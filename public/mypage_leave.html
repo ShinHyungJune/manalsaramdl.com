@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSA</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./images//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="/manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/common.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/mypage.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="subpage">
+    <!-- header -->
+    <header id="header"></header>
+    <!-- //header -->
+    <main class="subpage mypage mypage_leave">
+
+      <!-- banner -->
+      <div class="banner-wrap">
+        <div class="banner-container">
+          <div class="banner-contents">
+            <div class="title">Mypage</div>
+            <ul class="route">
+              <li><a href="#"><i class="xi-home"></i></a></li>
+              <li><i class="xi-angle-right"></i></li>
+              <li><a href="#"> 마이페이지</a></li>
+              <li><i class="xi-angle-right"></i></li>
+              <li><a href="#"> 회원 탈퇴</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mypage-wrap col-group">
+        <div class="left-wrap">
+          <div class="user-profile">
+            <div class="user-photo">
+              <img src="images/main-party.png" alt="">
+            </div>
+            <p class="user-name">
+              닉네임
+            </p>
+            <a href="mypage.html" class="edit-btn">프로필 수정</a>
+          </div>
+          <ul class="mypage-menu">
+            <li>
+              <a href="mypage_date.html">소개팅 목록</a>
+            </li>
+            <li>
+              <a href="mypage_party.html">파티 목록</a>
+            </li>
+            <li>
+              <a href="mypage_payment.html">결제내역</a>
+            </li>
+            <li class="active">
+              <a href="mypage_leave.html">회원 탈퇴</a>
+            </li>
+          </ul>
+        </div>
+        <div class="right-wrap">
+          <div class="title-wrap col-group">
+            <h2>회원 탈퇴</h2>
+          </div>
+          <div class="con-wrap">
+            <div class="txt-box">
+              <h3 class="title">
+                <i class="xi-lock"></i>
+                회원 탈퇴
+              </h3>
+              <p class="txt">
+                인사 회원에서 탈퇴 하시면 가입하신<br class="mb"> 회원정보, 프로필, 결제내역, 소개팅 내역, <br>
+                파티 내역등이 모두 초기화 되며, 복구하실 수 없습니다. <br>
+                정말로 탈퇴를 원하신다면 아래 탈퇴 버튼을 눌러주세요. <br>
+              </p>
+            </div>
+            <button type="button" onclick="confirm('정말로 탈퇴하시겠습니까?')" class="leave-btn">탈퇴하기</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer id="footer">
+    </footer>
+    <!-- //footer -->
+
+    <script defer src="/js/script.js"></script>
+
+    <script src="/js/jquery.js"></script>
+    <script>
+      //파일 업로드
+      let thumbnail_img = [];
+      let detail_back_img = [];
+      let detail_img = [];
+
+
+      function file_change(type) {
+        const files = $("#" + type + "_file")[0].files;
+        const filesArr = Array.prototype.slice.call(files);
+
+        filesArr.forEach(function(f) {
+          if (!f.type.match("image.*")) {
+            alert("이미지 파일만 업로드 가능합니다.");
+            return;
+          }
+
+          if (type == "thumbnail") {
+            thumbnail_img.push(f);
+          }
+
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            let str = "<li class='col-group " + type + "_img_li'>\
+                              <div class='txt col-group'>\
+                                <i class='xi-save'></i>\
+                                <p>" + f.name + "</p>\
+                              </div>\
+                              <button type='button' class='" + type + "_img_del'>\
+                                  <i class='xi-close'></i>\
+                              </button>\
+                            </li>";
+
+            $(".file-upload-list").show();
+            $("#" + type + "_ul").append(str);
+          }
+
+          reader.readAsDataURL(f);
+
+        });
+      }
+
+      //썸네일 이미지 x버튼
+      $(document).on("click", ".thumbnail_img_del", function() {
+        const idx = $(".thumbnail_img_del").index(this);
+
+        thumbnail_img.splice(idx, 1);
+        $("#file_upload").val("");
+        $(".thumbnail_img_li").eq(idx).remove();
+
+        if (thumbnail_img.length == 0) {
+          $(".file-upload-list").hide();
+        }
+
+      });
+
+      //탭
+      $('.tab-link li').click(function() {
+        $(".tab-link li").removeClass("active");
+        $(this).addClass("active");
+        var tab_id = $(this).attr('data-tab');
+        $('.tab-content').removeClass('active');
+
+        $(".tab-content#" + tab_id).addClass('active');
+      });
+    </script>
+  </div>
+</body>
+
+</html>

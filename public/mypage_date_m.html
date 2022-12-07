@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSA</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./images//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="/manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/common.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/mypage.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="subpage">
+    <!-- header -->
+    <header id="header"></header>
+    <!-- //header -->
+
+    <main class="subpage mypage">
+
+      <!-- banner -->
+      <div class="banner-wrap">
+        <div class="banner-container">
+          <div class="banner-contents">
+            <div class="title">Mypage</div>
+            <ul class="route">
+              <li><a href="#"><i class="xi-home"></i></a></li>
+              <li><i class="xi-angle-right"></i></li>
+              <li><a href="#"> 마이페이지</a></li>
+              <li><i class="xi-angle-right"></i></li>
+              <li><a href="#"> 소개팅 목록</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mypage-wrap col-group">
+        <div class="left-wrap">
+          <div class="user-profile">
+            <div class="user-photo">
+              <img src="images/main-party.png" alt="">
+            </div>
+            <p class="user-name">
+              닉네임
+            </p>
+            <a href="mypage.html" class="edit-btn">프로필 수정</a>
+          </div>
+          <ul class="mypage-menu">
+            <li class="active">
+              <a href="mypage_date.html">소개팅 목록</a>
+            </li>
+            <li>
+              <a href="mypage_party.html">파티 목록</a>
+            </li>
+            <li>
+              <a href="mypage_payment.html">결제내역</a>
+            </li>
+            <li>
+              <a href="mypage_leave.html">회원 탈퇴</a>
+            </li>
+          </ul>
+        </div>
+        <div class="right-wrap">
+          
+          <div class="title-wrap col-group">
+            <h2>소개팅 목록</h2>
+            <ul class="tab-link col-group">
+              <li class="active" data-tab="tab_1">진행중</li>
+              <li data-tab="tab_2">완료</li>
+            </ul>
+          </div>
+          <div class="tab-content active" id="tab_1">
+            <ul class="date-wrap col-group">
+              <li class="date-box">
+                <span class="state-label ongoing">진행중</span>
+                <span class="alarm-icon active">
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      인사동호랭이
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>미정</p>
+                    </div>
+                  </li>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user">
+                      <p>미정</p>
+                      <a href="#" class="date-btn active">일정제안</a>
+                    </div>
+                  </li>
+                </ul>
+                <a href="./chat.html" class="chat-btn">
+                  <p>1:1 채팅창 열기<span class="badge"></span></p>
+                </a>
+              </li>
+              <li class="date-box">
+                <span class="state-label ongoing">진행중</span> <!-- 소개팅 진행 중일 시 ongoing 클래스 추가 -->
+                <span class="alarm-icon active">
+                  <!-- 장소/일정/채팅에 변화가 있을 시 active 클래스 추가 -->
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      인사동호랭이
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>미정</p>
+                      <a href="#" class="date-btn location-check active">장소확인</a>
+                    </div>
+                  </li>
+                  <div class="modal-overley location-check">
+                       <!-- 장소 확인 -->
+                  <div class="modal-wrap">
+        <button type="button" class="close">
+          <i class="xi-close"></i>
+        </button>
+        <div class="title-wrap">
+          <img src="images/crown2.png" alt="">
+          <h2 class="title">
+            장소확인
+          </h2>
+          <p class="txt">
+            장소와 일정은 선호지역과 일정을 통해 선택되었습니다. <br>
+            이후 다른 일정으로 변경을 원하신다면 정해진 일정 하루전 열리는 <br>
+            채팅창을 통해 상대방 동의하에 가능합니다
+          </p>
+        </div>
+        <div class="form-wrap">
+          <div class="search-wrap form-box only">
+            <div class="search-result">
+              <div class="col-group">
+                <div class="txt-box">
+                  <p class="add">
+                    La Main de Chef
+                  </p>
+                  <p class="add-detail">
+                    서울 강남구 강남대로62길 18 맥산빌딩 1층
+                  </p>
+                </div>
+                <button type="button" class="map-btn">
+                  지도보기
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="form-box row-group">
+            <li class="col-group">
+              <div class="default">
+                <label for="list_1">
+                  <input type="radio" name="date_list" id="list_1" checked nonedit>
+                  <span class="radio-icon"></span>
+                  선호 일정1
+                </label>
+              </div>
+              <div class="user col-group">
+                <p>2022.10.10</p>
+                <p>19:00</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="submit-btn">장소 제안</button>
+                  </div>
+                   <!-- //장소 확인 -->
+                  </div>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user">
+                      <p>2022. 10. 12. 18:00</p>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <a href="./chat.html" class="chat-btn">
+                <!-- 새로운 채팅 도착 시 active 클래스 추가 -->
+                  <p>1:1 채팅창 열기<span class="badge"></span></p>
+                </a>
+              </li>
+              <li class="date-box">
+                <span class="state-label ongoing">진행중</span>
+                <span class="alarm-icon">
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      닉네임
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페앤레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                      <!--장소제안을 확인 완료 시 map 클래스로 변경 -->
+                    </div>
+                  </li>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user fixed">
+                      <!-- 일정 확정 시 fixed 클래스 추가 -->
+                      <p>2022. 10. 10. 18:00</p>
+                    </div>
+                  </li>
+                </ul>
+                <a href="#" class="chat-btn active">
+                  <!-- 새로운 채팅 도착 시 active 클래스 추가 -->
+                  <p>1:1 채팅창 열기<span class="badge"></span></p>
+                </a>
+              </li>
+              <li class="date-box">
+                <span class="state-label ongoing">진행중</span> <!-- 소개팅 진행 중일 시 ongoing 클래스 추가 -->
+                <span class="alarm-icon">
+                  <!-- 장소/일정/채팅에 변화가 있을 시 active 클래스 추가 -->
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      인사동호랭이
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페엔레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                    </div>
+                  </li>
+                  <div class="modal-overley location-check">
+                       <!-- 장소 확인 -->
+                  <div class="modal-wrap">
+        <button type="button" class="close">
+          <i class="xi-close"></i>
+        </button>
+        <div class="title-wrap">
+          <img src="images/crown2.png" alt="">
+          <h2 class="title">
+            장소확인
+          </h2>
+          <p class="txt">
+            장소와 일정은 선호지역과 일정을 통해 선택되었습니다. <br>
+            이후 다른 일정으로 변경을 원하신다면 정해진 일정 하루전 열리는 <br>
+            채팅창을 통해 상대방 동의하에 가능합니다
+          </p>
+        </div>
+        <div class="form-wrap">
+          <div class="search-wrap form-box only">
+            <div class="search-result">
+              <div class="col-group">
+                <div class="txt-box">
+                  <p class="add">
+                    La Main de Chef
+                  </p>
+                  <p class="add-detail">
+                    서울 강남구 강남대로62길 18 맥산빌딩 1층
+                  </p>
+                </div>
+                <button type="button" class="map-btn">
+                  지도보기
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="form-box row-group">
+            <li class="col-group">
+              <div class="default">
+                <label for="list_1">
+                  <input type="radio" name="date_list" id="list_1" checked nonedit>
+                  <span class="radio-icon"></span>
+                  선호 일정1
+                </label>
+              </div>
+              <div class="user col-group">
+                <p>2022.10.10</p>
+                <p>19:00</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="submit-btn">장소 제안</button>
+                  </div>
+                   <!-- //장소 확인 -->
+                  </div>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user">
+                      <p>2022. 10. 12. 18:00</p>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <a href="./chat.html" class="chat-btn">
+                <!-- 새로운 채팅 도착 시 active 클래스 추가 -->
+                  <p>1:1 채팅창 열기<span class="badge"></span></p>
+                </a>
+              </li>
+              <li class="date-box">
+                <span class="state-label ongoing">진행중</span> <!-- 소개팅 진행 중일 시 ongoing 클래스 추가 -->
+                <span class="alarm-icon">
+                  <!-- 장소/일정/채팅에 변화가 있을 시 active 클래스 추가 -->
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      인사동호랭이
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페엔레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                    </div>
+                  </li>
+                  <div class="modal-overley location-check">
+                       <!-- 장소 확인 -->
+                  <div class="modal-wrap">
+        <button type="button" class="close">
+          <i class="xi-close"></i>
+        </button>
+        <div class="title-wrap">
+          <img src="images/crown2.png" alt="">
+          <h2 class="title">
+            장소확인
+          </h2>
+          <p class="txt">
+            장소와 일정은 선호지역과 일정을 통해 선택되었습니다. <br>
+            이후 다른 일정으로 변경을 원하신다면 정해진 일정 하루전 열리는 <br>
+            채팅창을 통해 상대방 동의하에 가능합니다
+          </p>
+        </div>
+        <div class="form-wrap">
+          <div class="search-wrap form-box only">
+            <div class="search-result">
+              <div class="col-group">
+                <div class="txt-box">
+                  <p class="add">
+                    La Main de Chef
+                  </p>
+                  <p class="add-detail">
+                    서울 강남구 강남대로62길 18 맥산빌딩 1층
+                  </p>
+                </div>
+                <button type="button" class="map-btn">
+                  지도보기
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="form-box row-group">
+            <li class="col-group">
+              <div class="default">
+                <label for="list_1">
+                  <input type="radio" name="date_list" id="list_1" checked nonedit>
+                  <span class="radio-icon"></span>
+                  선호 일정1
+                </label>
+              </div>
+              <div class="user col-group">
+                <p>2022.10.10</p>
+                <p>19:00</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="submit-btn">장소 제안</button>
+                  </div>
+                   <!-- //장소 확인 -->
+                  </div>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user">
+                      <p>2022. 10. 12. 18:00</p>
+                    </div>
+                  </li>
+                  
+                </ul>
+                <a href="./chat.html" class="chat-btn">
+                <!-- 새로운 채팅 도착 시 active 클래스 추가 -->
+                  <p>1:1 채팅창 열기<span class="badge"></span></p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="tab_2">
+            <ul class="date-wrap col-group">
+              <li class="date-box">
+                <span class="state-label">완료</span>
+                <span class="alarm-icon">
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      닉네임
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페앤레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                      <!--장소제안을 확인 완료 시 map 클래스로 변경 -->
+                    </div>
+                  </li>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user fixed">
+                      <!-- 일정 확정 시 fixed 클래스 추가 -->
+                      <p>2022. 10. 10. 18:00</p>
+                    </div>
+                  </li>
+                </ul>
+                <a href="#" class="review-btn active">
+                  <p>후기 남기기</p>
+                </a>
+              </li>
+
+              <li class="date-box">
+                <span class="state-label">완료</span>
+                <span class="alarm-icon">
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      닉네임
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페앤레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                      <!--장소제안을 확인 완료 시 map 클래스로 변경 -->
+                    </div>
+                  </li>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user fixed">
+                      <!-- 일정 확정 시 fixed 클래스 추가 -->
+                      <p>2022. 10. 10. 18:00</p>
+                    </div>
+                  </li>
+                </ul>
+                <a href="#" class="review-btn active">
+                  <p>후기 남기기</p>
+                </a>
+              </li>
+              <li class="date-box">
+                <span class="state-label">완료</span>
+                <span class="alarm-icon">
+                  <i class="xi-bell"></i>
+                </span>
+                <div class="user-profile">
+                  <div class="user-photo">
+                    <img src="images/main-party.png" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="user-name">
+                      닉네임
+                    </p>
+                    <div class="user-info col-group">
+                      <p>92년생</p>
+                      /
+                      <p>부산거주</p>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-btn">프로필 상세보기</a>
+                </div>
+                <ul class="date-detail">
+                  <li class="col-group">
+                    <p class="default">
+                      장소
+                    </p>
+                    <div class="user">
+                      <p>오엔 카페앤레스토랑</p>
+                      <a href="#" class="date-btn map">지도보기</a>
+                      <!--장소제안을 확인 완료 시 map 클래스로 변경 -->
+                    </div>
+                  </li>
+                  <li class="col-group">
+                    <p class="default">
+                      일정
+                    </p>
+                    <div class="user fixed">
+                      <!-- 일정 확정 시 fixed 클래스 추가 -->
+                      <p>2022. 10. 10. 18:00</p>
+                    </div>
+                  </li>
+                </ul>
+                <a href="#" class="review-btn active">
+                  <p>후기 남기기</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer id="footer">
+    </footer>
+    <!-- //footer -->
+
+    <script defer src="/js/script.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script>
+      //파일 업로드
+      let thumbnail_img = [];
+      let detail_back_img = [];
+      let detail_img = [];
+
+
+      function file_change(type) {
+        const files = $("#" + type + "_file")[0].files;
+        const filesArr = Array.prototype.slice.call(files);
+
+        filesArr.forEach(function(f) {
+          if (!f.type.match("image.*")) {
+            alert("이미지 파일만 업로드 가능합니다.");
+            return;
+          }
+
+          if (type == "thumbnail") {
+            thumbnail_img.push(f);
+          }
+
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            let str = "<li class='col-group " + type + "_img_li'>\
+                              <div class='txt col-group'>\
+                                <i class='xi-save'></i>\
+                                <p>" + f.name + "</p>\
+                              </div>\
+                              <button type='button' class='" + type + "_img_del'>\
+                                  <i class='xi-close'></i>\
+                              </button>\
+                            </li>";
+
+            $(".file-upload-list").show();
+            $("#" + type + "_ul").append(str);
+          }
+
+          reader.readAsDataURL(f);
+
+        });
+      }
+
+      //썸네일 이미지 x버튼
+      $(document).on("click", ".thumbnail_img_del", function() {
+        const idx = $(".thumbnail_img_del").index(this);
+
+        thumbnail_img.splice(idx, 1);
+        $("#file_upload").val("");
+        $(".thumbnail_img_li").eq(idx).remove();
+
+        if (thumbnail_img.length == 0) {
+          $(".file-upload-list").hide();
+        }
+
+      });
+
+      //탭
+      $('.tab-link li').click(function() {
+        $(".tab-link li").removeClass("active");
+        $(this).addClass("active");
+        var tab_id = $(this).attr('data-tab');
+        $('.tab-content').removeClass('active');
+
+        $(".tab-content#" + tab_id).addClass('active');
+      });
+    </script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSA</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./images//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="/manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="./css/common.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/login.css">
+
+  <!-- 스와이퍼 -->
+  <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <script defer src="/js/script.js"></script>
+</head>
+
+<body>
+  <div id="subpage">
+    <!-- header -->
+    <header id="header"></header>
+    <!-- //header -->
+
+    <main class="loginpage login">
+      <div class="login-container main-login">
+        <div class="login-header">
+          <img src="./images/login-logo.png" alt="login-logo" class="login-logo">
+          <p class="login-header-title"><span class="text-style-1">인</span>생에서 가장 중요한 것은 <span class="text-style-1">사</span>랑이다.</p>
+          <img class="login-line-img" src="./images//log-line.png" alt="log-line">
+          <p class="login-header-sub">
+            가장 친한 친구가 되어 찾아 줄게요
+            <br />
+            인사 하세요!
+          </p>
+        </div>
+      </div>
+      <div class="login-wrap-main container row-group">
+        <div class="login-title">
+          <h2>Log in</h2>
+        </div>
+        <!--  -->
+        <div class="login-main">
+          <form action="">
+            <div class="login-form-wrap">
+              <ul class="login-form row-group">
+                <li>
+                  <input type="text" placeholder="이메일을 입력해 주세요.">
+                </li>
+                <li>
+                  <input type="password" placeholder="비밀번호를 입력해 주세요.">
+                </li>
+              </ul>
+              <button type="button" class="login-btn">
+                로그인
+              </button>
+            </div>
+          </form>
+          <!-- //form -->
+          <ul class="find-list col-group">
+            <li>
+              <a href="./find-id.html">
+                아이디 찾기
+              </a>
+            </li>
+            <li>
+              <a href="./password.html">
+                비밀번호 찾기
+              </a>
+            </li>
+          </ul>
+          <!-- //find -->
+
+          <div class="login-sns col-group">
+            <div class="sns-login-wrap col-group">
+              <p>
+                SNS 계정 로그인
+              </p>
+            </div>
+            <!--  -->
+            <ul class="sns-login-list col-group">
+              <li>
+                <a href="#" class="login-icon">
+                  <div class="login-sns-naver sns-box"><i class="xi-naver"></i></div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="login-icon">
+                  <div class="login-sns-kakao sns-box"><i class="xi-speech"></i></div>
+                </a>
+              </li>
+            </ul>
+            <!--  -->
+          </div>
+        </div>
+        <!-- //login-main -->
+      </div>
+      <div class="login-footer">
+        <a href="./form_join.html" class="member-benefit-btn col-group">
+          <p>아직 회원이 아니신가요? <br />
+            <span>회원가입 후 다양한 서비스를 만나보세요.</span>
+          </p>
+        </a>
+        <i class="xi-long-arrow-right"></i>
+      </div>
+
+
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+    </footer>
+    <!-- //footer -->
+
+    <script>
+      AOS.init();
+    </script>
+    <!-- aos 스크롤 애니메이션  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/jquery.js"></script>
+
+  </div>
+</body>
+
+</html>
