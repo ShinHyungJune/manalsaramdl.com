@@ -2193,169 +2193,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2367,9 +2204,20 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    //사이드 버튼
-    $('.side-btn button img').click(function () {
-      $(this).parent('button').toggleClass('active');
+    $(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+          $("#upBtn").fadeIn();
+        } else {
+          $("#upBtn").fadeOut();
+        }
+      });
+      $("#upBtn").click(function () {
+        $("html, body").animate({
+          scrollTop: 0
+        }, 400);
+        return false;
+      });
     });
   }
 });
@@ -2779,242 +2627,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -3023,7 +2635,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       pathname: location.pathname,
-      categories: this.$page.props.categories,
       user: this.$page.props.user ? this.$page.props.user.data : "",
       form: this.$inertia.form({
         word: ""
@@ -3031,90 +2642,31 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    search: function search() {
-      this.form.get("/brand/searches");
-    },
+    search: function search() {},
     init: function init() {
-      if ($(".mainpage").length === 0) $("body").addClass("subpage");else $("body").addClass("mainpage"); //페이지 스크롤시 헤더 색상 변경
-
-      $(window).scroll(function () {
-        var scrollTop = $(window).scrollTop();
-
-        if ($(".subpage").length === 0) {
-          if (scrollTop > 0) {
-            $(".mainpage #header").addClass("active");
+      $(function () {
+        $(".menu-bar").click(function () {
+          if ($(".mb-hd-wrap").hasClass("open") === true) {
+            $(".mb-hd-wrap").removeClass("open");
+            $(".nav-wrap").addClass("open");
+            $(".close-btn").click(function () {
+              $(".nav-wrap").removeClass("open");
+            });
           } else {
-            $(".mainpage #header").removeClass("active");
+            $(".nav-wrap").removeClass("open");
+            $(".mb-hd-wrap").addClass("open");
+            $(".close-btn").click(function () {
+              $(".mb-hd-wrap").removeClass("open");
+            });
           }
-        }
-      }); //서브페이지 헤더색상 고정
-
-      $(document).ready(function () {
-        $(".subpage #header").addClass("active");
-      }); //pc페이지 헤더 호버효과
-
-      $('#header .gnb').hover(function () {
-        $('#header').addClass('toggle');
-        $('#header .gnb .sub-menu').stop().slideDown();
-
-        if ($('#header').hasClass('toggle')) {
-          $('#header').mouseleave(function () {
-            $('#header').removeClass('toggle');
-            $('#header .gnb .sub-menu').stop().slideUp();
-          });
-        }
+        });
       });
-
-      if ($(document).width() > 768) {
-        //사이트맵
-        $('.sitemap-btn').click(function () {
-          $('.site-map').addClass('show');
-          $('.animate__animated').addClass('animate__fadeInUp');
-          $('body').css('overflow', 'hidden');
+      $(function () {
+        var $sm_nav_top = $(".mb-sm-nav-top");
+        $sm_nav_top.click(function () {
+          $(this).siblings(".mb-sm-nav").slideToggle();
+          $(this).toggleClass("active");
         });
-        $('.site-map .close').click(function () {
-          $('.site-map').removeClass('show');
-          $('.animate__animated').removeClass('animate__fadeInUp');
-          $('body').css('overflow', 'unset');
-        });
-      } else {
-        //사이트맵
-        $('.sitemap-btn').click(function () {
-          $('.site-map').addClass('show');
-          $('body').css('overflow', 'hidden');
-        });
-        $('.site-map .close').click(function () {
-          $('.site-map').removeClass('show');
-          $('body').css('overflow', 'unset');
-        }); //사이트맵 메뉴 슬라이드
-
-        $('.site-map .mid-menu li> p').click(function () {
-          $(this).next('.sub-menu').slideToggle();
-          $(this).toggleClass('active');
-
-          if ($(this).hasClass('active')) {
-            $(this).children('span').children('i').removeClass('xi-plus');
-            $(this).children('span').children('i').addClass('xi-minus');
-          } else {
-            $(this).children('span').children('i').addClass('xi-plus');
-            $(this).children('span').children('i').removeClass('xi-minus');
-          }
-        });
-      } //모바일 검색창
-
-
-      $('#header .search-btn').click(function () {
-        $('.header-search').toggleClass('active');
-      }); //통신판매업신고번호
-
-      var url = "http://www.ftc.go.kr/bizCommPop.do?wrkr_no=6038121138";
-      $('.footer-wrap .link').click(function () {
-        window.open(url, "bizCommPop", "width=750, height=700;");
-        return false;
-      }); //사이드 버튼
-
-      $('.side-btn button img').click(function () {
-        $(this).parent('button').toggleClass('active');
       });
     }
   },
@@ -4097,6 +3649,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
+    Pagination: _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      datings: this.$page.props.datings,
+      latestUnreadDating: this.$page.props.latestUnreadDating ? this.$page.props.latestUnreadDating.data : "",
+      form: this.$inertia.form({
+        page: 1,
+        state: this.$page.props.state
+      })
+    };
+  },
+  methods: {},
+  computed: {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Errors/403.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Errors/403.vue?vue&type=script&lang=js& ***!
@@ -4436,13 +4027,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
+    HeaderVue: _Components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
     FooterVue: _Components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"],
     Flash: _Components_Flash__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
@@ -5465,12 +5055,12 @@ __webpack_require__.r(__webpack_exports__);
         // version 1.1.0부터 지원.
         pay_method: this.order.pay_method_method,
         merchant_uid: this.order.merchant_uid,
-        name: this.order.delivery_name,
+        name: this.order.products[0].title,
         amount: this.order.price,
-        buyer_name: this.order.delivery_name,
-        buyer_tel: this.order.delivery_contact,
-        buyer_email: '',
-        buyer_addr: this.order.delivery_address,
+        buyer_name: this.order.user_name,
+        buyer_tel: this.order.user_contact,
+        buyer_email: this.order.user_email,
+        buyer_addr: '',
         buyer_postcode: '',
         m_redirect_url: this.$page.props.m_redirect_url
       }, function (rsp) {
@@ -5485,7 +5075,7 @@ __webpack_require__.r(__webpack_exports__);
           self.resultForm.message = msg;
           self.resultForm.order_id = self.order.id;
           alert(msg);
-          self.resultForm.get("/shopping/orders/fail", {
+          self.resultForm.get("/orders/fail", {
             replace: true
           });
         }
@@ -5512,67 +5102,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -42499,6 +42028,45 @@ component.options.__file = "resources/js/Pages/DatingProducts/Index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Datings/Index.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Datings/Index.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=2831cf1c& */ "./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Datings/Index.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Errors/403.vue":
 /*!*******************************************!*\
   !*** ./resources/js/Pages/Errors/403.vue ***!
@@ -43338,6 +42906,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Errors/403.vue?vue&type=script&lang=js&":
 /*!********************************************************************!*\
   !*** ./resources/js/Pages/Errors/403.vue?vue&type=script&lang=js& ***!
@@ -43797,6 +43381,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_2831cf1c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=template&id=2831cf1c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c&");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Errors/403.vue?vue&type=template&id=0c6e6d7c&":
 /*!**************************************************************************!*\
   !*** ./resources/js/Pages/Errors/403.vue?vue&type=template&id=0c6e6d7c& ***!
@@ -44155,415 +43756,58 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { attrs: { id: "footer" } }, [
-    _c("div", { staticClass: "footer-wrap container col-group" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("p", { staticClass: "mb" }, [
-        _vm._v("\n            궁금하신 점이 있으신가요?\n        "),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row-group" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "btm-wrap row-group" }, [
-          _c(
-            "a",
-            {
-              staticClass: "mb",
-              attrs: { href: "#" },
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  _vm.activeFamilyPop = !_vm.activeFamilyPop
-                },
-              },
-            },
-            [
-              _vm._v(
-                "\n                    FAMILY SITE\n\n                    "
-              ),
-              _vm.activeFamilyPop
-                ? _c("div", { staticClass: "pop-family" }, [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "https://barobau.com",
-                          target: "_blank",
-                        },
-                      },
-                      [_vm._v("메종바로바우")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "https://soframic.com",
-                          target: "_blank",
-                        },
-                      },
-                      [_vm._v("소프라믹")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "http://www.doodosf.co.kr/",
-                          target: "_blank",
-                        },
-                      },
-                      [_vm._v("두도")]
-                    ),
-                  ])
-                : _vm._e(),
-            ]
-          ),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _c("div", { staticClass: "btm-row2 col-group pc" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function ($event) {
-                    $event.preventDefault()
-                    _vm.activeFamilyPop = !_vm.activeFamilyPop
-                  },
-                },
-              },
-              [
-                _vm._v(
-                  "\n                        FAMILY SITE\n\n                        "
-                ),
-                _vm.activeFamilyPop
-                  ? _c("div", { staticClass: "pop-family" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://barobau.com",
-                            target: "_blank",
-                          },
-                        },
-                        [_vm._v("메종바로바우")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://soframic.com",
-                            target: "_blank",
-                          },
-                        },
-                        [_vm._v("소프라믹")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "http://www.doodosf.co.kr/",
-                            target: "_blank",
-                          },
-                        },
-                        [_vm._v("두도")]
-                      ),
-                    ])
-                  : _vm._e(),
-              ]
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._m(4),
-        ]),
-      ]),
-    ]),
-    _vm._v(" "),
-    _vm._m(5),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "footer-logo pc", attrs: { href: "/" } }, [
-      _c("img", { attrs: { src: "/images/footerlogo.svg", alt: "" } }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "top-wrap col-group" }, [
-      _c("ul", { staticClass: "top-left col-group" }, [
-        _c("li", [
-          _c("p", [
-            _vm._v(
-              "\n                            흙표흙침대 고객센터\n                        "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("h4", [
-            _vm._v(
-              "\n                            080-315-5233\n                        "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("span", [
-            _vm._v(
-              "\n                    월요일-금요일 09:00~16:30\n                    "
-            ),
-            _c("br"),
-            _vm._v(
-              "\n                    (토/일요일/공휴일 휴무)\n                "
-            ),
-          ]),
+    return _c("div", { attrs: { id: "footer" } }, [
+      _c("div", { staticClass: "footer-wrap" }, [
+        _c("a", { staticClass: "footer-logo", attrs: { href: "#" } }, [
+          _c("img", {
+            staticStyle: { width: "134px", height: "42px" },
+            attrs: { src: "/images/footer-logo.png", alt: "logo" },
+          }),
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c("p", [
-            _vm._v(
-              "\n                            가장 가까운 매장 연결\n                        "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("h4", [
-            _vm._v(
-              "\n                            1577-6674\n                        "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("span", [
-            _c("strong", [_vm._v("FAX")]),
-            _vm._v(" 051-315-5133\n                    "),
-            _c("br"),
+        _c("div", { staticClass: "col-group" }, [
+          _c("ul", { staticClass: "col-group" }, [
+            _c("li", [
+              _c("a", { attrs: { href: "privacy01.html" } }, [
+                _vm._v("개인정보처리방침"),
+              ]),
+            ]),
             _vm._v(" "),
-            _c("strong", [_vm._v("MAIL")]),
-            _vm._v(" contact@mudmatmail.com\n                "),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "top-right col-group" }, [
-        _c("li", { staticClass: "row-group" }, [
-          _c("a", { attrs: { href: "/brand/catalogs" } }, [
-            _c("img", { attrs: { src: "/images/footer_icon_1.svg", alt: "" } }),
+            _c("li", [
+              _c("a", { attrs: { href: "privacy02.html" } }, [
+                _vm._v("이용약관 및 환불규정"),
+              ]),
+            ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                                제품 매뉴얼\n                            "
-              ),
+            _c("li", [
+              _c("a", { attrs: { href: "story.html" } }, [_vm._v("회사소개")]),
             ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "row-group" }, [
-          _c("a", { attrs: { href: "/brand/afterServices/create" } }, [
-            _c("img", { attrs: { src: "/images/footer_icon_2.svg", alt: "" } }),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                                A/S 신청\n                            "
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "row-group" }, [
-          _c("a", { attrs: { href: "/brand/faqs" } }, [
-            _c("img", { attrs: { src: "/images/footer_icon_4.svg", alt: "" } }),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                                FAQ\n                            "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "btm-row1 col-group" }, [
-      _c("ul", { staticClass: "left col-group" }, [
-        _c("li", [
-          _c("a", { attrs: { href: "/brand/history" } }, [
-            _vm._v(
-              "\n                                회사소개\n                            "
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/brand/policy1" } }, [
-            _vm._v(
-              "\n                                이용약관\n                            "
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/brand/policy2" } }, [
-            _vm._v(
-              "\n                                개인정보처리방침\n                            "
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/brand/qnas/create" } }, [
-            _vm._v(
-              "\n                                고객센터\n                            "
-            ),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "right col-group" }, [
-        _c("li", [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://www.instagram.com/mudmat_official",
-                target: "_blank",
-                title: "인스타그램",
-              },
-            },
-            [_c("img", { attrs: { src: "/images/footer_sns_1.svg", alt: "" } })]
+        _c("span", [
+          _vm._v(
+            "대표 : 이태현   주소 : 서울특별시 강남구 영동대로 602, 6층  "
+          ),
+          _c("br", { staticClass: "mb" }),
+          _vm._v(
+            "대표전화 : 1660-1369   이메일 : cs@insacompany.com    사업자등록번호 : 481-17-02165"
           ),
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://www.youtube.com/channel/UCYehxk_hWKW4Q_IjwC1Mlfw?view_as=subscriber",
-                target: "_blank",
-                title: "유튜브",
-              },
-            },
-            [_c("img", { attrs: { src: "/images/footer_sns_2.svg", alt: "" } })]
-          ),
+        _c("span", { staticClass: "copyright" }, [
+          _vm._v("Copyright 인사 All rights reserved."),
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://blog.naver.com/mudmat1",
-                target: "_blank",
-                title: "네이버 블로그",
-              },
-            },
-            [_c("img", { attrs: { src: "/images/footer_sns_3.svg", alt: "" } })]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://www.facebook.com/gomudmat",
-                target: "_blank",
-                title: "페이스북",
-              },
-            },
-            [_c("img", { attrs: { src: "/images/footer_sns_4.svg", alt: "" } })]
-          ),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "\n                        (주)흙 - 사업자등록번호 : 603-81-21138 "
-      ),
-      _c("span", { staticClass: "link" }, [_vm._v("사업자등록확인")]),
-      _vm._v(
-        " | 대표이사 : 강무웅 / 개인정보관리책임자 : 정순영 | 부산광역시 사상구 학감대로192번길 60-30 (학장동)\n                        "
-      ),
-      _c("br"),
-      _vm._v(
-        "\n                        고객상담 : 080-315-5233 / 판매문의 : 1577-6674 / 팩스 : 051-315-5133\n                        "
-      ),
-      _c("br"),
-      _vm._v(
-        "\n                        copyright MUDMAT All Rights Reserved\n                    "
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "btm-row2 mb" }, [
-      _c("p", [
-        _vm._v(
-          "\n                        (주)흙 - 사업자등록번호 : 603-81-21138\n                        "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        대표이사 : 강무웅 / 개인정보관리책임자 : 정순영\n                        "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        부산광역시 사상구 학감대로192번길 60-30 (학장동)\n                        "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        고객상담 : 080-315-5233\n                        "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        판매문의 : 1577-6674 / 팩스 : 051-315-5133\n                        "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        copyright MUDMAT All Rights Reserved\n                    "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "side-btn row-group" }, [
-      _c(
-        "a",
-        { attrs: { href: "https://pf.kakao.com/_DQdpj", target: "_blank" } },
-        [_c("img", { attrs: { src: "/images/side_btn_kakao.svg", alt: "" } })]
-      ),
-      _vm._v(" "),
-      _c("button", { attrs: { type: "button" } }, [
-        _c("img", { attrs: { src: "/images/side_btn_inquiry.png", alt: "" } }),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "tel:080-315-5233" } }, [
-          _c("p", [
-            _vm._v("\n                    콜센터 "),
-            _c("br"),
-            _vm._v("\n                    080-315-5233\n                "),
-          ]),
+        _c("button", { staticClass: "mb", attrs: { id: "upBtn" } }, [
+          _c("i", { staticClass: "xi-long-arrow-up" }),
         ]),
       ]),
     ])
@@ -44927,663 +44171,296 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "active", attrs: { id: "header" } }, [
-    _c("div", { staticClass: "header-wrap row-group" }, [
-      _c("div", { staticClass: "top-menu col-group" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            attrs: { action: "" },
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.search.apply(null, arguments)
-              },
-            },
-          },
-          [
-            _c("div", { staticClass: "header-search" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.word,
-                    expression: "form.word",
-                  },
-                ],
-                attrs: { type: "text", placeholder: "검색어를 입력하세요." },
-                domProps: { value: _vm.form.word },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "word", $event.target.value)
-                  },
-                },
-              }),
-              _vm._v(" "),
-              _c("button", { attrs: { type: "submit" } }),
-            ]),
-          ]
-        ),
-      ]),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _c("nav", { staticClass: "gnb-wrap col-group" }, [
-        _c(
-          "ul",
-          { staticClass: "gnb left col-group" },
-          _vm._l(_vm.categories.data, function (category) {
-            return _c("li", { key: category.id }, [
-              _c(
-                "a",
-                {
-                  attrs: { href: "/brand/products?category_id=" + category.id },
-                },
-                [
-                  _vm._v(
-                    "\n                            " +
-                      _vm._s(category.title) +
-                      "\n                        "
-                  ),
-                ]
-              ),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _vm._m(2),
-      ]),
-      _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _vm._m(4),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "site-map" }, [
-      _vm._m(5),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-group" }, [
-        _c("div", { staticClass: "mid mb" }, [
-          _c("div", { staticClass: "col-group" }, [
-            !_vm.user
-              ? _c(
-                  "a",
-                  { staticClass: "login-txt", attrs: { href: "/login" } },
-                  [
-                    _vm._v(
-                      "\n                            로그인을 해주세요\n                            "
-                    ),
-                    _c("i", { staticClass: "xi-angle-right" }),
-                  ]
-                )
-              : _c("p", { staticClass: "login-txt" }, [
-                  _vm._v(
-                    "\n                            반갑습니다! " +
-                      _vm._s(_vm.user.name) +
-                      "님\n                        "
-                  ),
-                ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "link", attrs: { href: "/shopping" } }, [
-              _vm._v(
-                "\n                            흙침대 mall\n                        "
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "left" }, [
-          _c("p", { staticClass: "mb" }, [
-            _vm._v(
-              "\n                        제품 카테고리\n                    "
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "left-menu col-group" },
-            _vm._l(_vm.categories.data, function (category) {
-              return _c(
-                "li",
-                {
-                  key: category.id,
-                  staticClass: "animate__animated animate__faster",
-                },
-                [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "/brand/products?category_id=" + category.id,
-                      },
-                    },
-                    [
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(category.title) +
-                          "\n                                "
-                      ),
-                      _vm._m(6, true),
-                    ]
-                  ),
-                ]
-              )
-            }),
-            0
-          ),
-        ]),
-        _vm._v(" "),
-        _vm._m(7),
-      ]),
-    ]),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "col-group" }, [
-      _c("li", [
-        _c("a", { attrs: { href: "/shopping" } }, [
-          _vm._v(
-            "\n                            흙침대 mall\n                        "
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "https://soframic.com", target: "_blank" } }, [
-          _vm._v(
-            "\n                            소프라믹\n                        "
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "https://barobau.com", target: "_blank" } }, [
-          _vm._v(
-            "\n                            메종바로바우\n                        "
-          ),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "logo" }, [
-      _c("a", { attrs: { href: "/brand" } }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "gnb right col-group" }, [
-      _c("li", [
-        _c("a", { attrs: { href: "/brand/story1" } }, [
-          _vm._v(
-            "\n                            흙침대 이야기\n                        "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "sub-menu" }, [
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/story1" } }, [
-              _vm._v(
-                "\n                                    흙표흙침대의 가치\n                                "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/story2" } }, [
-              _vm._v(
-                "\n                                    흙표흙침대의 효과\n                                "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/story3" } }, [
-              _vm._v(
-                "\n                                    흙표흙침대의 철학\n                                "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/brand/reviews" } }, [
-          _vm._v(
-            "\n                            흙소식\n                        "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "sub-menu" }, [
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/reviews" } }, [
-              _vm._v(
-                "\n                                    고객후기\n                                "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/brandEvents" } }, [
-              _vm._v(
-                "\n                                    이벤트\n                                "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/brandEvents?type=SNS" } }, [
-              _vm._v(
-                "\n                                    SNS\n                                "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "/brand/stores" } }, [
-          _vm._v(
-            "\n                            매장안내\n                        "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "sub-menu" }, [
-          _c("li", [
-            _c("a", { attrs: { href: "/brand/stores" } }, [
-              _vm._v(
-                "\n                                    매장검색\n                                "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "a",
-              { attrs: { href: "https://soframic.com", target: "_blank" } },
-              [
-                _vm._v(
-                  "\n                                    소프라믹\n                                "
-                ),
-              ]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "a",
-              { attrs: { href: "https://barobau.com", target: "_blank" } },
-              [
-                _vm._v(
-                  "\n                                    메종바로바우\n                                "
-                ),
-              ]
-            ),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("ul", { staticClass: "icon-menu col-group" }, [
-          _c("li", { staticClass: "mypage-btn" }, [
-            _c("a", { attrs: { href: "/shopping/carts" } }),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "sitemap-btn" }, [
-            _c("a", { attrs: { href: "#" } }),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "search-btn mb", attrs: { type: "button" } },
-      [_c("i", { staticClass: "xi-search" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "sitemap-btn mb", attrs: { type: "button" } },
-      [_c("i", { staticClass: "xi-bars" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "close" }, [
-      _c("i", { staticClass: "xi-close" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "mb" }, [
-      _c("i", { staticClass: "xi-angle-right" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "right col-group" }, [
-      _c("ul", { staticClass: "mid-menu" }, [
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                흙침대 이야기\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/story1" } }, [
-                _vm._v(
-                  "\n                                        흙표흙침대의 가치\n                                    "
-                ),
+    return _c("header", { attrs: { id: "header" } }, [
+      _c("div", { staticClass: "header-wrap sitemap" }, [
+        _c("div", { staticClass: "top-menu" }, [
+          _c("ul", { staticClass: "top-menu-sns" }, [
+            _c("li", { staticClass: "sns-icons" }, [
+              _c("a", { attrs: { href: "#", target: "_blank" } }, [
+                _c("img", {
+                  staticClass: "sns-icon insta-off",
+                  attrs: { src: "/images/sns-icon-insta (1).svg" },
+                }),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/story2" } }, [
-                _vm._v(
-                  "\n                                        흙표흙침대의 효과\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/story3" } }, [
-                _vm._v(
-                  "\n                                        흙표흙침대의 철학\n                                    "
-                ),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                흙소식\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/reviews" } }, [
-                _vm._v(
-                  "\n                                        고객후기\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/brandEvents" } }, [
-                _vm._v(
-                  "\n                                        이벤트\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/brandEvents?type=SNS" } }, [
-                _vm._v(
-                  "\n                                        SNS\n                                    "
-                ),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                매장안내\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/stores" } }, [
-                _vm._v(
-                  "\n                                        매장검색\n                                    "
-                ),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#", target: "_blank" } }, [
+                _c("img", {
+                  staticClass: "sns-icon insta-on",
+                  attrs: { src: "/images/sns-icon-insta-on.svg" },
+                }),
               ]),
             ]),
             _vm._v(" "),
             _c("li", [
               _c(
                 "a",
-                { attrs: { href: "https://soframic.com", target: "_blank" } },
-                [
-                  _vm._v(
-                    "\n                                        소프라믹\n                                    "
-                  ),
-                ]
+                {
+                  attrs: {
+                    href: "http://pf.kakao.com/_kvwsxj",
+                    target: "_blank",
+                  },
+                },
+                [_c("i", { staticClass: "sns-icon speech xi-speech" })]
               ),
             ]),
             _vm._v(" "),
             _c("li", [
-              _c(
-                "a",
-                { attrs: { href: "https://barobau.com", target: "_blank" } },
-                [
-                  _vm._v(
-                    "\n                                        메종바로바우\n                                    "
-                  ),
-                ]
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                회사소개\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
+              _c("a", { attrs: { href: "#", target: "_blank" } }, [
+                _c("i", { staticClass: "sns-icon naver xi-naver" }),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/history" } }, [
-                _vm._v(
-                  "\n                                        흙의 역사\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/certification" } }, [
-                _vm._v(
-                  "\n                                        수상 및 인증\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/videos" } }, [
-                _vm._v(
-                  "\n                                        라이브러리\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/wayToCome" } }, [
-                _vm._v(
-                  "\n                                        오시는 길\n                                    "
-                ),
-              ]),
-            ]),
+          _c("h1", { staticClass: "logo" }, [
+            _c("a", { attrs: { href: "index.html" } }),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                고객지원\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "top-login" }, [
+            _c("ul", [
+              _c("li", [
+                _c("a", { attrs: { href: "/login.html" } }, [_vm._v("Log in")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/join.html" } }, [_vm._v("Sign up")]),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/faqs" } }, [
-                _vm._v(
-                  "\n                                        자주 묻는 질문\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/qnas/create" } }, [
-                _vm._v(
-                  "\n                                        AS신청 및 상담\n                                    "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/catalogs" } }, [
-                _vm._v(
-                  "\n                                        제품 매뉴얼\n                                    "
-                ),
-              ]),
+          _c("div", { staticClass: "menu-bar" }, [
+            _c("button", { staticClass: "mb-hd-open" }, [
+              _c("img", { attrs: { src: "/images/m-bar.png", alt: "" } }),
             ]),
           ]),
         ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated" }, [
-          _c("p", [
-            _vm._v(
-              "\n                                기타안내\n                                "
-            ),
-            _c("span", { staticClass: "mb" }, [
-              _c("i", { staticClass: "xi-plus" }),
+      ]),
+      _vm._v(" "),
+      _c("nav", { staticClass: "gnb-wrap" }, [
+        _c("ul", { staticClass: "gnb" }, [
+          _c("li", { staticClass: "active" }, [
+            _c("a", { attrs: { href: "/story.html" } }, [_vm._v("인사")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "gnb-sub" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "/story.html" } }, [
+                  _vm._v("탄생배경"),
+                ]),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("ul", { staticClass: "sub-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/policy1" } }, [
-                _vm._v(
-                  "\n                                        이용약관\n                                    "
-                ),
-              ]),
+          _c("li", [
+            _c("a", { attrs: { href: "/service_party.html" } }, [
+              _vm._v("서비스"),
             ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/brand/policy2" } }, [
-                _vm._v(
-                  "\n                                        개인정보보호정책\n                                    "
-                ),
+            _c("ul", { staticClass: "gnb-sub" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "/service_party.html" } }, [
+                  _vm._v("파티신청"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/service_blind.html" } }, [
+                  _vm._v("소개팅신청"),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "../review_date.html" } }, [
+              _vm._v("후기"),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "gnb-sub" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "../review_date.html" } }, [
+                  _vm._v("소개팅 후기"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "../review_party.html" } }, [
+                  _vm._v("파티 후기"),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/coment.html" } }, [_vm._v("게시판")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "gnb-sub" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "/coment.html" } }, [
+                  _vm._v("인사의 코멘트"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/notice_party.html" } }, [
+                  _vm._v("파티관련"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "/notice_blind.html" } }, [
+                  _vm._v("소개팅관련"),
+                ]),
               ]),
             ]),
           ]),
         ]),
       ]),
       _vm._v(" "),
-      _c("ul", { staticClass: "right-menu" }, [
-        _c("li", { staticClass: "animate__animated animate__faster" }, [
-          _c("a", { attrs: { href: "/brand" } }, [
-            _c("p", [
-              _vm._v("\n                                    흙표흙침대몰"),
-              _c("br"),
-              _vm._v(
-                "\n                                    바로가기\n                                "
-              ),
+      _c("div", { staticClass: "mb-hd mb" }, [
+        _c("div", { staticClass: "mb-hd-wrap " }, [
+          _c("div", { staticClass: "mb-hd-box" }, [
+            _c("div", { staticClass: "mb-logo" }, [
+              _c("img", {
+                attrs: { src: "/images/LOGO.png", alt: "insa-logo" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-login" }, [
+              _c("a", { attrs: { href: "../login.html" } }, [_vm._v("login")]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "../mypage.html" } }, [
+                _vm._v("My page"),
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "../signin.html" } }, [
+                _vm._v("sign in"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "mb-nav" }, [
+              _c("li", [
+                _c("div", { staticClass: "mb-sm-nav-top" }, [
+                  _c("a", { attrs: { href: "./story.html" } }, [
+                    _vm._v("인사"),
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "xi-angle-down" }),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "mb-sm-nav",
+                    staticStyle: { display: "none" },
+                  },
+                  [
+                    _c("a", { attrs: { href: "./story.html" } }, [
+                      _vm._v("탄생 배경"),
+                    ]),
+                  ]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "mb-sm-nav-top" }, [
+                  _c("a", { attrs: { href: "/service_party.html" } }, [
+                    _vm._v("서비스"),
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "xi-angle-down" }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-sm-nav" }, [
+                  _c("a", { attrs: { href: "/service_party.html" } }, [
+                    _vm._v("파티 신청"),
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "/service_blind.html" } }, [
+                    _vm._v("소개팅 신청"),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "mb-sm-nav-top" }, [
+                  _c("a", { attrs: { href: "../review_date.html" } }, [
+                    _vm._v("후기"),
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "xi-angle-down" }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-sm-nav" }, [
+                  _c("a", { attrs: { href: "../review_date.html" } }, [
+                    _vm._v("소개팅 후기"),
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "../review_party.html" } }, [
+                    _vm._v("파티 후기"),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "mb-sm-nav-top" }, [
+                  _c("a", { attrs: { href: "../coment.html" } }, [
+                    _vm._v("게시판"),
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "xi-angle-down" }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-sm-nav" }, [
+                  _c("a", { attrs: { href: "../coment.html" } }, [
+                    _vm._v("인사의 코멘트"),
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "../notice_party.html" } }, [
+                    _vm._v("파티관련"),
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "../notice_blind.html" } }, [
+                    _vm._v("소개팅관련"),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "sns-wrap-mb" }, [
+              _c("a", { staticClass: "logout-btn", attrs: { href: "#" } }, [
+                _vm._v("logout"),
+                _c("i", { staticClass: "xi-log-out" }),
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "utb youtube xi-youtube-play" }),
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "kakao speech xi-speech" }),
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "sns-icon naver xi-naver" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("button", { staticClass: "close-btn" }, [
+              _c("i", { staticClass: "xi-close" }),
             ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "animate__animated animate__faster" }, [
-          _c(
-            "a",
-            { attrs: { href: "https://barobau.com", target: "_blank" } },
-            [
-              _c("p", [
-                _vm._v("\n                                    메종바로바우"),
-                _c("br"),
-                _vm._v(
-                  "\n                                    바로가기\n                                "
-                ),
-              ]),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated animate__faster" }, [
-          _c(
-            "a",
-            { attrs: { href: "https://soframic.com", target: "_blank" } },
-            [
-              _c("p", [
-                _vm._v("\n                                    소프라믹"),
-                _c("br"),
-                _vm._v(
-                  "\n                                    바로가기\n                                "
-                ),
-              ]),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "animate__animated animate__faster" }, [
-          _c(
-            "a",
-            { attrs: { href: "http://www.doodosf.co.kr/", target: "_blank" } },
-            [
-              _c("p", [
-                _vm._v("\n                                    두도"),
-                _c("br"),
-                _vm._v(
-                  "\n                                    바로가기\n                                "
-                ),
-              ]),
-            ]
-          ),
+        _c("div", { staticClass: "chat-fixed mb" }, [
+          _c("a", { attrs: { href: "http://pf.kakao.com/_kvwsxj" } }, [
+            _c("i", { staticClass: "xi-speech" }),
+          ]),
         ]),
       ]),
     ])
@@ -47458,6 +46335,31 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Datings/Index.vue?vue&type=template&id=2831cf1c& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Errors/403.vue?vue&type=template&id=0c6e6d7c&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Errors/403.vue?vue&type=template&id=0c6e6d7c& ***!
@@ -47968,7 +46870,7 @@ var render = function () {
   return _c(
     "div",
     [
-      _c("header"),
+      _c("header-vue"),
       _vm._v(" "),
       _vm._t("default"),
       _vm._v(" "),
@@ -49868,71 +48770,69 @@ var render = function () {
               ? _c("div", { staticClass: "txt-box row-group" }, [
                   _c("h2", [
                     _vm._v(
-                      "\n                            주문이 정상적으로 완료되었습니다.\n                        "
+                      "\n                        주문이 정상적으로 완료되었습니다.\n                    "
                     ),
                   ]),
-                  _vm._v(" "),
-                  _vm._m(1),
                 ])
               : _c("div", { staticClass: "txt-box row-group" }, [
                   _c("h2", { staticStyle: { color: "red" } }, [
                     _vm._v(
-                      "\n                            주문에 실패하였습니다.\n                        "
+                      "\n                        주문에 실패하였습니다.\n                    "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "\n                            " +
+                      "\n                        " +
                         _vm._s(_vm.order.reason) +
-                        "\n                        "
+                        "\n                    "
                     ),
                   ]),
                 ]),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(1),
           ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "sec-wrap col-group" }, [
           _c("section", [
-            _vm._m(3),
+            _vm._m(2),
             _vm._v(" "),
             _c("div", { staticClass: "sec-con" }, [
               _c("ul", { staticClass: "row-group" }, [
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    배송지\n                                "
+                      "\n                                배송지\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "user row-group" }, [
                     _c("p", [
                       _vm._v(
-                        "\n                                        " +
+                        "\n                                    " +
                           _vm._s(_vm.order.delivery_name) +
-                          "\n                                    "
+                          "\n                                "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "\n                                        " +
+                        "\n                                    " +
                           _vm._s(_vm.order.delivery_contact) +
-                          "\n                                    "
+                          "\n                                "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "\n                                        " +
+                        "\n                                    " +
                           _vm._s(_vm.order.delivery_address) +
                           " " +
                           _vm._s(_vm.order.delivery_address_detail) +
                           " (" +
                           _vm._s(_vm.order.delivery_address_zipcode) +
-                          ")\n                                    "
+                          ")\n                                "
                       ),
                     ]),
                   ]),
@@ -49941,15 +48841,15 @@ var render = function () {
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    서비스 가능시간\n                                "
+                      "\n                                서비스 가능시간\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "user" }, [
                     _vm._v(
-                      "\n                                    " +
+                      "\n                                " +
                         _vm._s(_vm.order.service_time) +
-                        "\n                                "
+                        "\n                            "
                     ),
                   ]),
                 ]),
@@ -49959,15 +48859,15 @@ var render = function () {
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    주문일자\n                                "
+                      "\n                                주문일자\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "user" }, [
                     _vm._v(
-                      "\n                                    " +
+                      "\n                                " +
                         _vm._s(_vm.order.created_at) +
-                        "\n                                "
+                        "\n                            "
                     ),
                   ]),
                 ]),
@@ -49975,15 +48875,15 @@ var render = function () {
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    주문번호\n                                "
+                      "\n                                주문번호\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "user" }, [
                     _vm._v(
-                      "\n                                    " +
+                      "\n                                " +
                         _vm._s(_vm.order.merchant_uid) +
-                        "\n                                "
+                        "\n                            "
                     ),
                   ]),
                 ]),
@@ -49991,15 +48891,15 @@ var render = function () {
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    결제수단\n                                "
+                      "\n                                결제수단\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "user" }, [
                     _vm._v(
-                      "\n                                    " +
+                      "\n                                " +
                         _vm._s(_vm.order.pay_method_name) +
-                        "\n                                "
+                        "\n                            "
                     ),
                   ]),
                 ]),
@@ -50008,87 +48908,22 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("section", [
-            _vm._m(4),
+            _vm._m(3),
             _vm._v(" "),
             _c("div", { staticClass: "sec-con" }, [
               _c("ul", { staticClass: "row-group" }, [
                 _c("li", { staticClass: "col-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
-                      "\n                                    총 주문금액\n                                "
+                      "\n                                총 결제금액\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "user" }, [
                     _c("span", [
-                      _vm._v(_vm._s(_vm.order.price_total.toLocaleString())),
+                      _vm._v(_vm._s(_vm.order.price.toLocaleString())),
                     ]),
-                    _vm._v("원\n                                "),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "col-group" }, [
-                  _c("p", { staticClass: "default" }, [
-                    _vm._v(
-                      "\n                                    총 배송비\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "user" }, [
-                    _c("span", [
-                      _vm._v(_vm._s(_vm.order.delivery_price.toLocaleString())),
-                    ]),
-                    _vm._v("원\n                                "),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "col-group" }, [
-                  _c("p", { staticClass: "default" }, [
-                    _vm._v(
-                      "\n                                    적립금 할인\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "user" }, [
-                    _c("span", [
-                      _vm._v(_vm._s(_vm.order.point_use.toLocaleString())),
-                    ]),
-                    _vm._v("원\n                                "),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "col-group" }, [
-                  _c("p", { staticClass: "default" }, [
-                    _vm._v(
-                      "\n                                    총 결제금액\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "user" }, [
-                    _c("span", [
-                      _vm._v(_vm._s(_vm.order.price_real.toLocaleString())),
-                    ]),
-                    _vm._v("원\n                                "),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "notice" }, [
-                _vm._m(5),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-group" }, [
-                  _c("p", [
-                    _vm._v(
-                      "\n                                    예정 구매적립금\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                    " +
-                        _vm._s(_vm.order.point_give.toLocaleString()) +
-                        " 원\n                                "
-                    ),
+                    _vm._v("원\n                            "),
                   ]),
                 ]),
               ]),
@@ -50097,7 +48932,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("a", { staticClass: "home-btn", attrs: { href: "/shopping" } }, [
-          _vm._v("\n                홈으로 가기\n            "),
+          _vm._v("\n            홈으로 가기\n        "),
         ]),
       ]),
     ]
@@ -50109,26 +48944,22 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sec-top col-group" }, [
-      _c("h2", [_vm._v("\n                    주문 완료\n                ")]),
+      _c("h2", [_vm._v("\n                주문 완료\n            ")]),
       _vm._v(" "),
       _c("ul", { staticClass: "col-group" }, [
-        _c("li", [
-          _vm._v("\n                        장바구니\n                    "),
-        ]),
+        _c("li", [_vm._v("\n                    장바구니\n                ")]),
         _vm._v(" "),
         _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
         _vm._v(" "),
         _c("li", [
-          _vm._v("\n                        주문서 작성\n                    "),
+          _vm._v("\n                    주문서 작성\n                "),
         ]),
         _vm._v(" "),
         _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [
-            _vm._v(
-              "\n                            주문완료\n                        "
-            ),
+            _vm._v("\n                        주문완료\n                    "),
           ]),
         ]),
       ]),
@@ -50138,57 +48969,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "\n                            상세 주문 정보는\n                            "
-      ),
-      _c("strong", [
-        _vm._v(
-          "\n                                마이페이지 > 주문/배송관리 > 주문/배송조회\n                            "
-        ),
-      ]),
-      _vm._v(
-        "\n                            에서 확인 가능합니다.\n                        "
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "notice" }, [
       _c("h3", [
-        _vm._v(
-          "\n                            배송 안내\n                        "
-        ),
+        _vm._v("\n                        배송 안내\n                    "),
       ]),
       _vm._v(" "),
       _c("ul", [
         _c("li", [
           _vm._v(
-            "\n                                소물류는 2~3일 정도 소요되며,\n                                "
+            "\n                            소물류는 2~3일 정도 소요되며,\n                            "
           ),
           _c("br"),
           _vm._v(
-            "\n                                가구의 경우 일반적으로 제품 주문 후 7일 ~ 10일 정도 소요합니다.\n                                "
+            "\n                            가구의 경우 일반적으로 제품 주문 후 7일 ~ 10일 정도 소요합니다.\n                            "
           ),
           _c("br"),
           _vm._v(
-            "\n                                단, 성수기(9월~12월)에는 주문서 접수 후 5일 이상 더 소요될수 있습니다.\n                            "
+            "\n                            단, 성수기(9월~12월)에는 주문서 접수 후 5일 이상 더 소요될수 있습니다.\n                        "
           ),
         ]),
       ]),
       _vm._v(" "),
       _c("h3", [
-        _vm._v(
-          "\n                            적립금 안내\n                        "
-        ),
+        _vm._v("\n                        적립금 안내\n                    "),
       ]),
       _vm._v(" "),
       _c("ul", [
         _c("li", [
           _vm._v(
-            "\n                                제품 구매시 총 구매금액의 5%만큼의 포인트가 적립되며 차후 제품 구입시 차감을 받을 수 있습니다.\n                            "
+            "\n                            제품 구매시 총 구매금액의 5%만큼의 포인트가 적립되며 차후 제품 구입시 차감을 받을 수 있습니다.\n                        "
           ),
         ]),
       ]),
@@ -50201,7 +49010,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "sec-title" }, [
       _c("h2", [
         _vm._v(
-          "\n                            결제/배송 정보\n                        "
+          "\n                        결제/배송 정보\n                    "
         ),
       ]),
     ])
@@ -50213,28 +49022,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "sec-title" }, [
       _c("h2", [
         _vm._v(
-          "\n                            결제 금액 및 혜택\n                        "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _vm._v(
-        "\n                                적립금 혜택\n                                "
-      ),
-      _c("span", { staticStyle: { display: "block", "margin-top": "6px" } }, [
-        _vm._v(
-          "\n                                        본사 쇼핑몰 로그인 후 제품 구매시 총 구매금액의 5%만큼의 포인트가 적립됩니다.\n                                    "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticStyle: { display: "block", "margin-top": "6px" } }, [
-        _vm._v(
-          "\n                                        적립금은 배송완료시점에 적립됩니다.\n                                    "
+          "\n                        결제 금액 및 혜택\n                    "
         ),
       ]),
     ])
@@ -65571,6 +64359,8 @@ Vue.compile = compileToFunctions;
 var map = {
 	"./DatingProducts/Index": "./resources/js/Pages/DatingProducts/Index.vue",
 	"./DatingProducts/Index.vue": "./resources/js/Pages/DatingProducts/Index.vue",
+	"./Datings/Index": "./resources/js/Pages/Datings/Index.vue",
+	"./Datings/Index.vue": "./resources/js/Pages/Datings/Index.vue",
 	"./Errors/403": "./resources/js/Pages/Errors/403.vue",
 	"./Errors/403.vue": "./resources/js/Pages/Errors/403.vue",
 	"./Errors/404": "./resources/js/Pages/Errors/404.vue",
@@ -65646,7 +64436,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\project\\\\greeting"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"D:\\\\project\\\\greeting","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

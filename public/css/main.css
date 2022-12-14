@@ -7,6 +7,216 @@
 .pagination li a:hover { background-color: #679ad2;  border: solid 1px #679ad2; color: #fff; }
 .pagination li a:hover i { color: #fff; }
 
+/* mypage 마이페이지 */
+.mypage main { padding: 56px 0 150px; }
+.mypage .left-wrap { width: 240px; }
+.mypage .left-wrap h2 { margin-bottom: 32px; font-size: 26px; }
+.mypage .left-wrap .mypage-menu { display: flex; flex-flow: column; gap: 24px; }
+.mypage .left-wrap .mypage-menu li { position: relative; }
+.mypage .left-wrap .mypage-menu li a { font-size: 20px; font-weight: 300; transition: .3s; }
+.mypage .left-wrap .mypage-menu li i { position: absolute; top: 0; right: 56px; opacity: 0; transition: .3s; }
+.mypage .left-wrap .mypage-menu li:hover> a { font-weight: bold; }
+.mypage .left-wrap .mypage-menu li:hover i { opacity: 1; }
+.mypage .left-wrap .mypage-menu li .sub-menu { padding-left: 16px; border-left: 2px solid #333; margin-top: 24px; display: none; }
+.mypage .left-wrap .mypage-menu li .sub-menu li { margin-bottom: 16px; }
+.mypage .left-wrap .mypage-menu li .sub-menu li:last-child { margin-bottom: 0; }
+.mypage .left-wrap .mypage-menu li .sub-menu li a { font-size: 16px; }
+
+/* mypage 마이페이지 메뉴 클릭 시 */
+.left-wrap .mypage-menu> li a.active { font-weight: bold; }
+.left-wrap .mypage-menu> li a.active i { opacity: 1; }
+
+.mypage-order .left-wrap .mypage-menu> li:nth-child(2)> a { font-weight: bold; }
+.mypage-order .left-wrap .mypage-menu> li:nth-child(2) i { opacity: 1; }
+.mypage-order .left-wrap .mypage-menu> li:nth-child(2) .sub-menu { display: block; }
+.mypage-order1 .left-wrap .mypage-menu> li:nth-child(2) .sub-menu li:nth-child(1) a { font-weight: bold; }
+.mypage-order2 .left-wrap .mypage-menu> li:nth-child(2) .sub-menu li:nth-child(2) a { font-weight: bold; }
+
+.mypage-interest .left-wrap .mypage-menu> li:nth-child(3)> a { font-weight: bold; }
+.mypage-interest .left-wrap .mypage-menu> li:nth-child(3) i { opacity: 1; }
+.mypage-interest .left-wrap .mypage-menu> li:nth-child(3) .sub-menu { display: block; }
+.mypage-favorite .left-wrap .mypage-menu> li:nth-child(3) .sub-menu li:nth-child(1) a { font-weight: bold; }
+.mypage-history .left-wrap .mypage-menu> li:nth-child(3) .sub-menu li:nth-child(2) a { font-weight: bold; }
+
+.mypage-activity .left-wrap .mypage-menu> li:nth-child(4)> a { font-weight: bold; }
+.mypage-activity .left-wrap .mypage-menu> li:nth-child(4) i { opacity: 1; }
+.mypage-activity .left-wrap .mypage-menu> li:nth-child(4) .sub-menu { display: block; }
+.mypage-review .left-wrap .mypage-menu> li:nth-child(4) .sub-menu li:nth-child(1) a { font-weight: bold; }
+.mypage-inquiry .left-wrap .mypage-menu> li:nth-child(4) .sub-menu li:nth-child(2) a { font-weight: bold; }
+
+.mypage-member .left-wrap .mypage-menu> li:nth-child(5)> a { font-weight: bold; }
+.mypage-member .left-wrap .mypage-menu> li:nth-child(5) i { opacity: 1; }
+
+.mypage .right-wrap { width: calc( 100% - 240px ); }
+
+.mypage section { margin-bottom: 80px; }
+.mypage section .sec-title { padding-bottom: 16px; border-bottom: 2px solid #333; justify-content: space-between; align-items: center; }
+.mypage section .sec-title h2 { font-size: 24px; }
+.mypage section .sec-top { margin: 32px 0; justify-content: space-between; align-items: center; }
+.mypage section .sec-top .default { width: 200px; font-size: 18px; font-weight: bold; }
+.mypage section .sec-top .user { width: calc( 100% - 200px ); gap: 24px; justify-content: space-between; }
+.mypage section .sec-top .user .sec-top-txt { width: calc( 100% - 169px ); height: 56px; line-height: 56px; padding: 0 24px; font-size: 18px; }
+.mypage section .sec-top .user .sec-top-btn { width: 145px; height: 56px; border: 1px solid #333; text-align: center; line-height: 54px; font-size: 18px; font-weight: bold; }
+
+.mypage table { table-layout: fixed; width: 100%; border-collapse: collapse; }
+.mypage table thead th { padding: 16px 0; font-weight: bold; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+.mypage table tbody td { padding: 16px; border-bottom: 1px solid #e4e4e4; text-align: center; }
+
+/* 마이페이지 메인페이지 */
+.mypage .mypage-state ul { flex-flow: wrap; }
+.mypage .mypage-state ul li { padding: 30px 24px; background: #e6d7c9; border: 1px solid #fff; width: 30%; justify-content: space-between; align-items: center; }
+.mypage .mypage-state ul li:first-child { width: 40%; }
+.mypage .mypage-state ul li .left-box { width: 60px; text-align: center; }
+.mypage .mypage-state ul li .left-box .img-box { padding-top: 100%; }
+.mypage .mypage-state ul li .left-box p {font-size: 12px; font-weight: 500; }
+.mypage .mypage-state ul li .right-box { text-align: center; }
+.mypage .mypage-state ul li .right-box .num { font-size: 42px; font-weight: bold; border-bottom: 3px solid #333; line-height: 1.1; }
+.mypage .mypage-state ul li .right-box .num span { font-weight: bold; }
+.mypage .mypage-state ul li:first-child .right-box .num { font-size: 32px; }
+.mypage .mypage-state ul li:first-child .right-box a { font-size: 12px; font-weight: 500; margin-top: 8px; }
+
+/* 마이페이지 적립금 */
+.mypage .mypage-reserves .sec-top .user .sec-top-txt { background: #f2f2f2; }
+.mypage .mypage-reserves .sec-con { padding: 24px; background: #f5f5f5; }
+.mypage .mypage-reserves .sec-con h3 { font-size: 20px; font-weight: 500; margin-bottom: 16px; }
+.mypage .mypage-reserves .sec-con ul { display: flex; flex-flow: column; gap: 8px; }
+.mypage .mypage-reserves .sec-con ul li { font-size: 16px; color: #707070; font-weight: 300; padding-left: 16px; position: relative; line-height: 1.5; }
+.mypage .mypage-reserves .sec-con ul li::after { content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: #333; position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+
+/* 마이페이지 적립금 내역 확인 */
+.mypage-reserves .mypage-wrap { width: 1024px; }
+.mypage-reserves .mypage-wrap h2 { text-align: center; font-size: 24px; margin-bottom: 40px; }
+.mypage-reserves .mypage-wrap table tbody td { font-weight: bold; padding: 16px 0; }
+.mypage-reserves .mypage-wrap table tbody td:nth-child(3) { font-weight: normal; text-align: left; padding-left: 16px; }
+
+/* 마이페이지 쿠폰 */
+.mypage .mypage-coupon .sec-top .user .sec-top-txt { border: 1px solid #c7c7c7; }
+.mypage .mypage-coupon .sec-con table tbody td:first-child { text-align: left; font-weight: bold; }
+
+/* 마이페이지 최근본상품 */
+.mypage .mypage-history .sec-con { padding: 24px 0; border-bottom: 1px solid #e4e4e4; }
+
+/* 마이페이지 form */
+.mypage .mypage-form { padding: 24px 0; gap: 32px;}
+.mypage .mypage-form> li.half { width: calc( ( 100% - 32px ) / 2 ); }
+.mypage .mypage-form> li .default { width: 200px; padding: 16px 0; font-size: 18px; font-weight: bold; }
+.mypage .mypage-form> li .default span { color: #f00000; }
+.mypage .mypage-form> li:not(.agree) .user { width: calc( 100% - 200px ); }
+.mypage .mypage-form> li .user.col-group { gap: 48px; align-items: center; flex-flow: wrap; }
+.mypage .mypage-form> li .user.row-group { gap: 16px; }
+.mypage .mypage-form> li .user.row-group .inf-wrap input {margin-top:10px;}
+.mypage .mypage-form> li .user.row-group .fragment {display:flex;}
+.mypage .mypage-form> li .user.row-group .fragment input {margin-top:0;}
+.mypage .mypage-form> li .user.row-group .fragment button {flex: 0 0 auto; margin-left:10px; padding-left:10px; padding-right:10px;}
+.mypage .mypage-form> li .user input[type='text'], .mypage .mypage-form> li .user input[type='number'], .mypage .mypage-form> li .user select, .mypage .mypage-form> li .user input[type='email'], .mypage .mypage-form> li .user input[type='date'], .mypage .mypage-form> li .user input[type='password'] { height: 52px; width: 100%; border: 1px solid #c7c7c7; padding: 0 16px; font-size: 18px; }
+.mypage .mypage-form> li .user textarea { border: 1px solid #c7c7c7; width: 100%; outline: 0; font-size: 16px; line-height: 1.5; padding: 16px 24px; height: 220px; }
+.mypage .mypage-form> li.agree .user textarea {  background: #f5f5f5; border: 0; }
+.mypage .mypage-form> li .user label { font-size: 18px; cursor: pointer; display: flex; align-items: center; gap: 8px; width: fit-content; }
+.mypage .mypage-form> li .user label .check-icon { display: inline-block; width: 20px; height: 20px; border-radius: 50%; overflow: hidden; border: 1px solid #333; }
+.mypage .mypage-form> li .user label input:checked + .check-icon { background: url(../images/icon_checked.png) no-repeat; background-size: cover; font-weight: bold; }
+.mypage .mypage-form> li.addr .user .col-group { width: 100%; gap: 16px; justify-content: space-between; }
+.mypage .mypage-form> li.addr .user .col-group input { width: calc( 100% - 161px ); }
+.mypage .mypage-form> li.addr .user .col-group button { width: 145px; height: 52px; font-size: 18px; font-weight: bold; border: 1px solid #c7c7c7; transition: .3s; text-align: center; }
+.mypage .mypage-form> li.addr .user .col-group button:hover { background: #eee; }
+.mypage .mypage-form> li .user .find-file { width: 145px; height: 56px; border: 1px solid #c7c7c7; font-size: 18px; font-weight: bold; color: #707070; justify-content: center; transition: .3s; }
+.mypage .mypage-form> li .user .find-file:hover { background: #eee; }
+.mypage .mypage-form> li .user .upload-list { flex-flow: wrap; gap: 8px; }
+.mypage .mypage-form> li .user .upload-list li { width: calc(( 100% - 8px * 7 ) / 8); position: relative; }
+.mypage .mypage-form> li .user .upload-list li .img-box { width: 100%; padding-top: 100%; position: relative; overflow: hidden; }
+.mypage .mypage-form> li .user .upload-list li .img-box img { position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%; object-position: center; object-fit: cover; }
+.mypage .mypage-form> li .user .upload-list li .del { display: block; width: 20px; height: 20px; position: absolute; top: 0; right: 0; z-index: 9; background: #fff; text-align: center; cursor: pointer; }
+.mypage .mypage-form> li.agree .user label .check-icon { border-radius: 2px; }
+.mypage .mypage-form> li.agree .user label p { font-size: 18px; font-weight: bold; }
+.mypage .mypage-form> li .user .notice { display: inline-block; font-size: 16px; color: #707070; font-weight: 300; }
+.mypage .mypage-form-wrap .submit { width: 160px; height: 56px; border: 2px solid #333; text-align: center; border-radius: 28px; font-size: 21px; font-weight: bold; margin: 80px auto 0; display: block; transition: .3s; }
+.mypage .mypage-form-wrap .submit:hover { background: #eee; }
+
+/* 마이페이지 장바구니 */
+.mypage table tbody td .order-box { gap: 16px; }
+.mypage table tbody td .order-box .left-box { width: 80px; }
+.mypage table tbody td .order-box .left-box .img-box { padding-top: 100%; }
+.mypage table tbody td .order-box .right-box { width: calc( 100% - 96px ); text-align: left; }
+.mypage table tbody td .order-box .right-box h3 { font-size: 18px; margin-bottom: 16px; }
+.mypage table tbody td .order-box .right-box ul { padding-left: 16px; border-left: 1px solid #333; margin-bottom: 16px; }
+.mypage table tbody td .order-box .right-box ul li { font-size: 14px; font-weight: 300; margin-bottom: 8px; position: relative; width: fit-content; line-height: 1.5; }
+.mypage table tbody td .order-box .right-box ul li:last-child { font-size: 16px; font-weight: bold; margin-bottom: 0; }
+.mypage table tbody td .order-box .right-box ul li .color { display: block; width: 16px; height: 16px; border: 1px solid #333; position: absolute; top: 2px; right: -20px; }
+.mypage table tbody td .order-box .right-box ul li .color.camel { background: #be8039; }
+.mypage table tbody td .order-box .right-box p { font-size: 14px; }
+
+.mypage-cart label { cursor: pointer; }
+.mypage-cart label .check-icon { display: inline-block; width: 20px; height: 20px; overflow: hidden; background: url(../images/cart_unchecked.png) no-repeat; background-size: cover; }
+.mypage-cart label input:checked + .check-icon { background: url(../images/cart_checked.png) no-repeat; background-size: cover; }
+.mypage-cart .sec-con { margin-bottom: 60px; }
+.mypage-cart .sec-con button { margin-top: 16px; width: 120px; height: 32px; border: 1px solid #c7c7c7; font-size: 14px; font-weight: bold; transition: .2s; }
+.mypage-cart .sec-con button:hover { box-shadow: 0 0 0 1px #c7c7c7 inset; }
+.mypage-cart .sec-footer table thead th { border-top: 2px solid #333; font-size: 18px; font-weight: normal; }
+.mypage-cart .sec-footer table tbody td { border-bottom: 2px solid #333; padding: 56px 0; font-size: 24px; position: relative; }
+.mypage-cart .sec-footer table tbody td:nth-child(1)::before {content: "+"; display: block; position: absolute; top: 50%; right: 0; transform: translate(50%, -50%); }
+.mypage-cart .sec-footer table tbody td:nth-child(2)::before {content: "="; display: block; position: absolute; top: 50%; right: 0; transform: translate(50%, -50%); }
+.mypage-cart .sec-footer table tbody td p { justify-content: center; }
+.mypage-cart .sec-footer button { margin: 80px auto 0; display: block; width: 320px; height: 54px; border: 2px solid #333; font-size: 21px; font-weight: bold; border-radius: 27px; transition: .2s; }
+.mypage-cart .sec-footer button:hover { background: #f5f5f5; }
+
+/* 마이페이지 주문서 작성 */
+.mypage-order-create .sec-top { width: 100%; height: 90px; background: #e6d7c9; padding: 0 24px; align-items: center; justify-content: space-between; margin-bottom: 30px; }
+.mypage-order-create .sec-top h2 { font-size: 26px; }
+.mypage-order-create .sec-top ul { gap: 8px; align-items: center; }
+.mypage-order-create section .sec-title { padding: 16px 0; border-top: 2px solid #333; }
+
+.mypage-order-create .notice { padding: 24px 30px; background: #f5f5f5; }
+.mypage-order-create .notice h3 { font-size: 20px; font-weight: 500; margin-bottom: 16px; }
+.mypage-order-create .notice ul li { font-size: 16px; color: #707070; line-height: 1.5; margin-bottom: 16px; }
+.mypage-order-create .notice ul li:last-child { margin-bottom: 0; }
+.mypage-order-create .notice ul li strong { color: #707070; }
+
+.mypage-order-create .sec-wrap { gap: 40px; }
+.mypage-order-create .sec-wrap section { width: calc( ( 100% -40px ) / 2 ); }
+.mypage-order-create .sec-wrap section:nth-child(2) { padding: 16px 16px 32px; border: 2px solid #333; }
+.mypage-order-create .sec-wrap section:nth-child(2) .sec-title { padding-top: 0; border-top: 0; }
+
+.mypage-order-create .mypage-form> li .user .col-group { justify-content: space-between; align-items: center; }
+.mypage-order-create .mypage-form> li .user .discount-txt { width: 100%; height: 56px; background: #f2f2f2; align-items: center; padding: 0 16px; justify-content: space-between; }
+.mypage-order-create .mypage-form> li.coupon .user .discount-txt { width: calc( 100% - 161px ); }
+.mypage-order-create .mypage-form> li.coupon .user .discount-txt span { font-weight: bold; font-size: 18px; }
+.mypage-order-create .mypage-form> li.reserves .user .discount-txt span { font-size: 18px; }
+.mypage-order-create .mypage-form> li.reserves .user> .col-group p { width: calc( 100% - 161px ); height: 56px; border: 1px solid #c7c7c7; padding: 0 16px; display: flex; align-items: center; justify-content: flex-end; }
+.mypage-order-create .mypage-form> li.reserves .user> .col-group p span { font-size: 18px; font-weight: bold; }
+.mypage-order-create .mypage-form> li .user button { width: 145px; height: 52px; font-size: 18px; font-weight: bold; border: 1px solid #c7c7c7; transition: .3s; text-align: center; }
+.mypage-order-create .mypage-form> li .user button:hover { background: #eee; }
+
+.mypage-order-create .pay-list { padding-top: 24px; flex-flow: wrap; gap: 16px; }
+.mypage-order-create .pay-list li { width: calc( ( 100% - 16px * 3 ) / 4 ); }
+.mypage-order-create .pay-list li label { display: block; width: 100%; height: 50px; border: 1px solid #333; text-align: center; line-height: 48px; font-size: 18px; font-weight: bold; cursor: pointer; transition: .3s; }
+.mypage-order-create .pay-list li label:hover { background: #eee; }
+.mypage-order-create .pay-list li input:checked + label { background: #333; color: #fff; }
+
+.mypage-order-create .sec-wrap section:nth-child(2) table tbody tr:last-child td { border-bottom: 2px solid #333; }
+
+.mypage-order-create .sec-footer> ul { padding: 24px 8px; gap: 16px; border-bottom: 2px solid #333; margin-bottom: 24px; }
+.mypage-order-create .sec-footer> ul li { justify-content: space-between; font-size: 18px; }
+.mypage-order-create .sec-footer> ul li:last-child { padding-top: 16px; border-top: 1px solid #e4e4e4; font-weight: bold; }
+/*
+.mypage-order-create .sec-footer> ul li:nth-child(3) .user span, .mypage-order-create .sec-footer> ul li:nth-child(4) .user span { position: relative; }
+.mypage-order-create .sec-footer> ul li:nth-child(3) .user span::before, .mypage-order-create .sec-footer> ul li:nth-child(4) .user span::before {
+    content: "-"; display: block; position: absolute; left: -8px; top: 50%; transform: translate(-100%, -50%);
+}*/
+.mypage-order-create .sec-footer .notice { margin-bottom: 24px; }
+.mypage-order-create .sec-footer .notice h3 { font-size: 18px; padding-bottom: 16px; border-bottom: 2px solid #333; }
+.mypage-order-create .sec-footer .notice h3 span { display: inline-block; padding-left: 16px; font-size: 14px; }
+.mypage-order-create .sec-footer .notice .col-group { justify-content: space-between; font-size: 14px; }
+.mypage-order-create .sec-footer .notice .col-group p:last-child { font-weight: bold; }
+.mypage-order-create .sec-footer .agree-wrap { padding-bottom: 24px; border-bottom: 2px solid #333; }
+.mypage-order-create .sec-footer .agree-wrap label { font-size: 14px; margin-bottom: 16px; display: block; cursor: pointer; }
+.mypage-order-create .sec-footer .agree-wrap label .check-icon { display: inline-block; width: 20px; height: 20px; border-radius: 50%; overflow: hidden; border: 1px solid #333; transform: translateY(4px); margin-right: 4px; }
+.mypage-order-create .sec-footer .agree-wrap label input:checked + .check-icon { background: url(../images/icon_checked.png) no-repeat; background-size: cover; font-weight: bold; }
+.mypage-order-create .sec-footer .agree-wrap ul { gap: 8px; }
+.mypage-order-create .sec-footer .agree-wrap ul li { font-size: 14px; gap: 8px; }
+.mypage-order-create .sec-footer .agree-wrap ul li a { text-decoration: underline; }
+.mypage-order-create .sec-footer button { margin: 32px auto 0; display: block; width: 320px; height: 54px; border: 2px solid #333; font-size: 21px; font-weight: bold; border-radius: 27px; transition: .2s; }
+.mypage-order-create .sec-footer button:hover { background: #f5f5f5; }
+
+
 .modal-overley {
     display: none;
 }

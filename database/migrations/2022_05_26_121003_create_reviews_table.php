@@ -15,17 +15,12 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("user_id")->nullable();
-            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
-            $table->unsignedBigInteger("product_id");
-            $table->foreign("product_id")->references("id")->on("products")->onDelete("cascade");
-            $table->unsignedBigInteger("order_product_id")->nullable();
-            $table->foreign("order_product_id")->references("id")->on("order_product")->onDelete("cascade");
+            $table->string("type")->default(\App\Enums\ProductType::PARTY);
             $table->string("title");
             $table->text("description");
-            $table->integer("point")->default(1);
-            $table->boolean("best")->default(false);
-            $table->boolean("photo")->default(false);
+            $table->string("sex")->nullable();
+            $table->string("age")->nullable();
+            $table->string("job")->nullable();
             $table->timestamps();
         });
     }

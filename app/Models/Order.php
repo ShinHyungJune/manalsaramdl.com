@@ -41,7 +41,7 @@ class Order extends Model
 
         "state",
 
-        "reason_fail",
+        "reason",
     ];
 
     protected $casts = [
@@ -175,6 +175,9 @@ class Order extends Model
         $order = Order::create([
             "merchant_uid" => rand() . Carbon::now()->timestamp,
             "user_id" => auth()->user()->id,
+            "user_name" => auth()->user()->name,
+            "user_contact" => auth()->user()->contact,
+            "user_email" => auth()->user()->email,
 
             "pay_method_id" => $payMethod->id,
             "pay_method_name" => $payMethod->name,

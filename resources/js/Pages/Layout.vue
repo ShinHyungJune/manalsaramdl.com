@@ -1,7 +1,6 @@
 <template>
     <div>
-
-        <header/>
+        <header-vue />
 
         <slot />
 
@@ -12,11 +11,11 @@
 
 </template>
 <script>
-import Header from "../Components/Header";
+import HeaderVue from "../Components/Header";
 import FooterVue from "../Components/Footer";
 import Flash from "../Components/Flash";
 export default {
-    components: {Header, FooterVue, Flash},
+    components: {HeaderVue, FooterVue, Flash},
     data(){
         return {
             pathname: location.pathname,

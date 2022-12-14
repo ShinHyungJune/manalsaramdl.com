@@ -46,7 +46,6 @@
     <!-- 아이콘 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script defer src="/js/jquery.js"></script>
-    <script defer src="/js/script.js"></script>
 
     <!-- 아임포트 -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>

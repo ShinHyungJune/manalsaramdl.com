@@ -37,12 +37,12 @@ export default {
                 pg : this.order.pay_method_pg, // version 1.1.0부터 지원.
                 pay_method : this.order.pay_method_method,
                 merchant_uid : this.order.merchant_uid,
-                name : this.order.delivery_name,
+                name : this.order.products[0].title,
                 amount : this.order.price,
-                buyer_name : this.order.delivery_name,
-                buyer_tel : this.order.delivery_contact,
-                buyer_email : '',
-                buyer_addr : this.order.delivery_address,
+                buyer_name : this.order.user_name,
+                buyer_tel : this.order.user_contact,
+                buyer_email : this.order.user_email,
+                buyer_addr : '',
                 buyer_postcode : '',
                 m_redirect_url: this.$page.props.m_redirect_url
             }, function(rsp) {
@@ -61,7 +61,7 @@ export default {
 
                     alert(msg);
 
-                    self.resultForm.get("/shopping/orders/fail", {
+                    self.resultForm.get("/orders/fail", {
                         replace:true
                     })
                 }

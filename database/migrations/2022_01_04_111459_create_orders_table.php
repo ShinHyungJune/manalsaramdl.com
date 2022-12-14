@@ -41,7 +41,7 @@ class CreateOrdersTable extends Migration
             $table->string("refund_account")->nullable(); // 환불계좌 계좌번호
 
             $table->string("state")->default(\App\Enums\OrderState::FAIL);
-            $table->text("reason_fail")->nullable(); // 결제실패사유
+            $table->text("reason")->nullable(); // 결제실패사유
 
             $table->string("service_time")->nullable(); // #복붙주의 - 서비스가능시간
 

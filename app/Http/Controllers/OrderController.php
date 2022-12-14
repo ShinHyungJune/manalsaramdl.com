@@ -123,7 +123,7 @@ class OrderController extends Controller
             if(!$order)
                 return abort(404);
 
-            if($order->price_real != $impOrder["amount"])
+            if($order->price != $impOrder["amount"])
                 return abort(403);
 
             switch ($impOrder["status"]){
@@ -165,7 +165,7 @@ class OrderController extends Controller
 
         $order = Order::where("merchant_uid", $request->merchant_uid)->first();
 
-        return redirect("/shopping/orders/result?order_id=".$order->id);
+        return redirect("/orders/result?order_id=".$order->id);
     }
 
     public function fail(Request $request)
@@ -185,7 +185,7 @@ class OrderController extends Controller
 
         $order->update(["reason" => $request->message]);
 
-        return redirect("/shopping/orders/result?order_id=".$order->id);
+        return redirect("/orders/result?order_id=".$order->id);
     }
 
     public function result(Request $request)
@@ -202,7 +202,7 @@ class OrderController extends Controller
         if($order->user_id != auth()->id())
             return redirect()->back()->with("error", "자신의 주문결과만 조회할 수 있습니다.");
 
-        return Inertia::render("Shopping/Orders/Result", [
+        return Inertia::render("Orders/Result", [
             "order" => OrderResource::make($order),
             "message" => $order->reason,
         ]);

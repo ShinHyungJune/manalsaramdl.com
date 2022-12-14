@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Sex;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -137,5 +138,20 @@ class User extends Authenticatable implements HasMedia
     public function orderProducts()
     {
         return $this->hasMany(OrderProduct::class);
+    }
+
+    public function datings()
+    {
+        return $this->hasMany(Dating::class, $this->getIdColumn());
+    }
+
+    public function getReadColumn()
+    {
+        return $this->sex == Sex::MEN ? "read_men" : "read_women";
+    }
+
+    public function getIdColumn()
+    {
+        return $this->sex == Sex::MEN ? "men_id" : "women_id";
     }
 }

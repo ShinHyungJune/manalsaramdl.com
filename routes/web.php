@@ -74,23 +74,15 @@ Route::middleware("auth")->group(function(){
     Route::post("/orders", [\App\Http\Controllers\OrderController::class, "store"]);
 
     // 공통
-    Route::post("/likes/delete", [\App\Http\Controllers\LikeController::class, "destroy"]);
-    Route::resource("/likes", \App\Http\Controllers\LikeController::class);
     Route::get("/myShoppingPageController/users/edit", [\App\Http\Controllers\UserController::class, "edit"]);
 
-    Route::resource("/replies", \App\Http\Controllers\ReplyController::class);
-    Route::get("/myShoppingPageController/reviews", [\App\Http\Controllers\ReviewController::class, "index"]);
-    Route::get("/myShoppingPageController/products", [\App\Http\Controllers\ProductController::class, "pdfs"]);
-    Route::get("/myShoppingPageController/carts", [\App\Http\Controllers\CartController::class, "index"]);
     // Route::resource("/carts", \App\Http\Controllers\CartController::class);
 
     Route::get("/myShoppingPageController/orders", [\App\Http\Controllers\OrderController::class, "index"]);
     Route::get("/orders/cancel", [\App\Http\Controllers\OrderController::class, "cancel"]);
+    Route::get("/datings", [\App\Http\Controllers\DatingController::class, "index"]);
+    Route::patch("/datings/{dating}/read", [\App\Http\Controllers\DatingController::class, "read"]);
     // Route::resource("/orders", \App\Http\Controllers\OrderController::class);
-    Route::post("/qnas", [\App\Http\Controllers\QnaController::class, "store"]);
-
-    Route::get("/myShoppingPageController/refunds", [\App\Http\Controllers\RefundController::class, "index"]);
-    Route::delete("/reviews/{review}", [\App\Http\Controllers\ReviewController::class, "destroy"]);
 });
 
 

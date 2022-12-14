@@ -31,13 +31,6 @@
                         <h2>
                             주문이 정상적으로 완료되었습니다.
                         </h2>
-                        <p>
-                            상세 주문 정보는
-                            <strong>
-                                마이페이지 > 주문/배송관리 > 주문/배송조회
-                            </strong>
-                            에서 확인 가능합니다.
-                        </p>
                     </div>
                     <div class="txt-box row-group" v-else>
                         <h2 style="color:red;">
@@ -144,67 +137,13 @@
                         <ul class="row-group">
                             <li class="col-group">
                                 <p class="default">
-                                    총 주문금액
-                                </p>
-                                <p class="user">
-                                    <span>{{order.price_total.toLocaleString()}}</span>원
-                                </p>
-                            </li>
-                            <li class="col-group">
-                                <p class="default">
-                                    총 배송비
-                                </p>
-                                <p class="user">
-                                    <span>{{order.delivery_price.toLocaleString()}}</span>원
-                                </p>
-                            </li>
-<!--                            <li class="col-group">
-                                <p class="default">
-                                    쿠폰 할인
-                                </p>
-                                <p class="user">
-                                        <span>
-                                            408,500
-                                        </span>
-                                    원
-                                </p>
-                            </li>-->
-                            <li class="col-group">
-                                <p class="default">
-                                    적립금 할인
-                                </p>
-                                <p class="user">
-                                    <span>{{ order.point_use.toLocaleString() }}</span>원
-                                </p>
-                            </li>
-                            <li class="col-group">
-                                <p class="default">
                                     총 결제금액
                                 </p>
                                 <p class="user">
-                                    <span>{{ order.price_real.toLocaleString() }}</span>원
+                                    <span>{{order.price.toLocaleString()}}</span>원
                                 </p>
                             </li>
                         </ul>
-                        <div class="notice">
-                            <h3>
-                                적립금 혜택
-                                <span style="display:block; margin-top:6px;">
-                                        본사 쇼핑몰 로그인 후 제품 구매시 총 구매금액의 5%만큼의 포인트가 적립됩니다.
-                                    </span>
-                                <span style="display:block; margin-top:6px;">
-                                        적립금은 배송완료시점에 적립됩니다.
-                                    </span>
-                            </h3>
-                            <div class="col-group">
-                                <p>
-                                    예정 구매적립금
-                                </p>
-                                <p>
-                                    {{ order.point_give.toLocaleString() }} 원
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </section>
             </div>

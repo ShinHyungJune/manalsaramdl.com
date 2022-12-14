@@ -17,27 +17,15 @@ class ReviewResource extends JsonResource
      */
     public function toArray($request)
     {
-        $product = null;
-
-        if($this->product)
-            $product = $this->product;
-
-        if($this->orderProduct)
-            $product = $this->orderProduct->product;
-
         return [
             "id" => $this->id,
-            "best" => $this->best,
-            "imgs" => $this->imgs ?? "",
-            "user" => UserResource::make($this->user),
-            "product_id" => $this->product->origin_product_id ?? $this->product->id,
-            "product" => $product ? ProductResource::make($this->product) : $product,
-            "orderProduct" => $this->orderProduct ? OrderProductResource::make($this->orderProduct) : "",
+            "type" => $this->type,
             "title" => $this->title,
             "description" => $this->description,
-            "point" => $this->point,
-            "photo" => $this->photo,
-            "replies" => ReplyResource::collection($this->replies),
+            "sex" => $this->sex,
+            "age" => $this->age,
+            "job" => $this->job,
+            "img" => $this->img ?? "",
             "created_at" => Carbon::make($this->created_at)->format("Y.m.d")
         ];
     }

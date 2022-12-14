@@ -12,58 +12,32 @@ class Review extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-        "user_id",
-        "product_id",
-        "order_product_id",
+        "type",
         "title",
         "description",
-        "photo",
-        "point",
-        "best"
+
+        // 소개팅에만 쓰임
+        "sex",
+        "age",
+        "job",
     ];
 
-    protected $appends = ["imgs"];
+    protected $appends = ["img"];
 
     public function registerMediaCollections():void
     {
-        $this->addMediaCollection('imgs');
+        $this->addMediaCollection('img')->singleFile();
     }
 
-    public function getImgsAttribute()
+    public function getImgAttribute()
     {
-        $items = [];
+        if($this->hasMedia("img"))
+            return [
+                "url" => $this->getMedia("img")[0]->getFullUrl(),
+                "name" => $this->getMedia("img")[0]->file_name
+            ];
 
-        if($this->hasMedia('imgs')) {
-            $medias = $this->getMedia('imgs');
-
-            foreach($medias as $media){
-                $items[] = [
-                    "name" => $media->file_name,
-                    "url" => $media->getFullUrl()
-                ];
-            }
-        }
-
-        return $items;
+        return null;
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function replies()
-    {
-        return $this->hasMany(Reply::class);
-    }
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
-
-    public function orderProduct()
-    {
-        return $this->belongsTo(OrderProduct::class);
-    }
 }
