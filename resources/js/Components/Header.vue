@@ -134,7 +134,7 @@
                 <div class="mid mb">
                     <div class="col-group">
                         <!-- 로그아웃 상태일 때-->
-                        <a href="/shopping/login" class="login-txt" v-if="!user">
+                        <a href="/login" class="login-txt" v-if="!user">
                             로그인을 해주세요
                             <i class="xi-angle-right"></i>
                         </a>

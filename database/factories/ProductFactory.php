@@ -25,8 +25,10 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
+            "product_id" => null,
             "title" => $this->faker->unique()->name,
             "price" => rand(100, 10000),
+            "opened_at" => Carbon::now()->addDay(),
 
             "type" => ProductType::DATING,
             "count_dating" => rand(1,10),

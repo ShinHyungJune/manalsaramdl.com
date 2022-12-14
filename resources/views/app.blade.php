@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/mypage.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
     <!-- 스와이퍼 -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/swiper.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />

@@ -17,6 +17,12 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
+        $dayOfWeeks = [
+            "일","월","화","수","목","금","토","일"
+        ];
+
+        $openedAt = $this->opened_at ? Carbon::make($this->opened_at)->format("m.d (").$dayOfWeeks[Carbon::make($this->opened_at)->dayOfWeek].")"." ".Carbon::make($this->opened_at)->format("H:i") : "";
+
         $img = $this->img ? $this->img : "";
         $imgsParty = $this->imgs_party ? $this->imgs_party : "";
         $imgsFood = $this->imgs_food ? $this->imgs_food : "";
@@ -25,6 +31,17 @@ class ProductResource extends JsonResource
             $img = $this->originProduct->img ? $this->originProduct->img : "";
             $imgsParty = $this->originProduct->imgs_party ? $this->originProduct->imgs_party : "";
             $imgsFood = $this->originProduct->imgs_food ? $this->originProduct->imgs_food : "";
+        }
+
+        $tags = [];
+
+        if($this->tags) {
+            $items = explode("#",$this->tags);
+
+            foreach($items as $item){
+                if($item != "")
+                    $tags[] = str_replace(" ", "", $item);
+            }
         }
 
         return [
@@ -42,13 +59,17 @@ class ProductResource extends JsonResource
             "imgs_food" => $imgsFood,
 
             "count_dating" => $this->count_dating,
-            "opened_at" => $this->opened_at ? Carbon::make($this->opened_at)->format("m.d H:i") : "",
+            "opened_at" => $openedAt,
             "place" => $this->place,
             "address" => $this->address,
             "age" => $this->age,
             "max_women" => $this->max_women,
             "max_men" => $this->max_men,
+            "accept_women" => $this->accept_women,
+            "accept_men" => $this->accept_men,
             "must_do" => $this->must_do,
+            "tags" => $tags,
+            "ongoing" => $this->ongoing ? 1 : 0,
         ];
     }
 }

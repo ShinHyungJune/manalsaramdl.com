@@ -33,13 +33,13 @@ return [
     'naver' => [
         'client_id' => env('NAVER_CLIENT_ID', "nNaR0f89eHiKT5DUIB9R"),
         'client_secret' => env('NAVER_CLIENT_SECRET', "NbHmvgFtSh"),
-        'redirect' => env('NAVER_REDIRECT_URI', "/shopping/login/naver")
+        'redirect' => env('NAVER_REDIRECT_URI', "/login/naver")
     ],
 
     'kakao' => [
         'client_id' => env('KAKAO_CLIENT_ID', "607f2380342079374fd341d218b94ec3"),
         'client_secret' => env('KAKAO_CLIENT_SECRET'),
-        'redirect' => env('KAKAO_REDIRECT_URI', "/shopping/login/kakao")
+        'redirect' => env('KAKAO_REDIRECT_URI', "/login/kakao")
     ],
 
     'google' => [

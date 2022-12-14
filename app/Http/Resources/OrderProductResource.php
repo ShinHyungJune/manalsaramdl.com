@@ -20,12 +20,11 @@ class OrderProductResource extends JsonResource
             "id" => $this->id,
             "product" => ProductResource::make($this->product),
             "order" => OrderResource::make($this->order),
-            "outgoing" => OutgoingResource::make($this->outgoing),
             "can_refund" => $this->can_refund,
             "can_review" => $this->can_review,
             "state" => $this->state,
-            "delivery_number" => $this->delivery_number,
-            "delivery_url" => $this->delivery_url
+            "accept" => $this->accept,
+            "partner" => $this->partner
         ];
     }
 }

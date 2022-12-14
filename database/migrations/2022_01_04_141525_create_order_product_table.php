@@ -23,6 +23,8 @@ class CreateOrderProductTable extends Migration
             $table->unsignedBigInteger("product_id");
             $table->foreign("product_id")->on("products")->references("id");
             $table->string("state")->default(\App\Enums\OrderProductState::FAIL);
+            $table->boolean("accept")->default(false); // 파티참석권 허용여부
+            $table->string("partner")->nullable(); // 파티상품 동행인 메모란
             // $table->string("product_title");
             // $table->double("product_price");
             // $table->integer("count")->default(1);

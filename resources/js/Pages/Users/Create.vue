@@ -201,9 +201,9 @@
     </main>
 </template>
 <script>
-import InputVerifyNumber from "../../../Components/Form/InputVerifyNumber";
+import InputVerifyNumber from "../../Components/Form/InputVerifyNumber";
 import {Link} from "@inertiajs/inertia-vue";
-import InputAddress from "../../../Components/Form/InputAddress";
+import InputAddress from "../../Components/Form/InputAddress";
 
 export default {
     components: {InputAddress, Link, InputVerifyNumber},

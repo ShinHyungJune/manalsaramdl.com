@@ -8,13 +8,13 @@ $(document).ready(function () {
                     $(".mb-hd-wrap").removeClass("open");
                     $(".nav-wrap").addClass("open");
                     $(".close-btn").click(function () {
-                        $(".nav-wrap").removeClass("open");        
+                        $(".nav-wrap").removeClass("open");
                     });
                 }else{
                     $(".nav-wrap").removeClass("open");
                     $(".mb-hd-wrap").addClass("open");
                     $(".close-btn").click(function () {
-                    $(".mb-hd-wrap").removeClass("open");        
+                    $(".mb-hd-wrap").removeClass("open");
                     });
                 }
            });
@@ -53,7 +53,7 @@ $(document).ready(function () {
         });
     });
 
-    
+
 // });
 
 
@@ -149,7 +149,7 @@ const handleSelect = (label, item) => {
 
 
 
-// 팝업창 
+// 팝업창
 // $(function () {
 //     $(".x-btn").click(function () {
 //         $("#agreePopup").hide();
@@ -171,41 +171,8 @@ const swiperPopup = new Swiper(".layerbox .swiper", {
 });
 
 
-const swiperParty = new Swiper(".party-place .swiper", {
-    direction: "horizontal",
-    slidesPerView: "auto",
-    spaceBetween: 20,
 
-    centeredSlides: true,
 
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".party-place .swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        prevEl: ".party-place .swiper-button-prev",
-        nextEl: ".party-place .swiper-button-next",
-    },
-});
-
-//partyFood - SWIPER
-const swiperPartyFood = new Swiper(".party-food .swiper", {
-    direction: "horizontal",
-    loop: true,
-    autoplay: false,
-    pagination: {
-        el: ".party-food  .swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        prevEl: ".party-food  .swiper-button-prev",
-        nextEl: ".party-food  .swiper-button-next",
-    },
-});
 
 
 //리뷰 점수

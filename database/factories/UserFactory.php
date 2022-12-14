@@ -30,7 +30,6 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),
-            "point" => 0
         ];
     }
 

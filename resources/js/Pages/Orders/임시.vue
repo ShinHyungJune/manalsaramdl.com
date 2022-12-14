@@ -122,7 +122,7 @@
 
 <script>
 import {Link} from '@inertiajs/inertia-vue';
-import Pagination from "../../../Components/Pagination";
+import Pagination from "../../Components/Pagination";
 
 export default {
     components: {Link, Pagination},

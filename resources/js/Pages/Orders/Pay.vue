@@ -38,7 +38,7 @@ export default {
                 pay_method : this.order.pay_method_method,
                 merchant_uid : this.order.merchant_uid,
                 name : this.order.delivery_name,
-                amount : this.order.price_real,
+                amount : this.order.price,
                 buyer_name : this.order.delivery_name,
                 buyer_tel : this.order.delivery_contact,
                 buyer_email : '',

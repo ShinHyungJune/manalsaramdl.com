@@ -64,6 +64,16 @@
                                         </select>
                                     </div>
                                 </li>
+
+                                <li class="col-group">
+                                    <p class="default">결제수단</p>
+                                    <div class="user">
+                                        <select v-model="form.pay_method_id">
+                                            <option value="" disabled>선택</option>
+                                            <option v-for="payMethod in payMethods.data" :value="payMethod.id" :key="payMethod.id">{{ payMethod.name }}</option>
+                                        </select>
+                                    </div>
+                                </li>
                             </ul>
                             <ul class="form-box row-group">
                                 <li class="col-group">
@@ -493,10 +503,12 @@ export default {
     data() {
         return {
             products: this.$page.props.products,
+            payMethods: this.$page.props.payMethods,
             form: this.$inertia.form({
                 page: 1,
                 product_id: "",
-                option_id: ""
+                option_id: "",
+                pay_method_id: "",
             }),
             agree1: 0,
             agree2: 0,
@@ -507,7 +519,6 @@ export default {
         order() {
             if(!this.agree1 || !this.agree2)
                 return alert("필수 약관에 동의해주세요.");
-
         },
     },
     computed: {

@@ -1,10 +1,29 @@
 <template>
-    <main class="mypage mypage-order mypage-order1">
+    <main class="mypage mypage-order mypage-order1 nonmember">
+        <div class="sec-top container">
+            <h2>
+                비회원 주문 조회
+            </h2>
+            <a href="join.html">
+                회원가입을 하시면 더 많은 혜택을 받으실 수 있습니다
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
         <div class="mypage-wrap container col-group">
-            <sidebar />
+            <div class="left-wrap">
+                <p>
+                    흙표흙침대 고객센터
+                </p>
+                <h4>
+                    080-315-5233
+                </h4>
+                <p>
+                    월요일-금요일 09:00~16:30
+                    <br>
+                    (토/일요일/공휴일 휴무)
+                </p>
+            </div>
             <div class="right-wrap">
-                <state />
-
                 <section>
                     <div class="sec-title">
                         <h2>
@@ -16,8 +35,7 @@
                             <colgroup>
                                 <col width="20%">
                                 <col width="50%">
-                                <col width="20%">
-                                <col width="10%">
+                                <col width="30%">
                             </colgroup>
                             <thead>
                             <tr>
@@ -30,15 +48,11 @@
                                 <th>
                                     배송 현황
                                 </th>
-<!--                                <th>
-                                    배송비 정보
-                                </th>-->
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr v-if="orderProducts.data.length === 0">
-                                <td colspan="4">
+                                <td colspan="3">
                                     <div class="m-empty type01">
                                         데이터가 없습니다.
                                     </div>
@@ -89,7 +103,7 @@
                                                 {{ orderProduct.state }}
                                             </h3>
                                             <p v-if="orderProduct.delivery_number">
-<!--                                                <span>{{ orderProduct.updated_at }}</span>-->
+                                                <!--                                                <span>{{ orderProduct.updated_at }}</span>-->
                                                 <span>{{orderProduct.delivery_company}} <span class="blue">{{ orderProduct.delivery_number }}</span></span>
                                             </p>
                                         </div>
@@ -98,80 +112,34 @@
                                         </a>
                                     </div>
                                 </td>
-                                <td>
-                                    <ul>
-<!--                                        <li>
-                                            <a href="consultation.html">
-                                                1:1 문의
-                                            </a>
-                                        </li>-->
-                                        <li>
-                                            <a :href="`/shopping/reviews/create?order_product_id=${orderProduct.id}`" v-if="orderProduct.can_review">
-                                                리뷰쓰기
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a :href="`/shopping/refunds/create?order_product_id=${orderProduct.id}`" v-if="orderProduct.can_refund">
-                                                반품접수
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </td>
                             </tr>
                             </tbody>
                         </table>
-                        <div class="pagination col-group" id="pagination">
+<!--                        <div class="pagination col-group" id="pagination">
                             <pagination :meta="orderProducts.meta" @paginate="(page) => {form.page = page; filter()}" />
-                        </div>
+                        </div>-->
                     </div>
                 </section>
             </div>
         </div>
+
     </main>
-
-
 </template>
 <script>
-import Sidebar from "../../../Components/Sidebar";
+import Sidebar from "../../Components/Sidebar";
 import {Link} from '@inertiajs/inertia-vue';
-import Pagination from "../../../Components/Pagination";
-import State from "../../../Components/State";
+import Pagination from "../../Components/Pagination";
 
 export default {
-    components: {State, Sidebar, Link, Pagination},
+    components: {Sidebar, Link, Pagination},
     data() {
         return {
-            orderProducts: this.$page.props.orderProducts,
-            form: this.$inertia.form({
-                page: 1,
-            })
+            orderProducts:this.$page.props.orderProducts,
+
         }
     },
     methods: {
-        state(state) {
-            if (state === "WAIT")
-                return "결제대기";
 
-            if (state === "SUCCESS")
-                return "결제완료";
-
-            if (state === "REFUND")
-                return "환불";
-        },
-
-        filter() {
-            this.form.get("/shopping/orders");
-        },
-
-        ready() {
-            alert('준비중입니다.');
-        },
-
-        productLink(orderProduct) {
-            return orderProduct.product_diet
-                ? "/dietProducts/create?diet_product_id=" + orderProduct.product_diet_product_id
-                : "/singleProducts/" + orderProduct.product_id;
-        },
 
         optionProducts(product) {
             let text = "";
@@ -200,7 +168,6 @@ export default {
 
             return total;
         },
-
     }
 }
 </script>

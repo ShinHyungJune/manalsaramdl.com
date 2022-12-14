@@ -72,9 +72,9 @@
     </div>
 </template>
 <script>
-import Sidebar from "../../../Components/Sidebar";
+import Sidebar from "../../Components/Sidebar";
 import {Link} from '@inertiajs/inertia-vue';
-import Pagination from "../../../Components/Pagination";
+import Pagination from "../../Components/Pagination";
 export default {
     components: {Sidebar, Link, Pagination},
     data(){

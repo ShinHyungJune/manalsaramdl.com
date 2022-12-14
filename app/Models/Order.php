@@ -6,6 +6,8 @@ use App\Enums\KakaoTemplate;
 use App\Enums\OrderProductState;
 use App\Enums\OrderState;
 use App\Enums\OutgoingState;
+use App\Enums\ProductType;
+use App\Enums\Sex;
 use App\Http\Controllers\ReplyController;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,47 +33,19 @@ class Order extends Model
         "pay_method_method",
         "pay_method_commission",
 
-        "delivery_title",
-        "delivery_name",
-        "delivery_contact",
-        "delivery_contact2",
-        "delivery_address",
-        "delivery_address_detail",
-        "delivery_address_zipcode",
-        "delivery_memo",
-        "delivery_price",
-
-        "coupon_id",
-        "coupon_title",
-        "coupon_price_min",
-        "coupon_price_discount",
-
-        "point_use",
-        "point_give",
-
-        "price_total",
-        "price_real",
-
-        "vbank_num",
-        "vbank_date",
-        "vbank_name",
+        "price",
 
         "refund_owner",
         "refund_bank",
         "refund_account",
 
         "state",
-        "memo",
-        "delivery_at",
-        "reason",
-        "password",
 
         "reason_fail",
-        "service_time" // #복붙주의
     ];
 
     protected $casts = [
-        "delivery_at" => "date"
+
     ];
 
     protected $appends = ["can_cancel"];
@@ -91,18 +65,22 @@ class Order extends Model
             if ($prevState == OrderState::FAIL) {
                 if ($order->state == OrderState::SUCCESS) {
 
-                    // 출고내역 상품준비상태로 변경
+                    // 결제상품 주문성공처리
                     $order->orderProducts()->update([
-                        "state" => OrderProductState::WAIT
+                        "state" => OrderProductState::SUCCESS
                     ]);
 
-                    $products = $order->products;
+                    $products = $order->products()->where("products.product_id", null)->cursor();
 
-                    foreach ($products as $product) {
-                        $product->update(["count_order" => $product->count_order + 1]);
+                    foreach($products as $product){
+                        if($product->type == ProductType::DATING)
+                            $user->update([
+                                "count_dating" => $user->count_dating + $product->count_dating
+                            ]);
                     }
 
-                    try {
+                    // 카카오발송 (추후연동)
+                    /*try {
                         $kakao = new Kakao();
 
                         $kakao->send(str_replace("-", "", $order->delivery_contact), [
@@ -113,26 +91,8 @@ class Order extends Model
                         ], KakaoTemplate::ORDER_SUCCESS);
                     }catch (\Exception $exception){
 
-                    }
+                    }*/
 
-                }
-            }
-
-            if ($prevState == OrderState::SUCCESS) {
-                // 주문취소 시
-                if ($order->state == OrderState::CANCEL) {
-                    // 출고내역 실패처리
-                    $order->orderProducts()->update([
-                        "state" => OrderProductState::FAIL
-                    ]);
-
-                    $user = $order->user;
-
-                    // 적립금 반환
-                    if ($user)
-                        $user->update([
-                            "point" => $user->point + $order->point_use
-                        ]);
                 }
             }
         });
@@ -145,31 +105,12 @@ class Order extends Model
 
     public function getCanCancelAttribute()
     {
-        $canCancel = 0;
-
-        // 주문성공 && 전부 다 상품준비중 상태(아직 발송된게 없음)
-        if ($this->state == OrderState::SUCCESS && $this->orderProducts()->where("state", OrderState::WAIT)->count() == $this->orderProducts()->count())
-            $canCancel = 1;
-
-        return $canCancel;
+        return false;
     }
 
     public function getCanReviewAttribute()
     {
         return;
-    }
-
-    public function getShowOrderUrl()
-    {
-        $url = "/shopping/guestIndex?merchant_uid=" . $this->merchant_uid;
-
-        if ($this->user_name)
-            $url .= "&user_name=" . $this->user_name;
-
-        if ($this->password)
-            $url .= "&password=" . $this->password;
-
-        return $url;
     }
 
     public function payMethod()
@@ -185,12 +126,10 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot([
-            /*  "count",
-              "product_title",
-              "product_price",*/
             "user_id",
             "state",
-            "delivery_number"
+            "accept",
+            "partner"
         ]);
     }
 
@@ -204,37 +143,38 @@ class Order extends Model
     {
         $payMethod = PayMethod::find($request->pay_method_id);
 
-        $products = Product::whereIn("id", $request->product_ids)->get();
+        $product = Product::find($request->product_id);
 
-        $priceTotal = Order::getTotalPrice($products);
+        $option = Product::find($request->option_id);
 
-        if (count($request->product_ids) > 99)
-            return ["state" => "error", "message" => "한 번에 최대 99종류의 상품만 주문할 수 있습니다."];
+        $priceTotal = $product->price + $option->price;
 
         if (!$payMethod)
             return ["state" => "error", "message" => "존재하지 않는 결제수단입니다."];
 
-        if (count($products) == 0)
+        if (!$product)
             return ["state" => "error", "message" => "주문할 수 있는 상품이 없습니다."];
 
-        $deliveryPrice = Basic::getDeliveryPrice($products, $priceTotal);
+        if (!$option)
+            return ["state" => "error", "message" => "주문할 수 있는 옵션이 없습니다."];
 
-        $priceReal = $priceTotal + $deliveryPrice;
+        if($product->type == ProductType::PARTY){
 
-        $pointGive = 0;
+            if($product->opened_at <= Carbon::now())
+                return ["state" => "error", "message" => "파티일지가 지난 파티는 구매할 수 없습니다."];
 
-        $ratioPoint = Basic::first() ? Basic::first()->ratio_point : 0;
+            $acceptMemberCount = auth()->user()->sex == Sex::MEN ? $product->accept_men : $product->accept_women;
 
-        // 게스트가 아니라면
-        if (auth()->user()) {
-            $this->saveDelivery($request);
+            $maxCount = auth()->user()->sex == Sex::MEN ? $product->max_men : $product->max_women;
 
-            $pointGive = floor($priceTotal / 100 * $ratioPoint);
+            if($acceptMemberCount >= $maxCount)
+                return ["state" => "error", "message" => "더 이상 참여할 수 없습니다."];
         }
+
 
         $order = Order::create([
             "merchant_uid" => rand() . Carbon::now()->timestamp,
-            "user_id" => auth()->user() ? auth()->user()->id : null,
+            "user_id" => auth()->user()->id,
 
             "pay_method_id" => $payMethod->id,
             "pay_method_name" => $payMethod->name,
@@ -242,130 +182,20 @@ class Order extends Model
             "pay_method_method" => $payMethod->method,
             "pay_method_commission" => $payMethod->commission,
 
-            "delivery_title" => $request->delivery_title,
-            "delivery_name" => $request->delivery_name,
-            "delivery_contact" => $request->delivery_contact,
-            "delivery_contact2" => $request->delivery_contact2,
-            "delivery_address" => $request->delivery_address,
-            "delivery_address_detail" => $request->delivery_address_detail,
-            "delivery_address_zipcode" => $request->delivery_address_zipcode,
-            "delivery_memo" => $request->delivery_memo,
-            "delivery_price" => $deliveryPrice,
-
-            "point_use" => $request->point_use,
-            "point_give" => $pointGive,
-
-            "price_total" => $priceTotal,
-            "price_real" => $priceReal,
+            "price" => $priceTotal,
 
             "state" => OrderState::FAIL,
-            "memo" => $request->memo,
-
-            "service_time" => $request->service_time // #복붙주의 - 서비스 가능시간
         ]);
 
-        // 게스트라면
-        if (!auth()->user())
-            $order->update([
-                "user_name" => $request->user_name,
-                "password" => $request->password
-            ]);
+        $order->products()->attach($product->id, [
+            "user_id" => $order->user->id
+        ]);
 
-        foreach ($products as $product) {
-            $order->products()->attach($product->id, [
-                // "count" => $request->direct ? 1 : $product->pivot->count,
-                // "product_price" => $product->price,
-                // "product_title" => $product->title,
-                "user_id" => $order->user ? $order->user->id : null
-            ]);
-
-            $optionProducts = $product->optionProducts;
-
-            foreach ($optionProducts as $optionProduct) {
-                $order->products()->attach($optionProduct->id, [
-                    // "count" => $request->direct ? 1 : $product->pivot->count,
-                    // "product_price" => $product->price,
-                    // "product_title" => $product->title,
-                    "user_id" => $order->user ? $order->user->id : null
-                ]);
-            }
-        }
+        $order->products()->attach($option->id, [
+            "user_id" => $order->user->id
+        ]);
 
         return ["state" => "success", "message" => "성공적으로 처리되었습니다.", "data" => $order];
-    }
-
-    public static function getTotalPrice($products)
-    {
-        $total = 0;
-
-        foreach ($products as $product) {
-            $optionPrice = 0;
-
-            $optionProducts = $product->optionProducts;
-
-            foreach ($optionProducts as $optionProduct) {
-                $optionPrice += $optionProduct->price * $optionProduct->count;
-            }
-
-            // $total += $direct ? ($product->price - $product->price_discount) : (($product->price - $product->price_discount) * $product->pivot->count);
-            $total += ($product->getDiscountedPrice() + $optionPrice) * $product->count;
-        }
-
-        return $total;
-    }
-
-    public function getDeliveryPrice($products, $totalPrice)
-    {
-        $needDelivery = false;
-
-        foreach ($products as $product) {
-            if ($product->need_delivery)
-                $needDelivery = true;
-        }
-
-        if (!$needDelivery)
-            return 0;
-
-        $basic = Basic::first();
-
-        $priceMinDeliveryDiscount = $basic ? $basic->price_min_delivery_discount : 999999999999;
-
-        $deliveryPrice = 0;
-
-        if ($totalPrice < $priceMinDeliveryDiscount)
-            $deliveryPrice = $basic ? $basic->price_delivery : 0;
-
-        return $deliveryPrice;
-    }
-
-    public function saveDelivery(Request $request)
-    {
-        $delivery = auth()->user()->deliveries()->where("default", true)->first();
-
-        if ($delivery) {
-            $delivery->update([
-                "title" => $request->delivery_title,
-                "name" => $request->delivery_name,
-                "contact" => $request->delivery_contact,
-                "contact2" => $request->delivery_contact2,
-                "address" => $request->delivery_address,
-                "address_detail" => $request->delivery_address_detail,
-                "address_zipcode" => $request->delivery_address_zipcode,
-                "memo" => $request->delivery_memo,
-            ]);
-        } else {
-            auth()->user()->deliveries()->create([
-                "title" => $request->delivery_title,
-                "name" => $request->delivery_name,
-                "contact" => $request->delivery_contact,
-                "contact2" => $request->delivery_contact2,
-                "address" => $request->delivery_address,
-                "address_detail" => $request->delivery_address_detail,
-                "address_zipcode" => $request->delivery_address_zipcode,
-                "memo" => $request->delivery_memo,
-                "default" => true
-            ]);
-        }
     }
 
     public function orderProducts()

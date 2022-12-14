@@ -37,6 +37,8 @@ class CreateProductsTable extends Migration
             $table->string("max_men")->nullable(); // 남자 최대참여수
             $table->string("must_do")->nullable(); // 필수사항
 
+            $table->text("tags")->nullable(); // 해시태그
+
             $table->timestamps();
             $table->softDeletes();
         });

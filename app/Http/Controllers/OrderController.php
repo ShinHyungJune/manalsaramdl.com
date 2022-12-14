@@ -33,54 +33,9 @@ class OrderController extends Controller
             return $query->whereNull("product_id"); // 옵션상품이 아닌 상품만
         })->paginate(10);
 
-        $needDeliveryCheckOrderProducts = auth()->user()->orderProducts()->where("state", "!=", OrderProductState::DONE)->whereHas("order", function($query){
-            return $query->where("state", "!=", OrderState::FAIL); // 결제실패 상품이 아닌것만
-        })->get();
-
-        foreach($needDeliveryCheckOrderProducts as $needDeliveryCheckOrderProduct){
-            $needDeliveryCheckOrderProduct->checkDeliveryState();
-        }
-
-        return Inertia::render("Shopping/Orders/Index", [
+        return Inertia::render("Orders/Index", [
             "orderProducts" => OrderProductResource::collection($orderProducts),
         ]);
-    }
-
-    public function guestIndex(Request $request)
-    {
-        $request->validate([
-            "user_name" => "nullable|string|max:500",
-            "merchant_uid" => "required|string|max:50000",
-            "password" => "nullable|string|max:500"
-        ]);
-
-        $request["user_name"] = $request->user_name ?? null;
-        $request["password"] = $request->password ?? null;
-
-        $order = Order::where("user_name", $request->user_name)
-                    ->where("merchant_uid", $request->merchant_uid)
-                    ->where("password", $request->password)
-                    ->first();
-
-        if(!$order)
-            return redirect()->back()->with("error", "입력해주신 정보와 일치하는 주문정보가 없습니다.");
-
-        $orderProducts = $order->orderProducts()->whereHas("product", function($query){
-            return $query->whereNull("product_id"); // 옵션상품이 아닌 상품만
-        })->paginate(300);
-
-        foreach($orderProducts as $orderProduct){
-            $orderProduct->checkDeliveryState();
-        }
-
-        return Inertia::render("Shopping/Orders/GuestIndex", [
-            "orderProducts" => OrderProductResource::collection($orderProducts),
-        ]);
-    }
-
-    public function search()
-    {
-        return Inertia::render("Shopping/Orders/Search");
     }
 
     public function create(Request $request)
@@ -120,34 +75,11 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        // 게스트라면
-        if(!auth()->user())
-            $request->validate([
-                "user_name" => "required|string|max:500",
-                "password" => "required|string|max:500"
-            ]);
-
         $request->validate([
-            "product_ids" => "required|array|min:1",
-
+            "product_id" => "required|integer",
+            "option_id" => "required|integer",
             "pay_method_id" => "required|integer",
-
-            "memo" => "nullable|string|max:100000",
-
-            "delivery_title" => "required|string|max:10000",
-            "delivery_name" => "required|string|max:10000",
-            "delivery_contact" => "required|string|max:10000",
-            "delivery_contact2" => "nullable|string|max:10000",
-            "delivery_address" => "required|string|max:10000",
-            "delivery_address_detail" => "required|string|max:10000",
-            "delivery_address_zipcode" => "required|string|max:10000",
-            "delivery_memo" => "nullable|string|max:10000",
-
-            "point_use" => "nullable|integer|min:0|max:".(auth()->user() ? auth()->user()->point : 0),
-            "service_time" => "required|string|max:500"
         ]);
-
-        $request["point_use"] = $request->point_use ?? 0;
 
         $result = DB::transaction(function () use ($request) {
             $order = new Order();
@@ -157,7 +89,7 @@ class OrderController extends Controller
 
         return $result["state"] == "error"
             ? redirect()->back()->with($result["state"], $result["message"])
-            : Inertia::render("Shopping/Orders/Pay", [
+            : Inertia::render("Orders/Pay", [
                 "m_redirect_url" => config("app.url")."/orders/complete/mobile",
                 "order" => OrderResource::make($result["data"]),
                 "imp_code" => config("iamport.imp_code") // 가맹점 식별코드

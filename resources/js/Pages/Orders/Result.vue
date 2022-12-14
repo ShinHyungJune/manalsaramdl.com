@@ -216,7 +216,7 @@
     </main>
 </template>
 <script>
-import Pagination from "../../../Components/Pagination";
+import Pagination from "../../Components/Pagination";
 import {Link} from "@inertiajs/inertia-vue";
 
 export default {

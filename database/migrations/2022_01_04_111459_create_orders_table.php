@@ -32,29 +32,8 @@ class CreateOrdersTable extends Migration
             $table->string("pay_method_method");
             $table->string("pay_method_commission");
 
-            // 배송
-            // 배송지는 id 안받고 그냥 배송지 중 하나 클릭 시 자동입력용으로 사용
-            $table->string("delivery_title"); // 배송지명
-            $table->string("delivery_name"); // 받는분 성함
-            $table->string("delivery_contact"); // 받는분 전화번호
-            $table->string("delivery_contact2")->nullable(); // 받는분 전화번호2
-            $table->string("delivery_address"); // 받는분 주소
-            $table->string("delivery_address_detail"); // 받는분 상세주소
-            $table->string("delivery_address_zipcode"); // 받는분 상세주소
-            $table->string("delivery_memo")->nullable(); // 전달사황
-            $table->integer("delivery_price")->default(0); // 배송비
-
             // 금액
-            $table->double("price_total"); // 총 금액
-            $table->double("price_real"); // 결제예정금액
-
-            $table->double("point_use")->default(0); // 사용한 포인트
-            $table->double("point_give")->default(0); // 적립될 포인트
-
-            // 가상계좌
-            $table->string("vbank_num")->nullable(); // 계좌번호
-            $table->string("vbank_name")->nullable(); // 은행명
-            $table->string("vbank_date")->nullable(); // 입금기한
+            $table->double("price"); // 총 금액
 
             // 환불계좌
             $table->string("refund_owner")->nullable(); // 환불계좌 예금주
@@ -62,13 +41,10 @@ class CreateOrdersTable extends Migration
             $table->string("refund_account")->nullable(); // 환불계좌 계좌번호
 
             $table->string("state")->default(\App\Enums\OrderState::FAIL);
-            $table->text("memo")->nullable(); // 메모(전하고싶은말 등 적기)
-            $table->text("reason")->nullable(); // 결제실패사유
+            $table->text("reason_fail")->nullable(); // 결제실패사유
 
             $table->string("service_time")->nullable(); // #복붙주의 - 서비스가능시간
 
-            // 게스트용 주문확인 비밀번호
-            $table->string("password")->nullable();
             $table->timestamps();
         });
     }

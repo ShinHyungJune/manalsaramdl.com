@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Enums\ProductType;
+use App\Enums\Sex;
 use App\Models\Information;
 use App\Models\Notice;
-use App\Models\OptionProduct;
 use App\Models\Order;
 use App\Models\PayMethod;
 use App\Models\Product;
@@ -14,6 +15,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Testing\Concerns\Has;
@@ -56,13 +58,14 @@ class InitSeeder extends Seeder
         PayMethod::truncate();
         DB::statement("SET foreign_key_checks=1");
 
+        $this->createUsers();
         $this->createProducts();
         $this->createPayMethods();
 
         // $this->createReviews();
     }
 
-    public function createUser()
+    public function createUsers()
     {
         $users = User::get();
 
@@ -71,15 +74,59 @@ class InitSeeder extends Seeder
         }
 
         User::factory()->create([
-            "ids" => "ssa4141",
+            "email" => "girl@naver.com",
             "contact" => "01030217486",
+            "name" => "여자1호",
+            "sex" => Sex::WOMEN,
+            "birth" => "1995",
+            "job" => "간호사",
+            "school" => "대졸",
+            "city" => "서울시",
+            "area" => "강남구",
+            "need_service" => "소개팅 프로그램",
+            "registration_way" => "인스타그램",
+            "city_company" => "서울시",
+            "area_company" => "강남구",
+
+            "tall" => "174",
+            "weight" => "79",
+            "instagram" => "",
+
+            "ideal" => "이상형",
+            "introduce" => "잘 부탁드려요",
+            "to_manager" => "매칭 잘해주세요",
+            "marriage" => "미혼",
+            "comment_manager" => "이분은 정말 성실한 여성분이세요",
+            "count_dating" => 0,
             "password" => Hash::make("shin1109")
         ]);
 
         User::factory()->create([
-            "ids" => "admin1234",
-            "contact" => "00000000000",
-            "password" => Hash::make("!admin1234")
+            "email" => "men@naver.com",
+            "contact" => "01030217486",
+            "name" => "남자1호",
+            "sex" => Sex::MEN,
+            "birth" => "1995",
+            "job" => "변호사",
+            "school" => "대졸",
+            "city" => "강원도",
+            "area" => "춘천시",
+            "need_service" => "소개팅 프로그램",
+            "registration_way" => "인스타그램",
+            "city_company" => "강원도",
+            "area_company" => "춘천시",
+
+            "tall" => "174",
+            "weight" => "79",
+            "instagram" => "",
+
+            "ideal" => "이상형",
+            "introduce" => "잘 부탁드려요",
+            "to_manager" => "매칭 잘해주세요",
+            "marriage" => "미혼",
+            "comment_manager" => "이분은 정말 성실한 남성분이세요",
+            "count_dating" => 0,
+            "password" => Hash::make("shin1109")
         ]);
     }
 
@@ -167,6 +214,90 @@ class InitSeeder extends Seeder
                 ]);
             }
 
+        }
+
+        $partyProducts = [
+            [
+                "type" => ProductType::PARTY,
+                "title" => "10 : 10 와인파티",
+                "price" => 1000,
+                "place" => "해운대구",
+                "age" => "25~35세",
+                "max_men" => 2,
+                "max_women" => 1,
+                "tags" => "#와인#파티#선상",
+                "opened_at" => Carbon::now()->addDay(),
+                "address" => "강원도 춘천시 소양로 2가 르규옹",
+                "options" => [
+                    [
+                        "title" => "혼자 참여",
+                        "price" => "10",
+                    ],
+                    [
+                        "title" => "친구와 함께",
+                        "price" => "20",
+                    ],
+                ]
+            ],
+            [
+                "type" => ProductType::PARTY,
+                "title" => "10 : 10 선상파티",
+                "price" => 1000,
+                "place" => "해운대구",
+                "age" => "25~35세",
+                "max_men" => 2,
+                "max_women" => 1,
+                "tags" => "#와인#파티#선상",
+                "opened_at" => Carbon::now()->addDay(),
+                "address" => "강원도 춘천시 소양로 2가 르규옹",
+                "options" => [
+                    [
+                        "title" => "혼자 참여",
+                        "price" => "10",
+                    ],
+                    [
+                        "title" => "친구와 함께",
+                        "price" => "20",
+                    ],
+                ]
+            ],
+            [
+                "type" => ProductType::PARTY,
+                "title" => "10 : 10 마감파티",
+                "price" => 1000,
+                "place" => "해운대구",
+                "age" => "25~35세",
+                "max_men" => 2,
+                "max_women" => 1,
+                "tags" => "#와인#파티#선상",
+                "opened_at" => Carbon::now()->subDay(),
+                "address" => "강원도 춘천시 소양로 2가 르규옹",
+                "options" => [
+                    [
+                        "title" => "혼자 참여",
+                        "price" => "10",
+                    ],
+                    [
+                        "title" => "친구와 함께",
+                        "price" => "20",
+                    ],
+                ]
+            ],
+        ];
+
+        foreach($partyProducts as $partyProduct){
+
+            $createdItem = Product::factory()->create(Arr::except($partyProduct, "options"));
+
+            foreach($partyProduct["options"] as $option){
+                Product::factory()->create([
+                    "product_id" => $createdItem->id,
+                    "title" => $option["title"],
+                    "price" => $option["price"]
+                ]);
+            }
+
+            $createdItem->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
         }
     }
 }

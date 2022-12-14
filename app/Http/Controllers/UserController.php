@@ -26,7 +26,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     public function login(Request $request)
     {
         $data = $request->validate([
-            "ids" => "required|string|max:500",
+            "email" => "required|string|max:500",
             "password" => "required|string|max:500",
         ]);
 
@@ -36,9 +36,9 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             return redirect()->intended();
         }
 
-        return Inertia::render("Shopping/Users/Login", [
+        return Inertia::render("Users/Login", [
             "errors" => [
-                "ids" => __("socialLogin.invalid")
+                "email" => __("socialLogin.invalid")
             ]
         ]);
     }
@@ -46,7 +46,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     public function store(Request $request)
     {
         $request->validate([
-            "ids" => "required|string|min:4|max:20|unique:users",
+            "email" => "required|string|min:4|max:20|unique:users",
             "contact" => "required|string|max:500",
             "name" => "required|string|max:500",
             "password" => "required|string|min:8|max:30|confirmed",
@@ -75,7 +75,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
 
         $verifyNumber->delete();
 
-        return redirect("/shopping/login")->with("success", "성공적으로 가입되었습니다.");
+        return redirect("/login")->with("success", "성공적으로 가입되었습니다.");
     }
 
     public function socialLogin(Request $request, $social)
@@ -173,29 +173,29 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
 
     public function loginForm()
     {
-        return Inertia::render("Shopping/Users/Login",[]);
+        return Inertia::render("Users/Login",[]);
     }
 
     public function create()
     {
-        return Inertia::render("Shopping/Users/Create");
+        return Inertia::render("Users/Create");
     }
 
     public function edit()
     {
-        return Inertia::render("Shopping/Users/Edit", [
+        return Inertia::render("Users/Edit", [
 
         ]);
     }
 
     public function remove()
     {
-        return Inertia::render("Shopping/Users/Remove", []);
+        return Inertia::render("Users/Remove", []);
     }
 
     public function deleted()
     {
-        return Inertia::render("Shopping/Users/Deleted", []);
+        return Inertia::render("Users/Deleted", []);
     }
 
     public function destroy(Request $request)

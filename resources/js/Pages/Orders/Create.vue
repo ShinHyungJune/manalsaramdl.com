@@ -422,10 +422,10 @@
     </main>
 </template>
 <script>
-import Pagination from "../../../Components/Pagination";
-import InputVerifyNumber from '../../../Components/Form/InputVerifyNumber';
-import InputAddress from "../../../Components/Form/InputAddress";
-import InputDate from "../../../Components/Form/InputDate";
+import Pagination from "../../Components/Pagination";
+import InputVerifyNumber from '../../Components/Form/InputVerifyNumber';
+import InputAddress from "../../Components/Form/InputAddress";
+import InputDate from "../../Components/Form/InputDate";
 import {Link} from "@inertiajs/inertia-vue";
 
 export default {

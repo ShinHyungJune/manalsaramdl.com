@@ -93,6 +93,6 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
 
         $passwordReset->delete();
 
-        return redirect("/shopping/login")->with("success", "비밀번호가 변경되었습니다.");
+        return redirect("/login")->with("success", "비밀번호가 변경되었습니다.");
     }
 }

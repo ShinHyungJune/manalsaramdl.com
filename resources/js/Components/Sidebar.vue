@@ -4,7 +4,7 @@
         <h2 v-else><span>게스트</span>님</h2>
         <ul class="mypage-menu">
             <li v-if="!user">
-                <a href="/shopping/login">
+                <a href="/login">
                     <span class="mypage-icon mb"></span>
                     로그인
                     <i class="xi-angle-right"></i>

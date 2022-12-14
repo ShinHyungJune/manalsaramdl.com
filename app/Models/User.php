@@ -19,25 +19,36 @@ class User extends Authenticatable implements HasMedia
     use SoftDeletes;
 
     protected $fillable = [
-        'contact',
-        'ids',
         'email',
-        "point",
+        'contact',
         'name',
-        'address',
-        'address_detail',
-        'address_zipcode',
+        'sex',
+        'birth',
+        'job',
+        'school',
+        'city',
+        'area',
+        'need_service',
+        'registration_way',
+        'city_company',
+        'area_company',
+        'tall',
+        'weight',
+        'instagram',
+        'ideal',
+        'introduce',
+        'to_manager',
+        'marriage',
+        'comment_manager',
+        'count_dating',
+        'ideal',
+        'ideal',
 
         'password',
         "verified_at",
         "social_id",
         "social_platform",
-        "accepted",
-        "agree_ad",
-        "order_name",
-        "order_contact",
         "reason_leave_out",
-        "elevator",
 
         "account",
         "bank",
@@ -73,6 +84,7 @@ class User extends Authenticatable implements HasMedia
     public function registerMediaCollections():void
     {
         $this->addMediaCollection('img')->singleFile();
+        $this->addMediaCollection('imgs');
     }
 
     public function getImgAttribute()
@@ -89,22 +101,22 @@ class User extends Authenticatable implements HasMedia
         return null;
     }
 
-
-    public function deliveries()
+    public function getImgsAttribute()
     {
-        return $this->hasMany(Delivery::class);
-    }
+        $items = [];
 
-    public function coupons()
-    {
-        return $this->belongsToMany(Coupon::class)->withPivot(["used", "expired_at"]);
-    }
+        if($this->hasMedia('imgs')) {
+            $medias = $this->getMedia('imgs');
 
-    public function validCoupons()
-    {
-        return $this->coupons()
-            ->wherePivot("used", false)
-            ->wherePivot("expired_at", ">=", Carbon::now()->startOfDay()->format("Y-m-d"));
+            foreach($medias as $media){
+                $items[] = [
+                    "name" => $media->file_name,
+                    "url" => $media->getFullUrl()
+                ];
+            }
+        }
+
+        return $items;
     }
 
     public function orders()
@@ -126,26 +138,4 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(OrderProduct::class);
     }
-
-    public function outgoings()
-    {
-        return $this->hasManyThrough(Outgoing::class, Order::class);
-    }
-
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
-
-    public function qnas()
-    {
-        return $this->hasMany(Qna::class);
-    }
-
-    public function latestProducts()
-    {
-        return $this->hasMany(LatestProduct::class)->orderBy("updated_at", "desc");
-    }
-
-
 }
