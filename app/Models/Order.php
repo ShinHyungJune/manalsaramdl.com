@@ -48,7 +48,6 @@ class Order extends Model
 
     ];
 
-    protected $appends = ["can_cancel"];
 
     public $take = 50;
 
@@ -103,9 +102,9 @@ class Order extends Model
         return (new static)->take;
     }
 
-    public function getCanCancelAttribute()
+    public function getCanRefundAttribute()
     {
-        return false;
+        return $this->refunds()->count() == 0;
     }
 
     public function getCanReviewAttribute()

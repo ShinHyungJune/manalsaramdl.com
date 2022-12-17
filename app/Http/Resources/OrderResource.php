@@ -23,6 +23,7 @@ class OrderResource extends JsonResource
             "id" => $this->id,
 
             "products" => $this->products,
+            "product" => ProductResource::make($this->products()->first()),
 
             "user_id" => $this->user_id,
             "user_name" => $this->user_name,
@@ -48,7 +49,7 @@ class OrderResource extends JsonResource
 
             "products" => ProductResource::collection($this->products()->orderBy("created_at", "desc")->get()),
 
-            "can_cancel" => $this->can_cancel,
+            "can_refund" => $this->can_refund,
         ];
     }
 }

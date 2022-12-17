@@ -239,6 +239,6 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     {
         Auth::logout();
 
-        return redirect("/shopping");
+        return redirect("/");
     }
 }

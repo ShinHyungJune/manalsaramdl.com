@@ -3,8 +3,8 @@
 .popup-form {
     width: 480px;
     /* height: 752px; */
-    margin:  20px auto 0 ;
-
+    margin:  60px auto 60px ;
+    border:1px solid #ccc;
 }
 
 .chat-form .popup-header {
@@ -31,7 +31,7 @@
     padding: 24px 36px 0;
     overflow-y: scroll;
     /* height: calc(100vh - 176px); */
-    height: 752px;
+    height: 640px;
 }
 
 .chat-form .chat-area .message-group::-webkit-scrollbar {
@@ -95,7 +95,10 @@
     outline: 0;
     font-size: 14px;
     line-height: 1.5;
-    color: #c4c4c4;
+
+}
+.chat-form .chat-footer textarea::placeholder {
+    color: #c4c4c4 !important;
 }
 
 .chat-form .chat-footer textarea::-webkit-scrollbar {

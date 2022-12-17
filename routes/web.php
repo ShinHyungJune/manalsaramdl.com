@@ -27,9 +27,19 @@ Route::get("/home", function(){
 Route::post("/users", [\App\Http\Controllers\UserController::class, "store"]);
 
 Route::get('/', [\App\Http\Controllers\PageController::class, "index"]);
+Route::get('/story', [\App\Http\Controllers\PageController::class, "story"]);
+Route::get('/privacy01', [\App\Http\Controllers\PageController::class, "privacy01"]);
+Route::get('/privacy02', [\App\Http\Controllers\PageController::class, "privacy02"]);
+Route::get('/privacy03', [\App\Http\Controllers\PageController::class, "privacy03"]);
 Route::get('/datingProducts', [\App\Http\Controllers\DatingProductController::class, "index"]);
 Route::get('/partyProducts', [\App\Http\Controllers\PartyController::class, "index"]);
-
+Route::get('/partyOrderProducts', [\App\Http\Controllers\PartyOrderProductController::class, "index"]);
+Route::get('/datingReviews', [\App\Http\Controllers\DatingReviewController::class, "index"]);
+Route::get('/datingReviews/{datingReview}', [\App\Http\Controllers\DatingReviewController::class, "show"]);
+Route::get('/partyReviews', [\App\Http\Controllers\PartyReviewController::class, "index"]);
+Route::get('/partyReviews/{partyReview}', [\App\Http\Controllers\PartyReviewController::class, "show"]);
+Route::get('/notices', [\App\Http\Controllers\NoticeController::class, "index"]);
+Route::get('/notices/{notice}', [\App\Http\Controllers\NoticeController::class, "show"]);
 Route::post("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "store"]);
 Route::patch("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "update"]);
 
@@ -81,6 +91,7 @@ Route::middleware("auth")->group(function(){
     Route::get("/myShoppingPageController/orders", [\App\Http\Controllers\OrderController::class, "index"]);
     Route::get("/orders/cancel", [\App\Http\Controllers\OrderController::class, "cancel"]);
     Route::get("/datings", [\App\Http\Controllers\DatingController::class, "index"]);
+    Route::patch("/datings/{dating}", [\App\Http\Controllers\DatingController::class, "update"]);
     Route::patch("/datings/{dating}/read", [\App\Http\Controllers\DatingController::class, "read"]);
     // Route::resource("/orders", \App\Http\Controllers\OrderController::class);
 });
@@ -110,22 +121,7 @@ Route::middleware("guest")->group(function(){
 
 });
 
-Route::get("/mypage", [\App\Http\Controllers\Shopping\PageController::class, "mypage"]);
-Route::get("/", [\App\Http\Controllers\Shopping\PageController::class, "index"]);
-Route::get("/story3", [\App\Http\Controllers\Shopping\PageController::class, "story3"]);
-Route::resource("/products", \App\Http\Controllers\Shopping\ProductController::class);
-Route::resource("/faqs", \App\Http\Controllers\Shopping\FaqController::class);
 Route::resource("/notices", \App\Http\Controllers\Shopping\NoticeController::class);
-Route::resource("/searches", \App\Http\Controllers\Shopping\SearchController::class);
-
-Route::get("/supplyPolicy", [\App\Http\Controllers\Shopping\PageController::class, "supplyPolicy"]); // 개인정보 제3자 제공동의
-Route::get("/privacyPolicy", [\App\Http\Controllers\Shopping\PageController::class, "privacyPolicy"]); // 개인정보 수집/이용 동의
-Route::get("/servicePolicy", [\App\Http\Controllers\Shopping\PageController::class, "servicePolicy"]); // 결제대행 서비스 이용약관
-
-Route::get("/carts", [\App\Http\Controllers\CartController::class, "index"]);
-Route::get("/orders/search", [\App\Http\Controllers\OrderController::class, "search"]);
-Route::get("/orders/guest", [\App\Http\Controllers\OrderController::class, "guestIndex"]);
-Route::get("/orders/create", [\App\Http\Controllers\OrderController::class, "create"]);
 
 Route::middleware("auth")->group(function(){
     Route::get("/users/remove", [\App\Http\Controllers\UserController::class, "remove"]);
@@ -138,6 +134,11 @@ Route::middleware("auth")->group(function(){
     Route::get("/reviews", [\App\Http\Controllers\Shopping\ReviewController::class, "index"]);
     Route::get("/reviews/create", [\App\Http\Controllers\Shopping\ReviewController::class, "create"]);
     Route::post("/reviews", [\App\Http\Controllers\Shopping\ReviewController::class, "store"]);
-    Route::get("/refunds/create", [\App\Http\Controllers\RefundController::class, "create"]);
-    Route::resource("/refunds", \App\Http\Controllers\RefundController::class);
+    Route::get("/refunds", [\App\Http\Controllers\RefundController::class, "index"]);
+    Route::post("/refunds", [\App\Http\Controllers\RefundController::class, "store"]);
+    Route::post("/feedbacks", [\App\Http\Controllers\FeedbackController::class, "store"]);
+
+    Route::post("/messages", [\App\Http\Controllers\MessageController::class, "store"]);
+    Route::get("/chats/{dating}", [\App\Http\Controllers\ChatController::class, "show"]);
+
 });

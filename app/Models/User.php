@@ -120,6 +120,17 @@ class User extends Authenticatable implements HasMedia
         return $items;
     }
 
+    public function getAlarmAttribute()
+    {
+        if($this->chats()->wherePivot("has_new_message", 1)->count() > 0)
+            return 1;
+
+        if($this->datings()->where($this->getReadColumn(), false)->count() > 0)
+            return 1;
+
+        return 0;
+    }
+
     public function orders()
     {
         return $this->hasMany(Order::class);
@@ -130,6 +141,13 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(Refund::class);
     }
 
+    public function chats()
+    {
+        return $this->belongsToMany(Chat::class)->withPivot([
+            "has_new_message"
+        ]);
+
+    }
     public function reviews()
     {
         return $this->hasMany(Review::class);
@@ -153,5 +171,10 @@ class User extends Authenticatable implements HasMedia
     public function getIdColumn()
     {
         return $this->sex == Sex::MEN ? "men_id" : "women_id";
+    }
+
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
     }
 }

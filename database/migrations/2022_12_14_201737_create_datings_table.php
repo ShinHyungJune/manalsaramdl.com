@@ -22,6 +22,7 @@ class CreateDatingsTable extends Migration
             $table->boolean("read_men")->default(false); // 남자쪽 데이팅 프로필 확인여부
             $table->boolean("read_women")->default(false); // 여자쪽 데이팅 프로필 확인여부
             $table->boolean("check_address")->default(false); // 장소 확인여부
+            $table->string("address_title")->nullable(); // 장소명
             $table->string("address")->nullable(); // 주소
             $table->string("address_detail")->nullable(); // 상세 주소
             $table->string("city1")->nullable(); // 선호지역

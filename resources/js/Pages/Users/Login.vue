@@ -62,12 +62,12 @@
                         <!--  -->
                         <ul class="sns-login-list col-group">
                             <li>
-                                <a href="/openLoginPop/naver" class="login-icon">
+                                <a href="/openLoginPop/naver" class="login-icon" @click="ready">
                                     <div class="login-sns-naver sns-box"><i class="xi-naver"></i></div>
                                 </a>
                             </li>
                             <li>
-                                <a href="/openLoginPop/kakao" class="login-icon">
+                                <a href="/openLoginPop/kakao" class="login-icon" @click="ready">
                                     <div class="login-sns-kakao sns-box"><i class="xi-speech"></i></div>
                                 </a>
                             </li>

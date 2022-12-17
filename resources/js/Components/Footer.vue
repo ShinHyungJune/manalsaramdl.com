@@ -6,8 +6,8 @@
             </a>
             <div class="col-group">
                 <ul class="col-group">
-                    <li><a href="privacy01.html">개인정보처리방침</a></li>
-                    <li><a href="privacy02.html">이용약관 및 환불규정</a></li>
+                    <li><a href="/privacy02">개인정보처리방침</a></li>
+                    <li><a href="/privacy02">이용약관 및 환불규정</a></li>
                     <li><a href="story.html">회사소개</a></li>
                 </ul>
             </div>

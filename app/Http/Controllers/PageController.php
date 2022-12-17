@@ -19,23 +19,33 @@ class PageController extends Controller
         ]);
     }
 
-    /*public function privacyPolicy()
+    public function story(Request $request)
     {
-        return Inertia::render("Contents/PrivacyPolicy");
-    }
+        return Inertia::render("Contents/Story", [
 
-    public function servicePolicy()
-    {
-        return Inertia::render("Contents/ServicePolicy");
-    }
-    */
-
-    public function mypage()
-    {
-        $orders = auth()->user()->orders()->latest()->paginate(10);
-
-        return Inertia::render("Mypage", [
-            "orders" => OrderResource::collection($orders),
         ]);
     }
+
+    public function privacy01(Request $request)
+    {
+        return Inertia::render("Contents/Privacy01", [
+
+        ]);
+    }
+
+    public function privacy02(Request $request)
+    {
+        return Inertia::render("Contents/Privacy02", [
+
+        ]);
+    }
+
+    public function privacy03(Request $request)
+    {
+        return Inertia::render("Contents/Privacy03", [
+
+        ]);
+    }
+
+
 }

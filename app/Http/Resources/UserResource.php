@@ -2,6 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Enums\OrderProductState;
+use App\Enums\ProductType;
+use App\Models\OrderProduct;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -43,6 +46,13 @@ class UserResource extends JsonResource
             "marriage" => $this->marriage,
             "comment_manager" => $this->comment_manager,
             "count_dating" => $this->count_dating,
+            "count_matching_dating" => $this->datings()->count(),
+            "count_party" => $this->orderProducts()->where("state", OrderProductState::SUCCESS)->whereHas("product", function($query){
+                return $query->where("type", ProductType::PARTY)->where("opened_at", ">", Carbon::now());
+            })->count(),
+            "count_close_party" => $this->orderProducts()->where("state", OrderProductState::SUCCESS)->whereHas("product", function($query){
+                return $query->where("type", ProductType::PARTY)->where("opened_at", "<=", Carbon::now());
+            })->count(),
 
             "social_platform" => $this->social_platform,
             "agree_ad" => $this->agree_ad,
@@ -51,6 +61,7 @@ class UserResource extends JsonResource
             "owner" => $this->owner,
             "bank" => $this->bank,
             "account" => $this->account,
+            "alarm" => $this->alarm,
 
             "created_at" => Carbon::make($this->created_at)->format("Y-m-d H:i"),
             "updated_at" => Carbon::make($this->updated_at)->format("Y-m-d H:i")

@@ -15,12 +15,18 @@
                     </li>
                 </ul>
                 <h1 class="logo">
-                    <a href="index.html"></a>
+                    <a href="/"></a>
                 </h1>
-                <div class="top-login">
+                <div class="top-login" v-if="!user">
                     <ul>
-                        <li><a href="/login.html">Log in</a></li>
-                        <li><a href="/join.html">Sign up</a></li>
+                        <li><a href="/login">Log in</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
+                </div>
+                <div class="top-login" v-else>
+                    <ul>
+                        <li><a href="/logout">Logout</a></li>
+                        <li><a href="/datings" :class="user && user.alarm ? 'point' : ''">Mypage</a></li>
                     </ul>
                 </div>
                 <div class="menu-bar">
@@ -31,33 +37,33 @@
         <nav class="gnb-wrap">
             <ul class="gnb">
                 <li class="active">
-                    <a href="/story.html">인사</a>
+                    <a href="/story">인사</a>
                     <ul class="gnb-sub">
                         <li>
-                            <a href="/story.html">탄생배경</a>
+                            <a href="/story">탄생배경</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/service_party.html">서비스</a>
+                    <a href="/partyProducts">서비스</a>
                     <ul class="gnb-sub">
-                        <li><a href="/service_party.html">파티신청</a></li>
-                        <li><a href="/service_blind.html">소개팅신청</a></li>
+                        <li><a href="/partyProducts">파티신청</a></li>
+                        <li><a href="/datingProducts">소개팅신청</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="../review_date.html">후기</a>
+                    <a href="/datingReviews">후기</a>
                     <ul class="gnb-sub">
-                        <li><a href="../review_date.html">소개팅 후기</a></li>
-                        <li><a href="../review_party.html">파티 후기</a></li>
+                        <li><a href="/datingReviews">소개팅 후기</a></li>
+                        <li><a href="/partyReviews">파티 후기</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/coment.html">게시판</a>
+                    <a href="/notices?type='코멘트'">게시판</a>
                     <ul class="gnb-sub">
-                        <li><a href="/coment.html">인사의 코멘트</a></li>
-                        <li><a href="/notice_party.html">파티관련</a></li>
-                        <li><a href="/notice_blind.html">소개팅관련</a></li>
+                        <li><a href="/notices?type='코멘트'">인사의 코멘트</a></li>
+                        <li><a href="/notices?type='파티'">파티관련</a></li>
+                        <li><a href="/notices?type='소개팅'">소개팅관련</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,19 +74,22 @@
                     <div class="mb-logo">
                         <img src="/images/LOGO.png" alt="insa-logo">
                     </div>
-                    <div class="mb-login">
-                        <a href="../login.html">login</a>
-                        <a href="../mypage.html">My page</a>
-                        <a href="../signin.html">sign in</a>
+                    <div class="mb-login" v-if="!user">
+                        <a href="/login">login</a>
+                        <a href="/register">sign in</a>
+                    </div>
+                    <div class="mb-login" style="justify-content: center" v-else>
+                        <a href="/logout">logout</a>
+                        <a href="/datings">mypage</a>
                     </div>
                     <ul class="mb-nav">
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="./story.html">인사</a>
+                                <a href="/story">인사</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav" style="display: none;">
-                                <a href="./story.html">탄생 배경</a>
+                                <a href="/story">탄생 배경</a>
                             </div>
                         </li>
                         <li>
@@ -90,33 +99,33 @@
                             </div>
                             <div class="mb-sm-nav">
                                 <a href="/service_party.html">파티 신청</a>
-                                <a href="/service_blind.html">소개팅 신청</a>
+                                <a href="/datingProducts">소개팅 신청</a>
                             </div>
                         </li>
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="../review_date.html">후기</a>
+                                <a href="/datingReviews">후기</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="../review_date.html">소개팅 후기</a>
-                                <a href="../review_party.html">파티 후기</a>
+                                <a href="/datingReviews">소개팅 후기</a>
+                                <a href="/partyReviews">파티 후기</a>
                             </div>
                         </li>
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="../coment.html">게시판</a>
+                                <a href="/notices?type='코멘트'">게시판</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="../coment.html">인사의 코멘트</a>
-                                <a href="../notice_party.html">파티관련</a>
-                                <a href="../notice_blind.html">소개팅관련</a>
+                                <a href="/notices?type='코멘트'">인사의 코멘트</a>
+                                <a href="/notices?type='파티'">파티관련</a>
+                                <a href="/notices?type='소개팅'">소개팅관련</a>
                             </div>
                         </li>
                     </ul>
                     <div class="sns-wrap-mb">
-                        <a href="#" class="logout-btn">logout<i class="xi-log-out"></i></a>
+                        <a href="/logout" class="logout-btn">logout<i class="xi-log-out"></i></a>
                         <a href="#"> <i class="utb youtube xi-youtube-play"></i></a>
                         <a href="#"> <i class="kakao speech xi-speech"></i></a>
                         <a href="#"> <i class="sns-icon naver xi-naver"></i></a>

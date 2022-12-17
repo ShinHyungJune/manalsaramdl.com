@@ -92,6 +92,11 @@
                     <button><i class="xi-angle-down-min"></i></button>
                 </a>-->
             </div>
+
+        </div>
+
+        <div class="m-empty type01" v-if="products.data.length === 0">
+            데이터가 없습니다.
         </div>
 
         <pagination :meta="products.meta" @paginate="(page) => {form.page = page; filter()}" />

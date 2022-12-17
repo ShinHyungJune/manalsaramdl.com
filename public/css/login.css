@@ -839,10 +839,10 @@
     margin-top: 39.9px;
 }
 
-.con-wrap {
+/*.con-wrap {
     width: 100%;
     padding: 0px 72px 40px 72px;
-}
+}*/
 
 .con-wrap-header {
     width: 100%;
@@ -1494,7 +1494,7 @@ input[type="text"] {
 
     #theme .join-select {
         height: 40px;
-        padding: 14px;    
+        padding: 14px;
     }
     #theme .join-select .text{
         font-size: 10px;
@@ -1518,7 +1518,7 @@ input[type="text"] {
 }
 
 @media screen and (max-width: 518px) {
- 
+
     .con-wrap-title {
         font-size: 38px;
     }
@@ -1526,7 +1526,7 @@ input[type="text"] {
     .con-wrap-sub {
     top: 140px;
     right: 73px;
-    
+
     }
 
 }
@@ -1575,7 +1575,7 @@ input[type="text"] {
     }
 
     .join-wrap .duty-sub {
-        font-size: 12px;        
+        font-size: 12px;
         word-break: keep-all;
         line-height: 1.65;
         letter-spacing: -0.43px;

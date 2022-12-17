@@ -14,8 +14,9 @@ class Dating extends Model
         "read_men",
         "read_women",
         "check_address",
-        "address",
-        "address_detail",
+        "address_name",
+        "place_name",
+        "place_url",
         "city1",
         "area1",
         "city2",
@@ -28,13 +29,35 @@ class Dating extends Model
         "scheduled_at",
     ];
 
-
     public function getOngoingAttribute()
     {
-        if($this->scheduled_at && $this->sheduled_at <= Carbon::now())
+        if($this->scheduled_at && Carbon::make($this->scheduled_at) <= Carbon::now())
             return 0;
 
         return 1;
+    }
+
+    public function getCanChatAttribute()
+    {
+        if($this->ongoing && $this->scheduled_at && Carbon::make($this->scheduled_at)->subDay()->startOfDay() <= Carbon::now())
+            return 1;
+
+        return 0;
+    }
+
+    public function women()
+    {
+        return $this->belongsTo(User::class, "women_id");
+    }
+
+    public function men()
+    {
+        return $this->belongsTo(User::class, "men_id");
+    }
+
+    public function chat()
+    {
+        return $this->hasOne(Chat::class);
     }
 
 }

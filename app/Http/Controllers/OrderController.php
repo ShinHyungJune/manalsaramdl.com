@@ -27,14 +27,30 @@ class OrderController extends Controller
 {
     public function index(Request  $request)
     {
-        $orderProducts = auth()->user()->orderProducts()->whereHas("order", function($query){
-            return $query->where("state", "!=", OrderState::FAIL); // 결제실패 상품이 아닌것만
-        })->whereHas("product", function($query){
-            return $query->whereNull("product_id"); // 옵션상품이 아닌 상품만
-        })->paginate(10);
+        $request["started_at"] = $request->started_at ?? "";
+        $request["finished_at"] = $request->finished_at ?? "";
+        $request["type"] = $request->type ?? "";
+
+        $orders = auth()->user()->orders()->where("state", "!=", OrderState::FAIL);
+
+        if($request->started_at)
+            $orders = $orders->where("created_at", ">=", Carbon::make($request->started_at)->startOfDay());
+
+        if($request->finished_at)
+            $orders = $orders->where("created_at", "<=", Carbon::make($request->finished_at)->endOfDay());
+
+        if($request->type)
+            $orders = $orders->whereHas("products", function($query) use($request){
+                return $query->where("type", $request->type);
+            });
+
+        $orders = $orders->paginate(12);
 
         return Inertia::render("Orders/Index", [
-            "orderProducts" => OrderProductResource::collection($orderProducts),
+            "orders" => OrderResource::collection($orders),
+            "started_at" => $request->started_at,
+            "finished_at" => $request->finished_at,
+            "type" => $request->type,
         ]);
     }
 

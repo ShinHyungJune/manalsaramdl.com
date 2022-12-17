@@ -28,39 +28,55 @@ class DatingsTest extends TestCase
     public function 여자는_선호지역_및_선호일정을_수정할_수_있다()
     {
         $this->user->update([
-            "sex" => Sex::MEN
+            "sex" => Sex::WOMEN
         ]);
 
-        $datings = Dating::factory()->count(3)->create([
-            "men_id" => $this->user->id
+        $dating = Dating::factory()->create([
+            "women_id" => $this->user->id
         ]);
 
-        $this->get("/datings")->assertInertia(function($page) use($datings){
-            $items = $page->toArray()["props"]["datings"]["data"];
+        $this->patch("/datings/".$dating->id, [
+            "city1" => "123",
+            "area1" => "123",
+            "city2" => "123",
+            "area2" => "123",
+        ]);
 
-            $this->assertCount(count($datings), $items);
-        });
+        $dating = Dating::find($dating->id);
+
+        $this->assertNotNull($dating->city1);
     }
 
     /** @test */
     public function 주소가_있을_경우_여자는_장소확인여부를_수정할_수_있다 ()
     {
+        $this->user->update([
+            "sex" => Sex::WOMEN
+        ]);
 
+        $dating = Dating::factory()->create([
+            "women_id" => $this->user->id,
+            "address" => "123",
+            "address_detail" => "123123"
+        ]);
+
+        $this->patch("/datings/".$dating->id, [
+            "city1" => "123",
+            "area1" => "123",
+            "city2" => "123",
+            "area2" => "123",
+        ]);
+
+        $dating = Dating::find($dating->id);
+
+        $this->assertNotNull($dating->city1);
     }
 
-    /** @test */
-    public function 여자가_장소확인여부를_확인으로_수정할_시_양쪽의_데이트_이용권은()
-    {
-
-    }
-
-    /** @test */
     public function 남자는_최종일정과_주소를_수정할_수_있다 ()
     {
 
     }
 
-    /** @test */ //일정은_정해졌으나_장소확인여부없이(최종매칭없이)_일정이_지난_소개팅은_사용횟수_돌려주기(매일밤 12시에 배치체크)
     public function 일정은_정해졌으나_장소확인여부없이_일정이_지난_소개팅은_사용횟수_돌려주기()
     {
 

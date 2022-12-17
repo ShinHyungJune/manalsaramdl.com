@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Shopping;
+namespace App\Http\Controllers;
 
 use App\Enums\FaqType;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NoticeResource;
+use App\Http\Resources\ReviewResource;
 use App\Models\Faq;
 use App\Models\Notice;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -26,9 +28,16 @@ class NoticeController extends Controller
 
         $notices = $notices->orderBy("important", "desc")->paginate(10);
 
-        return Inertia::render("Shopping/Notices/Index", [
+        return Inertia::render("Notices/Index", [
             "notices" => NoticeResource::collection($notices),
             "word" => $request->word
+        ]);
+    }
+
+    public function show(Notice $notice)
+    {
+        return Inertia::render("Notices/Show", [
+            "item" => ReviewResource::make($notice)
         ]);
     }
 }

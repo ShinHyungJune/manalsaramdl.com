@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DatingResource extends JsonResource
@@ -14,6 +15,11 @@ class DatingResource extends JsonResource
      */
     public function toArray($request)
     {
+        $has_new_message = 0;
+
+        if($this->chat && auth()->user())
+            $has_new_message = $this->chat->users()->where("user_id", auth()->id())->first()->pivot->has_new_message;
+
         return [
             "id" => $this->id,
             "women" => UserResource::make($this->women),
@@ -21,19 +27,22 @@ class DatingResource extends JsonResource
             "read_men" => $this->read_men,
             "read_women" => $this->read_women,
             "check_address" => $this->check_address,
-            "address" => $this->address,
-            "address_detail" => $this->address_detail,
+            "address_name" => $this->address_name,
+            "place_name" => $this->place_name,
+            "place_url" => $this->place_url,
             "city1" => $this->city1,
             "area1" => $this->area1,
             "city2" => $this->city2,
             "area2" => $this->area2,
-            "schedule1" => $this->schedule1,
-            "schedule2" => $this->schedule2,
-            "schedule3" => $this->schedule3,
-            "schedule4" => $this->schedule4,
-            "schedule5" => $this->schedule5,
-            "scheduled_at" => $this->scheduled_at,
-            "ongoing"
+            "schedule1" => $this->schedule1 ? Carbon::make($this->schedule1)->format("Y-m-d H:i") : "",
+            "schedule2" => $this->schedule2 ? Carbon::make($this->schedule2)->format("Y-m-d H:i") : "",
+            "schedule3" => $this->schedule3 ? Carbon::make($this->schedule3)->format("Y-m-d H:i") : "",
+            "schedule4" => $this->schedule4 ? Carbon::make($this->schedule4)->format("Y-m-d H:i") : "",
+            "schedule5" => $this->schedule5 ? Carbon::make($this->schedule5)->format("Y-m-d H:i") : "",
+            "scheduled_at" => $this->scheduled_at ? Carbon::make($this->scheduled_at)->format("Y-m-d H:i") : "",
+            "ongoing" => $this->ongoing,
+            "can_chat" => $this->can_chat,
+            "has_new_message" => $has_new_message,
         ];
     }
 }

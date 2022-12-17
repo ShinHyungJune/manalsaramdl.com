@@ -7,6 +7,12 @@
 .pagination li a:hover { background-color: #679ad2;  border: solid 1px #679ad2; color: #fff; }
 .pagination li a:hover i { color: #fff; }
 
+.m-empty.type01 {
+    padding:100px 0;
+    font-size:18px; color:#777;
+    border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1;
+    text-align: center; font-weight:500;
+}
 /* mypage 마이페이지 */
 .mypage main { padding: 56px 0 150px; }
 .mypage .left-wrap { width: 240px; }
@@ -371,7 +377,7 @@
 }
 .modal-wrap .form-box > li .user.col-group input,
 .modal-wrap .form-box > li .user.col-group > p {
-    width: calc((100% - 16px) / 2);
+    width: 100%;
 }
 .modal-wrap .search-wrap {
     padding: 24px 0;

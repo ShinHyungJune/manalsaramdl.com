@@ -1,93 +1,26 @@
 <template>
-    <div class="left-wrap" id="left_wrap">
-        <h2 v-if="user"><span>{{ user.name ? user.name : "고객" }}</span>님</h2>
-        <h2 v-else><span>게스트</span>님</h2>
+    <div class="left-wrap">
+        <div class="user-profile">
+            <div class="user-photo">
+                <img :src="user.img ? user.img.url : ''" alt="">
+            </div>
+            <p class="user-name">
+                {{ user.name }}
+            </p>
+            <a href="/users/edit" class="edit-btn">프로필 수정</a>
+        </div>
         <ul class="mypage-menu">
-            <li v-if="!user">
-                <a href="/login">
-                    <span class="mypage-icon mb"></span>
-                    로그인
-                    <i class="xi-angle-right"></i>
-                </a>
+            <li :class="navClass('/datings')">
+                <a href="/datings">소개팅 목록</a>
             </li>
-            <li>
-                <a href="/shopping/carts" :class="navClass('/shopping/carts')">
-                    <span class="mypage-icon mb"></span>
-                    장바구니
-                    <i class="xi-angle-right"></i>
-                </a>
+            <li :class="navClass('/partyOrderProducts')">
+                <a href="/partyOrderProducts">파티 목록</a>
             </li>
-            <li v-if="user">
-                <a href="/shopping/orders" :class="navClass('/shopping/orders')">
-                    <span class="mypage-icon mb"></span>
-                    주문/배송관리
-                    <i class="xi-angle-right"></i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="/shopping/orders">
-                            주문/배송 조회
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/shopping/refunds">
-                            취소/교환/반품
-                        </a>
-                    </li>
-                </ul>
+            <li :class="navClass('/orders')">
+                <a href="/orders">결제내역</a>
             </li>
-            <li v-if="user">
-                <a href="/shopping/likes" :class="navClass('/shopping/likes')">
-                    <span class="mypage-icon mb"></span>
-                    관심목록
-                    <i class="xi-angle-right"></i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="/shopping/likes">
-                            관심상품
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/shopping/latestProducts">
-                            최근 본 상품
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li v-if="user">
-                <a href="/shopping/reviews" :class="navClass('/shopping/reviews')">
-                    <span class="mypage-icon mb"></span>
-                    활동관리
-                    <i class="xi-angle-right"></i>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="/shopping/reviews">
-                            나의 리뷰
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/shopping/qnas">
-                            A/S신청 및 상담
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li v-if="user">
-                <a href="/shopping/users/edit" :class="navClass('/shopping/users/edit')">
-                    <span class="mypage-icon mb"></span>
-                    회원정보관리
-                    <i class="xi-angle-right"></i>
-                </a>
-            </li>
-            <li v-if="user">
-                <a href="/logout">
-                    <img src="images/icon_logout.png" alt="" class="mb">
-                    <span class="pc">
-                로그아웃
-            </span>
-                </a>
+            <li :class="navClass('/users/remove')">
+                <a href="/users/remove">회원 탈퇴</a>
             </li>
         </ul>
     </div>

@@ -1,248 +1,371 @@
 <template>
-    <main id="main" class="main">
-        <section class="main-top">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="banner in banners.data" :key="banner.id">
-                        <div class="bg-cl" :style="`background-color:${banner.color}`"></div>
-                        <div class="container">
-                            <div class="main-top-le">
-                                <span>{{ banner.subtitle }}</span>
-                                <p class="GangwonEduAll" style="white-space: pre-line;">{{ banner.title}}</p>
-                                <Link :href="`${banner.link ? banner.link : '#'}`" class="radius-btn" :style="`color:${banner.color}; border-color:${banner.color}`">자세히 보기</Link>
-                            </div>
-                            <div class="main-top-ri">
-                                <div class="img-wrap">
-                                    <img :src="banner.pc ? banner.pc.url : ''" alt="" class="pc">
-                                    <img :src="banner.m ? banner.m.url : ''" alt="" class="mb">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-        <section class="section1">
-            <div class="container">
-                <div class="side-h2">
-                    <span class="num GangwonEduAll">01</span>
-                    <span class="GangwonEduAll">도란도란</span>
-                    <h2 class="GangwonEduAll">베스트셀러</h2>
-                </div>
-                <div class="best-wrap">
-                    <div class="swiper mySwiper3">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="bestProduct in bestProducts.data" :key="bestProduct.id">
-                                <div class="img-wrap">
-                                    <img :src="bestProduct.img ? bestProduct.img.url : ''" alt="">
-                                </div>
-                                <div class="ex-wrap">
-                                    <h3 class="GangwonEduAll">{{ bestProduct.title }}</h3>
-                                    <p class="blue">{{ bestProduct.subtitle }}</p>
-                                    <p v-html="bestProduct.summary"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-wrap">
-                        <div class="move-btn">
-                            <a href="" @click.prevent="showPreview(selectedBestProduct)" class="preview-btn">
-                                <i class="xi-play"></i>
-                                <i class="xi-play"></i>
-                            </a>
-                            <span>미리보기</span>
-                        </div>
-                        <div class="move-btn bl">
-                            <Link :href="`/products/${selectedBestProduct.id}`">
-                                <i class="xi-arrow-right"></i>
-                                <i class="xi-arrow-right"></i>
-                            </Link>
-                            <span>바로가기</span>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination3"></div>
-                </div>
-            </div>
-        </section>
-        <section class="section2">
-            <div class="container">
-                <div class="side-h2">
-                    <span class="num GangwonEduAll">02</span>
-                    <span class="GangwonEduAll">도란도란</span>
-                    <h2 class="GangwonEduAll">신간추천</h2>
-                </div>
-                <div class="swiper mySwiper2">
+    <main class="mainpage">
+        <!-- layerpopup -->
+       <div class="layerPopup open">
+            <div class="layerbox swiper-container" id="agreePopup">
+                <div class="swiper" >
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="recommendProduct in recommendProducts.data" :key="recommendProduct.id">
-                            <div class="pdmv-wrap">
-                                <div class="img-wrap">
-                                    <img :src="recommendProduct.img_recommend ? recommendProduct.img_recommend.url : ''" alt="">
-                                </div>
-                                <h4>{{recommendProduct.title}}</h4>
-                                <div class="btn-wrap">
-                                    <div class="move-btn">
-                                        <a href="#" @click.prevent="showPreview(recommendProduct)" class="preview-btn">
-                                            <i class="xi-play"></i>
-                                            <i class="xi-play"></i>
-                                        </a>
-                                        <span>미리보기</span>
-                                    </div>
-                                    <div class="move-btn bl">
-                                        <Link :href="`/products/${recommendProduct.id}`">
-                                            <i class="xi-arrow-right"></i>
-                                            <i class="xi-arrow-right"></i>
-                                        </Link>
-                                        <span>바로가기</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="/images/sample1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="/images/sample2.png" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="swiper-button-next"><i class="xi-angle-right"></i></div>
-                    <div class="swiper-button-prev"><i class="xi-angle-left"></i></div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination">
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <a href="" class="today-x-btn">오늘 하루 보지 않기</a>
+                    <a href="" class="x-btn">닫기</a>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- // -->
 
-        <section class="section3">
+        <!-- main-banner  -->
+        <div class="main-banner">
+            <div class="main-banner-box">
+                <div class="subpage-under">
+                    <span class="subpage-under-text">The most important thing in life is love</span>
+                </div>
+                <div class="banner-contents">
+                    <div class="banner-title">
+                        <h2 class="col-group pc">
+                <span class="text-style-1">
+                  인
+                </span>
+                            <span class="toggle_txt toggle_txt1">
+                  생에서 가장 중요한 것은 &nbsp;
+                </span>
+                            <span class="text-style-1">
+                  사
+                </span>
+                            <span class="toggle_txt toggle_txt2">
+                  랑이다
+                </span>
+                        </h2>
+                        <div class="mb">
+                            <h2 class="col-group">
+                  <span class="text-style-1">
+                    인
+                  </span>
+                                <span class="toggle_txt toggle_txt1">
+                    생에서 가장
+                  </span>
+                            </h2>
+                            <h2 class="col-group">
+                  <span class="toggle_txt toggle_txt2">
+                    중요한 것은 &nbsp;
+                  </span>
+                                <span class="text-style-1">
+                    사
+                  </span>
+                                <span class="toggle_txt toggle_txt3">
+                    랑이다
+                  </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <p class="banner-text">사랑을 선물합니다.
+                        <br /> 모든 사람들이 사랑하는 그 날까지
+                    </p>
+                    <a class="join-button" href="/register">
+                        <span>가입신청</span><i class="xi-long-arrow-right"></i>
+                    </a>
+                </div>
+                <img src="/images/main-visual.png" alt="main-visual" class="main-visual">
+            </div>
+
+        </div>
+        <!-- //main-banner -->
+        <!--  -->
+        <div class="main-section sec-1" data-aos="fade-right" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
+            <!-- <div class="main-section sec-1"> -->
             <div class="container">
-                <div class="side-h2">
-                    <span class="num GangwonEduAll">03</span>
-                    <span class="GangwonEduAll">도란도란</span>
-                    <h2 class="GangwonEduAll">게시판</h2>
-                </div>
-                <div class="board-wrap">
-                    <h3>도란도란 소식</h3>
-                    <ul>
-                        <li v-for="notice in notices.data" :key="notice.id">
-                            <Link :href="`/notices/${notice.id}`">{{ notice.title }}</Link>
-                            <span class="days">{{ notice.created_at }}</span>
-                        </li>
-                    </ul>
-                    <a href="/notices"><i class="xi-angle-right"></i></a>
+                <div class="main-party">
+                    <img src="/images/main-party.png" alt="main-party">
+                    <div class="left">
+                        <span class="left-title"><span class="text-style-1">P</span>arty</span>
+                        <p class="left-content">
+                            연령과 성비를 조율한 파티를 오픈하여 <br>
+                            고객님들께서 <span class="text-style-1">'자연스러운 만남'</span>을 <br>
+                            가질 수 있는 기회를 제공하는 서비스입니다.
+                        </p>
+                        <div class="left-roadMap">
+                            <span class="roadmap-line"></span>
+                            <ul class="roadmap-list">
+                                <li>파티신청</li>
+                                <li>신원인증</li>
+                                <li>참석권 수령</li>
+                                <li>파티참석</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="main-button"> -->
+                        <a class="main-button style1" href="/partyProducts">
+                            <span>신청하기</span><i class="xi-long-arrow-right"></i>
+                        </a>
+                        <!-- </button> -->
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <!--sec2  -->
+        <div class="main-section sec-2" data-aos="fade-left" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
+            <!-- <div class="main-section sec-2"> -->
+            <div class=" container">
+                <div class="main-date" aos-data="left">
+                    <img src="/images/main-date.png" alt="main-date">
+                    <div class="left">
+                        <span class="left-title"><span class="text-style-1">D</span>ate</span>
+                        <p class="left-content">
+                            조건, 성향 등을 고려해서 매칭해주는 서비스로<br />
+                            고객님들께서 <span class="text-style-1">'원하던 만남'</span>을<br />
+                            가질 수 있는 기회를 제공하는 서비스입니다.
+                        </p>
+                        <div class="top-roadMap">
+                            <ul class="roadmap roadmap-list-1">
+                                <li>사전 상담</li>
+                                <li>프로필 작성</li>
+                                <li>소개팅 매칭</li>
+                                <li>프로필 교환</li>
+                            </ul>
+                            <div class="roadmap-line-box"></div>
+                            <ul class="roadmap roadmap-list-2">
+                                <li>컨설팅</li>
+                                <li>피드백</li>
+                                <li>소개팅</li>
+                                <li>일정 조율</li>
+                            </ul>
+                        </div>
+                        <a class="main-button style1" href="/datingProducts">
+                            <span>신청하기</span><i class="xi-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="main-section sec-4">
+            <div class="sec4-container">
+                <div class="main-content">
+                    <div class="container">
+                        <img class="main-talk" src="/images/main-talk.png" alt="main-talk">
+                        <img class="main-talk mb" src="/images/main-talk-m.png" alt="main-talk">
+                        <div class="warning-container mb">
+                            <div class="warning-img">
+                                <img src="/images/main-warning.png" />
+                            </div>
+                            <div class="scroll-img">
+                                <img src="/images/scroll.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service-table mb">
+                            <img src="/images/main-table.png" alt="">
+                        </div>
+                        <div class="content-bg pc">
+                            <img src="/images/crown1.png" alt="crown1">
+                            <div class="content-container">
+                                <div class="banner-title">
+                                    <h2 class="content-title col-group pc">
+                      <span class="text-style-1">
+                        인
+                      </span>
+                                        <span class="toggle_txt toggle_txt1">
+                        생에서 가장 중요한 것은 &nbsp;
+                      </span>
+                                        <span class="text-style-1">
+                        사
+                      </span>
+                                        <span class="toggle_txt toggle_txt2">
+                        랑이다
+                      </span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <p class="content-sub mb">가장 친한 친구가 되어 찾아드립니다.</p>
+                            <button @click="$inertia.get('/datingProducts')" class="button-soge">올인원 프라이빗 소개팅</button>
+                        </div>
+                    </div>
+                    <div class="container mb">
+                        <div class="content-container">
+                            <div class="crown1-img">
+                                <img src="/images/crown1.png" alt="crown1">
+                            </div>
+                            <div class="banner-title">
+                                <div class="mb">
+                                    <h2 class="col-group">
+                      <span class="text-style-1">
+                        인
+                      </span>
+                                        <span class="toggle_txt toggle_txt1">
+                        생에서 가장
+                      </span>
+                                    </h2>
+                                    <h2 class="col-group">
+                      <span class="toggle_txt toggle_txt2_mb">
+                        중요한 것은 &nbsp;
+                      </span>
+                                        <span class="text-style-1">
+                        사
+                      </span>
+                                        <span class="toggle_txt toggle_txt3">
+                        랑이다
+                      </span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <p class="content-sub mb">가장 친한 친구가 되어 찾아드립니다.</p>
+                            <button class="button-soge">올인원 프라이빗 소개팅</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
-        <preview :product="previewProduct" @close="closePreview" v-if="previewProduct && previewProduct.previews.length > 0" />
+
+        <!-- MAIN-SERVICE -->
+        <div class="main-section sec-5">
+            <div class="container">
+                <div class="row-group">
+                    <div class="main-service">
+                        <div class="service-title">
+                            <span class="title-style-1">All IN ONE</span>
+                            <span class="title-style-2">Private</span>
+                            <span class="title-style-3">Service</span>
+                        </div>
+                        <div class="service-explan">
+            <pre>누군가 만날 준비된 당신.
+              쉽게 가볍게 만나기엔 어려운 당신.
+              비싼 돈을 지불하기엔 소중한 당신.
+
+              '인사'는 준비된 분들을 위한 서비스입니다.
+              인사는 나를 지키면서, 나를 위한 1:1 프리미엄,
+              프라이빗 서비스를 제공하는 온·오프라인 융합 서비스입니다.
+
+              모든 것이 디지털화된 지금, 절대 디지털화 할 수 없는 것이 있습니다.
+              바로 사람과의 관계입니다.
+
+              더이상 가벼운 만남으로 감정소모 하지 않아도,
+              고가의 비용을 지불하지 않아도 됩니다.
+              최고의 고객서비스를 제공하여 최고의 만족도를 만들어 드리겠습니다.</pre>
+                        </div>
+                    </div>
+                </div>
+                <img src="/images/line.png" alt="line">
+            </div>
+        </div>
+        <!-- MAIN-Choice -->
+        <div class="main-section sec-6">
+            <div class="container">
+                <div class="row-group">
+                    <div class="main-choice">
+                        <div class="choice-title">
+                            <img src="/images/crown2.png" alt="crown2">
+                            <p>인사를 <br /><span class="text-style-1">선택</span>해야하는 이유</p>
+                        </div>
+                        <div class="choice-container">
+                            <img src="/images/reason-01.png" alt="reason1" />
+                            <img src="/images/reason-02.png" alt="reason2" />
+                            <img src="/images/reason-03.png" alt="reason3" />
+                        </div>
+                        <img src="/images/line.png" alt="line">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main-only -->
+        <div class="main-section sec-7">
+            <div class="container">
+                <div class="row-group">
+                    <div class="main-only">
+                        <div class="only-title">
+                            <img src="/images/crown2.png" alt="crown2">
+                            <p><span class="text-style-1">오직</span><br />인사에만 있는 것</p>
+                        </div>
+                        <div class="only-container">
+                            <ul class="only-list">
+                                <li>
+                                    <span class="cir s-1"></span>
+                                    <span class="cirb b-1">01</span>
+                                    소개팅, 파티운영으로 <b>신뢰감 높음</b>
+                                </li>
+                                <li>
+                                    <span class="cir s-2"></span>
+                                    <span class="cirb b-2">02</span>
+                                    진정성 있는 만남을 위한 <b>모든 회원 검증</b>
+                                </li>
+                                <li>
+                                    <span class="cir s-3"></span>
+                                    <span class="cirb b-3">03</span>
+                                    전담 매니저와 소개팅 후 <b>피드백</b>
+                                </li>
+                                <li>
+                                    <span class="cir s-4"></span>
+                                    <span class="cirb b-4">04</span>
+                                    <b>남녀 동일한 비용</b>
+                                    (나이, 프로그램에 따라 상이)
+                                </li>
+                                <li>
+                                    <span class="cir s-5"></span>
+                                    <span class="cirb b-5">05</span>
+                                    디테일한 <b>매칭 회의</b>
+                                </li>
+                                <li>
+                                    <span class="cir s-6"></span>
+                                    <span class="cirb b-6">06</span>
+                                    매너, 호감도<b>피드백을 통한</b>회원 검증
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-Banner -->
+        <div class="main-section sec-8">
+            <div class="main-footer container">
+                <div class="main-footer-content">
+                    <p>사람은 만나봐야 알 수 있고,<br />
+                        사랑은 만나봐야 느낄 수 있어<br />
+                        사랑에 더 이상 우연은 없어</p>
+                    <a href="/register">
+                        <p class="main-footer-btn">가입신청</p>
+                        <img class="arrow-off" src="/images/arrow.png" alt="arrow-on">
+                        <img class="arrow-on" src="/images/arrow-on.png" alt="arrow-on">
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 <script>
 import {Link} from '@inertiajs/inertia-vue';
-import Preview from "../Components/Preview";
+
 
 export default {
-    components: {Preview, Link},
+    components: { Link},
 
     data() {
         return {
-            banners: this.$page.props.banners,
-            bestProducts: this.$page.props.bestProducts,
-            recommendProducts: this.$page.props.recommendProducts,
-            notices: this.$page.props.notices,
 
-            selectedBestProduct: this.$page.props.bestProducts.data[0],
-
-            form: this.$inertia.form({
-
-            }),
-
-            previewProduct: "",
         }
     },
 
     methods: {
-        showPreview(product){
-            this.previewProduct = product;
-        },
-        closePreview(){
-            this.previewProduct = "";
-        }
+
     },
 
     mounted() {
-        $(document).ready(function() {
-            $(".tab_title li").click(function() {
-                var idx = $(this).index();
-                $(".tab_title li").removeClass("on");
-                $(".tab_title li").eq(idx).addClass("on");
-                $(".tab_cont > div").removeClass("on");
-                $(".tab_cont > div").eq(idx).addClass("on");
-            })
-        });
+        AOS.init();
 
-        let self = this;
-
-        var swiper = new Swiper(".mySwiper", {
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-        });
-
-        var swiper = new Swiper(".mySwiper2", {
-            slidesPerView: 4,
-            spaceBetween: 40,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop:true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                1080: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: "auto",
-                    loop: true,
-                    centeredSlides: true,
-                    spaceBetween: 0,
-                    grabCursor: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        type: "progressbar",
-                    },
-                },
-            }
-        });
-
-        var swiper = new Swiper(".banner-sl", {
-            pagination: {
-                el: ".banner-sl-pagination",
-                clickable: true,
-            },
-            autoplay: {
-                delay: 4500,
-                disableOnInteraction: false,
-            },
-        });
-
-        var swiper = new Swiper(".mySwiper3", {
-            pagination: {
-                el: ".swiper-pagination3",
-                clickable: true,
-                renderBullet: function (index, className) {
-                    let $name = $(".mySwiper3").find(".swiper-slide h3").eq(index).text();
-                    return '<span class="' + className + '">' + $name + "</span>";
-                },
-            },
-            on: {
-                "slideChange": function(){
-                    self.selectedBestProduct = self.bestProducts.data[this.activeIndex];
-                }
-            }
-        });
     }
 }
 </script>
