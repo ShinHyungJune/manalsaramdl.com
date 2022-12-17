@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\NoticeType;
 use App\Enums\ProductType;
 use App\Enums\Sex;
 use App\Models\Information;
@@ -56,13 +57,15 @@ class InitSeeder extends Seeder
         Product::truncate();
         User::truncate();
         PayMethod::truncate();
+        Review::truncate();
+        Notice::truncate();
         DB::statement("SET foreign_key_checks=1");
 
         $this->createUsers();
         $this->createProducts();
         $this->createPayMethods();
-
-        // $this->createReviews();
+        $this->createReviews();
+        $this->createNotices();
     }
 
     public function createUsers()
@@ -299,5 +302,71 @@ class InitSeeder extends Seeder
 
             $createdItem->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
         }
+    }
+
+    public function createReviews()
+    {
+        $datingReviews = [
+            [
+                "sex" => "여",
+                "age" => "20대",
+                "job" => "연구원",
+                "description" => "<p>매우 마음에 드는 이성을 만나서 결혼까지 골인했습니다. 정말 행복한 순간이었습니다 감사합니다.</p>",
+                "type" => ProductType::DATING,
+                "title" => "인사에서 평생을 함께할 인생의 반려를 만났습니다."
+            ],
+            [
+                "sex" => "남",
+                "age" => "30대",
+                "job" => "직장인",
+                "description" => "<p>매우 마음에 드는 여성을 만나서 결혼까지 골인했습니다. 정말 행복한 순간이었습니다 감사합니다.</p>",
+                "type" => ProductType::DATING,
+                "title" => "인사에서 평생을 함께할 인생의 반려를 만났습니다."
+            ]
+        ];
+
+        $partyReviews = [
+            [
+                "description" => "<p>매우 마음에 드는 이성을 만나서 결혼까지 골인했습니다. 정말 행복한 순간이었습니다 감사합니다.</p>",
+                "type" => ProductType::PARTY,
+                "title" => "해운대구 10 : 10 와인파티 후기"
+            ],
+            [
+                "description" => "<p>매우 마음에 드는 이성을 만나서 결혼까지 골인했습니다. 정말 행복한 순간이었습니다 감사합니다.</p>",
+                "type" => ProductType::PARTY,
+                "title" => "강남 10 : 10 힐링파티 후기"
+            ],
+        ];
+
+        foreach($datingReviews as $datingReview){
+            $createdItem = Review::factory()->create($datingReview);
+
+            $createdItem->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
+        }
+
+        foreach($partyReviews as $partyReview){
+            $createdItem = Review::factory()->create($partyReview);
+
+            $createdItem->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
+        }
+    }
+
+    public function createNotices()
+    {
+        Notice::factory()->count(3)->create([
+            "type" => NoticeType::DATING,
+            "title" => NoticeType::DATING
+        ]);
+
+        Notice::factory()->count(3)->create([
+            "type" => NoticeType::PARTY,
+            "title" => NoticeType::PARTY
+        ]);
+
+        Notice::factory()->count(3)->create([
+            "type" => NoticeType::COMMENT,
+            "title" => NoticeType::COMMENT
+        ]);
+
     }
 }

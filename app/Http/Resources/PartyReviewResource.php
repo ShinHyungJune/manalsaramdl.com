@@ -2,12 +2,13 @@
 
 namespace App\Http\Resources;
 
-use App\Models\OrderProduct;
-use App\Models\Product;
+use App\Enums\ProductType;
+use App\Models\Dating;
+use App\Models\Review;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ReviewResource extends JsonResource
+class PartyReviewResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,6 +18,10 @@ class ReviewResource extends JsonResource
      */
     public function toArray($request)
     {
+        $next = Review::find(Review::where("type", ProductType::PARTY)->where('id', '<', $this->id)->max('id'));
+
+        $prev = Review::find(Review::where("type", ProductType::PARTY)->where('id', '>', $this->id)->min('id'));
+
         return [
             "id" => $this->id,
             "type" => $this->type,
@@ -26,6 +31,8 @@ class ReviewResource extends JsonResource
             "age" => $this->age,
             "job" => $this->job,
             "img" => $this->img ?? "",
+            "prev" => $prev ?? "",
+            "next" => $next ?? "",
             "created_at" => Carbon::make($this->created_at)->format("Y.m.d")
         ];
     }

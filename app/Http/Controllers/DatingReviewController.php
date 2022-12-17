@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ProductType;
+use App\Http\Resources\DatingReviewResource;
 use App\Http\Resources\ReviewResource;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -15,14 +16,14 @@ class DatingReviewController extends Controller
         $items = Review::where("type", ProductType::DATING)->latest()->paginate(12);
 
         return Inertia::render("DatingReviews/Index", [
-            "items" => ReviewResource::collection($items)
+            "items" => DatingReviewResource::collection($items)
         ]);
     }
 
     public function show(Review $review)
     {
         return Inertia::render("DatingReviews/Show", [
-            "item" => ReviewResource::make($review)
+            "item" => DatingReviewResource::make($review)
         ]);
     }
 }

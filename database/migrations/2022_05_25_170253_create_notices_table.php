@@ -15,6 +15,7 @@ class CreateNoticesTable extends Migration
     {
         Schema::create('notices', function (Blueprint $table) {
             $table->id();
+            $table->string("type")->default(\App\Enums\NoticeType::COMMENT);
             $table->string("title"); // 제목
             $table->text("description")->nullable(); // 내용
             $table->integer("count_view")->default(0); // 조회수

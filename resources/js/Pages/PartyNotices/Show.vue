@@ -10,14 +10,14 @@
             </div>
             <div class="post_navigaiton">
                 <div class="post-pre-btn">
-                    <a :href="`/partyReviews/${item.prev.id}`" v-if="item.prev">
+                    <a :href="`/partyNotices/${item.prev.id}`" v-if="item.prev">
                         <i class="xi-long-arrow-left"></i>
                         <span> 이전글</span>
                     </a>
                 </div>
-                <a href="/partyReviews"><button class="post-list-btn">목록</button></a>
+                <a href="/partyNotices"><button class="post-list-btn">목록</button></a>
                 <div class="post-next-btn">
-                    <a :href="`/partyReviews/${item.next.id}`" v-if="item.next">
+                    <a :href="`/partyNotices/${item.next.id}`" v-if="item.next">
                         <span> 다음글</span>
                         <i class="xi-long-arrow-right"></i>
                     </a>

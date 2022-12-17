@@ -59,11 +59,11 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/notices?type='코멘트'">게시판</a>
+                    <a href="/commentNotices">게시판</a>
                     <ul class="gnb-sub">
-                        <li><a href="/notices?type='코멘트'">인사의 코멘트</a></li>
-                        <li><a href="/notices?type='파티'">파티관련</a></li>
-                        <li><a href="/notices?type='소개팅'">소개팅관련</a></li>
+                        <li><a href="/commentNotices">인사의 코멘트</a></li>
+                        <li><a href="/partyNotices">파티관련</a></li>
+                        <li><a href="/datingNotices">소개팅관련</a></li>
                     </ul>
                 </li>
             </ul>
@@ -114,13 +114,13 @@
                         </li>
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="/notices?type='코멘트'">게시판</a>
+                                <a href="/commentNotices">게시판</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="/notices?type='코멘트'">인사의 코멘트</a>
-                                <a href="/notices?type='파티'">파티관련</a>
-                                <a href="/notices?type='소개팅'">소개팅관련</a>
+                                <a href="/commentNotices">인사의 코멘트</a>
+                                <a href="/partyNotices">파티관련</a>
+                                <a href="/datingNotices">소개팅관련</a>
                             </div>
                         </li>
                     </ul>

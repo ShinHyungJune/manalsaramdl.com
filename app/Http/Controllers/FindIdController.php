@@ -12,7 +12,7 @@ class FindIdController extends Controller
 {
     public function create()
     {
-        return Inertia::render("Shopping/FindIds/Create");
+        return Inertia::render("FindIds/Create");
     }
 
     public function search(Request $request)
@@ -27,11 +27,11 @@ class FindIdController extends Controller
         if(!$verifyNumber)
             return redirect()->back()->with("error", "인증된 전화번호로만 조회할 수 있습니다.");
 
-        $ids = User::where("contact", $request->contact)->get()->pluck("ids")->toArray();
+        $ids = User::where("contact", $request->contact)->get()->pluck("email")->toArray();
 
         $verifyNumber->delete();
 
-        return Inertia::render("Shopping/FindIds/Search", [
+        return Inertia::render("FindIds/Search", [
             "ids" => $ids
         ]);
     }

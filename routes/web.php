@@ -35,11 +35,18 @@ Route::get('/datingProducts', [\App\Http\Controllers\DatingProductController::cl
 Route::get('/partyProducts', [\App\Http\Controllers\PartyController::class, "index"]);
 Route::get('/partyOrderProducts', [\App\Http\Controllers\PartyOrderProductController::class, "index"]);
 Route::get('/datingReviews', [\App\Http\Controllers\DatingReviewController::class, "index"]);
-Route::get('/datingReviews/{datingReview}', [\App\Http\Controllers\DatingReviewController::class, "show"]);
+Route::get('/datingReviews/{review}', [\App\Http\Controllers\DatingReviewController::class, "show"]);
 Route::get('/partyReviews', [\App\Http\Controllers\PartyReviewController::class, "index"]);
-Route::get('/partyReviews/{partyReview}', [\App\Http\Controllers\PartyReviewController::class, "show"]);
-Route::get('/notices', [\App\Http\Controllers\NoticeController::class, "index"]);
-Route::get('/notices/{notice}', [\App\Http\Controllers\NoticeController::class, "show"]);
+Route::get('/partyReviews/{review}', [\App\Http\Controllers\PartyReviewController::class, "show"]);
+Route::get('/datingNotices', [\App\Http\Controllers\DatingNoticeController::class, "index"]);
+Route::get('/datingNotices/{notice}', [\App\Http\Controllers\DatingNoticeController::class, "show"]);
+Route::get('/partyNotices', [\App\Http\Controllers\PartyNoticeController::class, "index"]);
+Route::get('/partyNotices/{notice}', [\App\Http\Controllers\PartyNoticeController::class, "show"]);
+Route::get('/commentNotices', [\App\Http\Controllers\CommentNoticeController::class, "index"]);
+Route::get('/commentNotices/{notice}', [\App\Http\Controllers\CommentNoticeController::class, "show"]);
+
+Route::get('/datingNotices/{notice}', [\App\Http\Controllers\DatingNoticeController::class, "show"]);
+
 Route::post("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "store"]);
 Route::patch("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "update"]);
 

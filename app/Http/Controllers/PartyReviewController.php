@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ProductType;
+use App\Http\Resources\PartyReviewResource;
 use App\Http\Resources\ReviewResource;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -15,14 +16,14 @@ class PartyReviewController extends Controller
         $items = Review::where("type", ProductType::PARTY)->latest()->paginate(12);
 
         return Inertia::render("PartyReviews/Index", [
-            "items" => ReviewResource::collection($items)
+            "items" => PartyReviewResource::collection($items)
         ]);
     }
 
     public function show(Review $review)
     {
         return Inertia::render("PartyReviews/Show", [
-            "item" => ReviewResource::make($review)
+            "item" => PartyReviewResource::make($review)
         ]);
     }
 }

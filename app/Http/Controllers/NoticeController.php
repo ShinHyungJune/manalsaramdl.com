@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\FaqType;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\NoticeResource;
+use App\Http\Resources\CommentNoticeResource;
 use App\Http\Resources\ReviewResource;
 use App\Models\Faq;
 use App\Models\Notice;
@@ -29,7 +29,7 @@ class NoticeController extends Controller
         $notices = $notices->orderBy("important", "desc")->paginate(10);
 
         return Inertia::render("Notices/Index", [
-            "notices" => NoticeResource::collection($notices),
+            "notices" => CommentNoticeResource::collection($notices),
             "word" => $request->word
         ]);
     }

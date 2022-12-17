@@ -276,7 +276,7 @@ export default {
     },
     methods:{
         search(){
-            this.form.get("/shopping/searches");
+            this.form.get("/searches");
         },
         initRecommendSwiper(){
             let self = this;

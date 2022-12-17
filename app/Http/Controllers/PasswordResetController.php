@@ -29,7 +29,7 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
         if(!$verifyNumber)
             return redirect()->back()->with("error", "인증된 전화번호로만 진행할 수 있습니다.");
 
-        if(!User::where("contact", $request->contact)->where("ids", $request->ids)->exists())
+        if(!User::where("contact", $request->contact)->where("email", $request->ids)->exists())
             return redirect()->back()->with("error", "유효하지 않은 정보입니다.");
 
         $token = random_int(100000000,999999999);
@@ -44,8 +44,8 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
             "token" => $token
         ]);
 
-
         // 이 부분도 카카오톡 연동으로 들어가야겠지
+        /*
         $kakao = new Kakao();
 
         try {
@@ -57,19 +57,37 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
         }
 
         $verifyNumber->delete();
+        */
 
-        return redirect()->back()->with("success", "비밀번호 초기화 문자가 발송되었습니다.");
+        return redirect("/passwordResets/".$passwordReset->token."/edit")->with("success", "");
     }
 
     public function create()
     {
-        return Inertia::render("Shopping/PasswordResets/Create");
+        return Inertia::render("PasswordResets/Create");
     }
 
     public function edit(Request $request)
     {
-        return Inertia::render("Shopping/PasswordResets/Edit", [
+        return Inertia::render("PasswordResets/Edit", [
             "token" => $request->token
+        ]);
+    }
+
+    public function result($token)
+    {
+        $passwordReset = PasswordReset::where("token", $token)->first();
+
+        if(!$passwordReset)
+            return redirect("/");
+
+        $resetPassword = $passwordReset->password;
+
+        if($passwordReset)
+            $passwordReset->delete();
+
+        return Inertia::render("PasswordResets/Result", [
+            "password" => $resetPassword
         ]);
     }
 
@@ -83,7 +101,7 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
         $passwordReset = PasswordReset::where("token", $request->token)
             ->first();
 
-        $user = User::where("ids", $passwordReset->id)->first();
+        $user = User::where("email", $passwordReset->id)->first();
 
         if(!$user || !$passwordReset){
             return redirect()->back()->with("error", "유효하지 않은 토큰이거나 존재하지 않는 아이디입니다.");

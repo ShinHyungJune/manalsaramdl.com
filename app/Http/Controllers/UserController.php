@@ -47,7 +47,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     {
         $request->validate([
             "email" => "required|string|min:4|max:20|unique:users",
-            "contact" => "required|string|max:500",
+            "contact" => "required|string|unique:users|max:500",
             "name" => "required|string|max:500",
             "password" => "required|string|min:8|max:30|confirmed",
             "email" => "required|email|max:500",

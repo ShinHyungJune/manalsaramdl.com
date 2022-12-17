@@ -73,7 +73,7 @@ export default {
 
     methods:{
         filter(){
-            this.form.get("/shopping/searches", {
+            this.form.get("/searches", {
                 preserveScroll: true,
                 preserveState: false,
                 onSuccess: (page) => {
