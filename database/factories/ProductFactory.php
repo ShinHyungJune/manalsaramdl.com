@@ -33,7 +33,6 @@ class ProductFactory extends Factory
             "type" => ProductType::DATING,
             "count_dating" => rand(1,10),
             "place" => $this->faker->address,
-            "address" => $this->faker->address,
             "age" => "10대",
             "max_women" => rand(1,10),
             "max_men" => rand(1,10),

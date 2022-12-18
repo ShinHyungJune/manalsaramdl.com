@@ -1,6 +1,7 @@
 <template>
     <main class="mainpage">
         <!-- layerpopup -->
+        <!--
        <div class="layerPopup open">
             <div class="layerbox swiper-container" id="agreePopup">
                 <div class="swiper" >
@@ -27,6 +28,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!-- // -->
 
         <!-- main-banner  -->

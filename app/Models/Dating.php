@@ -60,4 +60,9 @@ class Dating extends Model
         return $this->hasOne(Chat::class);
     }
 
+    public function messages()
+    {
+        return $this->hasManyThrough(Message::class, Chat::class);
+    }
+
 }

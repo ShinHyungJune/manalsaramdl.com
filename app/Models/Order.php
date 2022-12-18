@@ -34,6 +34,7 @@ class Order extends Model
         "pay_method_commission",
 
         "price",
+        "product_title",
 
         "refund_owner",
         "refund_bank",
@@ -177,7 +178,7 @@ class Order extends Model
             "user_name" => auth()->user()->name,
             "user_contact" => auth()->user()->contact,
             "user_email" => auth()->user()->email,
-
+            "product_title" => $product->title,
             "pay_method_id" => $payMethod->id,
             "pay_method_name" => $payMethod->name,
             "pay_method_pg" => $payMethod->pg,

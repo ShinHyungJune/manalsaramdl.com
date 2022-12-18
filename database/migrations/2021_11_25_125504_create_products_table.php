@@ -31,7 +31,7 @@ class CreateProductsTable extends Migration
             // 파티용
             $table->dateTime("opened_at")->nullable(); // 파티 오픈일자
             $table->string("place")->nullable(); // 표시용 주소
-            $table->string("address")->nullable(); // 진짜 주소
+            // $table->string("address")->nullable(); // 진짜 주소
             $table->string("age")->nullable(); // 표시용 장소
             $table->string("max_women")->nullable(); // 여자 최대참여수
             $table->string("max_men")->nullable(); // 남자 최대참여수

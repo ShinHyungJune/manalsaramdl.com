@@ -6396,6 +6396,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -63176,8 +63178,6 @@ var render = function () {
     _vm._v(" "),
     _vm._m(2),
     _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
     _c("div", { staticClass: "main-section sec-4" }, [
       _c("div", { staticClass: "sec4-container" }, [
         _c("div", { staticClass: "main-content" }, [
@@ -63192,16 +63192,16 @@ var render = function () {
               attrs: { src: "/images/main-talk-m.png", alt: "main-talk" },
             }),
             _vm._v(" "),
-            _vm._m(4),
+            _vm._m(3),
             _vm._v(" "),
-            _vm._m(5),
+            _vm._m(4),
             _vm._v(" "),
             _c("div", { staticClass: "content-bg pc" }, [
               _c("img", {
                 attrs: { src: "/images/crown1.png", alt: "crown1" },
               }),
               _vm._v(" "),
-              _vm._m(6),
+              _vm._m(5),
               _vm._v(" "),
               _c("p", { staticClass: "content-sub mb" }, [
                 _vm._v("가장 친한 친구가 되어 찾아드립니다."),
@@ -63222,68 +63222,21 @@ var render = function () {
             ]),
           ]),
           _vm._v(" "),
-          _vm._m(7),
+          _vm._m(6),
         ]),
       ]),
     ]),
+    _vm._v(" "),
+    _vm._m(7),
     _vm._v(" "),
     _vm._m(8),
     _vm._v(" "),
     _vm._m(9),
     _vm._v(" "),
     _vm._m(10),
-    _vm._v(" "),
-    _vm._m(11),
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "layerPopup open" }, [
-      _c(
-        "div",
-        {
-          staticClass: "layerbox swiper-container",
-          attrs: { id: "agreePopup" },
-        },
-        [
-          _c("div", { staticClass: "swiper" }, [
-            _c("div", { staticClass: "swiper-wrapper" }, [
-              _c("div", { staticClass: "swiper-slide" }, [
-                _c("a", { attrs: { href: "" } }, [
-                  _c("img", { attrs: { src: "/images/sample1.png", alt: "" } }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "swiper-slide" }, [
-                _c("a", { attrs: { href: "" } }, [
-                  _c("img", { attrs: { src: "/images/sample2.png", alt: "" } }),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "swiper-pagination" }, [
-              _c("span", { staticClass: "swiper-pagination-bullet" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "swiper-pagination-bullet" }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "btn-wrap" }, [
-            _c("a", { staticClass: "today-x-btn", attrs: { href: "" } }, [
-              _vm._v("오늘 하루 보지 않기"),
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "x-btn", attrs: { href: "" } }, [
-              _vm._v("닫기"),
-            ]),
-          ]),
-        ]
-      ),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
