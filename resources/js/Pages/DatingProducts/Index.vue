@@ -519,6 +519,14 @@ export default {
         order() {
             if(!this.agree1 || !this.agree2)
                 return alert("필수 약관에 동의해주세요.");
+
+            if(!this.form.option_id)
+                return alert("참가비를 선택해주세요.");
+
+            if(!this.form.pay_method_id)
+                return alert("결제수단을 선택해주세요.");
+
+            this.form.post("/orders");
         },
     },
     computed: {
