@@ -201,10 +201,10 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     public function destroy(Request $request)
     {
         $request->validate([
-            "password" => "required|string|max:500"
+
         ]);
 
-        $hasOngoingOrder = auth()->user()->orderProducts()->where("state", OrderProductState::WAIT)
+        /*$hasOngoingOrder = auth()->user()->orderProducts()->where("state", OrderProductState::WAIT)
             ->orWhere("state", OrderProductState::ONGOING)
             ->orWhere("state", OrderProductState::READY)
             ->count() > 0;
@@ -215,7 +215,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             return redirect()->back()->with("error", "진행중인 주문이나 반품요청이 있을 경우 회원탈퇴를 진행할 수 없습니다.");
 
         if(!Hash::check($request->password, auth()->user()->password))
-            return redirect()->back()->with("error", "비밀번호가 틀렸습니다.");
+            return redirect()->back()->with("error", "비밀번호가 틀렸습니다.");*/
 
         auth()->user()->delete();
 
@@ -232,7 +232,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
         auth()->user()->forceDelete();
         */
 
-        return redirect("/shopping/users/deleted")->with("success", "성공적으로 탈퇴되었습니다.");
+        return redirect("/")->with("success", "성공적으로 처리되었습니다.");
     }
 
     public function logout()

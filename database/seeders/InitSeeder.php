@@ -27,12 +27,6 @@ class InitSeeder extends Seeder
 {
     protected $user;
 
-    protected $singleProducts;
-
-    protected $dietProducts;
-
-    protected $dietIncludeProducts;
-
     protected $imgs = [
         "https://swiperjs.com/demos/images/nature-1.jpg",
         "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -76,7 +70,7 @@ class InitSeeder extends Seeder
             $user->delete();
         }
 
-        User::factory()->create([
+        $user = User::factory()->create([
             "email" => "girl@naver.com",
             "contact" => "01030217486",
             "name" => "여자1호",
@@ -104,7 +98,9 @@ class InitSeeder extends Seeder
             "password" => Hash::make("shin1109")
         ]);
 
-        User::factory()->create([
+        $user->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
+
+        $user = User::factory()->create([
             "email" => "men@naver.com",
             "contact" => "01030217486",
             "name" => "남자1호",
@@ -131,6 +127,9 @@ class InitSeeder extends Seeder
             "count_dating" => 0,
             "password" => Hash::make("shin1109")
         ]);
+
+        $user->addMediaFromUrl($this->imgs[rand(0, count($this->imgs) - 1)])->preservingOriginal()->toMediaCollection("img", "s3");
+
     }
 
     public function createPayMethods()

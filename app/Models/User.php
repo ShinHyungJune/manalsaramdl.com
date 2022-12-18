@@ -173,6 +173,11 @@ class User extends Authenticatable implements HasMedia
         return $this->sex == Sex::MEN ? "men_id" : "women_id";
     }
 
+    public function getPartnerRelation()
+    {
+        return $this->sex == Sex::MEN ? "women" : "men";
+    }
+
     public function feedbacks()
     {
         return $this->hasMany(Feedback::class);

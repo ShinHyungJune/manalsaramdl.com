@@ -20,7 +20,7 @@ class UserResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "img" => $this->img ? $this->img : "",
+            "img" => count($this->imgs) > 0 ? $this->imgs[0] : "",
             "imgs" => $this->imgs,
 
             "email" => $this->email,

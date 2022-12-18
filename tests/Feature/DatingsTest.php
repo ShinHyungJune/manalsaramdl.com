@@ -36,10 +36,17 @@ class DatingsTest extends TestCase
         ]);
 
         $this->patch("/datings/".$dating->id, [
+            "type" => "일정제안",
             "city1" => "123",
             "area1" => "123",
             "city2" => "123",
             "area2" => "123",
+
+            "schedule1" => "2014-12-12 15:43",
+            "schedule2" => "2014-12-12 15:43",
+            "schedule3" => "2014-12-12 15:43",
+            "schedule4" => "2014-12-12 15:43",
+            "schedule5" => "2014-12-12 15:43",
         ]);
 
         $dating = Dating::find($dating->id);
@@ -47,29 +54,9 @@ class DatingsTest extends TestCase
         $this->assertNotNull($dating->city1);
     }
 
-    /** @test */
     public function 주소가_있을_경우_여자는_장소확인여부를_수정할_수_있다 ()
     {
-        $this->user->update([
-            "sex" => Sex::WOMEN
-        ]);
 
-        $dating = Dating::factory()->create([
-            "women_id" => $this->user->id,
-            "address" => "123",
-            "address_detail" => "123123"
-        ]);
-
-        $this->patch("/datings/".$dating->id, [
-            "city1" => "123",
-            "area1" => "123",
-            "city2" => "123",
-            "area2" => "123",
-        ]);
-
-        $dating = Dating::find($dating->id);
-
-        $this->assertNotNull($dating->city1);
     }
 
     public function 남자는_최종일정과_주소를_수정할_수_있다 ()

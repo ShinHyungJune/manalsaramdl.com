@@ -17,7 +17,7 @@
                 <h1 class="logo">
                     <a href="/"></a>
                 </h1>
-                <div class="top-login" v-if="!user">
+                <div class="top-login" v-if="!$page.props.user">
                     <ul>
                         <li><a href="/login">Log in</a></li>
                         <li><a href="#">Sign up</a></li>
@@ -26,7 +26,7 @@
                 <div class="top-login" v-else>
                     <ul>
                         <li><a href="/logout">Logout</a></li>
-                        <li><a href="/datings" :class="user && user.alarm ? 'point' : ''">Mypage</a></li>
+                        <li><a href="/datings" :class="$page.props.user && $page.props.user.data.alarm ? 'point' : ''">Mypage</a></li>
                     </ul>
                 </div>
                 <div class="menu-bar">
@@ -74,7 +74,7 @@
                     <div class="mb-logo">
                         <img src="/images/LOGO.png" alt="insa-logo">
                     </div>
-                    <div class="mb-login" v-if="!user">
+                    <div class="mb-login" v-if="!$page.props.user">
                         <a href="/login">login</a>
                         <a href="/register">sign in</a>
                     </div>
@@ -94,11 +94,11 @@
                         </li>
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="/service_party.html">서비스</a>
+                                <a href="/partyProducts">서비스</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="/service_party.html">파티 신청</a>
+                                <a href="/partyProducts">파티 신청</a>
                                 <a href="/datingProducts">소개팅 신청</a>
                             </div>
                         </li>
@@ -125,7 +125,7 @@
                         </li>
                     </ul>
                     <div class="sns-wrap-mb">
-                        <a href="/logout" class="logout-btn">logout<i class="xi-log-out"></i></a>
+                        <a href="/logout" class="logout-btn">logout<i class="xi-log-out" v-if="$page.props.user"></i></a>
                         <a href="#"> <i class="utb youtube xi-youtube-play"></i></a>
                         <a href="#"> <i class="kakao speech xi-speech"></i></a>
                         <a href="#"> <i class="sns-icon naver xi-naver"></i></a>

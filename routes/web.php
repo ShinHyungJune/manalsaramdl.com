@@ -118,15 +118,16 @@ Route::middleware("guest")->group(function(){
     Route::post("/login", [\App\Http\Controllers\UserController::class, "login"]);
     Route::post("/register", [\App\Http\Controllers\UserController::class, "register"]);
     // Route::resource("/users", \App\Http\Controllers\UserController::class);
-    Route::patch("/passwordResets", [\App\Http\Controllers\PasswordResetController::class, "update"]);
-    Route::get("/passwordResets/{token}/edit", [\App\Http\Controllers\PasswordResetController::class, "edit"]);
-    Route::resource("/passwordResets", \App\Http\Controllers\PasswordResetController::class);
 
     Route::get("/findIds/create", [\App\Http\Controllers\FindIdController::class, "create"]);
     Route::get("/findIds/search", [\App\Http\Controllers\FindIdController::class, "search"]);
     Route::get("/users/deleted", [\App\Http\Controllers\UserController::class, "deleted"]);
 
 });
+
+Route::patch("/passwordResets", [\App\Http\Controllers\PasswordResetController::class, "update"]);
+Route::get("/passwordResets/{token}/edit", [\App\Http\Controllers\PasswordResetController::class, "edit"]);
+Route::resource("/passwordResets", \App\Http\Controllers\PasswordResetController::class);
 
 Route::resource("/notices", \App\Http\Controllers\Shopping\NoticeController::class);
 

@@ -269,6 +269,14 @@
     resize: none;
 }
 
+.mypage-edit .nonedit {background-color:#efefef;}
+.mypage-edit .nonedit p {color:#000 !important;}
+.mypage-edit .nonedit input {color:#000 !important;}
+.mypage-edit .form-box > li .user.col-group input,
+.mypage-edit .form-box > li .user.col-group > p {
+    width: 100%;
+}
+
 .form-box > li .user.col-group input,
 .form-box > li .user.col-group > p {
     width: calc(100% - 144px - 16px);

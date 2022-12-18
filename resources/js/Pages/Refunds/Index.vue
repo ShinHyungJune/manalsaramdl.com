@@ -41,6 +41,9 @@
                         </div>
                     </li>
                 </ul>
+
+                <div class="m-empty type01" v-if="refunds.data.length === 0">데이터가 없습니다.</div>
+
             </div>
         </div>
     </div>

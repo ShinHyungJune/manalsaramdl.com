@@ -19,17 +19,21 @@ class DatingController extends Controller
 
         $request["state"] = $request->state ?? "진행중";
 
-        $datings = auth()->user()->datings()->latest();
+        $datings = auth()->user()->datings()->has(auth()->user()->getPartnerRelation())->latest();
 
         if($request->state == "진행중")
-            $datings = $datings->where("scheduled_at", ">", Carbon::now())->orWhere("scheduled_at", null);
+            $datings = $datings->where(function($query){
+                return $query->where("scheduled_at", ">", Carbon::now())->orWhere("scheduled_at", null);
+            });
 
         if($request->state == "완료")
-            $datings = $datings->where("scheduled_at", "<=", Carbon::now())->where("scheduled_at", "!=", null);
+            $datings = $datings->where(function($query){
+                return $query->where("scheduled_at", "<=", Carbon::now())->where("scheduled_at", "!=", null);
+            });
 
         $datings = $datings->paginate(60);
 
-        $latestUnreadDating = auth()->user()->datings()->latest()->where(auth()->user()->getReadColumn(), false)->first();
+        $latestUnreadDating = auth()->user()->datings()->has(auth()->user()->getPartnerRelation())->latest()->where(auth()->user()->getReadColumn(), false)->first();
 
         return Inertia::render("Datings/Index", [
             "state" => $request->state,
