@@ -1,5 +1,6 @@
 <template>
     <div id="footer">
+
         <div class="footer-wrap">
             <a href="#" class="footer-logo">
                 <img src="/images/footer-logo.png" style="width: 134px; height: 42px;" alt="logo">

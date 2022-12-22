@@ -27,25 +27,27 @@
                         </form>
                     </div>
                     <ul class="coment-list">
-                        <li :class="item.important ? 'fix-list' : ''" v-for="item in items.data" :key="item.id">
-                            <div class="date">
-                                <span class="sticker pc" v-if="item.important">공지</span>
-                                <span :class="item.important ? 'fix-day' : 'day'">{{ item.date }}</span>
-                                <span class="year">{{ item.year }}.{{ item.month }}</span>
-                            </div>
-                            <div class="title-wrap notify">
-                                <div class="txt-wrap">
-                                    <a :href="`/partyNotices/${item.id}`">
-                                        <p class="title">{{ item.title }}</p>
-                                    </a>
-                                    <p class="con">
-                                        {{item.description.replace(/<\/?[^>]+>/ig, " ")}}
-                                    </p>
+                        <li v-for="item in items.data">
+                            <a :class="item.important ? 'fix-list' : ''" :key="item.id" :href="`/partyNotices/${item.id}`">
+                                <div class="date">
+                                    <span class="sticker pc" v-if="item.important">공지</span>
+                                    <span :class="item.important ? 'fix-day' : 'day'">{{ item.date }}</span>
+                                    <span class="year">{{ item.year }}.{{ item.month }}</span>
                                 </div>
-                            </div>
-                            <div class="detail-btn">
-                                <i class="xi-plus"></i>
-                            </div>
+                                <div class="title-wrap notify">
+                                    <div class="txt-wrap">
+                                        <div>
+                                            <p class="title">{{ item.title }}</p>
+                                        </div>
+                                        <p class="con">
+                                            {{item.description.replace(/<\/?[^>]+>/ig, " ")}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="detail-btn">
+                                    <i class="xi-plus"></i>
+                                </div>
+                            </a>
                         </li>
                     </ul>
 

@@ -209,7 +209,7 @@
                             사용 이용권
                         </p>
                         <div class="txt-box col-group">
-                            <img src="" alt="">
+                            <img src="/images/payment-icon-01.png" alt="">
                             <p class="txt">
                                 {{ user.count_matching_dating }}건
                             </p>
@@ -220,7 +220,7 @@
                             남은 이용권
                         </p>
                         <div class="txt-box col-group">
-                            <img src="" alt="">
+                            <img src="/images/payment-icon-02.png" alt="">
                             <p class="txt">
                                 {{ user.count_dating }}건
                             </p>
@@ -231,7 +231,7 @@
                             예약된 파티
                         </p>
                         <div class="txt-box col-group">
-                            <img src="" alt="">
+                            <img src="/images/payment-icon-03.png" alt="">
                             <p class="txt">{{ user.count_party }}건</p>
                         </div>
                     </li>
@@ -240,7 +240,7 @@
                             마감된 파티
                         </p>
                         <div class="txt-box col-group">
-                            <img src="" alt="">
+                            <img src="/images/payment-icon-04.png" alt="">
                             <p class="txt">{{ user.count_close_party }}건</p>
                         </div>
                     </li>

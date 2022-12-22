@@ -19,7 +19,9 @@
         <div class="main-container">
             <div class="party-contents">
                 <div class="container sub">
-                    <img :src="product.img ? product.img.url : ''" alt="">
+                    <div class="img-wrap">
+                        <img :src="product.img ? product.img.url : ''" alt="">
+                    </div>
                     <div class="party-reservation">
                         <div class="party-main">
                             <span class="party-date">{{ product.opened_at }}</span>
@@ -481,7 +483,7 @@
             <div class="notification-contents">
                 <div class="container">
                     <img class="phonephoto" src="/images/kakao-phone.png" alt="phone-image">
-                    <a><img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle"></a>
+                    <a href="http://pf.kakao.com/_kvwsxj"><img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle"></a>
                     <div class="notification-box">
                         <i class="xi-warning"></i>
                         <span class="box-title"> 필수 안내사항 </span>

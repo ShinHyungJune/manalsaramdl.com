@@ -26,7 +26,7 @@
     <meta name="twitter:domain" content="인사">
 
     <!-- 구글검색등록 -->
-    <meta name="google-site-verification" content="CeCigp8thU8ZQSSVvTSXIbrPg9R0545f6kcFZ2U6_QI" />
+    <meta name="google-site-verification" content="MpGSFJzfvoMQB4LaRNSrK419lLPHMFPmLd1MmZgZwGw" />
 
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
