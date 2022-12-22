@@ -2,7 +2,7 @@ $(document).ready(function () {
     AOS.init();
 
     //헤더 푸터 컴포넌트
-    $("#header").load("./components/header.html", function () {
+    $("#header").load("../components/header.html", function () {
 
         $(function () {
             $(".menu-bar").click(function () {
@@ -33,7 +33,7 @@ $(document).ready(function () {
 });
 
 
-    $("#footer").load("./components/footer.html", function () {
+    $("#footer").load("../components/footer.html", function () {
         // Top btn
         $(function () {
             $(window).scroll(function () {

@@ -92,6 +92,13 @@
     padding-left: 56px;
     padding-right: 56px;
     padding-bottom: 120px;
+    position: relative;
+}
+
+.mypage-wrap .right-wrap .kakao-btn {
+    position: absolute;
+    bottom: -150px;
+    right: 30px;
 }
 .mypage-wrap .right-wrap .title-wrap {
     padding-bottom: 40px;
@@ -132,6 +139,15 @@
     background: #d7a550;
     border: 1px solid #d7a550;
     color: #fff;
+}
+
+
+@media screen and (max-width: 1489px) {
+
+.mypage-wrap .right-wrap .kakao-btn {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 1280px) {
@@ -207,7 +223,6 @@
     }
     .mypage-wrap .right-wrap .title-wrap h2 {
         font-size: 22px;
-        width: fit-content;
     }
     .mypage-wrap .right-wrap .title-wrap .tab-link {
         gap: 8px;

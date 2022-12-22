@@ -720,6 +720,26 @@ a {
 } */
 
 /*  */
+@media screen and (max-width: 1489px) {
+    .chat-fixed.mb {
+        display: block;
+        width: 48px;
+        height: 48px;
+        background-color: #fae100;
+        border-radius: 50%;
+        text-align: center;
+        position: fixed;
+        top: 190px;
+        right: 40px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .chat-fixed.mb > a i {
+        font-size: 28px;
+        line-height: 48px;
+    }
+    }
 
 @media screen and (max-width: 768px) {
     .mb {
@@ -945,25 +965,20 @@ a {
         font-size: 32px;
         color: #fff;
     }
+        .chat-fixed.mb {
+            display: block;
+            width: 48px;
+            height: 48px;
+            background-color: #fae100;
+            border-radius: 50%;
+            text-align: center;
+            position: fixed;
+            top: 66px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }    
 
-    .chat-fixed.mb {
-        display: block;
-        width: 48px;
-        height: 48px;
-        background-color: #fae100;
-        border-radius: 50%;
-        text-align: center;
-        position: fixed;
-        top: 66px;
-        right: 10px;
-        cursor: pointer;
-        z-index: 1;
-    }
-
-    .chat-fixed.mb > a i {
-        font-size: 28px;
-        line-height: 48px;
-    }
 
     #footer span {
         text-align: center;

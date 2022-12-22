@@ -3023,6 +3023,29 @@ color: #fff;
     width: 100%;
     padding: 120px 0;
     justify-content: space-evenly;
+    gap:88px;
+}
+
+.main-container .party-contents .container.sub .img-wrap{
+    max-width: 607px;
+    max-height: 511px;
+    position: relative;
+}
+
+.main-container .party-contents .container.sub .img-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-container .party-contents .container.sub .img-wrap::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width:100%;
+    height: 511px;
+    left: 33px;
+    top:29px;
+    border: solid 1px #e1bf87;
 }
 
 .main-container .party-reservation {
@@ -3758,7 +3781,10 @@ color: #fff;
 }
 
 .notification-container .notification-contents .container .kakao-cir {
-    display: none;
+    display: block;
+    position: absolute;
+    bottom: 79px;
+    right: -200px;
 }
 
 .notification-container .notification-contents .container .phonephoto {
@@ -4175,6 +4201,23 @@ color: #fff;
     background-color: #404040;
 }
 
+@media screen and (max-width: 1730px) {
+
+.notification-container .notification-contents .container .kakao-cir {
+    display: block;
+    position: absolute;
+    bottom: 79px;
+    right: -100px;
+}
+}
+@media screen and (max-width: 1489px) {
+
+    .notification-container .notification-contents .container .kakao-cir {
+        display: none;
+    }
+
+    }
+
 /* 와인파티 */
 @media screen and (max-width: 1220px) {
     .party-contents .container {
@@ -4186,6 +4229,30 @@ color: #fff;
         flex-direction: column;
         position: relative;
     }
+
+    .main-container .party-contents .container.sub .img-wrap{
+        max-width: 537px;
+        min-width: 537px;
+        height: 400px;
+        position: relative;
+    }
+    
+    .main-container .party-contents .container.sub .img-wrap img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .main-container .party-contents .container.sub .img-wrap::after{
+        position: absolute;
+        display: block;
+        content: "";
+        width:100%;
+        height: 400px;
+        left: 17px;
+        top:15px;
+        border: solid 1px #e1bf87;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -4359,11 +4426,12 @@ color: #fff;
         display: flex;
         flex-direction: column;
         gap: 23.9px;
+        min-width: 335px;
+        padding: 0 20px;
     }
 
     .application-container .qualifiction-contents .step-3-consult > img {
-        width: 335px;
-        height: 417.7px;
+        width: 100%;
     }
 
     .party-place .swiper-wrapper .swiper-slide {
@@ -4486,10 +4554,7 @@ color: #fff;
     }
 
     .notification-container .notification-contents .container .kakao-cir {
-        display: block;
-        position: absolute;
-        top: 340px;
-        right: 0;
+        display: none;
     }
 
     .notification-container .notification-contents .notification-box {
@@ -4554,6 +4619,44 @@ color: #fff;
 
 }
 
+
+
+
+@media screen and (max-width: 601px) {
+
+.main-container .party-contents .container.sub .img-wrap{
+    max-width: 318px;
+    min-width: 318px;
+    height: 267px;
+    position: relative;
+}
+
+.main-container .party-contents .container.sub .img-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-container .party-contents .container.sub .img-wrap::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width:100%;
+    height: 267px;
+    left: 17px;
+    top:15px;
+    border: solid 1px #e1bf87;
+}
+.party-info .refund-box > li .default {
+    width: 59px;
+}
+
+}
+
+
+
+
+
+
 @media screen and (max-width: 375px) {
     .application-container .food-contents .title {
         font-size: 24px;
@@ -4597,15 +4700,20 @@ color: #fff;
 }
 
 /* 파티 목록 */
+
 .party-list {
     gap: 40px;
     flex-flow: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width: 1200px; */
+    max-width: 1112px;
+
+    
 }
 .party-box {
     width: calc((100% - 40px * 2) / 3);
     height: 540px;
+    min-width: 344px;
+    max-width: 344px;
 }
 
 .application-container-party .tab-content .party-list .party-box > a {
@@ -6133,13 +6241,24 @@ td {
 .News .coment-list {
     border-top: solid 2px #716766;
 }
-.News .coment-list li {
+
+.News .coment-list li a {
     display: flex;
     align-items: center;
     padding: 36px 40px;
     justify-content: space-between;
     transition: all 0.3s;
     border-bottom: 1px solid #e6e6e6;
+}
+
+.News .coment-list li .fix-list{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 36px 40px;
+  justify-content: space-between;
+  transition: all 0.3s;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .News .coment-list li:nth-child(6) {
@@ -6725,7 +6844,7 @@ td {
 
 /* 리뷰 */
 .review .main-container {
-    padding: 80px 0;
+    padding: 80px 20px;
 }
 .review .sub-top {
     padding-bottom: 40px;
