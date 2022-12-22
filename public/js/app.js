@@ -55476,7 +55476,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-group" }, [
           _c("ul", { staticClass: "col-group" }, [
             _c("li", [
-              _c("a", { attrs: { href: "/privacy02" } }, [
+              _c("a", { attrs: { href: "/privacy01" } }, [
                 _vm._v("개인정보처리방침"),
               ]),
             ]),
@@ -55488,7 +55488,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { attrs: { href: "story.html" } }, [_vm._v("회사소개")]),
+              _c("a", { attrs: { href: "/story" } }, [_vm._v("회사소개")]),
             ]),
           ]),
         ]),

@@ -7,9 +7,9 @@
             </a>
             <div class="col-group">
                 <ul class="col-group">
-                    <li><a href="/privacy02">개인정보처리방침</a></li>
+                    <li><a href="/privacy01">개인정보처리방침</a></li>
                     <li><a href="/privacy02">이용약관 및 환불규정</a></li>
-                    <li><a href="story.html">회사소개</a></li>
+                    <li><a href="/story">회사소개</a></li>
                 </ul>
             </div>
             <span>대표 : 이태현 &nbsp; 주소 : 서울특별시 강남구 영동대로 602, 6층 &nbsp;<br class="mb" />대표전화 : 1660-1369 &nbsp; 이메일 : cs@insacompany.com  &nbsp; 사업자등록번호 : 481-17-02165</span>

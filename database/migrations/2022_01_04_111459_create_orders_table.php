@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->foreign("user_id")->on("users")->references("id");
             $table->string("user_name")->nullable(); // 주문자명
 
+            $table->string("product_title")->nullable(); // 상품명
 
             // 결제수단
             $table->unsignedBigInteger("pay_method_id");
