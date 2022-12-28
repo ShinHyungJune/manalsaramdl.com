@@ -503,6 +503,9 @@
                         <div class="title-wrap profile-wrap">
                             <img src="/images/crown2.png" alt="">
                             <div class="user-profile">
+                                <div class="img-wrap">
+                                    <img src="/images/crown2.png" alt="">
+                                </div>
                                 <div class="user-photo">
                                     <div class="img-box">
                                         <img :src="partner(targetFeedbackDating).img ? partner(targetFeedbackDating).img.url : ''" alt="">

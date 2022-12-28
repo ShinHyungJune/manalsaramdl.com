@@ -312,7 +312,7 @@
                                 <li>
                                     <span class="cir s-4"></span>
                                     <span class="cirb b-4">04</span>
-                                    <b>남녀 동일한 비용</b>
+                                    <b>남녀 동일한 비용</b><br class="br-m"/>
                                     (나이, 프로그램에 따라 상이)
                                 </li>
                                 <li>
@@ -323,7 +323,7 @@
                                 <li>
                                     <span class="cir s-6"></span>
                                     <span class="cirb b-6">06</span>
-                                    매너, 호감도<b>피드백을 통한</b>회원 검증
+                                    매너, 호감도<b>피드백을 통한</b> 회원 검증
                                 </li>
                             </ul>
                         </div>
