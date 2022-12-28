@@ -33,6 +33,7 @@ Route::get('/privacy02', [\App\Http\Controllers\PageController::class, "privacy0
 Route::get('/privacy03', [\App\Http\Controllers\PageController::class, "privacy03"]);
 Route::get('/datingProducts', [\App\Http\Controllers\DatingProductController::class, "index"]);
 Route::get('/partyProducts', [\App\Http\Controllers\PartyController::class, "index"]);
+Route::get('/partyProducts/{product}', [\App\Http\Controllers\PartyController::class, "show"]);
 Route::get('/partyOrderProducts', [\App\Http\Controllers\PartyOrderProductController::class, "index"]);
 Route::get('/datingReviews', [\App\Http\Controllers\DatingReviewController::class, "index"]);
 Route::get('/datingReviews/{review}', [\App\Http\Controllers\DatingReviewController::class, "show"]);
@@ -72,7 +73,6 @@ Route::middleware("auth")->group(function(){
 
 Route::middleware("auth")->group(function(){
     Route::get("/logout", [\App\Http\Controllers\UserController::class, "logout"]);
-    Route::get('/partyProducts/{product}', [\App\Http\Controllers\PartyController::class, "show"]);
 
 });
 

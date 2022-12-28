@@ -70,7 +70,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="party-request" @click="active = true">파티예약</button>
+                        <button class="party-request" @click="activate">파티예약</button>
                     </div>
                 </div>
             </div>
@@ -539,10 +539,17 @@ export default {
             agree1: 0,
             agree2: 0,
             active: false,
-            user: this.$page.props.user.data,
+            user: this.$page.props.user ? this.$page.props.user.data : "",
         }
     },
     methods: {
+        activate(){
+            if(this.user)
+                return this.active = true;
+
+            return alert("로그인 후 이용해주세요.");
+        },
+
         order() {
             if (!this.agree1 || !this.agree2)
                 return alert("필수 약관에 동의해주세요.");
