@@ -473,7 +473,8 @@
 }
 
 .loginpage.login .login-wrap-main {
-    width: 656px;
+    width: 100%;
+    max-width: 656px;
     padding: 72px 48px 48px;
     margin-top: 40px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
@@ -1288,111 +1289,117 @@ input[type="text"] {
         margin-top: 20px;
     }
 }
+@media screen and (max-width: 680px) {
+        .login-wrap {
+            min-height: calc(100vh - 305.1px);
+            margin: 0 auto;
+        }
+    
+        .loginpage.login .login-header .login-logo {
+            width: 80px;
+        }
+    
+        .loginpage.login .login-header {
+            padding-top: 20px;
+        }
+    
+        .loginpage.login .login-header .login-header-title {
+            font-family: "Nanum Myeongjo", serif;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+    
+        .loginpage.login .login-header .login-header-title {
+            margin: 10px 0;
+        }
+    
+        .loginpage.login .login-header .login-line-img {
+            width: 200px;
+        }
+    
+        .loginpage.login .login-header .login-header-sub {
+            margin: 10px 0;
+            font-size: 15px;
+        }
+    
+        .loginpage.login .login-title > h2 {
+            margin-top: 10px;
+            font-size: 40px;
+        }
+    
+        .loginpage.login .login-wrap-main {
+            width: calc(100% - 30px);
+            margin: 0px auto;
+            padding: 20px 0px;
+        }
+    
+        .loginpage.login .login-form-wrap {
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+        .loginpage.login .login-form-wrap .login-form {
+            gap: 10px;
+        }
+        .loginpage.login .login-form-wrap .login-form input {
+            height: 40px;
+            line-height: 15px;
+            font-size: 15px;
+        }
+        .loginpage.login .login-main .login-btn {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            margin: 16px 0;
+        }
+    
+        .loginpage.login .login-main .find-list > li > a {
+            color: #c1c1c1;
+            padding: 0 30px;
+        }
+        .loginpage.login .login-main .find-list > li:nth-child(1)::after {
+            left: 165px;
+        }
+    
+        .loginpage.login .login-sns {
+            margin: 30px 0;
+            width: 100%;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 64px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .loginpage.login .login-sns .sns-login-wrap > p {
+            font-size: 15px;
+        }
+    
+        .loginpage.login .sns-login-list {
+            gap: 10px;
+        }
+    
+        .loginpage.login .login-footer {
+            /* width: 345px; */
+            width: 96%;
+            background-color: #e1bf87;
+    
+            padding: 15px 22px;
+        }
+        .loginpage.login .login-footer .member-benefit-btn > p {
+            font-size: 18px;
+        }
+        .loginpage.login .login-footer .member-benefit-btn > p > span {
+            font-size: 13px;
+        }
+        .loginpage.login .login-footer .member-benefit-btn > p > span::before {
+            height: 13px;
+        }
+        .loginpage.login .login-main .find-list > li:nth-child(1)::after {
+            left: 49.5%;
+        }
+}
 
 @media screen and (max-width: 375px) {
-    .login-wrap {
-        min-height: calc(100vh - 305.1px);
-        margin: 0 auto;
-    }
-
-    .loginpage.login .login-header .login-logo {
-        width: 80px;
-    }
-
-    .loginpage.login .login-header {
-        padding-top: 20px;
-    }
-
-    .loginpage.login .login-header .login-header-title {
-        font-family: "Nanum Myeongjo", serif;
-        font-size: 18px;
-        padding: 10px 0;
-    }
-
-    .loginpage.login .login-header .login-header-title {
-        margin: 10px 0;
-    }
-
-    .loginpage.login .login-header .login-line-img {
-        width: 200px;
-    }
-
-    .loginpage.login .login-header .login-header-sub {
-        margin: 10px 0;
-        font-size: 15px;
-    }
-
-    .loginpage.login .login-title > h2 {
-        margin-top: 10px;
-        font-size: 40px;
-    }
-
-    .loginpage.login .login-wrap-main {
-        width: calc(100% - 30px);
-        margin: 0px auto;
-        padding: 20px 0px;
-    }
-
-    .loginpage.login .login-form-wrap {
-        margin-top: 20px;
-        padding: 0 20px;
-    }
-    .loginpage.login .login-form-wrap .login-form {
-        gap: 10px;
-    }
-    .loginpage.login .login-form-wrap .login-form input {
-        height: 40px;
-        line-height: 15px;
-        font-size: 15px;
-    }
-    .loginpage.login .login-main .login-btn {
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        font-size: 15px;
-        margin: 16px 0;
-    }
-
-    .loginpage.login .login-main .find-list > li > a {
-        color: #c1c1c1;
-        padding: 0 30px;
-    }
-    .loginpage.login .login-main .find-list > li:nth-child(1)::after {
-        left: 165px;
-    }
-
-    .loginpage.login .login-sns {
-        margin: 30px 0;
-        width: 100%;
-        padding: 0 20px;
-        font-size: 18px;
-        line-height: 64px;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .loginpage.login .login-sns .sns-login-wrap > p {
-        font-size: 15px;
-    }
-
-    .loginpage.login .sns-login-list {
-        gap: 10px;
-    }
-
-    .loginpage.login .login-footer {
-        width: 345px;
-        background-color: #e1bf87;
-
-        padding: 15px 22px;
-    }
-    .loginpage.login .login-footer .member-benefit-btn > p {
-        font-size: 18px;
-    }
-    .loginpage.login .login-footer .member-benefit-btn > p > span {
-        font-size: 13px;
-    }
-    .loginpage.login .login-footer .member-benefit-btn > p > span::before {
-        height: 13px;
-    }
     #theme {
         height: 40px;
     }
@@ -1408,6 +1415,7 @@ input[type="text"] {
         font-size: 12px;
     }
 }
+
 
 /* 인증방법으로 아이디 찾기 - 인증 */
 @media screen and (max-width: 375px) {

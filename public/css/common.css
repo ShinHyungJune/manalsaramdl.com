@@ -664,6 +664,13 @@ height: 48px;
     background-position: center;
 }
 
+.mypage .banner-wrap .banner-container {
+    background: url(../images/sub-top-05.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .banner-wrap .banner-container .banner-contents {
     height: 100%;
     display: flex;

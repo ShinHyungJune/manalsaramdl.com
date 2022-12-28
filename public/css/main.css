@@ -512,7 +512,7 @@
 }
 .modal-wrap .profile-wrap .left-wrap .user-profile {
     width: 100%;
-    background: #f5f1eb;
+    /* background: #f5f1eb; */
     padding: 24px 40px;
     text-align: center;
 }
@@ -632,6 +632,10 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+.modal-wrap .profile-wrap .btn-wrap .kakao-btn {
+    position: unset;
+
 }
 .modal-wrap .profile-wrap .btn-wrap .kakao-btn i {
     font-size: 30px;
@@ -2310,6 +2314,8 @@ color: #fff;
 
 /* main */
 
+.br-m{display: none;}
+
 @media screen and (max-width: 1440px) {
     .main-banner .banner-contents {
         width: 100%;
@@ -2466,6 +2472,8 @@ color: #fff;
     }
 }
 @media screen and (max-width: 768px) {
+    .br-m{display: block;}
+    
     .main-section.sec-1 .container {
         padding: 0 20px;
     }
@@ -2580,13 +2588,22 @@ color: #fff;
     }
     .main-section.sec-4 .main-content .warning-container.mb .scroll-img {
         position: absolute;
-        right: 25px;
+        left: 25px;
+        z-index: -1;
     }
     .main-section.sec-4 .main-content .service-table.mb {
         display: flex;
-        justify-content: center;
         overflow-x: scroll;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+    
     }
+    .main-section.sec-4 .main-content .service-table.mb img{
+        width:150%;
+        padding-left: 190px;
+    }
+
 
     .main-section.sec-4 .main-content .container.mb {
         display: block;
@@ -2839,6 +2856,14 @@ color: #fff;
     }
 }
 
+@media screen and (max-width: 500px) {
+    .main-section.sec-4 .main-content .service-table.mb img{
+        width: 130%;
+        padding-left: 80px;
+    }
+}
+
+
 /* subpage - story */
 
 .sub-banner .subpage-info {
@@ -2862,7 +2887,7 @@ color: #fff;
 .subpage-info .test-section .img-box {
     width: calc((100% - 80px) / 2);
     max-width: 520px;
-    height: 758px;
+    height: auto;
     position: relative;
     margin-top: 50px;
 }
@@ -3003,6 +3028,10 @@ color: #fff;
         transform: rotate(180deg);
         position: absolute;
         right: -20px;
+    }
+
+    .subpage-info .test-section .img-box::after{
+        display: none;
     }
 }
 
