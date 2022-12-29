@@ -691,10 +691,25 @@
         font-size: 24px;
         line-height: 48px;
     }
+
 }
 /* //modal- 프로필 */
 
 /* modal- 소개팅 후기 */
+.subpage.review .banner-wrap .banner-container {
+    width: 100%;
+    background-image: url(../images/sub-top-03.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 .modal-wrap.review .profile-wrap .user-profile .user-photo {
     margin: 0 auto 24px;
 }
@@ -1270,14 +1285,12 @@ color: #fff;
     white-space: nowrap;
 }
 .toggle_txt1 {
-    width: 442px;
     animation-name: toggletxt1;
     animation-duration: 12s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
 .toggle_txt2 {
-    width: 116px;
     animation-name: toggletxt2;
     animation-duration: 12s;
     animation-direction: alternate;
@@ -1324,11 +1337,10 @@ color: #fff;
 @media screen and (max-width: 1440px) {
     .main-banner .banner-contents {
         width: 100%;
-        max-width: 280px;
+        max-width: 400px;
         align-items: flex-start;
         text-align: left;
         gap: 32px;
-        margin-top: 0;
     }
     .main-banner .banner-contents .banner-title .pc {
         display: none;
@@ -1346,21 +1358,18 @@ color: #fff;
         font-size: 16px;
     }
     .toggle_txt1 {
-        width: 160px;
         animation-name: toggletxt1;
         animation-duration: 12s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
     .toggle_txt2 {
-        width: 165px;
         animation-name: toggletxt2;
         animation-duration: 12s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
     .toggle_txt3 {
-        width: 90px;
         animation-name: toggletxt3;
         animation-duration: 12s;
         animation-direction: alternate;
@@ -1795,7 +1804,9 @@ color: #fff;
 
 /* sec4-title */
 .content-sub {
-    display: none;
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 20px;
+    margin-bottom: 5%;
 }
 
 .content-title {
@@ -1815,14 +1826,12 @@ color: #fff;
     white-space: nowrap;
 }
 .content-title .toggle_txt1 {
-    width: 686px;
     animation-name: contenttxt1;
     animation-duration: 12s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
 .content-title .toggle_txt2 {
-    width: 182px;
     animation-name: contenttxt2;
     animation-duration: 12s;
     animation-direction: alternate;
@@ -1909,7 +1918,7 @@ color: #fff;
 }
 
 .main-section.sec-5 .container .main-service {
-    margin: 120px 0 80px 0;
+    margin: 10% 0 5%;
     padding: 10% 0 15%;
     background: url(../images/main-service-bg.svg);
     background-repeat: no-repeat;
@@ -1959,9 +1968,6 @@ color: #fff;
     width: 100%;
 }
 
-.main-section.sec-6 .container {
-    padding: 50px 100px;
-}
 
 .main-section.sec-6 .main-choice {
     display: flex;
@@ -1970,10 +1976,6 @@ color: #fff;
     width: 100%;
 }
 
-.main-section.sec-6 .main-choice .choice-title > img {
-    width: 171px;
-    height: 65px;
-}
 
 .main-section.sec-6 .main-choice .choice-title > p {
     font-family: "Nanum Myeongjo", serif;
@@ -2067,10 +2069,7 @@ color: #fff;
     padding: 80px 0;
 }
 
-.main-section.sec-7 .main-only .only-title > img {
-    width: 171px;
-    height: 65px;
-}
+
 
 .main-section.sec-7 .main-only .only-title > p {
     font-size: 56px;
@@ -2324,13 +2323,7 @@ color: #fff;
 
 
 @media screen and (max-width: 1440px) {
-    .main-banner .banner-contents {
-        width: 100%;
-        align-items: flex-start;
-        text-align: left;
-        gap: 32px;
-        margin-top: 0;
-    }
+
     .main-banner .banner-contents .banner-title .pc {
         display: none;
     }
@@ -2348,33 +2341,29 @@ color: #fff;
         margin-bottom: 16px;
     }
     
-    .main-banner .banner-contents .banner-text {
+    .banner-contents .banner-text {
         line-height: 1.5;
         font-size: 16px;
     }
     .banner-title .toggle_txt1 {
-        width: 160px;
         animation-name: toggletxt1;
         animation-duration: 12s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
     .banner-title .toggle_txt2 {
-        width: 175px;
         animation-name: toggletxt2;
         animation-duration: 12s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
     .banner-title .toggle_txt2_mb {
-        width: 140px;
         animation-name: toggletxt2_mb;
         animation-duration: 12s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
     .banner-title .toggle_txt3 {
-        width: 90px;
         animation-name: toggletxt3;
         animation-duration: 12s;
         animation-direction: alternate;
@@ -2489,6 +2478,10 @@ color: #fff;
 }
 @media screen and (max-width: 768px) {
     
+    .hidden-sm{
+        display: none;
+    }
+
     .main-banner .banner-contents {
         width: 100%;
         align-items: center;
@@ -2614,7 +2607,7 @@ color: #fff;
     }
     .main-section.sec-4 .main-content .warning-container.mb .scroll-img {
         position: absolute;
-        left: 25px;
+        right: 25px;
         z-index: -1;
     }
     .main-section.sec-4 .main-content .service-table.mb {
@@ -2626,7 +2619,7 @@ color: #fff;
     
     }
     .main-section.sec-4 .main-content .service-table.mb img{
-        width:110%;
+        width:150%;
     }
 
 
@@ -2672,7 +2665,7 @@ color: #fff;
         .container.mb
         .content-container
         .banner-title {
-        padding: 30px;
+        padding: 30px 0;
         font-size: 24px;
         line-height: 1.42;
         letter-spacing: 1.2px;
@@ -2748,9 +2741,7 @@ color: #fff;
         width: 100%;
         height: 50px;
     }
-    .main-section.sec-6 .container {
-        padding: 0px 73px;
-    }
+
     .main-section.sec-6 .main-choice .choice-title > img {
         width: 88px;
         height: 32px;
@@ -2796,6 +2787,7 @@ color: #fff;
     }
     .main-section.sec-7 .main-only .only-container {
         width: 100%;
+        padding: 0;
     }
 
     .main-section.sec-7 .main-only .only-container > ul > li {
@@ -2810,12 +2802,11 @@ color: #fff;
         letter-spacing: -0.3px;
     }
     .main-section.sec-7 .main-only .only-container > ul > li > .cir {
-        width: 48.6px;
-        height: 48.6px;
+        display: none;
     }
     .main-section.sec-7 .main-only .only-container > ul > li > .cirb {
-        width: 38.2px;
-        height: 38.2px;
+        width: 38px;
+        height: 38px;
         font-size: 14px;
         line-height: 38.2px;
         top: 50%;
@@ -2823,30 +2814,30 @@ color: #fff;
         left: -10px;
     }
     .main-section.sec-7 .main-only .only-container > ul > li::before {
-        width: 19.1px;
-        height: 19.1px;
-        border: solid 4px #e0d4c2;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -50px;
+        display: none;
     }
     .main-section.sec-7 .main-only .only-container .only-list {
-        padding-left: 50px;
+        padding-left: 5%;
+        width: 100%;
+        padding-bottom: 10%;
     }
     .main-section.sec-7 .main-only .only-container .only-list::after {
-        left: 13px;
-
-        border-left: dotted 2px #d1d1d1;
+        display: none;
     }
+
+    .main-section.sec-8 {
+        background-image: url(../images/main-bg-02-m.png);
+    }
+
     .main-section.sec-8 .main-footer {
         width: 100%;
     }
     .main-section.sec-8 .main-footer > img {
-        height: 407.4px;
+        height: 407px;
         width: 100%;
     }
     .main-section.sec-8 .main-footer .main-footer-content {
-        padding-right: 40px;
+        padding-top: 50%;
     }
 
     .main-section.sec-8 .main-footer .main-footer-content > p {
@@ -2866,7 +2857,10 @@ color: #fff;
 
 @media screen and (max-width: 500px) {
     .main-section.sec-4 .main-content .service-table.mb img{
-        width: 150%;
+        width: 280%;
+    }
+    .main-section.sec-8 .main-footer .main-footer-content {
+        padding-top: 80%;
     }
 }
 
@@ -3017,21 +3011,48 @@ color: #fff;
 @media screen and (max-width: 768px) {
     .subpage-info .test-section {
         width: 100%;
-        padding: 50px 20px 40px;
+        padding: 40px 0;
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
 
-    .subpage-info .test-section .story-contents p {
-        font-size: 14px;
-        line-height: 1.43;
-        letter-spacing: -0.35px;
+    .subpage-info .test-section .img-box {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .subpage-info .test-section .story-contents .story-top {
+        width: 100%;
+        gap: 0;
+        margin-bottom: 24px;
+        flex-direction: column;
+    }
+
+    .subpage-info .test-section .story-contents .story-top .story-title {
+        height: 80px;
+        line-height: 1;
+    }
+
+    .subpage-info .test-section .story-contents .story-top .story-line {
+        width: 2px;
+        height: 80px;
+    }
+
+    .subpage-info .test-section .story-contents .story-explanation {
+        font-size: 15px;
+        line-height: 1.8;
+        letter-spacing: 0;
+        width: 80%;
+        margin: 0 auto 48px;
+        text-align: center;
     }
 
     .subpage .subpage-under {
         z-index: -2;
+        opacity: 40%;
     }
 
     .subpage .subpage-under .subpage-under-text {
@@ -3046,11 +3067,15 @@ color: #fff;
     .subpage-info .test-section .img-box::after{
         display: none;
     }
+
+
+
 }
 
 /* 파티서비스 - 파티신청 */
 
 /* 와인서비스 */
+
 
 .sub-banner .banner-container {
     background-image: url(../images/sub-top-02.png);
@@ -3389,6 +3414,11 @@ color: #fff;
 }
 
 /* 파티 서비스 */
+
+
+.crown2{
+    max-width: 80px;
+}
 
 .application-container-party .tab-content {
     display: none;
@@ -3784,6 +3814,9 @@ color: #fff;
     position: relative;
     gap: 24px;
 }
+.progress-container .progress-contents .progress-box.mb{
+    display: none;
+}
 
 .progress-container .progress-contents .progress-box img {
     /* width: calc((100% - 24px * 3) / 4); */
@@ -3888,6 +3921,10 @@ color: #fff;
     border-bottom: 1px dotted black;
 }
 
+.notification-container .notification-contents .notification-box .notification-list > li p{
+    width: 90%;
+}
+
 .notification-container
     .notification-contents
     .notification-box
@@ -3896,14 +3933,7 @@ color: #fff;
     border: none;
 }
 
-.notification-container
-    .notification-contents
-    .notification-box
-    .notification-list
-    > li
-    p {
-    word-break: keep-all;
-}
+
 .notification-container
     .notification-contents
     .notification-box
@@ -3938,7 +3968,7 @@ color: #fff;
 
 .subpage.application .banner-wrap .banner-container {
     width: 100%;
-    background-image: url(../images/sub-top-01.png);
+    background-image: url(../images/sub-top-02.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -4465,6 +4495,17 @@ color: #fff;
         font-size: 24px;
         padding: 0;
     }
+
+    .application-container .food-contents .title-num{
+        font-size: 16px;
+        padding: 8px 0;
+    }
+
+    .application-container .food-contents .title{
+        font-size: 24px;
+        padding: 0;
+    }
+
     .application-container .qualifiction-contents .line-short {
         width: 168px;
         height: 32px;
@@ -4523,7 +4564,12 @@ color: #fff;
     .progress-container {
         padding: 0;
     }
-
+    .progress-container .progress-contents .progress-box.pc{
+        display: none;
+    }
+    .progress-container .progress-contents .progress-box.mb{
+        display: block;
+    }
     .progress-container .progress-box {
         flex-direction: column;
         gap: 16px;
@@ -4538,7 +4584,7 @@ color: #fff;
     }
 
     .progress-container .progress-contents .progress-box li {
-        height: 326px;
+        height: auto;
     }
 
     .progress-container .progress-contents .progress-line.mb {
@@ -4632,10 +4678,17 @@ color: #fff;
         flex-direction: column;
         padding-top: 20px;
     }
+    .progress-container .progress-contents .title-num {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+    .progress-container .progress-contents .title{
+        font-size: 24px;
+    }
 
     .default-container .default-box .debox {
         width: 100%;
-        min-height: 418px;
+        height: auto;
         padding: 20px 30px;
     }
 
@@ -4674,7 +4727,7 @@ color: #fff;
 
 .main-container .party-contents .container.sub .img-wrap{
     max-width: 318px;
-    min-width: 318px;
+    min-width: 90%;
     height: 267px;
     position: relative;
 }
@@ -4695,7 +4748,7 @@ color: #fff;
     border: solid 1px #e1bf87;
 }
 .party-info .refund-box > li .default {
-    width: 59px;
+    width: 20%;
 }
 
 }
@@ -4738,13 +4791,6 @@ color: #fff;
         font-size: 12px;
         border: solid 1px #8b8b8b;
     }
-
-    .notification-container .notification-contents .container .kakao-cir {
-        display: block;
-        position: absolute;
-        top: 340px;
-        right: 0;
-    }
 }
 
 /* 파티 목록 */
@@ -4760,7 +4806,6 @@ color: #fff;
 .party-box {
     width: calc((100% - 40px * 2) / 3);
     height: 540px;
-    min-width: 344px;
     max-width: 344px;
 }
 
@@ -4931,6 +4976,7 @@ color: #fff;
 @media screen and (max-width: 768px) {
     .party-box {
         width: 100%;
+        height: 440px;
     }
     .party-box > a {
         padding: 0 16px 16px;
@@ -5237,7 +5283,12 @@ color: #fff;
 
 .subpage .service-contents .step-1 .step-1-consult {
     display: flex;
-    gap: 62px;
+    gap: 48px;
+    justify-content: center;
+}
+
+.subpage .service-contents .step-1 .step-1-consult.mb{
+    display: none;
 }
 
 .subpage .service-contents .step-1 .step-1-consult > img {
@@ -5364,11 +5415,11 @@ color: #fff;
 
 .step-5 .step-container {
     width: 100%;
-    height: 460px;
     background-image: url(../images/date-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 5% 0;
 }
 
 .step-5 .step-container .step-container-contents {
@@ -5466,11 +5517,11 @@ color: #fff;
 
 .step-7 .step-container {
     width: 100%;
-    height: 460px;
     background-image: url(../images/consulting-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 5% 0;
 }
 
 .step-7 .step-container .step-container-contents {
@@ -5739,16 +5790,17 @@ td {
     }
 
     .subpage .main-container .start-contents p:nth-child(2) {
-        font-size: 20px;
+        font-size: 18px;
         letter-spacing: -0.5px;
-        padding: 20px 47px;
+        padding: 20px 0px;
+        width: 100%;
+        margin: 24px 0;
     }
     /* service-contents */
     .subpage .main-container .service-contents {
         width: calc(100% - 40px);
         margin: 0 auto;
         padding: 0;
-        /* background-color: salmon; */
     }
     .subpage .main-container .service-contents > img {
         width: 120px;
@@ -5822,14 +5874,34 @@ td {
         display: flex;
         gap: 20px;
         justify-content: flex-end;
+        padding: 5% 0;
     }
     .subpage .main-container .service-contents .service-step .step-box {
         width: calc((100% - 40px) / 2);
         height: unset;
         margin: 0;
+        padding-top: 10%;
         padding-bottom: 24px;
         margin-bottom: 55px;
     }
+    .subpage .main-container .service-contents .service-step .step-box7{
+        margin-bottom: 0;
+    }
+
+    .subpage .main-container .service-contents .service-step .step-box .step-img {
+        width: 80px;
+        top: -40%;
+    }
+    .subpage .service-contents .service-step .step-box .squair p:nth-child(1){
+        font-size: 14px;
+        margin-top: 20%;
+    }
+    .subpage .service-contents .service-step .step-box .squair p:nth-child(2){
+        font-size: 17px;
+        margin-top: 16px;
+    }
+
+
     .subpage
         .main-container
         .service-contents
@@ -5870,6 +5942,7 @@ td {
     .subpage .service-contents .step-1 {
         width: calc(100% - 40px);
         margin: 40px auto;
+        padding-bottom: 0;
     }
 
     .subpage .service-contents .step-1 > img {
@@ -5885,10 +5958,20 @@ td {
     }
     .subpage .service-contents .step-1 .sub-title {
         font-size: 16px;
-        margin: 10px 0;
+        margin: 10px 0 24px;
     }
+
+    .subpage .service-contents .step-1 .step-1-consult.pc{
+        display: none;        
+    }
+
+    .subpage .service-contents .step-1 .step-1-consult.mb{
+        display: block;        
+    }
+
     .subpage .service-contents .step-1 .step-1-consult > img {
-        width: 335px;
+        width: 100%;
+        margin-bottom: 5%;
     }
 
     /* step-2 */
@@ -5909,10 +5992,10 @@ td {
         word-break: keep-all;
         line-height: 1.5;
         letter-spacing: -0.4px;
+        margin: 10px 0 24px;
     }
     .subpage .service-contents .step-2 .step-2-consult img {
-        width: 335px;
-        height: 497px;
+        width: 100%;
     }
     .subpage .service-contents .step-2 .step-2-consult {
         flex-direction: column;
@@ -5934,6 +6017,7 @@ td {
     }
     .subpage .service-contents .step-3 .step-3-consult .matching-m {
         display: block;
+        width: 100%;
     }
 
     .subpage .service-contents .step-3 .title-num {
@@ -5948,6 +6032,10 @@ td {
         word-break: keep-all;
         line-height: 1.5;
         letter-spacing: -0.4px;
+        margin: 10px 0 24px;
+    }
+    .subpage .service-contents .step-4{
+        padding-bottom: 20%;
     }
 
     .subpage .service-contents .step-4 .title-num {
@@ -5962,7 +6050,7 @@ td {
         word-break: keep-all;
         line-height: 1.5;
         letter-spacing: -0.4px;
-        margin: 40px 0 20px;
+        margin: 10px 0 20px;
     }
     .subpage .service-contents .step-4 .warning-text {
         font-size: 14px;
@@ -5976,12 +6064,12 @@ td {
         max-width: 334px;
         width: 100%;
     }
-
-    .step-5 .step-container {
-        height: 306px;
+    .step-5 .step-container{
+        background-image: url(../images/date-bg-m.png);
     }
+    
     .step-5 .step-container .step-container-contents {
-        /* padding: 40px 0; */
+        padding: 20% 0;
         width: calc(100% - 40px);
         margin: 0px auto;
     }
@@ -6007,7 +6095,9 @@ td {
         margin: 0;
         text-align: center;
     }
-
+    .subpage .container .service-contents{
+        padding: 0;
+    }
     .subpage .service-contents .step-6 {
         padding: 40px 0;
         width: calc(100% - 40px);
@@ -6033,6 +6123,7 @@ td {
 
     .subpage .service-contents .step-6 .warning-text {
         font-size: 14px;
+        margin-bottom: 24px;
     }
 
     .subpage .service-contents .step-6 .step-6-consult {
@@ -6046,13 +6137,17 @@ td {
     }
 
     .step-7 .step-container {
-        width: 100%;
-        height: 250px;
-        background-image: url(../images/consulting1-bg.png);
+        padding: 10% 0;
+    }
+
+    .step-7 .step-container .step-container-contents .title-num{
+        font-size: 16px;
+        margin: 8px 0;
     }
 
     .step-7 .step-container .step-container-contents .title {
-        font-size: 18px;
+        font-size: 24px;
+        margin-bottom: 10px;
     }
 
     .step-7 .step-container .step-container-contents .sub-title {
@@ -6082,6 +6177,7 @@ td {
     .subpage .service-contents-price .step-7-content {
         padding: 40px 0;
         width: calc(100% - 40px);
+        margin-top: 0;
     }
 
     .subpage
@@ -6111,8 +6207,8 @@ td {
 
     .container .service-contents-price.refund-blind{
         background: none;
-        border: 1px solid #d7a550;
-        padding: 0 5%;
+        padding: 0;
+        display: none;
     }
 
     .container .service-contents-price.refund-blind .refund-logo{
@@ -6124,6 +6220,8 @@ td {
         font-size: 14px;
         margin-bottom: 5%;
     }
+
+
 }
 @media screen and (max-width: 400px) {
     .subpage .service-contents-price .step-7-content > img {
@@ -6132,6 +6230,8 @@ td {
     .container .service-contents-price.refund-blind .refund-logo {
         width: 70%;
     }
+    
+
 }
 /* 서비스 파티 페이지 */
 
@@ -6209,6 +6309,7 @@ td {
     }
 
     .application-container-party .application-states {
+        width: 90%;
         margin: 40px 0;
     }
 
@@ -6896,13 +6997,17 @@ td {
 }
 .review .sub-top {
     padding-bottom: 40px;
-    border-bottom: 2px solid #716766;
+    border-bottom: 2px solid #d7a550;
     margin-bottom: 40px;
 }
 .review .sub-top .sub-title {
     font-size: 48px;
     font-weight: 500;
+    color: #D7A550;
+    font-family: "Nanum Myeongjo", serif;
+    text-align: center;
 }
+
 .review-list {
     gap: 32px;
     flex-flow: wrap;

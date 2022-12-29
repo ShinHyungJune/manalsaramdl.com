@@ -272,6 +272,9 @@ input:focus {
 .header-wrap .top-menu .top-menu-sns li .sns-icon.naver:hover {
     color: #03c75a;
 }
+.header-wrap .top-menu .top-menu-sns li .sns-icon.youtube:hover {
+    color: #ff0000;
+}
 
 .header-wrap .top-menu .top-menu-sns .sns-icons > a{
 height: 48px;
