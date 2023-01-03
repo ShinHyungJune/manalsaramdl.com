@@ -8,9 +8,9 @@
                     <ul class="route">
                         <li><a href="#"><i class="xi-home"></i></a></li>
                         <li><i class="xi-angle-right"></i></li>
-                        <li><a href="#"> 서비스</a></li>
+                        <li><a href="#">서비스</a></li>
                         <li><i class="xi-angle-right"></i></li>
-                        <li><a href="#"> 파티신청</a></li>
+                        <li><a href="#">파티신청</a></li>
                     </ul>
                 </div>
             </div>
@@ -257,8 +257,13 @@
         </div>
 
 
+        <div class="container invited">
+            <div class="img-wrap">
+                <img src="/images/invited.png" alt="">
+            </div>
+        </div>
 
-        <div class="baytree-container">
+<!--        <div class="baytree-container">
             <div class="baytree-contents">
                 <div class="baytree-box">
                     <div class="baytree-content">
@@ -273,8 +278,13 @@
                     <p class="baytree-sumtext">Insa Party</p>
                 </div>
             </div>
-        </div>
+        </div>-->
 
+        <div class="container baytree">
+            <div class="img-wrap">
+                <img src="/images/insa-party@2x.png" alt="">
+            </div>
+        </div>
 
         <div class="application-container bg-gray">
             <div class="container">
@@ -409,13 +419,25 @@
                     <p class="title-num">5</p>
                     <p class="title">진행순서</p>
                     <img class="line-short" style="width: 264px; height:50.1px" src="/images/line-short.png" alt="crown2">
-                    <ul class="progress-box">
+<!--                    <ul class="progress-box">
                         <li> <img clsss="progress-img" src="/images/party-step-01.png" alt="matching"></li>
                         <li> <img clsss="progress-img" src="/images/party-step-02.png" alt="matching"></li>
                         <li> <img clsss="progress-img" src="/images/party-step-03.png" alt="matching"></li>
                         <li> <img clsss="progress-img" src="/images/party-step-04.png" alt="matching"></li>
-                    </ul>
+                    </ul>-->
                     <!-- </div> -->
+                    <ul>
+                        <li>
+                            <img src="/images/party-step-02@2x.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/images/party-step-022@2x.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/images/party-step-03@2x.png" alt="">
+                        </li>
+                    </ul>
+                    <div class="roadmap-line-box"></div>
                     <span class="progress-line mb"></span>
                 </div>
             </div>
@@ -426,7 +448,7 @@
                 <div class="default-contents">
                     <img src="/images/crown2.png" alt="crown2">
                     <p class="title-num">6</p>
-                    <p class="title">필수사항</p>
+                    <p class="title">기본매너</p>
                     <img class="line-short" style="width: 264px; height:50.1px" src="/images/line-short.png" alt="crown2">
                 </div>
                 <div class="default-box">
@@ -453,8 +475,8 @@
                         <div class="debox-content">남녀 모두 소개팅 복장에 맞춰<br />
                             깔끔하고 예의 있는 의상을 갖춰주세요.
                         </div>
-                        <div class="debox-sub">※ 여성분의 경우, 원피스나 투피스<br />
-                            &nbsp; &nbsp; 스타일을 추천드립니다.
+                        <div class="debox-sub">※ 여성분의 경우, 원피스나 투피스를 추천드립니다.
+
                             <br />
                             <br />
                             ※ 남성분의 경우, 수트나 셔츠류를 추천드립니다.
@@ -482,11 +504,11 @@
         <div class="notification-container">
             <div class="notification-contents">
                 <div class="container">
-                    <img class="phonephoto" src="/images/kakao-phone.png" alt="phone-image">
+                    <img class="phonephoto" src="/images/kakao-phone@2x.png" alt="phone-image">
                     <a href="http://pf.kakao.com/_kvwsxj"><img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle"></a>
                     <div class="notification-box">
                         <i class="xi-warning"></i>
-                        <span class="box-title"> 필수 안내사항 </span>
+                        <span class="box-title">필수사항</span>
                         <ul class="notification-list">
                             <li>
                                 <p class="circle-num">1</p>
@@ -499,8 +521,8 @@
                             </li>
                             <li>
                                 <p class="circle-num">3</p>
-                                <p>파티 참석 전에 <span class="text-style-1">신원인증 필수</span>입니다. <br />
-                                    신원인증은 마이페이지에 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.
+                                <p>파티 참석 전에 <span class="text-style-1">신원인증</span> 필수 입니다.
+                                    신원인증은 마이페이지에 <br /> 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.
                                 </p>
                             </li>
                             <li>

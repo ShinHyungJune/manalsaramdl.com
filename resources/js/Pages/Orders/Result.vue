@@ -8,9 +8,9 @@
                     <ul class="route">
                         <li><a href="#"><i class="xi-home"></i></a></li>
                         <li><i class="xi-angle-right"></i></li>
-                        <li><a href="#"> 서비스</a></li>
+                        <li><a href="#">서비스</a></li>
                         <li><i class="xi-angle-right"></i></li>
-                        <li><a href="#"> 소개팅 신청</a></li>
+                        <li><a href="#">소개팅 신청</a></li>
                     </ul>
                 </div>
             </div>

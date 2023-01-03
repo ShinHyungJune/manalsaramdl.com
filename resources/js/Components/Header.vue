@@ -62,8 +62,8 @@
                     <a href="/commentNotices">게시판</a>
                     <ul class="gnb-sub">
                         <li><a href="/commentNotices">인사의 코멘트</a></li>
-                        <li><a href="/partyNotices">파티관련</a></li>
-                        <li><a href="/datingNotices">소개팅관련</a></li>
+                        <li><a href="/partyNotices">파티Q&A</a></li>
+                        <li><a href="/datingNotices">소개팅Q&A</a></li>
                     </ul>
                 </li>
             </ul>
