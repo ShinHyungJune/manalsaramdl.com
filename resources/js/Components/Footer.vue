@@ -12,7 +12,7 @@
                     <li><a href="/story">회사소개</a></li>
                 </ul>
             </div>
-            <span>대표 : 이태현 &nbsp; 주소 : 서울특별시 강남구 영동대로 602, 6층 &nbsp;<br class="mb" />대표전화 : 1660-1369 &nbsp; 이메일 : cs@insacompany.com  &nbsp; 사업자등록번호 : 481-17-02165</span>
+            <span>대표 : 이태현 &nbsp; 주소 : 서울특별시 강남구 영동대로 602, 6층 &nbsp;<br class="mb" />대표전화 : 1660-1369 &nbsp; 이메일 : cs@insacompany.com  &nbsp; 업체명 : 인사 사업자등록번호 : 481-17-02165</span>
             <span class="copyright">Copyright 인사 All rights reserved.</span>
             <button id="upBtn" class="mb" >
                 <i class="xi-long-arrow-up"></i>

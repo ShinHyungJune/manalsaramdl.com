@@ -55539,7 +55539,7 @@ var staticRenderFns = [
           ),
           _c("br", { staticClass: "mb" }),
           _vm._v(
-            "대표전화 : 1660-1369   이메일 : cs@insacompany.com    사업자등록번호 : 481-17-02165"
+            "대표전화 : 1660-1369   이메일 : cs@insacompany.com    업체명 : 인사 사업자등록번호 : 481-17-02165"
           ),
         ]),
         _vm._v(" "),
