@@ -8642,28 +8642,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8684,14 +8662,10 @@ __webpack_require__.r(__webpack_exports__);
       agree1: 0,
       agree2: 0,
       active: false,
-      user: this.$page.props.user ? this.$page.props.user.data : ""
+      user: this.$page.props.user.data
     };
   },
   methods: {
-    activate: function activate() {
-      if (this.user) return this.active = true;
-      return alert("로그인 후 이용해주세요.");
-    },
     order: function order() {
       if (!this.agree1 || !this.agree2) return alert("필수 약관에 동의해주세요.");
       if (!this.form.option_id) return alert("참가비를 선택해주세요.");
@@ -10245,8 +10219,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "",
-  cluster: "mt1",
+  key: "b37aa6816339a77531ea",
+  cluster: "ap3",
   forceTLS: false
 }); // import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
@@ -55539,7 +55513,7 @@ var staticRenderFns = [
           ),
           _c("br", { staticClass: "mb" }),
           _vm._v(
-            "대표전화 : 1660-1369   이메일 : cs@insacompany.com    업체명 : 인사   사업자등록번호 : 481-17-02165"
+            "대표전화 : 1660-1369   이메일 : cs@insacompany.com    사업자등록번호 : 481-17-02165"
           ),
         ]),
         _vm._v(" "),
@@ -56243,13 +56217,13 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("li", [
               _c("a", { attrs: { href: "/partyNotices" } }, [
-                _vm._v("파티Q&A"),
+                _vm._v("파티관련"),
               ]),
             ]),
             _vm._v(" "),
             _c("li", [
               _c("a", { attrs: { href: "/datingNotices" } }, [
-                _vm._v("소개팅Q&A"),
+                _vm._v("소개팅관련"),
               ]),
             ]),
           ]),
@@ -64996,12 +64970,12 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("서비스")])]),
+            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v(" 서비스")])]),
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("소개팅 신청")]),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" 소개팅 신청")]),
             ]),
           ]),
         ]),
@@ -66290,11 +66264,13 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("서비스")])]),
+            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v(" 서비스")])]),
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("파티신청")])]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" 파티신청")]),
+            ]),
           ]),
         ]),
       ]),
@@ -67074,11 +67050,13 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("서비스")])]),
+            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v(" 서비스")])]),
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("파티신청")])]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" 파티신청")]),
+            ]),
           ]),
         ]),
       ]),
@@ -67307,7 +67285,14 @@ var render = function () {
             _vm._v(" "),
             _c(
               "button",
-              { staticClass: "party-request", on: { click: _vm.activate } },
+              {
+                staticClass: "party-request",
+                on: {
+                  click: function ($event) {
+                    _vm.active = true
+                  },
+                },
+              },
               [_vm._v("파티예약")]
             ),
           ]),
@@ -67349,18 +67334,18 @@ var render = function () {
                     _c("div", { staticClass: "request-info-main" }, [
                       _c("p", { staticClass: "title" }, [
                         _vm._v(
-                          "\n                                    " +
+                          "\n                                " +
                             _vm._s(_vm.product.title) +
-                            "\n                                "
+                            "\n                            "
                         ),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "date" }, [
                         _c("p", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.product.opened_at) +
-                              "\n                                    "
+                              "\n                                "
                           ),
                         ]),
                       ]),
@@ -67558,9 +67543,9 @@ var render = function () {
                                   _vm._v(" "),
                                   _c("span", { staticClass: "radio-icon" }),
                                   _vm._v(
-                                    "\n                                            " +
+                                    "\n                                        " +
                                       _vm._s(option.title) +
-                                      "\n                                        "
+                                      "\n                                    "
                                   ),
                                 ]
                               )
@@ -67645,7 +67630,7 @@ var render = function () {
                             _c("p", { staticClass: "nonedit" }, [
                               _vm._v(_vm._s(_vm.totalPrice.toLocaleString())),
                             ]),
-                            _vm._v("원\n                                    "),
+                            _vm._v("원\n                                "),
                           ]),
                         ]),
                       ]
@@ -67689,7 +67674,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("span", { staticClass: "radio-icon" }),
                           _vm._v(
-                            "\n                                    전체동의\n                                "
+                            "\n                                전체동의\n                            "
                           ),
                         ]
                       ),
@@ -67742,7 +67727,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("span", { staticClass: "radio-icon" }),
                           _vm._v(
-                            "\n                                        환불규정을 모두 확인했으며 이에 동의 합니다\n                                        "
+                            "\n                                    환불규정을 모두 확인했으며 이에 동의 합니다\n                                    "
                           ),
                           _vm._m(3),
                         ]),
@@ -67794,7 +67779,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("span", { staticClass: "radio-icon" }),
                           _vm._v(
-                            "\n                                        개인정보 수집 및 이용에 대한 동의 (필수)\n                                        "
+                            "\n                                    개인정보 수집 및 이용에 대한 동의 (필수)\n                                    "
                           ),
                           _vm._m(4),
                         ]),
@@ -67820,10 +67805,8 @@ var render = function () {
     _vm._v(" "),
     _vm._m(7),
     _vm._v(" "),
-    _vm._m(8),
-    _vm._v(" "),
     _c("div", { staticClass: "application-container" }, [
-      _vm._m(9),
+      _vm._m(8),
       _vm._v(" "),
       _c("div", { staticClass: "party-place swiper-container" }, [
         _c("div", { staticClass: "swiper" }, [
@@ -67843,7 +67826,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "application-container bg-gray" }, [
-        _vm._m(10),
+        _vm._m(9),
         _vm._v(" "),
         _c("div", { staticClass: "party-food swiper-container" }, [
           _c("div", { staticClass: "swiper" }, [
@@ -67863,18 +67846,18 @@ var render = function () {
             _c("div", { staticClass: "swiper-pagination" }),
           ]),
           _vm._v(" "),
-          _vm._m(11),
+          _vm._m(10),
           _vm._v(" "),
-          _vm._m(12),
+          _vm._m(11),
         ]),
       ]),
     ]),
     _vm._v(" "),
+    _vm._m(12),
+    _vm._v(" "),
     _vm._m(13),
     _vm._v(" "),
     _vm._m(14),
-    _vm._v(" "),
-    _vm._m(15),
   ])
 }
 var staticRenderFns = [
@@ -67896,11 +67879,13 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("서비스")])]),
+            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v(" 서비스")])]),
             _vm._v(" "),
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("파티신청")])]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" 파티신청")]),
+            ]),
           ]),
         ]),
       ]),
@@ -67914,9 +67899,7 @@ var staticRenderFns = [
       _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
       _vm._v(" "),
       _c("h2", { staticClass: "title" }, [
-        _vm._v(
-          "\n                            파티예약\n                        "
-        ),
+        _vm._v("\n                        파티예약\n                    "),
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "txt" }),
@@ -67931,13 +67914,13 @@ var staticRenderFns = [
         _c("p", { staticClass: "title" }, [
           _c("i", { staticClass: "xi-warning" }),
           _vm._v(
-            "\n                                    환불 규정\n                                "
+            "\n                                환불 규정\n                            "
           ),
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "txt" }, [
           _vm._v(
-            "\n                                    참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다.\n                                    참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                "
+            "\n                                참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다.\n                                참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                            "
           ),
         ]),
       ]),
@@ -67945,7 +67928,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "con-box" }, [
         _c("p", { staticClass: "title" }, [
           _vm._v(
-            "\n                                    개인적인 사유로 취소 신청할 경우\n                                "
+            "\n                                개인적인 사유로 취소 신청할 경우\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -68001,19 +67984,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container invited" }, [
-      _c("div", { staticClass: "img-wrap" }, [
-        _c("img", { attrs: { src: "/images/invited.png", alt: "" } }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container baytree" }, [
-      _c("div", { staticClass: "img-wrap" }, [
-        _c("img", { attrs: { src: "/images/insa-party@2x.png", alt: "" } }),
+    return _c("div", { staticClass: "baytree-container" }, [
+      _c("div", { staticClass: "baytree-contents" }, [
+        _c("div", { staticClass: "baytree-box" }, [
+          _c("div", { staticClass: "baytree-content" }, [
+            _c("img", { attrs: { src: "/images/crown5.png", alt: "crown5" } }),
+            _vm._v(" "),
+            _c("p", { staticClass: "baytree-text" }, [
+              _vm._v("\n                        럭셔리한 장소에서"),
+              _c("br"),
+              _vm._v("\n                        검증된 사람들과"),
+              _c("br"),
+              _vm._v(
+                "\n                        술과 음악과 함께\n                    "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "baytree-title" }, [_vm._v("인사 파티")]),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "baytree-sumtext" }, [_vm._v("Insa Party")]),
+        ]),
       ]),
     ])
   },
@@ -68210,27 +68201,47 @@ var staticRenderFns = [
             attrs: { src: "/images/line-short.png", alt: "crown2" },
           }),
           _vm._v(" "),
-          _c("ul", [
+          _c("ul", { staticClass: "progress-box" }, [
             _c("li", [
               _c("img", {
-                attrs: { src: "/images/party-step-02@2x.png", alt: "" },
+                attrs: {
+                  clsss: "progress-img",
+                  src: "/images/party-step-01.png",
+                  alt: "matching",
+                },
               }),
             ]),
             _vm._v(" "),
             _c("li", [
               _c("img", {
-                attrs: { src: "/images/party-step-022@2x.png", alt: "" },
+                attrs: {
+                  clsss: "progress-img",
+                  src: "/images/party-step-02.png",
+                  alt: "matching",
+                },
               }),
             ]),
             _vm._v(" "),
             _c("li", [
               _c("img", {
-                attrs: { src: "/images/party-step-03@2x.png", alt: "" },
+                attrs: {
+                  clsss: "progress-img",
+                  src: "/images/party-step-03.png",
+                  alt: "matching",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("img", {
+                attrs: {
+                  clsss: "progress-img",
+                  src: "/images/party-step-04.png",
+                  alt: "matching",
+                },
               }),
             ]),
           ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "roadmap-line-box" }),
           _vm._v(" "),
           _c("span", { staticClass: "progress-line mb" }),
         ]),
@@ -68248,7 +68259,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", { staticClass: "title-num" }, [_vm._v("6")]),
           _vm._v(" "),
-          _c("p", { staticClass: "title" }, [_vm._v("기본매너")]),
+          _c("p", { staticClass: "title" }, [_vm._v("필수사항")]),
           _vm._v(" "),
           _c("img", {
             staticClass: "line-short",
@@ -68273,7 +68284,7 @@ var staticRenderFns = [
               _vm._v("기본적으로 파티 시작 10분전에는"),
               _c("br"),
               _vm._v(
-                "\n                            입장해주시는 것을 추천드립니다.\n                        "
+                "\n                        입장해주시는 것을 추천드립니다.\n                    "
               ),
             ]),
             _vm._v(" "),
@@ -68281,11 +68292,11 @@ var staticRenderFns = [
               _vm._v("※ 남녀 파티의 컨셉으로 성비 조율로 진행되어"),
               _c("br"),
               _vm._v(
-                "\n                                지각하거나 불참하는 경우는 없도록 부탁드리며,"
+                "\n                            지각하거나 불참하는 경우는 없도록 부탁드리며,"
               ),
               _c("br"),
               _vm._v(
-                "\n                                혹시나 부득이한 경우 하루 전에 알려주세요!\n                        "
+                "\n                            혹시나 부득이한 경우 하루 전에 알려주세요!\n                    "
               ),
             ]),
           ]),
@@ -68305,19 +68316,21 @@ var staticRenderFns = [
               _vm._v("남녀 모두 소개팅 복장에 맞춰"),
               _c("br"),
               _vm._v(
-                "\n                            깔끔하고 예의 있는 의상을 갖춰주세요.\n                        "
+                "\n                        깔끔하고 예의 있는 의상을 갖춰주세요.\n                    "
               ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "debox-sub" }, [
+              _vm._v("※ 여성분의 경우, 원피스나 투피스"),
+              _c("br"),
               _vm._v(
-                "※ 여성분의 경우, 원피스나 투피스를 추천드립니다.\n\n                            "
+                "\n                            스타일을 추천드립니다.\n                        "
               ),
               _c("br"),
               _vm._v(" "),
               _c("br"),
               _vm._v(
-                "\n                            ※ 남성분의 경우, 수트나 셔츠류를 추천드립니다.\n                        "
+                "\n                        ※ 남성분의 경우, 수트나 셔츠류를 추천드립니다.\n                    "
               ),
             ]),
           ]),
@@ -68334,17 +68347,15 @@ var staticRenderFns = [
             _c("div", { staticClass: "debox-title" }, [_vm._v("매너")]),
             _vm._v(" "),
             _c("div", { staticClass: "debox-content" }, [
-              _vm._v("와인파티가 진행되는 동안\n                            "),
+              _vm._v("와인파티가 진행되는 동안\n                        "),
               _c("br"),
               _vm._v(
-                "\n                            기본적인 매너는 지켜주세요.\n                        "
+                "\n                        기본적인 매너는 지켜주세요.\n                    "
               ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "debox-sub" }, [
-              _vm._v(
-                "※ 과한 주류섭취, 무례한 대화 등\n                        "
-              ),
+              _vm._v("※ 과한 주류섭취, 무례한 대화 등\n                    "),
             ]),
           ]),
         ]),
@@ -68360,7 +68371,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "container" }, [
           _c("img", {
             staticClass: "phonephoto",
-            attrs: { src: "/images/kakao-phone@2x.png", alt: "phone-image" },
+            attrs: { src: "/images/kakao-phone.png", alt: "phone-image" },
           }),
           _vm._v(" "),
           _c("a", { attrs: { href: "http://pf.kakao.com/_kvwsxj" } }, [
@@ -68373,7 +68384,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "notification-box" }, [
             _c("i", { staticClass: "xi-warning" }),
             _vm._v(" "),
-            _c("span", { staticClass: "box-title" }, [_vm._v("필수사항")]),
+            _c("span", { staticClass: "box-title" }, [
+              _vm._v(" 필수 안내사항 "),
+            ]),
             _vm._v(" "),
             _c("ul", { staticClass: "notification-list" }, [
               _c("li", [
@@ -68392,7 +68405,7 @@ var staticRenderFns = [
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("[파티 참석합니다!] "),
                   ]),
-                  _vm._v("보내주세요.\n                                "),
+                  _vm._v("보내주세요.\n                            "),
                 ]),
               ]),
               _vm._v(" "),
@@ -68402,14 +68415,12 @@ var staticRenderFns = [
                 _c("p", [
                   _vm._v("파티 참석 전에 "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("신원인증"),
+                    _vm._v("신원인증 필수"),
                   ]),
-                  _vm._v(
-                    " 필수 입니다.\n                                    신원인증은 마이페이지에 "
-                  ),
+                  _vm._v("입니다. "),
                   _c("br"),
                   _vm._v(
-                    " 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.\n                                "
+                    "\n                                신원인증은 마이페이지에 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.\n                            "
                   ),
                 ]),
               ]),
@@ -81912,7 +81923,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\project\\\\greeting"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"D:\\\\project\\\\greeting","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

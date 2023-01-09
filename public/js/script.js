@@ -234,3 +234,42 @@ $('.review-score-btn-1').mouseover(function() {
     $('.score-num-2').html(score_value);
   });
 
+
+//   파티페이지 스와이퍼
+const swiperParty = new Swiper(".party-place .swiper", {
+    direction: "horizontal",
+    slidesPerView: "auto",
+    spaceBetween: 20,
+
+    centeredSlides: true,
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".party-place .swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        prevEl: ".party-place .swiper-button-prev",
+        nextEl: ".party-place .swiper-button-next",
+    },
+});
+
+//partyFood - SWIPER
+const swiperPartyFood = new Swiper(".party-food .swiper", {
+    direction: "horizontal",
+    // loop: true,
+    autoplay: false,
+    pagination: {
+        el: ".party-food  .swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        prevEl: ".party-food  .swiper-button-prev",
+        nextEl: ".party-food  .swiper-button-next",
+    },
+});
+
+// 파티페이지 스와이퍼 종료
