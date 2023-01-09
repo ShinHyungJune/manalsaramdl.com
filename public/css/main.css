@@ -1,3 +1,8 @@
+.m-ratioBox-wrap {width:100%; padding-top:60%; position:relative; border:1px solid #ebebeb; overflow:hidden;}
+.m-ratioBox-wrap .m-ratioBox {position:absolute; top:0; left:0; right:0; bottom:0;}
+.m-ratioBox-wrap img {width:100%; position:absolute; left:50%; top:50%; transform:translateY(-50%) translateX(-50%);}
+
+
 /* 모달 공통 */
 .pagination { display: flex; justify-content: center; gap: 8px; margin:60px 0; }
 .pagination li { width: 32px; height: 32px; }
@@ -2383,11 +2388,11 @@ color: #fff;
         justify-content: flex-start;
         line-height: 1.5;
     }
-    
+
     .main-banner .banner-contents .banner-title .col-group01{
         margin-bottom: 16px;
     }
-    
+
     .banner-contents .banner-text {
         line-height: 1.5;
         font-size: 16px;
@@ -2447,7 +2452,7 @@ color: #fff;
             opacity: 0;
             width: 0;
         }
-    } 
+    }
     @-webkit-keyframes toggletxt2 {
         0%,
         20%,
@@ -2559,7 +2564,7 @@ color: #fff;
 
 }
 @media screen and (max-width: 768px) {
-    
+
     .hidden-sm{
         display: none;
     }
@@ -2574,7 +2579,7 @@ color: #fff;
     .main-banner .banner-contents .banner-title h2{
         justify-content: center;
     }
-    
+
     .main-section.sec-1 .container {
         padding: 0 20px;
     }
@@ -2635,7 +2640,7 @@ color: #fff;
         order: 2;
     }
 
-   
+
 
     .main-section.sec-2 .main-date > img {
         width: 80%;
@@ -2709,7 +2714,7 @@ color: #fff;
         margin: 0 auto;
         width: 100%;
         height: auto;
-    
+
     } */
     /* .main-section.sec-4 .main-content .service-table.mb img{
         width:150%;
@@ -2851,7 +2856,7 @@ color: #fff;
         height: 50px;
     }
 
-  
+
     .main-section.sec-6 .main-choice .choice-title > img {
         width: 88px;
         height: 32px;
@@ -2915,7 +2920,7 @@ color: #fff;
         display: none;
     } */
 
-   
+
     .main-section.sec-7 .main-only .only-container > ul > li > .cirb {
         width: 38px;
         height: 38px;
@@ -2950,7 +2955,7 @@ color: #fff;
         top: 15px;
         left: -16%;
     }
-   
+
     .main-section.sec-8 {
         background-image: url(../images/main-bg-02-m.png);
     }
@@ -3000,7 +3005,7 @@ color: #fff;
     }*/
    .main-section.sec-8 .main-footer .main-footer-content {
     top: 54%;}
-} 
+}
 
 @media screen and (max-width: 375px) {
     .main-section.sec-2 .container .main-date .left .left-content br{
@@ -3091,7 +3096,7 @@ color: #fff;
     height: 2px;
     width: calc(100% - 166px);
 }
-/* 
+/*
 .subpage-info .test-section .story-explanation {
     font-family: "Nanum Myeongjo", serif;
     font-size: 17px;
@@ -3582,7 +3587,7 @@ color: #fff;
 
 /* 파티 서비스 */
 
-/* 
+/*
 .crown2{
     max-width: 80px;
 } */
@@ -3619,7 +3624,7 @@ color: #fff;
     width: 137.3px;
     height: 52.3px;
 }
-/* 
+/*
 .application-container .application-contents .line-short {
     width: 264px;
     height: 50px;
@@ -3937,14 +3942,13 @@ color: #fff;
     /* position: relative; */
     /* display: flex;
     justify-content: center; */
-    height: 640px;
     width: 1000px;
 }
 
 .party-food .swiper-wrapper .swiper-slide > img {
     width: 100%;
     height: 100%;
-   
+
     object-fit: cover;
     object-position: center;
 }
@@ -4011,7 +4015,7 @@ color: #fff;
     justify-content: center;
     position: relative;
 }
-/* 
+/*
 .progress-container .progress-contents .title-num {
     font-family: "Nanum Myeongjo", serif;
     font-size: 32px;
@@ -4543,7 +4547,7 @@ color: #fff;
         height: 400px;
         position: relative;
     }
-    
+
     .main-container .party-contents .container.sub .img-wrap img{
         width: 100%;
         height: 100%;
@@ -4559,7 +4563,7 @@ color: #fff;
         top:15px;
         border: solid 1px #e1bf87;
     }
-    
+
 }
 
 @media screen and (max-width: 768px) {
@@ -4752,7 +4756,7 @@ color: #fff;
     .application-container .qualifiction-contents .step-3-consult > img {
         width: 100%;
     }
-/* 
+/*
     .party-place .swiper-wrapper .swiper-slide {
         width: 356px;
         height: 200px;
@@ -4786,7 +4790,6 @@ color: #fff;
         height: auto; */
         max-width: 500px;
         width: 100%;
-        height: 250px;
     }
 
     .party-food .swiper .swiper-button-prev {
@@ -5062,7 +5065,7 @@ color: #fff;
     /* max-width: 1200px; */
     max-width: 1112px;
 
-    
+
 }
 .party-box {
     width: calc((100% - 40px * 2) / 3);
@@ -5420,7 +5423,7 @@ color: #fff;
     /* padding: 100px 0; */
     position: relative;
     padding-top: 100px;
-    
+
 }
 
 .subpage .main-container .service-contents .service-step .step-box {
@@ -5653,7 +5656,7 @@ color: #fff;
     width: 100%;
     padding-bottom: 80px;
 }
-/* 
+/*
 .subpage .service-contents .step-3 .title-num {
     font-family: "Nanum Myeongjo", serif;
     font-size: 32px;
@@ -6124,7 +6127,7 @@ td {
     }
 
     .subpage .main-container .start-contents p:nth-child(1) {
-        font-size: 20px; 
+        font-size: 20px;
         margin-bottom: 40px;
     }
 
@@ -6152,7 +6155,9 @@ td {
     .subpage .main-container .service-contents .sub-title {
         font-size: 32px;
     }
-
+    .application-container .party-food {
+        padding-left:80px; padding-right:80px;
+    }
     /* 여기 */
     /* .subpage .main-container .service-contents .service-step {
         width: calc(100% - 40px);
@@ -6231,7 +6236,7 @@ td {
         /* width: 80px; */
         top: -40%;
     }
-   
+
     .subpage .service-contents .service-step .step-box .squair p:nth-child(1){
         font-size: 14px;
         margin-top: 20%;
@@ -6302,11 +6307,11 @@ td {
     }
 
     /* .subpage .service-contents .step-1 .step-1-consult.pc{
-        display: none;        
+        display: none;
     } */
 
     .subpage .service-contents .step-1 .step-1-consult.mb{
-        display: block;        
+        display: block;
     }
 
     .subpage .service-contents .step-1 .step-1-consult > img {
@@ -6407,7 +6412,7 @@ td {
     .step-5 .step-container{
         background-image: url(../images/date-bg-m.png);
     }
-    
+
     .step-5 .step-container .step-container-contents {
         padding: 20% 0;
         width: calc(100% - 40px);
@@ -6570,7 +6575,7 @@ td {
     .container .service-contents-price.refund-blind .refund-logo {
         width: 70%;
     }
-    
+
 
 }
 /* 서비스 파티 페이지 */
@@ -7827,7 +7832,7 @@ td {
 .subpage.party-service .progress-container ul li { position: relative;max-width: 344px; }
 .subpage.party-service .progress-container ul li img { width:100%;}
 .subpage.party-service .progress-container ul li:after { position: absolute; content: ""; width: 32px; height: 32px; display: block; border-radius: 50%; border:  solid 1px #d9ac5e; background-color: #d9a958; position: absolute; bottom:-15%; left:50%; transform: translateX(-50%); box-sizing: border-box;}
-.subpage.party-service .progress-container ul li:not(:last-child):before { position: absolute; content: ""; width: 16px; height: 16px; display: block; border-radius: 50%; border:  solid 1px #fff; background-color: #fff;  position: absolute; bottom:-13.5%; left:50%; transform: translateX(-50%); box-sizing: border-box; z-index: 2;} 
+.subpage.party-service .progress-container ul li:not(:last-child):before { position: absolute; content: ""; width: 16px; height: 16px; display: block; border-radius: 50%; border:  solid 1px #fff; background-color: #fff;  position: absolute; bottom:-13.5%; left:50%; transform: translateX(-50%); box-sizing: border-box; z-index: 2;}
 .subpage.party-service .progress-container .roadmap-line-box { width: calc( ((100% / 4) * 3) - 177px ); height: 1px; border-left: 0; border: 1px solid #c4c4c4;}
 
 /* 메인페이지 */
@@ -8029,11 +8034,11 @@ td {
         }
     }
 
-    .main-section.sec-6 .main-choice .choice-title > p, 
+    .main-section.sec-6 .main-choice .choice-title > p,
     .main-section.sec-7 .main-only .only-title > p { font-size: 40px;  }
     .main-section.sec-7 .main-only .only-title { margin-bottom: 40px; }
     .main-section.sec-7 .main-only .only-container > ul > li {
-        width: 600px; 
+        width: 600px;
         padding-left: 60px;
     }
     .main-section.sec-7 .main-only .only-container .only-list::after {
@@ -8056,7 +8061,7 @@ td {
     .main-section.sec-1 .container .main-party .left .left-roadMap .roadmap-list li { font-size: 15px; }
     .main-section.sec-1 .container .main-party .left .left-content {font-size: 17px; margin-bottom: 40px; }
     .main-section.sec-1 .main-button.style1 {width: 150px; height: 46px; }
-    
+
     .party-service .application-container .application-contents .box {
         width: 100%;
         gap: 24px;
@@ -8066,7 +8071,7 @@ td {
     .application-container .application-contents .box li {
         width: calc((100% - 24px * 1) / 2);
     }
-    
+
     .party-service .application-container .application-contents .application-step-contents .application-step-content::before {
         display: none;
     }
@@ -8168,7 +8173,7 @@ td {
         opacity: 0;
         width: 0;
     }
-} 
+}
 
 @-webkit-keyframes toggletxt33 {
     0%,
@@ -8195,7 +8200,7 @@ td {
 .main-section.sec-7 .crown-wrap  { max-width: 88px; margin: 0 auto 16px; }
 
 .main-section.sec-5 .crown-wrap img,
-.main-section.sec-6 .crown-wrap img, 
+.main-section.sec-6 .crown-wrap img,
 .main-section.sec-7 .crown-wrap img { width: 100%;}
 
 .main-section.sec-5 .main-service .service-title img { margin-bottom: 0px; }
@@ -8244,7 +8249,7 @@ td {
     gap: 5px;
     margin-bottom: 35px;
 }
-.subpage.party-service .application-container .title, 
+.subpage.party-service .application-container .title,
 .subpage.party-service .default-container .title { font-size: 24px;}
 .subpage.party-service .progress-container ul li {
     max-width: 536px;
@@ -8267,7 +8272,7 @@ td {
 }
 
 .subpage .service-contents .step-1 .step-1-consult {
- flex-direction: column;} 
+ flex-direction: column;}
  .subpage.blind-date .service-contents .step-1 .step-1-consult li {
     width: 335px;
 }
@@ -8402,7 +8407,7 @@ td {
     .subpage.party-service .invited .img-wrap .invited-m { display: block;  max-width: 375px;  }
     /* .subpage.party-service .invited .img-wrap .invited-pc { display: none; } */
     .main-container .party-reservation button {  height: 64px;  font-size: 14px; }
-    
+
     /* 탄생배경 */
     .subpage-info .test-section .story-contents .story-explanation {  font-size: 13px;  line-height: 1.43;  letter-spacing: -0.35px;  font-weight: normal;  }
 
@@ -8412,7 +8417,7 @@ td {
     .main-container .party-contents .container.sub { gap: 32px; }
     .main-container .party-contents { margin-bottom: 30px; }
     .application-container.bg-gray {  padding: 52px 20px 120px; margin-bottom: 80px; }
-   
+
     /* 모바일 왕관 */
     .subpage.party-service .crown-wrap { width: 56px;  margin-bottom: 7.6px;  }
     .subpage.party-service .title-num { font-size: 16px; margin-bottom: 8px; padding: 0; }

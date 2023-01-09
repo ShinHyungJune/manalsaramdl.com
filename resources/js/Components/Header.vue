@@ -4,14 +4,14 @@
             <div class="top-menu">
                 <ul class="top-menu-sns">
                     <li class="sns-icons">
-                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta (1).svg" /></a>
+                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta%20(1).svg" /></a>
                         <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
                     </li>
                     <li>
                         <a href="http://pf.kakao.com/_kvwsxj" target="_blank"> <i class="sns-icon speech xi-speech"></i></a>
                     </li>
                     <li>
-                        <a href="https://m.blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
+                        <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
                     </li>
                 </ul>
                 <h1 class="logo">
@@ -38,29 +38,31 @@
             <ul class="gnb">
                 <li class="active">
                     <a href="/story">인사</a>
-                    <ul class="gnb-sub">
+                    <!-- <div class="subA"> -->
+                    <ul class="gnb-sub a">
                         <li>
                             <a href="/story">탄생배경</a>
                         </li>
                     </ul>
+                    <!-- </div> -->
                 </li>
                 <li>
                     <a href="/partyProducts">서비스</a>
-                    <ul class="gnb-sub">
+                    <ul class="gnb-sub b">
                         <li><a href="/partyProducts">파티신청</a></li>
                         <li><a href="/datingProducts">소개팅신청</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="/datingReviews">후기</a>
-                    <ul class="gnb-sub">
+                    <ul class="gnb-sub c">
                         <li><a href="/datingReviews">소개팅 후기</a></li>
                         <li><a href="/partyReviews">파티 후기</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="/commentNotices">게시판</a>
-                    <ul class="gnb-sub">
+                    <ul class="gnb-sub d">
                         <li><a href="/commentNotices">인사의 코멘트</a></li>
                         <li><a href="/partyNotices">파티Q&A</a></li>
                         <li><a href="/datingNotices">소개팅Q&A</a></li>

@@ -54,7 +54,7 @@
                 </span>
                         </h2>
                         <div class="mb">
-                            <h2 class="col-group">
+                            <h2 class="col-group col-group01">
                   <span class="text-style-1">
                     인
                   </span>
@@ -86,44 +86,14 @@
             </div>
 
         </div>
-        <!-- //main-banner -->
-        <!--  -->
-        <div class="main-section sec-1" data-aos="fade-right" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
+
+        <div class="main-section sec-2" data-aos="fade-left" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
             <!-- <div class="main-section sec-1"> -->
             <div class="container">
-                <div class="main-party">
-                    <img src="/images/main-party.png" alt="main-party">
-                    <div class="left">
-                        <span class="left-title"><span class="text-style-1">P</span>arty</span>
-                        <p class="left-content">
-                            연령과 성비를 조율한 파티를 오픈하여 <br>
-                            고객님들께서 <span class="text-style-1">'자연스러운 만남'</span>을 <br>
-                            가질 수 있는 기회를 제공하는 서비스입니다.
-                        </p>
-                        <div class="left-roadMap">
-                            <span class="roadmap-line"></span>
-                            <ul class="roadmap-list">
-                                <li>파티신청</li>
-                                <li>신원인증</li>
-                                <li>참석권 수령</li>
-                                <li>파티참석</li>
-                            </ul>
-                        </div>
-                        <!-- <button class="main-button"> -->
-                        <a class="main-button style1" href="/partyProducts">
-                            <span>신청하기</span><i class="xi-long-arrow-right"></i>
-                        </a>
-                        <!-- </button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--sec2  -->
-        <div class="main-section sec-2" data-aos="fade-left" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
-            <!-- <div class="main-section sec-2"> -->
-            <div class=" container">
                 <div class="main-date" aos-data="left">
-                    <img src="/images/main-date.png" alt="main-date">
+                    <div class="img-wrap">
+                        <img src="/images/main-date.png" alt="main-date">
+                    </div>
                     <div class="left">
                         <span class="left-title"><span class="text-style-1">D</span>ate</span>
                         <p class="left-content">
@@ -153,13 +123,49 @@
                 </div>
             </div>
         </div>
-        <!--  -->
+
+        <div class="main-section sec-1" data-aos="fade-right" data-aos-duration="3000" data-aos-anchor-placement="top-bottom" data-aos-delay="2">
+            <!-- <div class="main-section sec-2"> -->
+            <div class=" container">
+                <div class="main-party">
+                    <div class="img-wrap">
+                        <img src="/images/main-party.png" alt="main-party">
+                    </div>
+                    <div class="left">
+                        <span class="left-title"><span class="text-style-1">P</span>arty</span>
+                        <p class="left-content">
+                            연령과 성비를 조율한 파티 서비스로<br />
+                            <span class="text-style-1">'자연스러운 만남'</span> 의 기회를 제공합니다
+                        </p>
+                        <div class="left-roadMap">
+                            <span class="roadmap-line"></span>
+                            <ul class="roadmap-list">
+                                <li>파티신청</li>
+                                <li>신원인증</li>
+                                <li>참석권 수령</li>
+                                <li>파티참석</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="main-button"> -->
+                        <a class="main-button style1" href="/partyProducts">
+                            <span>신청하기</span><i class="xi-long-arrow-right"></i>
+                        </a>
+                        <!-- </button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="main-section sec-4">
             <div class="sec4-container">
                 <div class="main-content">
                     <div class="container">
-                        <img class="main-talk" src="/images/main-talk.png" alt="main-talk">
-                        <img class="main-talk mb" src="/images/main-talk-m.png" alt="main-talk">
+                        <div class="img-wrap main-talk">
+                            <img src="/images/main-talk.png" alt="">
+                        </div>
+                        <div class="img-wrap main-talk mb">
+                            <img src="/images/main-talk-m.png" alt="">
+                        </div>
                         <div class="warning-container mb">
                             <div class="warning-img">
                                 <img src="/images/main-warning.png" />
@@ -168,56 +174,70 @@
                                 <img src="/images/scroll.png" alt="">
                             </div>
                         </div>
-                        <div class="service-table mb">
-                            <img src="/images/main-table.png" alt="">
+                        <div class="warning-container mb">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper" >
+                                    <div class="swiper-slide">
+                                        <img src="/images/main-table-01.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/images/main-table-02.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/images/main-table-03.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="content-bg pc">
-                            <img src="/images/crown1.png" alt="crown1">
+                            <div class="crown-wrap type1">
+                                <img src="/images/crown1.png" alt="" class="crown1">
+                            </div>
                             <div class="content-container">
-                                <div class="banner-title">
+                                <div class="banner-title btm">
                                     <h2 class="content-title col-group pc">
                       <span class="text-style-1">
                         인
                       </span>
-                                        <span class="toggle_txt toggle_txt1">
+                                        <!-- <span class="toggle_txt toggle_txt1"> -->
+                                        <span class="toggle_txt contenttxt1">
                         생에서 가장 중요한 것은 &nbsp;
                       </span>
                                         <span class="text-style-1">
                         사
                       </span>
-                                        <span class="toggle_txt toggle_txt2">
+                                        <!-- <span class="toggle_txt toggle_txt2"> -->
+                                        <span class="toggle_txt contenttxt2">
                         랑이다
                       </span>
                                     </h2>
                                 </div>
                             </div>
-                            <p class="content-sub mb">가장 친한 친구가 되어 찾아드립니다.</p>
-                            <button @click="$inertia.get('/datingProducts')" class="button-soge">올인원 프라이빗 소개팅</button>
+                            <p class="content-sub pc">가장 친한 친구가 되어 찾아드립니다.</p>
+                            <button class="button-soge">올인원 프라이빗 소개팅</button>
                         </div>
                     </div>
                     <div class="container mb">
                         <div class="content-container">
                             <div class="crown1-img">
-                                <img src="/images/crown1.png" alt="crown1">
+                                <img src="/images/crown1.png" alt="" class="crown1">
                             </div>
                             <div class="banner-title">
                                 <div class="mb">
-                                    <h2 class="col-group">
+                                    <h2 class="col-group col-group01">
                       <span class="text-style-1">
                         인
                       </span>
-                                        <span class="toggle_txt toggle_txt1">
-                        생에서 가장
+                                        <span class="toggle_txt toggle_txt1 btm">
+                        생에서 가장 중요한 것은
                       </span>
                                     </h2>
                                     <h2 class="col-group">
-                      <span class="toggle_txt toggle_txt2_mb">
-                        중요한 것은 &nbsp;
-                      </span>
-                                        <span class="text-style-1">
+                      <span class="text-style-1">
                         사
                       </span>
-                                        <span class="toggle_txt toggle_txt3">
+                                        <span class="toggle_txt toggle_txt3 btm">
                         랑이다
                       </span>
                                     </h2>
@@ -230,7 +250,6 @@
                 </div>
             </div>
         </div>
-        </div>
 
 
         <!-- MAIN-SERVICE -->
@@ -239,9 +258,12 @@
                 <div class="row-group">
                     <div class="main-service">
                         <div class="service-title">
+                            <div class="crown-wrap">
+                                <img src="/images/crown5.svg" alt="" class="crown5">
+                            </div>
                             <span class="title-style-1">All IN ONE</span>
-                            <span class="title-style-2">Private</span>
-                            <span class="title-style-3">Service</span>
+                            <span class="title-style-2">PRIVATE</span>
+                            <span class="title-style-3">SERVICE</span>
                         </div>
                         <div class="service-explan">
             <pre>누군가 만날 준비된 당신.
@@ -250,46 +272,59 @@
 
               '인사'는 준비된 분들을 위한 서비스입니다.
               인사는 나를 지키면서, 나를 위한 1:1 프리미엄,
-              프라이빗 서비스를 제공하는 온·오프라인 융합 서비스입니다.
+              프라이빗 서비스를 제공하는 <br class="mb" /> 온·오프라인 융합 서비스입니다.
 
-              모든 것이 디지털화된 지금, 절대 디지털화 할 수 없는 것이 있습니다.
+              모든 것이 디지털화된 지금,<br class="mb" />  절대 디지털화 할 수 없는 것이 있습니다.
               바로 사람과의 관계입니다.
 
               더이상 가벼운 만남으로 감정소모 하지 않아도,
               고가의 비용을 지불하지 않아도 됩니다.
-              최고의 고객서비스를 제공하여 최고의 만족도를 만들어 드리겠습니다.</pre>
+              최고의 고객서비스를 제공하여<br class="mb" />  최고의 만족도를 만들어 드리겠습니다.</pre>
                         </div>
                     </div>
                 </div>
-                <img src="/images/line.png" alt="line">
             </div>
         </div>
+
         <!-- MAIN-Choice -->
         <div class="main-section sec-6">
             <div class="container">
                 <div class="row-group">
                     <div class="main-choice">
                         <div class="choice-title">
-                            <img src="/images/crown2.png" alt="crown2">
+                            <div class="crown-wrap">
+                                <img src="/images/crown2.png" alt="" >
+                            </div>
                             <p>인사를 <br /><span class="text-style-1">선택</span>해야하는 이유</p>
                         </div>
-                        <div class="choice-container">
-                            <img src="/images/reason-01.png" alt="reason1" />
-                            <img src="/images/reason-02.png" alt="reason2" />
-                            <img src="/images/reason-03.png" alt="reason3" />
+                        <ul class="choice-container">
+                            <li class="img-wrap">
+                                <img src="/images/reason-01.png" alt="reason1" />
+                            </li>
+                            <li class="img-wrap">
+                                <img src="/images/reason-02.png" alt="reason1" />
+                            </li>
+                            <li class="img-wrap">
+                                <img src="/images/reason-03.png" alt="reason1" />
+                            </li>
+                        </ul>
+                        <div class="line-wrap">
+                            <img src="/images/line.png" alt="" class="line hidden-sm">
                         </div>
-                        <img src="/images/line.png" alt="line">
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- main-only -->
         <div class="main-section sec-7">
             <div class="container">
                 <div class="row-group">
                     <div class="main-only">
                         <div class="only-title">
-                            <img src="/images/crown2.png" alt="crown2">
+                            <div class="crown-wrap">
+                                <img src="/images/crown2.png" alt="" >
+                            </div>
                             <p><span class="text-style-1">오직</span><br />인사에만 있는 것</p>
                         </div>
                         <div class="only-container">
@@ -297,33 +332,37 @@
                                 <li>
                                     <span class="cir s-1"></span>
                                     <span class="cirb b-1">01</span>
-                                    소개팅, 파티운영으로 <b>신뢰감 높음</b>
+                                    <b>진정성</b>있는 만남을 원하는 사람만 가입</b>
                                 </li>
                                 <li>
                                     <span class="cir s-2"></span>
                                     <span class="cirb b-2">02</span>
-                                    진정성 있는 만남을 위한 <b>모든 회원 검증</b>
+                                    <b>대면 상담</b>으로 철저한 검증
                                 </li>
                                 <li>
                                     <span class="cir s-3"></span>
                                     <span class="cirb b-3">03</span>
-                                    전담 매니저와 소개팅 후 <b>피드백</b>
+                                    남녀 <b>동일한 비용</b>
                                 </li>
                                 <li>
                                     <span class="cir s-4"></span>
                                     <span class="cirb b-4">04</span>
-                                    <b>남녀 동일한 비용</b><br class="br-m"/>
-                                    (나이, 프로그램에 따라 상이)
+                                    디테일한 <b>매칭 회의</b>
                                 </li>
                                 <li>
                                     <span class="cir s-5"></span>
                                     <span class="cirb b-5">05</span>
-                                    디테일한 <b>매칭 회의</b>
+                                    매너, 호감도를 체크하면서 <b>사후관리</b>까지 책임
                                 </li>
                                 <li>
                                     <span class="cir s-6"></span>
                                     <span class="cirb b-6">06</span>
-                                    매너, 호감도<b>피드백을 통한</b> 회원 검증
+                                    <b>알바 회원 없음</b>
+                                </li>
+                                <li>
+                                    <span class="cir s-7"></span>
+                                    <span class="cirb b-7">07</span>
+                                    온 &middot; 오프라인 서비스 동시 운영으로 <b>신뢰감</b>
                                 </li>
                             </ul>
                         </div>
@@ -331,6 +370,7 @@
                 </div>
             </div>
         </div>
+
         <!-- footer-Banner -->
         <div class="main-section sec-8">
             <div class="main-footer container">
@@ -346,6 +386,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 </template>
 <script>
@@ -368,6 +409,11 @@ export default {
     mounted() {
         AOS.init();
 
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: "auto",
+            freeMode: true,
+            initialSlide:1,
+        });
     }
 }
 </script>

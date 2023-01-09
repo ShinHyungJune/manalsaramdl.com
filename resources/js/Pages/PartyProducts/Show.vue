@@ -259,7 +259,11 @@
 
         <div class="container invited">
             <div class="img-wrap">
-                <img src="/images/invited.png" alt="">
+                <img class="invited-pc" src="/images/letter.png" alt="">
+            </div>
+            <div class="text-wrap">
+                <div class="line"></div>
+                <p>괜찮은 사람, <br />어디서 만나?</p>
             </div>
         </div>
 
@@ -289,50 +293,86 @@
         <div class="application-container bg-gray">
             <div class="container">
                 <div class="application-contents">
-                    <img src="/images/crown4.png" alt="crown4">
+                    <div class="crown-wrap">
+                        <img src="/images/crown2.png" class="crown2" alt="">
+                    </div>
                     <p class="title-num">1</p>
                     <p class="title">신청방법</p>
-                    <img class="line-short" src="/images/line-short.png" alt="crown2">
-                    <div class="box">
-                        <span class="line"></span>
-                        <div class="application-step-contents">
+                    <div class="line-wrap">
+                        <img class="line-short" src="/images/line-short.png" alt="">
+                    </div>
+                    <ul class="box">
+                        <div class="roadmap-line-box"></div>
+                        <li class="application-step-contents">
                             <div class="application-step-content">
                                 <div class="application-step-box">
                                     <span class="step-num">step 01</span>
-                                    <img src="/images/party-icon-01.png" alt="">
+                                    <div class="img-wrap">
+                                        <img src="/images/party-icon-01@2x.png" alt="">
+                                    </div>
                                     <span class="step-title">회원가입</span>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="application-step-contents">
+                        <li class="application-step-contents">
                             <div class="application-step-content">
                                 <div class="application-step-box">
                                     <span class="step-num">step 02</span>
-                                    <img src="/images/party-icon-02.png" alt="">
+                                    <div class="img-wrap">
+                                        <img src="/images/party-icon-02@2x.png" alt="">
+                                    </div>
                                     <span class="step-title">파티 신청 및 결제</span>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="application-step-contents">
+                        <li class="application-step-contents">
                             <div class="application-step-content">
                                 <div class="application-step-box">
                                     <span class="step-num">step 03</span>
-                                    <img src="/images/party-icon-03.png" alt="">
+                                    <div class="img-wrap">
+                                        <img src="/images/party-icon-03@2x.png" alt="">
+                                    </div>
                                     <span class="step-title">신원인증</span>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="application-step-contents step04">
+                        <li class="application-step-contents step04">
                             <div class="application-step-content">
                                 <div class="application-step-box">
                                     <span class="step-num">step 04</span>
-                                    <img src="/images/party-icon-04.png" alt="">
+                                    <div class="img-wrap">
+                                        <img src="/images/party-icon-04@2x.png" alt="">
+                                    </div>
                                     <span class="step-title">파티 참석</span>
                                 </div>
                             </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- qualifiction -->
+        <div class="application-container">
+            <div class="container">
+                <div class="qualifiction-contents">
+                    <div class="crown-wrap">
+                        <img src="/images/crown2.png" class="crown2" alt="">
+                    </div>
+                    <p class="title-num">2</p>
+                    <p class="title">참가자격</p>
+                    <div class="line-wrap">
+                        <img class="line-short" src="/images/line-short.png" alt="">
+                    </div>
+                    <div class="step-3-consult party-person">
+                        <div class="party-person-box">
+                            <img src="/images/party-person-1.png" alt="">
+                        </div>
+                        <div class="party-person-box">
+                            <img src="/images/party-person-2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -343,27 +383,14 @@
         <div class="application-container">
             <div class="container">
                 <div class="qualifiction-contents">
-                    <img src="/images/crown4.png" class="crown5" alt="crown5">
-                    <p class="title-num">2</p>
-                    <p class="title">참가자격</p>
-                    <img class="line-short" src="/images/line-short.png" alt="crown2">
-                    <div class="step-3-consult">
-                        <img src="/images/matching.png" alt="matching">
-                        <!-- <img src="/images/samplew.png" alt="sample1">
-                        <img src="/images/samplem.png" alt="sample2"> -->
+                    <div class="crown-wrap">
+                        <img src="/images/crown2.png" class="crown2" alt="">
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- qualifiction -->
-        <div class="application-container">
-            <div class="container">
-                <div class="qualifiction-contents">
-                    <img src="/images/crown2.png" alt="crown2">
                     <p class="title-num">3</p>
                     <p class="title">파티장소</p>
-                    <img class="line-short" src="/images/line-short.png" alt="crown2">
+                    <div class="line-wrap">
+                        <img class="line-short" src="/images/line-short.png" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -383,10 +410,14 @@
             <div class="application-container bg-gray">
                 <div class="container">
                     <div class="food-contents">
-                        <img src="/images/crown2.png" alt="crown2">
+                        <div class="crown-wrap">
+                            <img src="/images/crown2.png" class="crown2" alt="">
+                        </div>
                         <p class="title-num">4</p>
                         <p class="title">주류 및 푸드</p>
-                        <img class="line-short" style="width: 264px; height:50.1px" src="/images/line-short.png" alt="crown2">
+                        <div class="line-wrap">
+                            <img class="line-short" src="/images/line-short.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <!-- 슬라이드 -->
@@ -415,10 +446,14 @@
         <div class="progress-container">
             <div class="container">
                 <div class="progress-contents">
-                    <img src="/images/crown2.png" alt="crown2">
+                    <div class="crown-wrap">
+                        <img src="/images/crown2.png" class="crown2" alt="">
+                    </div>
                     <p class="title-num">5</p>
                     <p class="title">진행순서</p>
-                    <img class="line-short" style="width: 264px; height:50.1px" src="/images/line-short.png" alt="crown2">
+                    <div class="line-wrap">
+                        <img class="line-short" src="/images/line-short.png" alt="">
+                    </div>
 <!--                    <ul class="progress-box">
                         <li> <img clsss="progress-img" src="/images/party-step-01.png" alt="matching"></li>
                         <li> <img clsss="progress-img" src="/images/party-step-02.png" alt="matching"></li>
@@ -446,10 +481,14 @@
         <div class="default-container">
             <div class="container">
                 <div class="default-contents">
-                    <img src="/images/crown2.png" alt="crown2">
+                    <div class="crown-wrap">
+                        <img src="/images/crown2.png" class="crown2" alt="">
+                    </div>
                     <p class="title-num">6</p>
                     <p class="title">기본매너</p>
-                    <img class="line-short" style="width: 264px; height:50.1px" src="/images/line-short.png" alt="crown2">
+                    <div class="line-wrap">
+                        <img class="line-short" src="/images/line-short.png" alt="">
+                    </div>
                 </div>
                 <div class="default-box">
                     <div class="debox default-1">
@@ -516,18 +555,17 @@
                             </li>
                             <li>
                                 <p class="circle-num">2</p>
-                                <p>파티 결제 후에 카카오톡 플러스친구로 <span class="text-style-1">[파티 참석합니다!] </span>보내주세요.
-                                </p>
+                                <p>파티 결제 후에 카카오톡 플러스친구로 <span class="text-style-1"><br class="br-mb">[참석합니다!]</span> 보내주세요.</p>
                             </li>
                             <li>
                                 <p class="circle-num">3</p>
-                                <p>파티 참석 전에 <span class="text-style-1">신원인증</span> 필수 입니다.
-                                    신원인증은 마이페이지에 <br /> 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.
+                                <p>파티 참석 전에 <span class="text-style-1">신원인증</span> 필수입니다.<br class="br-mb">
+                                    신원인증은 마이페이지에 <br class="br-pc" /> 프로필수정에서 <br class="br-mb">명함, 신분증, 셀카사진 첨부 부탁드립니다.
                                 </p>
                             </li>
                             <li>
                                 <p class="circle-num">4</p>
-                                <p>신원인증 후에 <span class="text-style-1">파티참석권</span>발송드립니다. </p>
+                                <p>신원인증 후에 <span class="text-style-1">파티참석권</span> 승인드립니다. </p>
                             </li>
                             <li>
                                 <p class="circle-num">5</p>
