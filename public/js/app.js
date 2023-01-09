@@ -2625,6 +2625,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -8814,6 +8817,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     AOS.init();
+    $(".party-food .swiper-slide img").each(function (item, index) {
+      console.log(item);
+    });
     var swiperParty = new Swiper(".party-place .swiper", {
       direction: "horizontal",
       slidesPerView: "auto",
@@ -55628,6 +55634,8 @@ var staticRenderFns = [
           ),
           _c("br", { staticClass: "mb" }),
           _vm._v("대표전화 : 1660-1369   이메일 : cs@insacompany.com   "),
+          _c("br", { staticClass: "br-mb" }),
+          _vm._v("사업자명 : 인사   사업자등록번호 : 481-17-02165"),
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "copyright" }, [
@@ -56226,6 +56234,19 @@ var staticRenderFns = [
             },
           },
           [_c("i", { staticClass: "sns-icon naver xi-naver" })]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "https://www.youtube.com/insa_official",
+              target: "_blank",
+            },
+          },
+          [_c("i", { staticClass: "sns-icon youtube xi-youtube-play" })]
         ),
       ]),
     ])

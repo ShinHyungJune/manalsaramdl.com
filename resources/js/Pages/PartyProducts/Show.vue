@@ -648,6 +648,9 @@ export default {
     mounted() {
         AOS.init();
 
+        $(".party-food .swiper-slide img").each(function(item, index){
+            console.log(item);
+        });
         const swiperParty = new Swiper(".party-place .swiper", {
             direction: "horizontal",
             slidesPerView: "auto",

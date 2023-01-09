@@ -29,7 +29,7 @@
     <meta name="google-site-verification" content="MpGSFJzfvoMQB4LaRNSrK419lLPHMFPmLd1MmZgZwGw" />
 
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css?ver=1">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/mypage.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
