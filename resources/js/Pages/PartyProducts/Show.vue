@@ -290,9 +290,9 @@
             </div>
         </div>
 
-        <div class="application-container bg-gray">
+        <div class="application-container bg-gray fs ">
             <div class="container">
-                <div class="application-contents">
+                <div class="application-contents s1">
                     <div class="crown-wrap">
                         <img src="/images/crown2.png" class="crown2" alt="">
                     </div>
@@ -651,6 +651,7 @@ export default {
         $(".party-food .swiper-slide img").each(function(item, index){
             console.log(item);
         });
+
         const swiperParty = new Swiper(".party-place .swiper", {
             direction: "horizontal",
             slidesPerView: "auto",
@@ -671,22 +672,6 @@ export default {
                 nextEl: ".party-place .swiper-button-next",
             },
         });
-
-
-        const swiperPartyFood = new Swiper(".party-food .swiper", {
-            direction: "horizontal",
-            loop: true,
-            autoplay: false,
-            pagination: {
-                el: ".party-food  .swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                prevEl: ".party-food  .swiper-button-prev",
-                nextEl: ".party-food  .swiper-button-next",
-            },
-        });
-
     }
 }
 </script>

@@ -4625,6 +4625,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8836,19 +8907,6 @@ __webpack_require__.r(__webpack_exports__);
       navigation: {
         prevEl: ".party-place .swiper-button-prev",
         nextEl: ".party-place .swiper-button-next"
-      }
-    });
-    var swiperPartyFood = new Swiper(".party-food .swiper", {
-      direction: "horizontal",
-      loop: true,
-      autoplay: false,
-      pagination: {
-        el: ".party-food  .swiper-pagination",
-        clickable: true
-      },
-      navigation: {
-        prevEl: ".party-food  .swiper-button-prev",
-        nextEl: ".party-food  .swiper-button-next"
       }
     });
   }
@@ -58727,33 +58785,7 @@ var render = function () {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "sub-container-blind" }, [
-      _c("div", { staticClass: "sub-container-contents" }, [
-        _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
-        _vm._v(" "),
-        _c("p", { staticClass: "title" }, [_vm._v("올인원 1:1 프라이빗")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "sub-title" }, [_vm._v("소개팅 서비스")]),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "sub-line mb",
-          attrs: { src: "/images/line.png", alt: "line" },
-        }),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "sub-btn price-check",
-            on: {
-              click: function ($event) {
-                _vm.active = true
-              },
-            },
-          },
-          [_vm._v("소개팅 가격 확인")]
-        ),
-      ]),
+      _vm._m(1),
       _vm._v(" "),
       _vm.active
         ? _c(
@@ -59207,20 +59239,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v("\n                가장 친한 친구가 나에 대해서 잘 알듯,"),
-      _c("br"),
-      _vm._v("\n                가장 친한 친구가 되어 "),
-      _c("br", { staticClass: "mb" }),
-      _vm._v("모든 과정(상담-매칭-소개팅-후관리-컨설팅)을"),
-      _c("br"),
-      _vm._v(
-        "\n                소통하는 '나’ 만을 위한 프라이빗한 소개팅 서비스입니다."
-      ),
-      _c("br"),
-      _vm._v("\n                아래의 가격 확인 버튼을 클릭하시면"),
-      _c("br", { staticClass: "mb" }),
-      _vm._v(" 구체적인 금액 확인이 가능합니다.\n            "),
+    return _c("div", { staticClass: "sub-container-contents" }, [
+      _c("div", { staticClass: "crown-wrap" }, [
+        _c("img", {
+          staticClass: "crown2",
+          attrs: { src: "/images/sub02-line2.png", alt: "" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "title" }, [_vm._v("올인원 1:1 프라이빗")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "sub-title" }, [_vm._v("소개팅 서비스")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "line-wrap" }, [
+        _c("img", {
+          staticClass: "sub-line mb line",
+          attrs: { src: "/images/line.png" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("\n                가장 친한 친구가 나에 대해서 잘 알듯,"),
+        _c("br"),
+        _vm._v("\n                가장 친한 친구가 되어 "),
+        _c("br", { staticClass: "mb" }),
+        _vm._v("모든 과정(상담-매칭-소개팅-후관리-컨설팅)을"),
+        _c("br"),
+        _vm._v(
+          "\n                소통하는 '나’ 만을 위한 프라이빗한 소개팅 서비스입니다."
+        ),
+        _c("br"),
+        _vm._v("\n                아래의 가격 확인 버튼을 클릭하시면"),
+        _c("br", { staticClass: "mb" }),
+        _vm._v(" 구체적인 금액 확인이 가능합니다.\n            "),
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "sub-btn price-check" }, [
+        _vm._v("소개팅 가격 확인"),
+      ]),
     ])
   },
   function () {
@@ -59363,41 +59419,47 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service-contents" }, [
-          _c("img", { attrs: { src: "/images/crown3.png", alt: "crown3" } }),
+          _c("div", { staticClass: "crown-wrap type1 order" }, [
+            _c("img", {
+              staticClass: "crown3",
+              attrs: { src: "/images/crown3@2x.png" },
+            }),
+          ]),
           _vm._v(" "),
-          _c("p", { staticClass: "title" }, [_vm._v("인사 소개팅")]),
+          _c("p", { staticClass: "title order" }, [_vm._v("인사 소개팅")]),
           _vm._v(" "),
           _c("p", { staticClass: "sub-title" }, [_vm._v("서비스 절차")]),
           _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/images/line-short.png", alt: "line-short" },
-          }),
+          _c("div", { staticClass: "line-wrap type1" }, [
+            _c("img", {
+              staticClass: "line-short",
+              attrs: { src: "/images/line-short.png" },
+            }),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "service-step" }, [
             _c("div", { staticClass: "step-box" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-01.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-01@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
-                _c("p", [_vm._v("STEP 01")]),
+                _c("p", { staticClass: "recolor" }, [_vm._v("STEP 01")]),
                 _vm._v(" "),
                 _c("p", [_vm._v("사전 상담")]),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-box" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-02.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-02@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
                 _c("p", [_vm._v("STEP 02")]),
@@ -59407,13 +59469,12 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-box" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-03.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-03@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
                 _c("p", [_vm._v("STEP 03")]),
@@ -59423,13 +59484,12 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-box" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-04.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-04@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
                 _c("p", [_vm._v("STEP 04")]),
@@ -59439,13 +59499,12 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-box box-right" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-05.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-05@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
                 _c("p", [_vm._v("STEP 05")]),
@@ -59455,29 +59514,27 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-box box-right" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-06.png",
-                  alt: "service-icon-01",
-                },
-              }),
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-06@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
-                _c("p", [_vm._v("STEP 06")]),
+                _c("p", { staticClass: "recolor" }, [_vm._v("STEP 06")]),
                 _vm._v(" "),
                 _c("p", [_vm._v("소개팅")]),
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "step-box box-right" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-07.png",
-                  alt: "service-icon-01",
-                },
-              }),
+            _c("div", { staticClass: "step-box box-right step-box7" }, [
+              _c("div", { staticClass: "step-wrap" }, [
+                _c("img", {
+                  staticClass: "step-img",
+                  attrs: { src: "/images/service-icon-07@2x.png", alt: "" },
+                }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "squair" }, [
                 _c("p", [_vm._v("STEP 07")]),
@@ -59486,51 +59543,100 @@ var staticRenderFns = [
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "step-box box-right step-box8" }, [
-              _c("img", {
-                staticClass: "step-img",
-                attrs: {
-                  src: "/images/service-icon-08.png",
-                  alt: "service-icon-01",
-                },
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "squair" }, [
-                _c("p", [_vm._v("STEP 08")]),
+            _c(
+              "div",
+              { staticClass: "step-box box-right step-box7 step-box8" },
+              [
+                _c("div", { staticClass: "step-wrap" }, [
+                  _c("img", {
+                    staticClass: "step-img",
+                    attrs: { src: "/images/service-icon-08@2x.png", alt: "" },
+                  }),
+                ]),
                 _vm._v(" "),
-                _c("p", [_vm._v("컨설팅")]),
-              ]),
-            ]),
+                _c("div", { staticClass: "squair" }, [
+                  _c("p", [_vm._v("STEP 08")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("컨설팅")]),
+                ]),
+              ]
+            ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "step-1" }, [
-            _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "step-1 step-box" }, [
+            _c("div", { staticClass: "crown-wrap type2" }, [
+              _c("img", {
+                staticClass: "crown2",
+                attrs: { src: "/images/crown4@2x.png", alt: "" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title-num" }, [_vm._v("1")]),
             _vm._v(" "),
             _c("p", { staticClass: "title" }, [_vm._v("상담")]),
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
-              _vm._v("좋은 인연을 찾기 위한 디테일한 1,2차 상담"),
+              _vm._v("좋은 인연을 찾기 위한 "),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("디테일한 1, 2차 상담을 진행합니다."),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "step-1-consult" }, [
-              _c("img", {
-                attrs: { src: "/images/consult-01.png", alt: "consult-01" },
-              }),
+            _c("ul", { staticClass: "step-1-consult pc" }, [
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-01",
+                  attrs: { src: "/images/consult-01@2x.png" },
+                }),
+              ]),
               _vm._v(" "),
-              _c("img", {
-                attrs: { src: "/images/consult-02.png", alt: "consult-02" },
-              }),
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-01",
+                  attrs: { src: "/images/consult-02@2x.png" },
+                }),
+              ]),
               _vm._v(" "),
-              _c("img", {
-                attrs: { src: "/images/consult-03.png", alt: "consult-03" },
-              }),
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-01",
+                  attrs: { src: "/images/consult-03@2x.png" },
+                }),
+              ]),
             ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "step-1-consult mb" }, [
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-01",
+                  attrs: { src: "/images/consult-mb-01.png" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-02",
+                  attrs: { src: "/images/consult-mb-02.png" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "step-1-img-wrap" }, [
+                _c("img", {
+                  staticClass: "consult consult-03",
+                  attrs: { src: "/images/consult-mb-03.png" },
+                }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "step-1-consult mb" }),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "step-2" }, [
-            _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "step-2 step-box" }, [
+            _c("div", { staticClass: "crown-wrap type2" }, [
+              _c("img", {
+                staticClass: "crown2",
+                attrs: { src: "/images/crown4@2x.png", alt: "" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title-num" }, [_vm._v("2")]),
             _vm._v(" "),
@@ -59538,31 +59644,49 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
-                "\n                        매력적으로 본인을 소개해 주시면, 디테일한 상담 내용을 토대로"
+                "\n                        매력적으로 본인을 소개해 주시면,  "
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("\n                        디테일한 상담 내용을 토대로"),
+              _c("br", { staticClass: "br-pc" }),
               _vm._v(
-                "\n                        개인의 매력을 반영하여 매치스트들이 보완, 수정하여 프로필을 만듭니다.\n                    "
+                "\n                        개인의 매력을 반영하여 매니저들이 보완, 수정하여\n                        "
               ),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("프로필을 만듭니다.\n                    "),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "step-2-consult" }, [
-              _c("img", {
-                attrs: { src: "/images/profile-01.png", alt: "profile-01" },
-              }),
+            _c("ul", { staticClass: "step-2-consult" }, [
+              _c("li", { staticClass: "step-2-img-wrap" }, [
+                _c("img", {
+                  staticClass: "profile-01",
+                  attrs: { src: "/images/profile-01.png" },
+                }),
+              ]),
               _vm._v(" "),
-              _c("img", {
-                attrs: { src: "/images/profile-02.png", alt: "profile-02" },
-              }),
+              _c("li", { staticClass: "step-2-img-wrap" }, [
+                _c("img", {
+                  staticClass: "profile-02",
+                  attrs: { src: "/images/profile-02.png" },
+                }),
+              ]),
               _vm._v(" "),
-              _c("img", {
-                attrs: { src: "/images/profile-03.png", alt: "profile-03" },
-              }),
+              _c("li", { staticClass: "step-2-img-wrap" }, [
+                _c("img", {
+                  staticClass: "profile-03",
+                  attrs: { src: "/images/profile-03.png" },
+                }),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "step-3" }, [
-            _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "step-3 step-box" }, [
+            _c("div", { staticClass: "crown-wrap type2" }, [
+              _c("img", {
+                staticClass: "crown2",
+                attrs: { src: "/images/crown4@2x.png", alt: "" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title-num" }, [_vm._v("3")]),
             _vm._v(" "),
@@ -59570,25 +59694,34 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
-                "\n                        정량적, 정성적인 조건을 분석하여 매칭 후 상대방 프로필 안내\n                    "
+                "\n                        정량적, 정성적인 조건을 분석하여"
+              ),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v(
+                " 매칭 후 상대방 프로필 안내합니다.\n                    "
               ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-3-consult" }, [
               _c("img", {
                 staticClass: "matching-pc",
-                attrs: { src: "/images/matching.png", alt: "matching" },
+                attrs: { src: "/images/matching@2x.png", alt: "" },
               }),
               _vm._v(" "),
               _c("img", {
                 staticClass: "matching-m",
-                attrs: { src: "/images/matching-m.png", alt: "matching" },
+                attrs: { src: "/images/matching-m.png", alt: "" },
               }),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "step-4" }, [
-            _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "step-4 step-box" }, [
+            _c("div", { staticClass: "crown-wrap type2" }, [
+              _c("img", {
+                staticClass: "crown2",
+                attrs: { src: "/images/crown4@2x.png", alt: "" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title-num" }, [_vm._v("4")]),
             _vm._v(" "),
@@ -59596,33 +59729,42 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
-                "\n                        매칭 확정 후, 소개팅 상대방과 소개팅 일정, 장소를 조율합니다."
+                "\n                        매칭 확정 후, 소개팅 상대방과 소개팅 일정, "
               ),
-              _c("br"),
-              _vm._v(
-                "\n                        소개팅 확정 후 변경, 취소가 불가합니다.\n                    "
-              ),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("\n                        장소를 조율합니다."),
+              _c("br", { staticClass: "br-pc" }),
+              _vm._v("\n                        소개팅 확정 후 "),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v(" 변경, 취소가 불가합니다.\n                    "),
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "warning-text" }, [
-              _vm._v(
-                "※ 지각, 비매너적인 행동은 회원 제명, 소개 횟수 차감으로 이어집니다."
-              ),
+              _vm._v("※ 지각, 비매너적인 행동은 회원 제명, "),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("소개 횟수 차감으로 이어집니다."),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-4-consult" }, [
               _c("img", {
-                attrs: { src: "/images/calendar-01.png", alt: "calendar-01" },
+                staticClass: "calendar-01",
+                attrs: { src: "/images/calendar-01@2x.png" },
               }),
               _vm._v(" "),
               _c("img", {
-                attrs: { src: "/images/calendar-02.png", alt: "calendar-02" },
+                staticClass: "calendar-02",
+                attrs: { src: "/images/calendar-02@2x.png" },
               }),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "step-4" }, [
-            _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "step-4 step-box" }, [
+            _c("div", { staticClass: "crown-wrap type2" }, [
+              _c("img", {
+                staticClass: "crown2",
+                attrs: { src: "/images/crown4@2x.png", alt: "" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title-num" }, [_vm._v("5")]),
             _vm._v(" "),
@@ -59634,13 +59776,15 @@ var staticRenderFns = [
               ),
               _c("br"),
               _vm._v(
-                "\n                        소개팅 1시간전 서로의 연락처가 채팅방에 공유됩니다.\n                    "
+                "\n                        소개팅 1시간전 서로의 연락처가 "
               ),
+              _c("br", { staticClass: "br-m" }),
+              _vm._v("채팅방에 공유됩니다.\n                    "),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "step-4-consult" }, [
               _c("img", {
-                attrs: { src: "/images/chat.png", alt: "1:1채팅방" },
+                attrs: { src: "/images/chat@2x.png", alt: "1:1채팅방" },
               }),
             ]),
           ]),
@@ -59655,7 +59799,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "step-5" }, [
       _c("div", { staticClass: "step-container" }, [
         _c("div", { staticClass: "step-container-contents" }, [
-          _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "crown-wrap type2" }, [
+            _c("img", {
+              staticClass: "crown2",
+              attrs: { src: "/images/crown4@2x.png", alt: "" },
+            }),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "title-num" }, [_vm._v("6")]),
           _vm._v(" "),
@@ -59668,7 +59817,7 @@ var staticRenderFns = [
             _c("br"),
             _vm._v("\n                    첫인상이 중요한 만큼 드레스코드는"),
             _c("br", { staticClass: "mb" }),
-            _vm._v("깔끔하게 준비해주세요!\n                "),
+            _vm._v(" 깔끔하게 준비해주세요!\n                "),
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "warning-text" }, [
@@ -59686,8 +59835,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "service-contents" }, [
-        _c("div", { staticClass: "step-6" }, [
-          _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+        _c("div", { staticClass: "step-6 step-box" }, [
+          _c("div", { staticClass: "crown-wrap type2" }, [
+            _c("img", {
+              staticClass: "crown2",
+              attrs: { src: "/images/crown4@2x.png", alt: "" },
+            }),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "title-num" }, [_vm._v("7")]),
           _vm._v(" "),
@@ -59700,18 +59854,20 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "warning-text" }, [
-            _vm._v(
-              "※ 추후 더 나은 소개팅을 위해 100% 소개팅 피드백을 진행하고 있습니다."
-            ),
+            _vm._v("※ 추후 더 나은 소개팅을 위해 100% 소개팅 피드백을"),
+            _c("br", { staticClass: "br-mb" }),
+            _vm._v(" 진행하고 있습니다."),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "step-6-consult" }, [
             _c("img", {
-              attrs: { src: "/images/feedback-01.png", alt: "feedback-01" },
+              staticClass: "feedback-01",
+              attrs: { src: "/images/feedback-01.png" },
             }),
             _vm._v(" "),
             _c("img", {
-              attrs: { src: "/images/feedback-02.png", alt: "feedback-02" },
+              staticClass: "feedback-02",
+              attrs: { src: "/images/feedback-02.png" },
             }),
           ]),
         ]),
@@ -59722,12 +59878,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step-7" }, [
+    return _c("div", { staticClass: "step-7 step-box" }, [
       _c("div", { staticClass: "step-container" }, [
         _c("div", { staticClass: "step-container-contents" }, [
-          _c("img", { attrs: { src: "/images/crown2.png", alt: "crown2" } }),
+          _c("div", { staticClass: "crown-wrap type2" }, [
+            _c("img", {
+              staticClass: "crown2",
+              attrs: { src: "/images/crown4@2x.png", alt: "" },
+            }),
+          ]),
           _vm._v(" "),
-          _c("p", { staticClass: "title-num" }, [_vm._v("7")]),
+          _c("p", { staticClass: "title-num" }, [_vm._v("8")]),
           _vm._v(" "),
           _c("p", { staticClass: "title" }, [_vm._v("컨설팅")]),
           _vm._v(" "),
@@ -59746,7 +59907,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "service-contents-price" }, [
           _c("div", { staticClass: "step-7-content" }, [
-            _c("img", { attrs: { src: "/images/crown3.png", alt: "crown3" } }),
+            _c("div", { staticClass: "crown-wrap type1" }, [
+              _c("img", {
+                staticClass: "crown3",
+                attrs: { src: "/images/crown3@2x.png" },
+              }),
+            ]),
             _vm._v(" "),
             _c("p", { staticClass: "title" }, [_vm._v("인사 소개팅")]),
             _vm._v(" "),
@@ -59756,7 +59922,10 @@ var staticRenderFns = [
               ),
             ]),
             _vm._v(" "),
-            _c("img", { attrs: { src: "/images/line-short.png", alt: "" } }),
+            _c("img", {
+              staticClass: "line",
+              attrs: { src: "/images/line-short.png", alt: "" },
+            }),
             _vm._v(" "),
             _c("div", { staticClass: "step-7-consult" }, [
               _c("table", [
@@ -59897,7 +60066,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "service-contents-price refund-blind" }, [
         _c("div", { staticClass: "step-7-content" }, [
-          _c("img", { attrs: { src: "/images/crown3.png", alt: "crown3" } }),
+          _c("div", { staticClass: "crown-wrap type1" }, [
+            _c("img", {
+              staticClass: "crown3",
+              attrs: { src: "/images/crown3.png" },
+            }),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "title" }, [_vm._v("인사 소개팅")]),
           _vm._v(" "),
@@ -59907,15 +60081,28 @@ var staticRenderFns = [
             ),
           ]),
           _vm._v(" "),
-          _c("img", { attrs: { src: "/images/line-short.png", alt: "" } }),
+          _c("div", { staticClass: "line-wrap type1" }, [
+            _c("img", {
+              staticClass: "line",
+              attrs: { src: "/images/line-short.png", alt: "" },
+            }),
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "refund-blind-box" }, [
+          _c("div", { staticClass: "refund-blind-box top" }, [
             _c("p", [
               _vm._v(
-                "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다."
+                "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
               ),
+              _c("br"),
+              _vm._v(
+                "\n                        해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한 또는 거절될 수 있으며 "
+              ),
+              _c("br"),
+              _vm._v("그럴 경우에는 전액 환불 도와드리고 있습니다."),
             ]),
-            _vm._v(" "),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "refund-blind-box btm" }, [
             _c("p", [
               _c("span", [_vm._v("01.")]),
               _vm._v(
@@ -59931,7 +60118,11 @@ var staticRenderFns = [
             _c("p", [
               _c("span", [_vm._v("03.")]),
               _vm._v(
-                " 서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                        문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
+                " 서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때문에"
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
               ),
             ]),
             _vm._v(" "),
@@ -59950,35 +60141,51 @@ var staticRenderFns = [
             _c("p", [
               _c("span", [_vm._v("06.")]),
               _vm._v(
-                " 환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                        정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
+                " 환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산정됩니다."
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
               ),
             ]),
             _vm._v(" "),
             _c("p", [
               _c("span", [_vm._v("07.")]),
               _vm._v(
-                " 프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                        경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
+                " 프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일 경우,"
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
               ),
             ]),
             _vm._v(" "),
             _c("p", [
               _c("span", [_vm._v("08.")]),
               _vm._v(
-                " 소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                        있습니다"
+                " 소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수 있습니다"
               ),
             ]),
             _vm._v(" "),
             _c("p", [
               _c("span", [_vm._v("09.")]),
               _vm._v(
-                " 회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                        추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                        다. (단, 기간 연장의 경우 환불은 불가합니다.)"
+                " 회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로 추가 연장을 요구하는 경우는"
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니다. (단, 기간 연장의 경우 환불은 불가합니다.)"
               ),
             ]),
             _vm._v(" "),
             _c("p", [
               _c("span", [_vm._v("10.")]),
               _vm._v(
-                " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                        이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다."
+                " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        가입하신 프로그램 기간만큼 연장 가능합니다."
               ),
             ]),
             _vm._v(" "),
@@ -59992,7 +60199,15 @@ var staticRenderFns = [
             _c("p", [
               _c("span", [_vm._v("12.")]),
               _vm._v(
-                " 회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                        위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                        서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                        실과 책임은 없습니다."
+                " 회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기 위하여 당사자에게"
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우 서비스의 이용을 제한하거나 거부할 수 있으며 "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        손해배상을 청구할 수 있으며, 회사의 과실과 책임은 없습니다."
               ),
             ]),
           ]),
@@ -68169,9 +68384,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "application-container bg-gray" }, [
+    return _c("div", { staticClass: "application-container bg-gray fs " }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "application-contents" }, [
+        _c("div", { staticClass: "application-contents s1" }, [
           _c("div", { staticClass: "crown-wrap" }, [
             _c("img", {
               staticClass: "crown2",

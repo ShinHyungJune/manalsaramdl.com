@@ -257,19 +257,19 @@ const swiperParty = new Swiper(".party-place .swiper", {
     },
 });
 
-//partyFood - SWIPER
-const swiperPartyFood = new Swiper(".party-food .swiper", {
-    direction: "horizontal",
-    // loop: true,
-    autoplay: false,
-    pagination: {
-        el: ".party-food  .swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        prevEl: ".party-food  .swiper-button-prev",
-        nextEl: ".party-food  .swiper-button-next",
-    },
-});
+// partyFood - SWIPER
+// const swiperPartyFood = new Swiper(".party-food .swiper", {
+//     direction: "horizontal",
+//     // loop: true,
+//     autoplay: false,
+//     pagination: {
+//         el: ".party-food  .swiper-pagination",
+//         clickable: true,
+//     },
+//     navigation: {
+//         prevEl: ".party-food  .swiper-button-prev",
+//         nextEl: ".party-food  .swiper-button-next",
+//     },
+// });
 
 // 파티페이지 스와이퍼 종료
