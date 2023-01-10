@@ -2194,6 +2194,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -55691,9 +55692,13 @@ var staticRenderFns = [
             "대표 : 이태현   주소 : 서울특별시 강남구 영동대로 602, 6층  "
           ),
           _c("br", { staticClass: "mb" }),
-          _vm._v("대표전화 : 1660-1369   이메일 : cs@insacompany.com   "),
-          _c("br", { staticClass: "br-mb" }),
-          _vm._v("사업자명 : 인사   사업자등록번호 : 481-17-02165"),
+          _vm._v("대표전화 : 1660-1369   이메일 : cs@insacompany.com  "),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "통십판매업 신고번호 : 제 2023-서울강남-00152호    사업자명 : 인사   사업자등록번호 : 481-17-02165"
+          ),
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "copyright" }, [
