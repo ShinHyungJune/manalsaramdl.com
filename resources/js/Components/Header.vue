@@ -82,8 +82,9 @@
                     <div class="mb-login" v-if="!$page.props.user">
                         <a href="/login">login</a>
                         <a href="/datings">mypage</a>
+                        <a href="/register">sign in</a>
                     </div>
-                    <div class="mb-login" style="justify-content: center" v-else>
+                    <div class="mb-login" v-else>
                         <a href="/logout">logout</a>
                         <a href="/datings">mypage</a>
                     </div>

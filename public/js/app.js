@@ -2629,6 +2629,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -56202,19 +56203,14 @@ var render = function () {
                 _c("a", { attrs: { href: "/login" } }, [_vm._v("login")]),
                 _vm._v(" "),
                 _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "/register" } }, [_vm._v("sign in")]),
               ])
-            : _c(
-                "div",
-                {
-                  staticClass: "mb-login",
-                  staticStyle: { "justify-content": "center" },
-                },
-                [
-                  _c("a", { attrs: { href: "/logout" } }, [_vm._v("logout")]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
-                ]
-              ),
+            : _c("div", { staticClass: "mb-login" }, [
+                _c("a", { attrs: { href: "/logout" } }, [_vm._v("logout")]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
+              ]),
           _vm._v(" "),
           _vm._m(7),
           _vm._v(" "),
