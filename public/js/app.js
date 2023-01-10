@@ -8821,6 +8821,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -68197,7 +68204,7 @@ var render = function () {
       _c("div", { staticClass: "application-container bg-gray" }, [
         _vm._m(10),
         _vm._v(" "),
-        _c("div", { staticClass: "party-food party-place swiper-container" }, [
+        _c("div", { staticClass: "party-place food swiper-container" }, [
           _c("div", { staticClass: "swiper" }, [
             _c(
               "div",
