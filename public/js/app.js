@@ -56201,7 +56201,7 @@ var render = function () {
             ? _c("div", { staticClass: "mb-login" }, [
                 _c("a", { attrs: { href: "/login" } }, [_vm._v("login")]),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "/register" } }, [_vm._v("sign in")]),
+                _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
               ])
             : _c(
                 "div",
@@ -56331,7 +56331,7 @@ var staticRenderFns = [
     return _c("ul", [
       _c("li", [_c("a", { attrs: { href: "/login" } }, [_vm._v("Log in")])]),
       _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "/datings" } }, [_vm._v("Mypage")])]),
+      _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Sign up")])]),
     ])
   },
   function () {
