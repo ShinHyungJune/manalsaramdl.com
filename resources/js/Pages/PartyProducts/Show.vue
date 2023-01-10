@@ -422,22 +422,15 @@
                 </div>
                 <!-- 슬라이드 -->
                 <!-- <div class="container"> -->
-                <div class="party-food swiper-container">
+                <div class="party-food party-place swiper-container">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" v-for="(img_food, index) in product.imgs_food" :key="index">
-                                <img :src="img_food.url" alt="test image" />
+                                <img :src="img_food.url" alt="slide-img" />
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-prev">
-                        <i class="xi-long-arrow-left"></i>
-                    </div>
-                    <div class="swiper-button-next">
-                        <i class="xi-long-arrow-right"></i>
-                    </div>
-                    <!-- //슬라이드 -->
                 </div>
             </div>
         </div>

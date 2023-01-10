@@ -8821,13 +8821,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -68204,16 +68197,14 @@ var render = function () {
       _c("div", { staticClass: "application-container bg-gray" }, [
         _vm._m(10),
         _vm._v(" "),
-        _c("div", { staticClass: "party-food swiper-container" }, [
+        _c("div", { staticClass: "party-food party-place swiper-container" }, [
           _c("div", { staticClass: "swiper" }, [
             _c(
               "div",
               { staticClass: "swiper-wrapper" },
               _vm._l(_vm.product.imgs_food, function (img_food, index) {
                 return _c("div", { key: index, staticClass: "swiper-slide" }, [
-                  _c("img", {
-                    attrs: { src: img_food.url, alt: "test image" },
-                  }),
+                  _c("img", { attrs: { src: img_food.url, alt: "slide-img" } }),
                 ])
               }),
               0
@@ -68221,19 +68212,15 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "swiper-pagination" }),
           ]),
-          _vm._v(" "),
-          _vm._m(11),
-          _vm._v(" "),
-          _vm._m(12),
         ]),
       ]),
     ]),
     _vm._v(" "),
+    _vm._m(11),
+    _vm._v(" "),
+    _vm._m(12),
+    _vm._v(" "),
     _vm._m(13),
-    _vm._v(" "),
-    _vm._m(14),
-    _vm._v(" "),
-    _vm._m(15),
   ])
 }
 var staticRenderFns = [
@@ -68581,22 +68568,6 @@ var staticRenderFns = [
           }),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-button-prev" }, [
-      _c("i", { staticClass: "xi-long-arrow-left" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-button-next" }, [
-      _c("i", { staticClass: "xi-long-arrow-right" }),
     ])
   },
   function () {
