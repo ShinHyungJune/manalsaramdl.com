@@ -31,7 +31,7 @@
                     소통하는 '나’ 만을 위한 프라이빗한 소개팅 서비스입니다.<br />
                     아래의 가격 확인 버튼을 클릭하시면<br class="mb" /> 구체적인 금액 확인이 가능합니다.
                 </p>
-                <button class="sub-btn price-check">소개팅 가격 확인</button>
+                <button class="sub-btn price-check" @click="active = true;">소개팅 가격 확인</button>
             </div>
             <div :class="`modal-overley request ${active ? 'open' : ''}`" v-if="active">
                 <!-- 소개팅 신청 -->

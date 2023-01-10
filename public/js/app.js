@@ -56331,7 +56331,7 @@ var staticRenderFns = [
     return _c("ul", [
       _c("li", [_c("a", { attrs: { href: "/login" } }, [_vm._v("Log in")])]),
       _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Sign up")])]),
+      _c("li", [_c("a", { attrs: { href: "/datings" } }, [_vm._v("Mypage")])]),
     ])
   },
   function () {
@@ -58792,7 +58792,30 @@ var render = function () {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "sub-container-blind" }, [
-      _vm._m(1),
+      _c("div", { staticClass: "sub-container-contents" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("p", { staticClass: "title" }, [_vm._v("올인원 1:1 프라이빗")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "sub-title" }, [_vm._v("소개팅 서비스")]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "sub-btn price-check",
+            on: {
+              click: function ($event) {
+                _vm.active = true
+              },
+            },
+          },
+          [_vm._v("소개팅 가격 확인")]
+        ),
+      ]),
       _vm._v(" "),
       _vm.active
         ? _c(
@@ -58814,7 +58837,7 @@ var render = function () {
                   [_c("i", { staticClass: "xi-close" })]
                 ),
                 _vm._v(" "),
-                _vm._m(2),
+                _vm._m(4),
                 _vm._v(" "),
                 _c("form", { attrs: { action: "" } }, [
                   _c("div", { staticClass: "form-wrap" }, [
@@ -59034,7 +59057,7 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(3),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "agree-wrap form-box" }, [
                     _c("div", { staticClass: "title-wrap col-group" }, [
@@ -59126,7 +59149,7 @@ var render = function () {
                           _vm._v(
                             "\n                                    환불규정을 모두 확인했으며 이에 동의 합니다\n                                    "
                           ),
-                          _vm._m(4),
+                          _vm._m(6),
                         ]),
                       ]),
                       _vm._v(" "),
@@ -59178,7 +59201,7 @@ var render = function () {
                           _vm._v(
                             "\n                                    개인정보 수집 및 이용에 대한 동의 (필수)\n                                    "
                           ),
-                          _vm._m(5),
+                          _vm._m(7),
                         ]),
                       ]),
                     ]),
@@ -59200,15 +59223,15 @@ var render = function () {
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
     _vm._m(8),
     _vm._v(" "),
     _vm._m(9),
     _vm._v(" "),
     _vm._m(10),
+    _vm._v(" "),
+    _vm._m(11),
+    _vm._v(" "),
+    _vm._m(12),
   ])
 }
 var staticRenderFns = [
@@ -59246,44 +59269,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sub-container-contents" }, [
-      _c("div", { staticClass: "crown-wrap" }, [
-        _c("img", {
-          staticClass: "crown2",
-          attrs: { src: "/images/sub02-line2.png", alt: "" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "title" }, [_vm._v("올인원 1:1 프라이빗")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "sub-title" }, [_vm._v("소개팅 서비스")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "line-wrap" }, [
-        _c("img", {
-          staticClass: "sub-line mb line",
-          attrs: { src: "/images/line.png" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("\n                가장 친한 친구가 나에 대해서 잘 알듯,"),
-        _c("br"),
-        _vm._v("\n                가장 친한 친구가 되어 "),
-        _c("br", { staticClass: "mb" }),
-        _vm._v("모든 과정(상담-매칭-소개팅-후관리-컨설팅)을"),
-        _c("br"),
-        _vm._v(
-          "\n                소통하는 '나’ 만을 위한 프라이빗한 소개팅 서비스입니다."
-        ),
-        _c("br"),
-        _vm._v("\n                아래의 가격 확인 버튼을 클릭하시면"),
-        _c("br", { staticClass: "mb" }),
-        _vm._v(" 구체적인 금액 확인이 가능합니다.\n            "),
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "sub-btn price-check" }, [
-        _vm._v("소개팅 가격 확인"),
-      ]),
+    return _c("div", { staticClass: "crown-wrap" }, [
+      _c("img", {
+        staticClass: "crown2",
+        attrs: { src: "/images/sub02-line2.png", alt: "" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "line-wrap" }, [
+      _c("img", {
+        staticClass: "sub-line mb line",
+        attrs: { src: "/images/line.png" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("\n                가장 친한 친구가 나에 대해서 잘 알듯,"),
+      _c("br"),
+      _vm._v("\n                가장 친한 친구가 되어 "),
+      _c("br", { staticClass: "mb" }),
+      _vm._v("모든 과정(상담-매칭-소개팅-후관리-컨설팅)을"),
+      _c("br"),
+      _vm._v(
+        "\n                소통하는 '나’ 만을 위한 프라이빗한 소개팅 서비스입니다."
+      ),
+      _c("br"),
+      _vm._v("\n                아래의 가격 확인 버튼을 클릭하시면"),
+      _c("br", { staticClass: "mb" }),
+      _vm._v(" 구체적인 금액 확인이 가능합니다.\n            "),
     ])
   },
   function () {

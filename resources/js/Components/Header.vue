@@ -23,7 +23,7 @@
                 <div class="top-login" v-if="!$page.props.user">
                     <ul>
                         <li><a href="/login">Log in</a></li>
-                        <li><a href="#">Sign up</a></li>
+                        <li><a href="/datings">Mypage</a></li>
                     </ul>
                 </div>
                 <div class="top-login" v-else>
