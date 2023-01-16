@@ -215,7 +215,7 @@
                                 </div>
                             </div>
                             <p class="content-sub pc">가장 친한 친구가 되어 찾아드립니다.</p>
-                            <button class="button-soge">올인원 프라이빗 소개팅</button>
+                            <a href="/datingProducts" class="button-soge">올인원 프라이빗 소개팅</a>
                         </div>
                     </div>
                     <div class="container mb">
@@ -244,7 +244,7 @@
                                 </div>
                             </div>
                             <p class="content-sub mb">가장 친한 친구가 되어 찾아드립니다.</p>
-                            <button class="button-soge">올인원 프라이빗 소개팅</button>
+                            <a href="/datingProducts" class="button-soge">올인원 프라이빗 소개팅</a>
                         </div>
                     </div>
                 </div>

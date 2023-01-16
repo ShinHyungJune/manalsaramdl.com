@@ -1894,6 +1894,7 @@ color: #fff;
 }
 
 .button-soge {
+    display:flex; align-items: center; justify-content: center;
     width: 320px;
     height: 73px;
     /* margin: 10px 363px 0; */
