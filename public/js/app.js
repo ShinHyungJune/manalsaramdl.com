@@ -63980,9 +63980,14 @@ var staticRenderFns = [
                   _vm._v("가장 친한 친구가 되어 찾아드립니다."),
                 ]),
                 _vm._v(" "),
-                _c("button", { staticClass: "button-soge" }, [
-                  _vm._v("올인원 프라이빗 소개팅"),
-                ]),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
               ]),
             ]),
             _vm._v(" "),
@@ -64035,9 +64040,14 @@ var staticRenderFns = [
                   _vm._v("가장 친한 친구가 되어 찾아드립니다."),
                 ]),
                 _vm._v(" "),
-                _c("button", { staticClass: "button-soge" }, [
-                  _vm._v("올인원 프라이빗 소개팅"),
-                ]),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
               ]),
             ]),
           ]),
