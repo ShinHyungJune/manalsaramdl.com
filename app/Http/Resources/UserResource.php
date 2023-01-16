@@ -63,7 +63,7 @@ class UserResource extends JsonResource
             "account" => $this->account,
             "alarm" => $this->alarm,
 
-            "created_at" => Carbon::make($this->created_at)->format("Y-m-d H:i"),
+            "created_at" => $this->created_at ? Carbon::make($this->created_at)->format("Y-m-d H:i") : "",
             "updated_at" => Carbon::make($this->updated_at)->format("Y-m-d H:i")
         ];
     }
