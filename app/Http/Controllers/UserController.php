@@ -178,7 +178,13 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
 
     public function create()
     {
-        return Inertia::render("Users/Create");
+        $appUrl = config("app.url");
+        $impId = config("iamport.imp_code");
+
+        return Inertia::render("Users/Create", [
+            "appUrl" => $appUrl,
+            "impId" => $impId
+        ]);
     }
 
     public function edit()

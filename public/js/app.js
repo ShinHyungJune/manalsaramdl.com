@@ -9767,8 +9767,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -9791,6 +9789,11 @@ __webpack_require__.r(__webpack_exports__);
         address: "",
         address_detail: "",
         address_zipcode: ""
+      }),
+      appUrl: this.$page.props.appUrl,
+      verificationForm: this.$inertia.form({
+        imp_uid: "",
+        merchant_uid: ""
       })
     };
   },
@@ -9805,6 +9808,32 @@ __webpack_require__.r(__webpack_exports__);
     },
     verified: function verified(data) {
       this.form.contact = data;
+    },
+    verify: function verify() {
+      var date = new Date();
+      var self = this;
+      var IMP = window.IMP; // 생략 가능
+
+      IMP.init(this.$page.props.impId);
+      alert(this.$page.props.impId);
+      IMP.certification({
+        // param
+        merchant_uid: date.getMilliseconds(),
+        // 주문 번호
+        m_redirect_url: self.appUrl + "/verifications/complete",
+        // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
+        popup: false // PC환경에서는 popup 파라메터가 무시되고 항상 true 로 적용됨
+
+      }, function (rsp) {
+        // callback
+        if (rsp.success) {
+          self.verificationForm.imp_uid = rsp.imp_uid;
+          self.verificationForm.merchant_uid = rsp.merchant_uid;
+          self.verificationForm.post("/experts/search");
+        } else {
+          alert("인증에 실패하였습니다.");
+        }
+      });
     }
   }
 });
@@ -69520,58 +69549,790 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("main", { staticClass: "loginpage login" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "join-wrap" }, [
+      _c("div", { staticClass: "form-wrap form-join" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("form", { attrs: { action: "" } }, [
+          _c("div", { staticClass: "con-wrap" }, [
+            _c("ul", { staticClass: "form-box row-group" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c("li", { staticClass: "row-group" }, [
+                _vm._m(4),
+                _vm._v(" "),
+                _c("div", { staticClass: "user col-group " }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.contact,
+                        expression: "form.contact",
+                      },
+                    ],
+                    attrs: {
+                      type: "text",
+                      placeholder: "휴대폰 번호를 입력하세요(-없이 숫자만)",
+                    },
+                    domProps: { value: _vm.form.contact },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "contact", $event.target.value)
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "form-btn",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.verify.apply(null, arguments)
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                                    인증하기\n                                "
+                      ),
+                    ]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _vm._m(8),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _vm._m(10),
+              _vm._v(" "),
+              _vm._m(11),
+              _vm._v(" "),
+              _vm._m(12),
+            ]),
+            _vm._v(" "),
+            _vm._m(13),
+            _vm._v(" "),
+            _vm._m(14),
+          ]),
+          _vm._v(" "),
+          _vm._m(15),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "submit-duty-btn", attrs: { type: "submit" } },
+            [_vm._v("회원가입")]
+          ),
+        ]),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "loginpage login" }, [
-      _c("div", { staticClass: "login-container main-login" }, [
-        _c("div", { staticClass: "login-header" }, [
-          _c("img", {
-            staticClass: "login-logo",
-            attrs: { src: "/images/login-logo.png", alt: "login-logo" },
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "login-header-title" }, [
-            _c("span", { staticClass: "text-style-1" }, [_vm._v("인")]),
-            _vm._v("생에서 가장 중요한 것은 "),
-            _c("span", { staticClass: "text-style-1" }, [_vm._v("사")]),
-            _vm._v("랑이다."),
+    return _c("div", { staticClass: "login-container main-login" }, [
+      _c("div", { staticClass: "login-header" }, [
+        _c("img", {
+          staticClass: "login-logo",
+          attrs: { src: "/images/login-logo.png", alt: "login-logo" },
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "login-header-title" }, [
+          _c("span", { staticClass: "text-style-1" }, [_vm._v("인")]),
+          _vm._v("생에서 가장 중요한 것은 "),
+          _c("span", { staticClass: "text-style-1" }, [_vm._v("사")]),
+          _vm._v("랑이다."),
+        ]),
+        _vm._v(" "),
+        _c("img", { attrs: { src: "/images//log-line.png", alt: "log-line" } }),
+        _vm._v(" "),
+        _c("p", { staticClass: "login-header-sub" }, [
+          _vm._v(
+            "\n                가장 친한 친구가 되어 찾아 줄게요\n                "
+          ),
+          _c("br"),
+          _vm._v("\n                인사 하세요!\n            "),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "con-wrap-header" }, [
+      _c("p", { staticClass: "con-wrap-title" }, [_vm._v("일반 회원가입")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "con-wrap-sub" }, [_vm._v("* 필수입력 ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                이메일 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", {
+          attrs: {
+            type: "text",
+            placeholder: "이메일 (이메일은 아이디로 사용됩니다)",
+          },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                비밀번호 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", {
+          staticClass: "input-gap",
+          attrs: { type: "text", placeholder: "비밀 번호" },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", placeholder: "비밀번호 재확인" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                본인인증 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                이름(실명) "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", { attrs: { type: "text", placeholder: "홍길동" } }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                생년월일 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", { attrs: { type: "text", placeholder: "1999/01/01" } }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                성별 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", { attrs: { type: "text", placeholder: "남자" } }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                직업 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "theme" } }, [
+        _c("div", { staticClass: "select-close" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "join-select" }, [
+          _c("div", { staticClass: "text" }, [
+            _vm._v(
+              "직업을 선택해주세요.\n                                        "
+            ),
+            _c("i", { staticClass: "xi-caret-down-min" }),
           ]),
           _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/images//log-line.png", alt: "log-line" },
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "login-header-sub" }, [
+          _c("ul", { staticClass: "option-list" }, [
+            _c("li", { staticClass: "option" }, [_vm._v("서비스 및 영업")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("사무직")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("금융직")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("연구원/엔지니어")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("건축/설계")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("간호 및 의료사")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("디자이너")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("언론인")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("교사 및 강사")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("공무원 및 공공기관")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [
+              _vm._v("의사(한의,치의)/약사"),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("회계사")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("기타 전문직")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("변호사 및 법조인")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("자영업 및 사업")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("프리랜서")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [
+              _vm._v("승무원 및 항공 관련 직업"),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [
+              _vm._v("대학생/대학원생(석박사)"),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("방송 관련 직업")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("인플루언서")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("기타")]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                최종 학력 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "theme" } }, [
+        _c("div", { staticClass: "join-select" }, [
+          _c("div", { staticClass: "text" }, [
             _vm._v(
-              "\n                    가장 친한 친구가 되어 찾아 줄게요\n                    "
+              "최종 학력을 선택해주세요.\n                                        "
             ),
-            _c("br"),
-            _vm._v("\n                    인사 하세요!\n                "),
+            _c("i", { staticClass: "xi-caret-down-min" }),
+          ]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "option-list" }, [
+            _c("li", { staticClass: "option" }, [
+              _vm._v("고졸 (취업한 경우 가능)"),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("2년제 대졸")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("4년데 대졸")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("석사 졸업")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("박사 졸업")]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                거주지 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user col-group" }, [
+        _c("div", { attrs: { id: "theme" } }, [
+          _c("div", { staticClass: "join-select" }, [
+            _c("div", { staticClass: "text" }, [
+              _vm._v(
+                "시/도를 선택해 주세요\n                                            "
+              ),
+              _c("i", { staticClass: "xi-caret-down-min" }),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "option-list half" }, [
+              _c("li", { staticClass: "option" }, [_vm._v("서울")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("인천")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("경기")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("경북")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("경남")]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "theme" } }, [
+          _c("div", { staticClass: "join-select" }, [
+            _c("div", { staticClass: "text" }, [
+              _vm._v(
+                "구/군을 선택해 주세요\n                                            "
+              ),
+              _c("i", { staticClass: "xi-caret-down-min" }),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "option-list half" }, [
+              _c("li", { staticClass: "option" }, [_vm._v("종로구")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("중구")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("용산구")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("성동구")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("경남")]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                이용 예정 서비스 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user" }, [
+        _c("input", { attrs: { type: "text", value: "소개팅 or 파티" } }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                가입 경로 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "theme" } }, [
+        _c("div", { staticClass: "join-select" }, [
+          _c("div", { staticClass: "text" }, [
+            _vm._v(
+              "가입 경로를 선택해 주세요\n                                        "
+            ),
+            _c("i", { staticClass: "xi-caret-down-min" }),
+          ]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "option-list" }, [
+            _c("li", { staticClass: "option" }, [_vm._v("네이버 블로그")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("네이버 광고")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("지인추천")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "option" }, [_vm._v("검색")]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notice-box" }, [
+      _c("p", [
+        _c("span", { staticClass: "text-style-1" }, [_vm._v("소개팅 서비스")]),
+        _vm._v(" 이용을 원하신다면 "),
+        _c("br"),
+        _vm._v("\n                            아래의 "),
+        _c("span", { staticClass: "text-style-1" }, [_vm._v("선택입력사항")]),
+        _vm._v("을 모두 입력해주세요\n                        "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "form-box row-group" }, [
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                근무지\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user col-group" }, [
+          _c("div", { attrs: { id: "theme" } }, [
+            _c("div", { staticClass: "join-select" }, [
+              _c("div", { staticClass: "text" }, [
+                _vm._v(
+                  "시/도를 선택해 주세요\n                                            "
+                ),
+                _c("i", { staticClass: "xi-caret-down-min" }),
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "option-list half" }, [
+                _c("li", { staticClass: "option" }, [_vm._v("서울")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("인천")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("경기")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("경북")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("경남")]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "theme" } }, [
+            _c("div", { staticClass: "join-select" }, [
+              _c("div", { staticClass: "text" }, [
+                _vm._v(
+                  "구/군을 선택해 주세요\n                                            "
+                ),
+                _c("i", { staticClass: "xi-caret-down-min" }),
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "option-list half" }, [
+                _c("li", { staticClass: "option" }, [_vm._v("종로구")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("중구")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("용산구")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("성동구")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "option" }, [_vm._v("경남")]),
+              ]),
+            ]),
           ]),
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "join-wrap" }, [
-        _c(
-          "div",
-          {
-            staticClass: "m-empty type01",
-            staticStyle: {
-              margin: "40px 0",
-              padding: "100px",
-              "background-color": "#ccc",
-              color: "#fff",
-              "font-size": "24px",
-              "font-weight": "bold",
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                키/몸무게\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("input", {
+            attrs: { type: "text", placeholder: "키와 몸무게를 입력해주세요" },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                인스타그램 아이디\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("input", {
+            attrs: {
+              type: "text",
+              placeholder: "인스타그램 아이디를 입력해 주세요",
             },
-          },
-          [_vm._v("\n                본인인증 모듈 심사대기\n            ")]
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group file" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                프로필 사진 (최소 3장)\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("label", { attrs: { for: "thumbnail_file" } }, [
+            _vm._v("파일 첨부"),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: {
+              type: "file",
+              id: "thumbnail_file",
+              onchange: "file_change('thumbnail');",
+              multiple: "",
+              accept: "image/*",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "file-upload-list" }, [
+            _c("ul", { attrs: { id: "thumbnail_ul" } }),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                이상형\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("textarea", {
+            attrs: {
+              name: "",
+              id: "",
+              cols: "30",
+              rows: "10",
+              placeholder: "본인의 이상형에 대해 구체적으로 입력해 주세요.",
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                자기소개글\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("textarea", {
+            attrs: {
+              name: "",
+              id: "",
+              cols: "30",
+              rows: "10",
+              placeholder:
+                "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                매니저에게 한마디\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "user" }, [
+          _c("textarea", {
+            attrs: {
+              name: "",
+              id: "",
+              cols: "30",
+              rows: "10",
+              placeholder: "매니저에게 전하고 싶은 한마디를 입력해 주세요.",
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("p", { staticClass: "default" }, [
+          _vm._v(
+            "\n                                결혼여부\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "theme" } }, [
+          _c("div", { staticClass: "join-select" }, [
+            _c("div", { staticClass: "text" }, [
+              _vm._v(
+                "혼인이력을 선택해 주세요\n                                        "
+              ),
+              _c("i", { staticClass: "xi-caret-down-min" }),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "option-list" }, [
+              _c("li", { staticClass: "option" }, [_vm._v("초혼")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "option" }, [_vm._v("재혼")]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "row-group" }, [
+        _c("div", { staticClass: "terms" }, [
+          _c("p", { staticClass: "default" }, [
+            _vm._v(
+              "\n                                    약관동의\n                                "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "all-check-contents" }, [
+            _c("label", { attrs: { for: "join_agree" } }, [
+              _c("input", { attrs: { type: "checkbox", id: "join_agree" } }),
+              _vm._v(" "),
+              _c("span", { staticClass: "check-icon" }),
+              _vm._v(
+                "\n                                        전체 동의\n                                    "
+              ),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "row-group terms-list" }, [
+          _c("li", { staticClass: "row-group terms-1" }, [
+            _c("div", { staticClass: "terms-agree" }, [
+              _c("label", { attrs: { for: "check1" } }, [
+                _c("input", { attrs: { type: "checkbox", id: "check1" } }),
+                _vm._v(" "),
+                _c("span", { staticClass: "check-icon" }),
+                _vm._v(
+                  "\n                                            이용약관 동의(필수)\n                                        "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { attrs: { href: "완료/privacy02.html", target: "_blank" } },
+              [_c("i", { staticClass: "xi-angle-right" })]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "row-group  terms-1" }, [
+            _c("div", { staticClass: "terms-agree" }, [
+              _c("label", { attrs: { for: "check2" } }, [
+                _c("input", { attrs: { type: "checkbox", id: "check2" } }),
+                _vm._v(" "),
+                _c("span", { staticClass: "check-icon" }),
+                _vm._v(
+                  "\n                                            개인정보 수집 및 이용에 대한 동의 (필수)\n                                        "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { attrs: { href: "완료/privacy01.html", target: "_blank" } },
+              [_c("i", { staticClass: "xi-angle-right" })]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "row-group  terms-1" }, [
+            _c("div", { staticClass: "terms-agree" }, [
+              _c("label", { attrs: { for: "check3" } }, [
+                _c("input", { attrs: { type: "checkbox", id: "check3" } }),
+                _vm._v(" "),
+                _c("span", { staticClass: "check-icon" }),
+                _vm._v(
+                  "\n                                            광고 및 마케팅 활용 동의 (선택)\n                                        "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { attrs: { href: "완료/privacy03.html", target: "_blank" } },
+              [_c("i", { staticClass: "xi-angle-right" })]
+            ),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "duty-box " }, [
+      _c("p", { staticClass: "duty-title" }, [_vm._v("회원의 의무")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "duty-sub" }, [
+        _vm._v("회원이 기입한 정보는 모두 사실인 것으로 간주합니다. "),
+        _c("br"),
+        _vm._v(
+          "\n                        법률상 혼인이력이 있거나, 위조된 서류로 인증을 하는 경우 "
         ),
+        _c("br"),
+        _vm._v(
+          "\n                        즉시 이용계약이 해지 되며 이로 인해 발생하는 "
+        ),
+        _c("br", { staticClass: "mb" }),
+        _vm._v("회사측 손해에 대해서는 "),
+        _c("br"),
+        _vm._v("\n                        향후 구상권이 청구될 수 있습니다."),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "duty-label" }, [
+        _c("label", { attrs: { for: "duty-check" } }, [
+          _c("input", { attrs: { type: "checkbox", id: "duty-check" } }),
+          _vm._v(" "),
+          _c("span", { staticClass: "check-icon" }),
+          _vm._v(
+            "\n                            회원의 의무를 모두 확인했으며 이에 동의합니다.\n                        "
+          ),
+        ]),
       ]),
     ])
   },

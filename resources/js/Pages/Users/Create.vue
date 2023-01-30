@@ -13,10 +13,7 @@
             </div>
         </div>
         <div class="join-wrap">
-            <div class="m-empty type01" style="margin:40px 0; padding:100px; background-color:#ccc; color:#fff; font-size:24px; font-weight:bold;">
-                본인인증 모듈 심사대기
-            </div>
-<!--            <div class="form-wrap form-join">
+            <div class="form-wrap form-join">
                 <div class="con-wrap-header">
                     <p class="con-wrap-title">일반 회원가입</p>
                     <p class="con-wrap-sub">* 필수입력 </p>
@@ -47,8 +44,8 @@
                                     본인인증 <span>*</span>
                                 </p>
                                 <div class="user col-group ">
-                                    <input type="text" placeholder="휴대폰 번호를 입력하세요(-없이 숫자만)">
-                                    <button type="button" class="form-btn">
+                                    <input type="text" placeholder="휴대폰 번호를 입력하세요(-없이 숫자만)" v-model="form.contact">
+                                    <button type="button" class="form-btn" @click.prevent="verify">
                                         인증하기
                                     </button>
                                 </div>
@@ -115,7 +112,7 @@
                                     </div>
                                 </div>
 
-                                &lt;!&ndash;  셀렉트 &ndash;&gt;
+                                <!--  셀렉트 -->
                             </li>
                             <li class="row-group">
                                 <p class="default">
@@ -241,6 +238,7 @@
                                             </ul>
                                         </div>
                                     </div>
+                                </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
@@ -323,7 +321,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                &lt;!&ndash;  &ndash;&gt;
+                                <!--  -->
                                 <ul class="row-group terms-list">
                                     <li class="row-group terms-1">
                                         <div class="terms-agree">
@@ -376,7 +374,7 @@
                     </div>
                     <button type="submit" class="submit-duty-btn">회원가입</button>
                 </form>
-            </div>-->
+            </div>
         </div>
     </main>
 </template>
@@ -400,7 +398,12 @@ export default {
                 address: "",
                 address_detail: "",
                 address_zipcode: ""
-            })
+            }),
+            appUrl: this.$page.props.appUrl,
+            verificationForm: this.$inertia.form({
+                imp_uid: "",
+                merchant_uid: "",
+            }),
         }
     },
 
@@ -421,7 +424,34 @@ export default {
 
         verified(data){
             this.form.contact = data;
-        }
+        },
+
+        verify(){
+            let date = new Date();
+
+            let self = this;
+
+            let IMP = window.IMP; // 생략 가능
+
+            IMP.init(this.$page.props.impId);
+
+            alert(this.$page.props.impId);
+            IMP.certification({ // param
+                merchant_uid: date.getMilliseconds(), // 주문 번호
+                m_redirect_url : self.appUrl + "/verifications/complete", // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
+                popup : false // PC환경에서는 popup 파라메터가 무시되고 항상 true 로 적용됨
+            }, function (rsp) { // callback
+                if (rsp.success) {
+                    self.verificationForm.imp_uid = rsp.imp_uid;
+                    self.verificationForm.merchant_uid = rsp.merchant_uid;
+
+                    self.verificationForm.post("/experts/search");
+
+                } else {
+                    alert("인증에 실패하였습니다.");
+                }
+            });
+        },
     }
 }
 </script>
