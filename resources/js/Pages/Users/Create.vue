@@ -19,7 +19,7 @@
                     <p class="con-wrap-sub">* 필수입력 </p>
                 </div>
 
-                <form action="">
+                <form action="" @submit.prevent="store">
                     <div class="con-wrap">
                         <ul class="form-box row-group">
                             <li class="row-group">
@@ -27,7 +27,9 @@
                                     이메일 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="이메일 (이메일은 아이디로 사용됩니다)">
+                                    <input type="text" placeholder="이메일 (이메일은 아이디로 사용됩니다)" v-model="form.email">
+
+                                    <span class="m-input-error">{{form.errors.email}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -35,8 +37,9 @@
                                     비밀번호 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input class="input-gap" type="text" placeholder="비밀 번호">
-                                    <input type="text" placeholder="비밀번호 재확인">
+                                    <input class="input-gap" type="password" placeholder="비밀 번호" v-model="form.password">
+                                    <input type="password" placeholder="비밀번호 재확인" v-model="form.password_confirmation">
+                                    <span class="m-input-error">{{form.errors.password}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -44,7 +47,9 @@
                                     본인인증 <span>*</span>
                                 </p>
                                 <div class="user col-group ">
-                                    <input type="text" placeholder="휴대폰 번호를 입력하세요(-없이 숫자만)" v-model="form.contact">
+                                    <input type="text" placeholder="휴대폰 번호" v-model="form.contact" disabled>
+                                    <span class="m-input-error">{{form.errors.contact}}</span>
+
                                     <button type="button" class="form-btn" @click.prevent="verify">
                                         인증하기
                                     </button>
@@ -56,7 +61,9 @@
                                     이름(실명) <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="홍길동">
+                                    <input type="text" placeholder="홍길동" v-model="form.name" disabled>
+                                    <span class="m-input-error">{{form.errors.name}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -64,7 +71,8 @@
                                     생년월일 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="1999/01/01">
+                                    <input type="text" placeholder="" v-model="form.birth" disabled>
+                                    <span class="m-input-error">{{form.errors.birth}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -72,7 +80,9 @@
                                     성별 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="남자">
+                                    <input type="text" placeholder="" v-model="form.sex" disabled>
+                                    <span class="m-input-error">{{form.errors.sex}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -82,34 +92,35 @@
                                 <div id="theme">
                                     <div class="select-close"></div>
 
-                                    <div class="join-select">
-                                        <div class="text">직업을 선택해주세요.
-                                            <i class="xi-caret-down-min"></i>
-                                        </div>
-                                        <ul class="option-list">
-                                            <li class="option">서비스 및 영업</li>
-                                            <li class="option">사무직</li>
-                                            <li class="option">금융직</li>
-                                            <li class="option">연구원/엔지니어</li>
-                                            <li class="option">건축/설계</li>
-                                            <li class="option">간호 및 의료사</li>
-                                            <li class="option">디자이너</li>
-                                            <li class="option">언론인</li>
-                                            <li class="option">교사 및 강사</li>
-                                            <li class="option">공무원 및 공공기관</li>
-                                            <li class="option">의사(한의,치의)/약사</li>
-                                            <li class="option">회계사</li>
-                                            <li class="option">기타 전문직</li>
-                                            <li class="option">변호사 및 법조인</li>
-                                            <li class="option">자영업 및 사업</li>
-                                            <li class="option">프리랜서</li>
-                                            <li class="option">승무원 및 항공 관련 직업</li>
-                                            <li class="option">대학생/대학원생(석박사)</li>
-                                            <li class="option">방송 관련 직업</li>
-                                            <li class="option">인플루언서</li>
-                                            <li class="option">기타</li>
-                                        </ul>
+                                    <div class="join-select-wrap">
+                                        <select name="" id="" class="join-select">
+                                            <option value="" disabled>직업을 선택해주세요.</option>
+                                            <option value="서비스 및 영업">서비스 및 영업</option>
+                                            <option value="사무직">사무직</option>
+                                            <option value="금융직">금융직</option>
+                                            <option value="연구원/엔지니어">연구원/엔지니어</option>
+                                            <option value="건축/설계">건축/설계</option>
+                                            <option value="간호 및 의료사">간호 및 의료사</option>
+                                            <option value="디자이너">디자이너</option>
+                                            <option value="언론인">언론인</option>
+                                            <option value="교사 및 강사">교사 및 강사</option>
+                                            <option value="공무원 및 공공기관">공무원 및 공공기관</option>
+                                            <option value="의사(한의,치의)/약사">의사(한의,치의)/약사</option>
+                                            <option value="회계사">회계사</option>
+                                            <option value="기타 전문직">기타 전문직</option>
+                                            <option value="변호사 및 법조인">변호사 및 법조인</option>
+                                            <option value="자영업 및 사업">자영업 및 사업</option>
+                                            <option value="프리랜서">프리랜서</option>
+                                            <option value="승무원 및 항공 관련 직업">승무원 및 항공 관련 직업</option>
+                                            <option value="대학생/대학원생(석박사)">대학생/대학원생(석박사)</option>
+                                            <option value="방송 관련 직업">방송 관련 직업</option>
+                                            <option value="인플루언서">인플루언서</option>
+                                            <option value="기타">기타</option>
+                                        </select>
+
+                                        <i class="xi-caret-down-min"></i>
                                     </div>
+
                                 </div>
 
                                 <!--  셀렉트 -->
@@ -119,18 +130,20 @@
                                     최종 학력 <span>*</span>
                                 </p>
                                 <div id="theme">
-                                    <div class="join-select">
-                                        <div class="text">최종 학력을 선택해주세요.
-                                            <i class="xi-caret-down-min"></i>
-                                        </div>
-                                        <ul class="option-list">
-                                            <li class="option">고졸 (취업한 경우 가능)</li>
-                                            <li class="option">2년제 대졸</li>
-                                            <li class="option">4년데 대졸</li>
-                                            <li class="option">석사 졸업</li>
-                                            <li class="option">박사 졸업</li>
-                                        </ul>
+                                    <div class="join-select-wrap">
+                                        <select name="" id="" v-model="form.school">
+                                            <option value="" disabled>최종 학력을 선택해주세요.</option>
+                                            <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
+                                            <option value="2년제 대졸">2년제 대졸</option>
+                                            <option value="4년데 대졸">4년데 대졸</option>
+                                            <option value="석사 졸업">석사 졸업</option>
+                                            <option value="박사 졸업">박사 졸업</option>
+                                        </select>
+
+                                        <i class="xi-caret-down-min"></i>
                                     </div>
+
+                                    <span class="m-input-error">{{form.errors.school}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -140,18 +153,20 @@
                                 <div class="user col-group">
 
                                     <div id="theme">
-                                        <div class="join-select">
-                                            <div class="text">시/도를 선택해 주세요
-                                                <i class="xi-caret-down-min"></i>
-                                            </div>
-                                            <ul class="option-list half">
-                                                <li class="option">서울</li>
-                                                <li class="option">인천</li>
-                                                <li class="option">경기</li>
-                                                <li class="option">경북</li>
-                                                <li class="option">경남</li>
-                                            </ul>
+                                        <div class="join-select-wrap">
+                                            <select name="" id="" v-model="form.city">
+                                                <option value="서울">서울</option>
+                                                <option value="인천">인천</option>
+                                                <option value="경기">경기</option>
+                                                <option value="경북">경북</option>
+                                                <option value="경남">경남</option>
+                                                <option value="강원">강원</option>
+                                            </select>
+
+                                            <i class="xi-caret-down-min"></i>
                                         </div>
+
+                                        <span class="m-input-error">{{form.errors.city}}</span>
                                     </div>
 
                                     <div id="theme">
