@@ -5,7 +5,15 @@
             <input type="file" id="a" accept="image/*" @change="changeFile" multiple>
         </label>
 
-        <ul class="upload-list col-group" style="margin-top:20px;">
+        <ul class="upload-list col-group" style="margin-top:20px;" v-if="defaultFiles && files.length === 0">
+            <li v-for="(file, index) in defaultFiles" :key="index">
+                <div class="img-box">
+                    <img :src="file.url" alt="">
+                </div>
+            </li>
+        </ul>
+
+        <ul class="upload-list col-group" style="margin-top:20px;" v-else>
             <li v-for="(file, index) in files" :key="index">
                 <div class="img-box">
                     <img :src="file.img ? file.img : ''" alt="">
@@ -19,7 +27,7 @@
 </template>
 <script>
 export default {
-    props: ["default"],
+    props: ["defaultFiles"],
 
     data(){
         return {

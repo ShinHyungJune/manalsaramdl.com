@@ -8,6 +8,7 @@ use App\Http\Resources\EventBannerResource;
 use App\Models\Category;
 use App\Models\EventBanner;
 use App\Models\User;
+use App\Models\Verification;
 use App\Models\VerifyNumber;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -46,34 +47,50 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     public function store(Request $request)
     {
         $request->validate([
-            "email" => "required|string|min:4|max:20|unique:users",
             "contact" => "required|string|unique:users|max:500",
+            "email" => "required|unique:users|email|max:500",
             "name" => "required|string|max:500",
+            "sex" => "required|string|max:500",
+            "birth" => "required|string|max:500",
+            "job" => "required|string|max:500",
+            "school" => "required|string|max:500",
+            "city" => "required|string|max:500",
+            "area" => "required|string|max:500",
+            "need_service" => "required|string|max:500",
+            "registration_way" => "required|string|max:500",
             "password" => "required|string|min:8|max:30|confirmed",
-            "email" => "required|email|max:500",
-            "address" => "required|string|max:500",
-            "address_detail" => "required|string|max:500",
-            "address_zipcode" => "required|string|max:500",
+
+            "city_company" => "nullable|string|max:50000",
+            "area_company" => "nullable|string|max:50000",
+            "tall" => "nullable|string|max:50000",
+            "weight" => "nullable|string|max:50000",
+            "instagram" => "nullable|string|max:50000",
+            "ideal" => "nullable|string|max:50000",
+            "introduce" => "nullable|string|max:50000",
+            "to_manager" => "nullable|string|max:50000",
+            "marriage" => "nullable|string|max:50000",
+            "agree_marketing" => "nullable|string|max:50000",
+            "imp_uid" => "nullable|string|max:50000",
+            "merchant_uid" => "nullable|string|max:50000",
         ]);
 
-        $verifyNumber = VerifyNumber::where('contact', $request->contact)
-            ->where('verified', true)->first();
+        $verification = Verification::where('imp_uid', $request->imp_uid)
+            ->where('merchant_uid', $request->merchant_uid)->first();
 
-        if(!$verifyNumber)
-            return redirect()->back()->with("error", "인증된 전화번호만 사용할 수 있습니다.");
+        if(!$verification)
+            return redirect()->back()->with("error", "본인인증한 사용자만 회원가입할 수 있습니다.");
 
-        User::create([
-            "ids" => $request->ids,
-            "contact" => $request->contact,
-            "name" => $request->name,
-            "password" => Hash::make($request->password),
-            "email" => $request->email,
-            "address" => $request->address,
-            "address_detail" => $request->address_detail,
-            "address_zipcode" => $request->address_zipcode,
-        ]);
+        $user = User::create(array_merge($request->except(["password", "imgs"]), [
+            "password" => Hash::make($request->password)
+        ]));
 
-        $verifyNumber->delete();
+        if($request->imgs){
+            foreach($request->file("imgs") as $img){
+                $user->addMedia($img)->toMediaCollection("imgs", "s3");
+            }
+        }
+
+        $verification->delete();
 
         return redirect("/login")->with("success", "성공적으로 가입되었습니다.");
     }
@@ -103,22 +120,36 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     public function update(Request $request)
     {
         $request->validate([
-            "name" => "required|string|max:500",
-            "contact" => "required|string|max:500",
-            "email" => "required|email|max:500",
-            "address" => "required|string|max:500",
-            "address_detail" => "required|string|max:500",
-            "address_zipcode" => "required|string|max:500",
-            "elevator" => "required|boolean",
-            "password" => "nullable|string|min:8|max:20|confirmed"
+            "job" => "required|string|max:500",
+            "school" => "required|string|max:500",
+            "city" => "required|string|max:500",
+            "area" => "required|string|max:500",
+            "need_service" => "required|string|max:500",
+            "registration_way" => "required|string|max:500",
+
+            "city_company" => "nullable|string|max:50000",
+            "area_company" => "nullable|string|max:50000",
+            "tall" => "nullable|string|max:50000",
+            "weight" => "nullable|string|max:50000",
+            "instagram" => "nullable|string|max:50000",
+            "ideal" => "nullable|string|max:50000",
+            "introduce" => "nullable|string|max:50000",
+            "to_manager" => "nullable|string|max:50000",
+            "marriage" => "nullable|string|max:50000",
+            "agree_marketing" => "nullable|string|max:50000",
         ]);
 
-        auth()->user()->update($request->except("password"));
+        auth()->user()->update($request->except([
+            "password", "name", "sex", "contact", "birth", "email"
+        ]));
 
-        if($request->password)
-            auth()->user()->update([
-                "password" => Hash::make($request->password)
-            ]);
+        if($request->imgs){
+            auth()->user()->clearMediaCollection("imgs");
+
+            foreach($request->file("imgs") as $img){
+                auth()->user()->addMedia($img)->toMediaCollection("imgs", "s3");
+            }
+        }
 
         return redirect()->back()->with("success", "성공적으로 처리되었습니다.");
     }

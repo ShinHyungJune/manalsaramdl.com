@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 */
+Route::post("/verifications", [\App\Http\Controllers\Api\VerificationController::class, "store"]);
 
 Route::middleware('auth')->group(function () {
 

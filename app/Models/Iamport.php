@@ -46,4 +46,16 @@ class Iamport extends Model
             "imp_secret" => config("iamport.secret"),
         ])->json()["response"];
     }
+
+    // 인증정보조회
+    public static function getCertification($accessToken, $imp_uid)
+    {
+        return Http::withHeaders([
+            "Content-Type" => "application/json",
+            "Authorization" => $accessToken
+        ])->get("https://api.iamport.kr/certifications/{$imp_uid}", [
+            "imp_key" => config("iamport.key"),
+            "imp_secret" => config("iamport.secret"),
+        ])->json()["response"];
+    }
 }

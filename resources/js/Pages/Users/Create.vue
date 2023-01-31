@@ -19,7 +19,7 @@
                     <p class="con-wrap-sub">* 필수입력 </p>
                 </div>
 
-                <form action="" @submit.prevent="store">
+                <form action="" @submit.prevent="register">
                     <div class="con-wrap">
                         <ul class="form-box row-group">
                             <li class="row-group">
@@ -82,7 +82,6 @@
                                 <div class="user">
                                     <input type="text" placeholder="" v-model="form.sex" disabled>
                                     <span class="m-input-error">{{form.errors.sex}}</span>
-
                                 </div>
                             </li>
                             <li class="row-group">
@@ -93,7 +92,7 @@
                                     <div class="select-close"></div>
 
                                     <div class="join-select-wrap">
-                                        <select name="" id="" class="join-select">
+                                        <select name="" id="" class="join-select" v-model="form.job">
                                             <option value="" disabled>직업을 선택해주세요.</option>
                                             <option value="서비스 및 영업">서비스 및 영업</option>
                                             <option value="사무직">사무직</option>
@@ -121,6 +120,7 @@
                                         <i class="xi-caret-down-min"></i>
                                     </div>
 
+                                    <div class="m-input-error">{{form.errors.job}}</div>
                                 </div>
 
                                 <!--  셀렉트 -->
@@ -131,7 +131,7 @@
                                 </p>
                                 <div id="theme">
                                     <div class="join-select-wrap">
-                                        <select name="" id="" v-model="form.school">
+                                        <select name="" id="" v-model="form.school" class="join-select">
                                             <option value="" disabled>최종 학력을 선택해주세요.</option>
                                             <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
                                             <option value="2년제 대졸">2년제 대졸</option>
@@ -151,38 +151,11 @@
                                     거주지 <span>*</span>
                                 </p>
                                 <div class="user col-group">
+                                    <input-region @change="(data) => {form.city = data.city; form.area = data.area;}" />
 
-                                    <div id="theme">
-                                        <div class="join-select-wrap">
-                                            <select name="" id="" v-model="form.city">
-                                                <option value="서울">서울</option>
-                                                <option value="인천">인천</option>
-                                                <option value="경기">경기</option>
-                                                <option value="경북">경북</option>
-                                                <option value="경남">경남</option>
-                                                <option value="강원">강원</option>
-                                            </select>
-
-                                            <i class="xi-caret-down-min"></i>
-                                        </div>
-
-                                        <span class="m-input-error">{{form.errors.city}}</span>
-                                    </div>
-
-                                    <div id="theme">
-                                        <div class="join-select">
-                                            <div class="text">구/군을 선택해 주세요
-                                                <i class="xi-caret-down-min"></i>
-                                            </div>
-                                            <ul class="option-list half">
-                                                <li class="option">종로구</li>
-                                                <li class="option">중구</li>
-                                                <li class="option">용산구</li>
-                                                <li class="option">성동구</li>
-                                                <li class="option">경남</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <span class="m-input-error">{{form.errors.city}}</span>
+                                    <br/>
+                                    <span class="m-input-error">{{form.errors.area}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -190,7 +163,8 @@
                                     이용 예정 서비스 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" value="소개팅 or 파티">
+                                    <input type="text" value="소개팅 or 파티" v-model="form.need_service">
+                                    <span class="m-input-error">{{form.errors.need_service}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -198,17 +172,19 @@
                                     가입 경로 <span>*</span>
                                 </p>
                                 <div id="theme">
-                                    <div class="join-select">
-                                        <div class="text">가입 경로를 선택해 주세요
-                                            <i class="xi-caret-down-min"></i>
-                                        </div>
-                                        <ul class="option-list">
-                                            <li class="option">네이버 블로그</li>
-                                            <li class="option">네이버 광고</li>
-                                            <li class="option">지인추천</li>
-                                            <li class="option">검색</li>
-                                        </ul>
+                                    <div class="join-select-wrap">
+                                        <select name="" id="" v-model="form.registration_way" class="join-select">
+                                            <option value="" disabled>가입 경로를 선택해 주세요.</option>
+                                            <option value="네이버 블로그">네이버 블로그</option>
+                                            <option value="네이버 광고">네이버 광고</option>
+                                            <option value="지인추천">지인추천</option>
+                                            <option value="검색">검색</option>
+                                        </select>
+
+                                        <i class="xi-caret-down-min"></i>
                                     </div>
+
+                                    <span class="m-input-error">{{form.errors.registration_way}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -224,43 +200,26 @@
                                     근무지
                                 </p>
                                 <div class="user col-group">
-
-                                    <div id="theme">
-                                        <div class="join-select">
-                                            <div class="text">시/도를 선택해 주세요
-                                                <i class="xi-caret-down-min"></i>
-                                            </div>
-                                            <ul class="option-list half">
-                                                <li class="option">서울</li>
-                                                <li class="option">인천</li>
-                                                <li class="option">경기</li>
-                                                <li class="option">경북</li>
-                                                <li class="option">경남</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div id="theme">
-                                        <div class="join-select">
-                                            <div class="text">구/군을 선택해 주세요
-                                                <i class="xi-caret-down-min"></i>
-                                            </div>
-                                            <ul class="option-list half">
-                                                <li class="option">종로구</li>
-                                                <li class="option">중구</li>
-                                                <li class="option">용산구</li>
-                                                <li class="option">성동구</li>
-                                                <li class="option">경남</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <input-region @change="(data) => {form.city_company = data.city; form.area_company = data.area;}" />
+                                    <span class="m-input-error">{{form.errors.city_company}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
-                                    키/몸무게
+                                    키
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="키와 몸무게를 입력해주세요">
+                                    <input type="text" placeholder="키를 입력해주세요" v-model="form.tall">
+                                    <span class="m-input-error">{{form.errors.tall}}</span>
+                                </div>
+                            </li>
+                            <li class="row-group">
+                                <p class="default">
+                                    몸무게를 입력해주세요
+                                </p>
+                                <div class="user">
+                                    <input type="text" placeholder="몸무게를 입력해주세요" v-model="form.weight">
+                                    <span class="m-input-error">{{form.errors.weight}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -268,7 +227,8 @@
                                     인스타그램 아이디
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="인스타그램 아이디를 입력해 주세요">
+                                    <input type="text" placeholder="인스타그램 아이디를 입력해 주세요" v-model="form.instagram">
+                                    <span class="m-input-error">{{form.errors.instagram}}</span>
                                 </div>
                             </li>
                             <li class="row-group file">
@@ -276,11 +236,9 @@
                                     프로필 사진 (최소 3장)
                                 </p>
                                 <div class="user">
-                                    <label for="thumbnail_file">파일 첨부</label>
-                                    <input type="file" id="thumbnail_file" onchange="file_change('thumbnail');" multiple="" accept="image/*">
-                                    <div class="file-upload-list">
-                                        <ul id="thumbnail_ul"></ul>
-                                    </div>
+                                    <input-imgs @change="(data) => {form.imgs = data}" />
+                                    <span class="m-input-error">{{form.errors.imgs}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -288,7 +246,9 @@
                                     이상형
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="본인의 이상형에 대해 구체적으로 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="본인의 이상형에 대해 구체적으로 입력해 주세요." v-model="form.ideal"></textarea>
+                                    <span class="m-input-error">{{form.errors.ideal}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -296,7 +256,8 @@
                                     자기소개글
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요." v-model="form.introduce"></textarea>
+                                    <span class="m-input-error">{{form.errors.introduce}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -304,7 +265,8 @@
                                     매니저에게 한마디
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요." v-model="form.to_manager"></textarea>
+                                    <span class="m-input-error">{{form.errors.to_manager}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -312,15 +274,17 @@
                                     결혼여부
                                 </p>
                                 <div id="theme">
-                                    <div class="join-select">
-                                        <div class="text">혼인이력을 선택해 주세요
-                                            <i class="xi-caret-down-min"></i>
-                                        </div>
-                                        <ul class="option-list">
-                                            <li class="option">초혼</li>
-                                            <li class="option">재혼</li>
-                                        </ul>
+                                    <div class="join-select-wrap">
+                                        <select name="" id="" v-model="form.marriage" class="join-select">
+                                            <option value="" disabled>혼인이력을 선택해 주세요.</option>
+                                            <option value="초혼">초혼</option>
+                                            <option value="재혼">재혼</option>
+                                        </select>
+
+                                        <i class="xi-caret-down-min"></i>
                                     </div>
+
+                                    <span class="m-input-error">{{form.errors.marriage}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -329,8 +293,9 @@
                                         약관동의
                                     </p>
                                     <div class="all-check-contents">
-                                        <label for="join_agree">
-                                            <input type="checkbox" id="join_agree">
+                                        <label for="" @click="() => {agree1 = true; agree2 = true; form.agree_marketing = true;}">
+                                            <input type="checkbox" id="" v-if="agree1 && agree2 && form.agree_marketing" checked>
+                                            <input type="checkbox" id="" v-else>
                                             <span class="check-icon"></span>
                                             전체 동의
                                         </label>
@@ -341,32 +306,32 @@
                                     <li class="row-group terms-1">
                                         <div class="terms-agree">
                                             <label for="check1">
-                                                <input type="checkbox" id="check1">
+                                                <input type="checkbox" id="check1" v-model="agree1">
                                                 <span class="check-icon"></span>
                                                 이용약관 동의(필수)
                                             </label>
                                         </div>
-                                        <a href="완료/privacy02.html" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy02" target="_blank"><i class="xi-angle-right"></i></a>
                                     </li>
                                     <li class="row-group  terms-1">
                                         <div class="terms-agree">
                                             <label for="check2">
-                                                <input type="checkbox" id="check2">
+                                                <input type="checkbox" id="check2" v-model="agree2">
                                                 <span class="check-icon"></span>
                                                 개인정보 수집 및 이용에 대한 동의 (필수)
                                             </label>
                                         </div>
-                                        <a href="완료/privacy01.html" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right"></i></a>
                                     </li>
                                     <li class="row-group  terms-1">
                                         <div class="terms-agree">
                                             <label for="check3">
-                                                <input type="checkbox" id="check3">
+                                                <input type="checkbox" id="check3" v-model="form.agree_marketing">
                                                 <span class="check-icon"></span>
                                                 광고 및 마케팅 활용 동의 (선택)
                                             </label>
                                         </div>
-                                        <a href="완료/privacy03.html" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right"></i></a>
                                     </li>
                                 </ul>
                             </li>
@@ -380,7 +345,7 @@
                             향후 구상권이 청구될 수 있습니다.</p>
                         <div class="duty-label">
                             <label for="duty-check">
-                                <input type="checkbox" id="duty-check">
+                                <input type="checkbox" id="duty-check" v-model="agree4">
                                 <span class="check-icon"></span>
                                 회원의 의무를 모두 확인했으며 이에 동의합니다.
                             </label>
@@ -397,23 +362,46 @@
 import InputVerifyNumber from "../../Components/Form/InputVerifyNumber";
 import {Link} from "@inertiajs/inertia-vue";
 import InputAddress from "../../Components/Form/InputAddress";
+import InputRegion from "../../Components/Form/InputRegion";
+import InputImgs from "../../Components/Form/InputImgs";
 
 export default {
-    components: {InputAddress, Link, InputVerifyNumber},
+    components: {InputImgs, InputRegion, InputAddress, Link, InputVerifyNumber},
     data(){
         return {
             agree: 0,
             form: this.$inertia.form({
-                ids: "",
-                contact:"",
-                email:"",
-                name: "",
-                password: "",
-                password_confirmation: "",
-                address: "",
-                address_detail: "",
-                address_zipcode: ""
+                email: this.$page.props.user ? this.$page.props.user.data.email : "",
+                contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
+                name: this.$page.props.user ? this.$page.props.user.data.name : "",
+                sex: this.$page.props.user ? this.$page.props.user.data.sex : "",
+                birth: this.$page.props.user ? this.$page.props.user.data.birth : "",
+                job: this.$page.props.user ? this.$page.props.user.data.job : "",
+                school: this.$page.props.user ? this.$page.props.user.data.school : "",
+                city: this.$page.props.user ? this.$page.props.user.data.city : "",
+                area: this.$page.props.user ? this.$page.props.user.data.area : "",
+                need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
+                registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+                city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
+                area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
+                tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
+                weight: this.$page.props.user ? this.$page.props.user.data.weight : "",
+                instagram: this.$page.props.user ? this.$page.props.user.data.instagram : "",
+                ideal: this.$page.props.user ? this.$page.props.user.data.ideal : "",
+                introduce: this.$page.props.user ? this.$page.props.user.data.introduce : "",
+                to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
+                marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
+                password: this.$page.props.user ? this.$page.props.user.data.password : "",
+                password_confirmation: this.$page.props.user ? this.$page.props.user.data.password_confirmation : "",
+                agree_marketing: this.$page.props.user ? this.$page.props.user.data.agree_marketing : false,
+                imgs: [],
+                imp_uid: "",
+                merchant_uid: "",
             }),
+            agree1: false,
+            agree2: false,
+            agree4: false,
+
             appUrl: this.$page.props.appUrl,
             verificationForm: this.$inertia.form({
                 imp_uid: "",
@@ -424,11 +412,11 @@ export default {
 
     methods: {
         register() {
-            if(!this.agree)
-                return alert("약관에 동의해주세요.");
+            if(!this.agree1 || !this.agree2 || !this.agree4)
+                return alert("필수약관에 동의해주세요.");
 
             if(!this.form.contact)
-                return alert("인증하기 버튼을 눌러 폰번호 인증을 먼저 진행해주세요.");
+                return alert("인증하기 버튼을 눌러 본인인증을 먼저 진행해주세요.");
 
             this.form.post("/users");
         },
@@ -450,18 +438,28 @@ export default {
 
             IMP.init(this.$page.props.impId);
 
-            alert(this.$page.props.impId);
             IMP.certification({ // param
                 merchant_uid: date.getMilliseconds(), // 주문 번호
                 m_redirect_url : self.appUrl + "/verifications/complete", // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
                 popup : false // PC환경에서는 popup 파라메터가 무시되고 항상 true 로 적용됨
             }, function (rsp) { // callback
                 if (rsp.success) {
-                    self.verificationForm.imp_uid = rsp.imp_uid;
-                    self.verificationForm.merchant_uid = rsp.merchant_uid;
+                    self.form.imp_uid = rsp.imp_uid;
+                    self.form.merchant_uid = rsp.merchant_uid;
 
-                    self.verificationForm.post("/experts/search");
+                    axios.post("/api/verifications", {
+                        imp_uid: rsp.imp_uid,
+                        merchant_uid: rsp.merchant_uid,
+                    }).then(response => {
+                        let item = response.data.data;
 
+                        self.form.phone = item.phone;
+                        self.form.sex = item.sex;
+                        self.form.birth = item.birth;
+                        self.form.name = item.name;
+                    }).catch(error => {
+                        return alert("인증에 실패하였습니다.");
+                    });
                 } else {
                     alert("인증에 실패하였습니다.");
                 }

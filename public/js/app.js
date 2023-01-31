@@ -2381,6 +2381,225 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["defaultFiles"],
+  data: function data() {
+    return {
+      files: []
+      /*
+      {
+          file: "",
+          img : ""
+      }
+      * */
+
+    };
+  },
+  methods: {
+    changeFile: function changeFile(event) {
+      var _this = this;
+
+      this.files = [];
+      Array.from(event.target.files).map(function (file) {
+        _this.files.push({
+          file: file,
+          img: URL.createObjectURL(file)
+        });
+      });
+      this.$emit("change", this.files.map(function (file) {
+        return file.file;
+      }));
+    },
+    remove: function remove(index) {
+      this.files = this.files.filter(function (img, indexData) {
+        return indexData != index;
+      });
+      this.$emit("change", this.files.map(function (file) {
+        return file.file;
+      }));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    city: {
+      "default": ""
+    },
+    area: {
+      "default": ""
+    }
+  },
+  data: function data() {
+    return {
+      cityData: this.city,
+      areaData: this.area
+    };
+  },
+  methods: {
+    changeCity: function changeCity() {
+      this.areaData = "";
+      this.change();
+    },
+    change: function change() {
+      this.$emit("change", {
+        city: this.cityData,
+        area: this.areaData
+      });
+    }
+  },
+  computed: {
+    areaItems: function areaItems() {
+      switch (this.cityData) {
+        case "서울특별시":
+          return ["강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구", "도봉구", "동대문구", "동작구", "마포구", "서대문구", "서초구", "성동구", "성북구", "송파구", "양천구", "영등포구", "용산구", "은평구", "종로구", "중구", "중랑구"];
+
+        case "인천광역시":
+          return ["계양구", "남구", "남동구", "동구", "부평구", "서구", "연수구", "중구", "강화군", "옹진군"];
+
+        case "대전광역시":
+          return ["대덕구", "동구", "서구", "유성구", "중구"];
+
+        case "광주광역시":
+          return ["광산구", "남구", "동구", "북구", "서구"];
+
+        case "대구광역시":
+          return ["남구", "달서구", "동구", "북구", "서구", "수성구", "중구", "달성군"];
+
+        case "울산광역시":
+          return ["남구", "동구", "북구", "중구", "울주군"];
+
+        case "부산광역시":
+          return ["강서구", "금정구", "남구", "동구", "동래구", "부산진구", "북구", "사상구", "사하구", "서구", "수영구", "연제구", "영도구", "중구", "해운대구", "기장군"];
+
+        case "경기도":
+          return ["고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시", "가평군", "양평군", "여주군", "연천군"];
+
+        case "강원도":
+          return ["강릉시", "동해시", "삼척시", "속초시", "원주시", "춘천시", "태백시", "고성군", "양구군", "양양군", "영월군", "인제군", "정선군", "철원군", "평창군", "홍천군", "화천군", "횡성군"];
+
+        case "충청북도":
+          return ["제천시", "청주시", "충주시", "괴산군", "단양군", "보은군", "영동군", "옥천군", "음성군", "증평군", "진천군", "청원군"];
+
+        case "충청남도":
+          return ["계룡시", "공주시", "논산시", "보령시", "서산시", "아산시", "천안시", "금산군", "당진군", "부여군", "서천군", "연기군", "예산군", "청양군", "태안군", "홍성군"];
+
+        case "전라북도":
+          return ["군산시", "김제시", "남원시", "익산시", "전주시", "정읍시", "고창군", "무주군", "부안군", "순창군", "완주군", "임실군", "장수군", "진안군"];
+
+        case "전라남도":
+          return ["광양시", "나주시", "목포시", "순천시", "여수시", "강진군", "고흥군", "곡성군", "구례군", "담양군", "무안군", "보성군", "신안군", "영광군", "영암군", "완도군", "장성군", "장흥군", "진도군", "함평군", "해남군", "화순군"];
+
+        case "경상북도":
+          return ["경산시", "경주시", "구미시", "김천시", "문경시", "상주시", "안동시", "영주시", "영천시", "포항시", "고령군", "군위군", "봉화군", "성주군", "영덕군", "영양군", "예천군", "울릉군", "울진군", "의성군", "청도군", "청송군", "칠곡군"];
+
+        case "경상남도":
+          return ["거제시", "김해시", "마산시", "밀양시", "사천시", "양산시", "진주시", "진해시", "창원시", "통영시", "거창군", "고성군", "남해군", "산청군", "의령군", "창녕군", "하동군", "함안군", "함양군", "합천군"];
+
+        case "제주도":
+          return ["서귀포시", "제주시", "남제주군", "북제주군"];
+
+        default:
+          return [];
+      }
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=script&lang=js& ***!
@@ -9387,6 +9606,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Form_InputVerifyNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Components/Form/InputVerifyNumber */ "./resources/js/Components/Form/InputVerifyNumber.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Form/InputAddress */ "./resources/js/Components/Form/InputAddress.vue");
+/* harmony import */ var _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Form/InputRegion */ "./resources/js/Components/Form/InputRegion.vue");
+/* harmony import */ var _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Form/InputImgs */ "./resources/js/Components/Form/InputImgs.vue");
 //
 //
 //
@@ -9747,46 +9968,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    InputImgs: _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_4__["default"],
+    InputRegion: _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_3__["default"],
     InputAddress: _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_2__["default"],
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Link,
     InputVerifyNumber: _Components_Form_InputVerifyNumber__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -9795,16 +9985,36 @@ __webpack_require__.r(__webpack_exports__);
     return {
       agree: 0,
       form: this.$inertia.form({
-        ids: "",
-        contact: "",
-        email: "",
-        name: "",
-        password: "",
-        password_confirmation: "",
-        address: "",
-        address_detail: "",
-        address_zipcode: ""
+        email: this.$page.props.user ? this.$page.props.user.data.email : "",
+        contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
+        name: this.$page.props.user ? this.$page.props.user.data.name : "",
+        sex: this.$page.props.user ? this.$page.props.user.data.sex : "",
+        birth: this.$page.props.user ? this.$page.props.user.data.birth : "",
+        job: this.$page.props.user ? this.$page.props.user.data.job : "",
+        school: this.$page.props.user ? this.$page.props.user.data.school : "",
+        city: this.$page.props.user ? this.$page.props.user.data.city : "",
+        area: this.$page.props.user ? this.$page.props.user.data.area : "",
+        need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
+        registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+        city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
+        area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
+        tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
+        weight: this.$page.props.user ? this.$page.props.user.data.weight : "",
+        instagram: this.$page.props.user ? this.$page.props.user.data.instagram : "",
+        ideal: this.$page.props.user ? this.$page.props.user.data.ideal : "",
+        introduce: this.$page.props.user ? this.$page.props.user.data.introduce : "",
+        to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
+        marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
+        password: this.$page.props.user ? this.$page.props.user.data.password : "",
+        password_confirmation: this.$page.props.user ? this.$page.props.user.data.password_confirmation : "",
+        agree_marketing: this.$page.props.user ? this.$page.props.user.data.agree_marketing : false,
+        imgs: [],
+        imp_uid: "",
+        merchant_uid: ""
       }),
+      agree1: false,
+      agree2: false,
+      agree4: false,
       appUrl: this.$page.props.appUrl,
       verificationForm: this.$inertia.form({
         imp_uid: "",
@@ -9814,8 +10024,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     register: function register() {
-      if (!this.agree) return alert("약관에 동의해주세요.");
-      if (!this.form.contact) return alert("인증하기 버튼을 눌러 폰번호 인증을 먼저 진행해주세요.");
+      if (!this.agree1 || !this.agree2 || !this.agree4) return alert("필수약관에 동의해주세요.");
+      if (!this.form.contact) return alert("인증하기 버튼을 눌러 본인인증을 먼저 진행해주세요.");
       this.form.post("/users");
     },
     clearLetter: function clearLetter() {
@@ -9830,7 +10040,6 @@ __webpack_require__.r(__webpack_exports__);
       var IMP = window.IMP; // 생략 가능
 
       IMP.init(this.$page.props.impId);
-      alert(this.$page.props.impId);
       IMP.certification({
         // param
         merchant_uid: date.getMilliseconds(),
@@ -9842,9 +10051,20 @@ __webpack_require__.r(__webpack_exports__);
       }, function (rsp) {
         // callback
         if (rsp.success) {
-          self.verificationForm.imp_uid = rsp.imp_uid;
-          self.verificationForm.merchant_uid = rsp.merchant_uid;
-          self.verificationForm.post("/experts/search");
+          self.form.imp_uid = rsp.imp_uid;
+          self.form.merchant_uid = rsp.merchant_uid;
+          axios.post("/api/verifications", {
+            imp_uid: rsp.imp_uid,
+            merchant_uid: rsp.merchant_uid
+          }).then(function (response) {
+            var item = response.data.data;
+            self.form.phone = item.phone;
+            self.form.sex = item.sex;
+            self.form.birth = item.birth;
+            self.form.name = item.name;
+          })["catch"](function (error) {
+            return alert("인증에 실패하였습니다.");
+          });
         } else {
           alert("인증에 실패하였습니다.");
         }
@@ -9871,6 +10091,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_State__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/State */ "./resources/js/Components/State.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
 /* harmony import */ var _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Form/InputAddress */ "./resources/js/Components/Form/InputAddress.vue");
+/* harmony import */ var _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Form/InputRegion */ "./resources/js/Components/Form/InputRegion.vue");
+/* harmony import */ var _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/Form/InputImgs */ "./resources/js/Components/Form/InputImgs.vue");
 //
 //
 //
@@ -10096,6 +10318,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
@@ -10103,6 +10379,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    InputImgs: _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_6__["default"],
+    InputRegion: _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_5__["default"],
     InputAddress: _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_4__["default"],
     Sidebar: _Components_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"],
     State: _Components_State__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -10114,16 +10392,22 @@ __webpack_require__.r(__webpack_exports__);
       willChangePassword: false,
       user: this.$page.props.user.data,
       form: this.$inertia.form({
-        page: 1,
-        name: this.$page.props.user ? this.$page.props.user.data.name : "",
-        contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
-        email: this.$page.props.user ? this.$page.props.user.data.email : "",
-        address: this.$page.props.user ? this.$page.props.user.data.address : "",
-        address_detail: this.$page.props.user ? this.$page.props.user.data.address_detail : "",
-        address_zipcode: this.$page.props.user ? this.$page.props.user.data.address_zipcode : "",
-        elevator: this.$page.props.user ? this.$page.props.user.data.elevator : "",
-        password: "",
-        password_confirmation: ""
+        job: this.$page.props.user ? this.$page.props.user.data.job : "",
+        school: this.$page.props.user ? this.$page.props.user.data.school : "",
+        city: this.$page.props.user ? this.$page.props.user.data.city : "",
+        area: this.$page.props.user ? this.$page.props.user.data.area : "",
+        need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
+        registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+        city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
+        area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
+        tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
+        weight: this.$page.props.user ? this.$page.props.user.data.weight : "",
+        instagram: this.$page.props.user ? this.$page.props.user.data.instagram : "",
+        ideal: this.$page.props.user ? this.$page.props.user.data.ideal : "",
+        introduce: this.$page.props.user ? this.$page.props.user.data.introduce : "",
+        to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
+        marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
+        imgs: ""
       })
     };
   },
@@ -10444,8 +10728,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "123",
-  cluster: "mt1",
+  key: "b37aa6816339a77531ea",
+  cluster: "ap3",
   forceTLS: true
 }); // import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
@@ -52240,6 +52524,84 @@ component.options.__file = "resources/js/Components/Form/InputCities.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Components/Form/InputImgs.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Components/Form/InputImgs.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputImgs.vue?vue&type=template&id=c957c04c& */ "./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c&");
+/* harmony import */ var _InputImgs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputImgs.vue?vue&type=script&lang=js& */ "./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InputImgs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Form/InputImgs.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Form/InputRegion.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/Components/Form/InputRegion.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputRegion.vue?vue&type=template&id=68990f3e& */ "./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e&");
+/* harmony import */ var _InputRegion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputRegion.vue?vue&type=script&lang=js& */ "./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InputRegion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Form/InputRegion.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Form/InputVerifyNumber.vue":
 /*!************************************************************!*\
   !*** ./resources/js/Components/Form/InputVerifyNumber.vue ***!
@@ -54061,6 +54423,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputImgs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InputImgs.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputImgs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputRegion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InputRegion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputRegion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************!*\
   !*** ./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=script&lang=js& ***!
@@ -54858,6 +55252,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputCities_vue_vue_type_template_id_c1fb1dda___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputCities_vue_vue_type_template_id_c1fb1dda___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InputCities.vue?vue&type=template&id=c1fb1dda& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputCities.vue?vue&type=template&id=c1fb1dda&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputImgs_vue_vue_type_template_id_c957c04c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InputImgs.vue?vue&type=template&id=c957c04c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e& ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputRegion_vue_vue_type_template_id_68990f3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InputRegion.vue?vue&type=template&id=68990f3e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e&");
 
 
 /***/ }),
@@ -56045,6 +56473,266 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputImgs.vue?vue&type=template&id=c957c04c& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "upload" }, [
+    _c("label", { staticClass: "find-file", attrs: { for: "a" } }, [
+      _vm._v("\n        파일 선택\n        "),
+      _c("input", {
+        attrs: { type: "file", id: "a", accept: "image/*", multiple: "" },
+        on: { change: _vm.changeFile },
+      }),
+    ]),
+    _vm._v(" "),
+    _vm.defaultFiles && _vm.files.length === 0
+      ? _c(
+          "ul",
+          {
+            staticClass: "upload-list col-group",
+            staticStyle: { "margin-top": "20px" },
+          },
+          _vm._l(_vm.defaultFiles, function (file, index) {
+            return _c("li", { key: index }, [
+              _c("div", { staticClass: "img-box" }, [
+                _c("img", { attrs: { src: file.url, alt: "" } }),
+              ]),
+            ])
+          }),
+          0
+        )
+      : _c(
+          "ul",
+          {
+            staticClass: "upload-list col-group",
+            staticStyle: { "margin-top": "20px" },
+          },
+          _vm._l(_vm.files, function (file, index) {
+            return _c("li", { key: index }, [
+              _c("div", { staticClass: "img-box" }, [
+                _c("img", {
+                  attrs: { src: file.img ? file.img : "", alt: "" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "del",
+                  on: {
+                    click: function ($event) {
+                      return _vm.remove(index)
+                    },
+                  },
+                },
+                [_c("i", { staticClass: "xi-close" })]
+              ),
+            ])
+          }),
+          0
+        ),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputRegion.vue?vue&type=template&id=68990f3e& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "user col-group" }, [
+    _c("div", { attrs: { id: "theme" } }, [
+      _c("div", { staticClass: "join-select-wrap" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.cityData,
+                expression: "cityData",
+              },
+            ],
+            attrs: { name: "city", id: "" },
+            on: {
+              change: [
+                function ($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function (o) {
+                      return o.selected
+                    })
+                    .map(function (o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.cityData = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                _vm.changeCity,
+              ],
+            },
+          },
+          [
+            _c("option", { attrs: { value: "", disabled: "" } }, [
+              _vm._v("시/도 선택해 주세요"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "서울특별시" } }, [
+              _vm._v("서울특별시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "인천광역시" } }, [
+              _vm._v("인천광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "대전광역시" } }, [
+              _vm._v("대전광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "광주광역시" } }, [
+              _vm._v("광주광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "대구광역시" } }, [
+              _vm._v("대구광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "울산광역시" } }, [
+              _vm._v("울산광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "부산광역시" } }, [
+              _vm._v("부산광역시"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "경기도" } }, [_vm._v("경기도")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "강원도" } }, [_vm._v("강원도")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "충청북도" } }, [
+              _vm._v("충청북도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "충청남도" } }, [
+              _vm._v("충청남도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "전라북도" } }, [
+              _vm._v("전라북도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "전라남도" } }, [
+              _vm._v("전라남도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "경상북도" } }, [
+              _vm._v("경상북도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "경상남도" } }, [
+              _vm._v("경상남도"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "제주도" } }, [_vm._v("제주도")]),
+          ]
+        ),
+        _vm._v(" "),
+        _c("i", { staticClass: "xi-caret-down-min" }),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "theme" } }, [
+      _c("div", { staticClass: "join-select-wrap" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.areaData,
+                expression: "areaData",
+              },
+            ],
+            attrs: { name: "city", id: "" },
+            on: {
+              change: [
+                function ($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function (o) {
+                      return o.selected
+                    })
+                    .map(function (o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.areaData = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                _vm.change,
+              ],
+            },
+          },
+          [
+            _c("option", { attrs: { value: "", disabled: "" } }, [
+              _vm._v("구/군을 선택해 주세요"),
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.areaItems, function (areaItem, index) {
+              return _c(
+                "option",
+                { key: index, domProps: { value: areaItem } },
+                [_vm._v(_vm._s(areaItem))]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("i", { staticClass: "xi-caret-down-min" }),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=template&id=445c64ec&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Form/InputVerifyNumber.vue?vue&type=template&id=445c64ec& ***!
@@ -56371,7 +57059,9 @@ var staticRenderFns = [
     return _c("ul", [
       _c("li", [_c("a", { attrs: { href: "/login" } }, [_vm._v("Log in")])]),
       _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Sign up")])]),
+      _c("li", [
+        _c("a", { attrs: { href: "/register" } }, [_vm._v("Sign up")]),
+      ]),
     ])
   },
   function () {
@@ -69578,7 +70268,7 @@ var render = function () {
             on: {
               submit: function ($event) {
                 $event.preventDefault()
-                return _vm.store.apply(null, arguments)
+                return _vm.register.apply(null, arguments)
               },
             },
           },
@@ -69830,7 +70520,157 @@ var render = function () {
                   ]),
                 ]),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("li", { staticClass: "row-group" }, [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("div", { attrs: { id: "theme" } }, [
+                    _c("div", { staticClass: "select-close" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "join-select-wrap" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.job,
+                              expression: "form.job",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "job",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("직업을 선택해주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "서비스 및 영업" } }, [
+                            _vm._v("서비스 및 영업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "사무직" } }, [
+                            _vm._v("사무직"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "금융직" } }, [
+                            _vm._v("금융직"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "연구원/엔지니어" } },
+                            [_vm._v("연구원/엔지니어")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "건축/설계" } }, [
+                            _vm._v("건축/설계"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "간호 및 의료사" } }, [
+                            _vm._v("간호 및 의료사"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "디자이너" } }, [
+                            _vm._v("디자이너"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "언론인" } }, [
+                            _vm._v("언론인"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "교사 및 강사" } }, [
+                            _vm._v("교사 및 강사"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "공무원 및 공공기관" } },
+                            [_vm._v("공무원 및 공공기관")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "의사(한의,치의)/약사" } },
+                            [_vm._v("의사(한의,치의)/약사")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "회계사" } }, [
+                            _vm._v("회계사"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "기타 전문직" } }, [
+                            _vm._v("기타 전문직"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "변호사 및 법조인" } },
+                            [_vm._v("변호사 및 법조인")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "자영업 및 사업" } }, [
+                            _vm._v("자영업 및 사업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "프리랜서" } }, [
+                            _vm._v("프리랜서"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "승무원 및 항공 관련 직업" } },
+                            [_vm._v("승무원 및 항공 관련 직업")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "대학생/대학원생(석박사)" } },
+                            [_vm._v("대학생/대학원생(석박사)")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "방송 관련 직업" } }, [
+                            _vm._v("방송 관련 직업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "인플루언서" } }, [
+                            _vm._v("인플루언서"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "기타" } }, [
+                            _vm._v("기타"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "xi-caret-down-min" }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.job)),
+                    ]),
+                  ]),
+                ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(9),
@@ -69848,6 +70688,7 @@ var render = function () {
                               expression: "form.school",
                             },
                           ],
+                          staticClass: "join-select",
                           attrs: { name: "", id: "" },
                           on: {
                             change: function ($event) {
@@ -69910,91 +70751,762 @@ var render = function () {
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(10),
                   _vm._v(" "),
-                  _c("div", { staticClass: "user col-group" }, [
-                    _c("div", { attrs: { id: "theme" } }, [
-                      _c("div", { staticClass: "join-select-wrap" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.city,
-                                expression: "form.city",
-                              },
-                            ],
-                            attrs: { name: "", id: "" },
-                            on: {
-                              change: function ($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function (o) {
-                                    return o.selected
-                                  })
-                                  .map(function (o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.form,
-                                  "city",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              },
-                            },
+                  _c(
+                    "div",
+                    { staticClass: "user col-group" },
+                    [
+                      _c("input-region", {
+                        on: {
+                          change: function (data) {
+                            _vm.form.city = data.city
+                            _vm.form.area = data.area
                           },
-                          [
-                            _c("option", { attrs: { value: "서울" } }, [
-                              _vm._v("서울"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "인천" } }, [
-                              _vm._v("인천"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "경기" } }, [
-                              _vm._v("경기"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "경북" } }, [
-                              _vm._v("경북"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "경남" } }, [
-                              _vm._v("경남"),
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "강원" } }, [
-                              _vm._v("강원"),
-                            ]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("i", { staticClass: "xi-caret-down-min" }),
-                      ]),
+                        },
+                      }),
                       _vm._v(" "),
                       _c("span", { staticClass: "m-input-error" }, [
                         _vm._v(_vm._s(_vm.form.errors.city)),
                       ]),
-                    ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.area)),
+                      ]),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.need_service,
+                          expression: "form.need_service",
+                        },
+                      ],
+                      attrs: { type: "text", value: "소개팅 or 파티" },
+                      domProps: { value: _vm.form.need_service },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "need_service",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
                     _vm._v(" "),
-                    _vm._m(11),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.need_service)),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _vm._m(12),
-                _vm._v(" "),
-                _vm._m(13),
+                _c("li", { staticClass: "row-group" }, [
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _c("div", { attrs: { id: "theme" } }, [
+                    _c("div", { staticClass: "join-select-wrap" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.registration_way,
+                              expression: "form.registration_way",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "registration_way",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("가입 경로를 선택해 주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "네이버 블로그" } }, [
+                            _vm._v("네이버 블로그"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "네이버 광고" } }, [
+                            _vm._v("네이버 광고"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "지인추천" } }, [
+                            _vm._v("지인추천"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "검색" } }, [
+                            _vm._v("검색"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "xi-caret-down-min" }),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.registration_way)),
+                    ]),
+                  ]),
+                ]),
               ]),
               _vm._v(" "),
-              _vm._m(14),
+              _vm._m(13),
               _vm._v(" "),
-              _vm._m(15),
+              _c("ul", { staticClass: "form-box row-group" }, [
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                근무지\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "user col-group" },
+                    [
+                      _c("input-region", {
+                        on: {
+                          change: function (data) {
+                            _vm.form.city_company = data.city
+                            _vm.form.area_company = data.area
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.city_company)),
+                      ]),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                키\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.tall,
+                          expression: "form.tall",
+                        },
+                      ],
+                      attrs: { type: "text", placeholder: "키를 입력해주세요" },
+                      domProps: { value: _vm.form.tall },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "tall", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.tall)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                몸무게를 입력해주세요\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.weight,
+                          expression: "form.weight",
+                        },
+                      ],
+                      attrs: {
+                        type: "text",
+                        placeholder: "몸무게를 입력해주세요",
+                      },
+                      domProps: { value: _vm.form.weight },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "weight", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.weight)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                인스타그램 아이디\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.instagram,
+                          expression: "form.instagram",
+                        },
+                      ],
+                      attrs: {
+                        type: "text",
+                        placeholder: "인스타그램 아이디를 입력해 주세요",
+                      },
+                      domProps: { value: _vm.form.instagram },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "instagram", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.instagram)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group file" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                프로필 사진 (최소 3장)\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "user" },
+                    [
+                      _c("input-imgs", {
+                        on: {
+                          change: function (data) {
+                            _vm.form.imgs = data
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.imgs)),
+                      ]),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                이상형\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.ideal,
+                          expression: "form.ideal",
+                        },
+                      ],
+                      attrs: {
+                        name: "",
+                        id: "",
+                        cols: "30",
+                        rows: "10",
+                        placeholder:
+                          "본인의 이상형에 대해 구체적으로 입력해 주세요.",
+                      },
+                      domProps: { value: _vm.form.ideal },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "ideal", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.ideal)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                자기소개글\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.introduce,
+                          expression: "form.introduce",
+                        },
+                      ],
+                      attrs: {
+                        name: "",
+                        id: "",
+                        cols: "30",
+                        rows: "10",
+                        placeholder:
+                          "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
+                      },
+                      domProps: { value: _vm.form.introduce },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "introduce", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.introduce)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                매니저에게 한마디\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.to_manager,
+                          expression: "form.to_manager",
+                        },
+                      ],
+                      attrs: {
+                        name: "",
+                        id: "",
+                        cols: "30",
+                        rows: "10",
+                        placeholder:
+                          "매니저에게 전하고 싶은 한마디를 입력해 주세요.",
+                      },
+                      domProps: { value: _vm.form.to_manager },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "to_manager", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.to_manager)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                결혼여부\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { attrs: { id: "theme" } }, [
+                    _c("div", { staticClass: "join-select-wrap" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.marriage,
+                              expression: "form.marriage",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "marriage",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("혼인이력을 선택해 주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "초혼" } }, [
+                            _vm._v("초혼"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "재혼" } }, [
+                            _vm._v("재혼"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "xi-caret-down-min" }),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.marriage)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _c("div", { staticClass: "terms" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                    약관동의\n                                "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "all-check-contents" }, [
+                      _c(
+                        "label",
+                        {
+                          attrs: { for: "" },
+                          on: {
+                            click: function () {
+                              _vm.agree1 = true
+                              _vm.agree2 = true
+                              _vm.form.agree_marketing = true
+                            },
+                          },
+                        },
+                        [
+                          _vm.agree1 && _vm.agree2 && _vm.form.agree_marketing
+                            ? _c("input", {
+                                attrs: {
+                                  type: "checkbox",
+                                  id: "",
+                                  checked: "",
+                                },
+                              })
+                            : _c("input", {
+                                attrs: { type: "checkbox", id: "" },
+                              }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "check-icon" }),
+                          _vm._v(
+                            "\n                                        전체 동의\n                                    "
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "row-group terms-list" }, [
+                    _c("li", { staticClass: "row-group terms-1" }, [
+                      _c("div", { staticClass: "terms-agree" }, [
+                        _c("label", { attrs: { for: "check1" } }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.agree1,
+                                expression: "agree1",
+                              },
+                            ],
+                            attrs: { type: "checkbox", id: "check1" },
+                            domProps: {
+                              checked: Array.isArray(_vm.agree1)
+                                ? _vm._i(_vm.agree1, null) > -1
+                                : _vm.agree1,
+                            },
+                            on: {
+                              change: function ($event) {
+                                var $$a = _vm.agree1,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 && (_vm.agree1 = $$a.concat([$$v]))
+                                  } else {
+                                    $$i > -1 &&
+                                      (_vm.agree1 = $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1)))
+                                  }
+                                } else {
+                                  _vm.agree1 = $$c
+                                }
+                              },
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "check-icon" }),
+                          _vm._v(
+                            "\n                                            이용약관 동의(필수)\n                                        "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(14),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "row-group  terms-1" }, [
+                      _c("div", { staticClass: "terms-agree" }, [
+                        _c("label", { attrs: { for: "check2" } }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.agree2,
+                                expression: "agree2",
+                              },
+                            ],
+                            attrs: { type: "checkbox", id: "check2" },
+                            domProps: {
+                              checked: Array.isArray(_vm.agree2)
+                                ? _vm._i(_vm.agree2, null) > -1
+                                : _vm.agree2,
+                            },
+                            on: {
+                              change: function ($event) {
+                                var $$a = _vm.agree2,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 && (_vm.agree2 = $$a.concat([$$v]))
+                                  } else {
+                                    $$i > -1 &&
+                                      (_vm.agree2 = $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1)))
+                                  }
+                                } else {
+                                  _vm.agree2 = $$c
+                                }
+                              },
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "check-icon" }),
+                          _vm._v(
+                            "\n                                            개인정보 수집 및 이용에 대한 동의 (필수)\n                                        "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(15),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "row-group  terms-1" }, [
+                      _c("div", { staticClass: "terms-agree" }, [
+                        _c("label", { attrs: { for: "check3" } }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.agree_marketing,
+                                expression: "form.agree_marketing",
+                              },
+                            ],
+                            attrs: { type: "checkbox", id: "check3" },
+                            domProps: {
+                              checked: Array.isArray(_vm.form.agree_marketing)
+                                ? _vm._i(_vm.form.agree_marketing, null) > -1
+                                : _vm.form.agree_marketing,
+                            },
+                            on: {
+                              change: function ($event) {
+                                var $$a = _vm.form.agree_marketing,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.form,
+                                        "agree_marketing",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.form,
+                                        "agree_marketing",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.form, "agree_marketing", $$c)
+                                }
+                              },
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "check-icon" }),
+                          _vm._v(
+                            "\n                                            광고 및 마케팅 활용 동의 (선택)\n                                        "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(16),
+                    ]),
+                  ]),
+                ]),
+              ]),
             ]),
             _vm._v(" "),
-            _vm._m(16),
+            _c("div", { staticClass: "duty-box " }, [
+              _c("p", { staticClass: "duty-title" }, [_vm._v("회원의 의무")]),
+              _vm._v(" "),
+              _vm._m(17),
+              _vm._v(" "),
+              _c("div", { staticClass: "duty-label" }, [
+                _c("label", { attrs: { for: "duty-check" } }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.agree4,
+                        expression: "agree4",
+                      },
+                    ],
+                    attrs: { type: "checkbox", id: "duty-check" },
+                    domProps: {
+                      checked: Array.isArray(_vm.agree4)
+                        ? _vm._i(_vm.agree4, null) > -1
+                        : _vm.agree4,
+                    },
+                    on: {
+                      change: function ($event) {
+                        var $$a = _vm.agree4,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.agree4 = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.agree4 = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.agree4 = $$c
+                        }
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "check-icon" }),
+                  _vm._v(
+                    "\n                            회원의 의무를 모두 확인했으며 이에 동의합니다.\n                        "
+                  ),
+                ]),
+              ]),
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -70106,103 +71618,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "row-group" }, [
-      _c("p", { staticClass: "default" }, [
-        _vm._v("\n                                직업 "),
-        _c("span", [_vm._v("*")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "theme" } }, [
-        _c("div", { staticClass: "select-close" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "join-select-wrap" }, [
-          _c(
-            "select",
-            { staticClass: "join-select", attrs: { name: "", id: "" } },
-            [
-              _c("option", { attrs: { value: "", disabled: "" } }, [
-                _vm._v("직업을 선택해주세요."),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "서비스 및 영업" } }, [
-                _vm._v("서비스 및 영업"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "사무직" } }, [_vm._v("사무직")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "금융직" } }, [_vm._v("금융직")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "연구원/엔지니어" } }, [
-                _vm._v("연구원/엔지니어"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "건축/설계" } }, [
-                _vm._v("건축/설계"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "간호 및 의료사" } }, [
-                _vm._v("간호 및 의료사"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "디자이너" } }, [
-                _vm._v("디자이너"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "언론인" } }, [_vm._v("언론인")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "교사 및 강사" } }, [
-                _vm._v("교사 및 강사"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "공무원 및 공공기관" } }, [
-                _vm._v("공무원 및 공공기관"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "의사(한의,치의)/약사" } }, [
-                _vm._v("의사(한의,치의)/약사"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "회계사" } }, [_vm._v("회계사")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "기타 전문직" } }, [
-                _vm._v("기타 전문직"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "변호사 및 법조인" } }, [
-                _vm._v("변호사 및 법조인"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "자영업 및 사업" } }, [
-                _vm._v("자영업 및 사업"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "프리랜서" } }, [
-                _vm._v("프리랜서"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "승무원 및 항공 관련 직업" } }, [
-                _vm._v("승무원 및 항공 관련 직업"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "대학생/대학원생(석박사)" } }, [
-                _vm._v("대학생/대학원생(석박사)"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "방송 관련 직업" } }, [
-                _vm._v("방송 관련 직업"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "인플루언서" } }, [
-                _vm._v("인플루언서"),
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "기타" } }, [_vm._v("기타")]),
-            ]
-          ),
-          _vm._v(" "),
-          _c("i", { staticClass: "xi-caret-down-min" }),
-        ]),
-      ]),
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                직업 "),
+      _c("span", [_vm._v("*")]),
     ])
   },
   function () {
@@ -70227,74 +71645,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "theme" } }, [
-      _c("div", { staticClass: "join-select" }, [
-        _c("div", { staticClass: "text" }, [
-          _vm._v(
-            "구/군을 선택해 주세요\n                                            "
-          ),
-          _c("i", { staticClass: "xi-caret-down-min" }),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "option-list half" }, [
-          _c("li", { staticClass: "option" }, [_vm._v("종로구")]),
-          _vm._v(" "),
-          _c("li", { staticClass: "option" }, [_vm._v("중구")]),
-          _vm._v(" "),
-          _c("li", { staticClass: "option" }, [_vm._v("용산구")]),
-          _vm._v(" "),
-          _c("li", { staticClass: "option" }, [_vm._v("성동구")]),
-          _vm._v(" "),
-          _c("li", { staticClass: "option" }, [_vm._v("경남")]),
-        ]),
-      ]),
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                이용 예정 서비스 "),
+      _c("span", [_vm._v("*")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "row-group" }, [
-      _c("p", { staticClass: "default" }, [
-        _vm._v("\n                                이용 예정 서비스 "),
-        _c("span", [_vm._v("*")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "user" }, [
-        _c("input", { attrs: { type: "text", value: "소개팅 or 파티" } }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "row-group" }, [
-      _c("p", { staticClass: "default" }, [
-        _vm._v("\n                                가입 경로 "),
-        _c("span", [_vm._v("*")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "theme" } }, [
-        _c("div", { staticClass: "join-select" }, [
-          _c("div", { staticClass: "text" }, [
-            _vm._v(
-              "가입 경로를 선택해 주세요\n                                        "
-            ),
-            _c("i", { staticClass: "xi-caret-down-min" }),
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "option-list" }, [
-            _c("li", { staticClass: "option" }, [_vm._v("네이버 블로그")]),
-            _vm._v(" "),
-            _c("li", { staticClass: "option" }, [_vm._v("네이버 광고")]),
-            _vm._v(" "),
-            _c("li", { staticClass: "option" }, [_vm._v("지인추천")]),
-            _vm._v(" "),
-            _c("li", { staticClass: "option" }, [_vm._v("검색")]),
-          ]),
-        ]),
-      ]),
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                가입 경로 "),
+      _c("span", [_vm._v("*")]),
     ])
   },
   function () {
@@ -70316,322 +71678,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "form-box row-group" }, [
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                근무지\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user col-group" }, [
-          _c("div", { attrs: { id: "theme" } }, [
-            _c("div", { staticClass: "join-select" }, [
-              _c("div", { staticClass: "text" }, [
-                _vm._v(
-                  "시/도를 선택해 주세요\n                                            "
-                ),
-                _c("i", { staticClass: "xi-caret-down-min" }),
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "option-list half" }, [
-                _c("li", { staticClass: "option" }, [_vm._v("서울")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("인천")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("경기")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("경북")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("경남")]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "theme" } }, [
-            _c("div", { staticClass: "join-select" }, [
-              _c("div", { staticClass: "text" }, [
-                _vm._v(
-                  "구/군을 선택해 주세요\n                                            "
-                ),
-                _c("i", { staticClass: "xi-caret-down-min" }),
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "option-list half" }, [
-                _c("li", { staticClass: "option" }, [_vm._v("종로구")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("중구")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("용산구")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("성동구")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "option" }, [_vm._v("경남")]),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                키/몸무게\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("input", {
-            attrs: { type: "text", placeholder: "키와 몸무게를 입력해주세요" },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                인스타그램 아이디\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("input", {
-            attrs: {
-              type: "text",
-              placeholder: "인스타그램 아이디를 입력해 주세요",
-            },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group file" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                프로필 사진 (최소 3장)\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("label", { attrs: { for: "thumbnail_file" } }, [
-            _vm._v("파일 첨부"),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: {
-              type: "file",
-              id: "thumbnail_file",
-              onchange: "file_change('thumbnail');",
-              multiple: "",
-              accept: "image/*",
-            },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "file-upload-list" }, [
-            _c("ul", { attrs: { id: "thumbnail_ul" } }),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                이상형\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("textarea", {
-            attrs: {
-              name: "",
-              id: "",
-              cols: "30",
-              rows: "10",
-              placeholder: "본인의 이상형에 대해 구체적으로 입력해 주세요.",
-            },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                자기소개글\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("textarea", {
-            attrs: {
-              name: "",
-              id: "",
-              cols: "30",
-              rows: "10",
-              placeholder:
-                "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
-            },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                매니저에게 한마디\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("textarea", {
-            attrs: {
-              name: "",
-              id: "",
-              cols: "30",
-              rows: "10",
-              placeholder: "매니저에게 전하고 싶은 한마디를 입력해 주세요.",
-            },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("p", { staticClass: "default" }, [
-          _vm._v(
-            "\n                                결혼여부\n                            "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "theme" } }, [
-          _c("div", { staticClass: "join-select" }, [
-            _c("div", { staticClass: "text" }, [
-              _vm._v(
-                "혼인이력을 선택해 주세요\n                                        "
-              ),
-              _c("i", { staticClass: "xi-caret-down-min" }),
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "option-list" }, [
-              _c("li", { staticClass: "option" }, [_vm._v("초혼")]),
-              _vm._v(" "),
-              _c("li", { staticClass: "option" }, [_vm._v("재혼")]),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "row-group" }, [
-        _c("div", { staticClass: "terms" }, [
-          _c("p", { staticClass: "default" }, [
-            _vm._v(
-              "\n                                    약관동의\n                                "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "all-check-contents" }, [
-            _c("label", { attrs: { for: "join_agree" } }, [
-              _c("input", { attrs: { type: "checkbox", id: "join_agree" } }),
-              _vm._v(" "),
-              _c("span", { staticClass: "check-icon" }),
-              _vm._v(
-                "\n                                        전체 동의\n                                    "
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "row-group terms-list" }, [
-          _c("li", { staticClass: "row-group terms-1" }, [
-            _c("div", { staticClass: "terms-agree" }, [
-              _c("label", { attrs: { for: "check1" } }, [
-                _c("input", { attrs: { type: "checkbox", id: "check1" } }),
-                _vm._v(" "),
-                _c("span", { staticClass: "check-icon" }),
-                _vm._v(
-                  "\n                                            이용약관 동의(필수)\n                                        "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: "완료/privacy02.html", target: "_blank" } },
-              [_c("i", { staticClass: "xi-angle-right" })]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "row-group  terms-1" }, [
-            _c("div", { staticClass: "terms-agree" }, [
-              _c("label", { attrs: { for: "check2" } }, [
-                _c("input", { attrs: { type: "checkbox", id: "check2" } }),
-                _vm._v(" "),
-                _c("span", { staticClass: "check-icon" }),
-                _vm._v(
-                  "\n                                            개인정보 수집 및 이용에 대한 동의 (필수)\n                                        "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: "완료/privacy01.html", target: "_blank" } },
-              [_c("i", { staticClass: "xi-angle-right" })]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "row-group  terms-1" }, [
-            _c("div", { staticClass: "terms-agree" }, [
-              _c("label", { attrs: { for: "check3" } }, [
-                _c("input", { attrs: { type: "checkbox", id: "check3" } }),
-                _vm._v(" "),
-                _c("span", { staticClass: "check-icon" }),
-                _vm._v(
-                  "\n                                            광고 및 마케팅 활용 동의 (선택)\n                                        "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { attrs: { href: "완료/privacy03.html", target: "_blank" } },
-              [_c("i", { staticClass: "xi-angle-right" })]
-            ),
-          ]),
-        ]),
-      ]),
+    return _c("a", { attrs: { href: "/privacy02", target: "_blank" } }, [
+      _c("i", { staticClass: "xi-angle-right" }),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "duty-box " }, [
-      _c("p", { staticClass: "duty-title" }, [_vm._v("회원의 의무")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "duty-sub" }, [
-        _vm._v("회원이 기입한 정보는 모두 사실인 것으로 간주합니다. "),
-        _c("br"),
-        _vm._v(
-          "\n                        법률상 혼인이력이 있거나, 위조된 서류로 인증을 하는 경우 "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                        즉시 이용계약이 해지 되며 이로 인해 발생하는 "
-        ),
-        _c("br", { staticClass: "mb" }),
-        _vm._v("회사측 손해에 대해서는 "),
-        _c("br"),
-        _vm._v("\n                        향후 구상권이 청구될 수 있습니다."),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "duty-label" }, [
-        _c("label", { attrs: { for: "duty-check" } }, [
-          _c("input", { attrs: { type: "checkbox", id: "duty-check" } }),
-          _vm._v(" "),
-          _c("span", { staticClass: "check-icon" }),
-          _vm._v(
-            "\n                            회원의 의무를 모두 확인했으며 이에 동의합니다.\n                        "
-          ),
-        ]),
-      ]),
+    return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
+      _c("i", { staticClass: "xi-angle-right" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
+      _c("i", { staticClass: "xi-angle-right" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "duty-sub" }, [
+      _vm._v("회원이 기입한 정보는 모두 사실인 것으로 간주합니다. "),
+      _c("br"),
+      _vm._v(
+        "\n                        법률상 혼인이력이 있거나, 위조된 서류로 인증을 하는 경우 "
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                        즉시 이용계약이 해지 되며 이로 인해 발생하는 "
+      ),
+      _c("br", { staticClass: "mb" }),
+      _vm._v("회사측 손해에 대해서는 "),
+      _c("br"),
+      _vm._v("\n                        향후 구상권이 청구될 수 있습니다."),
     ])
   },
 ]
@@ -70663,7 +71747,817 @@ var render = function () {
     _c(
       "div",
       { staticClass: "mypage-wrap col-group" },
-      [_c("sidebar"), _vm._v(" "), _vm._m(1)],
+      [
+        _c("sidebar"),
+        _vm._v(" "),
+        _c("div", { staticClass: "right-wrap" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "con-wrap form-wrap" }, [
+            _c(
+              "form",
+              {
+                attrs: { action: "" },
+                on: {
+                  submit: function ($event) {
+                    $event.preventDefault()
+                    return _vm.update.apply(null, arguments)
+                  },
+                },
+              },
+              [
+                _c("ul", { staticClass: "form-box row-group" }, [
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user col-group nonedit" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.user.email))]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user col-group nonedit" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.user.contact))]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                이름(실명)\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user nonedit" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.user.name))]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                생년월일\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user nonedit" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.user.birth))]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                성별\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user nonedit" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.user.sex))]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.job,
+                              expression: "form.job",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "job",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("직업을 선택해주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "서비스 및 영업" } }, [
+                            _vm._v("서비스 및 영업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "사무직" } }, [
+                            _vm._v("사무직"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "금융직" } }, [
+                            _vm._v("금융직"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "연구원/엔지니어" } },
+                            [_vm._v("연구원/엔지니어")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "건축/설계" } }, [
+                            _vm._v("건축/설계"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "간호 및 의료사" } }, [
+                            _vm._v("간호 및 의료사"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "디자이너" } }, [
+                            _vm._v("디자이너"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "언론인" } }, [
+                            _vm._v("언론인"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "교사 및 강사" } }, [
+                            _vm._v("교사 및 강사"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "공무원 및 공공기관" } },
+                            [_vm._v("공무원 및 공공기관")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "의사(한의,치의)/약사" } },
+                            [_vm._v("의사(한의,치의)/약사")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "회계사" } }, [
+                            _vm._v("회계사"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "기타 전문직" } }, [
+                            _vm._v("기타 전문직"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "변호사 및 법조인" } },
+                            [_vm._v("변호사 및 법조인")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "자영업 및 사업" } }, [
+                            _vm._v("자영업 및 사업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "프리랜서" } }, [
+                            _vm._v("프리랜서"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "승무원 및 항공 관련 직업" } },
+                            [_vm._v("승무원 및 항공 관련 직업")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "대학생/대학원생(석박사)" } },
+                            [_vm._v("대학생/대학원생(석박사)")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "방송 관련 직업" } }, [
+                            _vm._v("방송 관련 직업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "인플루언서" } }, [
+                            _vm._v("인플루언서"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "기타" } }, [
+                            _vm._v("기타"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.job)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.school,
+                              expression: "form.school",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "school",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("최종 학력을 선택해주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "고졸 (취업한 경우 가능)" } },
+                            [_vm._v("고졸 (취업한 경우 가능)")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "2년제 대졸" } }, [
+                            _vm._v("2년제 대졸"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "4년데 대졸" } }, [
+                            _vm._v("4년데 대졸"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "석사 졸업" } }, [
+                            _vm._v("석사 졸업"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "박사 졸업" } }, [
+                            _vm._v("박사 졸업"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.school)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(7),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "user col-group" },
+                      [
+                        _c("input-region", {
+                          attrs: { area: _vm.form.area, city: _vm.form.city },
+                          on: {
+                            change: function (data) {
+                              _vm.form.city = data.city
+                              _vm.form.area = data.area
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.city)),
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.area)),
+                        ]),
+                      ],
+                      1
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.need_service,
+                            expression: "form.need_service",
+                          },
+                        ],
+                        attrs: { type: "text", value: "소개팅 or 파티" },
+                        domProps: { value: _vm.form.need_service },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.form,
+                              "need_service",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.need_service)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.registration_way,
+                              expression: "form.registration_way",
+                            },
+                          ],
+                          staticClass: "join-select",
+                          attrs: { name: "", id: "" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "registration_way",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "", disabled: "" } }, [
+                            _vm._v("가입 경로를 선택해 주세요."),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "네이버 블로그" } }, [
+                            _vm._v("네이버 블로그"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "네이버 광고" } }, [
+                            _vm._v("네이버 광고"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "지인추천" } }, [
+                            _vm._v("지인추천"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "검색" } }, [
+                            _vm._v("검색"),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.registration_way)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _vm._m(10),
+                _vm._v(" "),
+                _c("ul", { staticClass: "form-box row-group" }, [
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                근무지\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "user col-group" },
+                      [
+                        _c("input-region", {
+                          attrs: {
+                            city: _vm.form.city_company,
+                            area: _vm.form.area_company,
+                          },
+                          on: {
+                            change: function (data) {
+                              _vm.form.city_company = data.city
+                              _vm.form.area_company = data.area
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.city_company)),
+                        ]),
+                      ],
+                      1
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                키\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.tall,
+                            expression: "form.tall",
+                          },
+                        ],
+                        attrs: {
+                          type: "text",
+                          placeholder: "키를 입력해주세요",
+                        },
+                        domProps: { value: _vm.form.tall },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "tall", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.tall)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                몸무게를 입력해주세요\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.weight,
+                            expression: "form.weight",
+                          },
+                        ],
+                        attrs: {
+                          type: "text",
+                          placeholder: "몸무게를 입력해주세요",
+                        },
+                        domProps: { value: _vm.form.weight },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "weight", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.weight)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                인스타그램 아이디\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.instagram,
+                            expression: "form.instagram",
+                          },
+                        ],
+                        attrs: {
+                          type: "text",
+                          placeholder: "인스타그램 아이디를 입력해 주세요",
+                        },
+                        domProps: { value: _vm.form.instagram },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "instagram", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.instagram)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group file" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                프로필 사진 (최소 3장)\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "user" },
+                      [
+                        _c("input-imgs", {
+                          attrs: { "default-files": _vm.user.imgs },
+                          on: {
+                            change: function (data) {
+                              _vm.form.imgs = data
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.imgs)),
+                        ]),
+                      ],
+                      1
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                이상형\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.ideal,
+                            expression: "form.ideal",
+                          },
+                        ],
+                        attrs: {
+                          name: "",
+                          id: "",
+                          cols: "30",
+                          rows: "10",
+                          placeholder:
+                            "본인의 이상형에 대해 구체적으로 입력해 주세요.",
+                        },
+                        domProps: { value: _vm.form.ideal },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "ideal", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.ideal)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                자기소개글\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.introduce,
+                            expression: "form.introduce",
+                          },
+                        ],
+                        attrs: {
+                          name: "",
+                          id: "",
+                          cols: "30",
+                          rows: "10",
+                          placeholder:
+                            "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
+                        },
+                        domProps: { value: _vm.form.introduce },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "introduce", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.introduce)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                매니저에게 한마디\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.to_manager,
+                            expression: "form.to_manager",
+                          },
+                        ],
+                        attrs: {
+                          name: "",
+                          id: "",
+                          cols: "30",
+                          rows: "10",
+                          placeholder:
+                            "매니저에게 전하고 싶은 한마디를 입력해 주세요.",
+                        },
+                        domProps: { value: _vm.form.to_manager },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.form,
+                              "to_manager",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.to_manager)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                결혼여부\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { attrs: { id: "theme" } }, [
+                      _c("div", { staticClass: "join-select-wrap" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.marriage,
+                                expression: "form.marriage",
+                              },
+                            ],
+                            staticClass: "join-select",
+                            attrs: { name: "", id: "" },
+                            on: {
+                              change: function ($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function (o) {
+                                    return o.selected
+                                  })
+                                  .map(function (o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.form,
+                                  "marriage",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              },
+                            },
+                          },
+                          [
+                            _c(
+                              "option",
+                              { attrs: { value: "", disabled: "" } },
+                              [_vm._v("혼인이력을 선택해 주세요.")]
+                            ),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "초혼" } }, [
+                              _vm._v("초혼"),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "재혼" } }, [
+                              _vm._v("재혼"),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "xi-caret-down-min" }),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.marriage)),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "submit-btn", attrs: { type: "submit" } },
+                  [_vm._v("정보 수정")]
+                ),
+              ]
+            ),
+          ]),
+        ]),
+      ],
       1
     ),
   ])
@@ -70705,8 +72599,112 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "right-wrap" }, [
-      _c("div", { staticClass: "m-empty type01" }, [_vm._v("연동대기")]),
+    return _c("div", { staticClass: "title-wrap col-group" }, [
+      _c("h2", [_vm._v("프로필 수정")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                이메일 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "row-group" }, [
+      _c("p", { staticClass: "default" }, [
+        _vm._v("\n                                비밀번호 "),
+        _c("span", [_vm._v("*")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "user col-group" }, [
+        _c(
+          "a",
+          {
+            staticClass: "form-btn",
+            attrs: { href: "/passwordResets/create" },
+          },
+          [
+            _vm._v(
+              "\n                                    비밀번호 변경\n                                "
+            ),
+          ]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                휴대폰 번호 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                직업 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                최종 학력 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                거주지 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                이용 예정 서비스 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                가입 경로 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notice-box" }, [
+      _c("p", [
+        _c("span", { staticClass: "text-style-1" }, [_vm._v("소개팅 서비스")]),
+        _vm._v(" 이용을 원하신다면 "),
+        _c("br"),
+        _vm._v("\n                            아래의 "),
+        _c("span", { staticClass: "text-style-1" }, [_vm._v("선택입력사항")]),
+        _vm._v("을 모두 입력해 주세요\n                        "),
+      ]),
     ])
   },
 ]
@@ -83403,7 +85401,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\project\\\\greeting"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"D:\\\\project\\\\greeting","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

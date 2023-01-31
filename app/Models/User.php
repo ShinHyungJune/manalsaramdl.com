@@ -31,6 +31,7 @@ class User extends Authenticatable implements HasMedia
         'area',
         'need_service',
         'registration_way',
+
         'city_company',
         'area_company',
         'tall',
@@ -42,8 +43,7 @@ class User extends Authenticatable implements HasMedia
         'marriage',
         'comment_manager',
         'count_dating',
-        'ideal',
-        'ideal',
+        "agree_marketing",
 
         'password',
         "verified_at",

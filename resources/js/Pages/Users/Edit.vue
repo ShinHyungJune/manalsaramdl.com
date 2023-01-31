@@ -23,13 +23,11 @@
             <sidebar />
 
             <div class="right-wrap">
-
-                <div class="m-empty type01">연동대기</div>
-<!--                <div class="title-wrap col-group">
+                <div class="title-wrap col-group">
                     <h2>프로필 수정</h2>
                 </div>
                 <div class="con-wrap form-wrap">
-                    <form action="">
+                    <form action="" @submit.prevent="update">
                         <ul class="form-box row-group">
                             <li class="row-group">
                                 <p class="default">
@@ -54,31 +52,31 @@
                                     휴대폰 번호 <span>*</span>
                                 </p>
                                 <div class="user col-group nonedit">
-                                    <p>010-0000-0000</p>
+                                    <p>{{ user.contact }}</p>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
-                                    이름(실명) <span>*</span>
+                                    이름(실명)
                                 </p>
                                 <div class="user nonedit">
-                                    <p>홍길동</p>
+                                    <p>{{ user.name }}</p>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
-                                    생년월일 <span>*</span>
+                                    생년월일
                                 </p>
                                 <div class="user nonedit">
-                                    <p>1999/01/01</p>
+                                    <p>{{ user.birth }}</p>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
-                                    성별 <span>*</span>
+                                    성별
                                 </p>
                                 <div class="user nonedit">
-                                    <p>남자</p>
+                                    <p>{{ user.sex }}</p>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -86,9 +84,32 @@
                                     직업 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <select name="" id="">
+                                    <select name="" id="" class="join-select" v-model="form.job">
+                                        <option value="" disabled>직업을 선택해주세요.</option>
+                                        <option value="서비스 및 영업">서비스 및 영업</option>
+                                        <option value="사무직">사무직</option>
+                                        <option value="금융직">금융직</option>
+                                        <option value="연구원/엔지니어">연구원/엔지니어</option>
+                                        <option value="건축/설계">건축/설계</option>
+                                        <option value="간호 및 의료사">간호 및 의료사</option>
+                                        <option value="디자이너">디자이너</option>
+                                        <option value="언론인">언론인</option>
+                                        <option value="교사 및 강사">교사 및 강사</option>
+                                        <option value="공무원 및 공공기관">공무원 및 공공기관</option>
+                                        <option value="의사(한의,치의)/약사">의사(한의,치의)/약사</option>
+                                        <option value="회계사">회계사</option>
+                                        <option value="기타 전문직">기타 전문직</option>
+                                        <option value="변호사 및 법조인">변호사 및 법조인</option>
+                                        <option value="자영업 및 사업">자영업 및 사업</option>
+                                        <option value="프리랜서">프리랜서</option>
+                                        <option value="승무원 및 항공 관련 직업">승무원 및 항공 관련 직업</option>
+                                        <option value="대학생/대학원생(석박사)">대학생/대학원생(석박사)</option>
                                         <option value="방송 관련 직업">방송 관련 직업</option>
+                                        <option value="인플루언서">인플루언서</option>
+                                        <option value="기타">기타</option>
                                     </select>
+
+                                    <div class="m-input-error">{{form.errors.job}}</div>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -96,9 +117,15 @@
                                     최종 학력 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <select name="" id="">
+                                    <select name="" id="" v-model="form.school" class="join-select">
+                                        <option value="" disabled>최종 학력을 선택해주세요.</option>
+                                        <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
                                         <option value="2년제 대졸">2년제 대졸</option>
+                                        <option value="4년데 대졸">4년데 대졸</option>
+                                        <option value="석사 졸업">석사 졸업</option>
+                                        <option value="박사 졸업">박사 졸업</option>
                                     </select>
+                                    <span class="m-input-error">{{form.errors.school}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -106,12 +133,11 @@
                                     거주지 <span>*</span>
                                 </p>
                                 <div class="user col-group">
-                                    <select name="" id="">
-                                        <option value="시/도를 선택해 주세요">시/도를 선택해 주세요</option>
-                                    </select>
-                                    <select name="" id="">
-                                        <option value="구/군을 선택해 주세요">구/군을 선택해 주세요</option>
-                                    </select>
+                                    <input-region :area="form.area" :city="form.city" @change="(data) => {form.city = data.city; form.area = data.area;}" />
+
+                                    <span class="m-input-error">{{form.errors.city}}</span>
+                                    <br/>
+                                    <span class="m-input-error">{{form.errors.area}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -119,7 +145,8 @@
                                     이용 예정 서비스 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" value="소개팅, 파티">
+                                    <input type="text" value="소개팅 or 파티" v-model="form.need_service">
+                                    <span class="m-input-error">{{form.errors.need_service}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -127,10 +154,16 @@
                                     가입 경로 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <select name="" id="">
-                                        <option value="인스타그램">인스타그램</option>
+                                    <select name="" id="" v-model="form.registration_way" class="join-select">
+                                        <option value="" disabled>가입 경로를 선택해 주세요.</option>
+                                        <option value="네이버 블로그">네이버 블로그</option>
+                                        <option value="네이버 광고">네이버 광고</option>
+                                        <option value="지인추천">지인추천</option>
+                                        <option value="검색">검색</option>
                                     </select>
                                 </div>
+
+                                <span class="m-input-error">{{form.errors.registration_way}}</span>
                             </li>
                         </ul>
                         <div class="notice-box">
@@ -145,20 +178,26 @@
                                     근무지
                                 </p>
                                 <div class="user col-group">
-                                    <select name="" id="">
-                                        <option value="시/도를 선택해 주세요">시/도를 선택해 주세요</option>
-                                    </select>
-                                    <select name="" id="">
-                                        <option value="구/군을 선택해 주세요">구/군을 선택해 주세요</option>
-                                    </select>
+                                    <input-region :city="form.city_company" :area="form.area_company" @change="(data) => {form.city_company = data.city; form.area_company = data.area;}" />
+                                    <span class="m-input-error">{{form.errors.city_company}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
-                                    키/몸무게
+                                    키
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="키와 몸무게를 입력해주세요">
+                                    <input type="text" placeholder="키를 입력해주세요" v-model="form.tall">
+                                    <span class="m-input-error">{{form.errors.tall}}</span>
+                                </div>
+                            </li>
+                            <li class="row-group">
+                                <p class="default">
+                                    몸무게를 입력해주세요
+                                </p>
+                                <div class="user">
+                                    <input type="text" placeholder="몸무게를 입력해주세요" v-model="form.weight">
+                                    <span class="m-input-error">{{form.errors.weight}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -166,7 +205,8 @@
                                     인스타그램 아이디
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="인스타그램 아이디를 입력해 주세요">
+                                    <input type="text" placeholder="인스타그램 아이디를 입력해 주세요" v-model="form.instagram">
+                                    <span class="m-input-error">{{form.errors.instagram}}</span>
                                 </div>
                             </li>
                             <li class="row-group file">
@@ -174,11 +214,9 @@
                                     프로필 사진 (최소 3장)
                                 </p>
                                 <div class="user">
-                                    <label for="thumbnail_file">파일 첨부</label>
-                                    <input type="file" id="thumbnail_file" onchange="file_change('thumbnail');" multiple="" accept="image/*">
-                                    <div class="file-upload-list">
-                                        <ul id="thumbnail_ul"></ul>
-                                    </div>
+                                    <input-imgs :default-files="user.imgs" @change="(data) => {form.imgs = data}" />
+                                    <span class="m-input-error">{{form.errors.imgs}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -186,7 +224,9 @@
                                     이상형
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="본인의 이상형에 대해 구체적으로 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="본인의 이상형에 대해 구체적으로 입력해 주세요." v-model="form.ideal"></textarea>
+                                    <span class="m-input-error">{{form.errors.ideal}}</span>
+
                                 </div>
                             </li>
                             <li class="row-group">
@@ -194,7 +234,8 @@
                                     자기소개글
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요." v-model="form.introduce"></textarea>
+                                    <span class="m-input-error">{{form.errors.introduce}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
@@ -202,23 +243,34 @@
                                     매니저에게 한마디
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요."></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요." v-model="form.to_manager"></textarea>
+                                    <span class="m-input-error">{{form.errors.to_manager}}</span>
                                 </div>
                             </li>
                             <li class="row-group">
                                 <p class="default">
                                     결혼여부
                                 </p>
-                                <div class="user">
-                                    <select name="" id="">
-                                        <option value="혼인이력을 선택해 주세요">혼인이력을 선택해 주세요</option>
-                                    </select>
+                                <div id="theme">
+                                    <div class="join-select-wrap">
+                                        <select name="" id="" v-model="form.marriage" class="join-select">
+                                            <option value="" disabled>혼인이력을 선택해 주세요.</option>
+                                            <option value="초혼">초혼</option>
+                                            <option value="재혼">재혼</option>
+                                        </select>
+
+                                        <i class="xi-caret-down-min"></i>
+                                    </div>
+
+                                    <span class="m-input-error">{{form.errors.marriage}}</span>
                                 </div>
                             </li>
                         </ul>
+
+                        <button type="submit" class="submit-btn">정보 수정</button>
+
                     </form>
-                    <button type="submit" class="submit-btn">정보 수정</button>
-                </div>-->
+                </div>
             </div>
         </div>
     </main>
@@ -229,24 +281,32 @@ import Pagination from "../../Components/Pagination";
 import State from "../../Components/State";
 import Sidebar from "../../Components/Sidebar";
 import InputAddress from "../../Components/Form/InputAddress";
+import InputRegion from "../../Components/Form/InputRegion";
+import InputImgs from "../../Components/Form/InputImgs";
 
 export default {
-    components: {InputAddress, Sidebar, State, Link, Pagination},
+    components: {InputImgs, InputRegion, InputAddress, Sidebar, State, Link, Pagination},
     data(){
         return {
             willChangePassword: false,
             user: this.$page.props.user.data,
             form: this.$inertia.form({
-                page: 1,
-                name: this.$page.props.user ? this.$page.props.user.data.name : "",
-                contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
-                email: this.$page.props.user ? this.$page.props.user.data.email : "",
-                address: this.$page.props.user ? this.$page.props.user.data.address : "",
-                address_detail: this.$page.props.user ? this.$page.props.user.data.address_detail : "",
-                address_zipcode: this.$page.props.user ? this.$page.props.user.data.address_zipcode : "",
-                elevator: this.$page.props.user ? this.$page.props.user.data.elevator : "",
-                password: "",
-                password_confirmation: ""
+                job: this.$page.props.user ? this.$page.props.user.data.job : "",
+                school: this.$page.props.user ? this.$page.props.user.data.school : "",
+                city: this.$page.props.user ? this.$page.props.user.data.city : "",
+                area: this.$page.props.user ? this.$page.props.user.data.area : "",
+                need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
+                registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+                city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
+                area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
+                tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
+                weight: this.$page.props.user ? this.$page.props.user.data.weight : "",
+                instagram: this.$page.props.user ? this.$page.props.user.data.instagram : "",
+                ideal: this.$page.props.user ? this.$page.props.user.data.ideal : "",
+                introduce: this.$page.props.user ? this.$page.props.user.data.introduce : "",
+                to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
+                marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
+                imgs: "",
             })
         }
     },
