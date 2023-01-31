@@ -28,11 +28,11 @@
     <!-- 구글검색등록 -->
     <meta name="google-site-verification" content="MpGSFJzfvoMQB4LaRNSrK419lLPHMFPmLd1MmZgZwGw" />
 
-    <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/mypage.css">
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/common.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/main.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/mypage.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/login.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/chat.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
     <!-- 스와이퍼 -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/swiper.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
