@@ -397,6 +397,8 @@ export default {
                 imgs: [],
                 imp_uid: "",
                 merchant_uid: "",
+                social_platform: "",
+                social_id: "",
             }),
             agree1: false,
             agree2: false,
@@ -465,6 +467,17 @@ export default {
                 }
             });
         },
+    },
+
+    mounted() {
+        let params = new URLSearchParams(window.location.search);
+
+        if(params.get("social_id"))
+            this.form.social_id = params.get("social_id");
+
+        if(params.get("social_platform"))
+            this.form.social_platform = params.get("social_platform");
+
     }
 }
 </script>

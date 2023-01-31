@@ -69,7 +69,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "introduce" => "nullable|string|max:50000",
             "to_manager" => "nullable|string|max:50000",
             "marriage" => "nullable|string|max:50000",
-            "agree_marketing" => "nullable|string|max:50000",
+            "agree_marketing" => "nullable|boolean",
             "imp_uid" => "nullable|string|max:50000",
             "merchant_uid" => "nullable|string|max:50000",
         ]);
@@ -99,18 +99,10 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
     {
         $socialUser = Socialite::driver($social)->user();
 
-        // 일단 네이버
         $user = User::where("social_id", $socialUser->id)->where("social_platform", $social)->first();
 
-        if(!$user) {
-            $user = User::create([
-                "name" => isset($socialUser->name) ? $socialUser->name : null,
-                "email" => isset($socialUser->email) ? $socialUser->email : null,
-                // "contact" => $socialUser->contact,
-                "social_id" => $socialUser->id,
-                "social_platform" => $social
-            ]);
-        }
+        if(!$user)
+            return redirect("/register?social_id=".$socialUser->id."&social_platform=".$social);
 
         Auth::login($user);
 
@@ -136,7 +128,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "introduce" => "nullable|string|max:50000",
             "to_manager" => "nullable|string|max:50000",
             "marriage" => "nullable|string|max:50000",
-            "agree_marketing" => "nullable|string|max:50000",
+            "agree_marketing" => "nullable|boolean",
         ]);
 
         auth()->user()->update($request->except([

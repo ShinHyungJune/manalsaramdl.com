@@ -10010,7 +10010,9 @@ __webpack_require__.r(__webpack_exports__);
         agree_marketing: this.$page.props.user ? this.$page.props.user.data.agree_marketing : false,
         imgs: [],
         imp_uid: "",
-        merchant_uid: ""
+        merchant_uid: "",
+        social_platform: "",
+        social_id: ""
       }),
       agree1: false,
       agree2: false,
@@ -10070,6 +10072,11 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     }
+  },
+  mounted: function mounted() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("social_id")) this.form.social_id = params.get("social_id");
+    if (params.get("social_platform")) this.form.social_platform = params.get("social_platform");
   }
 });
 
@@ -72828,49 +72835,11 @@ var render = function () {
           _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
-          _c("div", { staticClass: "login-sns col-group" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c("ul", { staticClass: "sns-login-list col-group" }, [
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "login-icon",
-                    attrs: { href: "/openLoginPop/naver" },
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.ready.apply(null, arguments)
-                      },
-                    },
-                  },
-                  [_vm._m(4)]
-                ),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "login-icon",
-                    attrs: { href: "/openLoginPop/kakao" },
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.ready.apply(null, arguments)
-                      },
-                    },
-                  },
-                  [_vm._m(5)]
-                ),
-              ]),
-            ]),
-          ]),
+          _vm._m(3),
         ]),
       ]),
       _vm._v(" "),
-      _vm._m(6),
+      _vm._m(4),
     ]),
   ])
 }
@@ -72942,28 +72911,46 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sns-login-wrap col-group" }, [
-      _c("p", [
-        _vm._v(
-          "\n                            SNS 계정 로그인\n                        "
-        ),
+    return _c("div", { staticClass: "login-sns col-group" }, [
+      _c("div", { staticClass: "sns-login-wrap col-group" }, [
+        _c("p", [
+          _vm._v(
+            "\n                            SNS 계정 로그인\n                        "
+          ),
+        ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-sns-naver sns-box" }, [
-      _c("i", { staticClass: "xi-naver" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-sns-kakao sns-box" }, [
-      _c("i", { staticClass: "xi-speech" }),
+      _vm._v(" "),
+      _c("ul", { staticClass: "sns-login-list col-group" }, [
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticClass: "login-icon",
+              attrs: { href: "/openLoginPop/naver" },
+            },
+            [
+              _c("div", { staticClass: "login-sns-naver sns-box" }, [
+                _c("i", { staticClass: "xi-naver" }),
+              ]),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticClass: "login-icon",
+              attrs: { href: "/openLoginPop/kakao" },
+            },
+            [
+              _c("div", { staticClass: "login-sns-kakao sns-box" }, [
+                _c("i", { staticClass: "xi-speech" }),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
     ])
   },
   function () {
