@@ -455,7 +455,7 @@ export default {
                     }).then(response => {
                         let item = response.data.data;
 
-                        self.form.phone = item.phone;
+                        self.form.contact = item.phone;
                         self.form.sex = item.sex;
                         self.form.birth = item.birth;
                         self.form.name = item.name;

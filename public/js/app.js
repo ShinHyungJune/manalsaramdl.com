@@ -10060,7 +10060,7 @@ __webpack_require__.r(__webpack_exports__);
             merchant_uid: rsp.merchant_uid
           }).then(function (response) {
             var item = response.data.data;
-            self.form.phone = item.phone;
+            self.form.contact = item.phone;
             self.form.sex = item.sex;
             self.form.birth = item.birth;
             self.form.name = item.name;
