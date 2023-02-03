@@ -29,9 +29,9 @@ class VerificationController extends ApiController
             $impCertification = Iamport::getCertification($accessToken, $request->imp_uid);
 
             Verification::updateOrCreate([
-                // "phone" => $impCertification["phone"],
+                "phone" => $impCertification["phone"],
             ],[
-                // "phone" => $impCertification["phone"],
+                "phone" => $impCertification["phone"],
                 "name" => $impCertification["name"],
                 "birth" => $impCertification["birthday"],
                 "sex" => $impCertification["gender"] == "male" ? "남자" : "여자",
