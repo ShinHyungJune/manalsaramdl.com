@@ -2849,8 +2849,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -6763,90 +6761,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   data: function data() {
-    return {
-      activePop: true,
-      pops: this.$page.props.pops ? this.$page.props.pops : ""
-    };
+    return {};
   },
-  methods: {
-    closeToday: function closeToday() {
-      window.localStorage.setItem("closed_at", new Date().getDate());
-      this.activePop = false;
-    },
-    closePop: function closePop() {
-      this.activePop = false;
-    }
-  },
+  methods: {},
   mounted: function mounted() {
     AOS.init();
-    var swiper = new Swiper('.warning-container .swiper-container', {
+    var swiper = new Swiper('.swiper-container', {
       slidesPerView: "auto",
       freeMode: true,
       initialSlide: 1
-    });
-    var closedAt = window.localStorage.getItem("closed_at");
-    if (closedAt && closedAt >= new Date().getDate()) this.activePop = false;
-    $(".pop-parent .btn-toggle").click(function () {
-      $(".pop-parent").toggleClass("active");
-    });
-    new Swiper('.pop-parent .swiper-container', {
-      autoplay: {
-        delay: 3000
-      },
-      pagination: {
-        el: '.swiper-pagination'
-      }
     });
   }
 });
@@ -57042,6 +56971,8 @@ var render = function () {
             ? _c("div", { staticClass: "mb-login" }, [
                 _c("a", { attrs: { href: "/login" } }, [_vm._v("login")]),
                 _vm._v(" "),
+                _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
+                _vm._v(" "),
                 _c("a", { attrs: { href: "/register" } }, [_vm._v("sign in")]),
               ])
             : _c("div", { staticClass: "mb-login" }, [
@@ -57053,13 +56984,12 @@ var render = function () {
           _vm._m(7),
           _vm._v(" "),
           _c("div", { staticClass: "sns-wrap-mb" }, [
-            _vm.$page.props.user
-              ? _c(
-                  "a",
-                  { staticClass: "logout-btn", attrs: { href: "/logout" } },
-                  [_vm._v("logout"), _c("i", { staticClass: "xi-log-out" })]
-                )
-              : _vm._e(),
+            _c("a", { staticClass: "logout-btn", attrs: { href: "/logout" } }, [
+              _vm._v("logout"),
+              _vm.$page.props.user
+                ? _c("i", { staticClass: "xi-log-out" })
+                : _vm._e(),
+            ]),
             _vm._v(" "),
             _vm._m(8),
             _vm._v(" "),
@@ -61420,16 +61350,14 @@ var render = function () {
                       _c("p", { staticClass: "user-name" }, [
                         _vm._v(
                           "\n                                    " +
-                            _vm._s(_vm.partner(dating).displayName) +
+                            _vm._s(_vm.partner(dating).nickname) +
                             "\n                                 "
                         ),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-info col-group" }, [
                         _c("p", [
-                          _vm._v(
-                            _vm._s(_vm.partner(dating).formatBirth) + "년생"
-                          ),
+                          _vm._v(_vm._s(_vm.partner(dating).birth) + "년생"),
                         ]),
                         _vm._v(
                           "\n                                    /\n                                    "
@@ -61495,8 +61423,7 @@ var render = function () {
                         dating.ongoing &&
                         !dating.check_address &&
                         _vm.user.sex === "남자" &&
-                        dating.city1 &&
-                        !dating.address_name
+                        dating.city1
                           ? _c(
                               "a",
                               {
@@ -61734,9 +61661,7 @@ var render = function () {
                           _c("p", { staticClass: "user-name" }, [
                             _vm._v(
                               "\n                                        " +
-                                _vm._s(
-                                  _vm.partner(_vm.targetDating).displayName
-                                ) +
+                                _vm._s(_vm.partner(_vm.targetDating).nickname) +
                                 "\n                                    "
                             ),
                           ]),
@@ -61744,9 +61669,8 @@ var render = function () {
                           _c("div", { staticClass: "user-info-1 col-group" }, [
                             _c("p", [
                               _vm._v(
-                                _vm._s(
-                                  _vm.partner(_vm.targetDating).formatBirth
-                                ) + "년생"
+                                _vm._s(_vm.partner(_vm.targetDating).birth) +
+                                  "년생"
                               ),
                             ]),
                             _vm._v(
@@ -61903,7 +61827,7 @@ var render = function () {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _vm.activeGuide && _vm.user.sex === "여자"
+          _vm.activeGuide
             ? _c("div", { staticClass: "modal-overley go open" }, [
                 _c("div", { staticClass: "modal-wrap" }, [
                   _c(
@@ -62880,8 +62804,7 @@ var render = function () {
                           _c("p", [
                             _vm._v(
                               _vm._s(
-                                _vm.partner(_vm.targetFeedbackDating)
-                                  .formatBirth
+                                _vm.partner(_vm.targetFeedbackDating).birth
                               ) + "년생"
                             ),
                           ]),
@@ -64553,281 +64476,226 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", { staticClass: "mainpage" }, [
-    _vm.activePop && _vm.pops.data.length > 0
-      ? _c("div", { staticClass: "pop-parent", attrs: { id: "popParent" } }, [
-          _c("div", { staticClass: "pop" }, [
-            _c("div", { staticClass: "swiper" }, [
-              _c("div", { staticClass: "swiper-container" }, [
-                _c(
-                  "div",
-                  { staticClass: "swiper-wrapper" },
-                  _vm._l(_vm.pops.data, function (pop) {
-                    return _c(
-                      "a",
-                      {
-                        key: pop.id,
-                        staticClass: "swiper-slide",
-                        attrs: { href: pop.url ? pop.url : "#" },
-                      },
-                      [
-                        _c("div", { staticClass: "m-ratioBox-wrap" }, [
-                          _c("div", { staticClass: "m-ratioBox" }, [
-                            _c("img", {
-                              attrs: { src: pop.img ? pop.img.url : "" },
-                            }),
-                          ]),
-                        ]),
-                      ]
-                    )
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _vm._m(0),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "pop-btns" }, [
-                _c("input", {
-                  attrs: {
-                    type: "checkbox",
-                    name: "oneday",
-                    id: "oneday_check",
-                  },
-                  on: {
-                    click: function ($event) {
-                      return _vm.closeToday()
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    attrs: { for: "oneday_check" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.closeToday()
-                      },
-                    },
-                  },
-                  [
-                    _c("span", { staticClass: "icon" }),
-                    _vm._v(" 오늘하루 보지 않기\n                    "),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(1),
-              ]),
-            ]),
-          ]),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8),
-    _vm._v(" "),
-    _vm._m(9),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-control" }, [
-      _c("div", { staticClass: "swiper-pagination" }),
-      _vm._v(" "),
-      _c("button", { staticClass: "swiper-btn-control" }, [
-        _c(
-          "div",
-          {
-            staticClass: "icon_stop",
-            attrs: { title: "슬라이더 자동재생 멈춤" },
-          },
-          [
-            _c("span", { staticClass: "stick stick01" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "stick stick02" }),
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", {
-          staticClass: "icon_play",
-          attrs: { title: "슬라이더 자동재생 시작" },
-        }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn-toggle" }, [
-      _c("i", { staticClass: "xi-angle-up", staticStyle: { color: "#fff" } }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-banner" }, [
-      _c("div", { staticClass: "main-banner-box" }, [
-        _c("div", { staticClass: "subpage-under" }, [
-          _c("span", { staticClass: "subpage-under-text" }, [
-            _vm._v("The most important thing in life is love"),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "banner-contents" }, [
-          _c("div", { staticClass: "banner-title" }, [
-            _c("h2", { staticClass: "col-group pc" }, [
-              _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              인\n            "),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                _vm._v(
-                  "\n              생에서 가장 중요한 것은  \n            "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              사\n            "),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                _vm._v("\n              랑이다\n            "),
-              ]),
+    return _c("main", { staticClass: "mainpage" }, [
+      _c("div", { staticClass: "main-banner" }, [
+        _c("div", { staticClass: "main-banner-box" }, [
+          _c("div", { staticClass: "subpage-under" }, [
+            _c("span", { staticClass: "subpage-under-text" }, [
+              _vm._v("The most important thing in life is love"),
             ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb" }, [
-              _c("h2", { staticClass: "col-group col-group01" }, [
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "banner-contents" }, [
+            _c("div", { staticClass: "banner-title" }, [
+              _c("h2", { staticClass: "col-group pc" }, [
                 _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                인\n              "),
+                  _vm._v("\n              인\n            "),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                  _vm._v("\n                생에서 가장\n              "),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("h2", { staticClass: "col-group" }, [
-                _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                  _vm._v("\n                중요한 것은  \n              "),
+                  _vm._v(
+                    "\n              생에서 가장 중요한 것은  \n            "
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                사\n              "),
+                  _vm._v("\n              사\n            "),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "toggle_txt toggle_txt3" }, [
-                  _vm._v("\n                랑이다\n              "),
+                _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
+                  _vm._v("\n              랑이다\n            "),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb" }, [
+                _c("h2", { staticClass: "col-group col-group01" }, [
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("\n                인\n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
+                    _vm._v("\n                생에서 가장\n              "),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "col-group" }, [
+                  _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
+                    _vm._v("\n                중요한 것은  \n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("\n                사\n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "toggle_txt toggle_txt3" }, [
+                    _vm._v("\n                랑이다\n              "),
+                  ]),
                 ]),
               ]),
             ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "banner-text" }, [
+              _vm._v("사랑을 선물합니다.\n                    "),
+              _c("br"),
+              _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "join-button", attrs: { href: "/register" } },
+              [
+                _c("span", [_vm._v("가입신청")]),
+                _c("i", { staticClass: "xi-long-arrow-right" }),
+              ]
+            ),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "banner-text" }, [
-            _vm._v("사랑을 선물합니다.\n                    "),
-            _c("br"),
-            _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "join-button", attrs: { href: "/register" } },
-            [
-              _c("span", [_vm._v("가입신청")]),
-              _c("i", { staticClass: "xi-long-arrow-right" }),
-            ]
-          ),
+          _c("img", {
+            staticClass: "main-visual",
+            attrs: { src: "/images/main-visual.png", alt: "main-visual" },
+          }),
         ]),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "main-visual",
-          attrs: { src: "/images/main-visual.png", alt: "main-visual" },
-        }),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "main-section sec-2",
-        attrs: {
-          "data-aos": "fade-left",
-          "data-aos-duration": "3000",
-          "data-aos-anchor-placement": "top-bottom",
-          "data-aos-delay": "2",
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "main-section sec-2",
+          attrs: {
+            "data-aos": "fade-left",
+            "data-aos-duration": "3000",
+            "data-aos-anchor-placement": "top-bottom",
+            "data-aos-delay": "2",
+          },
         },
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "main-date", attrs: { "aos-data": "left" } },
-            [
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              { staticClass: "main-date", attrs: { "aos-data": "left" } },
+              [
+                _c("div", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/main-date.png", alt: "main-date" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "left" }, [
+                  _c("span", { staticClass: "left-title" }, [
+                    _c("span", { staticClass: "text-style-1" }, [_vm._v("D")]),
+                    _vm._v("ate"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "left-content" }, [
+                    _vm._v(
+                      "\n                        조건, 성향 등을 고려해서 매칭해주는 서비스로"
+                    ),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-style-1" }, [
+                      _vm._v("'원하는 만남'"),
+                    ]),
+                    _vm._v("의 기회를 제공합니다.\n                    "),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "top-roadMap" }, [
+                    _c("ul", { staticClass: "roadmap roadmap-list-1" }, [
+                      _c("li", [_vm._v("사전 상담")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("프로필 작성")]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "full" }, [_vm._v("소개팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("프로필 교환")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "roadmap-line-box" }),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "roadmap roadmap-list-2" }, [
+                      _c("li", [_vm._v("컨설팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("피드백")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("소개팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("일정 조율")]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "main-button style1",
+                      attrs: { href: "/datingProducts" },
+                    },
+                    [
+                      _c("span", [_vm._v("신청하기")]),
+                      _c("i", { staticClass: "xi-long-arrow-right" }),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "main-section sec-1",
+          attrs: {
+            "data-aos": "fade-right",
+            "data-aos-duration": "3000",
+            "data-aos-anchor-placement": "top-bottom",
+            "data-aos-delay": "2",
+          },
+        },
+        [
+          _c("div", { staticClass: " container" }, [
+            _c("div", { staticClass: "main-party" }, [
               _c("div", { staticClass: "img-wrap" }, [
                 _c("img", {
-                  attrs: { src: "/images/main-date.png", alt: "main-date" },
+                  attrs: { src: "/images/main-party.png", alt: "main-party" },
                 }),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "left" }, [
                 _c("span", { staticClass: "left-title" }, [
-                  _c("span", { staticClass: "text-style-1" }, [_vm._v("D")]),
-                  _vm._v("ate"),
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("P")]),
+                  _vm._v("arty"),
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "left-content" }, [
                   _vm._v(
-                    "\n                        조건, 성향 등을 고려해서 매칭해주는 서비스로"
+                    "\n                        연령과 성비를 조율한 파티 서비스로"
                   ),
                   _c("br"),
                   _vm._v(" "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("'원하는 만남'"),
+                    _vm._v("'자연스러운 만남'"),
                   ]),
-                  _vm._v("의 기회를 제공합니다.\n                    "),
+                  _vm._v(" 의 기회를 제공합니다\n                    "),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "top-roadMap" }, [
-                  _c("ul", { staticClass: "roadmap roadmap-list-1" }, [
-                    _c("li", [_vm._v("사전 상담")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("프로필 작성")]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "full" }, [_vm._v("소개팅")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("프로필 교환")]),
-                  ]),
+                _c("div", { staticClass: "left-roadMap" }, [
+                  _c("span", { staticClass: "roadmap-line" }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "roadmap-line-box" }),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "roadmap roadmap-list-2" }, [
-                    _c("li", [_vm._v("컨설팅")]),
+                  _c("ul", { staticClass: "roadmap-list" }, [
+                    _c("li", [_vm._v("파티신청")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("피드백")]),
+                    _c("li", [_vm._v("신원인증")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("소개팅")]),
+                    _c("li", [_vm._v("참석권 수령")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("일정 조율")]),
+                    _c("li", { staticClass: "full" }, [_vm._v("파티참석")]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -64835,7 +64703,7 @@ var staticRenderFns = [
                   "a",
                   {
                     staticClass: "main-button style1",
-                    attrs: { href: "/datingProducts" },
+                    attrs: { href: "/partyProducts" },
                   },
                   [
                     _c("span", [_vm._v("신청하기")]),
@@ -64843,456 +64711,377 @@ var staticRenderFns = [
                   ]
                 ),
               ]),
-            ]
-          ),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "main-section sec-1",
-        attrs: {
-          "data-aos": "fade-right",
-          "data-aos-duration": "3000",
-          "data-aos-anchor-placement": "top-bottom",
-          "data-aos-delay": "2",
-        },
-      },
-      [
-        _c("div", { staticClass: " container" }, [
-          _c("div", { staticClass: "main-party" }, [
-            _c("div", { staticClass: "img-wrap" }, [
-              _c("img", {
-                attrs: { src: "/images/main-party.png", alt: "main-party" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "left" }, [
-              _c("span", { staticClass: "left-title" }, [
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("P")]),
-                _vm._v("arty"),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "left-content" }, [
-                _vm._v(
-                  "\n                        연령과 성비를 조율한 파티 서비스로"
-                ),
-                _c("br"),
-                _vm._v(" "),
-                _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("'자연스러운 만남'"),
-                ]),
-                _vm._v(" 의 기회를 제공합니다\n                    "),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "left-roadMap" }, [
-                _c("span", { staticClass: "roadmap-line" }),
-                _vm._v(" "),
-                _c("ul", { staticClass: "roadmap-list" }, [
-                  _c("li", [_vm._v("파티신청")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("신원인증")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("참석권 수령")]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "full" }, [_vm._v("파티참석")]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "main-button style1",
-                  attrs: { href: "/partyProducts" },
-                },
-                [
-                  _c("span", [_vm._v("신청하기")]),
-                  _c("i", { staticClass: "xi-long-arrow-right" }),
-                ]
-              ),
             ]),
           ]),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-4" }, [
-      _c("div", { staticClass: "sec4-container" }, [
-        _c("div", { staticClass: "main-content" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "img-wrap main-talk" }, [
-              _c("img", { attrs: { src: "/images/main-talk.png", alt: "" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "img-wrap main-talk mb" }, [
-              _c("img", { attrs: { src: "/images/main-talk-m.png", alt: "" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "warning-container mb" }, [
-              _c("div", { staticClass: "warning-img" }, [
-                _c("img", { attrs: { src: "/images/main-warning.png" } }),
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-4" }, [
+        _c("div", { staticClass: "sec4-container" }, [
+          _c("div", { staticClass: "main-content" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "img-wrap main-talk" }, [
+                _c("img", { attrs: { src: "/images/main-talk.png", alt: "" } }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "scroll-img" }, [
-                _c("img", { attrs: { src: "/images/scroll.png", alt: "" } }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "warning-container mb" }, [
-              _c("div", { staticClass: "swiper-container" }, [
-                _c("div", { staticClass: "swiper-wrapper" }, [
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-01.png", alt: "" },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-02.png", alt: "" },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-03.png", alt: "" },
-                    }),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "content-bg pc" }, [
-              _c("div", { staticClass: "crown-wrap type1" }, [
+              _c("div", { staticClass: "img-wrap main-talk mb" }, [
                 _c("img", {
-                  staticClass: "crown1",
-                  attrs: { src: "/images/crown1.png", alt: "" },
+                  attrs: { src: "/images/main-talk-m.png", alt: "" },
                 }),
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "warning-container mb" }, [
+                _c("div", { staticClass: "warning-img" }, [
+                  _c("img", { attrs: { src: "/images/main-warning.png" } }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "scroll-img" }, [
+                  _c("img", { attrs: { src: "/images/scroll.png", alt: "" } }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "warning-container mb" }, [
+                _c("div", { staticClass: "swiper-container" }, [
+                  _c("div", { staticClass: "swiper-wrapper" }, [
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-01.png", alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-02.png", alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-03.png", alt: "" },
+                      }),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "content-bg pc" }, [
+                _c("div", { staticClass: "crown-wrap type1" }, [
+                  _c("img", {
+                    staticClass: "crown1",
+                    attrs: { src: "/images/crown1.png", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "content-container" }, [
+                  _c("div", { staticClass: "banner-title btm" }, [
+                    _c("h2", { staticClass: "content-title col-group pc" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    인\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "toggle_txt contenttxt1" }, [
+                        _vm._v(
+                          "\n                    생에서 가장 중요한 것은  \n                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    사\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "toggle_txt contenttxt2" }, [
+                        _vm._v(
+                          "\n                    랑이다\n                  "
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "content-sub pc" }, [
+                  _vm._v("가장 친한 친구가 되어 찾아드립니다."),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container mb" }, [
               _c("div", { staticClass: "content-container" }, [
-                _c("div", { staticClass: "banner-title btm" }, [
-                  _c("h2", { staticClass: "content-title col-group pc" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt contenttxt1" }, [
-                      _vm._v(
-                        "\n                    생에서 가장 중요한 것은  \n                  "
+                _c("div", { staticClass: "crown1-img" }, [
+                  _c("img", {
+                    staticClass: "crown1",
+                    attrs: { src: "/images/crown1.png", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "banner-title" }, [
+                  _c("div", { staticClass: "mb" }, [
+                    _c("h2", { staticClass: "col-group col-group01" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    인\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "toggle_txt toggle_txt1 btm" },
+                        [
+                          _vm._v(
+                            "\n                    생에서 가장 중요한 것은\n                  "
+                          ),
+                        ]
                       ),
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt contenttxt2" }, [
-                      _vm._v(
-                        "\n                    랑이다\n                  "
+                    _c("h2", { staticClass: "col-group" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    사\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "toggle_txt toggle_txt3 btm" },
+                        [
+                          _vm._v(
+                            "\n                    랑이다\n                  "
+                          ),
+                        ]
                       ),
                     ]),
                   ]),
                 ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "content-sub mb" }, [
+                  _vm._v("가장 친한 친구가 되어 찾아드립니다."),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
               ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "content-sub pc" }, [
-                _vm._v("가장 친한 친구가 되어 찾아드립니다."),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "button-soge",
-                  attrs: { href: "/datingProducts" },
-                },
-                [_vm._v("올인원 프라이빗 소개팅")]
-              ),
             ]),
           ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "container mb" }, [
-            _c("div", { staticClass: "content-container" }, [
-              _c("div", { staticClass: "crown1-img" }, [
-                _c("img", {
-                  staticClass: "crown1",
-                  attrs: { src: "/images/crown1.png", alt: "" },
-                }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-5" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-service" }, [
+              _c("div", { staticClass: "service-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", {
+                    staticClass: "crown5",
+                    attrs: { src: "/images/crown5.svg", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-1" }, [
+                  _vm._v("All IN ONE"),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-2" }, [
+                  _vm._v("PRIVATE"),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-3" }, [
+                  _vm._v("SERVICE"),
+                ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "banner-title" }, [
-                _c("div", { staticClass: "mb" }, [
-                  _c("h2", { staticClass: "col-group col-group01" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
+              _c("div", { staticClass: "service-explan" }, [
+                _c("pre", [
+                  _vm._v(
+                    "누군가 만날 준비된 당신.\n          쉽게 가볍게 만나기엔 어려운 당신.\n          비싼 돈을 지불하기엔 소중한 당신.\n\n          '인사'는 준비된 분들을 위한 서비스입니다.\n          인사는 나를 지키면서, 나를 위한 1:1 프리미엄,\n          프라이빗 서비스를 제공하는 "
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v(
+                    " 온·오프라인 융합 서비스입니다.\n\n          모든 것이 디지털화된 지금,"
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v(
+                    "  절대 디지털화 할 수 없는 것이 있습니다.\n          바로 사람과의 관계입니다.\n\n          더이상 가벼운 만남으로 감정소모 하지 않아도,\n          고가의 비용을 지불하지 않아도 됩니다.\n          최고의 고객서비스를 제공하여"
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v("  최고의 만족도를 만들어 드리겠습니다."),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-6" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-choice" }, [
+              _c("div", { staticClass: "choice-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("인사를 "),
+                  _c("br"),
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("선택")]),
+                  _vm._v("해야하는 이유"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "choice-container" }, [
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-01.png", alt: "reason1" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-02.png", alt: "reason1" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-03.png", alt: "reason1" },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "line-wrap" }, [
+                _c("img", {
+                  staticClass: "line hidden-sm",
+                  attrs: { src: "/images/line.png", alt: "" },
+                }),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-7" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-only" }, [
+              _c("div", { staticClass: "only-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("오직")]),
+                  _c("br"),
+                  _vm._v("인사에만 있는 것"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "only-container" }, [
+                _c("ul", { staticClass: "only-list" }, [
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-1" }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt toggle_txt1 btm" }, [
-                      _vm._v(
-                        "\n                    생에서 가장 중요한 것은\n                  "
-                      ),
-                    ]),
+                    _c("span", { staticClass: "cirb b-1" }, [_vm._v("01")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("진정성")]),
+                    _vm._v(" 있는 만남을 원하는 사람만 가입"),
                   ]),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "col-group" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
-                    ]),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-2" }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt toggle_txt3 btm" }, [
-                      _vm._v(
-                        "\n                    랑이다\n                  "
-                      ),
-                    ]),
+                    _c("span", { staticClass: "cirb b-2" }, [_vm._v("02")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("대면 상담")]),
+                    _vm._v("으로 철저한 검증\n                            "),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-3" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-3" }, [_vm._v("03")]),
+                    _vm._v("\n                                남녀 "),
+                    _c("b", [_vm._v("동일한 비용")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-4" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-4" }, [_vm._v("04")]),
+                    _vm._v("\n                                디테일한 "),
+                    _c("b", [_vm._v("매칭 회의")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-5" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-5" }, [_vm._v("05")]),
+                    _vm._v(
+                      "\n                                매너, 호감도를 체크하면서 "
+                    ),
+                    _c("b", [_vm._v("사후관리")]),
+                    _vm._v("까지 책임\n                            "),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-6" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-6" }, [_vm._v("06")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("알바 회원 없음")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-7" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-7" }, [_vm._v("07")]),
+                    _vm._v(
+                      "\n                                온 · 오프라인 서비스 동시 운영으로 "
+                    ),
+                    _c("b", [_vm._v("신뢰감")]),
                   ]),
                 ]),
               ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "content-sub mb" }, [
-                _vm._v("가장 친한 친구가 되어 찾아드립니다."),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "button-soge",
-                  attrs: { href: "/datingProducts" },
-                },
-                [_vm._v("올인원 프라이빗 소개팅")]
-              ),
             ]),
           ]),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-5" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-service" }, [
-            _c("div", { staticClass: "service-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", {
-                  staticClass: "crown5",
-                  attrs: { src: "/images/crown5.svg", alt: "" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-1" }, [
-                _vm._v("All IN ONE"),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-2" }, [_vm._v("PRIVATE")]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-3" }, [_vm._v("SERVICE")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-8" }, [
+        _c("div", { staticClass: "main-footer container" }, [
+          _c("div", { staticClass: "main-footer-content" }, [
+            _c("p", [
+              _vm._v("사람은 만나봐야 알 수 있고,"),
+              _c("br"),
+              _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
+              _c("br"),
+              _vm._v("\n                    사랑에 더 이상 우연은 없어"),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "service-explan" }, [
-              _c("pre", [
-                _vm._v(
-                  "누군가 만날 준비된 당신.\n          쉽게 가볍게 만나기엔 어려운 당신.\n          비싼 돈을 지불하기엔 소중한 당신.\n\n          '인사'는 준비된 분들을 위한 서비스입니다.\n          인사는 나를 지키면서, 나를 위한 1:1 프리미엄,\n          프라이빗 서비스를 제공하는 "
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v(
-                  " 온·오프라인 융합 서비스입니다.\n\n          모든 것이 디지털화된 지금,"
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v(
-                  "  절대 디지털화 할 수 없는 것이 있습니다.\n          바로 사람과의 관계입니다.\n\n          더이상 가벼운 만남으로 감정소모 하지 않아도,\n          고가의 비용을 지불하지 않아도 됩니다.\n          최고의 고객서비스를 제공하여"
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v("  최고의 만족도를 만들어 드리겠습니다."),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-6" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-choice" }, [
-            _c("div", { staticClass: "choice-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
-              ]),
+            _c("a", { attrs: { href: "/register" } }, [
+              _c("p", { staticClass: "main-footer-btn" }, [_vm._v("가입신청")]),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("인사를 "),
-                _c("br"),
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("선택")]),
-                _vm._v("해야하는 이유"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "choice-container" }, [
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-01.png", alt: "reason1" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-02.png", alt: "reason1" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-03.png", alt: "reason1" },
-                }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "line-wrap" }, [
               _c("img", {
-                staticClass: "line hidden-sm",
-                attrs: { src: "/images/line.png", alt: "" },
+                staticClass: "arrow-off",
+                attrs: { src: "/images/arrow.png", alt: "arrow-on" },
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "arrow-on",
+                attrs: { src: "/images/arrow-on.png", alt: "arrow-on" },
               }),
             ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-7" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-only" }, [
-            _c("div", { staticClass: "only-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("오직")]),
-                _c("br"),
-                _vm._v("인사에만 있는 것"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "only-container" }, [
-              _c("ul", { staticClass: "only-list" }, [
-                _c("li", [
-                  _c("span", { staticClass: "cir s-1" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-1" }, [_vm._v("01")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("진정성")]),
-                  _vm._v(" 있는 만남을 원하는 사람만 가입"),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-2" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-2" }, [_vm._v("02")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("대면 상담")]),
-                  _vm._v("으로 철저한 검증\n                            "),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-3" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-3" }, [_vm._v("03")]),
-                  _vm._v("\n                                남녀 "),
-                  _c("b", [_vm._v("동일한 비용")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-4" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-4" }, [_vm._v("04")]),
-                  _vm._v("\n                                디테일한 "),
-                  _c("b", [_vm._v("매칭 회의")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-5" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-5" }, [_vm._v("05")]),
-                  _vm._v(
-                    "\n                                매너, 호감도를 체크하면서 "
-                  ),
-                  _c("b", [_vm._v("사후관리")]),
-                  _vm._v("까지 책임\n                            "),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-6" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-6" }, [_vm._v("06")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("알바 회원 없음")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-7" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-7" }, [_vm._v("07")]),
-                  _vm._v(
-                    "\n                                온 · 오프라인 서비스 동시 운영으로 "
-                  ),
-                  _c("b", [_vm._v("신뢰감")]),
-                ]),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-8" }, [
-      _c("div", { staticClass: "main-footer container" }, [
-        _c("div", { staticClass: "main-footer-content" }, [
-          _c("p", [
-            _vm._v("사람은 만나봐야 알 수 있고,"),
-            _c("br"),
-            _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
-            _c("br"),
-            _vm._v("\n                    사랑에 더 이상 우연은 없어"),
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [
-            _c("p", { staticClass: "main-footer-btn" }, [_vm._v("가입신청")]),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "arrow-off",
-              attrs: { src: "/images/arrow.png", alt: "arrow-on" },
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "arrow-on",
-              attrs: { src: "/images/arrow-on.png", alt: "arrow-on" },
-            }),
           ]),
         ]),
       ]),
@@ -71224,11 +71013,7 @@ var render = function () {
                           expression: "form.nickname",
                         },
                       ],
-                      attrs: {
-                        type: "text",
-                        placeholder:
-                          "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요.",
-                      },
+                      attrs: { type: "text", placeholder: "닉네임" },
                       domProps: { value: _vm.form.nickname },
                       on: {
                         input: function ($event) {
@@ -72551,11 +72336,7 @@ var render = function () {
                             expression: "form.nickname",
                           },
                         ],
-                        attrs: {
-                          type: "text",
-                          placeholder:
-                            "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요.",
-                        },
+                        attrs: { type: "text", placeholder: "닉네임" },
                         domProps: { value: _vm.form.nickname },
                         on: {
                           input: function ($event) {
