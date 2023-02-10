@@ -108,7 +108,7 @@
 .login-contants .login-line {
     width: 576px;
     height: 1px;
-    margin: 39.5px 40px;
+    margin: 39 40px;
     background-color: #c4c4c4;
 }
 
@@ -188,7 +188,7 @@
 
 @media screen and (max-width: 375px) {
     .loginpage.pwd-id .login-wrap {
-        min-height: calc(100vh - 305.1px);
+        min-height: calc(100vh - 305px);
         margin: 0 auto;
     }
     .loginpage.pwd-id .login-contants {
@@ -235,7 +235,7 @@
 
 /* 인증방법으로 아이디 찾기 */
 .login-contants.find-id {
-    padding: 73.9px 0px 63.9px;
+    padding: 73px 0px 63px;
 }
 
 .loginpage.pwd-phone .login-certification {
@@ -399,7 +399,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 413.49px);
+    min-height: calc(100vh - 413px);
 }
 
 .subpage.result-section .result-contents {
@@ -535,11 +535,13 @@
     height: 56px;
     line-height: 56px;
     font-size: 18px;
-    color: #a4a4a4;
     padding: 0 24px;
     background-color: #f5f5f5;
     border: none;
 }
+.loginpage.login .login-form-wrap .login-form input:focus {outline: 2px solid #c4c4c4;} /* outline 테두리 속성 수정 */
+
+.loginpage.login .login-form-wrap .login-form input::placeholder{  color:#c1c1c1;}
 
 .loginpage.login .login-main .login-btn {
     width: 100%;
@@ -832,6 +834,7 @@
 .join-wrap {
     max-width: 744px;
     width: 100%;
+    padding: 0 20px;
 }
 
 .join-wrap .form-join {
@@ -840,11 +843,6 @@
     margin-top: 39.9px;
 }
 
-/*.con-wrap {
-    width: 100%;
-    padding: 0px 72px 40px 72px;
-}*/
-
 .con-wrap-header {
     width: 100%;
     padding: 84px 73px 0 73px;
@@ -852,7 +850,7 @@
 }
 
 .form-join .form-box {
-    padding: 25px;
+    padding: 72px;
 }
 
 .con-wrap-title {
@@ -870,6 +868,8 @@
     font-size: 18px;
     color: #f00;
 }
+
+
 
 .form-join .form-box .user > .input-gap {
     margin-bottom: 20px;
@@ -1034,9 +1034,9 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="text"] {
+/* input[type="text"] {
     color: #a4a4a4;
-}
+} */
 
 .join-wrap .duty-sub {
     font-size: 17px;
@@ -1078,7 +1078,7 @@ input[type="text"] {
 .login-contants .login-line {
     width: 576px;
     height: 1px;
-    margin: 39.5px 40px;
+    margin: 39px 40px;
     background-color: #c4c4c4;
 }
 
@@ -1104,15 +1104,34 @@ input[type="text"] {
 /* 아이디 찾기 - 인증방법 */
 @media screen and (max-width: 768px) {
     .login-wrap {
-        min-height: calc(100vh - 305.1px);
+        min-height: calc(100vh - 305px);
         margin: 0;
     }
+    .con-wrap-sub {
+        top: 82px;
+        right: 30px;
+    }
+   label .check-icon {
+    width: 13px;
+    height: 13px;
+   }
+   .terms-list > li { height: 40px;}
+   .term-arrow { font-size: 12px;}
+   .join-wrap .duty-box .duty-title {  font-size: 20px; }
+   .join-wrap .duty-sub {  font-size: 15px;  margin-top: 20px; margin-bottom: 20px; }
+   .duty-box label { line-height: 16px; }
+   .duty-box { padding: 20px 0 23px 0; }
+   .join-wrap .submit-duty-btn {  height: 67px; }
+   .loginpage.login .login-wrap-main { box-shadow: none;}
+   .loginpage.login .login-footer { box-shadow: none;}
+   .join-wrap .submit-duty-btn { margin-bottom: 0px;}
+
 }
 
 @media screen and (max-width: 375px) {
     /* loginpage 공통 */
     .login-wrap {
-        min-height: calc(100vh - 305.1px);
+        min-height: calc(100vh - 305px);
         margin: 0 auto;
     }
     .loginpage .login-contants {
@@ -1194,26 +1213,29 @@ input[type="text"] {
 /* 테마 적용하기 */
 #theme {
     width: 100%;
-    height: 64px;
 }
 
+
 #theme .join-select {
+    display: flex;
+    align-items: center;
     padding: 23px 15px;
     cursor: pointer;
-    width: 100%; height: 100%;
-    /* height: 64px; */
-    font-size:18px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
     color: #a4a4a4;
 }
+
 #theme .join-select:hover {
     color: #333;
     transition: all 0.3s;
 }
 
 #theme .join-select .text {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
     color: #a4a4a4;
     white-space: nowap;
 }
@@ -1230,9 +1252,7 @@ input[type="text"] {
     width: 100.7%;
 }
 
-#theme .join-select .option-list.half {
-    width: 101.5%;
-}
+
 
 #theme .join-select .option-list .option {
     padding: 25px 15px;
@@ -1258,7 +1278,7 @@ input[type="text"] {
 
 @media screen and (max-width: 768px) {
     .login-wrap {
-        min-height: calc(100vh - 305.1px);
+        min-height: calc(100vh - 305px);
         margin: 0;
     }
     .loginpage.login .login-header .login-logo {
@@ -1289,10 +1309,18 @@ input[type="text"] {
     .loginpage.login .login-header .login-header-sub {
         margin-top: 20px;
     }
+    .con-wrap-header {
+        padding: 42px 25px 0 36px;
+    }
+    .form-join .form-box {
+        padding: 25px;
+    }
+    #theme .join-select { padding:  0 8px;}
+   
 }
 @media screen and (max-width: 680px) {
         .login-wrap {
-            min-height: calc(100vh - 305.1px);
+            min-height: calc(100vh - 305px);
             margin: 0 auto;
         }
 
@@ -1329,7 +1357,7 @@ input[type="text"] {
         }
 
         .loginpage.login .login-wrap-main {
-            width: calc(100% - 30px);
+            width: 100%;
             margin: 0px auto;
             padding: 20px 0px;
         }
@@ -1380,10 +1408,9 @@ input[type="text"] {
         }
 
         .loginpage.login .login-footer {
-            /* width: 345px; */
-            width: 96%;
+            width: calc(100% - 40px);
             background-color: #e1bf87;
-
+            margin-bottom: 20px;
             padding: 15px 22px;
         }
         .loginpage.login .login-footer .member-benefit-btn > p {
@@ -1405,7 +1432,7 @@ input[type="text"] {
         height: 40px;
     }
     #theme .join-select {
-        padding: 13px 16px;
+        padding: 13px 8px;
         height: 40px;
     }
     #theme .join-select .text {
@@ -1493,6 +1520,7 @@ input[type="text"] {
         font-size: 15px;
         margin-top: 30px;
     }
+    
 }
 
 
@@ -1503,9 +1531,9 @@ input[type="text"] {
 
     #theme .join-select {
         height: 40px;
-        padding: 14px;
+        /* padding: 14px; */
     }
-    #theme .join-select .text{
+    #theme .join-select .text {
         font-size: 10px;
         line-height: 12px;
     }
@@ -1515,12 +1543,12 @@ input[type="text"] {
     }
 
     .all-check-contents label {
-        font-size: 15px;
+        font-size: 12px;
         align-items: end;
     }
 
     .terms-list .terms-agree label {
-        font-size: 15px;
+        font-size: 10px;
         align-items: end;
         word-break: keep-all;
     }
@@ -1530,11 +1558,16 @@ input[type="text"] {
 
     .con-wrap-title {
         font-size: 38px;
+        text-align: center;
     }
 
     .con-wrap-sub {
-    top: 140px;
-    right: 73px;
+    /* right: 73px; */
+    top: 106px;
+    bottom: 0;
+    right: 42%;
+    transform: translateX(-2px);
+    font-size: 15px;
 
     }
 
@@ -1557,6 +1590,7 @@ input[type="text"] {
         width: 100%;
         margin: 0 auto;
         position: relative;
+        padding: 42px 20px 0 20px;
     }
 
     .con-wrap-title {
@@ -1566,9 +1600,9 @@ input[type="text"] {
 
     .con-wrap-sub {
         position: absolute;
-        top: 132px;
+        top: 90px;
         bottom: 0;
-        right: 140px;
+        right: 40%;
         font-size: 15px;
         color: #f00;
     }
@@ -1595,7 +1629,7 @@ input[type="text"] {
 
     .duty-box label {
         font-size: 12px;
-        line-height: 21px;
+        line-height: 16px;
     }
 
     label > .duty-check {
@@ -1609,6 +1643,9 @@ input[type="text"] {
 
     .terms-list > li {
         font-size: 15px;
+    }
+    .form-join .form-box {
+        padding: 16px 0px;
     }
 }
 
@@ -1729,7 +1766,7 @@ input[type="text"] {
 }
 #theme .join-select-wrap i {
     position:absolute; top:50%; right:16px; transform:translateY(-50%);
-    font-sizez:18px; color:#a4a4a4;
+    font-size:18px; color:#a4a4a4;
 }
 input:disabled {
     background-color:#eee !important; color:#777 !important;
@@ -1741,11 +1778,7 @@ input:disabled {
     padding:4px;
     position:relative;
 }
-.upload-list .img-box {
-    width:100px; height:100px;
-    margin:4px; position:relative;
-     border:1px solid #e1e1e1;
-}
+.upload-list .img-box { width:100px; height:100px;  margin:4px; position:relative; border:1px solid #e1e1e1; overflow: hidden; }
 .upload-list .img-box img {
     width:100%; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
 }
