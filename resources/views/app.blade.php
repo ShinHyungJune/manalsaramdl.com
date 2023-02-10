@@ -18,6 +18,7 @@
     <meta name="description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
     <meta property="og:type" content="website">
     <meta property="og:title" content="인사">
+    <meta property="og:image" content="{{asset("images/insa-kakao-img.jpg")}}">
     <meta property="og:description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
     <meta property="og:url" content="https://insacompany.com">
     <meta name="twitter:card" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">

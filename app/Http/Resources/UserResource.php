@@ -27,6 +27,8 @@ class UserResource extends JsonResource
             "contact" => $this->contact,
             "name" => $this->name,
 
+            "displayName" => $this->nickname ?? $this->name,
+
             "sex" => $this->sex,
             "birth" => $this->birth,
             "job" => $this->job,
@@ -35,6 +37,7 @@ class UserResource extends JsonResource
             "area" => $this->area ?? "",
             "need_service" => $this->need_service ?? "",
             "registration_way" => $this->registration_way ?? "",
+            "nickname" => $this->nickname ?? "",
             "city_company" => $this->city_company ?? "",
             "area_company" => $this->area_company ?? "",
             "tall" => $this->tall,
@@ -63,6 +66,17 @@ class UserResource extends JsonResource
             "account" => $this->account,
             "alarm" => $this->alarm,
             "agree_marketing" => $this->agree_marketing,
+
+            "comment1" => $this->comment1,
+            "comment2" => $this->comment2,
+            "comment3" => $this->comment3,
+            "comment4" => $this->comment4,
+            "comment5" => $this->comment5,
+            "comment6" => $this->comment6,
+            "comment7" => $this->comment7,
+            "comment8" => $this->comment8,
+            "comment9" => $this->comment9,
+            "comment10" => $this->comment10,
 
             "created_at" => $this->created_at ? Carbon::make($this->created_at)->format("Y-m-d H:i") : "",
             "updated_at" => Carbon::make($this->updated_at)->format("Y-m-d H:i")

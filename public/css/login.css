@@ -1316,7 +1316,7 @@ input[type="checkbox"] {
         padding: 25px;
     }
     #theme .join-select { padding:  0 8px;}
-   
+
 }
 @media screen and (max-width: 680px) {
         .login-wrap {
@@ -1520,7 +1520,7 @@ input[type="checkbox"] {
         font-size: 15px;
         margin-top: 30px;
     }
-    
+
 }
 
 
@@ -1765,6 +1765,7 @@ input[type="checkbox"] {
     position:relative;
 }
 #theme .join-select-wrap i {
+    display:none;
     position:absolute; top:50%; right:16px; transform:translateY(-50%);
     font-size:18px; color:#a4a4a4;
 }
@@ -1775,8 +1776,17 @@ input:disabled {
     display:flex;
 }
 .upload-list li {
-    padding:4px;
     position:relative;
+}
+.upload-list li .del {
+    display:flex; align-items: center; justify-content: center;
+    width:20px; height:20px;
+    position:absolute; top:4px; right:4px;
+    background-color:#ccc;
+}
+.upload-list li .del i {
+    position:absolute; top:50% !important; left:50% !important; right:auto !important; transform:translate(-50%, -50%);
+    color:#fff !important;
 }
 .upload-list .img-box { width:100px; height:100px;  margin:4px; position:relative; border:1px solid #e1e1e1; overflow: hidden; }
 .upload-list .img-box img {

@@ -36,13 +36,11 @@
                             <span :class="`state-label ${dating.ongoing ? 'ongoing' : ''}`">{{dating.ongoing ? '진행중' : '종료'}}</span>
                             <span :class="alarmClass(dating)"><i class="xi-bell"></i></span>
                             <div class="user-profile">
-                                <div class="user-photo">
-                                    <img :src="partner(dating).img ? partner(dating).img.url : ''" alt="">
-                                </div>
+                                <div class="user-photo" :style="`background-image:url(${partner(dating).img ? partner(dating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                 <div class="txt-box">
                                     <p class="user-name">
                                         {{partner(dating).nickname}}
-                                    </p>
+                                     </p>
                                     <div class="user-info col-group">
                                         <p>{{partner(dating).birth}}년생</p>
                                         /
@@ -144,9 +142,7 @@
                             <div class="left-wrap col-group">
                                 <div class="user-profile">
                                     <div class="user-photo">
-                                        <div class="img-box">
-                                            <img :src="partner(targetDating).img ? partner(targetDating).img.url : ''" alt="">
-                                        </div>
+                                        <div class="img-box" :style="`background-image:url(${partner(targetDating).img ? partner(targetDating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                     </div>
                                     <div class="txt-box">
                                         <p class="user-name">
@@ -177,7 +173,13 @@
                             <div class="right-wrap">
                                 <div class="comment-box">
                                     <h3 class="title">매니저 코멘트</h3>
-                                    <pre class="txt" v-text="partner(targetDating).comment_manager"></pre>
+                                    <ul class="comment-list row-group">
+                                        <li v-if="partner(targetDating).comment1"><pre class="txt" v-text="partner(targetDating).comment1"></pre></li>
+                                        <li v-if="partner(targetDating).comment2"><pre class="txt" v-text="partner(targetDating).comment2"></pre></li>
+                                        <li v-if="partner(targetDating).comment3"><pre class="txt" v-text="partner(targetDating).comment3"></pre></li>
+                                        <li v-if="partner(targetDating).comment4"><pre class="txt" v-text="partner(targetDating).comment4"></pre></li>
+                                        <li v-if="partner(targetDating).comment5"><pre class="txt" v-text="partner(targetDating).comment5"></pre></li>
+                                    </ul>
                                 </div>
                                 <div class="btn-wrap col-group">
                                     <button type="button" @click="read(targetDating)">확인완료</button>
@@ -507,9 +509,7 @@
                                     <img src="/images/crown2.png" alt="">
                                 </div>
                                 <div class="user-photo">
-                                    <div class="img-box">
-                                        <img :src="partner(targetFeedbackDating).img ? partner(targetFeedbackDating).img.url : ''" alt="">
-                                    </div>
+                                    <div class="img-box" :style="`background-image:url(${partner(targetFeedbackDating).img ? partner(targetFeedbackDating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                 </div>
                                 <div class="txt-box">
                                     <p class="user-name">

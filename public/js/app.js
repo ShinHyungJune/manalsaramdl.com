@@ -3001,8 +3001,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -6763,7 +6761,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -6844,6 +6841,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_State__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/State */ "./resources/js/Components/State.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -8269,6 +8270,7 @@ __webpack_require__.r(__webpack_exports__);
       slidesPerView: "auto",
       spaceBetween: 20,
       centeredSlides: true,
+      loop: true,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false
@@ -9116,6 +9118,7 @@ __webpack_require__.r(__webpack_exports__);
       direction: "horizontal",
       slidesPerView: "auto",
       spaceBetween: 20,
+      loop: true,
       centeredSlides: true,
       autoplay: {
         delay: 3000,
@@ -9968,6 +9971,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9996,6 +10009,7 @@ __webpack_require__.r(__webpack_exports__);
         area: this.$page.props.user ? this.$page.props.user.data.area : "",
         need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
         registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+        nickname: this.$page.props.user ? this.$page.props.user.data.nickname : "",
         city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
         area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
         tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
@@ -10377,6 +10391,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -10405,6 +10430,7 @@ __webpack_require__.r(__webpack_exports__);
         area: this.$page.props.user ? this.$page.props.user.data.area : "",
         need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
         registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+        nickname: this.$page.props.user ? this.$page.props.user.data.nickname : "",
         city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
         area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
         tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
@@ -10582,6 +10608,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_State__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/State */ "./resources/js/Components/State.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -57238,11 +57268,9 @@ var staticRenderFns = [
             _vm._v("인사의 코멘트"),
           ]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/partyNotices" } }, [_vm._v("파티관련")]),
+          _c("a", { attrs: { href: "/partyNotices" } }, [_vm._v("파티Q&A")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/datingNotices" } }, [
-            _vm._v("소개팅관련"),
-          ]),
+          _c("a", { attrs: { href: "/datingNotices" } }, [_vm._v("소개팅Q&A")]),
         ]),
       ]),
     ])
@@ -57403,11 +57431,13 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "left-wrap" }, [
     _c("div", { staticClass: "user-profile" }, [
-      _c("div", { staticClass: "user-photo" }, [
-        _c("img", {
-          attrs: { src: _vm.user.img ? _vm.user.img.url : "", alt: "" },
-        }),
-      ]),
+      _c("div", {
+        staticClass: "user-photo",
+        style:
+          "background-image:url(" +
+          (_vm.user.img ? _vm.user.img.url : "") +
+          "); background-repeat:no-repeat; background-size:100%; background-position:center;",
+      }),
       _vm._v(" "),
       _c("p", { staticClass: "user-name" }, [
         _vm._v("\n            " + _vm._s(_vm.user.name) + "\n        "),
@@ -61306,23 +61336,22 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "user-profile" }, [
-                    _c("div", { staticClass: "user-photo" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.partner(dating).img
-                            ? _vm.partner(dating).img.url
-                            : "",
-                          alt: "",
-                        },
-                      }),
-                    ]),
+                    _c("div", {
+                      staticClass: "user-photo",
+                      style:
+                        "background-image:url(" +
+                        (_vm.partner(dating).img
+                          ? _vm.partner(dating).img.url
+                          : "") +
+                        "); background-repeat:no-repeat; background-size:100%; background-position:center;",
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "txt-box" }, [
                       _c("p", { staticClass: "user-name" }, [
                         _vm._v(
                           "\n                                    " +
                             _vm._s(_vm.partner(dating).nickname) +
-                            "\n                                "
+                            "\n                                 "
                         ),
                       ]),
                       _vm._v(" "),
@@ -61617,16 +61646,15 @@ var render = function () {
                     _c("div", { staticClass: "left-wrap col-group" }, [
                       _c("div", { staticClass: "user-profile" }, [
                         _c("div", { staticClass: "user-photo" }, [
-                          _c("div", { staticClass: "img-box" }, [
-                            _c("img", {
-                              attrs: {
-                                src: _vm.partner(_vm.targetDating).img
-                                  ? _vm.partner(_vm.targetDating).img.url
-                                  : "",
-                                alt: "",
-                              },
-                            }),
-                          ]),
+                          _c("div", {
+                            staticClass: "img-box",
+                            style:
+                              "background-image:url(" +
+                              (_vm.partner(_vm.targetDating).img
+                                ? _vm.partner(_vm.targetDating).img.url
+                                : "") +
+                              "); background-repeat:no-repeat; background-size:100%; background-position:center;",
+                          }),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "txt-box" }, [
@@ -61709,14 +61737,72 @@ var render = function () {
                           _vm._v("매니저 코멘트"),
                         ]),
                         _vm._v(" "),
-                        _c("pre", {
-                          staticClass: "txt",
-                          domProps: {
-                            textContent: _vm._s(
-                              _vm.partner(_vm.targetDating).comment_manager
-                            ),
-                          },
-                        }),
+                        _c("ul", { staticClass: "comment-list row-group" }, [
+                          _vm.partner(_vm.targetDating).comment1
+                            ? _c("li", [
+                                _c("pre", {
+                                  staticClass: "txt",
+                                  domProps: {
+                                    textContent: _vm._s(
+                                      _vm.partner(_vm.targetDating).comment1
+                                    ),
+                                  },
+                                }),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.partner(_vm.targetDating).comment2
+                            ? _c("li", [
+                                _c("pre", {
+                                  staticClass: "txt",
+                                  domProps: {
+                                    textContent: _vm._s(
+                                      _vm.partner(_vm.targetDating).comment2
+                                    ),
+                                  },
+                                }),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.partner(_vm.targetDating).comment3
+                            ? _c("li", [
+                                _c("pre", {
+                                  staticClass: "txt",
+                                  domProps: {
+                                    textContent: _vm._s(
+                                      _vm.partner(_vm.targetDating).comment3
+                                    ),
+                                  },
+                                }),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.partner(_vm.targetDating).comment4
+                            ? _c("li", [
+                                _c("pre", {
+                                  staticClass: "txt",
+                                  domProps: {
+                                    textContent: _vm._s(
+                                      _vm.partner(_vm.targetDating).comment4
+                                    ),
+                                  },
+                                }),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.partner(_vm.targetDating).comment5
+                            ? _c("li", [
+                                _c("pre", {
+                                  staticClass: "txt",
+                                  domProps: {
+                                    textContent: _vm._s(
+                                      _vm.partner(_vm.targetDating).comment5
+                                    ),
+                                  },
+                                }),
+                              ])
+                            : _vm._e(),
+                        ]),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "btn-wrap col-group" }, [
@@ -62692,16 +62778,15 @@ var render = function () {
                       _vm._m(11),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-photo" }, [
-                        _c("div", { staticClass: "img-box" }, [
-                          _c("img", {
-                            attrs: {
-                              src: _vm.partner(_vm.targetFeedbackDating).img
-                                ? _vm.partner(_vm.targetFeedbackDating).img.url
-                                : "",
-                              alt: "",
-                            },
-                          }),
-                        ]),
+                        _c("div", {
+                          staticClass: "img-box",
+                          style:
+                            "background-image:url(" +
+                            (_vm.partner(_vm.targetFeedbackDating).img
+                              ? _vm.partner(_vm.targetFeedbackDating).img.url
+                              : "") +
+                            "); background-repeat:no-repeat; background-size:100%; background-position:center;",
+                        }),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "txt-box" }, [
@@ -64513,15 +64598,11 @@ var staticRenderFns = [
                       "\n                        조건, 성향 등을 고려해서 매칭해주는 서비스로"
                     ),
                     _c("br"),
-                    _vm._v("\n                        고객님들께서 "),
+                    _vm._v(" "),
                     _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("'원하던 만남'"),
+                      _vm._v("'원하는 만남'"),
                     ]),
-                    _vm._v("을"),
-                    _c("br"),
-                    _vm._v(
-                      "\n                        가질 수 있는 기회를 제공하는 서비스입니다.\n                    "
-                    ),
+                    _vm._v("의 기회를 제공합니다.\n                    "),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "top-roadMap" }, [
@@ -64530,7 +64611,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("li", [_vm._v("프로필 작성")]),
                       _vm._v(" "),
-                      _c("li", [_vm._v("소개팅 매칭")]),
+                      _c("li", { staticClass: "full" }, [_vm._v("소개팅")]),
                       _vm._v(" "),
                       _c("li", [_vm._v("프로필 교환")]),
                     ]),
@@ -64614,7 +64695,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("li", [_vm._v("참석권 수령")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("파티참석")]),
+                    _c("li", { staticClass: "full" }, [_vm._v("파티참석")]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -64914,7 +64995,7 @@ var staticRenderFns = [
                     _c("span", { staticClass: "cirb b-1" }, [_vm._v("01")]),
                     _vm._v(" "),
                     _c("b", [_vm._v("진정성")]),
-                    _vm._v("있는 만남을 원하는 사람만 가입"),
+                    _vm._v(" 있는 만남을 원하는 사람만 가입"),
                   ]),
                   _vm._v(" "),
                   _c("li", [
@@ -65752,6 +65833,8 @@ var render = function () {
                 ])
               : _vm._e(),
           ]),
+          _vm._v(" "),
+          _vm._m(6),
         ]),
       ],
       1
@@ -66000,6 +66083,24 @@ var staticRenderFns = [
         _vm._v("환불내역"),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
+      },
+      [
+        _c("img", {
+          staticClass: "kakao-cir",
+          attrs: { src: "/images/kakao-circle.png", alt: "kakao-circle" },
+        }),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -70443,6 +70544,7 @@ var render = function () {
                           expression: "form.name",
                         },
                       ],
+                      staticClass: "re-bg",
                       attrs: {
                         type: "text",
                         placeholder: "홍길동",
@@ -70798,7 +70900,7 @@ var render = function () {
                           expression: "form.need_service",
                         },
                       ],
-                      attrs: { type: "text", value: "소개팅 or 파티" },
+                      attrs: { type: "text", placeholder: "소개팅 or 파티" },
                       domProps: { value: _vm.form.need_service },
                       on: {
                         input: function ($event) {
@@ -70894,6 +70996,41 @@ var render = function () {
               _vm._m(13),
               _vm._v(" "),
               _c("ul", { staticClass: "form-box row-group" }, [
+                _c("li", { staticClass: "row-group" }, [
+                  _c("p", { staticClass: "default" }, [
+                    _vm._v(
+                      "\n                                닉네임\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user col-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.nickname,
+                          expression: "form.nickname",
+                        },
+                      ],
+                      attrs: { type: "text", placeholder: "닉네임" },
+                      domProps: { value: _vm.form.nickname },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "nickname", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.nickname)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
                   _c("p", { staticClass: "default" }, [
                     _vm._v(
@@ -71686,7 +71823,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/privacy02", target: "_blank" } }, [
-      _c("i", { staticClass: "xi-angle-right" }),
+      _c("i", { staticClass: "xi-angle-right term-arrow" }),
     ])
   },
   function () {
@@ -71694,7 +71831,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
-      _c("i", { staticClass: "xi-angle-right" }),
+      _c("i", { staticClass: "xi-angle-right term-arrow" }),
     ])
   },
   function () {
@@ -71702,7 +71839,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
-      _c("i", { staticClass: "xi-angle-right" }),
+      _c("i", { staticClass: "xi-angle-right term-arrow" }),
     ])
   },
   function () {
@@ -72090,7 +72227,7 @@ var render = function () {
                             expression: "form.need_service",
                           },
                         ],
-                        attrs: { type: "text", value: "소개팅 or 파티" },
+                        attrs: { type: "text", placeholder: "소개팅 or 파티" },
                         domProps: { value: _vm.form.need_service },
                         on: {
                           input: function ($event) {
@@ -72182,6 +72319,41 @@ var render = function () {
                 _vm._m(10),
                 _vm._v(" "),
                 _c("ul", { staticClass: "form-box row-group" }, [
+                  _c("li", { staticClass: "row-group" }, [
+                    _c("p", { staticClass: "default" }, [
+                      _vm._v(
+                        "\n                                닉네임\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "user col-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.nickname,
+                            expression: "form.nickname",
+                          },
+                        ],
+                        attrs: { type: "text", placeholder: "닉네임" },
+                        domProps: { value: _vm.form.nickname },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "nickname", $event.target.value)
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.nickname)),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
@@ -73025,6 +73197,8 @@ var render = function () {
               [_vm._v("탈퇴하기")]
             ),
           ]),
+          _vm._v(" "),
+          _vm._m(3),
         ]),
       ],
       1
@@ -73097,6 +73271,24 @@ var staticRenderFns = [
         _c("br"),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
+      },
+      [
+        _c("img", {
+          staticClass: "kakao-cir",
+          attrs: { src: "/images/kakao-circle.png", alt: "kakao-circle" },
+        }),
+      ]
+    )
   },
 ]
 render._withStripped = true

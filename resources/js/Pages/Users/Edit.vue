@@ -145,7 +145,7 @@
                                     이용 예정 서비스 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" value="소개팅 or 파티" v-model="form.need_service">
+                                    <input type="text" placeholder="소개팅 or 파티" v-model="form.need_service">
                                     <span class="m-input-error">{{form.errors.need_service}}</span>
                                 </div>
                             </li>
@@ -173,6 +173,17 @@
                             </p>
                         </div>
                         <ul class="form-box row-group">
+                            <li class="row-group">
+                                <p class="default">
+                                    닉네임
+                                </p>
+                                <div class="user col-group">
+                                    <input type="text" placeholder="닉네임" v-model="form.nickname">
+
+                                    <span class="m-input-error">{{form.errors.nickname}}</span>
+                                </div>
+                            </li>
+
                             <li class="row-group">
                                 <p class="default">
                                     근무지
@@ -297,6 +308,7 @@ export default {
                 area: this.$page.props.user ? this.$page.props.user.data.area : "",
                 need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
                 registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+                nickname: this.$page.props.user ? this.$page.props.user.data.nickname : "",
                 city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
                 area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
                 tall: this.$page.props.user ? this.$page.props.user.data.tall : "",

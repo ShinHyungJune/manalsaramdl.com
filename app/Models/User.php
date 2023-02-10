@@ -32,6 +32,7 @@ class User extends Authenticatable implements HasMedia
         'need_service',
         'registration_way',
 
+        "nickname",
         'city_company',
         'area_company',
         'tall',
@@ -53,7 +54,18 @@ class User extends Authenticatable implements HasMedia
 
         "account",
         "bank",
-        "owner"
+        "owner",
+
+        "comment1",
+        "comment2",
+        "comment3",
+        "comment4",
+        "comment5",
+        "comment6",
+        "comment7",
+        "comment8",
+        "comment9",
+        "comment10",
     ];
 
     /**

@@ -586,6 +586,8 @@ export default {
 
             centeredSlides: true,
 
+            loop: true,
+
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,

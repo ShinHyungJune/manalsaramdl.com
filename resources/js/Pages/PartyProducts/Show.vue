@@ -657,6 +657,8 @@ export default {
             slidesPerView: "auto",
             spaceBetween: 20,
 
+            loop: true,
+
             centeredSlides: true,
 
             autoplay: {

@@ -1,9 +1,7 @@
 <template>
     <div class="left-wrap">
         <div class="user-profile">
-            <div class="user-photo">
-                <img :src="user.img ? user.img.url : ''" alt="">
-            </div>
+            <div class="user-photo" :style="`background-image:url(${user.img ? user.img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
             <p class="user-name">
                 {{ user.name }}
             </p>

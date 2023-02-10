@@ -125,8 +125,8 @@
                             </div>
                             <div class="mb-sm-nav">
                                 <a href="/commentNotices">인사의 코멘트</a>
-                                <a href="/partyNotices">파티관련</a>
-                                <a href="/datingNotices">소개팅관련</a>
+                                <a href="/partyNotices">파티Q&A</a>
+                                <a href="/datingNotices">소개팅Q&A</a>
                             </div>
                         </li>
                     </ul>

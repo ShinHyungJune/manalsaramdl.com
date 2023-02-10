@@ -60,6 +60,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "registration_way" => "required|string|max:500",
             "password" => "required|string|min:8|max:30|confirmed",
 
+            "nickname" => "nullable|string|max:50000",
             "city_company" => "nullable|string|max:50000",
             "area_company" => "nullable|string|max:50000",
             "tall" => "nullable|string|max:50000",
@@ -119,6 +120,7 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "need_service" => "required|string|max:500",
             "registration_way" => "required|string|max:500",
 
+            "nickname" => "nullable|string|max:50000",
             "city_company" => "nullable|string|max:50000",
             "area_company" => "nullable|string|max:50000",
             "tall" => "nullable|string|max:50000",

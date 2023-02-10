@@ -61,7 +61,7 @@
                                     이름(실명) <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" placeholder="홍길동" v-model="form.name" disabled>
+                                    <input type="text" class="re-bg" placeholder="홍길동" v-model="form.name" disabled>
                                     <span class="m-input-error">{{form.errors.name}}</span>
 
                                 </div>
@@ -163,7 +163,7 @@
                                     이용 예정 서비스 <span>*</span>
                                 </p>
                                 <div class="user">
-                                    <input type="text" value="소개팅 or 파티" v-model="form.need_service">
+                                    <input type="text" placeholder="소개팅 or 파티" v-model="form.need_service">
                                     <span class="m-input-error">{{form.errors.need_service}}</span>
                                 </div>
                             </li>
@@ -195,6 +195,16 @@
                             </p>
                         </div>
                         <ul class="form-box row-group">
+                            <li class="row-group">
+                                <p class="default">
+                                    닉네임
+                                </p>
+                                <div class="user col-group">
+                                    <input type="text" placeholder="닉네임" v-model="form.nickname">
+
+                                    <span class="m-input-error">{{form.errors.nickname}}</span>
+                                </div>
+                            </li>
                             <li class="row-group">
                                 <p class="default">
                                     근무지
@@ -311,7 +321,7 @@
                                                 이용약관 동의(필수)
                                             </label>
                                         </div>
-                                        <a href="/privacy02" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy02" target="_blank"><i class="xi-angle-right term-arrow"></i></a>
                                     </li>
                                     <li class="row-group  terms-1">
                                         <div class="terms-agree">
@@ -321,7 +331,7 @@
                                                 개인정보 수집 및 이용에 대한 동의 (필수)
                                             </label>
                                         </div>
-                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right term-arrow"></i></a>
                                     </li>
                                     <li class="row-group  terms-1">
                                         <div class="terms-agree">
@@ -331,7 +341,7 @@
                                                 광고 및 마케팅 활용 동의 (선택)
                                             </label>
                                         </div>
-                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right"></i></a>
+                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right term-arrow"></i></a>
                                     </li>
                                 </ul>
                             </li>
@@ -382,6 +392,7 @@ export default {
                 area: this.$page.props.user ? this.$page.props.user.data.area : "",
                 need_service: this.$page.props.user ? this.$page.props.user.data.need_service : "",
                 registration_way: this.$page.props.user ? this.$page.props.user.data.registration_way : "",
+                nickname: this.$page.props.user ? this.$page.props.user.data.nickname : "",
                 city_company: this.$page.props.user ? this.$page.props.user.data.city_company : "",
                 area_company: this.$page.props.user ? this.$page.props.user.data.area_company : "",
                 tall: this.$page.props.user ? this.$page.props.user.data.tall : "",
