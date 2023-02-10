@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset("css/mypage.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
     <link rel="stylesheet" type="text/css" href="{{asset("css/login.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
     <link rel="stylesheet" type="text/css" href="{{asset("css/chat.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/developer.css?v=".\Carbon\Carbon::now()->format("YmdHi"))}}">
     <!-- 스와이퍼 -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/swiper.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
