@@ -1,5 +1,50 @@
 <template>
     <main class="mainpage">
+        <div class="pop-parent" id="popParent" v-if="activePop && pops.data.length > 0">
+            <div class="pop">
+                <div class="swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <a :href="pop.url ? pop.url : '#'" class="swiper-slide" v-for="pop in pops.data" :key="pop.id">
+                                <div class="m-ratioBox-wrap">
+                                    <div class="m-ratioBox">
+                                        <img :src="pop.img ? pop.img.url : ''">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-control">
+                            <div class="swiper-pagination"></div>
+
+                            <button class="swiper-btn-control">
+                                <div class="icon_stop" title="슬라이더 자동재생 멈춤">
+                                    <span class="stick stick01"></span>
+                                    <span class="stick stick02"></span>
+                                </div>
+
+                                <div class="icon_play" title="슬라이더 자동재생 시작"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pop-btns">
+                        <!-- <a href="#a" id="popupToday" class="btnDivPopClose"><span class="icon"></span> 오늘하루 보지 않기</a> -->
+                        <input type="checkbox" name="oneday" id="oneday_check" @click="closeToday()">
+                        <label for="oneday_check" @click="closeToday()">
+                            <span class="icon"></span> 오늘하루 보지 않기
+                        </label>
+
+
+                        <!-- <input type="checkbox" id="popupToday"> <label for="popupToday">오늘하루 열지않음</label> -->
+                        <button class="btn-toggle">
+                            <i class="xi-angle-up" style="color:#fff;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- layerpopup -->
         <!--
        <div class="layerPopup open">
@@ -397,21 +442,48 @@ export default {
 
     data() {
         return {
-
+            activePop: true,
+            pops: this.$page.props.pops ? this.$page.props.pops : "",
         }
     },
 
     methods: {
+        closeToday() {
+            window.localStorage.setItem("closed_at", (new Date()).getDate());
 
+            this.activePop = false;
+        },
+
+        closePop() {
+            this.activePop = false;
+        },
     },
 
     mounted() {
         AOS.init();
 
-        const swiper = new Swiper('.swiper-container', {
+        const swiper = new Swiper('.warning-container .swiper-container', {
             slidesPerView: "auto",
             freeMode: true,
             initialSlide:1,
+        });
+
+        let closedAt = window.localStorage.getItem("closed_at");
+
+        if(closedAt && closedAt >= (new Date()).getDate())
+            this.activePop = false;
+
+        $(".pop-parent .btn-toggle").click(function () {
+            $(".pop-parent").toggleClass("active");
+        });
+
+        new Swiper('.pop-parent .swiper-container', {
+            autoplay: {
+                delay: 3000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
         });
     }
 }

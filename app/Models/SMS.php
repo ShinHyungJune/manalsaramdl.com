@@ -2,35 +2,39 @@
 
 namespace App\Models;
 
-use mysql_xdevapi\Exception;
+use Nurigo\Solapi\Models\Message;
+use Nurigo\Solapi\Models\Request\GetGroupMessagesRequest;
+use Nurigo\Solapi\Models\Request\GetGroupsRequest;
+use Nurigo\Solapi\Models\Request\GetMessagesRequest;
+use Nurigo\Solapi\Models\Request\GetStatisticsRequest;
+use Nurigo\Solapi\Services\SolapiMessageService;
 
 class SMS
 {
-    protected $client;
+    public SolapiMessageService $messageService;
 
     public function __construct()
     {
-        $this->client = new \Aws\Sns\SnsClient([
-            "region" => "ap-northeast-1",
-            "version" => "2010-03-31",
-        ]);
+        $this->from = config("hello-message.from");
+
+        $this->messageService = new SolapiMessageService(config("hello-message.key"), config("hello-message.secret"));
     }
 
-    public function send($to, $message)
+    public function send($to, $text, $template)
     {
-        if (!$result = $this->client->checkIfPhoneNumberIsOptedOut(['phoneNumber' => $to])) { // 번호확인 실패
-            return false;
+        try {
+            $message = new Message();
+
+            $message->setFrom($this->from)
+                ->setTo($to)
+                ->setText($text);
+
+            // 혹은 메시지 객체의 배열을 넣어 여러 건을 발송할 수도 있습니다!
+            $result = $this->messageService->send($message);
+
+            return response()->json($result);
+        } catch (Exception $exception) {
+            return response()->json($exception->getMessage());
         }
-
-        if ($result['isOptedOut']) { // 잘못된 번호 맞다면
-            return false;
-        }
-
-        $this->client->publish([
-            "Message" => $message,
-            "PhoneNumber" => $to
-        ]);
-
-        return true;
     }
 }

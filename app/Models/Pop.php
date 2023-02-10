@@ -12,14 +12,20 @@ class Pop extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $fillable = ["title"];
+    protected $fillable = ["title", "hide_at", "url"];
 
-    protected $appends = ["img"];
+    // protected $appends = ["pc", "mobile"];
+    protected $appends = ["img", "hide"];
 
+    protected $casts = [
+        "hide_at" => "datetime"
+    ];
 
     public function registerMediaCollections():void
     {
         $this->addMediaCollection('img')->singleFile();
+        $this->addMediaCollection('pc')->singleFile();
+        $this->addMediaCollection('m')->singleFile();
     }
 
     public function getImgAttribute()
@@ -35,4 +41,39 @@ class Pop extends Model implements HasMedia
 
         return null;
     }
+
+    public function getHideAttribute()
+    {
+        return Carbon::now() < Carbon::make($this->hide_at);
+    }
+
+
+    /*
+    public function getPcAttribute()
+    {
+        if($this->hasMedia('pc')) {
+            $media = $this->getMedia('pc')[0];
+
+            return [
+                "name" => $media->file_name,
+                "url" => $media->getFullUrl()
+            ];
+        }
+
+        return null;
+    }
+
+    public function getMobileAttribute()
+    {
+        if($this->hasMedia('mobile')) {
+            $media = $this->getMedia('mobile')[0];
+
+            return [
+                "name" => $media->file_name,
+                "url" => $media->getFullUrl()
+            ];
+        }
+
+        return null;
+    }*/
 }

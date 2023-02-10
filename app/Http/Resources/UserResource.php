@@ -30,7 +30,8 @@ class UserResource extends JsonResource
             "displayName" => $this->nickname ?? $this->name,
 
             "sex" => $this->sex,
-            "birth" => $this->birth,
+            "formatBirth" => $this->birth ? Carbon::make($this->birth)->format("Y") : "",
+            "birth" => $this->birth ?? "",
             "job" => $this->job,
             "school" => $this->school,
             "city" => $this->city ?? "",

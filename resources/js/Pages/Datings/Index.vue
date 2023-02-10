@@ -39,10 +39,10 @@
                                 <div class="user-photo" :style="`background-image:url(${partner(dating).img ? partner(dating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                 <div class="txt-box">
                                     <p class="user-name">
-                                        {{partner(dating).nickname}}
+                                        {{partner(dating).displayName}}
                                      </p>
                                     <div class="user-info col-group">
-                                        <p>{{partner(dating).birth}}년생</p>
+                                        <p>{{partner(dating).formatBirth}}년생</p>
                                         /
                                         <p>{{ partner(dating).city }} 거주</p>
                                     </div>
@@ -66,7 +66,7 @@
                                         <a href="#" class="date-btn active" v-if="dating.ongoing && !dating.check_address && user.sex === '여자' && dating.place_url" @click="targetAddressDating = dating">장소확인</a>
 
                                         <!-- STEP02 남자 | 일정제안  -->
-                                        <a href="#" class="date-btn active" v-if="dating.ongoing && !dating.check_address && user.sex === '남자' && dating.city1" @click="targetSuggestAddressDating = dating">장소제안</a>
+                                        <a href="#" class="date-btn active" v-if="dating.ongoing && !dating.check_address && user.sex === '남자' && dating.city1 && !dating.address_name" @click="targetSuggestAddressDating = dating">장소제안</a>
                                         <a href="#" class="date-btn" v-if="dating.ongoing && !dating.check_address && user.sex === '남자' && !dating.city1">장소제안</a>
 
                                         <a v-if="dating.check_address" :href="dating.place_url" target="_blank" class="date-btn map">지도보기</a>
@@ -146,10 +146,10 @@
                                     </div>
                                     <div class="txt-box">
                                         <p class="user-name">
-                                            {{ partner(targetDating).nickname }}
+                                            {{ partner(targetDating).displayName }}
                                         </p>
                                         <div class="user-info-1 col-group">
-                                            <p>{{ partner(targetDating).birth }}년생</p>
+                                            <p>{{ partner(targetDating).formatBirth }}년생</p>
                                             /
                                             <p>{{ partner(targetDating).city }} 거주</p>
                                         </div>
@@ -195,7 +195,7 @@
                 </div>
 
                 <!-- 프로필 확인 후 안내 -->
-                <div class="modal-overley go open" v-if="activeGuide">
+                <div class="modal-overley go open" v-if="activeGuide && user.sex === '여자'">
                     <!-- 일정 안내 -->
                     <div class="modal-wrap">
                         <button type="button" class="close" @click="activeGuide = false">
@@ -516,7 +516,7 @@
                                         {{ partner(targetFeedbackDating).name }}
                                     </p>
                                     <div class="user-info-1 col-group">
-                                        <p>{{ partner(targetFeedbackDating).birth }}년생</p>
+                                        <p>{{ partner(targetFeedbackDating).formatBirth }}년생</p>
                                         /
                                         <p>{{ partner(targetFeedbackDating).city }}거주</p>
                                     </div>

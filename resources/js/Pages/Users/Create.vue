@@ -200,7 +200,7 @@
                                     닉네임
                                 </p>
                                 <div class="user col-group">
-                                    <input type="text" placeholder="닉네임" v-model="form.nickname">
+                                    <input type="text" placeholder="소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요." v-model="form.nickname">
 
                                     <span class="m-input-error">{{form.errors.nickname}}</span>
                                 </div>

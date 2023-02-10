@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d0a98ef5559adcf1e158a71c32e3207",
+    "content-hash": "0853115663aa3f9c5f50ce2404a6a81a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5695,6 +5695,64 @@
             "time": "2020-12-01T23:10:59+00:00"
         },
         {
+            "name": "solapi/sdk",
+            "version": "5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solapi/solapi-php.git",
+                "reference": "6fc09c0734140d5a3e22f967801929db7e5b0f49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solapi/solapi-php/zipball/6fc09c0734140d5a3e22f967801929db7e5b0f49",
+                "reference": "6fc09c0734140d5a3e22f967801929db7e5b0f49",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nurigo\\Solapi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nurigo CX Team",
+                    "email": "contact@nurigo.net"
+                },
+                {
+                    "name": "Subin Lee",
+                    "email": "chandar.sblee@gmail.com",
+                    "homepage": "https://subux.dev"
+                }
+            ],
+            "description": "SOLAPI SDK for PHP",
+            "homepage": "https://solapi.com",
+            "keywords": [
+                "alimtalk",
+                "friendtalk",
+                "lms",
+                "mms",
+                "nurigo",
+                "sdk",
+                "sms",
+                "solapi"
+            ],
+            "support": {
+                "issues": "https://github.com/solapi/solapi-php/issues",
+                "source": "https://github.com/solapi/solapi-php/tree/v5.0.4"
+            },
+            "time": "2022-11-02T09:18:21+00:00"
+        },
+        {
             "name": "spatie/image",
             "version": "1.10.6",
             "source": {
@@ -10782,5 +10840,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }

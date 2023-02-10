@@ -18,7 +18,8 @@ class PopResource extends JsonResource
             "id" => $this->id,
             "title" => $this->title,
             "img" => $this->img ? $this->img : "",
-            "hide" => $this->hide
+            "hide" => $this->hide,
+            "url" => $this->url,
         ];
     }
 }

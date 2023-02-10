@@ -81,7 +81,9 @@
                     </div>
                     <div class="mb-login" v-if="!$page.props.user">
                         <a href="/login">login</a>
+                        <!--
                         <a href="/datings">mypage</a>
+                        -->
                         <a href="/register">sign in</a>
                     </div>
                     <div class="mb-login" v-else>
@@ -131,7 +133,7 @@
                         </li>
                     </ul>
                     <div class="sns-wrap-mb">
-                        <a href="/logout" class="logout-btn">logout<i class="xi-log-out" v-if="$page.props.user"></i></a>
+                        <a href="/logout" class="logout-btn" v-if="$page.props.user">logout<i class="xi-log-out"></i></a>
                         <a href="#"> <i class="utb youtube xi-youtube-play"></i></a>
                         <a href="#"> <i class="kakao speech xi-speech"></i></a>
                         <a href="#"> <i class="sns-icon naver xi-naver"></i></a>

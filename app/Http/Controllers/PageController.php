@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\OrderResource;
+use App\Http\Resources\PopResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\ReviewResource;
+use App\Models\Pop;
 use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -15,7 +17,10 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
+        $pops = Pop::latest()->paginate(30);
+
         return Inertia::render("Index", [
+            "pops" => PopResource::collection($pops),
         ]);
     }
 
