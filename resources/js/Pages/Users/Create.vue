@@ -485,26 +485,22 @@ export default {
         },
 
         search(){
-            let url = `https://dapi.kakao.com/v2/local/search/keyword.json?query={스케줄 청담}`;
-
-            axios.get(url, {
-                headers : {
-                    "Authorization" : "KakaoAK c586e8748f85b41f7f33f6ebe9ea2891"
+            axios.get("/api/search", {
+                params: {
+                    word: "스케줄 청담"
                 }
             }).then(response => {
-                // this.places = response.data.documents;
+                let data = JSON.parse(response.data);
 
-                console.log(response);
-
-                let targetPlace = response.data.documents[0];
+                let targetPlace = data.documents[0];
 
                 if(targetPlace){
                     this.form.address_name = targetPlace.address_name;
                     this.form.place_name = targetPlace.place_name;
                     this.form.place_url = targetPlace.place_url;
                 }
+            });
 
-            })
         },
     },
 

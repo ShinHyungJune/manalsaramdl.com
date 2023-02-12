@@ -836,24 +836,21 @@ export default {
         },
 
         search(){
-            let url = `https://dapi.kakao.com/v2/local/search/keyword.json?query={${this.word}}`;
-
-            axios.get(url, {
-                headers : {
-                   "Authorization" : "KakaoAK 382ea2610142c4e2c16534aa66204092"
+            axios.get("/api/search", {
+                params: {
+                    word: this.word
                 }
             }).then(response => {
-                // this.places = response.data.documents;
+                let data = JSON.parse(response.data);
 
-                let targetPlace = response.data.documents[0];
+                let targetPlace = data.documents[0];
 
                 if(targetPlace){
                     this.form.address_name = targetPlace.address_name;
                     this.form.place_name = targetPlace.place_name;
                     this.form.place_url = targetPlace.place_url;
                 }
-
-            })
+            });
         },
 
         alarmClass(dating){

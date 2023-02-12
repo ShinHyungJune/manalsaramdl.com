@@ -6087,14 +6087,13 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this4 = this;
 
-      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={".concat(this.word, "}");
-      axios.get(url, {
-        headers: {
-          "Authorization": "KakaoAK 382ea2610142c4e2c16534aa66204092"
+      axios.get("/api/search", {
+        params: {
+          word: this.word
         }
       }).then(function (response) {
-        // this.places = response.data.documents;
-        var targetPlace = response.data.documents[0];
+        var data = JSON.parse(response.data);
+        var targetPlace = data.documents[0];
 
         if (targetPlace) {
           _this4.form.address_name = targetPlace.address_name;
@@ -10283,15 +10282,13 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this = this;
 
-      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={\uC2A4\uCF00\uC904 \uCCAD\uB2F4}";
-      axios.get(url, {
-        headers: {
-          "Authorization": "KakaoAK c586e8748f85b41f7f33f6ebe9ea2891"
+      axios.get("/api/search", {
+        params: {
+          word: "스케줄 청담"
         }
       }).then(function (response) {
-        // this.places = response.data.documents;
-        console.log(response);
-        var targetPlace = response.data.documents[0];
+        var data = JSON.parse(response.data);
+        var targetPlace = data.documents[0];
 
         if (targetPlace) {
           _this.form.address_name = targetPlace.address_name;

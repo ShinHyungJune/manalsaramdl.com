@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 Route::post("/verifications", [\App\Http\Controllers\Api\VerificationController::class, "store"]);
-
+Route::get("/search", [\App\Http\Controllers\SearchController::class, "search"]);
 Route::middleware('auth')->group(function () {
 
 });
