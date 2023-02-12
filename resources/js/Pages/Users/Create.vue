@@ -65,8 +65,6 @@
                                 </div>
                             </li>
 
-                            <button type="button" @click="search">테스트</button>
-
                             <li class="row-group" v-if="!form.social_id">
                                 <p class="default">
                                     이메일 <span>*</span>
@@ -484,24 +482,7 @@ export default {
             });
         },
 
-        search(){
-            axios.get("/api/search", {
-                params: {
-                    word: "스케줄 청담"
-                }
-            }).then(response => {
-                let data = JSON.parse(response.data);
 
-                let targetPlace = data.documents[0];
-
-                if(targetPlace){
-                    this.form.address_name = targetPlace.address_name;
-                    this.form.place_name = targetPlace.place_name;
-                    this.form.place_url = targetPlace.place_url;
-                }
-            });
-
-        },
     },
 
     mounted() {

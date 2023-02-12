@@ -10171,8 +10171,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -10276,24 +10274,6 @@ __webpack_require__.r(__webpack_exports__);
           });
         } else {
           alert("인증에 실패하였습니다.");
-        }
-      });
-    },
-    search: function search() {
-      var _this = this;
-
-      axios.get("/api/search", {
-        params: {
-          word: "스케줄 청담"
-        }
-      }).then(function (response) {
-        var data = JSON.parse(response.data);
-        var targetPlace = data.documents[0];
-
-        if (targetPlace) {
-          _this.form.address_name = targetPlace.address_name;
-          _this.form.place_name = targetPlace.place_name;
-          _this.form.place_url = targetPlace.place_url;
         }
       });
     }
@@ -70768,12 +70748,6 @@ var render = function () {
                     ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { attrs: { type: "button" }, on: { click: _vm.search } },
-                  [_vm._v("테스트")]
-                ),
                 _vm._v(" "),
                 !_vm.form.social_id
                   ? _c("li", { staticClass: "row-group" }, [
