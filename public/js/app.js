@@ -7539,6 +7539,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -66396,6 +66400,14 @@ var render = function () {
                       _c("th", [_vm._v("입금기한")]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(_vm.order.vbank_date))]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("th", [_vm._v("입금금액")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(_vm._s(_vm.order.price.toLocaleString())),
+                      ]),
                     ]),
                   ]),
                 ]),

@@ -54,6 +54,10 @@
                                 <th>입금기한</th>
                                 <td>{{order.vbank_date}}</td>
                             </tr>
+                            <tr>
+                                <th>입금금액</th>
+                                <td>{{order.price.toLocaleString()}}</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
