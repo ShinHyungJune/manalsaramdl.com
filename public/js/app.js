@@ -70738,99 +70738,108 @@ var render = function () {
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("li", { staticClass: "row-group" }, [
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "user" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.email,
-                          expression: "form.email",
-                        },
-                      ],
-                      attrs: {
-                        type: "text",
-                        placeholder: "이메일 (이메일은 아이디로 사용됩니다)",
-                      },
-                      domProps: { value: _vm.form.email },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "email", $event.target.value)
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "m-input-error" }, [
-                      _vm._v(_vm._s(_vm.form.errors.email)),
-                    ]),
-                  ]),
-                ]),
+                !_vm.form.social_id
+                  ? _c("li", { staticClass: "row-group" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "user" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.email,
+                              expression: "form.email",
+                            },
+                          ],
+                          attrs: {
+                            type: "text",
+                            placeholder:
+                              "이메일 (이메일은 아이디로 사용됩니다)",
+                          },
+                          domProps: { value: _vm.form.email },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "email", $event.target.value)
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.email)),
+                        ]),
+                      ]),
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
-                _c("li", { staticClass: "row-group" }, [
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "user" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.password,
-                          expression: "form.password",
-                        },
-                      ],
-                      staticClass: "input-gap",
-                      attrs: { type: "password", placeholder: "비밀 번호" },
-                      domProps: { value: _vm.form.password },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "password", $event.target.value)
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.password_confirmation,
-                          expression: "form.password_confirmation",
-                        },
-                      ],
-                      attrs: {
-                        type: "password",
-                        placeholder: "비밀번호 재확인",
-                      },
-                      domProps: { value: _vm.form.password_confirmation },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.form,
-                            "password_confirmation",
-                            $event.target.value
-                          )
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "m-input-error" }, [
-                      _vm._v(_vm._s(_vm.form.errors.password)),
-                    ]),
-                  ]),
-                ]),
+                !_vm.form.social_id
+                  ? _c("li", { staticClass: "row-group" }, [
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "user" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.password,
+                              expression: "form.password",
+                            },
+                          ],
+                          staticClass: "input-gap",
+                          attrs: { type: "password", placeholder: "비밀 번호" },
+                          domProps: { value: _vm.form.password },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "password",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.password_confirmation,
+                              expression: "form.password_confirmation",
+                            },
+                          ],
+                          attrs: {
+                            type: "password",
+                            placeholder: "비밀번호 재확인",
+                          },
+                          domProps: { value: _vm.form.password_confirmation },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "password_confirmation",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.password)),
+                        ]),
+                      ]),
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(8),

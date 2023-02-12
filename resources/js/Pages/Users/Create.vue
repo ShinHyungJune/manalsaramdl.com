@@ -65,7 +65,7 @@
                                 </div>
                             </li>
 
-                            <li class="row-group">
+                            <li class="row-group" v-if="!form.social_id">
                                 <p class="default">
                                     이메일 <span>*</span>
                                 </p>
@@ -75,7 +75,7 @@
                                     <span class="m-input-error">{{form.errors.email}}</span>
                                 </div>
                             </li>
-                            <li class="row-group">
+                            <li class="row-group" v-if="!form.social_id">
                                 <p class="default">
                                     비밀번호 <span>*</span>
                                 </p>
