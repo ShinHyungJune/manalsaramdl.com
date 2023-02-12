@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Enums\Sex;
+use App\Models\Chat;
+use App\Models\Dating;
+use App\Models\Message;
 use App\Models\Notice;
 use App\Models\Order;
 use App\Models\OrderProduct;
@@ -28,6 +31,9 @@ class ClearSeeder extends Seeder
         PayMethod::where("method", "phone")->delete();
         OrderProduct::truncate();
         User::truncate();
+        Dating::truncate();
+        Chat::truncate();
+        Message::truncate();
         $user = User::factory()->create([
             "email" => "girl@naver.com",
             "contact" => "01030217486",
