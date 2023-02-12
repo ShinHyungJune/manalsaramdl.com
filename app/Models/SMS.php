@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\SmsTemplate;
 use Nurigo\Solapi\Models\Message;
 use Nurigo\Solapi\Models\Request\GetGroupMessagesRequest;
 use Nurigo\Solapi\Models\Request\GetGroupsRequest;
@@ -20,14 +21,14 @@ class SMS
         $this->messageService = new SolapiMessageService(config("hello-message.key"), config("hello-message.secret"));
     }
 
-    public function send($to, $text, $template)
+    public function send($to, $data, $template)
     {
         try {
             $message = new Message();
 
             $message->setFrom($this->from)
                 ->setTo($to)
-                ->setText($text);
+                ->setText($this->getTemplateMessage($data, $template));
 
             // 혹은 메시지 객체의 배열을 넣어 여러 건을 발송할 수도 있습니다!
             $result = $this->messageService->send($message);
@@ -37,4 +38,71 @@ class SMS
             return response()->json($exception->getMessage());
         }
     }
+
+    public function getTemplateMessage($data, $template)
+    {
+        if($template == SmsTemplate::VERIFY_NUMBER)
+            return "본인확인 인증번호입니다.\n[{$data["verify_number"]}]";
+
+        if($template == SmsTemplate::NEW_PROFILE)
+            return "새로운 소개팅 프로필이 도착했습니다.\n확인하시겠습니까?\n\n{$data['url']}";
+
+        if($template == SmsTemplate::NEW_SCHEDULE)
+            return "상대방에게서 소개팅 일정이 도착했습니다.\n확인하시겠습니까?\n\n{$data['url']}";
+
+        if($template == SmsTemplate::NEW_ADDRESS)
+            return "상대방에게서 소개팅 장소가 도착했습니다.\n확인하시겠습니까?\n\n{$data['url']}";
+
+        if($template == SmsTemplate::CHAT_OPEN)
+            return "[1:1채팅창 오픈]
+소개팅 상대와의 약속확인을 위한
+1:1 채팅창이 오픈되었습니다.
+확인하시겠습니까?
+
+{$data['url']}";
+
+        if($template == SmsTemplate::DATE_OPEN)
+            return "[소개팅 일정 확정 및 안내]
+일정 : {$data['scheduled_at']}
+장소 : {$data['place_name']}
+주소 : {$data['address_name']}
+예약자 : {$data['name']}
+
+- 주의사항
+1. 최종 확정 되었으며 일정 변경 및 취소가 불가합니다.
+2. 소개팅 하루 전 채팅창이 오픈됩니다. 유사시 채팅창을 통해 소통해주세요.
+3. 지각 또는 비매너적인 행동으로 인한 만남 취소시, 원인 제공이 있는 당사자에게 패널티가 돌아갑니다.
+
+▶ 인사 마이페이지 바로실행 : {$data['url']}";
+
+        if($template == SmsTemplate::ORDER_PARTY)
+            return "[인사 파티 결제완료]
+[{$data["title"]}] 결제가 완료되었습니다.
+카카오채널로 [파티신청날짜/이름/전화번호/동행인여부/동행인이름/결제여부]를 알려주세요.";
+
+        if($template == SmsTemplate::ACCEPT_PARTY)
+            return "[인사 파티 승인완료]
+일정 : {$data['opened_at']}
+장소 : {$data['place_name']}
+주소 : {$data['address']}
+
+- 안내 및 주의사항
+1. 주류와 간단한 핑거푸드 제공합니다.
+2. 설레는 파티에 어울릴 깔끔하고 매너있는 복장으로 와주세요.
+3. 파티에 늦을 경우 입장에 불이익이 있어요. 파티 시작 10분 전에는 오시는 것을 추천드립니다.
+4. 남녀 성비가 조율되는 파티로 늦거나 오지 않을 시 파티 진행에 차질이 생기니 꼭 미리 알려주세요.
+- 파티 참석 전 꼭 카카오톡플러스친구 추가해주세요!
+파티 중간에 카톡메세지 이벤트가 있을 예정이라 서비스 이용에 제한되지 않도록 추가 부탁드립니다.";
+
+    }
+
+    /*
+    const NEW_PROFILE = "NEW_PROFILE";  // 새 프로필 도착
+    const NEW_SCHEDULE = "NEW_SCHEDULE"; // 일정제안 도착
+    const NEW_ADDRESS = "NEW_ADDRESS";  // 장소제안 도착
+    const CHAT_OPEN = "CHAT_OPEN"; // 1:1 채팅창 오픈
+    const DATE_OPEN = "DATE_OPEN"; // 실제 소개팅 당일
+    const ORDER_PARTY = "ORDER_PARTY"; // 파티결제
+    const ACCEPT_PARTY = "ACCEPT_PARTY"; // 파티승인
+    */
 }

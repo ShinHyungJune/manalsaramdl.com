@@ -11,7 +11,7 @@ class PasswordReset extends Model
 
     protected $fillable = ["id", "ids", "token", "password"];
 
-    protected $primaryKey = "id";
+    protected $primaryKey = false;
 
     public $timestamps = false;
 

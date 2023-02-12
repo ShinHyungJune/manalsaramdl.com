@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Enums\KakaoTemplate;
+use App\Enums\SmsTemplate;
 use App\Models\Kakao;
 use App\Models\User;
 use App\Models\VerifyNumber;
@@ -38,15 +39,11 @@ class VerifyNumberController extends ApiController
             return redirect()->back()->with("error", "잘못된 전화번호 형식입니다.");
         }*/
 
-        $kakao = new Kakao();
+        $sms = new SMS();
 
-        try{
-            $kakao->send(str_replace("-","",$request->contact), [
-                "number" => $number
-            ], KakaoTemplate::NUMBER_SEND);
-        }catch(\Exception $exception){
-            return redirect()->back()->with("error", "인증번호 발송에 실패하였습니다 새로고침 후 재시도해주세요..");
-        }
+        $sms->send($request->contact, [
+            "verify_number" => $number
+        ], SmsTemplate::VERIFY_NUMBER);
 
         // return $this->respondSuccessfully(null, __("response.verifyNumber")["send mail"]);
         return redirect()->back()->with("success", "인증번호가 전송되었습니다.");

@@ -22,7 +22,6 @@ class OrderResource extends JsonResource
             "merchant_uid" => $this->merchant_uid,
             "id" => $this->id,
 
-            "products" => $this->products,
             "product" => ProductResource::make($this->products()->first()),
 
             "user_id" => $this->user_id,
@@ -48,6 +47,10 @@ class OrderResource extends JsonResource
             "created_at" => Carbon::make($this->created_at)->format("Y.m.d"),
 
             "products" => ProductResource::collection($this->products()->orderBy("created_at", "desc")->get()),
+
+            "vbank_num" => $this->vbank_num,
+            "vbank_date" => $this->vbank_date ? Carbon::make($this->vbank_date)->format("Y-m-d H:i:s") : "",
+            "vbank_name" => $this->vbank_name,
 
             "can_refund" => $this->can_refund,
         ];

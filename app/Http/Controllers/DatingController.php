@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Enums\Sex;
+use App\Enums\SmsTemplate;
 use App\Http\Resources\DatingResource;
 use App\Models\Dating;
+use App\Models\SMS;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -48,6 +50,8 @@ class DatingController extends Controller
             "type" => "required|string|max:500"
         ]);
 
+        $sms = new SMS();
+
         // 여자가 일정제안
         if($request->type == "일정제안"){
             $request->validate([
@@ -78,6 +82,9 @@ class DatingController extends Controller
             ]);
 
             // #메시지발송필요
+            $sms->send($dating->men->contact, [
+                "url" => $dating->getUrl(),
+            ], SmsTemplate::NEW_SCHEDULE);
         }
 
         // 여자가 장소확인
@@ -106,6 +113,9 @@ class DatingController extends Controller
             ]);
 
             // #메시지발송필요
+            $sms->send($dating->women->contact, [
+                "url" => $dating->getUrl(),
+            ], SmsTemplate::NEW_ADDRESS);
         }
 
         return redirect()->back()->with("success");

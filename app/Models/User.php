@@ -12,6 +12,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class User extends Authenticatable implements HasMedia
 {
@@ -107,7 +108,8 @@ class User extends Authenticatable implements HasMedia
 
             return [
                 "name" => $media->file_name,
-                "url" => $media->getFullUrl()
+                "type" => $media->mime_type,
+                "url" => $media->getFullUrl(),
             ];
         }
 
@@ -124,7 +126,8 @@ class User extends Authenticatable implements HasMedia
             foreach($medias as $media){
                 $items[] = [
                     "name" => $media->file_name,
-                    "url" => $media->getFullUrl()
+                    "type" => $media->mime_type,
+                    "url" => $media->getFullUrl(),
                 ];
             }
         }

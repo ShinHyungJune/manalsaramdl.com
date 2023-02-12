@@ -5,10 +5,9 @@ namespace App\Models;
 use App\Enums\KakaoTemplate;
 use App\Enums\OrderProductState;
 use App\Enums\OrderState;
-use App\Enums\OutgoingState;
+
 use App\Enums\ProductType;
 use App\Enums\Sex;
-use App\Http\Controllers\ReplyController;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -43,6 +42,10 @@ class Order extends Model
         "state",
 
         "reason",
+
+        "vbank_num",
+        "vbank_date",
+        "vbank_name",
     ];
 
     protected $casts = [
@@ -62,7 +65,7 @@ class Order extends Model
 
             $user = $order->user;
 
-            if ($prevState == OrderState::FAIL) {
+            /*if ($prevState == OrderState::FAIL) {
                 if ($order->state == OrderState::SUCCESS) {
 
                     // 결제상품 주문성공처리
@@ -78,23 +81,8 @@ class Order extends Model
                                 "count_dating" => $user->count_dating + $product->count_dating
                             ]);
                     }
-
-                    // 카카오발송 (추후연동)
-                    /*try {
-                        $kakao = new Kakao();
-
-                        $kakao->send(str_replace("-", "", $order->delivery_contact), [
-                            "merchant_uid" => $order->merchant_uid,
-                            "created_at" => Carbon::make($order->created_at)->format("Y-m-d"),
-                            "price_real" => $order->price_real,
-                            "url" => $order->getShowOrderUrl(),
-                        ], KakaoTemplate::ORDER_SUCCESS);
-                    }catch (\Exception $exception){
-
-                    }*/
-
                 }
-            }
+            }*/
         });
     }
 

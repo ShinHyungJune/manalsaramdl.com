@@ -31,9 +31,9 @@ class RefundController extends Controller
         $request->validate([
             "order_id" => "required|integer",
             "reason_request" => "required|string|max:50000",
-            "bank" => "required|string|max:50000",
-            "account" => "required|string|max:50000",
-            "owner" => "required|string|max:50000",
+            "bank" => "nullable|string|max:50000",
+            "account" => "nullable|string|max:50000",
+            "owner" => "nullable|string|max:50000",
         ]);
 
         $order = Order::find($request->order_id);

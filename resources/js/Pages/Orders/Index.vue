@@ -53,7 +53,7 @@
                                             <input class="edit" name="" v-model="refundForm.reason_request" />
                                         </div>
                                     </li>
-                                    <li class="col-group">
+<!--                                    <li class="col-group">
                                         <p class="default">환불계좌은행</p>
                                         <div class="user col-group">
                                             <input class="edit" name="" v-model="refundForm.bank" />
@@ -70,7 +70,7 @@
                                         <div class="user col-group">
                                             <input class="edit" name="" v-model="refundForm.owner" />
                                         </div>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                             <div class="notice-box">
@@ -130,7 +130,7 @@
                                             <input class="edit" name="" v-model="refundForm.reason_request" />
                                         </div>
                                     </li>
-                                    <li class="col-group">
+<!--                                    <li class="col-group">
                                         <p class="default">환불계좌은행</p>
                                         <div class="user col-group">
                                             <input class="edit" name="" v-model="refundForm.bank" />
@@ -147,7 +147,7 @@
                                         <div class="user col-group">
                                             <input class="edit" name="" v-model="refundForm.owner" />
                                         </div>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                             <div class="notice-box">

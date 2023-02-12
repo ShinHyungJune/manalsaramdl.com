@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Enums\OrderProductState;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\EventBannerResource;
+use App\Http\Resources\VerificationResource;
 use App\Models\Category;
 use App\Models\EventBanner;
+use App\Models\Expert;
 use App\Models\User;
 use App\Models\Verification;
 use App\Models\VerifyNumber;
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 use Laravel\Socialite\Facades\Socialite;
 
-class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
+class UserController extends Controller
 {
     public function username()
     {
@@ -72,11 +74,9 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "marriage" => "nullable|string|max:50000",
             "agree_marketing" => "nullable|boolean",
             "imp_uid" => "nullable|string|max:50000",
-            "merchant_uid" => "nullable|string|max:50000",
         ]);
 
-        $verification = Verification::where('imp_uid', $request->imp_uid)
-            ->where('merchant_uid', $request->merchant_uid)->first();
+        $verification = Verification::where('imp_uid', $request->imp_uid)->first();
 
         if(!$verification)
             return redirect()->back()->with("error", "본인인증한 사용자만 회원가입할 수 있습니다.");
@@ -86,14 +86,23 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
         ]));
 
         if($request->imgs){
-            foreach($request->file("imgs") as $img){
+            foreach($request->imgs as $img){
                 $user->addMedia($img)->toMediaCollection("imgs", "s3");
             }
+
+            $media = $user->getMedia('imgs')[0];
+
+            $user->addMediaFromUrl($media->getFullUrl())->toMediaCollection("img", "s3");
         }
 
         $verification->delete();
 
         return redirect("/login")->with("success", "성공적으로 가입되었습니다.");
+    }
+
+    public function openSocialLoginPop($social)
+    {
+        return Socialite::driver($social)->redirect();
     }
 
     public function socialLogin(Request $request, $social)
@@ -137,78 +146,41 @@ class UserController extends \ShinHyungJune\SocialLogin\Http\UserController
             "password", "name", "sex", "contact", "birth", "email"
         ]));
 
-        if($request->imgs){
-            auth()->user()->clearMediaCollection("imgs");
+        // 올려놨던 이미지 정리(나중에는 올려놨던 이미지는 그대로 살리고, 새로 업로드되거나 삭제된 이미지만 걸러내는게 효율적이겠지? 일단은 다 지우고 다 업로드하는식)
+        auth()->user()->clearMediaCollection("imgs");
 
-            foreach($request->file("imgs") as $img){
+        if($request->imgs){
+            foreach($request->imgs as $img){
                 auth()->user()->addMedia($img)->toMediaCollection("imgs", "s3");
             }
         }
 
-        return redirect()->back()->with("success", "성공적으로 처리되었습니다.");
-    }
-
-    /*
-    public function update(Request $request)
-    {
-        $request->validate([
-            "contact_change" => "nullable|string|max:500|unique:users,contact",
-            "name" => "nullable|string|max:500",
-            "password" => "nullable|string|max:500|min:8|confirmed",
-            "agree_ad" => "nullable|boolean",
-
-            "bank" => "nullable|string|max:500",
-            "account" => "nullable|string|max:500",
-            "owner" => "nullable|string|max:500",
-        ]);
-
-        if($request->contact_change){
-            $verifyNumber = VerifyNumber::where('contact', $request->contact_change)
-                ->where('verified', true)->first();
-
-            if(!$verifyNumber)
-                return redirect()->back()->with("error", "인증된 전화번호만 사용할 수 있습니다.");
-
-            auth()->user()->update(["contact" => $request->contact_change]);
-
-            $verifyNumber->delete();
+        if($request->img){
+            auth()->user()->addMedia($request->img)->toMediaCollection("img", "s3");
         }
 
-        if($request->name)
-            auth()->user()->update(["name" => $request->name]);
-
-        if($request->password)
-            auth()->user()->update(["password" => Hash::make($request->password)]);
-
-        if($request->bank)
-            auth()->user()->update(["bank" => $request->bank]);
-
-        if($request->owner)
-            auth()->user()->update(["owner" => $request->owner]);
-
-        if($request->account)
-            auth()->user()->update(["account" => $request->account]);
-
-        if(isset($request->agree_ad))
-            auth()->user()->update(["agree_ad" => $request->boolean("agree_ad")]);
-
         return redirect()->back()->with("success", "성공적으로 처리되었습니다.");
     }
-    */
 
     public function loginForm()
     {
         return Inertia::render("Users/Login",[]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $appUrl = config("app.url");
         $impId = config("iamport.imp_code");
 
+        $verification = null;
+
+        if($request->imp_uid)
+            $verification = Verification::where("imp_uid", $request->imp_uid)->first();
+
         return Inertia::render("Users/Create", [
             "appUrl" => $appUrl,
-            "impId" => $impId
+            "impId" => $impId,
+            "verification" => $verification ? VerificationResource::make($verification) : ""
         ]);
     }
 

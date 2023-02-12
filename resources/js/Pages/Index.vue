@@ -142,7 +142,7 @@
                     <div class="left">
                         <span class="left-title"><span class="text-style-1">D</span>ate</span>
                         <p class="left-content">
-                            조건, 성향 등을 고려해서 매칭해주는 서비스로<br />
+                            조건, 성향 등을 고려해서 매칭해주는 소개팅 서비스로<br />
                             <span class="text-style-1">'원하는 만남'</span>의 기회를 제공합니다.
                         </p>
                         <div class="top-roadMap">

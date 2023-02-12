@@ -28,7 +28,7 @@
 
                 <ul class="review-list col-group">
                     <li class="review-box" v-for="item in items.data" :key="item.id">
-                        <a :href="`/datingReviews/${item.id}`">
+                        <a href="#" @click.prevent="move(item)">
                             <div class="bg-img">
                                 <img :src="item.img ? item.img.url : ''" alt="">
                             </div>
@@ -83,6 +83,12 @@ export default {
                     this.items = page.props.items;
                 }
             });
+        },
+
+        move(item){
+            if(item.url)
+                window.open(item.url, "pop", "_blank");
+
         }
     },
     computed: {

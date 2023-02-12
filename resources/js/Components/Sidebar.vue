@@ -1,9 +1,9 @@
 <template>
     <div class="left-wrap">
         <div class="user-profile">
-            <div class="user-photo" :style="`background-image:url(${user.img ? user.img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
+            <div class="user-photo" :style="`background-image:url(${$page.props.user.data.img ? $page.props.user.data.img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
             <p class="user-name">
-                {{ user.name }}
+                {{ $page.props.user.name }}
             </p>
             <a href="/users/edit" class="edit-btn">프로필 수정</a>
         </div>
@@ -29,7 +29,6 @@
         components: {Link},
         data(){
             return {
-                user: this.$page.props.user ? this.$page.props.user.data : "",
                 active: false
             }
         },

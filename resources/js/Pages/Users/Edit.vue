@@ -222,10 +222,19 @@
                             </li>
                             <li class="row-group file">
                                 <p class="default">
+                                    대표 프로필 사진
+                                </p>
+                                <div class="user">
+                                    <input-imgs id="img" :multiple="false" :default-files="[user.img]" @change="(data) => {form.img = data[0]}" />
+                                    <span class="m-input-error">{{form.errors.img}}</span>
+                                </div>
+                            </li>
+                            <li class="row-group file">
+                                <p class="default">
                                     프로필 사진 (최소 3장)
                                 </p>
                                 <div class="user">
-                                    <input-imgs :default-files="user.imgs" @change="(data) => {form.imgs = data}" />
+                                    <input-imgs id="imgs" :default-files="user.imgs" @change="(data) => {form.imgs = data}" />
                                     <span class="m-input-error">{{form.errors.imgs}}</span>
 
                                 </div>
@@ -319,6 +328,7 @@ export default {
                 to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
                 marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
                 imgs: "",
+                img: "",
             })
         }
     },
@@ -327,6 +337,8 @@ export default {
             this.form.post("/users/update", {
                 onSuccess: () => {
                     this.willChangePassword = false;
+
+                    this.user = this.$page.props.user.data;
                 }
             });
         }

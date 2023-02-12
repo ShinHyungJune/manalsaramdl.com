@@ -109,7 +109,7 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
 
         $user->update(["password" => Hash::make($request->password)]);
 
-        $passwordReset->delete();
+        $passwordReset->where("id", $request->id)->delete();
 
         return redirect("/login")->with("success", "비밀번호가 변경되었습니다.");
     }

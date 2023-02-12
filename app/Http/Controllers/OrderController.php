@@ -6,6 +6,8 @@ use App\Enums\KakaoTemplate;
 use App\Enums\OrderProductState;
 use App\Enums\OrderState;
 use App\Enums\OutgoingState;
+use App\Enums\ProductType;
+use App\Enums\SmsTemplate;
 use App\Http\Resources\BannerResource;
 use App\Http\Resources\DeliveryResource;
 use App\Http\Resources\OrderProductResource;
@@ -17,6 +19,7 @@ use App\Models\Kakao;
 use App\Models\Order;
 use App\Models\PayMethod;
 use App\Models\Product;
+use App\Models\SMS;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -125,6 +128,8 @@ class OrderController extends Controller
         // 권한 얻기
         $accessToken = Iamport::getAccessToken();
 
+        $sms = new SMS();
+
         DB::beginTransaction();
 
         try {
@@ -161,12 +166,35 @@ class OrderController extends Controller
 
                     break;
                 case "paid": // 결제완료
-                    // OrderObserver 사용
-                    $order->update(["imp_uid" => $request->imp_uid, "state" => OrderState::SUCCESS]);
+                    // 웹훅은 boot가 안먹어서 그냥 boot 버리고 여기다 작업
 
-                    $result = ["state" => "success", "message"=> "결제가 완료되었습니다."];
+                    // 결제상품 주문성공처리
+                    $order->orderProducts()->update([
+                        "state" => OrderProductState::SUCCESS
+                    ]);
 
-                    break;
+                    $products = $order->products()->where("products.product_id", null)->cursor();
+
+                    foreach($products as $product){
+                        if($product->type == ProductType::DATING)
+                            $order->user->update([
+                                "count_dating" => $order->user->count_dating + $product->count_dating
+                            ]);
+
+                        if($product->type == ProductType::PARTY) {
+                            try {
+                                $sms->send($order->user->contact, [
+                                    "title" => $product->title,
+                                    "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
+                                    "place_name" => $product->place_name,
+                                    "address" => $product->address
+                                ], SmsTemplate::ORDER_PARTY);
+                            }catch (\Exception $exception){
+
+                            }
+
+                        }
+                    }
             }
 
             DB::commit();

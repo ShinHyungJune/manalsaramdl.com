@@ -24,26 +24,6 @@
                         <ul class="form-box row-group">
                             <li class="row-group">
                                 <p class="default">
-                                    이메일 <span>*</span>
-                                </p>
-                                <div class="user">
-                                    <input type="text" placeholder="이메일 (이메일은 아이디로 사용됩니다)" v-model="form.email">
-
-                                    <span class="m-input-error">{{form.errors.email}}</span>
-                                </div>
-                            </li>
-                            <li class="row-group">
-                                <p class="default">
-                                    비밀번호 <span>*</span>
-                                </p>
-                                <div class="user">
-                                    <input class="input-gap" type="password" placeholder="비밀 번호" v-model="form.password">
-                                    <input type="password" placeholder="비밀번호 재확인" v-model="form.password_confirmation">
-                                    <span class="m-input-error">{{form.errors.password}}</span>
-                                </div>
-                            </li>
-                            <li class="row-group">
-                                <p class="default">
                                     본인인증 <span>*</span>
                                 </p>
                                 <div class="user col-group ">
@@ -84,6 +64,28 @@
                                     <span class="m-input-error">{{form.errors.sex}}</span>
                                 </div>
                             </li>
+
+                            <li class="row-group">
+                                <p class="default">
+                                    이메일 <span>*</span>
+                                </p>
+                                <div class="user">
+                                    <input type="text" placeholder="이메일 (이메일은 아이디로 사용됩니다)" v-model="form.email">
+
+                                    <span class="m-input-error">{{form.errors.email}}</span>
+                                </div>
+                            </li>
+                            <li class="row-group">
+                                <p class="default">
+                                    비밀번호 <span>*</span>
+                                </p>
+                                <div class="user">
+                                    <input class="input-gap" type="password" placeholder="비밀 번호" v-model="form.password">
+                                    <input type="password" placeholder="비밀번호 재확인" v-model="form.password_confirmation">
+                                    <span class="m-input-error">{{form.errors.password}}</span>
+                                </div>
+                            </li>
+
                             <li class="row-group">
                                 <p class="default">
                                     직업 <span>*</span>
@@ -380,6 +382,7 @@ export default {
     data(){
         return {
             agree: 0,
+            verification: this.$page.props.verification ? this.$page.props.verification.data : "",
             form: this.$inertia.form({
                 email: this.$page.props.user ? this.$page.props.user.data.email : "",
                 contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
@@ -453,7 +456,7 @@ export default {
 
             IMP.certification({ // param
                 merchant_uid: date.getMilliseconds(), // 주문 번호
-                m_redirect_url : self.appUrl + "/verifications/complete", // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
+                m_redirect_url : self.form.social_id ? `${self.appUrl}/verifications/complete?social_id=${self.form.social_id}&social_platform=${self.form.social_platform}` : `${self.appUrl}/verifications/complete`, // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
                 popup : false // PC환경에서는 popup 파라메터가 무시되고 항상 true 로 적용됨
             }, function (rsp) { // callback
                 if (rsp.success) {
@@ -488,6 +491,14 @@ export default {
 
         if(params.get("social_platform"))
             this.form.social_platform = params.get("social_platform");
+
+        if(this.verification) {
+            this.form.contact = this.verification.phone;
+            this.form.sex = this.verification.sex;
+            this.form.birth = this.verification.birth;
+            this.form.name = this.verification.name;
+            this.form.imp_uid = this.verification.imp_uid;
+        }
 
     }
 }

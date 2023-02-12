@@ -8,7 +8,7 @@
 
 .pop-parent {
     position: fixed;
-    top: 200px;
+    top: 260px;
     right: 0;
     z-index: 99;
     transition: all .2s;
@@ -45,6 +45,9 @@
 .pop-parent.active .btn-toggle {transform:rotate(180deg);}
 
 @media screen and (max-width:1200px) {
+    .pop-parent {
+        top:160px;
+    }
     .pop-parent .pop {width:310px;}
     .pop-parent.active {
         right:-310px;
@@ -54,4 +57,39 @@
 .m-input-error {
     margin-top:4px;
     font-size:14px; color:red;
+}
+
+.upload-list {
+    flex-wrap:wrap;
+}
+
+.editor-wrap img {
+    max-width:100%;
+}
+
+.chat-fixed.mb {
+
+}
+
+#header .mb-hd .mb-hd-wrap.open {
+    z-index:102;
+}
+
+.join2 .sec-con .mypage-form li .user .col-group button {
+    width:200px;
+}
+
+.m-input-text + .m-input-btn {
+    height:56px;
+}
+
+.pay-result .m-table.type01 {
+    margin-top:20px;
+}
+.m-table.type01 {
+    width:100%;
+    border:1px solid #e1e1e1;
+}
+.m-table.type01 th {
+    background-color:#efefef;
 }

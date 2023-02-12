@@ -17,6 +17,7 @@ class VerificationResource extends JsonResource
     {
         return [
             "id" => $this->id,
+            "imp_uid" => $this->imp_uid,
             "phone" => $this->phone ?? "",
             "name" => $this->name ?? "",
             "birth" => Carbon::make($this->birth)->format("Y-m-d") ?? "",

@@ -27,6 +27,8 @@ class Dating extends Model
         "schedule4",
         "schedule5",
         "scheduled_at",
+        "alarm_chat_open",
+        "alarm_date_open",
     ];
 
     public function getOngoingAttribute()
@@ -65,4 +67,13 @@ class Dating extends Model
         return $this->hasManyThrough(Message::class, Chat::class);
     }
 
+    public function getUrl()
+    {
+        return config("app.url")."/datings";
+    }
+
+    public function getChatUrl()
+    {
+        return config("app.url")."/chats/".$this->id;
+    }
 }

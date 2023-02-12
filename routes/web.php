@@ -50,7 +50,7 @@ Route::get('/datingNotices/{notice}', [\App\Http\Controllers\DatingNoticeControl
 
 Route::post("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "store"]);
 Route::patch("/verifyNumbers", [\App\Http\Controllers\Api\VerifyNumberController::class, "update"]);
-
+Route::get("/verifications/complete", [\App\Http\Controllers\VerificationController::class, "complete"]);
 Route::middleware("auth")->group(function(){
     // Route::get("/users/remove", [\App\Http\Controllers\UserController::class, "remove"]);
     Route::delete("/users", [\App\Http\Controllers\UserController::class, "destroy"]);

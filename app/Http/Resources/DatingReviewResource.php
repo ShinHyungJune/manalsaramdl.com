@@ -34,6 +34,7 @@ class DatingReviewResource extends JsonResource
             "img" => $this->img ?? "",
             "prev" => $prev ?? "",
             "next" => $next ?? "",
+            "url" => $this->url,
             "created_at" => Carbon::make($this->created_at)->format("Y.m.d")
         ];
     }

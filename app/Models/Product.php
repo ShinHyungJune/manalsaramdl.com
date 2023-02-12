@@ -31,6 +31,7 @@ class Product extends Model implements HasMedia
         "opened_at",
         "place",
         "address",
+        "place_name",
         "age",
         "max_women",
         "max_men",

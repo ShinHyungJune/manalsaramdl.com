@@ -25,12 +25,39 @@
                         </h2>
                         <p class="txt"></p>
                     </div>
+                    <div class="title-wrap only" v-if="order.state === 'WAIT'">
+                        <h2 class="title">
+                            결제대기
+                        </h2>
+                        <p class="txt"></p>
+                    </div>
                     <div class="title-wrap only" v-else>
                         <h2 class="title" style="color:red;">
                             결제실패
                         </h2>
                         <p class="txt" style="margin-top:8px;">{{order.reason}}</p>
                     </div>
+
+                    <div class="m-table-wrap" v-if="order.vbank_num">
+                        <h3 class="m-table-title">가상계좌 입금기한 내 입금완료 시 정상결제처리됩니다.</h3>
+                        <table class="m-table type01">
+                            <tbody>
+                            <tr>
+                                <th>은행명</th>
+                                <td>{{order.vbank_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>계좌번호</th>
+                                <td>{{order.vbank_num}}</td>
+                            </tr>
+                            <tr>
+                                <th>입금기한</th>
+                                <td>{{order.vbank_date}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
 
                     <div class="txt-box">
                         인사와 함께해 주셔서 감사합니다. <br>
