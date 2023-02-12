@@ -8370,3 +8370,16 @@ td {
     background-image: url(../images/sub-top-01-m.jpg);
 }
 }
+
+.privacy01 {
+    padding: 56px 24px;
+}
+    .privacy01 p{
+      margin-bottom: 24px;
+    }
+    .privacy01 h4{
+      padding: 24px 0;
+      margin-bottom: 24px;
+      border-top: 2px solid #444;
+      border-bottom: 1px solid #444;
+}
