@@ -10172,6 +10172,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -10275,6 +10277,26 @@ __webpack_require__.r(__webpack_exports__);
           });
         } else {
           alert("인증에 실패하였습니다.");
+        }
+      });
+    },
+    search: function search() {
+      var _this = this;
+
+      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={\uC2A4\uCF00\uC904\uCCAD\uB2F4}";
+      axios.get(url, {
+        headers: {
+          "Authorization": "KakaoAK 382ea2610142c4e2c16534aa66204092"
+        }
+      }).then(function (response) {
+        // this.places = response.data.documents;
+        console.log(response);
+        var targetPlace = response.data.documents[0];
+
+        if (targetPlace) {
+          _this.form.address_name = targetPlace.address_name;
+          _this.form.place_name = targetPlace.place_name;
+          _this.form.place_url = targetPlace.place_url;
         }
       });
     }
@@ -70749,6 +70771,8 @@ var render = function () {
                     ]),
                   ]),
                 ]),
+                _vm._v(" "),
+                _c("button", [_vm._v("테스트")]),
                 _vm._v(" "),
                 !_vm.form.social_id
                   ? _c("li", { staticClass: "row-group" }, [

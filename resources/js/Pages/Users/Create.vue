@@ -65,6 +65,8 @@
                                 </div>
                             </li>
 
+                            <button>테스트</button>
+
                             <li class="row-group" v-if="!form.social_id">
                                 <p class="default">
                                     이메일 <span>*</span>
@@ -480,6 +482,29 @@ export default {
                     alert("인증에 실패하였습니다.");
                 }
             });
+        },
+
+        search(){
+            let url = `https://dapi.kakao.com/v2/local/search/keyword.json?query={스케줄청담}`;
+
+            axios.get(url, {
+                headers : {
+                    "Authorization" : "KakaoAK 382ea2610142c4e2c16534aa66204092"
+                }
+            }).then(response => {
+                // this.places = response.data.documents;
+
+                console.log(response);
+
+                let targetPlace = response.data.documents[0];
+
+                if(targetPlace){
+                    this.form.address_name = targetPlace.address_name;
+                    this.form.place_name = targetPlace.place_name;
+                    this.form.place_url = targetPlace.place_url;
+                }
+
+            })
         },
     },
 
