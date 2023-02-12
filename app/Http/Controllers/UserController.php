@@ -82,7 +82,7 @@ class UserController extends Controller
             return redirect()->back()->with("error", "본인인증한 사용자만 회원가입할 수 있습니다.");
 
         $user = User::create(array_merge($request->except(["password", "imgs"]), [
-            "password" => Hash::make($request->password)
+            "password" => $request->password ? Hash::make($request->password) : ""
         ]));
 
         if($request->imgs){
