@@ -34,7 +34,7 @@ class OrderController extends Controller
         $request["finished_at"] = $request->finished_at ?? "";
         $request["type"] = $request->type ?? "";
 
-        $orders = auth()->user()->orders()->where("state", "!=", OrderState::FAIL);
+        $orders = auth()->user()->orders()->where("state", "!=", OrderState::FAIL)->where("state", "!=", OrderState::WAIT);
 
         if($request->started_at)
             $orders = $orders->where("created_at", ">=", Carbon::make($request->started_at)->startOfDay());
