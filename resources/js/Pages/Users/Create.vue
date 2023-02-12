@@ -65,7 +65,7 @@
                                 </div>
                             </li>
 
-                            <button>테스트</button>
+                            <button type="button" @click="search">테스트</button>
 
                             <li class="row-group" v-if="!form.social_id">
                                 <p class="default">

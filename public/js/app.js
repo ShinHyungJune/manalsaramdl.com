@@ -70772,7 +70772,11 @@ var render = function () {
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("button", [_vm._v("테스트")]),
+                _c(
+                  "button",
+                  { attrs: { type: "button" }, on: { click: _vm.search } },
+                  [_vm._v("테스트")]
+                ),
                 _vm._v(" "),
                 !_vm.form.social_id
                   ? _c("li", { staticClass: "row-group" }, [
