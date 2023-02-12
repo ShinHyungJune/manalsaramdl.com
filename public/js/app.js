@@ -10283,10 +10283,10 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this = this;
 
-      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={\uC2A4\uCF00\uC904\uCCAD\uB2F4}";
+      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={\uC2A4\uCF00\uC904 \uCCAD\uB2F4}";
       axios.get(url, {
         headers: {
-          "Authorization": "KakaoAK c586e8748f85b41f7f33f6ebe9ea2891"
+          "Authorization": "KakaoAK 29b3522220330622937664ba237fa0a4"
         }
       }).then(function (response) {
         // this.places = response.data.documents;

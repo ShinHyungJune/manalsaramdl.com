@@ -485,11 +485,11 @@ export default {
         },
 
         search(){
-            let url = `https://dapi.kakao.com/v2/local/search/keyword.json?query={스케줄청담}`;
+            let url = `https://dapi.kakao.com/v2/local/search/keyword.json?query={스케줄 청담}`;
 
             axios.get(url, {
                 headers : {
-                    "Authorization" : "KakaoAK c586e8748f85b41f7f33f6ebe9ea2891"
+                    "Authorization" : "KakaoAK 29b3522220330622937664ba237fa0a4"
                 }
             }).then(response => {
                 // this.places = response.data.documents;
