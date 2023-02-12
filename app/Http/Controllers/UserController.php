@@ -50,7 +50,6 @@ class UserController extends Controller
     {
         $request->validate([
             "contact" => "required|string|unique:users|max:500",
-            "email" => "required|unique:users|email|max:500",
             "name" => "required|string|max:500",
             "sex" => "required|string|max:500",
             "birth" => "required|string|max:500",
@@ -60,7 +59,6 @@ class UserController extends Controller
             "area" => "required|string|max:500",
             "need_service" => "required|string|max:500",
             "registration_way" => "required|string|max:500",
-            "password" => "required|string|min:8|max:30|confirmed",
 
             "nickname" => "nullable|string|max:50000",
             "city_company" => "nullable|string|max:50000",
@@ -75,6 +73,12 @@ class UserController extends Controller
             "agree_marketing" => "nullable|boolean",
             "imp_uid" => "nullable|string|max:50000",
         ]);
+
+        if(!$request->social_id)
+            $request->validate([
+                "email" => "required|unique:users|email|max:500",
+                "password" => "required|string|min:8|max:30|confirmed",
+            ]);
 
         $verification = Verification::where('imp_uid', $request->imp_uid)->first();
 
