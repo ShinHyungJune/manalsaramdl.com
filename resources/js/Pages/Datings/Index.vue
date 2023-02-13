@@ -100,6 +100,7 @@
                             <a :href="`/chats/${dating.id}`" class="chat-btn active" v-else-if="dating.can_chat">
                                 <p>1:1 채팅창 열기<span class="badge" v-if="dating.has_new_message"></span></p>
                             </a>
+
                             <!-- 채팅 열림 전 -->
                             <a href="#" @click.prevent="" class="chat-btn" v-else>
                                 <p>1:1 채팅창 열기</p>
