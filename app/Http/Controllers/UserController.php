@@ -159,9 +159,9 @@ class UserController extends Controller
             }
         }
 
-        if($request->img){
+        /*if($request->img){
             auth()->user()->addMedia($request->img)->toMediaCollection("img", "s3");
-        }
+        }*/
 
         return redirect()->back()->with("success", "성공적으로 처리되었습니다.");
     }
