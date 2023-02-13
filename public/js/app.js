@@ -61549,7 +61549,6 @@ var render = function () {
               "ul",
               { staticClass: "date-wrap col-group" },
               _vm._l(_vm.datings.data, function (dating) {
-                var this$1 = this
                 return _c("li", { key: dating.id, staticClass: "date-box" }, [
                   _c(
                     "span",
@@ -61764,10 +61763,13 @@ var render = function () {
                             (dating.already_feedback ? "" : "active"),
                           attrs: { href: "#" },
                           on: {
-                            click: function () {
-                              !dating.already_feedback
-                                ? (this$1.targetFeedbackDating = dating)
-                                : ""
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return function () {
+                                !dating.already_feedback
+                                  ? (_vm.targetFeedbackDating = dating)
+                                  : ""
+                              }.apply(null, arguments)
                             },
                           },
                         },
