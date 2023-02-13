@@ -61755,7 +61755,9 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  !dating.ongoing && dating.check_address
+                  !dating.ongoing &&
+                  dating.check_address &&
+                  !dating.already_feedback
                     ? _c(
                         "a",
                         {

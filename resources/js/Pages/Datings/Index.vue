@@ -92,7 +92,7 @@
                                 </li>
                             </ul>
                             <!-- 데이트 최종 매칭 & 종료 -->
-                            <a href="#" class="chat-btn active" v-if="!dating.ongoing && dating.check_address" @click="targetFeedbackDating = dating">
+                            <a href="#" class="chat-btn active" v-if="!dating.ongoing && dating.check_address && !dating.already_feedback" @click="targetFeedbackDating = dating">
                                 <p>후기 남기기</p>
 
                             </a>

@@ -16,6 +16,11 @@ class DatingResource extends JsonResource
     public function toArray($request)
     {
         $has_new_message = 0;
+        $alreadyFeedback = 0;
+
+
+        if(auth()->user() && auth()->user()->feedbacks()->where("dating_id", $this->id)->first())
+            $alreadyFeedback = 1;
 
         if($this->chat && auth()->user())
             $has_new_message = $this->chat->users()->where("user_id", auth()->id())->first()->pivot->has_new_message;
@@ -43,6 +48,9 @@ class DatingResource extends JsonResource
             "ongoing" => $this->ongoing,
             "can_chat" => $this->can_chat,
             "has_new_message" => $has_new_message,
+            "already_feedback" => $alreadyFeedback
+
+
         ];
     }
 }
