@@ -147,6 +147,7 @@ class OrderController extends Controller
         // 결제상품 주문성공처리
         $prevState = $order->state;
 
+
         $order->orderProducts()->update([
             "state" => OrderProductState::SUCCESS
         ]);
@@ -154,14 +155,9 @@ class OrderController extends Controller
         $user = $order->user;
 
         if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
+            $order->update(["state" => OrderState::SUCCESS]);
 
             if ($order->state == OrderState::SUCCESS) {
-
-                // 결제상품 주문성공처리
-                $order->orderProducts()->update([
-                    "state" => OrderProductState::SUCCESS
-                ]);
-
                 $products = $order->products()->where("products.product_id", null)->cursor();
 
                 foreach($products as $product){
@@ -193,7 +189,7 @@ class OrderController extends Controller
         }
 
 
-        DB::beginTransaction();
+        /*DB::beginTransaction();
 
         try {
             // 주문조회
@@ -242,7 +238,7 @@ class OrderController extends Controller
             $result = ["state" => "error", "message"=> "결제를 실패하였습니다."];
 
             DB::rollBack();
-        }
+        }*/
 
         $order = Order::where("merchant_uid", $request->merchant_uid)->first();
 
