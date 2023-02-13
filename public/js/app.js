@@ -5133,6 +5133,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -61286,7 +61287,27 @@ var render = function () {
                       }),
                     ]),
                     _vm._v(" "),
-                    _vm._m(2, true),
+                    item.type === "INSTAGRAM"
+                      ? _c("span", { staticClass: "sns-badge" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "/images/sns-icon-insta.png",
+                              alt: "",
+                            },
+                          }),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    item.type === "NAVER"
+                      ? _c("span", { staticClass: "sns-badge" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "/images/sns-icon-blog.png",
+                              alt: "",
+                            },
+                          }),
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
                     _c("div", { staticClass: "txt-box" }, [
                       _c("ul", { staticClass: "user-info col-group" }, [
@@ -61382,14 +61403,6 @@ var staticRenderFns = [
       _c("h2", { staticClass: "sub-title" }, [
         _vm._v("\n                    소개팅 후기\n                "),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "sns-badge" }, [
-      _c("img", { attrs: { src: "/images/sns-icon-insta.png", alt: "" } }),
     ])
   },
 ]

@@ -21,6 +21,7 @@ class Review extends Model implements HasMedia
         "age",
         "job",
         "url",
+        "type"
     ];
 
     protected $appends = ["img"];

@@ -32,7 +32,8 @@
                             <div class="bg-img">
                                 <img :src="item.img ? item.img.url : ''" alt="">
                             </div>
-                            <span class="sns-badge"><img src="/images/sns-icon-insta.png" alt=""></span>
+                            <span class="sns-badge" v-if="item.type === 'INSTAGRAM'"><img src="/images/sns-icon-insta.png" alt=""></span>
+                            <span class="sns-badge" v-if="item.type === 'NAVER'"><img src="/images/sns-icon-blog.png" alt=""></span>
                             <div class="txt-box">
                                 <ul class="user-info col-group">
                                     <li>{{item.sex}}</li>
