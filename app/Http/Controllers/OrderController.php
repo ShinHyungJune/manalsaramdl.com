@@ -169,9 +169,33 @@ class OrderController extends Controller
                     // 웹훅은 boot가 안먹어서 그냥 boot 버리고 여기다 작업
 
                     // 결제상품 주문성공처리
+                    $prevState = $order->state;
+
                     $order->orderProducts()->update([
                         "state" => OrderProductState::SUCCESS
                     ]);
+
+                    $user = $order->user;
+
+                    if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
+
+                        if ($order->state == OrderState::SUCCESS) {
+
+                            // 결제상품 주문성공처리
+                            $order->orderProducts()->update([
+                                "state" => OrderProductState::SUCCESS
+                            ]);
+
+                            $products = $order->products()->where("products.product_id", null)->cursor();
+
+                            foreach($products as $product){
+                                if($product->type == ProductType::DATING)
+                                    $user->update([
+                                        "count_dating" => $user->count_dating + $product->count_dating
+                                    ]);
+                            }
+                        }
+                    }
 
                     $products = $order->products()->where("products.product_id", null)->cursor();
 
@@ -182,17 +206,12 @@ class OrderController extends Controller
                             ]);
 
                         if($product->type == ProductType::PARTY) {
-                            try {
-                                $sms->send($order->user->contact, [
-                                    "title" => $product->title,
-                                    "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
-                                    "place_name" => $product->place_name,
-                                    "address" => $product->address
-                                ], SmsTemplate::ORDER_PARTY);
-                            }catch (\Exception $exception){
-
-                            }
-
+                            $sms->send($order->user->contact, [
+                                "title" => $product->title,
+                                "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
+                                "place_name" => $product->place_name,
+                                "address" => $product->address
+                            ], SmsTemplate::ORDER_PARTY);
                         }
                     }
             }
