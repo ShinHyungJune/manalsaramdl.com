@@ -147,6 +147,52 @@ class OrderController extends Controller
             if($order->price != $impOrder["amount"])
                 return abort(403);
 
+            $prevState = $order->state;
+
+            $order->orderProducts()->update([
+                "state" => OrderProductState::SUCCESS
+            ]);
+
+            $user = $order->user;
+
+            if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
+
+                if ($order->state == OrderState::SUCCESS) {
+
+                    // 결제상품 주문성공처리
+                    $order->orderProducts()->update([
+                        "state" => OrderProductState::SUCCESS
+                    ]);
+
+                    $products = $order->products()->where("products.product_id", null)->cursor();
+
+                    foreach($products as $product){
+                        if($product->type == ProductType::DATING)
+                            $user->update([
+                                "count_dating" => $user->count_dating + $product->count_dating
+                            ]);
+                    }
+                }
+            }
+
+            $products = $order->products()->where("products.product_id", null)->cursor();
+
+            foreach($products as $product){
+                if($product->type == ProductType::DATING)
+                    $order->user->update([
+                        "count_dating" => $order->user->count_dating + $product->count_dating
+                    ]);
+
+                if($product->type == ProductType::PARTY) {
+                    $sms->send($order->user->contact, [
+                        "title" => $product->title,
+                        "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
+                        "place_name" => $product->place_name,
+                        "address" => $product->address
+                    ], SmsTemplate::ORDER_PARTY);
+                }
+            }
+
             switch ($impOrder["status"]){
                 case "ready": // 가상계좌 발급
                     $vbankNum = $impOrder["vbank_num"];
