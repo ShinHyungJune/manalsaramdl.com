@@ -130,66 +130,7 @@ class OrderController extends Controller
 
         $sms = new SMS();
 
-        // 주문조회
-        $impOrder = Iamport::getOrder($accessToken, $request->imp_uid);
-
-        $order = Order::where(function($query){
-            $query->where("state", OrderState::WAIT)
-                ->orWhere("state", OrderState::FAIL);
-        })->where("merchant_uid", $impOrder["merchant_uid"])->first();
-
-        if(!$order)
-            return abort(404);
-
-        if($order->price != $impOrder["amount"])
-            return abort(403);
-
-        // 결제상품 주문성공처리
-        $prevState = $order->state;
-
-
-        $order->orderProducts()->update([
-            "state" => OrderProductState::SUCCESS
-        ]);
-
-        $user = $order->user;
-
-        if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
-            $order->update(["state" => OrderState::SUCCESS]);
-
-            if ($order->state == OrderState::SUCCESS) {
-                $products = $order->products()->where("products.product_id", null)->cursor();
-
-                foreach($products as $product){
-                    if($product->type == ProductType::DATING)
-                        $user->update([
-                            "count_dating" => $user->count_dating + $product->count_dating
-                        ]);
-                }
-            }
-
-
-            $products = $order->products()->where("products.product_id", null)->cursor();
-
-            foreach($products as $product){
-                if($product->type == ProductType::DATING)
-                    $order->user->update([
-                        "count_dating" => $order->user->count_dating + $product->count_dating
-                    ]);
-
-                if($product->type == ProductType::PARTY) {
-                    $sms->send($order->user->contact, [
-                        "title" => $product->title,
-                        "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
-                        "place_name" => $product->place_name,
-                        "address" => $product->address
-                    ], SmsTemplate::ORDER_PARTY);
-                }
-            }
-        }
-
-
-        /*DB::beginTransaction();
+        DB::beginTransaction();
 
         try {
             // 주문조회
@@ -227,7 +168,44 @@ class OrderController extends Controller
                 case "paid": // 결제완료
                     // 웹훅은 boot가 안먹어서 그냥 boot 버리고 여기다 작업
 
+                    // 결제상품 주문성공처리
+                    $prevState = $order->state;
 
+                    $order->update(["state" => OrderState::SUCCESS]);
+
+                    $order->orderProducts()->update([
+                        "state" => OrderProductState::SUCCESS
+                    ]);
+
+                    $user = $order->user;
+
+                    if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
+                        if ($order->state == OrderState::SUCCESS) {
+
+                            // 결제상품 주문성공처리
+                            $order->orderProducts()->update([
+                                "state" => OrderProductState::SUCCESS
+                            ]);
+
+                            $products = $order->products()->where("products.product_id", null)->cursor();
+
+                            foreach($products as $product){
+                                if($product->type == ProductType::DATING)
+                                    $user->update([
+                                        "count_dating" => $user->count_dating + $product->count_dating
+                                    ]);
+
+                                if($product->type == ProductType::PARTY) {
+                                    $sms->send($order->user->contact, [
+                                        "title" => $product->title,
+                                        "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
+                                        "place_name" => $product->place_name,
+                                        "address" => $product->address
+                                    ], SmsTemplate::ORDER_PARTY);
+                                }
+                            }
+                        }
+                    }
             }
 
             DB::commit();
@@ -238,7 +216,7 @@ class OrderController extends Controller
             $result = ["state" => "error", "message"=> "결제를 실패하였습니다."];
 
             DB::rollBack();
-        }*/
+        }
 
         $order = Order::where("merchant_uid", $request->merchant_uid)->first();
 
