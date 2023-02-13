@@ -61760,7 +61760,7 @@ var render = function () {
                         {
                           class:
                             "chat-btn " +
-                            (dating.already_feedback ? "active" : ""),
+                            (dating.already_feedback ? "" : "active"),
                           attrs: { href: "#" },
                           on: {
                             click: function ($event) {
