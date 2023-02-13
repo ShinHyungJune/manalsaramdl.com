@@ -72173,7 +72173,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                이름(실명)\n                            "
+                        "\n                                    이름(실명)\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72185,7 +72185,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                생년월일\n                            "
+                        "\n                                    생년월일\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72197,7 +72197,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                성별\n                            "
+                        "\n                                    성별\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72563,7 +72563,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                닉네임\n                            "
+                        "\n                                    닉네임\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72602,7 +72602,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                근무지\n                            "
+                        "\n                                    근무지\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72634,7 +72634,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                키\n                            "
+                        "\n                                    키\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72672,7 +72672,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                몸무게를 입력해주세요\n                            "
+                        "\n                                    몸무게를 입력해주세요\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72710,7 +72710,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                인스타그램 아이디\n                            "
+                        "\n                                    인스타그램 아이디\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72748,39 +72748,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group file" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                대표 프로필 사진\n                            "
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "user" },
-                      [
-                        _c("input-imgs", {
-                          attrs: {
-                            id: "img",
-                            multiple: false,
-                            "default-files": [_vm.user.img],
-                          },
-                          on: {
-                            change: function (data) {
-                              _vm.form.img = data[0]
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-input-error" }, [
-                          _vm._v(_vm._s(_vm.form.errors.img)),
-                        ]),
-                      ],
-                      1
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "row-group file" }, [
-                    _c("p", { staticClass: "default" }, [
-                      _vm._v(
-                        "\n                                프로필 사진 (최소 3장)\n                            "
+                        "\n                                    프로필 사진 (최소 3장)\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72808,7 +72776,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                이상형\n                            "
+                        "\n                                    이상형\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72850,7 +72818,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                자기소개글\n                            "
+                        "\n                                    자기소개글\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72892,7 +72860,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                매니저에게 한마디\n                            "
+                        "\n                                    매니저에게 한마디\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72938,7 +72906,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                결혼여부\n                            "
+                        "\n                                    결혼여부\n                                "
                       ),
                     ]),
                     _vm._v(" "),
@@ -73064,7 +73032,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                이메일 "),
+      _vm._v("\n                                    이메일 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73074,7 +73042,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "row-group" }, [
       _c("p", { staticClass: "default" }, [
-        _vm._v("\n                                비밀번호 "),
+        _vm._v("\n                                    비밀번호 "),
         _c("span", [_vm._v("*")]),
       ]),
       _vm._v(" "),
@@ -73087,7 +73055,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                    비밀번호 변경\n                                "
+              "\n                                        비밀번호 변경\n                                    "
             ),
           ]
         ),
@@ -73099,7 +73067,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                휴대폰 번호 "),
+      _vm._v("\n                                    휴대폰 번호 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73108,7 +73076,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                직업 "),
+      _vm._v("\n                                    직업 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73117,7 +73085,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                최종 학력 "),
+      _vm._v("\n                                    최종 학력 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73126,7 +73094,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                거주지 "),
+      _vm._v("\n                                    거주지 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73135,7 +73103,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                이용 예정 서비스 "),
+      _vm._v("\n                                    이용 예정 서비스 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73144,7 +73112,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                가입 경로 "),
+      _vm._v("\n                                    가입 경로 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73157,9 +73125,9 @@ var staticRenderFns = [
         _c("span", { staticClass: "text-style-1" }, [_vm._v("소개팅 서비스")]),
         _vm._v(" 이용을 원하신다면 "),
         _c("br"),
-        _vm._v("\n                            아래의 "),
+        _vm._v("\n                                아래의 "),
         _c("span", { staticClass: "text-style-1" }, [_vm._v("선택입력사항")]),
-        _vm._v("을 모두 입력해 주세요\n                        "),
+        _vm._v("을 모두 입력해 주세요\n                            "),
       ]),
     ])
   },

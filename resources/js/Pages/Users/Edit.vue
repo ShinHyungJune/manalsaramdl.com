@@ -220,7 +220,7 @@
                                     <span class="m-input-error">{{form.errors.instagram}}</span>
                                 </div>
                             </li>
-                            <li class="row-group file">
+<!--                            <li class="row-group file">
                                 <p class="default">
                                     대표 프로필 사진
                                 </p>
@@ -228,7 +228,7 @@
                                     <input-imgs id="img" :multiple="false" :default-files="[user.img]" @change="(data) => {form.img = data[0]}" />
                                     <span class="m-input-error">{{form.errors.img}}</span>
                                 </div>
-                            </li>
+                            </li>-->
                             <li class="row-group file">
                                 <p class="default">
                                     프로필 사진 (최소 3장)
