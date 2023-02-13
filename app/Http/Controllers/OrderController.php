@@ -130,6 +130,20 @@ class OrderController extends Controller
 
         $sms = new SMS();
 
+        // 주문조회
+        $impOrder = Iamport::getOrder($accessToken, $request->imp_uid);
+
+        $order = Order::where(function($query){
+            $query->where("state", OrderState::WAIT)
+                ->orWhere("state", OrderState::FAIL);
+        })->where("merchant_uid", $impOrder["merchant_uid"])->first();
+
+        if(!$order)
+            return abort(404);
+
+        if($order->price != $impOrder["amount"])
+            return abort(403);
+
         // 결제상품 주문성공처리
         $prevState = $order->state;
 

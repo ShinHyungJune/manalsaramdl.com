@@ -37,10 +37,10 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
         $passwordReset = PasswordReset::where("id", $request->ids)->first();
 
         $passwordReset ? $passwordReset->update([
-            "id" => $request->ids,
+            "ids" => $request->ids,
             "token" => $token
         ]) : $passwordReset = PasswordReset::create([
-            "id" => $request->ids,
+            "ids" => $request->ids,
             "token" => $token
         ]);
 
@@ -101,7 +101,7 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
         $passwordReset = PasswordReset::where("token", $request->token)
             ->first();
 
-        $user = User::where("email", $passwordReset->id)->first();
+        $user = User::where("email", $passwordReset->ids)->first();
 
         if(!$user || !$passwordReset){
             return redirect()->back()->with("error", "유효하지 않은 토큰이거나 존재하지 않는 아이디입니다.");
@@ -109,7 +109,7 @@ class PasswordResetController extends \ShinHyungJune\SocialLogin\Http\PasswordRe
 
         $user->update(["password" => Hash::make($request->password)]);
 
-        $passwordReset->where("id", $request->id)->delete();
+        $passwordReset->where("ids", $request->ids)->delete();
 
         return redirect("/login")->with("success", "비밀번호가 변경되었습니다.");
     }
