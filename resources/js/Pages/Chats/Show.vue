@@ -1,7 +1,7 @@
 <template>
     <div id="wrap" class="popup-form chat-form">
         <div class="popup-header">
-            <p>{{ partner(chat.dating).name }}</p>
+            <p>{{ partner(chat.dating).displayName }}</p>
             <i class="xi-close" @click="back"></i>
         </div>
         <!-- //header -->

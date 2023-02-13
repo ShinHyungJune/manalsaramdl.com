@@ -137,7 +137,7 @@ class OrderController extends Controller
                 ->orWhere("state", OrderState::FAIL);
         })->where("merchant_uid", $impOrder["merchant_uid"])->first();
 
-        dd($request->imp_uid, $impOrder, $order);
+        // dd($request->imp_uid, $impOrder, $order);
 
         $prevState = $order->state;
 

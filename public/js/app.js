@@ -57887,7 +57887,7 @@ var render = function () {
     { staticClass: "popup-form chat-form", attrs: { id: "wrap" } },
     [
       _c("div", { staticClass: "popup-header" }, [
-        _c("p", [_vm._v(_vm._s(_vm.partner(_vm.chat.dating).name))]),
+        _c("p", [_vm._v(_vm._s(_vm.partner(_vm.chat.dating).displayName))]),
         _vm._v(" "),
         _c("i", { staticClass: "xi-close", on: { click: _vm.back } }),
       ]),
