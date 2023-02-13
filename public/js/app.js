@@ -61287,7 +61287,7 @@ var render = function () {
                       }),
                     ]),
                     _vm._v(" "),
-                    item.type === "INSTAGRAM"
+                    item.platform === "INSTAGRAM"
                       ? _c("span", { staticClass: "sns-badge" }, [
                           _c("img", {
                             attrs: {
@@ -61298,7 +61298,7 @@ var render = function () {
                         ])
                       : _vm._e(),
                     _vm._v(" "),
-                    item.type === "NAVER"
+                    item.platform === "NAVER"
                       ? _c("span", { staticClass: "sns-badge" }, [
                           _c("img", {
                             attrs: {
