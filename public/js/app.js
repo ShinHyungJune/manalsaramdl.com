@@ -68854,7 +68854,7 @@ var render = function () {
                                 { key: option.id, staticClass: "col-group" },
                                 [
                                   _c("span", { staticClass: "label" }, [
-                                    _vm._v(_vm._s(option.id) + "}"),
+                                    _vm._v(_vm._s(option.title)),
                                   ]),
                                   _vm._v(" "),
                                   _c("p", { staticClass: "price" }, [

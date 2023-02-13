@@ -118,7 +118,7 @@
                                     <p class="default">참가비</p>
                                     <ul class="user col-group">
                                         <li class="col-group" v-for="option in product.options" :key="option.id">
-                                            <span class="label">{{option.id}}}</span>
+                                            <span class="label">{{option.title}}</span>
                                             <p class="price">{{ option.price.toLocaleString() }}원</p>
                                         </li>
                                     </ul>
