@@ -25,7 +25,7 @@
                         </h2>
                         <p class="txt"></p>
                     </div>
-                    <div class="title-wrap only" v-if="order.state === 'WAIT'">
+                    <div class="title-wrap only" v-else-if="order.state === 'WAIT'">
                         <h2 class="title">
                             결제대기
                         </h2>

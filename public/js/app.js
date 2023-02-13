@@ -66343,9 +66343,7 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "txt" }),
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.order.state === "WAIT"
+            : _vm.order.state === "WAIT"
             ? _c("div", { staticClass: "title-wrap only" }, [
                 _c("h2", { staticClass: "title" }, [
                   _vm._v(
