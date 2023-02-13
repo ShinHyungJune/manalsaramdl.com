@@ -130,93 +130,52 @@ class OrderController extends Controller
 
         $sms = new SMS();
 
-        DB::beginTransaction();
+        $impOrder = Iamport::getOrder($accessToken, $request->imp_uid);
 
-        try {
-            // 주문조회
-            $impOrder = Iamport::getOrder($accessToken, $request->imp_uid);
+        $order = Order::where(function($query){
+            $query->where("state", OrderState::WAIT)
+                ->orWhere("state", OrderState::FAIL);
+        })->where("merchant_uid", $impOrder["merchant_uid"])->first();
 
-            $order = Order::where(function($query){
-                $query->where("state", OrderState::WAIT)
-                    ->orWhere("state", OrderState::FAIL);
-            })->where("merchant_uid", $impOrder["merchant_uid"])->first();
+        $prevState = $order->state;
 
-            if(!$order)
-                return abort(404);
+        $order->update(["state" => OrderState::SUCCESS]);
 
-            if($order->price != $impOrder["amount"])
-                return abort(403);
+        $order->orderProducts()->update([
+            "state" => OrderProductState::SUCCESS
+        ]);
 
-            switch ($impOrder["status"]){
-                case "ready": // 가상계좌 발급
-                    $vbankNum = $impOrder["vbank_num"];
-                    $vbankDate = Carbon::parse($impOrder["vbank_date"])->format("Y-m-d H:i");
-                    $vbankName = $impOrder["vbank_name"];
+        $user = $order->user;
 
-                    // OrderObserver 사용
-                    $order->update([
-                        "imp_uid" => $request->imp_uid,
-                        "state" => OrderState::WAIT,
-                        "vbank_num" => $vbankNum,
-                        "vbank_date" => $vbankDate,
-                        "vbank_name" => $vbankName
-                    ]);
+        if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
+            if ($order->state == OrderState::SUCCESS) {
 
-                    $result = ["state" => "success", "message"=>"가상계좌 발급이 완료되었습니다. ${vbankName}/ ${vbankNum} / ${vbankDate}"];
+                // 결제상품 주문성공처리
+                $order->orderProducts()->update([
+                    "state" => OrderProductState::SUCCESS
+                ]);
 
-                    break;
-                case "paid": // 결제완료
-                    // 웹훅은 boot가 안먹어서 그냥 boot 버리고 여기다 작업
+                $products = $order->products()->where("products.product_id", null)->cursor();
 
-                    // 결제상품 주문성공처리
-                    $prevState = $order->state;
+                foreach($products as $product){
+                    if($product->type == ProductType::DATING)
+                        $user->update([
+                            "count_dating" => $user->count_dating + $product->count_dating
+                        ]);
 
-                    $order->update(["state" => OrderState::SUCCESS]);
-
-                    $order->orderProducts()->update([
-                        "state" => OrderProductState::SUCCESS
-                    ]);
-
-                    $user = $order->user;
-
-                    if ($prevState == OrderState::FAIL || $prevState == OrderState::WAIT) {
-                        if ($order->state == OrderState::SUCCESS) {
-
-                            // 결제상품 주문성공처리
-                            $order->orderProducts()->update([
-                                "state" => OrderProductState::SUCCESS
-                            ]);
-
-                            $products = $order->products()->where("products.product_id", null)->cursor();
-
-                            foreach($products as $product){
-                                if($product->type == ProductType::DATING)
-                                    $user->update([
-                                        "count_dating" => $user->count_dating + $product->count_dating
-                                    ]);
-
-                                if($product->type == ProductType::PARTY) {
-                                    $sms->send($order->user->contact, [
-                                        "title" => $product->title,
-                                        "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
-                                        "place_name" => $product->place_name,
-                                        "address" => $product->address
-                                    ], SmsTemplate::ORDER_PARTY);
-                                }
-                            }
-                        }
+                    if($product->type == ProductType::PARTY) {
+                        $sms->send($order->user->contact, [
+                            "title" => $product->title,
+                            "opened_at" => Carbon::make($product->opened_at)->format("m월 d일 H:i"),
+                            "place_name" => $product->place_name,
+                            "address" => $product->address
+                        ], SmsTemplate::ORDER_PARTY);
                     }
+                }
             }
-
-            DB::commit();
-        }catch(\Exception $e) {
-            // Iamport::cancel($accessToken, $request->imp_uid);
-
-            // $order->update(["state" => OrderState::FAIL]);
-            $result = ["state" => "error", "message"=> "결제를 실패하였습니다."];
-
-            DB::rollBack();
         }
+
+
 
         $order = Order::where("merchant_uid", $request->merchant_uid)->first();
 
