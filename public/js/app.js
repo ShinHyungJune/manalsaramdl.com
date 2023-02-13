@@ -5981,7 +5981,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -61755,13 +61754,13 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  !dating.ongoing &&
-                  dating.check_address &&
-                  !dating.already_feedback
+                  !dating.ongoing && dating.check_address
                     ? _c(
                         "a",
                         {
-                          staticClass: "chat-btn active",
+                          class:
+                            "chat-btn " +
+                            (dating.already_feedback ? "active" : ""),
                           attrs: { href: "#" },
                           on: {
                             click: function ($event) {
