@@ -20,7 +20,6 @@ import Echo from 'laravel-echo';
 
 window.Pusher = require('pusher-js');
 
-alert(process.env.MIX_PUSHER_APP_KEY);
 window.Echo = new Echo({
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
