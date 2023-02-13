@@ -90,7 +90,7 @@
 .mypage-wrap .right-wrap {
     width: calc(100% - 320px);
     padding-top: 80px;
-    padding-left: 56px;
+    padding-left: 32px;
     padding-right: 56px;
     padding-bottom: 0px;
     position: relative;
@@ -460,7 +460,6 @@ color: #a4a4a4;
     .form-box > li .user.col-group {
         gap: 8px;
         display: flex;
-        flex-direction: column;
     }
     .form-box > li .user.col-group input,
     .form-box > li .user.col-group > p {

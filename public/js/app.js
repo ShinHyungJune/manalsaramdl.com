@@ -2392,15 +2392,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-//
 //
 //
 //
@@ -2429,23 +2420,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    "defaultFiles": {
-      "default": function _default() {
-        return [];
-      }
-    },
-    "multiple": {
-      "default": function _default() {
-        return true;
-      }
-    },
-    "id": {
-      "default": function _default() {
-        return "img";
-      }
-    }
-  },
+  props: ["defaultFiles"],
   data: function data() {
     return {
       files: []
@@ -2462,10 +2437,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     changeFile: function changeFile(event) {
       var _this = this;
 
-      if (!this.multiple) this.files = [];
+      this.files = [];
       Array.from(event.target.files).map(function (file) {
         _this.files.push({
-          index: _this.files.length,
           file: file,
           img: URL.createObjectURL(file)
         });
@@ -2481,65 +2455,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$emit("change", this.files.map(function (file) {
         return file.file;
       }));
-    },
-    getBlobFromUrl: function getBlobFromUrl(myImageUrl) {
-      return new Promise(function (resolve, reject) {
-        var request = new XMLHttpRequest();
-        request.open('GET', myImageUrl, true);
-        request.responseType = 'blob';
-
-        request.onload = function () {
-          resolve(request.response);
-        };
-
-        request.onerror = reject;
-        request.send();
-      });
     }
-  },
-  computed: {
-    sortedFiles: function sortedFiles() {
-      return this.files.sort(function (a, b) {
-        return a.index - b.index;
-      });
-    }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    if (this.defaultFiles) this.defaultFiles.map( /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(file, index) {
-        var blob;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _this2.getBlobFromUrl(file.url);
-
-              case 2:
-                blob = _context.sent;
-
-                _this2.files.push({
-                  index: index,
-                  img: file.url,
-                  file: new File([blob], file.name, {
-                    type: file.type
-                  })
-                });
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-
-      return function (_x, _x2) {
-        return _ref.apply(this, arguments);
-      };
-    }());
   }
 });
 
@@ -2933,9 +2849,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -3095,6 +3008,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      user: this.$page.props.user ? this.$page.props.user.data : "",
       active: false
     };
   },
@@ -5133,7 +5047,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5160,9 +5073,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.items = page.props.items;
         }
       });
-    },
-    move: function move(item) {
-      if (item.url) window.open(item.url, "pop", "_blank");
     }
   },
   computed: {}
@@ -5245,7 +5155,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
 /* harmony import */ var _Components_Form_InputCities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Form/InputCities */ "./resources/js/Components/Form/InputCities.vue");
-//
 //
 //
 //
@@ -6089,13 +5998,14 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this4 = this;
 
-      axios.get("/api/search", {
-        params: {
-          word: this.word
+      var url = "https://dapi.kakao.com/v2/local/search/keyword.json?query={".concat(this.word, "}");
+      axios.get(url, {
+        headers: {
+          "Authorization": "KakaoAK 382ea2610142c4e2c16534aa66204092"
         }
       }).then(function (response) {
-        var data = JSON.parse(response.data);
-        var targetPlace = data.documents[0];
+        // this.places = response.data.documents;
+        var targetPlace = response.data.documents[0];
 
         if (targetPlace) {
           _this4.form.address_name = targetPlace.address_name;
@@ -6851,90 +6761,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   data: function data() {
-    return {
-      activePop: true,
-      pops: this.$page.props.pops ? this.$page.props.pops : ""
-    };
+    return {};
   },
-  methods: {
-    closeToday: function closeToday() {
-      window.localStorage.setItem("closed_at", new Date().getDate());
-      this.activePop = false;
-    },
-    closePop: function closePop() {
-      this.activePop = false;
-    }
-  },
+  methods: {},
   mounted: function mounted() {
     AOS.init();
-    var swiper = new Swiper('.warning-container .swiper-container', {
+    var swiper = new Swiper('.swiper-container', {
       slidesPerView: "auto",
       freeMode: true,
       initialSlide: 1
-    });
-    var closedAt = window.localStorage.getItem("closed_at");
-    if (closedAt && closedAt >= new Date().getDate()) this.activePop = false;
-    $(".pop-parent .btn-toggle").click(function () {
-      $(".pop-parent").toggleClass("active");
-    });
-    new Swiper('.pop-parent .swiper-container', {
-      autoplay: {
-        delay: 3000
-      },
-      pagination: {
-        el: '.swiper-pagination'
-      }
     });
   }
 });
@@ -7465,37 +7306,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10171,8 +9981,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -10189,7 +9997,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       agree: 0,
-      verification: this.$page.props.verification ? this.$page.props.verification.data : "",
       form: this.$inertia.form({
         email: this.$page.props.user ? this.$page.props.user.data.email : "",
         contact: this.$page.props.user ? this.$page.props.user.data.contact : "",
@@ -10253,7 +10060,7 @@ __webpack_require__.r(__webpack_exports__);
         // param
         merchant_uid: date.getMilliseconds(),
         // 주문 번호
-        m_redirect_url: self.form.social_id ? "".concat(self.appUrl, "/verifications/complete?social_id=").concat(self.form.social_id, "&social_platform=").concat(self.form.social_platform) : "".concat(self.appUrl, "/verifications/complete"),
+        m_redirect_url: self.appUrl + "/verifications/complete",
         // 모바일환경에서 popup:false(기본값) 인 경우 필수, 예: https://www.myservice.com/payments/complete/mobile
         popup: false // PC환경에서는 popup 파라메터가 무시되고 항상 true 로 적용됨
 
@@ -10284,14 +10091,6 @@ __webpack_require__.r(__webpack_exports__);
     var params = new URLSearchParams(window.location.search);
     if (params.get("social_id")) this.form.social_id = params.get("social_id");
     if (params.get("social_platform")) this.form.social_platform = params.get("social_platform");
-
-    if (this.verification) {
-      this.form.contact = this.verification.phone;
-      this.form.sex = this.verification.sex;
-      this.form.birth = this.verification.birth;
-      this.form.name = this.verification.name;
-      this.form.imp_uid = this.verification.imp_uid;
-    }
   }
 });
 
@@ -10315,15 +10114,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Form/InputAddress */ "./resources/js/Components/Form/InputAddress.vue");
 /* harmony import */ var _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Form/InputRegion */ "./resources/js/Components/Form/InputRegion.vue");
 /* harmony import */ var _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/Form/InputImgs */ "./resources/js/Components/Form/InputImgs.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10650,8 +10440,7 @@ __webpack_require__.r(__webpack_exports__);
         introduce: this.$page.props.user ? this.$page.props.user.data.introduce : "",
         to_manager: this.$page.props.user ? this.$page.props.user.data.to_manager : "",
         marriage: this.$page.props.user ? this.$page.props.user.data.marriage : "",
-        imgs: "",
-        img: ""
+        imgs: ""
       })
     };
   },
@@ -10662,7 +10451,6 @@ __webpack_require__.r(__webpack_exports__);
       this.form.post("/users/update", {
         onSuccess: function onSuccess() {
           _this.willChangePassword = false;
-          _this.user = _this.$page.props.user.data;
         }
       });
     }
@@ -10977,11 +10765,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "52af68ea6720e39336b9",
+  key: "b37aa6816339a77531ea",
   cluster: "ap3",
   forceTLS: true
-}); //
-// import Echo from 'laravel-echo';
+}); // import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
@@ -56740,53 +56527,60 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "upload" }, [
-    _c("label", { staticClass: "find-file", attrs: { for: _vm.id } }, [
-      _vm._v("\n            파일 선택\n            "),
-      _vm.multiple
-        ? _c("input", {
-            attrs: {
-              type: "file",
-              id: _vm.id,
-              accept: "image/*",
-              multiple: "",
-            },
-            on: { change: _vm.changeFile },
-          })
-        : _c("input", {
-            attrs: { type: "file", id: _vm.id, accept: "image/*" },
-            on: { change: _vm.changeFile },
-          }),
+    _c("label", { staticClass: "find-file", attrs: { for: "a" } }, [
+      _vm._v("\n        파일 선택\n        "),
+      _c("input", {
+        attrs: { type: "file", id: "a", accept: "image/*", multiple: "" },
+        on: { change: _vm.changeFile },
+      }),
     ]),
     _vm._v(" "),
-    _c(
-      "ul",
-      {
-        staticClass: "upload-list col-group",
-        staticStyle: { "margin-top": "20px" },
-      },
-      _vm._l(_vm.sortedFiles, function (file, index) {
-        return _c("li", { key: index }, [
-          _c("div", { staticClass: "img-box" }, [
-            _c("img", { attrs: { src: file.img ? file.img : "", alt: "" } }),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "del",
-              attrs: { type: "button" },
-              on: {
-                click: function ($event) {
-                  return _vm.remove(index)
+    _vm.defaultFiles && _vm.files.length === 0
+      ? _c(
+          "ul",
+          {
+            staticClass: "upload-list col-group",
+            staticStyle: { "margin-top": "20px" },
+          },
+          _vm._l(_vm.defaultFiles, function (file, index) {
+            return _c("li", { key: index }, [
+              _c("div", { staticClass: "img-box" }, [
+                _c("img", { attrs: { src: file.url, alt: "" } }),
+              ]),
+            ])
+          }),
+          0
+        )
+      : _c(
+          "ul",
+          {
+            staticClass: "upload-list col-group",
+            staticStyle: { "margin-top": "20px" },
+          },
+          _vm._l(_vm.files, function (file, index) {
+            return _c("li", { key: index }, [
+              _c("div", { staticClass: "img-box" }, [
+                _c("img", {
+                  attrs: { src: file.img ? file.img : "", alt: "" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "del",
+                  on: {
+                    click: function ($event) {
+                      return _vm.remove(index)
+                    },
+                  },
                 },
-              },
-            },
-            [_c("i", { staticClass: "xi-close" })]
-          ),
-        ])
-      }),
-      0
-    ),
+                [_c("i", { staticClass: "xi-close" })]
+              ),
+            ])
+          }),
+          0
+        ),
   ])
 }
 var staticRenderFns = []
@@ -57177,6 +56971,8 @@ var render = function () {
             ? _c("div", { staticClass: "mb-login" }, [
                 _c("a", { attrs: { href: "/login" } }, [_vm._v("login")]),
                 _vm._v(" "),
+                _c("a", { attrs: { href: "/datings" } }, [_vm._v("mypage")]),
+                _vm._v(" "),
                 _c("a", { attrs: { href: "/register" } }, [_vm._v("sign in")]),
               ])
             : _c("div", { staticClass: "mb-login" }, [
@@ -57187,13 +56983,26 @@ var render = function () {
           _vm._v(" "),
           _vm._m(7),
           _vm._v(" "),
-          _vm._m(8),
+          _c("div", { staticClass: "sns-wrap-mb" }, [
+            _c("a", { staticClass: "logout-btn", attrs: { href: "/logout" } }, [
+              _vm._v("logout"),
+              _vm.$page.props.user
+                ? _c("i", { staticClass: "xi-log-out" })
+                : _vm._e(),
+            ]),
+            _vm._v(" "),
+            _vm._m(8),
+            _vm._v(" "),
+            _vm._m(9),
+            _vm._v(" "),
+            _vm._m(10),
+          ]),
           _vm._v(" "),
-          _vm._m(9),
+          _vm._m(11),
         ]),
       ]),
       _vm._v(" "),
-      _vm._m(10),
+      _vm._m(12),
     ]),
   ])
 }
@@ -57470,45 +57279,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sns-wrap-mb" }, [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://www.instagram.com/insa.official_/",
-            target: "_blank",
-          },
-        },
-        [_c("i", { staticClass: "insta xi-instagram" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://www.youtube.com/insa_official",
-            target: "_blank",
-          },
-        },
-        [_c("i", { staticClass: "utb youtube xi-youtube-play" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        { attrs: { href: "https://pf.kakao.com/_kvwsxj", target: "_blank" } },
-        [_c("i", { staticClass: "kakao speech xi-speech" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://blog.naver.com/insa_official",
-            target: "_blank",
-          },
-        },
-        [_c("i", { staticClass: "sns-icon naver xi-naver" })]
-      ),
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("i", { staticClass: "utb youtube xi-youtube-play" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("i", { staticClass: "kakao speech xi-speech" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("i", { staticClass: "sns-icon naver xi-naver" }),
     ])
   },
   function () {
@@ -57647,16 +57435,12 @@ var render = function () {
         staticClass: "user-photo",
         style:
           "background-image:url(" +
-          (_vm.$page.props.user.data.img
-            ? _vm.$page.props.user.data.img.url
-            : "") +
+          (_vm.user.img ? _vm.user.img.url : "") +
           "); background-repeat:no-repeat; background-size:100%; background-position:center;",
       }),
       _vm._v(" "),
       _c("p", { staticClass: "user-name" }, [
-        _vm._v(
-          "\n            " + _vm._s(_vm.$page.props.user.name) + "\n        "
-        ),
+        _vm._v("\n            " + _vm._s(_vm.user.name) + "\n        "),
       ]),
       _vm._v(" "),
       _c("a", { staticClass: "edit-btn", attrs: { href: "/users/edit" } }, [
@@ -57890,7 +57674,7 @@ var render = function () {
     { staticClass: "popup-form chat-form", attrs: { id: "wrap" } },
     [
       _c("div", { staticClass: "popup-header" }, [
-        _c("p", [_vm._v(_vm._s(_vm.partner(_vm.chat.dating).displayName))]),
+        _c("p", [_vm._v(_vm._s(_vm.partner(_vm.chat.dating).name))]),
         _vm._v(" "),
         _c("i", { staticClass: "xi-close", on: { click: _vm.back } }),
       ]),
@@ -61269,75 +61053,43 @@ var render = function () {
             { staticClass: "review-list col-group" },
             _vm._l(_vm.items.data, function (item) {
               return _c("li", { key: item.id, staticClass: "review-box" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.move(item)
-                      },
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "bg-img" }, [
-                      _c("img", {
-                        attrs: { src: item.img ? item.img.url : "", alt: "" },
-                      }),
+                _c("a", { attrs: { href: "/datingReviews/" + item.id } }, [
+                  _c("div", { staticClass: "bg-img" }, [
+                    _c("img", {
+                      attrs: { src: item.img ? item.img.url : "", alt: "" },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "txt-box" }, [
+                    _c("ul", { staticClass: "user-info col-group" }, [
+                      _c("li", [_vm._v(_vm._s(item.sex))]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v(_vm._s(item.age))]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v(_vm._s(item.job))]),
                     ]),
                     _vm._v(" "),
-                    item.platform === "INSTAGRAM"
-                      ? _c("span", { staticClass: "sns-badge" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "/images/sns-icon-insta.png",
-                              alt: "",
-                            },
-                          }),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    item.platform === "NAVER"
-                      ? _c("span", { staticClass: "sns-badge" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "/images/sns-icon-blog.png",
-                              alt: "",
-                            },
-                          }),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "txt-box" }, [
-                      _c("ul", { staticClass: "user-info col-group" }, [
-                        _c("li", [_vm._v(_vm._s(item.sex))]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v(_vm._s(item.age))]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v(_vm._s(item.job))]),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "title" }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(item.title) +
-                            "\n                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(
-                              item.description.replace(/<\/?[^>]+>/gi, " ")
-                            ) +
-                            "\n                            "
-                        ),
-                      ]),
+                    _c("p", { staticClass: "title" }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(item.title) +
+                          "\n                            "
+                      ),
                     ]),
-                  ]
-                ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "txt" }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(
+                            item.description.replace(/<\/?[^>]+>/gi, " ")
+                          ) +
+                          "\n                            "
+                      ),
+                    ]),
+                  ]),
+                ]),
               ])
             }),
             0
@@ -61403,6 +61155,14 @@ var staticRenderFns = [
       _c("h2", { staticClass: "sub-title" }, [
         _vm._v("\n                    소개팅 후기\n                "),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "sns-badge" }, [
+      _c("img", { attrs: { src: "/images/sns-icon-insta.png", alt: "" } }),
     ])
   },
 ]
@@ -61590,16 +61350,14 @@ var render = function () {
                       _c("p", { staticClass: "user-name" }, [
                         _vm._v(
                           "\n                                    " +
-                            _vm._s(_vm.partner(dating).displayName) +
+                            _vm._s(_vm.partner(dating).nickname) +
                             "\n                                 "
                         ),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-info col-group" }, [
                         _c("p", [
-                          _vm._v(
-                            _vm._s(_vm.partner(dating).formatBirth) + "년생"
-                          ),
+                          _vm._v(_vm._s(_vm.partner(dating).birth) + "년생"),
                         ]),
                         _vm._v(
                           "\n                                    /\n                                    "
@@ -61665,8 +61423,7 @@ var render = function () {
                         dating.ongoing &&
                         !dating.check_address &&
                         _vm.user.sex === "남자" &&
-                        dating.city1 &&
-                        !dating.address_name
+                        dating.city1
                           ? _c(
                               "a",
                               {
@@ -61759,6 +61516,12 @@ var render = function () {
                               {
                                 staticClass: "date-btn active",
                                 attrs: { href: "#" },
+                                on: {
+                                  click: function ($event) {
+                                    $event.preventDefault()
+                                    _vm.targetSuggestAddressDating = dating
+                                  },
+                                },
                               },
                               [_vm._v("일정도착")]
                             )
@@ -61771,18 +61534,11 @@ var render = function () {
                     ? _c(
                         "a",
                         {
-                          class:
-                            "chat-btn " +
-                            (dating.already_feedback ? "" : "active"),
+                          staticClass: "chat-btn active",
                           attrs: { href: "#" },
                           on: {
                             click: function ($event) {
-                              $event.preventDefault()
-                              return function () {
-                                !dating.already_feedback
-                                  ? (_vm.targetFeedbackDating = dating)
-                                  : ""
-                              }.apply(null, arguments)
+                              _vm.targetFeedbackDating = dating
                             },
                           },
                         },
@@ -61905,9 +61661,7 @@ var render = function () {
                           _c("p", { staticClass: "user-name" }, [
                             _vm._v(
                               "\n                                        " +
-                                _vm._s(
-                                  _vm.partner(_vm.targetDating).displayName
-                                ) +
+                                _vm._s(_vm.partner(_vm.targetDating).nickname) +
                                 "\n                                    "
                             ),
                           ]),
@@ -61915,9 +61669,8 @@ var render = function () {
                           _c("div", { staticClass: "user-info-1 col-group" }, [
                             _c("p", [
                               _vm._v(
-                                _vm._s(
-                                  _vm.partner(_vm.targetDating).formatBirth
-                                ) + "년생"
+                                _vm._s(_vm.partner(_vm.targetDating).birth) +
+                                  "년생"
                               ),
                             ]),
                             _vm._v(
@@ -62074,7 +61827,7 @@ var render = function () {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _vm.activeGuide && _vm.user.sex === "여자"
+          _vm.activeGuide
             ? _c("div", { staticClass: "modal-overley go open" }, [
                 _c("div", { staticClass: "modal-wrap" }, [
                   _c(
@@ -63051,8 +62804,7 @@ var render = function () {
                           _c("p", [
                             _vm._v(
                               _vm._s(
-                                _vm.partner(_vm.targetFeedbackDating)
-                                  .formatBirth
+                                _vm.partner(_vm.targetFeedbackDating).birth
                               ) + "년생"
                             ),
                           ]),
@@ -64724,281 +64476,226 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", { staticClass: "mainpage" }, [
-    _vm.activePop && _vm.pops.data.length > 0
-      ? _c("div", { staticClass: "pop-parent", attrs: { id: "popParent" } }, [
-          _c("div", { staticClass: "pop" }, [
-            _c("div", { staticClass: "swiper" }, [
-              _c("div", { staticClass: "swiper-container" }, [
-                _c(
-                  "div",
-                  { staticClass: "swiper-wrapper" },
-                  _vm._l(_vm.pops.data, function (pop) {
-                    return _c(
-                      "a",
-                      {
-                        key: pop.id,
-                        staticClass: "swiper-slide",
-                        attrs: { href: pop.url ? pop.url : "#" },
-                      },
-                      [
-                        _c("div", { staticClass: "m-ratioBox-wrap" }, [
-                          _c("div", { staticClass: "m-ratioBox" }, [
-                            _c("img", {
-                              attrs: { src: pop.img ? pop.img.url : "" },
-                            }),
-                          ]),
-                        ]),
-                      ]
-                    )
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _vm._m(0),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "pop-btns" }, [
-                _c("input", {
-                  attrs: {
-                    type: "checkbox",
-                    name: "oneday",
-                    id: "oneday_check",
-                  },
-                  on: {
-                    click: function ($event) {
-                      return _vm.closeToday()
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    attrs: { for: "oneday_check" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.closeToday()
-                      },
-                    },
-                  },
-                  [
-                    _c("span", { staticClass: "icon" }),
-                    _vm._v(" 오늘하루 보지 않기\n                    "),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(1),
-              ]),
-            ]),
-          ]),
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8),
-    _vm._v(" "),
-    _vm._m(9),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-control" }, [
-      _c("div", { staticClass: "swiper-pagination" }),
-      _vm._v(" "),
-      _c("button", { staticClass: "swiper-btn-control" }, [
-        _c(
-          "div",
-          {
-            staticClass: "icon_stop",
-            attrs: { title: "슬라이더 자동재생 멈춤" },
-          },
-          [
-            _c("span", { staticClass: "stick stick01" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "stick stick02" }),
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", {
-          staticClass: "icon_play",
-          attrs: { title: "슬라이더 자동재생 시작" },
-        }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn-toggle" }, [
-      _c("i", { staticClass: "xi-angle-up", staticStyle: { color: "#fff" } }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-banner" }, [
-      _c("div", { staticClass: "main-banner-box" }, [
-        _c("div", { staticClass: "subpage-under" }, [
-          _c("span", { staticClass: "subpage-under-text" }, [
-            _vm._v("The most important thing in life is love"),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "banner-contents" }, [
-          _c("div", { staticClass: "banner-title" }, [
-            _c("h2", { staticClass: "col-group pc" }, [
-              _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              인\n            "),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                _vm._v(
-                  "\n              생에서 가장 중요한 것은  \n            "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              사\n            "),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                _vm._v("\n              랑이다\n            "),
-              ]),
+    return _c("main", { staticClass: "mainpage" }, [
+      _c("div", { staticClass: "main-banner" }, [
+        _c("div", { staticClass: "main-banner-box" }, [
+          _c("div", { staticClass: "subpage-under" }, [
+            _c("span", { staticClass: "subpage-under-text" }, [
+              _vm._v("The most important thing in life is love"),
             ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb" }, [
-              _c("h2", { staticClass: "col-group col-group01" }, [
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "banner-contents" }, [
+            _c("div", { staticClass: "banner-title" }, [
+              _c("h2", { staticClass: "col-group pc" }, [
                 _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                인\n              "),
+                  _vm._v("\n              인\n            "),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                  _vm._v("\n                생에서 가장\n              "),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("h2", { staticClass: "col-group" }, [
-                _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                  _vm._v("\n                중요한 것은  \n              "),
+                  _vm._v(
+                    "\n              생에서 가장 중요한 것은  \n            "
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                사\n              "),
+                  _vm._v("\n              사\n            "),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "toggle_txt toggle_txt3" }, [
-                  _vm._v("\n                랑이다\n              "),
+                _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
+                  _vm._v("\n              랑이다\n            "),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb" }, [
+                _c("h2", { staticClass: "col-group col-group01" }, [
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("\n                인\n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
+                    _vm._v("\n                생에서 가장\n              "),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "col-group" }, [
+                  _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
+                    _vm._v("\n                중요한 것은  \n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("\n                사\n              "),
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "toggle_txt toggle_txt3" }, [
+                    _vm._v("\n                랑이다\n              "),
+                  ]),
                 ]),
               ]),
             ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "banner-text" }, [
+              _vm._v("사랑을 선물합니다.\n                    "),
+              _c("br"),
+              _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "join-button", attrs: { href: "/register" } },
+              [
+                _c("span", [_vm._v("가입신청")]),
+                _c("i", { staticClass: "xi-long-arrow-right" }),
+              ]
+            ),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "banner-text" }, [
-            _vm._v("사랑을 선물합니다.\n                    "),
-            _c("br"),
-            _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "join-button", attrs: { href: "/register" } },
-            [
-              _c("span", [_vm._v("가입신청")]),
-              _c("i", { staticClass: "xi-long-arrow-right" }),
-            ]
-          ),
+          _c("img", {
+            staticClass: "main-visual",
+            attrs: { src: "/images/main-visual.png", alt: "main-visual" },
+          }),
         ]),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "main-visual",
-          attrs: { src: "/images/main-visual.png", alt: "main-visual" },
-        }),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "main-section sec-2",
-        attrs: {
-          "data-aos": "fade-left",
-          "data-aos-duration": "3000",
-          "data-aos-anchor-placement": "top-bottom",
-          "data-aos-delay": "2",
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "main-section sec-2",
+          attrs: {
+            "data-aos": "fade-left",
+            "data-aos-duration": "3000",
+            "data-aos-anchor-placement": "top-bottom",
+            "data-aos-delay": "2",
+          },
         },
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "main-date", attrs: { "aos-data": "left" } },
-            [
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              { staticClass: "main-date", attrs: { "aos-data": "left" } },
+              [
+                _c("div", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/main-date.png", alt: "main-date" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "left" }, [
+                  _c("span", { staticClass: "left-title" }, [
+                    _c("span", { staticClass: "text-style-1" }, [_vm._v("D")]),
+                    _vm._v("ate"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "left-content" }, [
+                    _vm._v(
+                      "\n                        조건, 성향 등을 고려해서 매칭해주는 서비스로"
+                    ),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-style-1" }, [
+                      _vm._v("'원하는 만남'"),
+                    ]),
+                    _vm._v("의 기회를 제공합니다.\n                    "),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "top-roadMap" }, [
+                    _c("ul", { staticClass: "roadmap roadmap-list-1" }, [
+                      _c("li", [_vm._v("사전 상담")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("프로필 작성")]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "full" }, [_vm._v("소개팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("프로필 교환")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "roadmap-line-box" }),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "roadmap roadmap-list-2" }, [
+                      _c("li", [_vm._v("컨설팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("피드백")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("소개팅")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("일정 조율")]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "main-button style1",
+                      attrs: { href: "/datingProducts" },
+                    },
+                    [
+                      _c("span", [_vm._v("신청하기")]),
+                      _c("i", { staticClass: "xi-long-arrow-right" }),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "main-section sec-1",
+          attrs: {
+            "data-aos": "fade-right",
+            "data-aos-duration": "3000",
+            "data-aos-anchor-placement": "top-bottom",
+            "data-aos-delay": "2",
+          },
+        },
+        [
+          _c("div", { staticClass: " container" }, [
+            _c("div", { staticClass: "main-party" }, [
               _c("div", { staticClass: "img-wrap" }, [
                 _c("img", {
-                  attrs: { src: "/images/main-date.png", alt: "main-date" },
+                  attrs: { src: "/images/main-party.png", alt: "main-party" },
                 }),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "left" }, [
                 _c("span", { staticClass: "left-title" }, [
-                  _c("span", { staticClass: "text-style-1" }, [_vm._v("D")]),
-                  _vm._v("ate"),
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("P")]),
+                  _vm._v("arty"),
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "left-content" }, [
                   _vm._v(
-                    "\n                        조건, 성향 등을 고려해서 매칭해주는 소개팅 서비스로"
+                    "\n                        연령과 성비를 조율한 파티 서비스로"
                   ),
                   _c("br"),
                   _vm._v(" "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("'원하는 만남'"),
+                    _vm._v("'자연스러운 만남'"),
                   ]),
-                  _vm._v("의 기회를 제공합니다.\n                    "),
+                  _vm._v(" 의 기회를 제공합니다\n                    "),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "top-roadMap" }, [
-                  _c("ul", { staticClass: "roadmap roadmap-list-1" }, [
-                    _c("li", [_vm._v("사전 상담")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("프로필 작성")]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "full" }, [_vm._v("소개팅")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("프로필 교환")]),
-                  ]),
+                _c("div", { staticClass: "left-roadMap" }, [
+                  _c("span", { staticClass: "roadmap-line" }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "roadmap-line-box" }),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "roadmap roadmap-list-2" }, [
-                    _c("li", [_vm._v("컨설팅")]),
+                  _c("ul", { staticClass: "roadmap-list" }, [
+                    _c("li", [_vm._v("파티신청")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("피드백")]),
+                    _c("li", [_vm._v("신원인증")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("소개팅")]),
+                    _c("li", [_vm._v("참석권 수령")]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("일정 조율")]),
+                    _c("li", { staticClass: "full" }, [_vm._v("파티참석")]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -65006,7 +64703,7 @@ var staticRenderFns = [
                   "a",
                   {
                     staticClass: "main-button style1",
-                    attrs: { href: "/datingProducts" },
+                    attrs: { href: "/partyProducts" },
                   },
                   [
                     _c("span", [_vm._v("신청하기")]),
@@ -65014,456 +64711,377 @@ var staticRenderFns = [
                   ]
                 ),
               ]),
-            ]
-          ),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "main-section sec-1",
-        attrs: {
-          "data-aos": "fade-right",
-          "data-aos-duration": "3000",
-          "data-aos-anchor-placement": "top-bottom",
-          "data-aos-delay": "2",
-        },
-      },
-      [
-        _c("div", { staticClass: " container" }, [
-          _c("div", { staticClass: "main-party" }, [
-            _c("div", { staticClass: "img-wrap" }, [
-              _c("img", {
-                attrs: { src: "/images/main-party.png", alt: "main-party" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "left" }, [
-              _c("span", { staticClass: "left-title" }, [
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("P")]),
-                _vm._v("arty"),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "left-content" }, [
-                _vm._v(
-                  "\n                        연령과 성비를 조율한 파티 서비스로"
-                ),
-                _c("br"),
-                _vm._v(" "),
-                _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("'자연스러운 만남'"),
-                ]),
-                _vm._v(" 의 기회를 제공합니다\n                    "),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "left-roadMap" }, [
-                _c("span", { staticClass: "roadmap-line" }),
-                _vm._v(" "),
-                _c("ul", { staticClass: "roadmap-list" }, [
-                  _c("li", [_vm._v("파티신청")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("신원인증")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("참석권 수령")]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "full" }, [_vm._v("파티참석")]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "main-button style1",
-                  attrs: { href: "/partyProducts" },
-                },
-                [
-                  _c("span", [_vm._v("신청하기")]),
-                  _c("i", { staticClass: "xi-long-arrow-right" }),
-                ]
-              ),
             ]),
           ]),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-4" }, [
-      _c("div", { staticClass: "sec4-container" }, [
-        _c("div", { staticClass: "main-content" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "img-wrap main-talk" }, [
-              _c("img", { attrs: { src: "/images/main-talk.png", alt: "" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "img-wrap main-talk mb" }, [
-              _c("img", { attrs: { src: "/images/main-talk-m.png", alt: "" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "warning-container mb" }, [
-              _c("div", { staticClass: "warning-img" }, [
-                _c("img", { attrs: { src: "/images/main-warning.png" } }),
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-4" }, [
+        _c("div", { staticClass: "sec4-container" }, [
+          _c("div", { staticClass: "main-content" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "img-wrap main-talk" }, [
+                _c("img", { attrs: { src: "/images/main-talk.png", alt: "" } }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "scroll-img" }, [
-                _c("img", { attrs: { src: "/images/scroll.png", alt: "" } }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "warning-container mb" }, [
-              _c("div", { staticClass: "swiper-container" }, [
-                _c("div", { staticClass: "swiper-wrapper" }, [
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-01.png", alt: "" },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-02.png", alt: "" },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "swiper-slide" }, [
-                    _c("img", {
-                      attrs: { src: "/images/main-table-03.png", alt: "" },
-                    }),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "content-bg pc" }, [
-              _c("div", { staticClass: "crown-wrap type1" }, [
+              _c("div", { staticClass: "img-wrap main-talk mb" }, [
                 _c("img", {
-                  staticClass: "crown1",
-                  attrs: { src: "/images/crown1.png", alt: "" },
+                  attrs: { src: "/images/main-talk-m.png", alt: "" },
                 }),
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "warning-container mb" }, [
+                _c("div", { staticClass: "warning-img" }, [
+                  _c("img", { attrs: { src: "/images/main-warning.png" } }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "scroll-img" }, [
+                  _c("img", { attrs: { src: "/images/scroll.png", alt: "" } }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "warning-container mb" }, [
+                _c("div", { staticClass: "swiper-container" }, [
+                  _c("div", { staticClass: "swiper-wrapper" }, [
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-01.png", alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-02.png", alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "swiper-slide" }, [
+                      _c("img", {
+                        attrs: { src: "/images/main-table-03.png", alt: "" },
+                      }),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "content-bg pc" }, [
+                _c("div", { staticClass: "crown-wrap type1" }, [
+                  _c("img", {
+                    staticClass: "crown1",
+                    attrs: { src: "/images/crown1.png", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "content-container" }, [
+                  _c("div", { staticClass: "banner-title btm" }, [
+                    _c("h2", { staticClass: "content-title col-group pc" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    인\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "toggle_txt contenttxt1" }, [
+                        _vm._v(
+                          "\n                    생에서 가장 중요한 것은  \n                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    사\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "toggle_txt contenttxt2" }, [
+                        _vm._v(
+                          "\n                    랑이다\n                  "
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "content-sub pc" }, [
+                  _vm._v("가장 친한 친구가 되어 찾아드립니다."),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container mb" }, [
               _c("div", { staticClass: "content-container" }, [
-                _c("div", { staticClass: "banner-title btm" }, [
-                  _c("h2", { staticClass: "content-title col-group pc" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt contenttxt1" }, [
-                      _vm._v(
-                        "\n                    생에서 가장 중요한 것은  \n                  "
+                _c("div", { staticClass: "crown1-img" }, [
+                  _c("img", {
+                    staticClass: "crown1",
+                    attrs: { src: "/images/crown1.png", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "banner-title" }, [
+                  _c("div", { staticClass: "mb" }, [
+                    _c("h2", { staticClass: "col-group col-group01" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    인\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "toggle_txt toggle_txt1 btm" },
+                        [
+                          _vm._v(
+                            "\n                    생에서 가장 중요한 것은\n                  "
+                          ),
+                        ]
                       ),
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt contenttxt2" }, [
-                      _vm._v(
-                        "\n                    랑이다\n                  "
+                    _c("h2", { staticClass: "col-group" }, [
+                      _c("span", { staticClass: "text-style-1" }, [
+                        _vm._v("\n                    사\n                  "),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "toggle_txt toggle_txt3 btm" },
+                        [
+                          _vm._v(
+                            "\n                    랑이다\n                  "
+                          ),
+                        ]
                       ),
                     ]),
                   ]),
                 ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "content-sub mb" }, [
+                  _vm._v("가장 친한 친구가 되어 찾아드립니다."),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-soge",
+                    attrs: { href: "/datingProducts" },
+                  },
+                  [_vm._v("올인원 프라이빗 소개팅")]
+                ),
               ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "content-sub pc" }, [
-                _vm._v("가장 친한 친구가 되어 찾아드립니다."),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "button-soge",
-                  attrs: { href: "/datingProducts" },
-                },
-                [_vm._v("올인원 프라이빗 소개팅")]
-              ),
             ]),
           ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "container mb" }, [
-            _c("div", { staticClass: "content-container" }, [
-              _c("div", { staticClass: "crown1-img" }, [
-                _c("img", {
-                  staticClass: "crown1",
-                  attrs: { src: "/images/crown1.png", alt: "" },
-                }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-5" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-service" }, [
+              _c("div", { staticClass: "service-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", {
+                    staticClass: "crown5",
+                    attrs: { src: "/images/crown5.svg", alt: "" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-1" }, [
+                  _vm._v("All IN ONE"),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-2" }, [
+                  _vm._v("PRIVATE"),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "title-style-3" }, [
+                  _vm._v("SERVICE"),
+                ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "banner-title" }, [
-                _c("div", { staticClass: "mb" }, [
-                  _c("h2", { staticClass: "col-group col-group01" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
+              _c("div", { staticClass: "service-explan" }, [
+                _c("pre", [
+                  _vm._v(
+                    "누군가 만날 준비된 당신.\n          쉽게 가볍게 만나기엔 어려운 당신.\n          비싼 돈을 지불하기엔 소중한 당신.\n\n          '인사'는 준비된 분들을 위한 서비스입니다.\n          인사는 나를 지키면서, 나를 위한 1:1 프리미엄,\n          프라이빗 서비스를 제공하는 "
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v(
+                    " 온·오프라인 융합 서비스입니다.\n\n          모든 것이 디지털화된 지금,"
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v(
+                    "  절대 디지털화 할 수 없는 것이 있습니다.\n          바로 사람과의 관계입니다.\n\n          더이상 가벼운 만남으로 감정소모 하지 않아도,\n          고가의 비용을 지불하지 않아도 됩니다.\n          최고의 고객서비스를 제공하여"
+                  ),
+                  _c("br", { staticClass: "mb" }),
+                  _vm._v("  최고의 만족도를 만들어 드리겠습니다."),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-6" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-choice" }, [
+              _c("div", { staticClass: "choice-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("인사를 "),
+                  _c("br"),
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("선택")]),
+                  _vm._v("해야하는 이유"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "choice-container" }, [
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-01.png", alt: "reason1" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-02.png", alt: "reason1" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "img-wrap" }, [
+                  _c("img", {
+                    attrs: { src: "/images/reason-03.png", alt: "reason1" },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "line-wrap" }, [
+                _c("img", {
+                  staticClass: "line hidden-sm",
+                  attrs: { src: "/images/line.png", alt: "" },
+                }),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-7" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row-group" }, [
+            _c("div", { staticClass: "main-only" }, [
+              _c("div", { staticClass: "only-title" }, [
+                _c("div", { staticClass: "crown-wrap" }, [
+                  _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("span", { staticClass: "text-style-1" }, [_vm._v("오직")]),
+                  _c("br"),
+                  _vm._v("인사에만 있는 것"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "only-container" }, [
+                _c("ul", { staticClass: "only-list" }, [
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-1" }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt toggle_txt1 btm" }, [
-                      _vm._v(
-                        "\n                    생에서 가장 중요한 것은\n                  "
-                      ),
-                    ]),
+                    _c("span", { staticClass: "cirb b-1" }, [_vm._v("01")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("진정성")]),
+                    _vm._v(" 있는 만남을 원하는 사람만 가입"),
                   ]),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "col-group" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
-                    ]),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-2" }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "toggle_txt toggle_txt3 btm" }, [
-                      _vm._v(
-                        "\n                    랑이다\n                  "
-                      ),
-                    ]),
+                    _c("span", { staticClass: "cirb b-2" }, [_vm._v("02")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("대면 상담")]),
+                    _vm._v("으로 철저한 검증\n                            "),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-3" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-3" }, [_vm._v("03")]),
+                    _vm._v("\n                                남녀 "),
+                    _c("b", [_vm._v("동일한 비용")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-4" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-4" }, [_vm._v("04")]),
+                    _vm._v("\n                                디테일한 "),
+                    _c("b", [_vm._v("매칭 회의")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-5" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-5" }, [_vm._v("05")]),
+                    _vm._v(
+                      "\n                                매너, 호감도를 체크하면서 "
+                    ),
+                    _c("b", [_vm._v("사후관리")]),
+                    _vm._v("까지 책임\n                            "),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-6" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-6" }, [_vm._v("06")]),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("알바 회원 없음")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("span", { staticClass: "cir s-7" }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cirb b-7" }, [_vm._v("07")]),
+                    _vm._v(
+                      "\n                                온 · 오프라인 서비스 동시 운영으로 "
+                    ),
+                    _c("b", [_vm._v("신뢰감")]),
                   ]),
                 ]),
               ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "content-sub mb" }, [
-                _vm._v("가장 친한 친구가 되어 찾아드립니다."),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "button-soge",
-                  attrs: { href: "/datingProducts" },
-                },
-                [_vm._v("올인원 프라이빗 소개팅")]
-              ),
             ]),
           ]),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-5" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-service" }, [
-            _c("div", { staticClass: "service-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", {
-                  staticClass: "crown5",
-                  attrs: { src: "/images/crown5.svg", alt: "" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-1" }, [
-                _vm._v("All IN ONE"),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-2" }, [_vm._v("PRIVATE")]),
-              _vm._v(" "),
-              _c("span", { staticClass: "title-style-3" }, [_vm._v("SERVICE")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-section sec-8" }, [
+        _c("div", { staticClass: "main-footer container" }, [
+          _c("div", { staticClass: "main-footer-content" }, [
+            _c("p", [
+              _vm._v("사람은 만나봐야 알 수 있고,"),
+              _c("br"),
+              _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
+              _c("br"),
+              _vm._v("\n                    사랑에 더 이상 우연은 없어"),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "service-explan" }, [
-              _c("pre", [
-                _vm._v(
-                  "누군가 만날 준비된 당신.\n          쉽게 가볍게 만나기엔 어려운 당신.\n          비싼 돈을 지불하기엔 소중한 당신.\n\n          '인사'는 준비된 분들을 위한 서비스입니다.\n          인사는 나를 지키면서, 나를 위한 1:1 프리미엄,\n          프라이빗 서비스를 제공하는 "
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v(
-                  " 온·오프라인 융합 서비스입니다.\n\n          모든 것이 디지털화된 지금,"
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v(
-                  "  절대 디지털화 할 수 없는 것이 있습니다.\n          바로 사람과의 관계입니다.\n\n          더이상 가벼운 만남으로 감정소모 하지 않아도,\n          고가의 비용을 지불하지 않아도 됩니다.\n          최고의 고객서비스를 제공하여"
-                ),
-                _c("br", { staticClass: "mb" }),
-                _vm._v("  최고의 만족도를 만들어 드리겠습니다."),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-6" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-choice" }, [
-            _c("div", { staticClass: "choice-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
-              ]),
+            _c("a", { attrs: { href: "/register" } }, [
+              _c("p", { staticClass: "main-footer-btn" }, [_vm._v("가입신청")]),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("인사를 "),
-                _c("br"),
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("선택")]),
-                _vm._v("해야하는 이유"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "choice-container" }, [
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-01.png", alt: "reason1" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-02.png", alt: "reason1" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "img-wrap" }, [
-                _c("img", {
-                  attrs: { src: "/images/reason-03.png", alt: "reason1" },
-                }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "line-wrap" }, [
               _c("img", {
-                staticClass: "line hidden-sm",
-                attrs: { src: "/images/line.png", alt: "" },
+                staticClass: "arrow-off",
+                attrs: { src: "/images/arrow.png", alt: "arrow-on" },
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "arrow-on",
+                attrs: { src: "/images/arrow-on.png", alt: "arrow-on" },
               }),
             ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-7" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row-group" }, [
-          _c("div", { staticClass: "main-only" }, [
-            _c("div", { staticClass: "only-title" }, [
-              _c("div", { staticClass: "crown-wrap" }, [
-                _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("span", { staticClass: "text-style-1" }, [_vm._v("오직")]),
-                _c("br"),
-                _vm._v("인사에만 있는 것"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "only-container" }, [
-              _c("ul", { staticClass: "only-list" }, [
-                _c("li", [
-                  _c("span", { staticClass: "cir s-1" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-1" }, [_vm._v("01")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("진정성")]),
-                  _vm._v(" 있는 만남을 원하는 사람만 가입"),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-2" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-2" }, [_vm._v("02")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("대면 상담")]),
-                  _vm._v("으로 철저한 검증\n                            "),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-3" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-3" }, [_vm._v("03")]),
-                  _vm._v("\n                                남녀 "),
-                  _c("b", [_vm._v("동일한 비용")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-4" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-4" }, [_vm._v("04")]),
-                  _vm._v("\n                                디테일한 "),
-                  _c("b", [_vm._v("매칭 회의")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-5" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-5" }, [_vm._v("05")]),
-                  _vm._v(
-                    "\n                                매너, 호감도를 체크하면서 "
-                  ),
-                  _c("b", [_vm._v("사후관리")]),
-                  _vm._v("까지 책임\n                            "),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-6" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-6" }, [_vm._v("06")]),
-                  _vm._v(" "),
-                  _c("b", [_vm._v("알바 회원 없음")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("span", { staticClass: "cir s-7" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "cirb b-7" }, [_vm._v("07")]),
-                  _vm._v(
-                    "\n                                온 · 오프라인 서비스 동시 운영으로 "
-                  ),
-                  _c("b", [_vm._v("신뢰감")]),
-                ]),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-section sec-8" }, [
-      _c("div", { staticClass: "main-footer container" }, [
-        _c("div", { staticClass: "main-footer-content" }, [
-          _c("p", [
-            _vm._v("사람은 만나봐야 알 수 있고,"),
-            _c("br"),
-            _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
-            _c("br"),
-            _vm._v("\n                    사랑에 더 이상 우연은 없어"),
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [
-            _c("p", { staticClass: "main-footer-btn" }, [_vm._v("가입신청")]),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "arrow-off",
-              attrs: { src: "/images/arrow.png", alt: "arrow-on" },
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "arrow-on",
-              attrs: { src: "/images/arrow-on.png", alt: "arrow-on" },
-            }),
           ]),
         ]),
       ]),
@@ -65582,7 +65200,7 @@ var render = function () {
                                     ),
                                   ]),
                                   _vm._v(
-                                    "원\n                                        "
+                                    "원\n                                    "
                                   ),
                                 ]),
                               ]),
@@ -65615,6 +65233,108 @@ var render = function () {
                                         _vm.$set(
                                           _vm.refundForm,
                                           "reason_request",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌은행"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.bank,
+                                        expression: "refundForm.bank",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.bank },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "bank",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌번호"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.account,
+                                        expression: "refundForm.account",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.account },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "account",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌 예금주"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.owner,
+                                        expression: "refundForm.owner",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.owner },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "owner",
                                           $event.target.value
                                         )
                                       },
@@ -65653,7 +65373,7 @@ var render = function () {
                                     ),
                                   ]),
                                   _vm._v(
-                                    "원\n                                        "
+                                    "원\n                                    "
                                   ),
                                 ]),
                               ]),
@@ -65693,6 +65413,108 @@ var render = function () {
                                   }),
                                 ]),
                               ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌은행"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.bank,
+                                        expression: "refundForm.bank",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.bank },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "bank",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌번호"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.account,
+                                        expression: "refundForm.account",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.account },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "account",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불계좌 예금주"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.refundForm.owner,
+                                        expression: "refundForm.owner",
+                                      },
+                                    ],
+                                    staticClass: "edit",
+                                    attrs: { name: "" },
+                                    domProps: { value: _vm.refundForm.owner },
+                                    on: {
+                                      input: function ($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.refundForm,
+                                          "owner",
+                                          $event.target.value
+                                        )
+                                      },
+                                    },
+                                  }),
+                                ]),
+                              ]),
                             ]
                           ),
                         ]),
@@ -65719,7 +65541,7 @@ var render = function () {
             _c("li", [
               _c("p", { staticClass: "title" }, [
                 _vm._v(
-                  "\n                            사용 이용권\n                        "
+                  "\n                        사용 이용권\n                    "
                 ),
               ]),
               _vm._v(" "),
@@ -65730,9 +65552,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "txt" }, [
                   _vm._v(
-                    "\n                                " +
+                    "\n                            " +
                       _vm._s(_vm.user.count_matching_dating) +
-                      "건\n                            "
+                      "건\n                        "
                   ),
                 ]),
               ]),
@@ -65741,7 +65563,7 @@ var render = function () {
             _c("li", [
               _c("p", { staticClass: "title" }, [
                 _vm._v(
-                  "\n                            남은 이용권\n                        "
+                  "\n                        남은 이용권\n                    "
                 ),
               ]),
               _vm._v(" "),
@@ -65752,9 +65574,9 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "txt" }, [
                   _vm._v(
-                    "\n                                " +
+                    "\n                            " +
                       _vm._s(_vm.user.count_dating) +
-                      "건\n                            "
+                      "건\n                        "
                   ),
                 ]),
               ]),
@@ -65763,7 +65585,7 @@ var render = function () {
             _c("li", [
               _c("p", { staticClass: "title" }, [
                 _vm._v(
-                  "\n                            예약된 파티\n                        "
+                  "\n                        예약된 파티\n                    "
                 ),
               ]),
               _vm._v(" "),
@@ -65781,7 +65603,7 @@ var render = function () {
             _c("li", [
               _c("p", { staticClass: "title" }, [
                 _vm._v(
-                  "\n                            마감된 파티\n                        "
+                  "\n                        마감된 파티\n                    "
                 ),
               ]),
               _vm._v(" "),
@@ -66006,7 +65828,7 @@ var render = function () {
             _vm.orders.data.length === 0
               ? _c("div", { staticClass: "m-empty type01" }, [
                   _vm._v(
-                    "\n                        데이터가 없습니다.\n                    "
+                    "\n                    데이터가 없습니다.\n                "
                   ),
                 ])
               : _vm._e(),
@@ -66061,21 +65883,21 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("h2", { staticClass: "title" }, [
         _vm._v(
-          "\n                                    파티 환불신청서\n                                "
+          "\n                                파티 환불신청서\n                            "
         ),
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "txt" }, [
         _vm._v(
-          "\n                                    참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 "
+          "\n                                참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 "
         ),
         _c("br"),
         _vm._v(
-          "\n                                    아래와 같습니다. 참석 인원 미달되거나 주최측에 의한 "
+          "\n                                아래와 같습니다. 참석 인원 미달되거나 주최측에 의한 "
         ),
         _c("br"),
         _vm._v(
-          "\n                                    이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                "
+          "\n                                이벤트 취소의 경우, 전액 환불 도와드립니다.\n                            "
         ),
       ]),
     ])
@@ -66089,17 +65911,17 @@ var staticRenderFns = [
         _c("p", { staticClass: "title" }, [
           _c("i", { staticClass: "xi-warning" }),
           _vm._v(
-            "\n                                        환불 규정\n                                    "
+            "\n                                    환불 규정\n                                "
           ),
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "txt" }, [
           _vm._v(
-            "\n                                        참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다. "
+            "\n                                    참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다. "
           ),
           _c("br"),
           _vm._v(
-            "\n                                        참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                    "
+            "\n                                    참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                "
           ),
         ]),
       ]),
@@ -66107,7 +65929,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "con-box" }, [
         _c("p", { staticClass: "title" }, [
           _vm._v(
-            "\n                                        개인적인 사유로 취소 신청할 경우\n                                    "
+            "\n                                    개인적인 사유로 취소 신청할 경우\n                                "
           ),
         ]),
         _vm._v(" "),
@@ -66150,13 +65972,13 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("h2", { staticClass: "title" }, [
         _vm._v(
-          "\n                                    소개팅 환불신청서\n                                "
+          "\n                                소개팅 환불신청서\n                            "
         ),
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "txt" }, [
         _vm._v(
-          "\n                                    인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
+          "\n                                인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                            "
         ),
       ]),
     ])
@@ -66170,13 +65992,13 @@ var staticRenderFns = [
         _c("p", { staticClass: "title" }, [
           _c("i", { staticClass: "xi-warning" }),
           _vm._v(
-            "\n                                        환불 규정\n                                    "
+            "\n                                    환불 규정\n                                "
           ),
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "txt" }, [
           _vm._v(
-            "\n                                        인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                    "
+            "\n                                    인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
           ),
         ]),
       ]),
@@ -66193,7 +66015,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "3.서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                                            문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
+              "3.서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                                        문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
             ),
           ]),
           _vm._v(" "),
@@ -66207,31 +66029,31 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                            정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                            산정됩니다.)"
+              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                        정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                        산정됩니다.)"
             ),
           ]),
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "7.프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                                            경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
+              "7.프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                                        경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
             ),
           ]),
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "8.소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                                            있습니다"
+              "8.소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                                        있습니다"
             ),
           ]),
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "9.회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                                            추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                                            다. (단, 기간 연장의 경우 환불은 불가합니다.)"
+              "9.회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                                        추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                                        다. (단, 기간 연장의 경우 환불은 불가합니다.)"
             ),
           ]),
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                            이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
+              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                        이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
             ),
           ]),
           _vm._v(" "),
@@ -66243,7 +66065,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "12.회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                                            위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                                            서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                                            실과 책임은 없습니다."
+              "12.회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                                        위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                                        서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                                        실과 책임은 없습니다."
             ),
           ]),
         ]),
@@ -66359,16 +66181,6 @@ var render = function () {
                 _vm._v(" "),
                 _c("p", { staticClass: "txt" }),
               ])
-            : _vm.order.state === "WAIT"
-            ? _c("div", { staticClass: "title-wrap only" }, [
-                _c("h2", { staticClass: "title" }, [
-                  _vm._v(
-                    "\n                        결제대기\n                    "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "txt" }),
-              ])
             : _c("div", { staticClass: "title-wrap only" }, [
                 _c(
                   "h2",
@@ -66386,46 +66198,6 @@ var render = function () {
                   [_vm._v(_vm._s(_vm.order.reason))]
                 ),
               ]),
-          _vm._v(" "),
-          _vm.order.vbank_num
-            ? _c("div", { staticClass: "m-table-wrap" }, [
-                _c("h3", { staticClass: "m-table-title" }, [
-                  _vm._v(
-                    "가상계좌 입금기한 내 입금완료 시 정상결제처리됩니다."
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("table", { staticClass: "m-table type01" }, [
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("th", [_vm._v("은행명")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.order.vbank_name))]),
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", [_vm._v("계좌번호")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.order.vbank_num))]),
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", [_vm._v("입금기한")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.order.vbank_date))]),
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", [_vm._v("입금금액")]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(_vm._s(_vm.order.price.toLocaleString())),
-                      ]),
-                    ]),
-                  ]),
-                ]),
-              ])
-            : _vm._e(),
           _vm._v(" "),
           _vm._m(1),
           _vm._v(" "),
@@ -68870,7 +68642,7 @@ var render = function () {
                                 { key: option.id, staticClass: "col-group" },
                                 [
                                   _c("span", { staticClass: "label" }, [
-                                    _vm._v(_vm._s(option.title)),
+                                    _vm._v(_vm._s(option.id) + "}"),
                                   ]),
                                   _vm._v(" "),
                                   _c("p", { staticClass: "price" }, [
@@ -70614,6 +70386,100 @@ var render = function () {
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(2),
                   _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.email,
+                          expression: "form.email",
+                        },
+                      ],
+                      attrs: {
+                        type: "text",
+                        placeholder: "이메일 (이메일은 아이디로 사용됩니다)",
+                      },
+                      domProps: { value: _vm.form.email },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "email", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.email)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "user" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.password,
+                          expression: "form.password",
+                        },
+                      ],
+                      staticClass: "input-gap",
+                      attrs: { type: "password", placeholder: "비밀 번호" },
+                      domProps: { value: _vm.form.password },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "password", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.password_confirmation,
+                          expression: "form.password_confirmation",
+                        },
+                      ],
+                      attrs: {
+                        type: "password",
+                        placeholder: "비밀번호 재확인",
+                      },
+                      domProps: { value: _vm.form.password_confirmation },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "password_confirmation",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.password)),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "row-group" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
                   _c("div", { staticClass: "user col-group " }, [
                     _c("input", {
                       directives: [
@@ -70666,7 +70532,7 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
-                  _vm._m(3),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "user" }, [
                     _c("input", {
@@ -70702,7 +70568,7 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
-                  _vm._m(4),
+                  _vm._m(6),
                   _vm._v(" "),
                   _c("div", { staticClass: "user" }, [
                     _c("input", {
@@ -70733,7 +70599,7 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
-                  _vm._m(5),
+                  _vm._m(7),
                   _vm._v(" "),
                   _c("div", { staticClass: "user" }, [
                     _c("input", {
@@ -70762,109 +70628,6 @@ var render = function () {
                     ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                !_vm.form.social_id
-                  ? _c("li", { staticClass: "row-group" }, [
-                      _vm._m(6),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "user" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.email,
-                              expression: "form.email",
-                            },
-                          ],
-                          attrs: {
-                            type: "text",
-                            placeholder:
-                              "이메일 (이메일은 아이디로 사용됩니다)",
-                          },
-                          domProps: { value: _vm.form.email },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(_vm.form, "email", $event.target.value)
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-input-error" }, [
-                          _vm._v(_vm._s(_vm.form.errors.email)),
-                        ]),
-                      ]),
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.form.social_id
-                  ? _c("li", { staticClass: "row-group" }, [
-                      _vm._m(7),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "user" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.password,
-                              expression: "form.password",
-                            },
-                          ],
-                          staticClass: "input-gap",
-                          attrs: { type: "password", placeholder: "비밀 번호" },
-                          domProps: { value: _vm.form.password },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.form,
-                                "password",
-                                $event.target.value
-                              )
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.password_confirmation,
-                              expression: "form.password_confirmation",
-                            },
-                          ],
-                          attrs: {
-                            type: "password",
-                            placeholder: "비밀번호 재확인",
-                          },
-                          domProps: { value: _vm.form.password_confirmation },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.form,
-                                "password_confirmation",
-                                $event.target.value
-                              )
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-input-error" }, [
-                          _vm._v(_vm._s(_vm.form.errors.password)),
-                        ]),
-                      ]),
-                    ])
-                  : _vm._e(),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(8),
@@ -71250,11 +71013,7 @@ var render = function () {
                           expression: "form.nickname",
                         },
                       ],
-                      attrs: {
-                        type: "text",
-                        placeholder:
-                          "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요.",
-                      },
+                      attrs: { type: "text", placeholder: "닉네임" },
                       domProps: { value: _vm.form.nickname },
                       on: {
                         input: function ($event) {
@@ -71950,6 +71709,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                이메일 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("\n                                비밀번호 "),
+      _c("span", [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
       _vm._v("\n                                본인인증 "),
       _c("span", [_vm._v("*")]),
     ])
@@ -71978,24 +71755,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
       _vm._v("\n                                성별 "),
-      _c("span", [_vm._v("*")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                이메일 "),
-      _c("span", [_vm._v("*")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                비밀번호 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -72173,7 +71932,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    이름(실명)\n                                "
+                        "\n                                이름(실명)\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72185,7 +71944,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    생년월일\n                                "
+                        "\n                                생년월일\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72197,7 +71956,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    성별\n                                "
+                        "\n                                성별\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72563,7 +72322,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    닉네임\n                                "
+                        "\n                                닉네임\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72577,11 +72336,7 @@ var render = function () {
                             expression: "form.nickname",
                           },
                         ],
-                        attrs: {
-                          type: "text",
-                          placeholder:
-                            "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요.",
-                        },
+                        attrs: { type: "text", placeholder: "닉네임" },
                         domProps: { value: _vm.form.nickname },
                         on: {
                           input: function ($event) {
@@ -72602,7 +72357,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    근무지\n                                "
+                        "\n                                근무지\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72634,7 +72389,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    키\n                                "
+                        "\n                                키\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72672,7 +72427,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    몸무게를 입력해주세요\n                                "
+                        "\n                                몸무게를 입력해주세요\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72710,7 +72465,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    인스타그램 아이디\n                                "
+                        "\n                                인스타그램 아이디\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72748,7 +72503,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group file" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    프로필 사진 (최소 3장)\n                                "
+                        "\n                                프로필 사진 (최소 3장)\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72757,7 +72512,7 @@ var render = function () {
                       { staticClass: "user" },
                       [
                         _c("input-imgs", {
-                          attrs: { id: "imgs", "default-files": _vm.user.imgs },
+                          attrs: { "default-files": _vm.user.imgs },
                           on: {
                             change: function (data) {
                               _vm.form.imgs = data
@@ -72776,7 +72531,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    이상형\n                                "
+                        "\n                                이상형\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72818,7 +72573,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    자기소개글\n                                "
+                        "\n                                자기소개글\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72860,7 +72615,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    매니저에게 한마디\n                                "
+                        "\n                                매니저에게 한마디\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -72906,7 +72661,7 @@ var render = function () {
                   _c("li", { staticClass: "row-group" }, [
                     _c("p", { staticClass: "default" }, [
                       _vm._v(
-                        "\n                                    결혼여부\n                                "
+                        "\n                                결혼여부\n                            "
                       ),
                     ]),
                     _vm._v(" "),
@@ -73032,7 +72787,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    이메일 "),
+      _vm._v("\n                                이메일 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73042,7 +72797,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "row-group" }, [
       _c("p", { staticClass: "default" }, [
-        _vm._v("\n                                    비밀번호 "),
+        _vm._v("\n                                비밀번호 "),
         _c("span", [_vm._v("*")]),
       ]),
       _vm._v(" "),
@@ -73055,7 +72810,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                        비밀번호 변경\n                                    "
+              "\n                                    비밀번호 변경\n                                "
             ),
           ]
         ),
@@ -73067,7 +72822,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    휴대폰 번호 "),
+      _vm._v("\n                                휴대폰 번호 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73076,7 +72831,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    직업 "),
+      _vm._v("\n                                직업 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73085,7 +72840,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    최종 학력 "),
+      _vm._v("\n                                최종 학력 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73094,7 +72849,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    거주지 "),
+      _vm._v("\n                                거주지 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73103,7 +72858,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    이용 예정 서비스 "),
+      _vm._v("\n                                이용 예정 서비스 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73112,7 +72867,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "default" }, [
-      _vm._v("\n                                    가입 경로 "),
+      _vm._v("\n                                가입 경로 "),
       _c("span", [_vm._v("*")]),
     ])
   },
@@ -73125,9 +72880,9 @@ var staticRenderFns = [
         _c("span", { staticClass: "text-style-1" }, [_vm._v("소개팅 서비스")]),
         _vm._v(" 이용을 원하신다면 "),
         _c("br"),
-        _vm._v("\n                                아래의 "),
+        _vm._v("\n                            아래의 "),
         _c("span", { staticClass: "text-style-1" }, [_vm._v("선택입력사항")]),
-        _vm._v("을 모두 입력해 주세요\n                            "),
+        _vm._v("을 모두 입력해 주세요\n                        "),
       ]),
     ])
   },
