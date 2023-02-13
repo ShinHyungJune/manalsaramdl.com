@@ -100,6 +100,10 @@ class OrderController extends Controller
             "pay_method_id" => "required|integer",
         ]);
 
+        $order = new Order();
+
+        return $order->attempt($request);
+
         $result = DB::transaction(function () use ($request) {
             $order = new Order();
 
