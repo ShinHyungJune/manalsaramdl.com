@@ -10980,7 +10980,8 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   key: "b37aa6816339a77531ea",
   cluster: "ap3",
   forceTLS: true
-}); // import Echo from 'laravel-echo';
+}); //
+// import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
