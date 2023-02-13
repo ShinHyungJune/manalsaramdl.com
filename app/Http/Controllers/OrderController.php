@@ -268,7 +268,7 @@ class OrderController extends Controller
 
             DB::commit();
         }catch(\Exception $e) {
-            Iamport::cancel($accessToken, $request->imp_uid);
+            // Iamport::cancel($accessToken, $request->imp_uid);
 
             // $order->update(["state" => OrderState::FAIL]);
             $result = ["state" => "error", "message"=> "결제를 실패하였습니다."];
