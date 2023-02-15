@@ -17,7 +17,7 @@
         <ul class="upload-list col-group" style="margin-top:20px;">
             <li v-for="(file, index) in sortedFiles" :key="index">
                 <div class="img-box">
-                    <img :src="file.img ? file.img : ''" alt="">
+                    <img :src="file.img ? file.img : ''" alt="" crossorigin="anonymous">
                 </div>
                 <button type="button" class="del" @click="remove(index)">
                     <i class="xi-close"></i>

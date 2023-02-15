@@ -25,17 +25,22 @@ class DatingController extends Controller
 
         if($request->state == "진행중")
             $datings = $datings->where(function($query){
-                return $query->where("scheduled_at", ">", Carbon::now())->orWhere("scheduled_at", null);
+                return $query->where("scheduled_at", ">", Carbon::now()->subHour())->orWhere("scheduled_at", null);
             });
 
         if($request->state == "완료")
             $datings = $datings->where(function($query){
-                return $query->where("scheduled_at", "<=", Carbon::now())->where("scheduled_at", "!=", null);
+                return $query->where("scheduled_at", "<=", Carbon::now()->subHour())->where("scheduled_at", "!=", null);
             });
 
         $datings = $datings->paginate(60);
 
         $latestUnreadDating = auth()->user()->datings()->has(auth()->user()->getPartnerRelation())->latest()->where(auth()->user()->getReadColumn(), false)->first();
+
+        if($latestUnreadDating)
+            $latestUnreadDating->update([
+                auth()->user()->getReadColumn() => 1
+            ]);
 
         return Inertia::render("Datings/Index", [
             "state" => $request->state,
@@ -65,6 +70,11 @@ class DatingController extends Controller
                 "schedule3" => "required|string|max:500",
                 "schedule4" => "required|string|max:500",
                 "schedule5" => "required|string|max:500",
+                "schedule6" => "required|string|max:500",
+                "schedule7" => "nullable|string|max:500",
+                "schedule8" => "nullable|string|max:500",
+                "schedule9" => "nullable|string|max:500",
+                "schedule10" => "nullable|string|max:500",
             ]);
 
 
@@ -79,6 +89,11 @@ class DatingController extends Controller
                 "schedule3" => $request->schedule3,
                 "schedule4" => $request->schedule4,
                 "schedule5" => $request->schedule5,
+                "schedule6" => $request->schedule6,
+                "schedule7" => $request->schedule7,
+                "schedule8" => $request->schedule8,
+                "schedule9" => $request->schedule9,
+                "schedule10" => $request->schedule10,
             ]);
 
             // #메시지발송필요

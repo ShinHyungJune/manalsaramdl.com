@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\CheckChatOpenCommand;
+use App\Console\Commands\CheckContactOpenCommand;
 use App\Console\Commands\CheckDateOpenCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         CheckChatOpenCommand::class,
         CheckDateOpenCommand::class,
+        CheckContactOpenCommand::class,
     ];
 
     /**

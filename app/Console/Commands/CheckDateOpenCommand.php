@@ -55,7 +55,7 @@ class CheckDateOpenCommand extends Command
                 "scheduled_at" => Carbon::make($dating->scheduled_at)->format("m월 d일 H:i"),
                 "place_name" => $dating->place_name,
                 "address_name" => $dating->address_name,
-                "name" => $dating->men->name,
+                "name" => $dating->men->nickname,
             ], SmsTemplate::DATE_OPEN);
 
             $sms->send($dating->women->contact, [
@@ -63,7 +63,7 @@ class CheckDateOpenCommand extends Command
                 "scheduled_at" => Carbon::make($dating->scheduled_at)->format("m월 d일 H:i"),
                 "place_name" => $dating->place_name,
                 "address_name" => $dating->address_name,
-                "name" => $dating->men->name,
+                "name" => $dating->men->nickname,
             ], SmsTemplate::DATE_OPEN);
 
             $dating->update(["alarm_date_open" => 1]);

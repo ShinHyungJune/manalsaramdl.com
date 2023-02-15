@@ -201,6 +201,7 @@ return [
         "schedule3" => "선호일정3",
         "schedule4" => "선호일정4",
         "schedule5" => "선호일정5",
+        "schedule6" => "선호일정6",
         "place_name" => "장소명",
         "address_name" => "주소명",
         "place_url" => "주소 URL",

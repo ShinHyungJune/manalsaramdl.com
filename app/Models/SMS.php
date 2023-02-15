@@ -28,6 +28,7 @@ class SMS
 
             $message->setFrom($this->from)
                 ->setTo($to)
+                ->setSubject($this->getTemplateTitle($template))
                 ->setText($this->getTemplateMessage($data, $template));
 
             // 혹은 메시지 객체의 배열을 넣어 여러 건을 발송할 수도 있습니다!
@@ -37,6 +38,33 @@ class SMS
         } catch (Exception $exception) {
             return response()->json($exception->getMessage());
         }
+    }
+
+    public function getTemplateTitle($template)
+    {
+        if($template == SmsTemplate::VERIFY_NUMBER)
+            return "[인증번호발송]";
+
+        if($template == SmsTemplate::NEW_PROFILE)
+            return "[프로필 도착]";
+
+        if($template == SmsTemplate::NEW_SCHEDULE)
+            return "[소개팅 일정 도착]";
+
+        if($template == SmsTemplate::NEW_ADDRESS)
+            return "[소개팅 장소 도착]";
+
+        if($template == SmsTemplate::CHAT_OPEN)
+            return "[1:1채팅창 오픈]";
+
+        if($template == SmsTemplate::DATE_OPEN)
+            return "[소개팅 일정 확정 및 안내]";
+
+        if($template == SmsTemplate::ORDER_PARTY)
+            return "[인사 파티 결제완료]";
+
+        if($template == SmsTemplate::ACCEPT_PARTY)
+            return "[인사 파티 승인완료]";
     }
 
     public function getTemplateMessage($data, $template)
@@ -77,8 +105,15 @@ class SMS
 
         if($template == SmsTemplate::ORDER_PARTY)
             return "[인사 파티 결제완료]
-[{$data["title"]}] 결제가 완료되었습니다.
-카카오채널로 [파티신청날짜/이름/전화번호/동행인여부/동행인이름/결제여부]를 알려주세요.";
+결제가 완료되었습니다.
+신원인증 후에 선착순으로 파티참석권 승인드리고 있습니다.
+
+1. 마이페이지>프로필수정>프로필사진에 업로드해주세요.
+①명함or재직증명서
+②신분증
+③셀카사진 3장
+2. 업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다.
+3. 파티 승인 후에는 문자메세지를 보내드립니다.";
 
         if($template == SmsTemplate::ACCEPT_PARTY)
             return "[인사 파티 승인완료]
@@ -91,7 +126,7 @@ class SMS
 2. 설레는 파티에 어울릴 깔끔하고 매너있는 복장으로 와주세요.
 3. 파티에 늦을 경우 입장에 불이익이 있어요. 파티 시작 10분 전에는 오시는 것을 추천드립니다.
 4. 남녀 성비가 조율되는 파티로 늦거나 오지 않을 시 파티 진행에 차질이 생기니 꼭 미리 알려주세요.
-- 파티 참석 전 꼭 카카오톡플러스친구 추가해주세요!
+5. 파티 참석 전 꼭 카카오톡플러스친구 추가해주세요!
 파티 중간에 카톡메세지 이벤트가 있을 예정이라 서비스 이용에 제한되지 않도록 추가 부탁드립니다.";
 
     }

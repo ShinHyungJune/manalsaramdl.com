@@ -67,6 +67,7 @@ class User extends Authenticatable implements HasMedia
         "comment8",
         "comment9",
         "comment10",
+        "memo",
     ];
 
     /**
@@ -137,8 +138,8 @@ class User extends Authenticatable implements HasMedia
 
     public function getAlarmAttribute()
     {
-        if($this->chats()->wherePivot("has_new_message", 1)->count() > 0)
-            return 1;
+        /*if($this->chats()->wherePivot("has_new_message", 1)->count() > 0)
+            return 1;*/
 
         if($this->datings()->where($this->getReadColumn(), false)->count() > 0)
             return 1;

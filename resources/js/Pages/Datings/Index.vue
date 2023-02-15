@@ -394,6 +394,66 @@
                                         <p>{{ targetSuggestAddressDating.schedule5 }}</p>
                                     </div>
                                 </li>
+                                <li class="col-group">
+                                    <div class="default">
+                                        <label for="list_6">
+                                            <input type="radio" name="date_list" id="list_6" v-model="form.scheduled_at" :value="targetSuggestAddressDating.schedule6">
+                                            <span class="radio-icon"></span>
+                                            선호 일정6
+                                        </label>
+                                    </div>
+                                    <div class="user col-group">
+                                        <p>{{ targetSuggestAddressDating.schedule6 }}</p>
+                                    </div>
+                                </li>
+                                <li class="col-group" v-if="form.schedule7">
+                                    <div class="default">
+                                        <label for="list_7">
+                                            <input type="radio" name="date_list" id="list_7" v-model="form.scheduled_at" :value="targetSuggestAddressDating.schedule7">
+                                            <span class="radio-icon"></span>
+                                            선호 일정7
+                                        </label>
+                                    </div>
+                                    <div class="user col-group">
+                                        <p>{{ targetSuggestAddressDating.schedule7 }}</p>
+                                    </div>
+                                </li>
+                                <li class="col-group" v-if="form.schedule8">
+                                    <div class="default">
+                                        <label for="list_8">
+                                            <input type="radio" name="date_list" id="list_89" v-model="form.scheduled_at" :value="targetSuggestAddressDating.schedule8">
+                                            <span class="radio-icon"></span>
+                                            선호 일정8
+                                        </label>
+                                    </div>
+                                    <div class="user col-group">
+                                        <p>{{ targetSuggestAddressDating.schedule8 }}</p>
+                                    </div>
+                                </li>
+                                <li class="col-group" v-if="form.schedule9">
+                                    <div class="default">
+                                        <label for="list_9">
+                                            <input type="radio" name="date_list" id="list_9" v-model="form.scheduled_at" :value="targetSuggestAddressDating.schedule9">
+                                            <span class="radio-icon"></span>
+                                            선호 일정9
+                                        </label>
+                                    </div>
+                                    <div class="user col-group">
+                                        <p>{{ targetSuggestAddressDating.schedule9 }}</p>
+                                    </div>
+                                </li>
+                                <li class="col-group" v-if="form.schedule10">
+                                    <div class="default">
+                                        <label for="list_10">
+                                            <input type="radio" name="date_list" id="list_10" v-model="form.scheduled_at" :value="targetSuggestAddressDating.schedule10">
+                                            <span class="radio-icon"></span>
+                                            선호 일정10
+                                        </label>
+                                    </div>
+                                    <div class="user col-group">
+                                        <p>{{ targetSuggestAddressDating.schedule10 }}</p>
+                                    </div>
+                                </li>
                             </ul>
                             <div class="m-input-error">{{form.errors.scheduled_at}}</div>
                         </div>
@@ -451,7 +511,7 @@
 
                             <ul class="form-box row-group">
                                 <li class="col-group">
-                                    <p class="default">선호일정1</p>
+                                    <p class="default">선호일정1 <span class="star">*</span></p>
                                     <div class="user col-group nonedit disabled">
                                         <input type="datetime-local" :min="now" v-model="form.schedule1" />
                                     </div>
@@ -459,7 +519,7 @@
                                 <p class="m-input-error type01">{{ form.errors.schedule1 }}</p>
 
                                 <li class="col-group">
-                                    <p class="default">선호일정2</p>
+                                    <p class="default">선호일정2 <span class="star">*</span></p>
                                     <div class="user col-group nonedit disabled">
                                         <input type="datetime-local" :min="now" v-model="form.schedule2" />
                                     </div>
@@ -467,7 +527,7 @@
                                 <p class="m-input-error type01">{{ form.errors.schedule2 }}</p>
 
                                 <li class="col-group">
-                                    <p class="default">선호일정3</p>
+                                    <p class="default">선호일정3 <span class="star">*</span></p>
                                     <div class="user col-group nonedit disabled">
                                         <input type="datetime-local" :min="now" v-model="form.schedule3" />
                                     </div>
@@ -475,7 +535,7 @@
                                 <p class="m-input-error type01">{{ form.errors.schedule3 }}</p>
 
                                 <li class="col-group">
-                                    <p class="default">선호일정4</p>
+                                    <p class="default">선호일정4 <span class="star">*</span></p>
                                     <div class="user col-group nonedit disabled">
                                         <input type="datetime-local" :min="now" v-model="form.schedule4" />
                                     </div>
@@ -483,13 +543,52 @@
                                 <p class="m-input-error type01">{{ form.errors.schedule4 }}</p>
 
                                 <li class="col-group">
-                                    <p class="default">선호일정5</p>
+                                    <p class="default">선호일정5 <span class="star">*</span></p>
                                     <div class="user col-group nonedit disabled">
                                         <input type="datetime-local" :min="now" v-model="form.schedule5" />
                                     </div>
                                 </li>
                                 <p class="m-input-error type01">{{ form.errors.schedule5 }}</p>
 
+                                <li class="col-group">
+                                    <p class="default">선호일정6 <span class="star">*</span></p>
+                                    <div class="user col-group nonedit disabled">
+                                        <input type="datetime-local" :min="now" v-model="form.schedule6" />
+                                    </div>
+                                </li>
+                                <p class="m-input-error type01">{{ form.errors.schedule6 }}</p>
+
+                                <li class="col-group">
+                                    <p class="default">선호일정7</p>
+                                    <div class="user col-group nonedit disabled">
+                                        <input type="datetime-local" :min="now" v-model="form.schedule7" />
+                                    </div>
+                                </li>
+                                <p class="m-input-error type01">{{ form.errors.schedule7 }}</p>
+
+                                <li class="col-group">
+                                    <p class="default">선호일정8</p>
+                                    <div class="user col-group nonedit disabled">
+                                        <input type="datetime-local" :min="now" v-model="form.schedule8" />
+                                    </div>
+                                </li>
+                                <p class="m-input-error type01">{{ form.errors.schedule8 }}</p>
+
+                                <li class="col-group">
+                                    <p class="default">선호일정9</p>
+                                    <div class="user col-group nonedit disabled">
+                                        <input type="datetime-local" :min="now" v-model="form.schedule9" />
+                                    </div>
+                                </li>
+                                <p class="m-input-error type01">{{ form.errors.schedule7 }}</p>
+
+                                <li class="col-group">
+                                    <p class="default">선호일정10</p>
+                                    <div class="user col-group nonedit disabled">
+                                        <input type="datetime-local" :min="now" v-model="form.schedule10" />
+                                    </div>
+                                </li>
+                                <p class="m-input-error type01">{{ form.errors.schedule10 }}</p>
                             </ul>
                         </div>
                         <button type="button" class="submit-btn" @click="suggestSchedule(targetSuggestSchedule)">일정 제안</button>
@@ -764,6 +863,11 @@ export default {
                 schedule3: "",
                 schedule4: "",
                 schedule5: "",
+                schedule6: "",
+                schedule7: "",
+                schedule8: "",
+                schedule9: "",
+                schedule10: "",
 
                 // 장소제안
                 address_name:"",

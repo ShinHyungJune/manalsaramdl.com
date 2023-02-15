@@ -5982,6 +5982,105 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6013,6 +6112,11 @@ __webpack_require__.r(__webpack_exports__);
         schedule3: "",
         schedule4: "",
         schedule5: "",
+        schedule6: "",
+        schedule7: "",
+        schedule8: "",
+        schedule9: "",
+        schedule10: "",
         // 장소제안
         address_name: "",
         place_url: "",
@@ -7000,182 +7104,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_State__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/State */ "./resources/js/Components/State.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -9744,6 +9672,146 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9760,14 +9828,22 @@ __webpack_require__.r(__webpack_exports__);
       refunds: this.$page.props.refunds,
       form: this.$inertia.form({
         page: 1
-      })
+      }),
+      targetRefund: ""
     };
   },
   methods: {
-    filter: function filter() {
-      this.form.get("/shopping/refund", {
-        preserveScroll: false,
-        preserveState: false
+    filter: function filter() {},
+    check: function check() {
+      var _this = this;
+
+      this.form.patch("/refunds/" + this.targetRefund.id + "/check", {
+        preserveScroll: true,
+        preserveState: true,
+        onSuccess: function onSuccess(page) {
+          _this.refunds = page.props.refunds;
+          _this.targetRefund = "";
+        }
       });
     },
     productTotalPrice: function productTotalPrice(product) {
@@ -9779,6 +9855,10 @@ __webpack_require__.r(__webpack_exports__);
       });
       total = (product.discounted_price + optionPrice) * product.count;
       return total;
+    },
+    state: function state(_state) {
+      if (_state === "승인대기") return "환불신청";
+      return _state;
     }
   }
 });
@@ -56767,7 +56847,13 @@ var render = function () {
       _vm._l(_vm.sortedFiles, function (file, index) {
         return _c("li", { key: index }, [
           _c("div", { staticClass: "img-box" }, [
-            _c("img", { attrs: { src: file.img ? file.img : "", alt: "" } }),
+            _c("img", {
+              attrs: {
+                src: file.img ? file.img : "",
+                alt: "",
+                crossorigin: "anonymous",
+              },
+            }),
           ]),
           _vm._v(" "),
           _c(
@@ -62622,6 +62708,282 @@ var render = function () {
                           ]),
                         ]),
                       ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _c("div", { staticClass: "default" }, [
+                          _c("label", { attrs: { for: "list_6" } }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.scheduled_at,
+                                  expression: "form.scheduled_at",
+                                },
+                              ],
+                              attrs: {
+                                type: "radio",
+                                name: "date_list",
+                                id: "list_6",
+                              },
+                              domProps: {
+                                value: _vm.targetSuggestAddressDating.schedule6,
+                                checked: _vm._q(
+                                  _vm.form.scheduled_at,
+                                  _vm.targetSuggestAddressDating.schedule6
+                                ),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.$set(
+                                    _vm.form,
+                                    "scheduled_at",
+                                    _vm.targetSuggestAddressDating.schedule6
+                                  )
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "radio-icon" }),
+                            _vm._v(
+                              "\n                                        선호 일정6\n                                    "
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "user col-group" }, [
+                          _c("p", [
+                            _vm._v(
+                              _vm._s(_vm.targetSuggestAddressDating.schedule6)
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _vm.form.schedule7
+                        ? _c("li", { staticClass: "col-group" }, [
+                            _c("div", { staticClass: "default" }, [
+                              _c("label", { attrs: { for: "list_7" } }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.scheduled_at,
+                                      expression: "form.scheduled_at",
+                                    },
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "date_list",
+                                    id: "list_7",
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.targetSuggestAddressDating.schedule7,
+                                    checked: _vm._q(
+                                      _vm.form.scheduled_at,
+                                      _vm.targetSuggestAddressDating.schedule7
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "scheduled_at",
+                                        _vm.targetSuggestAddressDating.schedule7
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "radio-icon" }),
+                                _vm._v(
+                                  "\n                                        선호 일정7\n                                    "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "user col-group" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.targetSuggestAddressDating.schedule7
+                                  )
+                                ),
+                              ]),
+                            ]),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.form.schedule8
+                        ? _c("li", { staticClass: "col-group" }, [
+                            _c("div", { staticClass: "default" }, [
+                              _c("label", { attrs: { for: "list_8" } }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.scheduled_at,
+                                      expression: "form.scheduled_at",
+                                    },
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "date_list",
+                                    id: "list_89",
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.targetSuggestAddressDating.schedule8,
+                                    checked: _vm._q(
+                                      _vm.form.scheduled_at,
+                                      _vm.targetSuggestAddressDating.schedule8
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "scheduled_at",
+                                        _vm.targetSuggestAddressDating.schedule8
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "radio-icon" }),
+                                _vm._v(
+                                  "\n                                        선호 일정8\n                                    "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "user col-group" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.targetSuggestAddressDating.schedule8
+                                  )
+                                ),
+                              ]),
+                            ]),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.form.schedule9
+                        ? _c("li", { staticClass: "col-group" }, [
+                            _c("div", { staticClass: "default" }, [
+                              _c("label", { attrs: { for: "list_9" } }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.scheduled_at,
+                                      expression: "form.scheduled_at",
+                                    },
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "date_list",
+                                    id: "list_9",
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.targetSuggestAddressDating.schedule9,
+                                    checked: _vm._q(
+                                      _vm.form.scheduled_at,
+                                      _vm.targetSuggestAddressDating.schedule9
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "scheduled_at",
+                                        _vm.targetSuggestAddressDating.schedule9
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "radio-icon" }),
+                                _vm._v(
+                                  "\n                                        선호 일정9\n                                    "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "user col-group" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.targetSuggestAddressDating.schedule9
+                                  )
+                                ),
+                              ]),
+                            ]),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.form.schedule10
+                        ? _c("li", { staticClass: "col-group" }, [
+                            _c("div", { staticClass: "default" }, [
+                              _c("label", { attrs: { for: "list_10" } }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.scheduled_at,
+                                      expression: "form.scheduled_at",
+                                    },
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "date_list",
+                                    id: "list_10",
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.targetSuggestAddressDating.schedule10,
+                                    checked: _vm._q(
+                                      _vm.form.scheduled_at,
+                                      _vm.targetSuggestAddressDating.schedule10
+                                    ),
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "scheduled_at",
+                                        _vm.targetSuggestAddressDating
+                                          .schedule10
+                                      )
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "radio-icon" }),
+                                _vm._v(
+                                  "\n                                        선호 일정10\n                                    "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "user col-group" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.targetSuggestAddressDating.schedule10
+                                  )
+                                ),
+                              ]),
+                            ]),
+                          ])
+                        : _vm._e(),
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "m-input-error" }, [
@@ -62776,9 +63138,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("ul", { staticClass: "form-box row-group" }, [
                       _c("li", { staticClass: "col-group" }, [
-                        _c("p", { staticClass: "default" }, [
-                          _vm._v("선호일정1"),
-                        ]),
+                        _vm._m(11),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -62817,9 +63177,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _c("p", { staticClass: "default" }, [
-                          _vm._v("선호일정2"),
-                        ]),
+                        _vm._m(12),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -62858,9 +63216,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _c("p", { staticClass: "default" }, [
-                          _vm._v("선호일정3"),
-                        ]),
+                        _vm._m(13),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -62899,9 +63255,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _c("p", { staticClass: "default" }, [
-                          _vm._v("선호일정4"),
-                        ]),
+                        _vm._m(14),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -62940,9 +63294,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _c("p", { staticClass: "default" }, [
-                          _vm._v("선호일정5"),
-                        ]),
+                        _vm._m(15),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -62978,6 +63330,209 @@ var render = function () {
                       _vm._v(" "),
                       _c("p", { staticClass: "m-input-error type01" }, [
                         _vm._v(_vm._s(_vm.form.errors.schedule5)),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _vm._m(16),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "user col-group nonedit disabled" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.schedule6,
+                                  expression: "form.schedule6",
+                                },
+                              ],
+                              attrs: { type: "datetime-local", min: _vm.now },
+                              domProps: { value: _vm.form.schedule6 },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "schedule6",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "m-input-error type01" }, [
+                        _vm._v(_vm._s(_vm.form.errors.schedule6)),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _c("p", { staticClass: "default" }, [
+                          _vm._v("선호일정7"),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "user col-group nonedit disabled" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.schedule7,
+                                  expression: "form.schedule7",
+                                },
+                              ],
+                              attrs: { type: "datetime-local", min: _vm.now },
+                              domProps: { value: _vm.form.schedule7 },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "schedule7",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "m-input-error type01" }, [
+                        _vm._v(_vm._s(_vm.form.errors.schedule7)),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _c("p", { staticClass: "default" }, [
+                          _vm._v("선호일정8"),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "user col-group nonedit disabled" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.schedule8,
+                                  expression: "form.schedule8",
+                                },
+                              ],
+                              attrs: { type: "datetime-local", min: _vm.now },
+                              domProps: { value: _vm.form.schedule8 },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "schedule8",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "m-input-error type01" }, [
+                        _vm._v(_vm._s(_vm.form.errors.schedule8)),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _c("p", { staticClass: "default" }, [
+                          _vm._v("선호일정9"),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "user col-group nonedit disabled" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.schedule9,
+                                  expression: "form.schedule9",
+                                },
+                              ],
+                              attrs: { type: "datetime-local", min: _vm.now },
+                              domProps: { value: _vm.form.schedule9 },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "schedule9",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "m-input-error type01" }, [
+                        _vm._v(_vm._s(_vm.form.errors.schedule7)),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "col-group" }, [
+                        _c("p", { staticClass: "default" }, [
+                          _vm._v("선호일정10"),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "user col-group nonedit disabled" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.schedule10,
+                                  expression: "form.schedule10",
+                                },
+                              ],
+                              attrs: { type: "datetime-local", min: _vm.now },
+                              domProps: { value: _vm.form.schedule10 },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "schedule10",
+                                    $event.target.value
+                                  )
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "m-input-error type01" }, [
+                        _vm._v(_vm._s(_vm.form.errors.schedule10)),
                       ]),
                     ]),
                   ]),
@@ -63022,7 +63577,7 @@ var render = function () {
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "user-profile" }, [
-                      _vm._m(11),
+                      _vm._m(17),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-photo" }, [
                         _c("div", {
@@ -63070,7 +63625,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(12),
+                    _vm._m(18),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "review-wrap form-wrap overflow" }, [
@@ -63080,7 +63635,7 @@ var render = function () {
                         { staticClass: "review-box form-box row-group" },
                         [
                           _c("li", [
-                            _vm._m(13),
+                            _vm._m(19),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -63264,7 +63819,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(14),
+                            _vm._m(20),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -63399,7 +63954,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(15),
+                            _vm._m(21),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -63598,7 +64153,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(16),
+                              _vm._m(22),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -63609,7 +64164,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(17),
+                            _vm._m(23),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -63778,7 +64333,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(18),
+                              _vm._m(24),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -63787,7 +64342,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(19),
+                            _vm._m(25),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -63883,7 +64438,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(20),
+                            _vm._m(26),
                             _vm._v(" "),
                             _c("div", { staticClass: "as" }, [
                               _c("textarea", {
@@ -64158,6 +64713,60 @@ var staticRenderFns = [
           "일정은 5개까지 설정 가능하며 최대 2주 안으로 선택해 주세요.\n                        "
         ),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정1 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정2 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정3 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정4 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정5 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "default" }, [
+      _vm._v("선호일정6 "),
+      _c("span", { staticClass: "star" }, [_vm._v("*")]),
     ])
   },
   function () {
@@ -65539,181 +66148,7 @@ var render = function () {
         _c("sidebar"),
         _vm._v(" "),
         _c("div", { staticClass: "right-wrap" }, [
-          _vm.targetRefundOrder
-            ? _c("div", { staticClass: "modal-overley refund open" }, [
-                _c("div", { staticClass: "modal-wrap refund" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function ($event) {
-                          _vm.targetRefundOrder = false
-                        },
-                      },
-                    },
-                    [_c("i", { staticClass: "xi-close" })]
-                  ),
-                  _vm._v(" "),
-                  _vm.targetRefundOrder.product.type === "파티"
-                    ? _c("div", [
-                        _vm._m(1),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "request-wrap party-wrap" }, [
-                          _c(
-                            "ul",
-                            {
-                              staticClass:
-                                "request-box request-box-2 row-group",
-                            },
-                            [
-                              _c("li", { staticClass: "col-group" }, [
-                                _c("p", { staticClass: "default" }, [
-                                  _vm._v("결제금액"),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "user col-group" }, [
-                                  _c("p", { staticClass: "nonedit" }, [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.targetRefundOrder.price.toLocaleString()
-                                      )
-                                    ),
-                                  ]),
-                                  _vm._v(
-                                    "원\n                                        "
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "col-group" }, [
-                                _c("p", { staticClass: "default" }, [
-                                  _vm._v("환불사유"),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "user col-group" }, [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.refundForm.reason_request,
-                                        expression: "refundForm.reason_request",
-                                      },
-                                    ],
-                                    staticClass: "edit",
-                                    attrs: { name: "" },
-                                    domProps: {
-                                      value: _vm.refundForm.reason_request,
-                                    },
-                                    on: {
-                                      input: function ($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          _vm.refundForm,
-                                          "reason_request",
-                                          $event.target.value
-                                        )
-                                      },
-                                    },
-                                  }),
-                                ]),
-                              ]),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(2),
-                      ])
-                    : _c("div", [
-                        _vm._m(3),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "request-wrap" }, [
-                          _c(
-                            "ul",
-                            {
-                              staticClass:
-                                "request-box request-box-2 row-group",
-                            },
-                            [
-                              _c("li", { staticClass: "col-group" }, [
-                                _c("p", { staticClass: "default" }, [
-                                  _vm._v("결제금액"),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "user col-group" }, [
-                                  _c("p", { staticClass: "nonedit" }, [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.targetRefundOrder.price.toLocaleString()
-                                      )
-                                    ),
-                                  ]),
-                                  _vm._v(
-                                    "원\n                                        "
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "col-group" }, [
-                                _c("p", { staticClass: "default" }, [
-                                  _vm._v("환불사유"),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "user col-group" }, [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.refundForm.reason_request,
-                                        expression: "refundForm.reason_request",
-                                      },
-                                    ],
-                                    staticClass: "edit",
-                                    attrs: { name: "" },
-                                    domProps: {
-                                      value: _vm.refundForm.reason_request,
-                                    },
-                                    on: {
-                                      input: function ($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          _vm.refundForm,
-                                          "reason_request",
-                                          $event.target.value
-                                        )
-                                      },
-                                    },
-                                  }),
-                                ]),
-                              ]),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(4),
-                      ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "submit-btn",
-                      attrs: { type: "button" },
-                      on: { click: _vm.refund },
-                    },
-                    [_vm._v("환불 요청")]
-                  ),
-                ]),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._m(5),
+          _vm._m(1),
           _vm._v(" "),
           _c("ul", { staticClass: "top-wrap col-group" }, [
             _c("li", [
@@ -65979,23 +66414,6 @@ var render = function () {
                           _vm._v(_vm._s(order.created_at)),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      order.can_refund
-                        ? _c("li", { staticClass: "btn-wrap" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "m-btn type01",
-                                on: {
-                                  click: function ($event) {
-                                    _vm.targetRefundOrder = order
-                                  },
-                                },
-                              },
-                              [_vm._v("환불요청")]
-                            ),
-                          ])
-                        : _vm._e(),
                     ]),
                   ]),
                 ])
@@ -66012,7 +66430,7 @@ var render = function () {
               : _vm._e(),
           ]),
           _vm._v(" "),
-          _vm._m(6),
+          _vm._m(2),
         ]),
       ],
       1
@@ -66047,204 +66465,6 @@ var staticRenderFns = [
             _c("li", [
               _c("a", { attrs: { href: "#" } }, [_vm._v(" 결제내역")]),
             ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title-wrap" }, [
-      _c("i", { staticClass: "xi-lock" }),
-      _vm._v(" "),
-      _c("h2", { staticClass: "title" }, [
-        _vm._v(
-          "\n                                    파티 환불신청서\n                                "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "txt" }, [
-        _vm._v(
-          "\n                                    참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                                    아래와 같습니다. 참석 인원 미달되거나 주최측에 의한 "
-        ),
-        _c("br"),
-        _vm._v(
-          "\n                                    이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notice-box" }, [
-      _c("div", { staticClass: "title-box" }, [
-        _c("p", { staticClass: "title" }, [
-          _c("i", { staticClass: "xi-warning" }),
-          _vm._v(
-            "\n                                        환불 규정\n                                    "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "txt" }, [
-          _vm._v(
-            "\n                                        참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다. "
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                                        참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                    "
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "con-box" }, [
-        _c("p", { staticClass: "title" }, [
-          _vm._v(
-            "\n                                        개인적인 사유로 취소 신청할 경우\n                                    "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "row-group" }, [
-          _c("li", [
-            _vm._v(
-              "파티일자 7일 이전: 입장료 전액 환불 (송금수수료 -1,000원 공제)"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("파티일자 5일 이전: 입장료 70% 환불")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("파티일자 4일 이전: 입장료 50% 환불")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("파티일자 3일 이전: 입장료 30% 환불")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("파티일자 2일 이내 또는 당일 불참: 환불 불가")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("환불 소요일 : 영업일 기준으로 1~7일")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "btm-box" }, [
-        _c("p", { staticClass: "title" }, [
-          _vm._v("카카오채널 추가 & 메시지 꼭 주세요!"),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "txt" }, [
-          _vm._v("[파티신청날짜/이름/전화번호/동행인여부/동행인이름/결제여부]"),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title-wrap" }, [
-      _c("i", { staticClass: "xi-lock" }),
-      _vm._v(" "),
-      _c("h2", { staticClass: "title" }, [
-        _vm._v(
-          "\n                                    소개팅 환불신청서\n                                "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "txt" }, [
-        _vm._v(
-          "\n                                    인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notice-box" }, [
-      _c("div", { staticClass: "title-box" }, [
-        _c("p", { staticClass: "title" }, [
-          _c("i", { staticClass: "xi-warning" }),
-          _vm._v(
-            "\n                                        환불 규정\n                                    "
-          ),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "txt" }, [
-          _vm._v(
-            "\n                                        인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                    "
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "con-box" }, [
-        _c("ul", { staticClass: "row-group blind-num" }, [
-          _c("li", [
-            _vm._v(
-              "1.인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("2.프로그램은 연령대별로 가격이 상이합니다.")]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "3.서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                                            문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("4.첫 프로필 제공은 최소 2주가 소요됩니다.")]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "5.첫 프로필 제공 후에 환불 요청 시에는 1회 차감 후 환불됩니다."
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                            정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                            산정됩니다.)"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "7.프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                                            경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "8.소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                                            있습니다"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "9.회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                                            추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                                            다. (단, 기간 연장의 경우 환불은 불가합니다.)"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                            이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "11.회원 교제나 성혼의 이유로 이용이 불가할 때, 지인(신규회원)에게 양도 가능합니다."
-            ),
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v(
-              "12.회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                                            위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                                            서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                                            실과 책임은 없습니다."
-            ),
           ]),
         ]),
       ]),
@@ -70480,65 +70700,78 @@ var render = function () {
             "ul",
             { staticClass: "payment-list row-group" },
             _vm._l(_vm.refunds.data, function (refund) {
-              return _c("li", { key: refund.id }, [
-                _c("div", { staticClass: "tr col-group" }, [
-                  _c("div", { staticClass: "title-box row-group" }, [
-                    _c("span", { staticClass: "label" }, [
-                      _vm._v(_vm._s(refund.order.product.type)),
+              return _c(
+                "li",
+                {
+                  key: refund.id,
+                  staticStyle: { cursor: "pointer" },
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      _vm.targetRefund = refund
+                    },
+                  },
+                },
+                [
+                  _c("div", { staticClass: "tr col-group" }, [
+                    _c("div", { staticClass: "title-box row-group" }, [
+                      _c("span", { staticClass: "label" }, [
+                        _vm._v(_vm._s(refund.order.product.type)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "title" }, [
+                        _vm._v(_vm._s(refund.order.product.title)),
+                      ]),
                     ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "title" }, [
-                      _vm._v(_vm._s(refund.order.product.title)),
+                    _c("ul", { staticClass: "payment-box col-group" }, [
+                      _c("li", [
+                        _c("p", { staticClass: "title" }, [
+                          _vm._v("환불요청날짜"),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "txt" }, [
+                          _vm._v(_vm._s(refund.created_at)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("p", { staticClass: "title" }, [
+                          _vm._v("환불요청사유"),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "txt" }, [
+                          _vm._v(_vm._s(refund.reason_request)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("p", { staticClass: "title" }, [_vm._v("결제날짜")]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "txt" }, [
+                          _vm._v(_vm._s(refund.order.created_at)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("p", { staticClass: "title" }, [_vm._v("결제금액")]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "txt" }, [
+                          _vm._v(_vm._s(refund.order.price.toLocaleString())),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("p", { staticClass: "title" }, [_vm._v("상태")]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "txt state" }, [
+                          _vm._v(_vm._s(_vm.state(refund.state))),
+                        ]),
+                      ]),
                     ]),
                   ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "payment-box col-group" }, [
-                    _c("li", [
-                      _c("p", { staticClass: "title" }, [
-                        _vm._v("환불요청날짜"),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(_vm._s(refund.created_at)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("p", { staticClass: "title" }, [
-                        _vm._v("환불요청사유"),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(_vm._s(refund.reason_request)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("p", { staticClass: "title" }, [_vm._v("결제날짜")]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(_vm._s(refund.order.created_at)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("p", { staticClass: "title" }, [_vm._v("결제금액")]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(_vm._s(refund.order.price.toLocaleString())),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("p", { staticClass: "title" }, [_vm._v("상태")]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt state" }, [
-                        _vm._v(_vm._s(refund.state)),
-                      ]),
-                    ]),
-                  ]),
-                ]),
-              ])
+                ]
+              )
             }),
             0
           ),
@@ -70546,6 +70779,140 @@ var render = function () {
           _vm.refunds.data.length === 0
             ? _c("div", { staticClass: "m-empty type01" }, [
                 _vm._v("데이터가 없습니다."),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.targetRefund
+            ? _c("div", { staticClass: "modal-overley refund open" }, [
+                _c("div", { staticClass: "modal-wrap refund" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function ($event) {
+                          _vm.targetRefund = ""
+                        },
+                      },
+                    },
+                    [_c("i", { staticClass: "xi-close" })]
+                  ),
+                  _vm._v(" "),
+                  _vm.targetRefund.order.product.type === "파티"
+                    ? _c("div", [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "request-wrap party-wrap" }, [
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "request-box request-box-2 row-group",
+                            },
+                            [
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("결제금액"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("p", { staticClass: "nonedit" }, [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.targetRefund.price.toLocaleString()
+                                      )
+                                    ),
+                                  ]),
+                                  _vm._v(
+                                    "원\n                                    "
+                                  ),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불사유"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    staticClass: "edit",
+                                    attrs: { name: "", disabled: "" },
+                                    domProps: {
+                                      value: _vm.targetRefund.reason_request,
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(2),
+                      ])
+                    : _c("div", [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "request-wrap" }, [
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "request-box request-box-2 row-group",
+                            },
+                            [
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("결제금액"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("p", { staticClass: "nonedit" }, [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.targetRefund.price.toLocaleString()
+                                      )
+                                    ),
+                                  ]),
+                                  _vm._v(
+                                    "원\n                                    "
+                                  ),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", { staticClass: "col-group" }, [
+                                _c("p", { staticClass: "default" }, [
+                                  _vm._v("환불사유"),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "user col-group" }, [
+                                  _c("input", {
+                                    staticClass: "edit",
+                                    attrs: { name: "", disabled: "" },
+                                    domProps: {
+                                      value: _vm.targetRefund.reason_request,
+                                    },
+                                  }),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(4),
+                      ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "submit-btn",
+                      attrs: { type: "button" },
+                      on: { click: _vm.check },
+                    },
+                    [_vm._v("환불 확인")]
+                  ),
+                ]),
               ])
             : _vm._e(),
         ]),
@@ -70564,6 +70931,208 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("a", { staticClass: "refund-btn", attrs: { href: "/orders" } }, [
         _vm._v("결제내역"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "title-wrap", staticStyle: { display: "block" } },
+      [
+        _c("i", { staticClass: "xi-lock" }),
+        _vm._v(" "),
+        _c("h2", { staticClass: "title" }, [
+          _vm._v(
+            "\n                                파티 환불신청서\n                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "txt" }, [
+          _vm._v(
+            "\n                                참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 "
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                                아래와 같습니다. 참석 인원 미달되거나 주최측에 의한 "
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                                이벤트 취소의 경우, 전액 환불 도와드립니다.\n                            "
+          ),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notice-box" }, [
+      _c("div", { staticClass: "title-box" }, [
+        _c("p", { staticClass: "title" }, [
+          _c("i", { staticClass: "xi-warning" }),
+          _vm._v(
+            "\n                                    환불 규정\n                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "txt" }, [
+          _vm._v(
+            "\n                                    참가비 환불 절차는 공정거래위원회의 소비자 환불규정에 따라 아래와 같습니다. "
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                                    참석 인원 미달되거나 주최측에 의한 이벤트 취소의 경우, 전액 환불 도와드립니다.\n                                "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "con-box" }, [
+        _c("p", { staticClass: "title" }, [
+          _vm._v(
+            "\n                                    개인적인 사유로 취소 신청할 경우\n                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "row-group" }, [
+          _c("li", [
+            _vm._v(
+              "파티일자 7일 이전: 입장료 전액 환불 (송금수수료 -1,000원 공제)"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("파티일자 5일 이전: 입장료 70% 환불")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("파티일자 4일 이전: 입장료 50% 환불")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("파티일자 3일 이전: 입장료 30% 환불")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("파티일자 2일 이내 또는 당일 불참: 환불 불가")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("환불 소요일 : 영업일 기준으로 1~7일")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "btm-box" }, [
+        _c("p", { staticClass: "title" }, [
+          _vm._v("카카오채널 추가 & 메시지 꼭 주세요!"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "txt" }, [
+          _vm._v("[파티신청날짜/이름/전화번호/동행인여부/동행인이름/결제여부]"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title-wrap" }, [
+      _c("i", { staticClass: "xi-lock" }),
+      _vm._v(" "),
+      _c("h2", { staticClass: "title" }, [
+        _vm._v(
+          "\n                                소개팅 환불신청서\n                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "txt" }, [
+        _vm._v(
+          "\n                                인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notice-box" }, [
+      _c("div", { staticClass: "title-box" }, [
+        _c("p", { staticClass: "title" }, [
+          _c("i", { staticClass: "xi-warning" }),
+          _vm._v(
+            "\n                                    환불 규정\n                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "txt" }, [
+          _vm._v(
+            "\n                                    인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "con-box" }, [
+        _c("ul", { staticClass: "row-group blind-num" }, [
+          _c("li", [
+            _vm._v(
+              "1.인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("2.프로그램은 연령대별로 가격이 상이합니다.")]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "3.서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                                        문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("4.첫 프로필 제공은 최소 2주가 소요됩니다.")]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "5.첫 프로필 제공 후에 환불 요청 시에는 1회 차감 후 환불됩니다."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                        정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                        산정됩니다.)"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "7.프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                                        경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "8.소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                                        있습니다"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "9.회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                                        추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                                        다. (단, 기간 연장의 경우 환불은 불가합니다.)"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                        이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "11.회원 교제나 성혼의 이유로 이용이 불가할 때, 지인(신규회원)에게 양도 가능합니다."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v(
+              "12.회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                                        위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                                        서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                                        실과 책임은 없습니다."
+            ),
+          ]),
+        ]),
       ]),
     ])
   },
@@ -72079,7 +72648,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
+    return _c("a", { attrs: { href: "/privacy03", target: "_blank" } }, [
       _c("i", { staticClass: "xi-angle-right term-arrow" }),
     ])
   },

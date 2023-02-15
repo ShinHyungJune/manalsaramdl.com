@@ -343,7 +343,7 @@
                                                 광고 및 마케팅 활용 동의 (선택)
                                             </label>
                                         </div>
-                                        <a href="/privacy01" target="_blank"><i class="xi-angle-right term-arrow"></i></a>
+                                        <a href="/privacy03" target="_blank"><i class="xi-angle-right term-arrow"></i></a>
                                     </li>
                                 </ul>
                             </li>

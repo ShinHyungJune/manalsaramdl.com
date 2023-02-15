@@ -143,6 +143,7 @@ Route::middleware("auth")->group(function(){
     Route::get("/reviews/create", [\App\Http\Controllers\Shopping\ReviewController::class, "create"]);
     Route::post("/reviews", [\App\Http\Controllers\Shopping\ReviewController::class, "store"]);
     Route::get("/refunds", [\App\Http\Controllers\RefundController::class, "index"]);
+    Route::patch("/refunds/{refund}/check", [\App\Http\Controllers\RefundController::class, "check"]);
     Route::post("/refunds", [\App\Http\Controllers\RefundController::class, "store"]);
     Route::post("/feedbacks", [\App\Http\Controllers\FeedbackController::class, "store"]);
 

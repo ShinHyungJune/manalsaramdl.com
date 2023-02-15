@@ -26,14 +26,20 @@ class Dating extends Model
         "schedule3",
         "schedule4",
         "schedule5",
+        "schedule6",
+        "schedule7",
+        "schedule8",
+        "schedule9",
+        "schedule10",
         "scheduled_at",
         "alarm_chat_open",
         "alarm_date_open",
+        "alarm_contact_open",
     ];
 
     public function getOngoingAttribute()
     {
-        if($this->scheduled_at && Carbon::make($this->scheduled_at) <= Carbon::now())
+        if($this->scheduled_at && Carbon::make($this->scheduled_at) <= Carbon::now()->subHour())
             return 0;
 
         return 1;
