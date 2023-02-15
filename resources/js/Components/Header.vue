@@ -14,7 +14,7 @@
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/insa_official" target="_blank"> <i class="sns-icon youtube xi-youtube-play"></i></a>
+                        <a href="https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ" target="_blank"> <i class="sns-icon youtube xi-youtube-play"></i></a>
                     </li>
                 </ul>
                 <h1 class="logo">
@@ -135,7 +135,7 @@
                     <div class="sns-wrap-mb">
 <!--                        <a href="/logout" class="logout-btn" v-if="$page.props.user">logout<i class="xi-log-out"></i></a>-->
                         <a href="https://www.instagram.com/insa.official_/" target="_blank"> <i class="insta xi-instagram"></i></a>
-                        <a href="https://www.youtube.com/insa_official" target="_blank"> <i class="utb youtube xi-youtube-play"></i></a>
+                        <a href="https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ" target="_blank"> <i class="utb youtube xi-youtube-play"></i></a>
                         <a href="https://pf.kakao.com/_kvwsxj" target="_blank"> <i class="kakao speech xi-speech"></i></a>
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
                     </div>

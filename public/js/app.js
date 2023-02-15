@@ -57349,7 +57349,7 @@ var staticRenderFns = [
           "a",
           {
             attrs: {
-              href: "https://www.youtube.com/insa_official",
+              href: "https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ",
               target: "_blank",
             },
           },
@@ -57572,7 +57572,7 @@ var staticRenderFns = [
         "a",
         {
           attrs: {
-            href: "https://www.youtube.com/insa_official",
+            href: "https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ",
             target: "_blank",
           },
         },
