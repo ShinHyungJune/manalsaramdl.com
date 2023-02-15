@@ -177,6 +177,7 @@
                                             실과 책임은 없습니다.</li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
 
@@ -184,6 +185,9 @@
                     </div>
                 </div>
 
+                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
+                    <img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle">
+                </a>
             </div>
         </div>
     </div>

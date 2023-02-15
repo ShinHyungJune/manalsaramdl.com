@@ -4058,6 +4058,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -9812,6 +9814,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -10855,6 +10861,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -10869,6 +10876,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    move: function move() {
+      location.href = "/register";
+    },
     login: function login() {
       this.form.post("/login", {
         preserveState: true
@@ -10900,6 +10910,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_State__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/State */ "./resources/js/Components/State.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
+//
 //
 //
 //
@@ -59146,13 +59157,23 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("img", { attrs: { src: "/images/line-short.png", alt: "" } }),
             _vm._v(" "),
-            _c("div", { staticClass: "refund-blind-box" }, [
+            _c("div", { staticClass: "refund-blind-box top" }, [
               _c("p", [
                 _vm._v(
-                  "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다."
+                  "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한 또는 거절될 수 있으며"
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  " 그럴 경우에는 전액 환불\n                        도와드리고 있습니다."
                 ),
               ]),
-              _vm._v(" "),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "refund-blind-box btm" }, [
               _c("p", [
                 _c("span", [_vm._v("01.")]),
                 _vm._v(
@@ -59168,7 +59189,11 @@ var staticRenderFns = [
               _c("p", [
                 _c("span", [_vm._v("03.")]),
                 _vm._v(
-                  " 서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때\n                        문에 결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
+                  " 서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때문에"
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
                 ),
               ]),
               _vm._v(" "),
@@ -59187,35 +59212,51 @@ var staticRenderFns = [
               _c("p", [
                 _c("span", [_vm._v("06.")]),
                 _vm._v(
-                  " 환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                        정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
+                  " 환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산정됩니다."
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
                 ),
               ]),
               _vm._v(" "),
               _c("p", [
                 _c("span", [_vm._v("07.")]),
                 _vm._v(
-                  " 프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일\n                        경우, 프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
+                  " 프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일 경우,"
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
                 ),
               ]),
               _vm._v(" "),
               _c("p", [
                 _c("span", [_vm._v("08.")]),
                 _vm._v(
-                  " 소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수\n                        있습니다"
+                  " 소개팅 확정 후에 취소나 변경 시에는 횟수 차감뿐만 아니라 프로그램 이용이 거절될 수 있습니다"
                 ),
               ]),
               _vm._v(" "),
               _c("p", [
                 _c("span", [_vm._v("09.")]),
                 _vm._v(
-                  " 회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로\n                        추가 연장을 요구하는 경우는 최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니\n                        다. (단, 기간 연장의 경우 환불은 불가합니다.)"
+                  " 회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로 추가 연장을 요구하는 경우는"
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니다. (단, 기간 연장의 경우 환불은 불가합니다.)"
                 ),
               ]),
               _vm._v(" "),
               _c("p", [
                 _c("span", [_vm._v("10.")]),
                 _vm._v(
-                  " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                        이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다."
+                  " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        가입하신 프로그램 기간만큼 연장 가능합니다."
                 ),
               ]),
               _vm._v(" "),
@@ -59229,16 +59270,24 @@ var staticRenderFns = [
               _c("p", [
                 _c("span", [_vm._v("12.")]),
                 _vm._v(
-                  " 회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기\n                        위하여 당사자에게 정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우\n                        서비스의 이용을 제한하거나 거부할 수 있으며 손해배상을 청구할 수 있으며, 회사의 과\n                        실과 책임은 없습니다."
+                  " 회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기 위하여 당사자에게 "
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우 서비스의 이용을 제한하거나 거부할 수 있으며 "
+                ),
+                _c("br", { staticClass: "br-re" }),
+                _vm._v(
+                  "\n                        손해배상을 청구할 수 있으며, 회사의 과실과 책임은 없습니다."
                 ),
               ]),
             ]),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "refund-logo",
-              attrs: { src: "/images/LOGO.png", alt: "" },
-            }),
           ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "refund-logo",
+            attrs: { src: "/images/LOGO.png", alt: "" },
+          }),
         ]),
       ]),
     ])
@@ -61190,11 +61239,11 @@ var staticRenderFns = [
               _vm._v(
                 "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한 또는 거절될 수 있으며 "
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v("그럴 경우에는 전액 환불 도와드리고 있습니다."),
             ]),
           ]),
@@ -61217,7 +61266,7 @@ var staticRenderFns = [
               _vm._v(
                 " 서비스 이용료 납부와 동시에 상담, 회원 등록, 매칭 등 소개팅 프로세스가 진행되기 때문에"
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        결제금액에서 이용금액과 위약금 20%를 제하고 환불 가능합니다."
               ),
@@ -61240,7 +61289,7 @@ var staticRenderFns = [
               _vm._v(
                 " 환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산정됩니다."
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
               ),
@@ -61251,7 +61300,7 @@ var staticRenderFns = [
               _vm._v(
                 " 프로필 수령 후 24시간 내에 소개팅 날짜, 장소를 조율해주세요. 24시간 내에 무응답일 경우,"
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        프로그램 진행 회피로 여겨 횟수 차감이나 불이익이 발생합니다"
               ),
@@ -61269,7 +61318,7 @@ var staticRenderFns = [
               _vm._v(
                 " 회원권 이용기간은 프로그램 기간과 동일하며, 개인적인 사유(해외파견, 출장, 입원 등)로 추가 연장을 요구하는 경우는"
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        최대 프로그램 기간만큼 유효하며 서류 증빙 후 가능합니다. (단, 기간 연장의 경우 환불은 불가합니다.)"
               ),
@@ -61280,7 +61329,7 @@ var staticRenderFns = [
               _vm._v(
                 " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        가입하신 프로그램 기간만큼 연장 가능합니다."
               ),
@@ -61298,11 +61347,11 @@ var staticRenderFns = [
               _vm._v(
                 " 회원이 제출한 개인정보를 사실로 간주하며 허위로 의심되는 경우 진위 여부를 확인하기 위하여 당사자에게"
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        정보에 관하여 증명을 요구할 수 있으며 허위의 사실을 제출한 경우 서비스의 이용을 제한하거나 거부할 수 있으며 "
               ),
-              _c("br"),
+              _c("br", { staticClass: "br-re" }),
               _vm._v(
                 "\n                        손해배상을 청구할 수 있으며, 회사의 과실과 책임은 없습니다."
               ),
@@ -65520,7 +65569,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "banner-text" }, [
-            _vm._v("사랑을 선물합니다.\n                    "),
+            _vm._v("사랑을 선물합니다\n                    "),
             _c("br"),
             _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
           ]),
@@ -66054,7 +66103,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "main-footer container" }, [
         _c("div", { staticClass: "main-footer-content" }, [
           _c("p", [
-            _vm._v("사람은 만나봐야 알 수 있고,"),
+            _vm._v("사람은 만나봐야 알 수 있고"),
             _c("br"),
             _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
             _c("br"),
@@ -70915,6 +70964,8 @@ var render = function () {
                 ]),
               ])
             : _vm._e(),
+          _vm._v(" "),
+          _vm._m(5),
         ]),
       ]),
     ],
@@ -71135,6 +71186,24 @@ var staticRenderFns = [
         ]),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
+      },
+      [
+        _c("img", {
+          staticClass: "kakao-cir",
+          attrs: { src: "/images/kakao-circle.png", alt: "kakao-circle" },
+        }),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -73825,7 +73894,25 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _c("div", { staticClass: "login-footer", on: { click: _vm.move } }, [
+        _c(
+          "a",
+          {
+            staticClass: "member-benefit-btn col-group",
+            attrs: { href: "#" },
+            on: {
+              click: function ($event) {
+                $event.preventDefault()
+              },
+            },
+          },
+          [
+            _vm._m(4),
+            _vm._v(" "),
+            _c("i", { staticClass: "xi-long-arrow-right" }),
+          ]
+        ),
+      ]),
     ]),
   ])
 }
@@ -73943,24 +74030,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-footer" }, [
-      _c(
-        "a",
-        {
-          staticClass: "member-benefit-btn col-group",
-          attrs: { href: "/register" },
-        },
-        [
-          _c("p", [
-            _vm._v("아직 회원이 아니신가요? "),
-            _c("br"),
-            _vm._v(" "),
-            _c("span", [_vm._v("회원가입 후 다양한 서비스를 만나보세요.")]),
-          ]),
-        ]
-      ),
+    return _c("p", [
+      _vm._v("아직 회원이 아니신가요? "),
+      _c("br"),
       _vm._v(" "),
-      _c("i", { staticClass: "xi-long-arrow-right" }),
+      _c("span", [_vm._v("회원가입 후 다양한 서비스를 만나보세요.")]),
     ])
   },
 ]
@@ -74083,6 +74157,9 @@ var staticRenderFns = [
           "\n                        정말로 탈퇴를 원하신다면 아래 탈퇴 버튼을 눌러주세요. "
         ),
         _c("br"),
+        _vm._v(
+          "\n                        회원탈퇴 후 [30일간 재가입이 불가합니다.]\n                    "
+        ),
       ]),
     ])
   },

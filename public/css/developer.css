@@ -55,3 +55,7 @@
     margin-top:4px;
     font-size:14px; color:red;
 }
+
+#header .mb-hd .mb-hd-wrap.open {
+    z-index:100;
+}

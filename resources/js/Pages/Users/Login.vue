@@ -77,13 +77,14 @@
                 </div>
                 <!-- //login-main -->
             </div>
-            <div class="login-footer">
-                <a href="/register" class="member-benefit-btn col-group">
+            <div class="login-footer" @click="move">
+                <a href="#" class="member-benefit-btn col-group" @click.prevent="">
                     <p>아직 회원이 아니신가요? <br />
                         <span>회원가입 후 다양한 서비스를 만나보세요.</span>
                     </p>
+
+                    <i class="xi-long-arrow-right"></i>
                 </a>
-                <i class="xi-long-arrow-right"></i>
             </div>
 
 
@@ -106,6 +107,9 @@ export default {
     },
 
     methods: {
+        move(){
+            location.href="/register";
+        },
         login() {
             this.form.post("/login", {
                 preserveState: true
