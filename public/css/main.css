@@ -1607,7 +1607,7 @@ color: #fff;
 }
 
 .main-section.sec-2 .main-date .left {
-    width: calc(60% - 5.8vw);
+    width: calc(60% - 5.8vw); 
     order: 1;
     display: flex;
     flex-direction: column;
@@ -5842,6 +5842,7 @@ td {
     color: #d7a550;
     /* margin-left: 30px; */
 }
+.container .refund-blind .refund-blind-box .br-re { display: block;}
 
 @media screen and (max-width: 1280px) {
     .subpage .main-container .service-contents .service-step {
@@ -5897,6 +5898,11 @@ td {
     }
 }
 
+@media screen and (max-width: 1158px) {
+.container .refund-blind .refund-blind-box .br-re { display: none;}
+
+
+}
 @media screen and (max-width: 768px) {
     .subpage.blind-date .sub-container-blind .sub-container-contents {
         width: calc(100% - 40px);
@@ -6360,7 +6366,7 @@ td {
         font-size: 12px;
     }
 
-    .container .service-contents-price.refund-blind{
+    .subpage.blind-date .container .service-contents-price.refund-blind{
         background: none;
         padding: 0;
         display: none;
@@ -6387,6 +6393,19 @@ td {
     .subpage.blind-date .service-contents .title-num {
         margin-bottom: 8px;
     }
+
+
+    
+    .subpage.privacy02 .container .service-contents-price.refund-blind{
+        background: none;
+        padding: 0 20px;
+        margin: 40px 0px;
+    }
+    .subpage.privacy02 .service-contents-price .step-7-content > img { width: 30%;}
+    .subpage.privacy02 .service-contents-price .step-7-content .sub-title { font-size: 27px;}
+    .subpage.privacy02  .container .refund-blind .refund-blind-box.btm p { text-indent: -27px; } 
+    .subpage.privacy02 .container .refund-blind .refund-blind-box.top { text-indent: 0px;}
+
 
 }
 
@@ -8238,7 +8257,7 @@ td {
 }
 
 @media screen and (max-width: 376px) {
-
+    .subpage.privacy02  .container .refund-blind .refund-blind-box.btm p { text-indent: -25px; } 
     .subpage.party-service .invited .img-wrap .invited-m { display: block;  max-width: 375px;  }
     /* .subpage.party-service .invited .img-wrap .invited-pc { display: none; } */
     .main-container .party-reservation button {  height: 64px;  font-size: 14px; }

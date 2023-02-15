@@ -92,7 +92,7 @@
     padding-top: 80px;
     padding-left: 32px;
     padding-right: 56px;
-    padding-bottom: 0px;
+    padding-bottom: 50px;
     position: relative;
 }
 
@@ -472,6 +472,13 @@ color: #a4a4a4;
         font-size: 10px;
         /* color: #a4a4a4; */
     }
+    .mypage .form-box > li .user select {
+        color: #a4a4a4;
+    }
+
+
+
+
     .form-box > li .user textarea {
         height: 120px;
         font-size: 12px;
