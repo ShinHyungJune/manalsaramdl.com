@@ -95,7 +95,7 @@
 
                                     <div class="join-select-wrap">
                                         <select name="" id="" class="join-select" v-model="form.job">
-                                            <option value="" disabled>직업을 선택해주세요.</option>
+                                            <option value="" disabled>직업을 선택해주세요</option>
                                             <option value="서비스 및 영업">서비스 및 영업</option>
                                             <option value="사무직">사무직</option>
                                             <option value="금융직">금융직</option>
@@ -134,7 +134,7 @@
                                 <div id="theme">
                                     <div class="join-select-wrap">
                                         <select name="" id="" v-model="form.school" class="join-select">
-                                            <option value="" disabled>최종 학력을 선택해주세요.</option>
+                                            <option value="" disabled>최종 학력을 선택해주세요</option>
                                             <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
                                             <option value="2년제 대졸">2년제 대졸</option>
                                             <option value="4년제 대졸">4년제 대졸</option>
@@ -152,13 +152,12 @@
                                 <p class="default">
                                     거주지 <span>*</span>
                                 </p>
-                                <div class="user col-group">
-                                    <input-region @change="(data) => {form.city = data.city; form.area = data.area;}" />
 
-                                    <span class="m-input-error">{{form.errors.city}}</span>
-                                    <br/>
-                                    <span class="m-input-error">{{form.errors.area}}</span>
-                                </div>
+                                <input-region @change="(data) => {form.city = data.city; form.area = data.area;}" />
+
+                                <span class="m-input-error">{{form.errors.city}}</span>
+                                <br/>
+                                <span class="m-input-error">{{form.errors.area}}</span>
                             </li>
                             <li class="row-group">
                                 <p class="default">
@@ -176,7 +175,7 @@
                                 <div id="theme">
                                     <div class="join-select-wrap">
                                         <select name="" id="" v-model="form.registration_way" class="join-select">
-                                            <option value="" disabled>가입 경로를 선택해 주세요.</option>
+                                            <option value="" disabled>가입 경로를 선택해 주세요</option>
                                             <option value="인스타그램">인스타그램</option>
                                             <option value="페이스북">페이스북</option>
                                             <option value="유튜브">유튜브</option>
@@ -207,8 +206,8 @@
                                 <p class="default">
                                     닉네임
                                 </p>
-                                <div class="user col-group">
-                                    <input type="text" placeholder="소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요." v-model="form.nickname">
+                                <div class="user">
+                                    <input type="text" placeholder="소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요" v-model="form.nickname">
 
                                     <span class="m-input-error">{{form.errors.nickname}}</span>
                                 </div>
@@ -264,7 +263,7 @@
                                     이상형
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="본인의 이상형에 대해 구체적으로 입력해 주세요." v-model="form.ideal"></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="제가 생각하는 이상적인 연인은 서로 함께 있을 때 가장 즐겁고 재밌는사람입니다. 진중한 만남 기대하고 있습니다" v-model="form.ideal"></textarea>
                                     <span class="m-input-error">{{form.errors.ideal}}</span>
 
                                 </div>
@@ -274,7 +273,7 @@
                                     자기소개글
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요." v-model="form.introduce"></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 인사를 찾게 되었습니다. 곧 만나뵐게요!♥" v-model="form.introduce"></textarea>
                                     <span class="m-input-error">{{form.errors.introduce}}</span>
                                 </div>
                             </li>
@@ -283,7 +282,7 @@
                                     매니저에게 한마디
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요." v-model="form.to_manager"></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="매니저에게 전하고 싶은 한마디를 입력해 주세요" v-model="form.to_manager"></textarea>
                                     <span class="m-input-error">{{form.errors.to_manager}}</span>
                                 </div>
                             </li>
@@ -294,7 +293,7 @@
                                 <div id="theme">
                                     <div class="join-select-wrap">
                                         <select name="" id="" v-model="form.marriage" class="join-select">
-                                            <option value="" disabled>혼인이력을 선택해 주세요.</option>
+                                            <option value="" disabled>혼인이력을 선택해 주세요</option>
                                             <option value="초혼">초혼</option>
                                             <option value="재혼">재혼</option>
                                         </select>
