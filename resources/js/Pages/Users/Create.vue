@@ -137,7 +137,7 @@
                                             <option value="" disabled>최종 학력을 선택해주세요.</option>
                                             <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
                                             <option value="2년제 대졸">2년제 대졸</option>
-                                            <option value="4년데 대졸">4년데 대졸</option>
+                                            <option value="4년제 대졸">4년제 대졸</option>
                                             <option value="석사 졸업">석사 졸업</option>
                                             <option value="박사 졸업">박사 졸업</option>
                                         </select>
@@ -177,10 +177,16 @@
                                     <div class="join-select-wrap">
                                         <select name="" id="" v-model="form.registration_way" class="join-select">
                                             <option value="" disabled>가입 경로를 선택해 주세요.</option>
+                                            <option value="인스타그램">인스타그램</option>
+                                            <option value="페이스북">페이스북</option>
+                                            <option value="유튜브">유튜브</option>
                                             <option value="네이버 블로그">네이버 블로그</option>
+                                            <option value="네이버카페">네이버 카페</option>
                                             <option value="네이버 광고">네이버 광고</option>
                                             <option value="지인추천">지인추천</option>
+                                            <option value="지인양도">지인양도</option>
                                             <option value="검색">검색</option>
+                                            <option value="오프라인광고">오프라인광고</option>
                                         </select>
 
                                         <i class="xi-caret-down-min"></i>

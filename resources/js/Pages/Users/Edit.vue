@@ -121,7 +121,7 @@
                                         <option value="" disabled>최종 학력을 선택해주세요.</option>
                                         <option value="고졸 (취업한 경우 가능)">고졸 (취업한 경우 가능)</option>
                                         <option value="2년제 대졸">2년제 대졸</option>
-                                        <option value="4년데 대졸">4년데 대졸</option>
+                                        <option value="4년제 대졸">4년제 대졸</option>
                                         <option value="석사 졸업">석사 졸업</option>
                                         <option value="박사 졸업">박사 졸업</option>
                                     </select>

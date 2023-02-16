@@ -219,8 +219,8 @@
                         <div class="agree-wrap form-box">
                             <div class="title-wrap col-group">
                                 <p class="title">약관동의</p>
-                                <label for="" @click="() => {agree1=true; agree2 = true;}">
-                                    <input type="checkbox" id="" name="chk" checked v-if="agree1 && agree2">
+                                <label for="" @click="() => {agree1=true; agree2 = true; agree3 = true;}">
+                                    <input type="checkbox" id="" name="chk" checked v-if="agree1 && agree2 && agree3">
                                     <input type="checkbox" id="" name="chk" v-else>
                                     <span class="radio-icon"></span>
                                     전체동의
@@ -241,8 +241,18 @@
                                     <label for="chk_2">
                                         <input type="checkbox" id="chk_2" name="chk" v-model="agree2">
                                         <span class="radio-icon"></span>
-                                        개인정보 수집 및 이용에 대한 동의 (필수)
+                                        개인정보 수집 및 이용에 대한 동의
                                         <a href="/privacy01" target="_blank">
+                                            <i class="xi-angle-right"></i>
+                                        </a>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="chk_3">
+                                        <input type="checkbox" id="chk_3" name="chk" v-model="agree3">
+                                        <span class="radio-icon"></span>
+                                        마케팅 활용에 동의 합니다
+                                        <a href="/privacy04" target="_blank">
                                             <i class="xi-angle-right"></i>
                                         </a>
                                     </label>
@@ -598,6 +608,7 @@ export default {
             }),
             agree1: 0,
             agree2: 0,
+            agree3: 0,
             active: false,
             user: this.$page.props.user ? this.$page.props.user.data : "",
         }
@@ -611,8 +622,8 @@ export default {
         },
 
         order() {
-            if (!this.agree1 || !this.agree2)
-                return alert("필수 약관에 동의해주세요.");
+            if (!this.agree1 || !this.agree2 || !this.agree3)
+                return alert("약관에 동의해주세요.");
 
             if(!this.form.option_id)
                 return alert("참가비를 선택해주세요.");

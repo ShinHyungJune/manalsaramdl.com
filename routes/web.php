@@ -31,6 +31,7 @@ Route::get('/story', [\App\Http\Controllers\PageController::class, "story"]);
 Route::get('/privacy01', [\App\Http\Controllers\PageController::class, "privacy01"]);
 Route::get('/privacy02', [\App\Http\Controllers\PageController::class, "privacy02"]);
 Route::get('/privacy03', [\App\Http\Controllers\PageController::class, "privacy03"]);
+Route::get('/privacy04', [\App\Http\Controllers\PageController::class, "privacy04"]);
 Route::get('/datingProducts', [\App\Http\Controllers\DatingProductController::class, "index"]);
 Route::get('/partyProducts', [\App\Http\Controllers\PartyController::class, "index"]);
 Route::get('/partyProducts/{product}', [\App\Http\Controllers\PartyController::class, "show"]);

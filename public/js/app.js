@@ -4146,6 +4146,60 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
+    Pagination: _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {};
+  },
+  methods: {},
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Story.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Story.vue?vue&type=script&lang=js& ***!
@@ -9168,6 +9222,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -9187,6 +9251,7 @@ __webpack_require__.r(__webpack_exports__);
       }),
       agree1: 0,
       agree2: 0,
+      agree3: 0,
       active: false,
       user: this.$page.props.user ? this.$page.props.user.data : ""
     };
@@ -9197,7 +9262,7 @@ __webpack_require__.r(__webpack_exports__);
       return location.href = "/login";
     },
     order: function order() {
-      if (!this.agree1 || !this.agree2) return alert("필수 약관에 동의해주세요.");
+      if (!this.agree1 || !this.agree2 || !this.agree3) return alert("약관에 동의해주세요.");
       if (!this.form.option_id) return alert("참가비를 선택해주세요.");
       if (!this.form.pay_method_id) return alert("결제수단을 선택해주세요.");
       this.form.post("/orders");
@@ -9885,6 +9950,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Form/InputAddress */ "./resources/js/Components/Form/InputAddress.vue");
 /* harmony import */ var _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Form/InputRegion */ "./resources/js/Components/Form/InputRegion.vue");
 /* harmony import */ var _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Form/InputImgs */ "./resources/js/Components/Form/InputImgs.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -53372,6 +53443,45 @@ component.options.__file = "resources/js/Pages/Contents/Privacy03.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Contents/Privacy04.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Contents/Privacy04.vue ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Privacy04.vue?vue&type=template&id=03ea80a0& */ "./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0&");
+/* harmony import */ var _Privacy04_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Privacy04.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Privacy04_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Contents/Privacy04.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Contents/Story.vue":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/Contents/Story.vue ***!
@@ -54970,6 +55080,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy04_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Privacy04.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy04_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Contents/Story.vue?vue&type=script&lang=js&":
 /*!************************************************************************!*\
   !*** ./resources/js/Pages/Contents/Story.vue?vue&type=script&lang=js& ***!
@@ -55812,6 +55938,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy03_vue_vue_type_template_id_03dc691f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy03_vue_vue_type_template_id_03dc691f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Privacy03.vue?vue&type=template&id=03dc691f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy03.vue?vue&type=template&id=03dc691f&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Privacy04_vue_vue_type_template_id_03ea80a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Privacy04.vue?vue&type=template&id=03ea80a0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0&");
 
 
 /***/ }),
@@ -59372,6 +59515,70 @@ var staticRenderFns = [
                   _c("p", [
                     _vm._v(
                       "\n                                ③ 인사에서 제공하는 소개팅,파티 서비스에 대한 고객 설문 및 만족도 조사\n                            "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Contents/Privacy04.vue?vue&type=template&id=03ea80a0& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", { staticClass: "subpage privacy01" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "txt" }, [
+          _c("div", [
+            _c("ul", [
+              _c("li", [
+                _c("h4", [
+                  _vm._v(
+                    "\n                            마케팅 활용 동의\n                        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pb" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                파티 진행시 주최측의 사진 및 영상촬영이 진행됩니다. "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                                해당촬영물은 내부기록 및 사후 홍보용으로 활용되며 게스트분들의 모습이 노출될 수 있으므로 양해부탁드립니다. "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                                상품구매 및 이용은 초상권동의로 간주합니다.\n                            "
                     ),
                   ]),
                 ]),
@@ -69393,11 +69600,12 @@ var render = function () {
                             click: function () {
                               _vm.agree1 = true
                               _vm.agree2 = true
+                              _vm.agree3 = true
                             },
                           },
                         },
                         [
-                          _vm.agree1 && _vm.agree2
+                          _vm.agree1 && _vm.agree2 && _vm.agree3
                             ? _c("input", {
                                 attrs: {
                                   type: "checkbox",
@@ -69521,9 +69729,61 @@ var render = function () {
                           _vm._v(" "),
                           _c("span", { staticClass: "radio-icon" }),
                           _vm._v(
-                            "\n                                        개인정보 수집 및 이용에 대한 동의 (필수)\n                                        "
+                            "\n                                        개인정보 수집 및 이용에 대한 동의\n                                        "
                           ),
                           _vm._m(4),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("label", { attrs: { for: "chk_3" } }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.agree3,
+                                expression: "agree3",
+                              },
+                            ],
+                            attrs: {
+                              type: "checkbox",
+                              id: "chk_3",
+                              name: "chk",
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.agree3)
+                                ? _vm._i(_vm.agree3, null) > -1
+                                : _vm.agree3,
+                            },
+                            on: {
+                              change: function ($event) {
+                                var $$a = _vm.agree3,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 && (_vm.agree3 = $$a.concat([$$v]))
+                                  } else {
+                                    $$i > -1 &&
+                                      (_vm.agree3 = $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1)))
+                                  }
+                                } else {
+                                  _vm.agree3 = $$c
+                                }
+                              },
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "radio-icon" }),
+                          _vm._v(
+                            "\n                                        마케팅 활용에 동의 합니다\n                                        "
+                          ),
+                          _vm._m(5),
                         ]),
                       ]),
                     ]),
@@ -69541,16 +69801,16 @@ var render = function () {
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
     _vm._m(6),
     _vm._v(" "),
     _vm._m(7),
     _vm._v(" "),
     _vm._m(8),
     _vm._v(" "),
+    _vm._m(9),
+    _vm._v(" "),
     _c("div", { staticClass: "application-container" }, [
-      _vm._m(9),
+      _vm._m(10),
       _vm._v(" "),
       _c("div", { staticClass: "party-place swiper-container" }, [
         _c("div", { staticClass: "swiper" }, [
@@ -69570,7 +69830,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "application-container bg-gray" }, [
-        _vm._m(10),
+        _vm._m(11),
         _vm._v(" "),
         _c("div", { staticClass: "party-place food swiper-container" }, [
           _c("div", { staticClass: "swiper" }, [
@@ -69591,11 +69851,11 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(11),
-    _vm._v(" "),
     _vm._m(12),
     _vm._v(" "),
     _vm._m(13),
+    _vm._v(" "),
+    _vm._m(14),
   ])
 }
 var staticRenderFns = [
@@ -69715,6 +69975,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/privacy01", target: "_blank" } }, [
+      _c("i", { staticClass: "xi-angle-right" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/privacy04", target: "_blank" } }, [
       _c("i", { staticClass: "xi-angle-right" }),
     ])
   },
@@ -71709,8 +71977,8 @@ var render = function () {
                             _vm._v("2년제 대졸"),
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "4년데 대졸" } }, [
-                            _vm._v("4년데 대졸"),
+                          _c("option", { attrs: { value: "4년제 대졸" } }, [
+                            _vm._v("4년제 대졸"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "석사 졸업" } }, [
@@ -71840,8 +72108,24 @@ var render = function () {
                             _vm._v("가입 경로를 선택해 주세요."),
                           ]),
                           _vm._v(" "),
+                          _c("option", { attrs: { value: "인스타그램" } }, [
+                            _vm._v("인스타그램"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "페이스북" } }, [
+                            _vm._v("페이스북"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "유튜브" } }, [
+                            _vm._v("유튜브"),
+                          ]),
+                          _vm._v(" "),
                           _c("option", { attrs: { value: "네이버 블로그" } }, [
                             _vm._v("네이버 블로그"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "네이버카페" } }, [
+                            _vm._v("네이버 카페"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "네이버 광고" } }, [
@@ -71852,8 +72136,16 @@ var render = function () {
                             _vm._v("지인추천"),
                           ]),
                           _vm._v(" "),
+                          _c("option", { attrs: { value: "지인양도" } }, [
+                            _vm._v("지인양도"),
+                          ]),
+                          _vm._v(" "),
                           _c("option", { attrs: { value: "검색" } }, [
                             _vm._v("검색"),
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "오프라인광고" } }, [
+                            _vm._v("오프라인광고"),
                           ]),
                         ]
                       ),
@@ -73042,8 +73334,8 @@ var render = function () {
                             _vm._v("2년제 대졸"),
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "4년데 대졸" } }, [
-                            _vm._v("4년데 대졸"),
+                          _c("option", { attrs: { value: "4년제 대졸" } }, [
+                            _vm._v("4년제 대졸"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "석사 졸업" } }, [
@@ -86362,6 +86654,8 @@ var map = {
 	"./Contents/Privacy02.vue": "./resources/js/Pages/Contents/Privacy02.vue",
 	"./Contents/Privacy03": "./resources/js/Pages/Contents/Privacy03.vue",
 	"./Contents/Privacy03.vue": "./resources/js/Pages/Contents/Privacy03.vue",
+	"./Contents/Privacy04": "./resources/js/Pages/Contents/Privacy04.vue",
+	"./Contents/Privacy04.vue": "./resources/js/Pages/Contents/Privacy04.vue",
 	"./Contents/Story": "./resources/js/Pages/Contents/Story.vue",
 	"./Contents/Story.vue": "./resources/js/Pages/Contents/Story.vue",
 	"./DatingNotices/Index": "./resources/js/Pages/DatingNotices/Index.vue",

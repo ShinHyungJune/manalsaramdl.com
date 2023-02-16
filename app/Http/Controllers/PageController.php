@@ -52,5 +52,12 @@ class PageController extends Controller
         ]);
     }
 
+    public function privacy04(Request $request)
+    {
+        return Inertia::render("Contents/Privacy04", [
+
+        ]);
+    }
+
 
 }
