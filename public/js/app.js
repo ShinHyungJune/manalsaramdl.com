@@ -65425,9 +65425,9 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("p", [
-          _vm._v(
-            "\n                    회원가입시 입력했던 휴대폰번호로 아이디를 찾을 수 있습니다.\n                "
-          ),
+          _vm._v("\n                    회원가입시 입력했던 휴대폰번호로 "),
+          _c("br"),
+          _vm._v("아이디를 찾을 수 있습니다.\n                "),
         ]),
       ]),
     ])
@@ -70822,9 +70822,9 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("p", [
-          _vm._v(
-            "\n                    비밀번호를 초기화하려는 아이디를 가입했던 휴대폰번호와 함께 입력해주세요.\n                "
-          ),
+          _vm._v("\n                    비밀번호를 초기화하려는 아이디를 "),
+          _c("br"),
+          _vm._v("가입했던 휴대폰번호와 함께 입력해주세요.\n                "),
         ]),
       ]),
     ])
@@ -72053,15 +72053,19 @@ var render = function () {
                       },
                     }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "m-input-error" }, [
-                      _vm._v(_vm._s(_vm.form.errors.city)),
-                    ]),
+                    _vm.form.errors.city
+                      ? _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.city)),
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
                     _c("br"),
                     _vm._v(" "),
-                    _c("span", { staticClass: "m-input-error" }, [
-                      _vm._v(_vm._s(_vm.form.errors.area)),
-                    ]),
+                    _vm.form.errors.area
+                      ? _c("span", { staticClass: "m-input-error" }, [
+                          _vm._v(_vm._s(_vm.form.errors.area)),
+                        ])
+                      : _vm._e(),
                   ],
                   1
                 ),

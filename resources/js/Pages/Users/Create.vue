@@ -155,9 +155,9 @@
 
                                 <input-region @change="(data) => {form.city = data.city; form.area = data.area;}" />
 
-                                <span class="m-input-error">{{form.errors.city}}</span>
+                                <span class="m-input-error" v-if="form.errors.city">{{form.errors.city}}</span>
                                 <br/>
-                                <span class="m-input-error">{{form.errors.area}}</span>
+                                <span class="m-input-error" v-if="form.errors.area">{{form.errors.area}}</span>
                             </li>
                             <li class="row-group">
                                 <p class="default">
