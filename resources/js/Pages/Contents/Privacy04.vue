@@ -1,5 +1,5 @@
 <template>
-    <main class="subpage privacy01">
+    <main class="subpage privacy01 privacy4">
         <div class="container">
             <div class="txt">
                 <div>

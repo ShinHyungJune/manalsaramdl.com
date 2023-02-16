@@ -59552,7 +59552,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "subpage privacy01" }, [
+    return _c("main", { staticClass: "subpage privacy01 privacy4" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "txt" }, [
           _c("div", [
