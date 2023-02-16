@@ -59,3 +59,7 @@
 #header .mb-hd .mb-hd-wrap.open {
     z-index:100;
 }
+
+select, input {
+    font-family: "Pretendard";
+}
