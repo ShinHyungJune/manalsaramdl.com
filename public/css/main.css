@@ -8401,3 +8401,16 @@ td {
       border-top: 2px solid #444;
       border-bottom: 1px solid #444;
 }
+
+.privacy4 {
+min-height: calc(100vh - 156px - 307px);
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .privacy4 {
+        min-height: calc(100vh - 56px - 307px);
+        
+    }
+}

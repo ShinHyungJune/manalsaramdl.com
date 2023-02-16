@@ -1232,9 +1232,11 @@ input[type="checkbox"] {
     cursor: pointer;
     width: 100%;
     height: 100%;
-    font-size: 10px;
+    font-size: 18px;
     color: #a4a4a4;
 }
+
+
 
 #theme .join-select:hover {
     color: #333;
@@ -1486,6 +1488,8 @@ input[type="checkbox"] {
     .subpage.result-section {
         min-height: calc(100vh - 305.49px);
     }
+    #theme .join-select {  font-size: 10px; }
+    
 }
 /* 결과 화면 582 */
 @media screen and (max-width: 582px) {
@@ -1553,8 +1557,11 @@ input[type="checkbox"] {
 
     #theme .join-select {
         height: 40px;
+        font-size: 10px;
+
         /* padding: 14px; */
     }
+
     #theme .join-select .text {
         font-size: 10px;
         line-height: 12px;

@@ -326,9 +326,14 @@ color: #a4a4a4;
     color: #333;
     resize: none;
 }
+.form-box > li .user input { color: unset;}
+
+.form-join .form-box .user > .input-gap { color: unset;}
+
 .form-box > li .user textarea::placeholder {
     color: #a4a4a4;
 }
+
 .form-box > li .user input::placeholder { 
     color: #a4a4a4;
 }
