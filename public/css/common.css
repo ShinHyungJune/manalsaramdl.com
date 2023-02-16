@@ -1064,7 +1064,7 @@ a {
         border-radius: 50%;
         position: absolute;
         right: 24px;
-        bottom: 140px;
+         top: -26px;
     }
     #footer button i {
         font-size: 16px;
