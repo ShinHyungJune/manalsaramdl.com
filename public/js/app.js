@@ -6137,6 +6137,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -7730,6 +7731,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -61859,8 +61864,10 @@ var render = function () {
         _c("sidebar"),
         _vm._v(" "),
         _c("div", { staticClass: "right-wrap" }, [
+          _vm._m(1),
+          _vm._v(" "),
           _c("div", { staticClass: "title-wrap col-group" }, [
-            _vm._m(1),
+            _vm._m(2),
             _vm._v(" "),
             _c("ul", { staticClass: "tab-link col-group" }, [
               _c(
@@ -62184,9 +62191,9 @@ var render = function () {
                     [_c("i", { staticClass: "xi-close" })]
                   ),
                   _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
                   _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4),
                   _vm._v(" "),
                   _c(
                     "button",
@@ -62401,8 +62408,6 @@ var render = function () {
                           },
                           [_vm._v("확인완료")]
                         ),
-                        _vm._v(" "),
-                        _vm._m(4),
                       ]),
                     ]),
                   ]),
@@ -64790,6 +64795,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj", target: "_blank" },
+      },
+      [
+        _c("i", { staticClass: "xi-kakaotalk" }),
+        _vm._v(" 카톡문의\n            "),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/datings" } }, [
       _c("h2", [_vm._v("소개팅 목록")]),
     ])
@@ -64821,22 +64842,6 @@ var staticRenderFns = [
         "\n                        확인하시겠습니까?\n                    "
       ),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "kakao-btn",
-        attrs: { href: "http://pf.kakao.com/_kvwsxj", target: "_blank" },
-      },
-      [
-        _c("i", { staticClass: "xi-kakaotalk" }),
-        _vm._v(" 카톡문의\n                                "),
-      ]
-    )
   },
   function () {
     var _vm = this
@@ -67287,6 +67292,8 @@ var render = function () {
         _c("sidebar"),
         _vm._v(" "),
         _c("div", { staticClass: "right-wrap" }, [
+          _vm._m(1),
+          _vm._v(" "),
           _c("div", { staticClass: "title-wrap col-group" }, [
             _c("h2", [_vm._v("파티 목록")]),
             _vm._v(" "),
@@ -67487,6 +67494,22 @@ var staticRenderFns = [
         ]),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj", target: "_blank" },
+      },
+      [
+        _c("i", { staticClass: "xi-kakaotalk" }),
+        _vm._v(" 카톡문의\n            "),
+      ]
+    )
   },
 ]
 render._withStripped = true

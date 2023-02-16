@@ -20,6 +20,10 @@
             <sidebar />
 
             <div class="right-wrap">
+                <a href="http://pf.kakao.com/_kvwsxj" target="_blank" class="kakao-btn">
+                    <i class="xi-kakaotalk"></i> 카톡문의
+                </a>
+
                 <div class="title-wrap col-group">
                     <h2>파티 목록</h2>
                     <ul class="tab-link col-group">
