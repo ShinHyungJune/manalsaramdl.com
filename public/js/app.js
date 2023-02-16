@@ -9194,7 +9194,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     activate: function activate() {
       if (this.user) return this.active = true;
-      return alert("로그인 후 이용해주세요.");
+      return location.href = "/login";
     },
     order: function order() {
       if (!this.agree1 || !this.agree2) return alert("필수 약관에 동의해주세요.");
@@ -11066,7 +11066,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "556bb957c118309549b8",
+  key: "52af68ea6720e39336b9",
   cluster: "ap3",
   forceTLS: true
 }); //

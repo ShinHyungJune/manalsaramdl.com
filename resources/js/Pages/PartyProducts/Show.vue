@@ -607,7 +607,7 @@ export default {
             if(this.user)
                 return this.active = true;
 
-            return alert("로그인 후 이용해주세요.");
+            return location.href="/login";
         },
 
         order() {
