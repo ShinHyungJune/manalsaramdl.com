@@ -8379,7 +8379,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -10327,7 +10326,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -10470,8 +10468,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Form_InputAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/Form/InputAddress */ "./resources/js/Components/Form/InputAddress.vue");
 /* harmony import */ var _Components_Form_InputRegion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Form/InputRegion */ "./resources/js/Components/Form/InputRegion.vue");
 /* harmony import */ var _Components_Form_InputImgs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/Form/InputImgs */ "./resources/js/Components/Form/InputImgs.vue");
-//
-//
 //
 //
 //
@@ -68736,7 +68732,11 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("1")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에 카카오톡 플러스친구를 추가해주세요."),
+                  _vm._v("파티 참석 전에  "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("카카오톡 플러스친구를 "),
+                  ]),
+                  _vm._v("추가해주세요."),
                 ]),
               ]),
               _vm._v(" "),
@@ -68744,11 +68744,19 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("2")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 결제 후에 카카오톡 플러스친구로 "),
+                  _vm._v("파티 결제 후에 "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("[파티 참석합니다!] "),
+                    _vm._v("신원인증"),
                   ]),
-                  _vm._v("보내주세요.\n                            "),
+                  _vm._v("을 진행해주세요."),
+                  _c("br"),
+                  _vm._v(
+                    "\n                                신원인증은 마이페이지>프로필수정>프로필사진에서 "
+                  ),
+                  _c("br", { staticClass: "mb2" }),
+                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 3장 "),
+                  _c("br", { staticClass: "br-mb" }),
+                  _vm._v(" 업로드 부탁드립니다.\n                            "),
                 ]),
               ]),
               _vm._v(" "),
@@ -68756,14 +68764,8 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("3")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에 "),
-                  _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("신원인증 필수"),
-                  ]),
-                  _vm._v("입니다. "),
-                  _c("br"),
                   _vm._v(
-                    "\n                                신원인증은 마이페이지에 프로필수정에서 명함, 신분증, 셀카사진 첨부 부탁드립니다.\n                            "
+                    "파업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
                   ),
                 ]),
               ]),
@@ -68772,18 +68774,24 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("4")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("신원인증 후에 "),
+                  _vm._v("신원인증 확인 후에 선착순으로 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("파티참석권"),
                   ]),
-                  _vm._v("발송드립니다. "),
+                  _vm._v(" 승인드리고 있습니다. "),
                 ]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("5")]),
                 _vm._v(" "),
-                _c("p", [_vm._v("파티 신청 전에 환불규정 확인해주세요. ")]),
+                _c("p", [
+                  _vm._v("파티 신청 전에 "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("환불규정"),
+                  ]),
+                  _vm._v(" 확인해주세요. "),
+                ]),
               ]),
             ]),
           ]),
@@ -70414,7 +70422,11 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("1")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에 카카오톡 플러스친구를 추가해주세요."),
+                  _vm._v("파티 참석 전에  "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("카카오톡 플러스친구를 "),
+                  ]),
+                  _vm._v("추가해주세요."),
                 ]),
               ]),
               _vm._v(" "),
@@ -70422,12 +70434,21 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("2")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 결제 후에 카카오톡 플러스친구로 "),
+                  _vm._v("파티 결제 후에 "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _c("br", { staticClass: "br-mb" }),
-                    _vm._v("[참석합니다!]"),
+                    _vm._v("신원인증"),
                   ]),
-                  _vm._v(" 보내주세요."),
+                  _vm._v("을 진행해주세요."),
+                  _c("br"),
+                  _vm._v(
+                    "\n                                    신원인증은 마이페이지>프로필수정>프로필사진에서 "
+                  ),
+                  _c("br", { staticClass: "mb2" }),
+                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 3장 "),
+                  _c("br", { staticClass: "br-mb" }),
+                  _vm._v(
+                    " 업로드 부탁드립니다.\n                                "
+                  ),
                 ]),
               ]),
               _vm._v(" "),
@@ -70435,20 +70456,8 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("3")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에 "),
-                  _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("신원인증"),
-                  ]),
-                  _vm._v(" 필수입니다."),
-                  _c("br", { staticClass: "br-mb" }),
                   _vm._v(
-                    "\n                                    신원인증은 마이페이지에 "
-                  ),
-                  _c("br", { staticClass: "br-pc" }),
-                  _vm._v(" 프로필수정에서 "),
-                  _c("br", { staticClass: "br-mb" }),
-                  _vm._v(
-                    "명함, 신분증, 셀카사진 첨부 부탁드립니다.\n                                "
+                    "파업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
                   ),
                 ]),
               ]),
@@ -70457,18 +70466,24 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("4")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("신원인증 후에 "),
+                  _vm._v("신원인증 확인 후에 선착순으로 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("파티참석권"),
                   ]),
-                  _vm._v(" 승인드립니다. "),
+                  _vm._v(" 승인드리고 있습니다. "),
                 ]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("5")]),
                 _vm._v(" "),
-                _c("p", [_vm._v("파티 신청 전에 환불규정 확인해주세요. ")]),
+                _c("p", [
+                  _vm._v("파티 신청 전에 "),
+                  _c("span", { staticClass: "text-style-1" }, [
+                    _vm._v("환불규정"),
+                  ]),
+                  _vm._v(" 확인해주세요. "),
+                ]),
               ]),
             ]),
           ]),
@@ -71814,7 +71829,7 @@ var render = function () {
                         },
                         [
                           _c("option", { attrs: { value: "", disabled: "" } }, [
-                            _vm._v("직업을 선택해주세요."),
+                            _vm._v("직업을 선택해주세요"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "서비스 및 영업" } }, [
@@ -71964,7 +71979,7 @@ var render = function () {
                         },
                         [
                           _c("option", { attrs: { value: "", disabled: "" } }, [
-                            _vm._v("최종 학력을 선택해주세요."),
+                            _vm._v("최종 학력을 선택해주세요"),
                           ]),
                           _vm._v(" "),
                           _c(
@@ -72000,35 +72015,33 @@ var render = function () {
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("li", { staticClass: "row-group" }, [
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "user col-group" },
-                    [
-                      _c("input-region", {
-                        on: {
-                          change: function (data) {
-                            _vm.form.city = data.city
-                            _vm.form.area = data.area
-                          },
+                _c(
+                  "li",
+                  { staticClass: "row-group" },
+                  [
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _c("input-region", {
+                      on: {
+                        change: function (data) {
+                          _vm.form.city = data.city
+                          _vm.form.area = data.area
                         },
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-input-error" }, [
-                        _vm._v(_vm._s(_vm.form.errors.city)),
-                      ]),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-input-error" }, [
-                        _vm._v(_vm._s(_vm.form.errors.area)),
-                      ]),
-                    ],
-                    1
-                  ),
-                ]),
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.city)),
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "m-input-error" }, [
+                      _vm._v(_vm._s(_vm.form.errors.area)),
+                    ]),
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c("li", { staticClass: "row-group" }, [
                   _vm._m(11),
@@ -72105,7 +72118,7 @@ var render = function () {
                         },
                         [
                           _c("option", { attrs: { value: "", disabled: "" } }, [
-                            _vm._v("가입 경로를 선택해 주세요."),
+                            _vm._v("가입 경로를 선택해 주세요"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "인스타그램" } }, [
@@ -72170,7 +72183,7 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "user col-group" }, [
+                  _c("div", { staticClass: "user" }, [
                     _c("input", {
                       directives: [
                         {
@@ -72183,7 +72196,7 @@ var render = function () {
                       attrs: {
                         type: "text",
                         placeholder:
-                          "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요.",
+                          "소개팅 서비스 이용시 상대방에게 표시될 닉네임을 입력하세요",
                       },
                       domProps: { value: _vm.form.nickname },
                       on: {
@@ -72391,7 +72404,7 @@ var render = function () {
                         cols: "30",
                         rows: "10",
                         placeholder:
-                          "본인의 이상형에 대해 구체적으로 입력해 주세요.",
+                          "제가 생각하는 이상적인 연인은 서로 함께 있을 때 가장 즐겁고 재밌는사람입니다. 진중한 만남 기대하고 있습니다",
                       },
                       domProps: { value: _vm.form.ideal },
                       on: {
@@ -72433,7 +72446,7 @@ var render = function () {
                         cols: "30",
                         rows: "10",
                         placeholder:
-                          "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
+                          "안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 인사를 찾게 되었습니다. 곧 만나뵐게요!♥",
                       },
                       domProps: { value: _vm.form.introduce },
                       on: {
@@ -72475,7 +72488,7 @@ var render = function () {
                         cols: "30",
                         rows: "10",
                         placeholder:
-                          "매니저에게 전하고 싶은 한마디를 입력해 주세요.",
+                          "매니저에게 전하고 싶은 한마디를 입력해 주세요",
                       },
                       domProps: { value: _vm.form.to_manager },
                       on: {
@@ -72538,7 +72551,7 @@ var render = function () {
                         },
                         [
                           _c("option", { attrs: { value: "", disabled: "" } }, [
-                            _vm._v("혼인이력을 선택해 주세요."),
+                            _vm._v("혼인이력을 선택해 주세요"),
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "초혼" } }, [
@@ -73354,36 +73367,34 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  _c("li", { staticClass: "row-group" }, [
-                    _vm._m(7),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "user col-group" },
-                      [
-                        _c("input-region", {
-                          attrs: { area: _vm.form.area, city: _vm.form.city },
-                          on: {
-                            change: function (data) {
-                              _vm.form.city = data.city
-                              _vm.form.area = data.area
-                            },
+                  _c(
+                    "li",
+                    { staticClass: "row-group" },
+                    [
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c("input-region", {
+                        attrs: { area: _vm.form.area, city: _vm.form.city },
+                        on: {
+                          change: function (data) {
+                            _vm.form.city = data.city
+                            _vm.form.area = data.area
                           },
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-input-error" }, [
-                          _vm._v(_vm._s(_vm.form.errors.city)),
-                        ]),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-input-error" }, [
-                          _vm._v(_vm._s(_vm.form.errors.area)),
-                        ]),
-                      ],
-                      1
-                    ),
-                  ]),
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.city)),
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-input-error" }, [
+                        _vm._v(_vm._s(_vm.form.errors.area)),
+                      ]),
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c("li", { staticClass: "row-group" }, [
                     _vm._m(8),
@@ -73497,7 +73508,7 @@ var render = function () {
                       ),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "user col-group" }, [
+                    _c("div", { staticClass: "user" }, [
                       _c("input", {
                         directives: [
                           {
@@ -73726,7 +73737,7 @@ var render = function () {
                           cols: "30",
                           rows: "10",
                           placeholder:
-                            "본인의 이상형에 대해 구체적으로 입력해 주세요.",
+                            "제가 생각하는 이상적인 연인은 서로 함께 있을 때 가장 즐겁고 재밌는사람입니다. 진중한 만남 기대하고 있습니다.",
                         },
                         domProps: { value: _vm.form.ideal },
                         on: {
@@ -73768,7 +73779,7 @@ var render = function () {
                           cols: "30",
                           rows: "10",
                           placeholder:
-                            "자신을 소개할 수 있는 간단한 자기소개를 입력해 주세요.",
+                            "안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 인사를 찾게 되었습니다. 곧 만나뵐게요!♥",
                         },
                         domProps: { value: _vm.form.introduce },
                         on: {
