@@ -21,9 +21,7 @@
             <sidebar />
 
             <div class="right-wrap">
-                <a href="http://pf.kakao.com/_kvwsxj" target="_blank" class="kakao-btn">
-                    <i class="xi-kakaotalk"></i> 카톡문의
-                </a>
+                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn"><img src="/images/kakao-circle.png" alt="kakao-circle" class="kakao-cir"></a>
 
                 <div class="title-wrap col-group">
                     <a href="/datings"><h2>소개팅 목록</h2></a>

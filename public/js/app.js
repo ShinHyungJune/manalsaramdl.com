@@ -6136,8 +6136,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -7731,8 +7729,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
 /* harmony import */ var _Components_Sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Sidebar */ "./resources/js/Components/Sidebar.vue");
-//
-//
 //
 //
 //
@@ -64799,11 +64795,13 @@ var staticRenderFns = [
       "a",
       {
         staticClass: "kakao-btn",
-        attrs: { href: "http://pf.kakao.com/_kvwsxj", target: "_blank" },
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
       },
       [
-        _c("i", { staticClass: "xi-kakaotalk" }),
-        _vm._v(" 카톡문의\n            "),
+        _c("img", {
+          staticClass: "kakao-cir",
+          attrs: { src: "/images/kakao-circle.png", alt: "kakao-circle" },
+        }),
       ]
     )
   },
@@ -67503,11 +67501,13 @@ var staticRenderFns = [
       "a",
       {
         staticClass: "kakao-btn",
-        attrs: { href: "http://pf.kakao.com/_kvwsxj", target: "_blank" },
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
       },
       [
-        _c("i", { staticClass: "xi-kakaotalk" }),
-        _vm._v(" 카톡문의\n            "),
+        _c("img", {
+          staticClass: "kakao-cir",
+          attrs: { src: "/images/kakao-circle.png", alt: "kakao-circle" },
+        }),
       ]
     )
   },
