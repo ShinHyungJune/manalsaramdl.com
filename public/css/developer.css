@@ -1,4 +1,4 @@
-.m-ratioBox-wrap {width:100%; padding-top:100%; position:relative; border:1px solid #ebebeb; overflow:hidden;}
+.m-ratioBox-wrap {width:100%; padding-top:120%; position:relative; overflow:hidden;}
 .m-ratioBox-wrap .m-ratioBox {position:absolute; top:0; left:0; right:0; bottom:0;}
 /*
 .m-ratioBox-wrap .m-ratioBox:after {content:""; width:83px; height:28px; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:url("../img/logo.png") no-repeat; background-size:100%; opacity:0.4;}

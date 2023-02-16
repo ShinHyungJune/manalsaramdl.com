@@ -7,9 +7,7 @@
                         <div class="swiper-wrapper">
                             <a :href="pop.url ? pop.url : '#'" class="swiper-slide" v-for="pop in pops.data" :key="pop.id">
                                 <div class="m-ratioBox-wrap">
-                                    <div class="m-ratioBox">
-                                        <img :src="pop.img ? pop.img.url : ''">
-                                    </div>
+                                    <div class="m-ratioBox" :style="`background-image:url(${pop.img ? pop.img.url : ''}); background-size:cover; background-position:center;`"></div>
                                 </div>
                             </a>
                         </div>
