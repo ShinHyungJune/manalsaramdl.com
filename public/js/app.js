@@ -69356,7 +69356,7 @@ var render = function () {
                               ]),
                               _vm._v(" "),
                               _c("p", { staticClass: "addr" }, [
-                                _vm._v(_vm._s(_vm.product.place_name)),
+                                _vm._v(_vm._s(_vm.product.address)),
                               ]),
                             ]),
                             _vm._v(" "),
