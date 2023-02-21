@@ -90,3 +90,6 @@ select, input {
 .m-pop.type01 .btn-close i {
     font-size:24px; color:#fff;
 }
+.m-pop.type01 img {
+    max-height:calc(100vh - 200px);
+}
