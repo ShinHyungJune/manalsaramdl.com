@@ -38,7 +38,7 @@
                                     <ul class="user col-group">
                                         <li class="col-group">
                                             <span class="label">장소</span>
-                                            <p class="addr">{{ product.place }}</p>
+                                            <p class="addr">{{ product.address }}</p>
                                         </li>
                                         <li class="col-group">
                                             <span class="label">연령</span>

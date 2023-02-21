@@ -69206,7 +69206,7 @@ var render = function () {
                       _c("span", { staticClass: "label" }, [_vm._v("장소")]),
                       _vm._v(" "),
                       _c("p", { staticClass: "addr" }, [
-                        _vm._v(_vm._s(_vm.product.place)),
+                        _vm._v(_vm._s(_vm.product.address)),
                       ]),
                     ]),
                     _vm._v(" "),
