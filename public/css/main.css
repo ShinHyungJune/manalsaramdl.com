@@ -8404,8 +8404,16 @@ td {
 
 .privacy4 {
 min-height: calc(100vh - 156px - 307px);
-
 }
+
+.privacy2 p { white-space: nowrap; }
+
+
+@media screen and (max-width: 1158px) {
+    .privacy2 p { white-space: unset; }
+}
+
+
 
 @media screen and (max-width: 768px) {
 
