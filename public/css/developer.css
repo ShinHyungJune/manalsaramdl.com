@@ -93,3 +93,9 @@ select, input {
 .m-pop.type01 img {
     max-height:calc(100vh - 200px);
 }
+
+@media screen and (max-width:768px) {
+    .m-pop.type01 {
+        padding:50px;
+    }
+}
