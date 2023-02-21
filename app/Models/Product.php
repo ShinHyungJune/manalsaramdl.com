@@ -71,6 +71,7 @@ class Product extends Model implements HasMedia
     public function registerMediaCollections():void
     {
         $this->addMediaCollection('img')->singleFile();
+        $this->addMediaCollection('img_show')->singleFile();
         $this->addMediaCollection('imgs_party');
         $this->addMediaCollection('imgs_food');
     }
@@ -92,6 +93,17 @@ class Product extends Model implements HasMedia
         return $this->orders()->where("orders.state", OrderState::SUCCESS)->whereHas("user", function($query){
             return $query->where("sex", Sex::MEN);
         })->wherePivot("accept", true)->count();
+    }
+
+    public function getImgShowAttribute()
+    {
+        if($this->hasMedia("img_show"))
+            return [
+                "url" => $this->getMedia("img_show")[0]->getFullUrl(),
+                "name" => $this->getMedia("img_show")[0]->file_name
+            ];
+
+        return null;
     }
 
     public function getImgAttribute()

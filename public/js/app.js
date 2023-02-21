@@ -2090,6 +2090,67 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["item"],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  methods: {
+    move: function move(item) {
+      if (item.url) return window.open(item.url, "pop", "_blank");
+      return this.active = true;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Flash.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/Flash.vue?vue&type=script&lang=js& ***!
@@ -5128,6 +5189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
+/* harmony import */ var _Components_DatingReview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/DatingReview */ "./resources/js/Components/DatingReview.vue");
 //
 //
 //
@@ -5170,31 +5232,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    DatingReview: _Components_DatingReview__WEBPACK_IMPORTED_MODULE_2__["default"],
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
     Pagination: _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -5217,9 +5260,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.items = page.props.items;
         }
       });
-    },
-    move: function move(item) {
-      if (item.url) window.open(item.url, "pop", "_blank");
     }
   },
   computed: {}
@@ -8640,10 +8680,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -52775,6 +52811,45 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/DatingReview.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/Components/DatingReview.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatingReview.vue?vue&type=template&id=5baa9b24& */ "./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24&");
+/* harmony import */ var _DatingReview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatingReview.vue?vue&type=script&lang=js& */ "./resources/js/Components/DatingReview.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DatingReview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__.render,
+  _DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/DatingReview.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Flash.vue":
 /*!*******************************************!*\
   !*** ./resources/js/Components/Flash.vue ***!
@@ -54805,6 +54880,22 @@ component.options.__file = "resources/js/Pages/Users/Remove.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Components/DatingReview.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Components/DatingReview.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatingReview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DatingReview.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatingReview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Flash.vue?vue&type=script&lang=js&":
 /*!********************************************************************!*\
   !*** ./resources/js/Components/Flash.vue?vue&type=script&lang=js& ***!
@@ -55646,6 +55737,23 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_style_index_0_id_8dec130c_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Show.vue?vue&type=style&index=0&id=8dec130c&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Chats/Show.vue?vue&type=style&index=0&id=8dec130c&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatingReview_vue_vue_type_template_id_5baa9b24___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DatingReview.vue?vue&type=template&id=5baa9b24& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24&");
 
 
 /***/ }),
@@ -56530,6 +56638,118 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Remove_vue_vue_type_template_id_5348f734___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Remove_vue_vue_type_template_id_5348f734___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Remove.vue?vue&type=template&id=5348f734& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Users/Remove.vue?vue&type=template&id=5348f734&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Components/DatingReview.vue?vue&type=template&id=5baa9b24& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("li", { staticClass: "review-box" }, [
+    _vm.active
+      ? _c("div", { staticClass: "m-pop type01" }, [
+          _c("div", { staticClass: "m-pop-inner" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn-close",
+                on: {
+                  click: function ($event) {
+                    _vm.active = false
+                  },
+                },
+              },
+              [_c("i", { staticClass: "xi-close" })]
+            ),
+            _vm._v(" "),
+            _c("img", {
+              attrs: { src: _vm.item.img ? _vm.item.img.url : "", alt: "" },
+            }),
+          ]),
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        attrs: { href: "#" },
+        on: {
+          click: function ($event) {
+            $event.preventDefault()
+            return _vm.move(_vm.item)
+          },
+        },
+      },
+      [
+        _c(
+          "div",
+          { class: "bg-img " + (!_vm.item.description ? "no-blind" : "") },
+          [
+            _c("img", {
+              attrs: { src: _vm.item.img ? _vm.item.img.url : "", alt: "" },
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _vm.item.platform === "INSTAGRAM"
+          ? _c("span", { staticClass: "sns-badge" }, [
+              _c("img", {
+                attrs: { src: "/images/sns-icon-insta.png", alt: "" },
+              }),
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.item.platform === "NAVER"
+          ? _c("span", { staticClass: "sns-badge" }, [
+              _c("img", {
+                attrs: { src: "/images/sns-icon-blog.png", alt: "" },
+              }),
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "txt-box" }, [
+          _c("ul", { staticClass: "user-info col-group" }, [
+            _c("li", [_vm._v(_vm._s(_vm.item.sex))]),
+            _vm._v(" "),
+            _c("li", [_vm._v(_vm._s(_vm.item.age))]),
+            _vm._v(" "),
+            _c("li", [_vm._v(_vm._s(_vm.item.job))]),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "title" }, [
+            _vm._v(
+              "\n                " + _vm._s(_vm.item.title) + "\n            "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "txt" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.item.description.replace(/<\/?[^>]+>/gi, " ")) +
+                "\n            "
+            ),
+          ]),
+        ]),
+      ]
+    ),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -59939,9 +60159,7 @@ var render = function () {
                             _vm._v(
                               "\n                                        " +
                                 _vm._s(
-                                  item.description
-                                    .replace(" ", "")
-                                    .replace(/<\/?[^>]+>/gi, " ")
+                                  item.description.replace(/<\/?[^>]+>/gi, " ")
                                 ) +
                                 "\n                                    "
                             ),
@@ -61625,79 +61843,12 @@ var render = function () {
             "ul",
             { staticClass: "review-list col-group" },
             _vm._l(_vm.items.data, function (item) {
-              return _c("li", { key: item.id, staticClass: "review-box" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.move(item)
-                      },
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "bg-img" }, [
-                      _c("img", {
-                        attrs: { src: item.img ? item.img.url : "", alt: "" },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    item.platform === "INSTAGRAM"
-                      ? _c("span", { staticClass: "sns-badge" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "/images/sns-icon-insta.png",
-                              alt: "",
-                            },
-                          }),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    item.platform === "NAVER"
-                      ? _c("span", { staticClass: "sns-badge" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "/images/sns-icon-blog.png",
-                              alt: "",
-                            },
-                          }),
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "txt-box" }, [
-                      _c("ul", { staticClass: "user-info col-group" }, [
-                        _c("li", [_vm._v(_vm._s(item.sex))]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v(_vm._s(item.age))]),
-                        _vm._v(" "),
-                        _c("li", [_vm._v(_vm._s(item.job))]),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "title" }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(item.title) +
-                            "\n                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "txt" }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(
-                              item.description.replace(/<\/?[^>]+>/gi, " ")
-                            ) +
-                            "\n                            "
-                        ),
-                      ]),
-                    ]),
-                  ]
-                ),
-              ])
+              return _c("dating-review", {
+                key: item.id,
+                attrs: { item: item },
+              })
             }),
-            0
+            1
           ),
           _vm._v(" "),
           _vm.items.data.length === 0
@@ -68818,7 +68969,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "파업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
+                    "파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
                   ),
                 ]),
               ]),
@@ -69176,7 +69327,7 @@ var render = function () {
           _c("div", { staticClass: "img-wrap" }, [
             _c("img", {
               attrs: {
-                src: _vm.product.img ? _vm.product.img.url : "",
+                src: _vm.product.img_show ? _vm.product.img_show.url : "",
                 alt: "",
               },
             }),
@@ -69899,9 +70050,116 @@ var render = function () {
     _vm._v(" "),
     _vm._m(12),
     _vm._v(" "),
-    _vm._m(13),
+    _c("div", { staticClass: "default-container" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(13),
+        _vm._v(" "),
+        _c("div", { staticClass: "default-box" }, [
+          _c("div", { staticClass: "debox default-1" }, [
+            _c("div", { staticClass: "debox-cir" }, [_vm._v("01")]),
+            _vm._v(" "),
+            _vm._m(14),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-title" }, [_vm._v("시간준수")]),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "debox-content",
+              domProps: { textContent: _vm._s(_vm.product.manner_time_title) },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-sub" }, [
+              _vm.product.manner_time_comment1
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_time_comment1)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_time_comment2
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_time_comment2)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_time_comment3
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_time_comment3)),
+                  ])
+                : _vm._e(),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: " debox default-2" }, [
+            _c("div", { staticClass: "debox-cir" }, [_vm._v("02")]),
+            _vm._v(" "),
+            _vm._m(15),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-title" }, [_vm._v("의상")]),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "debox-content",
+              domProps: { textContent: _vm._s(_vm.product.manner_cloth_title) },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-sub" }, [
+              _vm.product.manner_cloth_comment1
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_cloth_comment1)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_cloth_comment2
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_cloth_comment2)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_cloth_comment3
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_cloth_comment3)),
+                  ])
+                : _vm._e(),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "debox default-3" }, [
+            _c("div", { staticClass: "debox-cir" }, [_vm._v("03")]),
+            _vm._v(" "),
+            _vm._m(16),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-title" }, [_vm._v("매너")]),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "debox-content",
+              domProps: {
+                textContent: _vm._s(_vm.product.manner_attitude_title),
+              },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "debox-sub" }, [
+              _vm.product.manner_attitude_comment1
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_attitude_comment1)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_attitude_comment2
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_attitude_comment2)),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.product.manner_attitude_comment3
+                ? _c("p", { staticClass: "body" }, [
+                    _vm._v(_vm._s(_vm.product.manner_attitude_comment3)),
+                  ])
+                : _vm._e(),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
     _vm._v(" "),
-    _vm._m(14),
+    _vm._m(17),
   ])
 }
 var staticRenderFns = [
@@ -70315,120 +70573,54 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "default-container" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "default-contents" }, [
-          _c("div", { staticClass: "crown-wrap" }, [
-            _c("img", {
-              staticClass: "crown2",
-              attrs: { src: "/images/crown2.png", alt: "" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "title-num" }, [_vm._v("6")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "title" }, [_vm._v("기본매너")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "line-wrap" }, [
-            _c("img", {
-              staticClass: "line-short",
-              attrs: { src: "/images/line-short.png", alt: "" },
-            }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "default-box" }, [
-          _c("div", { staticClass: "debox default-1" }, [
-            _c("div", { staticClass: "debox-cir" }, [_vm._v("01")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-icon" }, [
-              _c("img", {
-                attrs: { src: "/images/essential-01.png", alt: "essential-01" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-title" }, [_vm._v("시간준수")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-content" }, [
-              _vm._v("기본적으로 파티 시작 10분전에는"),
-              _c("br"),
-              _vm._v(
-                "\n                            입장해주시는 것을 추천드립니다.\n                        "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-sub" }, [
-              _vm._v("※ 남녀 파티의 컨셉으로 성비 조율로 진행되어"),
-              _c("br"),
-              _vm._v(
-                "\n                                지각하거나 불참하는 경우는 없도록 부탁드리며,"
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                                혹시나 부득이한 경우 하루 전에 알려주세요!\n                        "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: " debox default-2" }, [
-            _c("div", { staticClass: "debox-cir" }, [_vm._v("02")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-icon" }, [
-              _c("img", {
-                attrs: { src: "/images/essential-02.png", alt: "essential-02" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-title" }, [_vm._v("의상")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-content" }, [
-              _vm._v("남녀 모두 소개팅 복장에 맞춰"),
-              _c("br"),
-              _vm._v(
-                "\n                            깔끔하고 예의 있는 의상을 갖춰주세요.\n                        "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-sub" }, [
-              _vm._v(
-                "※ 여성분의 경우, 원피스나 투피스를 추천드립니다.\n\n                            "
-              ),
-              _c("br"),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n                            ※ 남성분의 경우, 수트나 셔츠류를 추천드립니다.\n                        "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "debox default-3" }, [
-            _c("div", { staticClass: "debox-cir" }, [_vm._v("03")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-icon" }, [
-              _c("img", {
-                attrs: { src: "/images/essential-03.png", alt: "essential-03" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-title" }, [_vm._v("매너")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-content" }, [
-              _vm._v("와인파티가 진행되는 동안\n                            "),
-              _c("br"),
-              _vm._v(
-                "\n                            기본적인 매너는 지켜주세요.\n                        "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "debox-sub" }, [
-              _vm._v(
-                "※ 과한 주류섭취, 무례한 대화 등\n                        "
-              ),
-            ]),
-          ]),
-        ]),
+    return _c("div", { staticClass: "default-contents" }, [
+      _c("div", { staticClass: "crown-wrap" }, [
+        _c("img", {
+          staticClass: "crown2",
+          attrs: { src: "/images/crown2.png", alt: "" },
+        }),
       ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "title-num" }, [_vm._v("6")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "title" }, [_vm._v("기본매너")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "line-wrap" }, [
+        _c("img", {
+          staticClass: "line-short",
+          attrs: { src: "/images/line-short.png", alt: "" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "debox-icon" }, [
+      _c("img", {
+        attrs: { src: "/images/essential-01.png", alt: "essential-01" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "debox-icon" }, [
+      _c("img", {
+        attrs: { src: "/images/essential-02.png", alt: "essential-02" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "debox-icon" }, [
+      _c("img", {
+        attrs: { src: "/images/essential-03.png", alt: "essential-03" },
+      }),
     ])
   },
   function () {
@@ -70495,7 +70687,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "파업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
+                    "파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
                   ),
                 ]),
               ]),

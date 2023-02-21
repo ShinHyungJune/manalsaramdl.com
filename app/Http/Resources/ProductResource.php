@@ -24,11 +24,13 @@ class ProductResource extends JsonResource
         $openedAt = $this->opened_at ? Carbon::make($this->opened_at)->format("m.d (").$dayOfWeeks[Carbon::make($this->opened_at)->dayOfWeek].")"." ".Carbon::make($this->opened_at)->format("H:i") : "";
 
         $img = $this->img ? $this->img : "";
+        $imgShow = $this->img_show ? $this->img_show : $this->img;
         $imgsParty = $this->imgs_party ? $this->imgs_party : "";
         $imgsFood = $this->imgs_food ? $this->imgs_food : "";
 
         if($this->originProduct) {
             $img = $this->originProduct->img ? $this->originProduct->img : "";
+            $imgShow = $this->originProduct->img_show ?$this->originProduct->img_show  : $this->originProduct->img;
             $imgsParty = $this->originProduct->imgs_party ? $this->originProduct->imgs_party : "";
             $imgsFood = $this->originProduct->imgs_food ? $this->originProduct->imgs_food : "";
         }
@@ -55,6 +57,7 @@ class ProductResource extends JsonResource
             "origin_product_id" => $this->origin_product_id, // 구매용 상품으로 만들어진 경우 본래 상품 id
 
             "img" => $img,
+            "img_show" => $imgShow,
             "imgs_party" => $imgsParty,
             "imgs_food" => $imgsFood,
 
@@ -70,6 +73,29 @@ class ProductResource extends JsonResource
             "must_do" => $this->must_do,
             "tags" => $tags,
             "ongoing" => $this->ongoing ? 1 : 0,
+
+
+            // 파티용
+            "manner_time_title" => $this->manner_time_title,
+            "manner_time_comment1" => $this->manner_time_comment1,
+            "manner_time_comment2" => $this->manner_time_comment2,
+            "manner_time_comment3" => $this->manner_time_comment3,
+            "manner_time_comment4" => $this->manner_time_comment4,
+            "manner_time_comment5" => $this->manner_time_comment5,
+
+            "manner_cloth_title" => $this->manner_cloth_title,
+            "manner_cloth_comment1" => $this->manner_cloth_comment1,
+            "manner_cloth_comment2" => $this->manner_cloth_comment2,
+            "manner_cloth_comment3" => $this->manner_cloth_comment3,
+            "manner_cloth_comment4" => $this->manner_cloth_comment4,
+            "manner_cloth_comment5" => $this->manner_cloth_comment5,
+
+            "manner_attitude_title" => $this->manner_attitude_title,
+            "manner_attitude_comment1" => $this->manner_attitude_comment1,
+            "manner_attitude_comment2" => $this->manner_attitude_comment2,
+            "manner_attitude_comment3" => $this->manner_attitude_comment3,
+            "manner_attitude_comment4" => $this->manner_attitude_comment4,
+            "manner_attitude_comment5" => $this->manner_attitude_comment5,
         ];
     }
 }

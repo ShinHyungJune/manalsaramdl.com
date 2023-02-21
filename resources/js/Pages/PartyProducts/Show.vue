@@ -20,7 +20,7 @@
             <div class="party-contents">
                 <div class="container sub">
                     <div class="img-wrap">
-                        <img :src="product.img ? product.img.url : ''" alt="">
+                        <img :src="product.img_show ? product.img_show.url : ''" alt="">
                     </div>
                     <div class="party-reservation">
                         <div class="party-main">
@@ -507,12 +507,11 @@
                             <img src="/images/essential-01.png" alt="essential-01">
                         </div>
                         <div class="debox-title">시간준수</div>
-                        <div class="debox-content">기본적으로 파티 시작 10분전에는<br />
-                            입장해주시는 것을 추천드립니다.
-                        </div>
-                        <div class="debox-sub">※ 남녀 파티의 컨셉으로 성비 조율로 진행되어<br />
-                            &nbsp; &nbsp; 지각하거나 불참하는 경우는 없도록 부탁드리며,<br />
-                            &nbsp; &nbsp; 혹시나 부득이한 경우 하루 전에 알려주세요!
+                        <div class="debox-content" v-text="product.manner_time_title"></div>
+                        <div class="debox-sub">
+                            <p class="body" v-if="product.manner_time_comment1">{{product.manner_time_comment1}}</p>
+                            <p class="body" v-if="product.manner_time_comment2">{{product.manner_time_comment2}}</p>
+                            <p class="body" v-if="product.manner_time_comment3">{{product.manner_time_comment3}}</p>
                         </div>
                     </div>
                     <div class=" debox default-2">
@@ -521,14 +520,11 @@
                             <img src="/images/essential-02.png" alt="essential-02">
                         </div>
                         <div class="debox-title">의상</div>
-                        <div class="debox-content">남녀 모두 소개팅 복장에 맞춰<br />
-                            깔끔하고 예의 있는 의상을 갖춰주세요.
-                        </div>
-                        <div class="debox-sub">※ 여성분의 경우, 원피스나 투피스를 추천드립니다.
-
-                            <br />
-                            <br />
-                            ※ 남성분의 경우, 수트나 셔츠류를 추천드립니다.
+                        <div class="debox-content" v-text="product.manner_cloth_title"></div>
+                        <div class="debox-sub">
+                            <p class="body" v-if="product.manner_cloth_comment1">{{product.manner_cloth_comment1}}</p>
+                            <p class="body" v-if="product.manner_cloth_comment2">{{product.manner_cloth_comment2}}</p>
+                            <p class="body" v-if="product.manner_cloth_comment3">{{product.manner_cloth_comment3}}</p>
                         </div>
                     </div>
                     <div class="debox default-3">
@@ -537,11 +533,11 @@
                             <img src="/images/essential-03.png" alt="essential-03">
                         </div>
                         <div class="debox-title">매너</div>
-                        <div class="debox-content">와인파티가 진행되는 동안
-                            <br />
-                            기본적인 매너는 지켜주세요.
-                        </div>
-                        <div class="debox-sub">※ 과한 주류섭취, 무례한 대화 등
+                        <div class="debox-content" v-text="product.manner_attitude_title"></div>
+                        <div class="debox-sub">
+                            <p class="body" v-if="product.manner_attitude_comment1">{{product.manner_attitude_comment1}}</p>
+                            <p class="body" v-if="product.manner_attitude_comment2">{{product.manner_attitude_comment2}}</p>
+                            <p class="body" v-if="product.manner_attitude_comment3">{{product.manner_attitude_comment3}}</p>
                         </div>
                     </div>
 
@@ -571,7 +567,7 @@
                             </li>
                             <li>
                                 <p class="circle-num">3</p>
-                                <p>파업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다.</p>
+                                <p>파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다.</p>
                             </li>
                             <li>
                                 <p class="circle-num">4</p>

@@ -27,28 +27,7 @@
                 </div>
 
                 <ul class="review-list col-group">
-                    <li class="review-box" v-for="item in items.data" :key="item.id">
-                        <a href="#" @click.prevent="move(item)">
-                            <div class="bg-img">
-                                <img :src="item.img ? item.img.url : ''" alt="">
-                            </div>
-                            <span class="sns-badge" v-if="item.platform === 'INSTAGRAM'"><img src="/images/sns-icon-insta.png" alt=""></span>
-                            <span class="sns-badge" v-if="item.platform === 'NAVER'"><img src="/images/sns-icon-blog.png" alt=""></span>
-                            <div class="txt-box">
-                                <ul class="user-info col-group">
-                                    <li>{{item.sex}}</li>
-                                    <li>{{item.age}}</li>
-                                    <li>{{item.job}}</li>
-                                </ul>
-                                <p class="title">
-                                    {{item.title}}
-                                </p>
-                                <p class="txt">
-                                    {{item.description.replace(/<\/?[^>]+>/ig, " ")}}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
+                    <dating-review :item="item" v-for="item in items.data" :key="item.id" />
                 </ul>
 
                 <div class="m-empty type01" v-if="items.data.length === 0">데이터가 없습니다.</div>
@@ -64,9 +43,10 @@
 <script>
 import {Link} from '@inertiajs/inertia-vue';
 import Pagination from "../../Components/Pagination";
+import DatingReview from "../../Components/DatingReview";
 
 export default {
-    components: {Link, Pagination},
+    components: {DatingReview, Link, Pagination},
     data() {
         return {
             items: this.$page.props.items,
@@ -86,11 +66,7 @@ export default {
             });
         },
 
-        move(item){
-            if(item.url)
-                window.open(item.url, "pop", "_blank");
 
-        }
     },
     computed: {
 
