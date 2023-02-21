@@ -58353,7 +58353,9 @@ var render = function () {
                             _vm._v(
                               "\n                                        " +
                                 _vm._s(
-                                  item.description.replace(/<\/?[^>]+>/gi, " ")
+                                  item.description
+                                    .replace(" ", "")
+                                    .replace(/<\/?[^>]+>/gi, " ")
                                 ) +
                                 "\n                                    "
                             ),
@@ -59937,7 +59939,9 @@ var render = function () {
                             _vm._v(
                               "\n                                        " +
                                 _vm._s(
-                                  item.description.replace(/<\/?[^>]+>/gi, " ")
+                                  item.description
+                                    .replace(" ", "")
+                                    .replace(/<\/?[^>]+>/gi, " ")
                                 ) +
                                 "\n                                    "
                             ),
@@ -67119,7 +67123,9 @@ var render = function () {
                             _vm._v(
                               "\n                                        " +
                                 _vm._s(
-                                  item.description.replace(/<\/?[^>]+>/gi, " ")
+                                  item.description
+                                    .replace(" ", "")
+                                    .replace(/<\/?[^>]+>/gi, " ")
                                 ) +
                                 "\n                                    "
                             ),

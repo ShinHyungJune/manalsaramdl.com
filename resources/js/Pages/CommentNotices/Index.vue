@@ -40,7 +40,7 @@
                                             <p class="title">{{ item.title }}</p>
                                         </div>
                                         <p class="con">
-                                            {{item.description.replace(/<\/?[^>]+>/ig, " ")}}
+                                            {{item.description.replace("&nbsp;","").replace(/<\/?[^>]+>/ig, " ")}}
                                         </p>
                                     </div>
                                 </div>
