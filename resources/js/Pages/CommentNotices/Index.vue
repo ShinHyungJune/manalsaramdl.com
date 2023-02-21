@@ -27,11 +27,11 @@
                         </form>
                     </div>
                     <ul class="coment-list">
-                        <li  v-for="item in items.data" >
+                        <li  v-for="(item, index) in items.data" >
                             <a :href="`/commentNotices/${item.id}`" :class="item.important ? 'fix-list' : ''" :key="item.id">
                                 <div class="date">
                                     <span class="sticker pc" v-if="item.important">공지</span>
-                                    <span :class="item.important ? 'fix-day' : 'day'">{{ item.date }}</span>
+                                    <span :class="item.important ? 'fix-day' : 'day'">{{ ((items.meta.current_page - 1) * items.meta.per_page) + (index + 1) }}</span>
                                     <span class="year">{{ item.year }}.{{ item.month }}</span>
                                 </div>
                                 <div class="title-wrap notify">
@@ -91,6 +91,10 @@ export default {
     },
     computed: {
 
+    },
+
+    mounted(){
+        console.log(this.items);
     }
 }
 </script>

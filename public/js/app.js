@@ -3509,7 +3509,10 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  computed: {}
+  computed: {},
+  mounted: function mounted() {
+    console.log(this.items);
+  }
 });
 
 /***/ }),
@@ -58305,7 +58308,7 @@ var render = function () {
             _c(
               "ul",
               { staticClass: "coment-list" },
-              _vm._l(_vm.items.data, function (item) {
+              _vm._l(_vm.items.data, function (item, index) {
                 return _c("li", [
                   _c(
                     "a",
@@ -58325,7 +58328,15 @@ var render = function () {
                         _c(
                           "span",
                           { class: item.important ? "fix-day" : "day" },
-                          [_vm._v(_vm._s(item.date))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                (_vm.items.meta.current_page - 1) *
+                                  _vm.items.meta.per_page +
+                                  (index + 1)
+                              )
+                            ),
+                          ]
                         ),
                         _vm._v(" "),
                         _c("span", { staticClass: "year" }, [
@@ -59877,7 +59888,7 @@ var render = function () {
             _c(
               "ul",
               { staticClass: "coment-list" },
-              _vm._l(_vm.items.data, function (item) {
+              _vm._l(_vm.items.data, function (item, index) {
                 return _c("li", [
                   _c(
                     "a",
@@ -59901,7 +59912,15 @@ var render = function () {
                         _c(
                           "span",
                           { class: item.important ? "fix-day" : "day" },
-                          [_vm._v(_vm._s(item.date))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                (_vm.items.meta.current_page - 1) *
+                                  _vm.items.meta.per_page +
+                                  (index + 1)
+                              )
+                            ),
+                          ]
                         ),
                         _vm._v(" "),
                         _c("span", { staticClass: "year" }, [
@@ -67055,7 +67074,7 @@ var render = function () {
             _c(
               "ul",
               { staticClass: "coment-list" },
-              _vm._l(_vm.items.data, function (item) {
+              _vm._l(_vm.items.data, function (item, index) {
                 return _c("li", [
                   _c(
                     "a",
@@ -67075,7 +67094,15 @@ var render = function () {
                         _c(
                           "span",
                           { class: item.important ? "fix-day" : "day" },
-                          [_vm._v(_vm._s(item.date))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                (_vm.items.meta.current_page - 1) *
+                                  _vm.items.meta.per_page +
+                                  (index + 1)
+                              )
+                            ),
+                          ]
                         ),
                         _vm._v(" "),
                         _c("span", { staticClass: "year" }, [
