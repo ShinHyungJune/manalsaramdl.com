@@ -11,13 +11,15 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class PartyController extends Controller
+class PartyProductController extends Controller
 {
     public function index(Request $request)
     {
         $request->validate([
             "state" => "nullable"
         ]);
+
+        $request["state"] = $request->state ?? "예약중";
 
         $products = Product::where("origin_product_id", null)
             ->where("product_id", null)
@@ -29,9 +31,10 @@ class PartyController extends Controller
         if($request->state == "예약중")
             $products = $products->where("opened_at", ">", Carbon::now());
 
-        $products = $products->paginate(12);
+        $products = $products->latest()->paginate(12);
 
         return Inertia::render("PartyProducts/Index", [
+            "state" => $request->state,
             "products" => ProductResource::collection($products),
         ]);
     }

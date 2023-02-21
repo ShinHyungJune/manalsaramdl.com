@@ -46,7 +46,6 @@
         </div>
         <div class="application-container-party">
             <ul class="application-states tab-link">
-                <li :class="`state ${form.state === '' ? 'active' : ''}`" data-tab="tab_1" @click="() => {form.state=''; filter();}">전체</li>
                 <li :class="`state ${form.state === '예약중' ? 'active' : ''}`" data-tab="tab_2" @click="() => {form.state='예약중'; filter();}">예약중</li>
                 <li :class="`state ${form.state === '마감' ? 'active' : ''}`" data-tab="tab_3" @click="() => {form.state='마감'; filter();}">마감</li>
             </ul>
@@ -115,7 +114,7 @@ export default {
             products: this.$page.props.products,
             form: this.$inertia.form({
                 page: 1,
-                state: "",
+                state: this.$page.props.state,
             }),
         }
     },
