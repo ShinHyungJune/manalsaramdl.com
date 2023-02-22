@@ -64381,7 +64381,11 @@ var render = function () {
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
                                 "div",
-                                { staticClass: "review-score-wrap col-group" },
+                                {
+                                  class:
+                                    "review-score-wrap col-group star" +
+                                    _vm.feedbackForm.likeablility,
+                                },
                                 [
                                   _c("div", { staticClass: "m-input-score" }, [
                                     _c("input", {
@@ -64591,7 +64595,11 @@ var render = function () {
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
                                 "div",
-                                { staticClass: "review-score-wrap col-group" },
+                                {
+                                  class:
+                                    "review-score-wrap col-group star" +
+                                    _vm.feedbackForm.manner,
+                                },
                                 [
                                   _c("div", { staticClass: "m-input-score" }, [
                                     _c("input", {

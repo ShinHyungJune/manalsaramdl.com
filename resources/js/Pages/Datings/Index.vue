@@ -714,7 +714,7 @@
                                             </p>
                                         </div>
                                         <div class="as row-group">
-                                            <div class="review-score-wrap col-group">
+                                            <div :class="`review-score-wrap col-group star${feedbackForm.likeablility}`">
                                                 <div class="m-input-score">
                                                     <input type="radio" :value="1" id="likeablility-1" v-model="feedbackForm.likeablility">
                                                     <label for="likeablility-1"></label>
@@ -755,7 +755,7 @@
                                             </p>
                                         </div>
                                         <div class="as row-group">
-                                            <div class="review-score-wrap col-group">
+                                            <div  :class="`review-score-wrap col-group star${feedbackForm.manner}`">
                                                 <div class="m-input-score">
                                                     <input type="radio" :value="1" id="manner-1" v-model="feedbackForm.manner">
                                                     <label for="manner-1"></label>

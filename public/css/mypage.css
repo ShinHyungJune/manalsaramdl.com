@@ -160,10 +160,10 @@
 }
 
 @media screen and (max-width: 1280px) {
-    
+
     .mypage .left-wrap .mypage-menu { width: 100%; flex-direction: row;}
-    .mypage .left-wrap .mypage-menu li { position: relative; width: calc( 100% / 4)px; }  
-    
+    .mypage .left-wrap .mypage-menu li { position: relative; width: calc( 100% / 4)px; }
+
     .mypage-wrap .left-wrap .mypage-menu li.active a::after {
         display: block;
     }
@@ -225,7 +225,7 @@
         position: relative;
         white-space: nowrap;
     }
-  
+
     .mypage-wrap .left-wrap .mypage-menu li.active a::after {
         display: block;
     }
@@ -244,7 +244,7 @@
     .mypage-wrap .right-wrap .title-wrap.profile-wrap {
        margin-bottom: 0px;
     }
-   
+
     .mypage-wrap .right-wrap .title-wrap h2 {
         font-size: 22px;
     }
@@ -334,7 +334,7 @@ color: #a4a4a4;
     color: #a4a4a4;
 }
 
-.form-box > li .user input::placeholder { 
+.form-box > li .user input::placeholder {
     color: #a4a4a4;
 }
 
@@ -535,7 +535,7 @@ color: #a4a4a4;
         font-size: 10px;
         color: #a4a4a4;
     }
-    
+
 
 
 }
@@ -1751,6 +1751,36 @@ border-bottom: 1px solid #8d8882;
 
 .review-score-wrap {
     justify-content: center;
+}
+.review-score-wrap.star1 .m-input-score:nth-of-type(-n + 1) label {
+    background: url(../images/score_checked.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+.review-score-wrap.star2 .m-input-score:nth-of-type(-n + 2) label {
+    background: url(../images/score_checked.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+.review-score-wrap.star3 .m-input-score:nth-of-type(-n + 3) label {
+    background: url(../images/score_checked.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+.review-score-wrap.star4 .m-input-score:nth-of-type(-n + 4) label {
+    background: url(../images/score_checked.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+.review-score-wrap.star5 .m-input-score:nth-of-type(-n + 5) label {
+    background: url(../images/score_checked.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
 }
 .review-score-wrap button {
     width: 32px;

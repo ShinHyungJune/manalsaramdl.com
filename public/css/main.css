@@ -1235,9 +1235,10 @@
     color: white;
 }
 .main-banner img {
-    width: 27.7vw;
+    /*width: 27.7vw;*/
     min-width: 280px;
     max-width: 600px;
+    max-height:calc(100vh - 247px);
 }
 .main-banner .banner-contents .banner-title .mb {
     display: none;
@@ -1437,6 +1438,7 @@ color: #fff;
         width: 70%;
         margin: 0 auto;
         min-height: unset;
+        max-height:none;
     }
     .main-banner  .subpage-under {
         display: none;
