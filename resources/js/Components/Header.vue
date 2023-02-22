@@ -4,8 +4,8 @@
             <div class="top-menu">
                 <ul class="top-menu-sns">
                     <li class="sns-icons">
-                        <a href="https://www.instagram.com/insa.official" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta%20(1).svg" /></a>
-                        <a href="https://www.instagram.com/insa.official" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
+                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta%20(1).svg" /></a>
+                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
                     </li>
                     <li>
                         <a href="http://pf.kakao.com/_kvwsxj" target="_blank"> <i class="sns-icon speech xi-speech"></i></a>
@@ -134,7 +134,7 @@
                     </ul>
                     <div class="sns-wrap-mb">
 <!--                        <a href="/logout" class="logout-btn" v-if="$page.props.user">logout<i class="xi-log-out"></i></a>-->
-                        <a href="https://www.instagram.com/insa.official" target="_blank"> <i class="insta xi-instagram"></i></a>
+                        <a href="https://www.instagram.com/insa.official_" target="_blank"> <i class="insta xi-instagram"></i></a>
                         <a href="https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ" target="_blank"> <i class="utb youtube xi-youtube-play"></i></a>
                         <a href="https://pf.kakao.com/_kvwsxj" target="_blank"> <i class="kakao speech xi-speech"></i></a>
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>

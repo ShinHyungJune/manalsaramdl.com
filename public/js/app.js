@@ -57663,7 +57663,7 @@ var staticRenderFns = [
           "a",
           {
             attrs: {
-              href: "https://www.instagram.com/insa.official",
+              href: "https://www.instagram.com/insa.official_",
               target: "_blank",
             },
           },
@@ -57679,7 +57679,7 @@ var staticRenderFns = [
           "a",
           {
             attrs: {
-              href: "https://www.instagram.com/insa.official",
+              href: "https://www.instagram.com/insa.official_",
               target: "_blank",
             },
           },
@@ -57930,7 +57930,7 @@ var staticRenderFns = [
         "a",
         {
           attrs: {
-            href: "https://www.instagram.com/insa.official",
+            href: "https://www.instagram.com/insa.official_",
             target: "_blank",
           },
         },
