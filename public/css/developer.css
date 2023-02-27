@@ -19,7 +19,7 @@
 .pop-parent .swiper-pagination {
     display:flex;
 }
-.pop-parent .pop {width:520px; position:relative;}
+.pop-parent .pop {width:400px; position:relative;}
 .pop-parent .pop .btn-toggle {width:40px; height:40px; position:relative; background-color:black;
     cursor:pointer;
 }
@@ -41,7 +41,7 @@
 .pop-parent .swiper-control {display:flex; align-items:center; position:absolute; top:6px; right:20px; z-index:2;}
 .pop-parent .swiper-pagination-bullet {width:10px; height:10px; margin:0 5px; border-radius:0; border:1px solid white; opacity:0.5; background-color:transparent;}
 .pop-parent .swiper-pagination-bullet-active {background-color:#fff; opacity:1;}
-.pop-parent.active {right:-520px;}
+.pop-parent.active {right:-400px;}
 .pop-parent.active .btn-toggle {transform:rotate(180deg);}
 
 @media screen and (max-width:1200px) {
