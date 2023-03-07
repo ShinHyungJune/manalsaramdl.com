@@ -7107,11 +7107,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     closeToday: function closeToday() {
-      window.localStorage.setItem("closed_at", new Date().getDate());
+      window.localStorage.setItem("closed_at", JSON.stringify(new Date()));
       this.activePop = false;
     },
     closePop: function closePop() {
       this.activePop = false;
+    },
+    checkToday: function checkToday(date) {
+      var today = new Date();
+      if (date.getFullYear() !== today.getFullYear()) return false;
+      if (date.getMonth() !== today.getMonth()) return false;
+      if (date.getDate() !== today.getDate()) return false;
+      return true;
     }
   },
   mounted: function mounted() {
@@ -7122,7 +7129,7 @@ __webpack_require__.r(__webpack_exports__);
       initialSlide: 1
     });
     var closedAt = window.localStorage.getItem("closed_at");
-    if (closedAt && closedAt >= new Date().getDate()) this.activePop = false;
+    if (closedAt && this.checkToday(new Date(JSON.parse(closedAt)))) this.activePop = false;
     $(".pop-parent .btn-toggle").click(function () {
       $(".pop-parent").toggleClass("active");
     });

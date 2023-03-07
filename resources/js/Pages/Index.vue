@@ -447,13 +447,28 @@ export default {
 
     methods: {
         closeToday() {
-            window.localStorage.setItem("closed_at", (new Date()).getDate());
+            window.localStorage.setItem("closed_at", JSON.stringify(new Date()));
 
             this.activePop = false;
         },
 
         closePop() {
             this.activePop = false;
+        },
+
+        checkToday(date){
+            let today = new Date();
+
+            if(date.getFullYear() !== today.getFullYear())
+                return false;
+
+            if(date.getMonth() !== today.getMonth())
+                return false;
+
+            if(date.getDate() !== today.getDate())
+                return false;
+
+            return true;
         },
     },
 
@@ -468,7 +483,7 @@ export default {
 
         let closedAt = window.localStorage.getItem("closed_at");
 
-        if(closedAt && closedAt >= (new Date()).getDate())
+        if(closedAt && this.checkToday(new Date(JSON.parse(closedAt))))
             this.activePop = false;
 
         $(".pop-parent .btn-toggle").click(function () {
