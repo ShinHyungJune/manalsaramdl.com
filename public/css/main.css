@@ -1,4 +1,4 @@
-/* 모달 공통 */
+/*  모달 공통 */
 .pagination { display: flex; justify-content: center; gap: 8px; margin:60px 0; }
 .pagination li { width: 32px; height: 32px; }
 .pagination li a { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; border: solid 1px #aaa; font-size: 14px; color: #aaa; transition: all 0.3s; }
@@ -243,13 +243,15 @@
     overflow-y: auto;
 }
 /* modal 공통 */
+/* 3월 */
 .modal-wrap {
     max-width: 656px;
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
     position: absolute;
-    top: 5%;
+    top: 0;
 }
+/* // */
 .modal-wrap .close {
     position: absolute;
     top: 16px;

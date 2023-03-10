@@ -101,13 +101,16 @@
     bottom: -150px;
     right: 30px;
 }
+/* 3월 */
 .mypage-wrap .right-wrap .title-wrap {
     padding-bottom: 40px;
     border: none;
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;
+    background: #fff;
 }
+/* 3월 */
 
 .mypage-wrap .title-wrap.profile-wrap {
     padding-bottom: 0px;
@@ -233,14 +236,16 @@
     .mypage-wrap .right-wrap {
         padding: 40px 16px;
     }
+    /* 3월 */
     .mypage-wrap .right-wrap .title-wrap {
         padding-bottom: 24px;
-        margin-bottom: 24px;
+        /* pa-bottom: 24px; */
         align-items: center;
         flex-flow: wrap;
         gap: 16px;
         justify-content: space-between;
     }
+    /* 3월 */
     .mypage-wrap .right-wrap .title-wrap.profile-wrap {
        margin-bottom: 0px;
     }
@@ -1233,16 +1238,29 @@ color: #a4a4a4;
 /* //회원탈퇴 */
 
 /* modal 공통 */
+/* 3월 */
 .modal-wrap {
     max-width: 656px;
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
+    max-height: 90vh;
+    overflow: scroll;
+    padding-top: 40px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
+
+.modal-wrap::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+/* //3월 */
+/* 3월 */
 .modal-wrap .close {
     position: absolute;
-    top: 16px;
+    top: 48px;    
     right: 16px;
 }
+/* //3월 */
 .modal-wrap .close i {
     font-size: 32px;
     color: #828282;
@@ -1282,10 +1300,13 @@ color: #a4a4a4;
     position: absolute;
     bottom: 0;
 }
+/* 3월 */
 .modal-wrap .form-wrap {
     max-width: unset;
     padding: 0 42px;
+    background: #fff;
 }
+/* //3월 */
 
 .modal-wrap .form-box {
     gap: 16px;
@@ -1416,10 +1437,10 @@ color: #a4a4a4;
     font-size: 18px;
     line-height: 1.78;
 }
-
+/* 3월 */
 .modal-wrap .submit-btn {
     width: 100%;
-    margin-top: 24px;
+    margin-top: unset;
     height: 72px;
     background: #d7a550;
     font-size: 18px;
@@ -1427,6 +1448,7 @@ color: #a4a4a4;
     color: #fff;
     transition: 0.2s;
 }
+/* //3월 */
 .modal-wrap .submit-btn:hover {
     background: #bb8e40;
 }
