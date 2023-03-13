@@ -16,7 +16,7 @@
             <span class="sns-badge" v-if="item.platform === 'INSTAGRAM'"><img src="/images/sns-icon-insta.png" alt=""></span>
             <span class="sns-badge" v-if="item.platform === 'NAVER'"><img src="/images/sns-icon-blog.png" alt=""></span>
             <div class="txt-box">
-                <ul class="user-info col-group">
+                <ul class="user-info col-group" v-if="item.sex || item.age || item.job">
                     <li v-if="item.sex">{{item.sex}}</li>
                     <li v-if="item.age">{{item.age}}</li>
                     <li v-if="item.job">{{item.job}}</li>

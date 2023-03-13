@@ -56728,13 +56728,21 @@ var render = function () {
           : _vm._e(),
         _vm._v(" "),
         _c("div", { staticClass: "txt-box" }, [
-          _c("ul", { staticClass: "user-info col-group" }, [
-            _vm.item.sex ? _c("li", [_vm._v(_vm._s(_vm.item.sex))]) : _vm._e(),
-            _vm._v(" "),
-            _vm.item.age ? _c("li", [_vm._v(_vm._s(_vm.item.age))]) : _vm._e(),
-            _vm._v(" "),
-            _vm.item.job ? _c("li", [_vm._v(_vm._s(_vm.item.job))]) : _vm._e(),
-          ]),
+          _vm.item.sex || _vm.item.age || _vm.item.job
+            ? _c("ul", { staticClass: "user-info col-group" }, [
+                _vm.item.sex
+                  ? _c("li", [_vm._v(_vm._s(_vm.item.sex))])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.item.age
+                  ? _c("li", [_vm._v(_vm._s(_vm.item.age))])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.item.job
+                  ? _c("li", [_vm._v(_vm._s(_vm.item.job))])
+                  : _vm._e(),
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("p", { staticClass: "title" }, [
             _vm._v(
