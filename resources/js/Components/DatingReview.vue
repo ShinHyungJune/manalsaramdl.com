@@ -24,7 +24,7 @@
                 <p class="title">
                     {{item.title}}
                 </p>
-                <p class="txt">
+                <p class="txt" v-if="item.description">
                     {{item.description.replace(/<\/?[^>]+>/ig, " ")}}
                 </p>
             </div>

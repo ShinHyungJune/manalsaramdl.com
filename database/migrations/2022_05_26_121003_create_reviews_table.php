@@ -16,7 +16,7 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string("type")->default(\App\Enums\ProductType::PARTY);
-            $table->string("title");
+            $table->string("title")->nullable();
             $table->text("description")->nullable();
             $table->string("sex")->nullable();
             $table->string("age")->nullable();
