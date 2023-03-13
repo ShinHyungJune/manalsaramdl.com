@@ -56742,13 +56742,15 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "txt" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.item.description.replace(/<\/?[^>]+>/gi, " ")) +
-                "\n            "
-            ),
-          ]),
+          _vm.item.description
+            ? _c("p", { staticClass: "txt" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.item.description.replace(/<\/?[^>]+>/gi, " ")) +
+                    "\n            "
+                ),
+              ])
+            : _vm._e(),
         ]),
       ]
     ),
