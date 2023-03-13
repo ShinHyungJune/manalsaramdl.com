@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string("type")->default(\App\Enums\ProductType::PARTY);
             $table->string("title");
-            $table->text("description");
+            $table->text("description")->nullable();
             $table->string("sex")->nullable();
             $table->string("age")->nullable();
             $table->string("job")->nullable();
