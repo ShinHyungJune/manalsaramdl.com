@@ -3015,6 +3015,19 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {},
     init: function init() {
       $(function () {
+        // 모달된 스크롤 막기
+        $(document).ready(function () {
+          if ($('.modal-overley').hasClass('open')) {
+            $('html, body').css({
+              'position': 'fixed',
+              'overflow': 'hidden'
+            });
+          }
+
+          $('.modal-wrap button.close').click(function () {
+            $('html, body').css('position', 'inherit');
+          });
+        });
         $(".menu-bar").click(function () {
           if ($(".mb-hd-wrap").hasClass("open") === true) {
             $(".mb-hd-wrap").removeClass("open");
@@ -68983,7 +68996,7 @@ var staticRenderFns = [
                     "\n                                신원인증은 마이페이지>프로필수정>프로필사진에서 "
                   ),
                   _c("br", { staticClass: "mb2" }),
-                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 3장 "),
+                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 "),
                   _c("br", { staticClass: "br-mb" }),
                   _vm._v(" 업로드 부탁드립니다.\n                            "),
                 ]),
@@ -70699,7 +70712,7 @@ var staticRenderFns = [
                     "\n                                    신원인증은 마이페이지>프로필수정>프로필사진에서 "
                   ),
                   _c("br", { staticClass: "mb2" }),
-                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 3장 "),
+                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 "),
                   _c("br", { staticClass: "br-mb" }),
                   _vm._v(
                     " 업로드 부탁드립니다.\n                                "
