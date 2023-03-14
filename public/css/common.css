@@ -749,9 +749,9 @@ a {
     color: #fff;
 }
 
-.chat-fixed {
+/* .chat-fixed {
     display: none;
-}
+} */
 
 .footer-wrap #upBtn.mb {
     display: none !important;
@@ -783,7 +783,7 @@ a {
 } */
 
 /*  */
-@media screen and (max-width: 1489px) {
+
     .chat-fixed.mb {
         display: block;
         width: 48px;
@@ -803,7 +803,7 @@ a {
         font-size: 28px;
         line-height: 48px;
     }
-    }
+
 
 @media screen and (max-width: 768px) {
     .mb {

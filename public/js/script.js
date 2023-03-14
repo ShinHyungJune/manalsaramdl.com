@@ -273,3 +273,16 @@ const swiperParty = new Swiper(".party-place .swiper", {
 // });
 
 // 파티페이지 스와이퍼 종료
+
+
+//모달 뒷 스크롤 막기
+$(document).ready(function(){
+    if($('.modal-overley').hasClass('open')){
+        $('html, body').css({'position':'fixed','overflow':'hidden'});
+    }
+    $('.modal-wrap button.close').click(function(){
+        $('html, body').css('position','inherit');
+    });
+})
+//
+

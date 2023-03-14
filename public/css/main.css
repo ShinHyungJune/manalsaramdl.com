@@ -7470,6 +7470,8 @@ td {
 .pay-result .container .result-wrap .submit-btn:hover { background: #bb8e40; }
 .pay-result .container .result-wrap .submit-btn.back:hover { background: #a9a7a4;; }
 
+.pay-result .container .result-wrap .title-wrap .m-table.type01 { width: 100%; }
+.pay-result .container .result-wrap .title-wrap .m-table-title { margin-bottom: 10px;}
 
 @media screen and (max-width: 376px) {
     .pay-result .main-container { display:flex; padding: 30px 0 80px;}
