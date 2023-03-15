@@ -3014,20 +3014,18 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     search: function search() {},
     init: function init() {
-      $(function () {
-        // 모달된 스크롤 막기
-        $(document).ready(function () {
-          if ($('.modal-overley').hasClass('open')) {
-            $('html, body').css({
-              'position': 'fixed',
-              'overflow': 'hidden'
-            });
-          }
-
-          $('.modal-wrap button.close').click(function () {
-            $('html, body').css('position', 'inherit');
-          });
+      // 모달된 스크롤 막기
+      if ($('.modal-overley').hasClass('open')) {
+        $('html, body').css({
+          'position': 'fixed',
+          'overflow': 'hidden'
         });
+      }
+
+      $('.modal-wrap button.close').click(function () {
+        $('html, body').css('position', 'inherit');
+      });
+      $(function () {
         $(".menu-bar").click(function () {
           if ($(".mb-hd-wrap").hasClass("open") === true) {
             $(".mb-hd-wrap").removeClass("open");
