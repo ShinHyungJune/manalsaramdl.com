@@ -172,13 +172,13 @@ export default {
 
         init(){
             // 모달된 스크롤 막기
-            if($('.modal-overley').hasClass('open')){
-                $('html, body').css({'position':'fixed','overflow':'hidden'});
-            }
+            $("*").click(function(){
+                if($('.modal-overley').hasClass('open'))
+                    return $('html, body').css({'position':'fixed','overflow':'hidden'});
 
-            $('.modal-wrap button.close').click(function(){
-                $('html, body').css('position','inherit');
+                return $('html, body').css({'position':'inherit', 'overflow':'auto'});
             });
+
 
             $(function () {
                 $(".menu-bar").click(function () {

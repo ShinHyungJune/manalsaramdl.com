@@ -3015,15 +3015,15 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {},
     init: function init() {
       // 모달된 스크롤 막기
-      if ($('.modal-overley').hasClass('open')) {
-        $('html, body').css({
+      $("*").click(function () {
+        if ($('.modal-overley').hasClass('open')) return $('html, body').css({
           'position': 'fixed',
           'overflow': 'hidden'
         });
-      }
-
-      $('.modal-wrap button.close').click(function () {
-        $('html, body').css('position', 'inherit');
+        return $('html, body').css({
+          'position': 'inherit',
+          'overflow': 'auto'
+        });
       });
       $(function () {
         $(".menu-bar").click(function () {
@@ -8437,8 +8437,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8698,8 +8696,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Pagination */ "./resources/js/Components/Pagination.vue");
-//
-//
 //
 //
 //
@@ -68972,9 +68968,9 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("1")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에  "),
+                  _vm._v("파티 결제 후  "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("카카오톡 플러스친구를 "),
+                    _vm._v("카카오톡 플러스친구 "),
                   ]),
                   _vm._v("추가해주세요."),
                 ]),
@@ -68984,41 +68980,29 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("2")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 결제 후에 "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("신원인증"),
+                    _vm._v("명함이나 사원증"),
                   ]),
-                  _vm._v("을 진행해주세요."),
+                  _vm._v("인증해주세요."),
                   _c("br"),
-                  _vm._v(
-                    "\n                                신원인증은 마이페이지>프로필수정>프로필사진에서 "
-                  ),
-                  _c("br", { staticClass: "mb2" }),
-                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 "),
-                  _c("br", { staticClass: "br-mb" }),
-                  _vm._v(" 업로드 부탁드립니다.\n                            "),
                 ]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("3")]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
-                  ),
-                ]),
+                _c("p", [_vm._v("카카오톡 메세지 주세요.")]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("4")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("신원인증 확인 후에 선착순으로 "),
+                  _vm._v("선착순으로 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("파티참석권"),
                   ]),
-                  _vm._v(" 승인드리고 있습니다. "),
+                  _vm._v(" 승인 드립니다. "),
                 ]),
               ]),
               _vm._v(" "),
@@ -69026,7 +69010,7 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("5")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 신청 전에 "),
+                  _vm._v("파티 참석 전에 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("환불규정"),
                   ]),
@@ -70688,9 +70672,9 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("1")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 참석 전에  "),
+                  _vm._v("파티 결제 후  "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("카카오톡 플러스친구를 "),
+                    _vm._v("카카오톡 플러스친구 "),
                   ]),
                   _vm._v("추가해주세요."),
                 ]),
@@ -70700,43 +70684,29 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("2")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 결제 후에 "),
                   _c("span", { staticClass: "text-style-1" }, [
-                    _vm._v("신원인증"),
+                    _vm._v("명함이나 사원증"),
                   ]),
-                  _vm._v("을 진행해주세요."),
+                  _vm._v("인증해주세요."),
                   _c("br"),
-                  _vm._v(
-                    "\n                                    신원인증은 마이페이지>프로필수정>프로필사진에서 "
-                  ),
-                  _c("br", { staticClass: "mb2" }),
-                  _vm._v(" ①명함or재직증명서 ②신분증 ③셀카사진 "),
-                  _c("br", { staticClass: "br-mb" }),
-                  _vm._v(
-                    " 업로드 부탁드립니다.\n                                "
-                  ),
                 ]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("3")]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다."
-                  ),
-                ]),
+                _c("p", [_vm._v("카카오톡 메세지 주세요.")]),
               ]),
               _vm._v(" "),
               _c("li", [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("4")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("신원인증 확인 후에 선착순으로 "),
+                  _vm._v("선착순으로 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("파티참석권"),
                   ]),
-                  _vm._v(" 승인드리고 있습니다. "),
+                  _vm._v(" 승인 드립니다. "),
                 ]),
               ]),
               _vm._v(" "),
@@ -70744,7 +70714,7 @@ var staticRenderFns = [
                 _c("p", { staticClass: "circle-num" }, [_vm._v("5")]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm._v("파티 신청 전에 "),
+                  _vm._v("파티 참석 전에 "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("환불규정"),
                   ]),

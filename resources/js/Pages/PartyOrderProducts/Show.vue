@@ -488,25 +488,23 @@
                         <ul class="notification-list">
                             <li>
                                 <p class="circle-num">1</p>
-                                <p>파티 참석 전에  <span class="text-style-1">카카오톡 플러스친구를 </span>추가해주세요.</p>
+                                <p>파티 결제 후  <span class="text-style-1">카카오톡 플러스친구 </span>추가해주세요.</p>
                             </li>
                             <li>
                                 <p class="circle-num">2</p>
-                                <p>파티 결제 후에 <span class="text-style-1">신원인증</span>을 진행해주세요.<br />
-                                    신원인증은 마이페이지>프로필수정>프로필사진에서 <br class="mb2"/> &#9312;명함or재직증명서 &#9313;신분증 &#9314;셀카사진 <br class="br-mb" /> 업로드 부탁드립니다.
-                                </p>
+                                <p><span class="text-style-1">명함이나 사원증</span>인증해주세요.<br /></p>
                             </li>
                             <li>
                                 <p class="circle-num">3</p>
-                                <p>파일업로드 후에 카카오톡 플러스친구로 메시지 부탁드립니다.</p>
+                                <p>카카오톡 메세지 주세요.</p>
                             </li>
                             <li>
                                 <p class="circle-num">4</p>
-                                <p>신원인증 확인 후에 선착순으로 <span class="text-style-1">파티참석권</span> 승인드리고 있습니다. </p>
+                                <p>선착순으로 <span class="text-style-1">파티참석권</span> 승인 드립니다. </p>
                             </li>
                             <li>
                                 <p class="circle-num">5</p>
-                                <p>파티 신청 전에 <span class="text-style-1">환불규정</span> 확인해주세요. </p>
+                                <p>파티 참석 전에 <span class="text-style-1">환불규정</span> 확인해주세요. </p>
                             </li>
                         </ul>
                     </div>

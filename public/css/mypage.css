@@ -1242,10 +1242,10 @@ color: #a4a4a4;
 .modal-wrap {
     max-width: 656px;
     width: 100%;
-    /* background: #fff; */
+    background: #fff;
     max-height: 90vh;
     overflow: scroll;
-    padding-top: 40px;
+    margin-top: 40px;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
@@ -1257,7 +1257,7 @@ color: #a4a4a4;
 /* 3월 */
 .modal-wrap .close {
     position: absolute;
-    top: 48px;    
+    top: 48px;
     right: 16px;
 }
 /* //3월 */
