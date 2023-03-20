@@ -6188,6 +6188,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -62599,6 +62601,8 @@ var render = function () {
                           },
                           [_vm._v("확인완료")]
                         ),
+                        _vm._v(" "),
+                        _vm._m(5),
                       ]),
                     ]),
                   ]),
@@ -62623,9 +62627,9 @@ var render = function () {
                     [_c("i", { staticClass: "xi-close" })]
                   ),
                   _vm._v(" "),
-                  _vm._m(5),
-                  _vm._v(" "),
                   _vm._m(6),
+                  _vm._v(" "),
+                  _vm._m(7),
                   _vm._v(" "),
                   _c(
                     "button",
@@ -62661,7 +62665,7 @@ var render = function () {
                     [_c("i", { staticClass: "xi-close" })]
                   ),
                   _vm._v(" "),
-                  _vm._m(7),
+                  _vm._m(8),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-wrap" }, [
                     _c("div", { staticClass: "search-wrap form-box only" }, [
@@ -62707,7 +62711,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("ul", { staticClass: "form-box row-group" }, [
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(8),
+                        _vm._m(9),
                         _vm._v(" "),
                         _c("div", { staticClass: "user col-group" }, [
                           _c("p", [
@@ -62754,7 +62758,7 @@ var render = function () {
                     [_c("i", { staticClass: "xi-close" })]
                   ),
                   _vm._v(" "),
-                  _vm._m(9),
+                  _vm._m(10),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-wrap overflow" }, [
                     _c("ul", { staticClass: "form-box row-group" }, [
@@ -63473,7 +63477,7 @@ var render = function () {
                     [_c("i", { staticClass: "xi-close" })]
                   ),
                   _vm._v(" "),
-                  _vm._m(10),
+                  _vm._m(11),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-wrap overflow" }, [
                     _c("ul", { staticClass: "form-box row-group" }, [
@@ -63584,7 +63588,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("ul", { staticClass: "form-box row-group" }, [
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(11),
+                        _vm._m(12),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -63623,7 +63627,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(12),
+                        _vm._m(13),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -63662,7 +63666,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(13),
+                        _vm._m(14),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -63701,7 +63705,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(14),
+                        _vm._m(15),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -63740,7 +63744,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(15),
+                        _vm._m(16),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -63779,7 +63783,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("li", { staticClass: "col-group" }, [
-                        _vm._m(16),
+                        _vm._m(17),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -64023,7 +64027,7 @@ var render = function () {
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "user-profile" }, [
-                      _vm._m(17),
+                      _vm._m(18),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-photo" }, [
                         _c("div", {
@@ -64071,7 +64075,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(18),
+                    _vm._m(19),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "review-wrap form-wrap overflow" }, [
@@ -64081,7 +64085,7 @@ var render = function () {
                         { staticClass: "review-box form-box row-group" },
                         [
                           _c("li", [
-                            _vm._m(19),
+                            _vm._m(20),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -64265,7 +64269,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(20),
+                            _vm._m(21),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -64400,7 +64404,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(21),
+                            _vm._m(22),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -64603,7 +64607,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(22),
+                              _vm._m(23),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -64614,7 +64618,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(23),
+                            _vm._m(24),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -64787,7 +64791,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(24),
+                              _vm._m(25),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -64796,7 +64800,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(25),
+                            _vm._m(26),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -64892,7 +64896,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(26),
+                            _vm._m(27),
                             _vm._v(" "),
                             _c("div", { staticClass: "as" }, [
                               _c("textarea", {
@@ -65043,6 +65047,22 @@ var staticRenderFns = [
         "\n                        확인하시겠습니까?\n                    "
       ),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "kakao-btn",
+        attrs: { href: "http://pf.kakao.com/_kvwsxj" },
+      },
+      [
+        _c("i", { staticClass: "xi-kakaotalk" }),
+        _vm._v(" 카톡문의\n                                "),
+      ]
+    )
   },
   function () {
     var _vm = this

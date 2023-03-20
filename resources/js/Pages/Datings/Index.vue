@@ -186,7 +186,9 @@
                                 </div>
                                 <div class="btn-wrap col-group">
                                     <button type="button" @click="read(targetDating)">확인완료</button>
-                                    <!-- #카톡문의 -->
+                                    <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
+                                        <i class="xi-kakaotalk"></i> 카톡문의
+                                    </a>
                                 </div>
                             </div>
                         </div>
