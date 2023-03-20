@@ -1243,8 +1243,10 @@ color: #a4a4a4;
     max-width: 656px;
     width: 100%;
     background: #fff;
-    max-height: 90vh;
-    overflow: scroll;
+    max-height: 85vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     margin-top: 40px;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -1477,10 +1479,7 @@ color: #a4a4a4;
         font-size: 16px;
     }
     .modal-wrap {
-        width: 320px;
-    }
-    .modal-wrap .form-box > li .user input, .modal-wrap .form-box > li .user > p, .modal-wrap .form-box > li .user select {
-        font-size:10px !important;
+        width: 90%;
     }
 }
 /* //modal 공통 */
@@ -1655,12 +1654,6 @@ border-bottom: 1px solid #8d8882;
 
 @media screen and (max-width: 480px) {
 
-    .modal-wrap .search-box input {
-        font-size:12px;
-    }
-    .form-box > li .user input, .form-box > li .user > p, .form-box > li .user select {
-        font-size:12px;
-    }
     .modal-wrap .profile-wrap .user-profile .user-photo {
         width: 170px;
         height: 170px;
