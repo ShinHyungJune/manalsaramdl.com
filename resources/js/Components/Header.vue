@@ -172,12 +172,12 @@ export default {
 
         init(){
             // 모달된 스크롤 막기
-            $("*").click(function(){
+            /*$("*").click(function(){
                 if($('.modal-overley').hasClass('open'))
                     return $('html, body').css({'position':'fixed','overflow':'hidden'});
 
                 return $('html, body').css({'position':'inherit', 'overflow':'auto'});
-            });
+            });*/
 
 
             $(function () {
