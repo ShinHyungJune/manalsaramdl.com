@@ -3015,16 +3015,12 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {},
     init: function init() {
       // 모달된 스크롤 막기
-      $("*").click(function () {
-        if ($('.modal-overley').hasClass('open')) return $('html, body').css({
-          'position': 'fixed',
-          'overflow': 'hidden'
-        });
-        return $('html, body').css({
-          'position': 'inherit',
-          'overflow': 'auto'
-        });
-      });
+
+      /*$("*").click(function(){
+          if($('.modal-overley').hasClass('open'))
+              return $('html, body').css({'position':'fixed','overflow':'hidden'});
+           return $('html, body').css({'position':'inherit', 'overflow':'auto'});
+      });*/
       $(function () {
         $(".menu-bar").click(function () {
           if ($(".mb-hd-wrap").hasClass("open") === true) {
