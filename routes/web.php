@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/test", function(){
-    $user = User::factory()->create([
+    $user = User::create([
         "email" => "men2@naver.com",
         "contact" => "01000000000",
         "name" => "남자2호",
@@ -44,7 +44,7 @@ Route::get("/test", function(){
         "password" => Hash::make("men2@naver.com")
     ]);
 
-    $user = User::factory()->create([
+    $user = User::create([
         "email" => "girl2@naver.com",
         "contact" => "01030217486",
         "name" => "여자2호",
