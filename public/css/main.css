@@ -7237,7 +7237,7 @@ td {
 }
 .review-list .review-box a {
     width: 100%;
-    padding-top: 130%;
+    padding-top: 100%;
     position: relative;
     overflow: hidden;
 }
