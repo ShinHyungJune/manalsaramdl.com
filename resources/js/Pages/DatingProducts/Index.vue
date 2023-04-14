@@ -433,6 +433,7 @@
                 </div>
             </div>
             <!-- 서비스 가격 -->
+            <!--
             <div class="container">
                 <div class="service-contents-price">
                     <div class="step-7-content">
@@ -521,6 +522,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
         <!--  //step-7-->
 
