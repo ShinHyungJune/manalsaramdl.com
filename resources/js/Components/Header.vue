@@ -8,9 +8,6 @@
                         <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
                     </li>
                     <li>
-                        <a href="http://pf.kakao.com/_kvwsxj" target="_blank"> <i class="sns-icon speech xi-speech"></i></a>
-                    </li>
-                    <li>
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
                     </li>
                     <li>
@@ -143,9 +140,6 @@
                         <i class="xi-close"></i>
                     </button>
                 </div>
-            </div>
-            <div class="chat-fixed mb">
-                <a href="http://pf.kakao.com/_kvwsxj"> <i class="xi-speech"></i></a>
             </div>
         </div>
     </header>

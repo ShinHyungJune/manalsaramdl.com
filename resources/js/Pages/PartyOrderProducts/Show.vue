@@ -480,8 +480,8 @@
         <div class="notification-container">
             <div class="notification-contents">
                 <div class="container">
-                    <img class="phonephoto" src="/images/kakao-phone.png" alt="phone-image">
-                    <a href="http://pf.kakao.com/_kvwsxj"><img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle"></a>
+<!--                    <img class="phonephoto" src="/images/kakao-phone.png" alt="phone-image">
+                    <a href="http://pf.kakao.com/_kvwsxj"><img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle"></a>-->
                     <div class="notification-box">
                         <i class="xi-warning"></i>
                         <span class="box-title"> 필수 안내사항 </span>

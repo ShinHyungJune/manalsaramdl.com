@@ -41,9 +41,9 @@
                     <button type="button" @click="check" class="leave-btn">탈퇴하기</button>
                 </div>
 
-                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
+<!--                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
                     <img class="kakao-cir" src="/images/kakao-circle.png" alt="kakao-circle">
-                </a>
+                </a>-->
             </div>
         </div>
     </main>

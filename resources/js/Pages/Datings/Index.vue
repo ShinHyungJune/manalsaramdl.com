@@ -21,8 +21,6 @@
             <sidebar />
 
             <div class="right-wrap">
-                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn"><img src="/images/kakao-circle.png" alt="kakao-circle" class="kakao-cir"></a>
-
                 <div class="title-wrap col-group">
                     <a href="/datings"><h2>소개팅 목록</h2></a>
 
@@ -186,9 +184,9 @@
                                 </div>
                                 <div class="btn-wrap col-group">
                                     <button type="button" @click="read(targetDating)">확인완료</button>
-                                    <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
+<!--                                    <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn">
                                         <i class="xi-kakaotalk"></i> 카톡문의
-                                    </a>
+                                    </a>-->
                                 </div>
                             </div>
                         </div>

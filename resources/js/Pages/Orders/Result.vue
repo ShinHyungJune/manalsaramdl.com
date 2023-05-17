@@ -68,7 +68,7 @@
                         전담 매니저가 1~2영업일 이내에 연락드리겠습니다.
                     </div>
                     <div class="btn-wrap">
-                        <a href="http://pf.kakao.com/_kvwsxj" class="submit-btn chat">1:1 상담 바로가기</a>
+<!--                        <a href="http://pf.kakao.com/_kvwsxj" class="submit-btn chat">1:1 상담 바로가기</a>-->
                         <a href="/" class="submit-btn back">메인으로</a>
                     </div>
                 </div>

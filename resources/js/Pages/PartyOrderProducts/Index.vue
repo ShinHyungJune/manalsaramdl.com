@@ -20,7 +20,7 @@
             <sidebar />
 
             <div class="right-wrap">
-                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn"><img src="/images/kakao-circle.png" alt="kakao-circle" class="kakao-cir"></a>
+<!--                <a href="http://pf.kakao.com/_kvwsxj" class="kakao-btn"><img src="/images/kakao-circle.png" alt="kakao-circle" class="kakao-cir"></a>-->
 
                 <div class="title-wrap col-group">
                     <h2>파티 목록</h2>
