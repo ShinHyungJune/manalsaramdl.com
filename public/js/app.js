@@ -57956,12 +57956,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c(
         "a",
-        { attrs: { href: "https://pf.kakao.com/_kvwsxj", target: "_blank" } },
-        [_c("i", { staticClass: "kakao speech xi-speech" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
         {
           attrs: {
             href: "https://blog.naver.com/insa_official",
