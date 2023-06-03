@@ -62103,7 +62103,7 @@ var render = function () {
                               {
                                 staticClass: "date-btn active",
                                 staticStyle: {
-                                  color: "#e61414",
+                                  color: "black",
                                   "background-color": "transparent",
                                 },
                                 attrs: { href: "#" },
