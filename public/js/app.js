@@ -62102,13 +62102,11 @@ var render = function () {
                               "a",
                               {
                                 staticClass: "date-btn active",
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function ($event) {
-                                    $event.preventDefault()
-                                    _vm.targetSuggestSchedule = dating
-                                  },
+                                staticStyle: {
+                                  color: "#e61414",
+                                  "background-color": "transparent",
                                 },
+                                attrs: { href: "#" },
                               },
                               [_vm._v("일정도착")]
                             )
