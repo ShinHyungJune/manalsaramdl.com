@@ -86,7 +86,7 @@
 
                                         <!-- STEP01 일정제안대기 -->
                                         <a href="#" v-if="dating.ongoing && user.sex === '남자' && !dating.city1" class="date-btn">일정도착</a>
-                                        <a href="#" v-if="!dating.check_address && dating.ongoing && user.sex === '남자' && dating.city1" class="date-btn active">일정도착</a>
+                                        <a href="#" v-if="!dating.check_address && dating.ongoing && user.sex === '남자' && dating.city1" class="date-btn active" @click.prevent="targetSuggestSchedule = dating">일정도착</a>
 
                                     </div>
                                 </li>
