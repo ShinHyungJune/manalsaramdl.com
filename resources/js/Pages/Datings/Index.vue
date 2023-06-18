@@ -314,17 +314,17 @@
                                     </div>
                                 </form>
 
-                                <div class="search-result" v-if="form.place_name">
-                                    <div class="col-group">
+                                <div class="search-result" v-if="places.length > 0">
+                                    <div class="col-group" v-for="(place, index) in places" :key="index">
                                         <div class="txt-box">
                                             <p class="add">
-                                                {{ form.place_name }}
+                                                {{ place.place_name }}
                                             </p>
                                             <p class="add-detail">
-                                                {{ form.address_name }}
+                                                {{ place.address_name }}
                                             </p>
                                         </div>
-                                        <a :href="form.place_url" target="_blank" type="button" class="map-btn">지도보기</a>
+                                        <a href="#" target="_blank" type="button" class="map-btn" @click.prevent="selectPlace(place)">{{form.place_name === place.place_name ? '선택됨' : '선택하기'}}</a>
                                     </div>
                                 </div>
 
@@ -890,6 +890,7 @@ export default {
             targetFeedbackDating: '', // 피드백
             activeGuide: false,
             word:"",
+            places: [],
             now: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 2}T00:00:00`
         }
     },
@@ -947,14 +948,14 @@ export default {
             }).then(response => {
                 let data = JSON.parse(response.data);
 
-                let targetPlace = data.documents[0];
-
-                if(targetPlace){
-                    this.form.address_name = targetPlace.address_name;
-                    this.form.place_name = targetPlace.place_name;
-                    this.form.place_url = targetPlace.place_url;
-                }
+                this.places = data.documents;
             });
+        },
+
+        selectPlace(place){
+            this.form.address_name = place.address_name;
+            this.form.place_name = place.place_name;
+            this.form.place_url = place.place_url;
         },
 
         alarmClass(dating){

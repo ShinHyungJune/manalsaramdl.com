@@ -6242,6 +6242,7 @@ __webpack_require__.r(__webpack_exports__);
       // 피드백
       activeGuide: false,
       word: "",
+      places: [],
       now: "".concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDate() + 2, "T00:00:00")
     };
   },
@@ -6298,14 +6299,13 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         var data = JSON.parse(response.data);
-        var targetPlace = data.documents[0];
-
-        if (targetPlace) {
-          _this4.form.address_name = targetPlace.address_name;
-          _this4.form.place_name = targetPlace.place_name;
-          _this4.form.place_url = targetPlace.place_url;
-        }
+        _this4.places = data.documents;
       });
+    },
+    selectPlace: function selectPlace(place) {
+      this.form.address_name = place.address_name;
+      this.form.place_name = place.place_name;
+      this.form.place_url = place.place_url;
     },
     alarmClass: function alarmClass(dating) {
       var name = "alarm-icon";
@@ -62621,41 +62621,65 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _vm.form.place_name
-                        ? _c("div", { staticClass: "search-result" }, [
-                            _c("div", { staticClass: "col-group" }, [
-                              _c("div", { staticClass: "txt-box" }, [
-                                _c("p", { staticClass: "add" }, [
-                                  _vm._v(
-                                    "\n                                                " +
-                                      _vm._s(_vm.form.place_name) +
-                                      "\n                                            "
+                      _vm.places.length > 0
+                        ? _c(
+                            "div",
+                            { staticClass: "search-result" },
+                            _vm._l(_vm.places, function (place, index) {
+                              return _c(
+                                "div",
+                                { key: index, staticClass: "col-group" },
+                                [
+                                  _c("div", { staticClass: "txt-box" }, [
+                                    _c("p", { staticClass: "add" }, [
+                                      _vm._v(
+                                        "\n                                                " +
+                                          _vm._s(place.place_name) +
+                                          "\n                                            "
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "add-detail" }, [
+                                      _vm._v(
+                                        "\n                                                " +
+                                          _vm._s(place.address_name) +
+                                          "\n                                            "
+                                      ),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "map-btn",
+                                      attrs: {
+                                        href: "#",
+                                        target: "_blank",
+                                        type: "button",
+                                      },
+                                      on: {
+                                        click: function ($event) {
+                                          $event.preventDefault()
+                                          return _vm.selectPlace(place)
+                                        },
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.form.place_name ===
+                                            place.place_name
+                                            ? "선택됨"
+                                            : "선택하기"
+                                        )
+                                      ),
+                                    ]
                                   ),
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "add-detail" }, [
-                                  _vm._v(
-                                    "\n                                                " +
-                                      _vm._s(_vm.form.address_name) +
-                                      "\n                                            "
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "map-btn",
-                                  attrs: {
-                                    href: _vm.form.place_url,
-                                    target: "_blank",
-                                    type: "button",
-                                  },
-                                },
-                                [_vm._v("지도보기")]
-                              ),
-                            ]),
-                          ])
+                                ]
+                              )
+                            }),
+                            0
+                          )
                         : _vm._e(),
                       _vm._v(" "),
                       _c("div", { staticClass: "m-input-error" }, [

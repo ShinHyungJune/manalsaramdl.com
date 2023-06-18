@@ -1390,12 +1390,17 @@ color: #a4a4a4;
     color: #d7a550;
 }
 .modal-wrap .search-result {
+    max-height:300px;
     padding-top: 24px;
+    overflow-y:auto;
 }
 .modal-wrap .search-result .col-group {
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+}
+.modal-wrap .search-result .col-group + .col-group {
+    margin-top:20px; padding-top:20px;
 }
 .modal-wrap .search-result .txt-box {
     display: flex;
