@@ -443,6 +443,7 @@ height: 48px;
     color: #fff;
     text-align: center;
     cursor: pointer;
+    font-size:15px;
 }
 
 .gnb .gnb-sub li a:hover {
