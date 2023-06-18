@@ -4,7 +4,7 @@
             <div class="sec-title-wrap col-group">
                 <div class="sec-title">
                     <h2>
-                        <span>인사</span>
+                        <span>만날사람들</span>
                         비밀번호 초기화
                     </h2>
                     <p>

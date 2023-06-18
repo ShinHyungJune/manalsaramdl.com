@@ -3013,7 +3013,7 @@ __webpack_require__.r(__webpack_exports__);
       /*$("*").click(function(){
           if($('.modal-overley').hasClass('open'))
               return $('html, body').css({'position':'fixed','overflow':'hidden'});
-            return $('html, body').css({'position':'inherit', 'overflow':'auto'});
+           return $('html, body').css({'position':'inherit', 'overflow':'auto'});
       });*/
       $(function () {
         $(".menu-bar").click(function () {
@@ -7051,52 +7051,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -10367,8 +10321,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -10877,8 +10829,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
-//
-//
 //
 //
 //
@@ -56850,7 +56800,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "footer-wrap" }, [
         _c("a", { staticClass: "footer-logo", attrs: { href: "#" } }, [
           _c("img", {
-            staticStyle: { width: "134px", height: "42px" },
+            staticStyle: { width: "160px" },
             attrs: { src: "/images/footer-logo.png", alt: "logo" },
           }),
         ]),
@@ -56885,14 +56835,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("span", [
           _vm._v(
-            "통신판매업 신고번호 : 제 2023-서울강남-00152호    사업자명 : 인사   "
+            "통신판매업 신고번호 : 제 2023-서울강남-00152호    사업자명 : 만날사람들   "
           ),
           _c("br", { staticClass: "mb" }),
           _vm._v("사업자등록번호 : 481-17-02165"),
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "copyright" }, [
-          _vm._v("Copyright 인사 All rights reserved."),
+          _vm._v("Copyright 만날사람들 All rights reserved."),
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "mb", attrs: { id: "upBtn" } }, [
@@ -57778,7 +57728,7 @@ var staticRenderFns = [
     return _c("nav", { staticClass: "gnb-wrap" }, [
       _c("ul", { staticClass: "gnb" }, [
         _c("li", { staticClass: "active" }, [
-          _c("a", { attrs: { href: "/story" } }, [_vm._v("인사")]),
+          _c("a", { attrs: { href: "/story" } }, [_vm._v("만날 사람들")]),
           _vm._v(" "),
           _c("ul", { staticClass: "gnb-sub a" }, [
             _c("li", [
@@ -57792,14 +57742,14 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("ul", { staticClass: "gnb-sub b" }, [
             _c("li", [
-              _c("a", { attrs: { href: "/partyProducts" } }, [
-                _vm._v("파티신청"),
+              _c("a", { attrs: { href: "/datingProducts" } }, [
+                _vm._v("소개팅신청"),
               ]),
             ]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { attrs: { href: "/datingProducts" } }, [
-                _vm._v("소개팅신청"),
+              _c("a", { attrs: { href: "/partyProducts" } }, [
+                _vm._v("파티신청"),
               ]),
             ]),
           ]),
@@ -57829,19 +57779,19 @@ var staticRenderFns = [
           _c("ul", { staticClass: "gnb-sub d" }, [
             _c("li", [
               _c("a", { attrs: { href: "/commentNotices" } }, [
-                _vm._v("인사의 코멘트"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/partyNotices" } }, [
-                _vm._v("파티Q&A"),
+                _vm._v("만날사람들의 코멘트"),
               ]),
             ]),
             _vm._v(" "),
             _c("li", [
               _c("a", { attrs: { href: "/datingNotices" } }, [
                 _vm._v("소개팅Q&A"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "/partyNotices" } }, [
+                _vm._v("파티Q&A"),
               ]),
             ]),
           ]),
@@ -57854,7 +57804,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mb-logo" }, [
-      _c("img", { attrs: { src: "/images/LOGO.png", alt: "insa-logo" } }),
+      _c("img", {
+        attrs: { src: "/images/footer-logo.png", alt: "insa-logo" },
+      }),
     ])
   },
   function () {
@@ -57864,7 +57816,7 @@ var staticRenderFns = [
     return _c("ul", { staticClass: "mb-nav" }, [
       _c("li", [
         _c("div", { staticClass: "mb-sm-nav-top" }, [
-          _c("a", { attrs: { href: "/story" } }, [_vm._v("인사")]),
+          _c("a", { attrs: { href: "/story" } }, [_vm._v("만날사람들")]),
           _vm._v(" "),
           _c("i", { staticClass: "xi-angle-down" }),
         ]),
@@ -57917,7 +57869,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "mb-sm-nav" }, [
           _c("a", { attrs: { href: "/commentNotices" } }, [
-            _vm._v("인사의 코멘트"),
+            _vm._v("만날사람들의 코멘트"),
           ]),
           _vm._v(" "),
           _c("a", { attrs: { href: "/partyNotices" } }, [_vm._v("파티Q&A")]),
@@ -58465,7 +58417,9 @@ var render = function () {
           { staticClass: "container" },
           [
             _c("div", { staticClass: "list-top" }, [
-              _c("p", { staticClass: "list-title" }, [_vm._v("인사 코멘트")]),
+              _c("p", { staticClass: "list-title" }, [
+                _vm._v("만날사람들 코멘트"),
+              ]),
               _vm._v(" "),
               _c(
                 "form",
@@ -58629,7 +58583,7 @@ var staticRenderFns = [
             _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("인사 코멘트")]),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("만날사람들 코멘트")]),
             ]),
           ]),
         ]),
@@ -58767,13 +58721,13 @@ var staticRenderFns = [
               _c("li", [
                 _c("p", [
                   _vm._v(
-                    "\n                            인사(이하 “회사”라 함)은 이용자의 개인정보를 소중하게 생각하고, 보호하기 위하여 항상 최선을 다해 노력하고 있습니다. “회사”는 「개인정보보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「통신비밀보호법」을 비롯한 모든 개인정보보호 관련 법률규정을 준수하고 있으며, 관련법령에 의거한 개인정보처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 또한 「개인정보처리방침」을 제정하여 이를 준수하고 있으며, 이를 인터넷 사이트 및 모바일 어플리케이션(서비스 예정)에 공개하여 이용자가 언제나 용이하게 열람할 수 있도록 하고 있습니다.\n                        "
+                    "\n                            만날사람들(이하 “회사”라 함)은 이용자의 개인정보를 소중하게 생각하고, 보호하기 위하여 항상 최선을 다해 노력하고 있습니다. “회사”는 「개인정보보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「통신비밀보호법」을 비롯한 모든 개인정보보호 관련 법률규정을 준수하고 있으며, 관련법령에 의거한 개인정보처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 또한 「개인정보처리방침」을 제정하여 이를 준수하고 있으며, 이를 인터넷 사이트 및 모바일 어플리케이션(서비스 예정)에 공개하여 이용자가 언제나 용이하게 열람할 수 있도록 하고 있습니다.\n                        "
                   ),
                 ]),
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "\n                            “회사”는 “인사” 서비스의 개인정보처리방침을 개정하는 경우 웹사이트 공지사항을 통하여 공지할 것입니다.\n                        "
+                    "\n                            “회사”는 “만날사람들” 서비스의 개인정보처리방침을 개정하는 경우 웹사이트 공지사항을 통하여 공지할 것입니다.\n                        "
                   ),
                 ]),
               ]),
@@ -58852,7 +58806,7 @@ var staticRenderFns = [
                 _c("div", [
                   _c("p", [
                     _vm._v(
-                      "\n                                1. 개인정보 파일명 : 인사 개인정보처리방침\n                            "
+                      "\n                                1. 개인정보 파일명 : 만날사람들 개인정보처리방침\n                            "
                     ),
                   ]),
                   _vm._v(" "),
@@ -58986,7 +58940,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "pb" }, [
                   _c("p", [
                     _vm._v(
-                      "\n                                1. 정보주체는 인사에 대해 언제든지 개인정보 열람, 정정, 삭제, 처리정지 요구 등의 권리를 행사할 수 있습니다.\n                            "
+                      "\n                                1. 정보주체는 만날사람들에 대해 언제든지 개인정보 열람, 정정, 삭제, 처리정지 요구 등의 권리를 행사할 수 있습니다.\n                            "
                     ),
                   ]),
                   _vm._v(" "),
@@ -59505,7 +59459,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "step-7-content" }, [
             _c("img", { attrs: { src: "/images/crown3.png", alt: "crown3" } }),
             _vm._v(" "),
-            _c("p", { staticClass: "title" }, [_vm._v("인사 소개팅")]),
+            _c("p", { staticClass: "title" }, [_vm._v("만날사람들 소개팅")]),
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
@@ -59519,7 +59473,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "refund-blind-box top" }, [
                 _c("p", [
                   _vm._v(
-                    "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
+                    "만날사람들(이하 '회사')이 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
                   ),
                   _c("br", { staticClass: "br-re" }),
                   _vm._v(
@@ -59534,7 +59488,7 @@ var staticRenderFns = [
                 _c("p", [
                   _c("span", [_vm._v("01.")]),
                   _vm._v(
-                    " 인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
+                    " 만날사람들 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
                   ),
                 ]),
                 _vm._v(" "),
@@ -59609,7 +59563,7 @@ var staticRenderFns = [
                 _c("p", [
                   _c("span", [_vm._v("10.")]),
                   _vm._v(
-                    " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
+                    " 만날사람들을 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
                   ),
                   _c("br", { staticClass: "br-re" }),
                   _vm._v(
@@ -59695,7 +59649,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "pb" }, [
                   _c("p", [
                     _vm._v(
-                      "\n                                1. 제공 받는 자 : 인사\n                            "
+                      "\n                                1. 제공 받는 자 : 만날사람들\n                            "
                     ),
                   ]),
                   _vm._v(" "),
@@ -59725,13 +59679,13 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "\n                                ② 인사의 서비스에 대한 정보제공과 홍보, 할인 이벤트행사 등 정보 안내를 전화, 전자우편(E-mail), 모바일 문자, 카톡, 채널 등 활용\n                            "
+                      "\n                                ② 만날사람들의 서비스에 대한 정보제공과 홍보, 할인 이벤트행사 등 정보 안내를 전화, 전자우편(E-mail), 모바일 문자, 카톡, 채널 등 활용\n                            "
                     ),
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "\n                                ③ 인사에서 제공하는 소개팅,파티 서비스에 대한 고객 설문 및 만족도 조사\n                            "
+                      "\n                                ③ 만날사람들에서 제공하는 소개팅,파티 서비스에 대한 고객 설문 및 만족도 조사\n                            "
                     ),
                   ]),
                 ]),
@@ -59851,7 +59805,9 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
               _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v(" 인사")])]),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v(" 만날사람들")]),
+              ]),
               _vm._v(" "),
               _c("li", [_c("i", { staticClass: "xi-angle-right" })]),
               _vm._v(" "),
@@ -59882,11 +59838,11 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "story-explanation" }, [
                 _vm._v(
-                  "\n                        안녕하세요. 인사 대표 이태현입니다.^^"
+                  "\n                        안녕하세요. 만날사람들 대표 이태현입니다.^^"
                 ),
                 _c("br"),
                 _vm._v(
-                  "\n                        인사라는 회사를 만나기까지 우여곡절 많으셨죠?"
+                  "\n                        만날사람들이라는 회사를 만나기까지 우여곡절 많으셨죠?"
                 ),
                 _c("br"),
                 _vm._v(" "),
@@ -59956,7 +59912,7 @@ var staticRenderFns = [
                 _vm._v(" 커플, 결혼에 도달하기에는 어려운 구조입니다."),
                 _c("br"),
                 _vm._v(
-                  "\n                        그래서 인사가 필요하다고 생각했어요."
+                  "\n                        그래서 만날사람들이 필요하다고 생각했어요."
                 ),
                 _c("br"),
                 _vm._v(" "),
@@ -59983,7 +59939,7 @@ var staticRenderFns = [
                 _vm._v(" 나의 인연을 이어주는 매개체 역할을 하니까요."),
                 _c("br"),
                 _vm._v(" "),
-                _c("b", [_vm._v("인사가 가장 친한 친구가 되겠습니다.")]),
+                _c("b", [_vm._v("만날사람들이 가장 친한 친구가 되겠습니다.")]),
                 _c("br"),
                 _vm._v(" "),
                 _c("br"),
@@ -59999,7 +59955,7 @@ var staticRenderFns = [
                 _c("br"),
                 _vm._v("\n                        나에게 맞는 단 한 사람, "),
                 _c("br", { staticClass: "br-mb3" }),
-                _vm._v("인사와 함께 찾아보아요!"),
+                _vm._v("만날사람들과 함께 찾아보아요!"),
                 _c("br"),
               ]),
             ]),
@@ -60882,7 +60838,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "txt" }, [
           _vm._v(
-            "\n                                인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                            "
+            "\n                                만날사람들(이하 '회사')이 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                            "
           ),
         ]),
       ]),
@@ -60891,7 +60847,7 @@ var staticRenderFns = [
         _c("ul", { staticClass: "row-group blind-num" }, [
           _c("li", [
             _vm._v(
-              "1.인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
+              "1.만날사람들 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
             ),
           ]),
           _vm._v(" "),
@@ -60937,7 +60893,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                    이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
+              "10.만날사람들을 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                    이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
             ),
           ]),
           _vm._v(" "),
@@ -61002,7 +60958,9 @@ var staticRenderFns = [
             }),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "title order" }, [_vm._v("인사 소개팅")]),
+          _c("p", { staticClass: "title order" }, [
+            _vm._v("만날사람들 소개팅"),
+          ]),
           _vm._v(" "),
           _c("p", { staticClass: "sub-title" }, [_vm._v("서비스 절차")]),
           _vm._v(" "),
@@ -61348,7 +61306,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
-                "\n                        소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 인사만 나눠주세요."
+                "\n                        소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 만날사람들에서만 나눠주세요."
               ),
               _c("br"),
               _vm._v(
@@ -61495,7 +61453,7 @@ var staticRenderFns = [
             }),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "title" }, [_vm._v("인사 소개팅")]),
+          _c("p", { staticClass: "title" }, [_vm._v("만날사람들 소개팅")]),
           _vm._v(" "),
           _c("p", { staticClass: "sub-title" }, [
             _vm._v(
@@ -61513,7 +61471,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "refund-blind-box top" }, [
             _c("p", [
               _vm._v(
-                "인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
+                "만날사람들(이하 '회사')이 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을 결제함으로써 "
               ),
               _c("br", { staticClass: "br-re" }),
               _vm._v(
@@ -61528,7 +61486,7 @@ var staticRenderFns = [
             _c("p", [
               _c("span", [_vm._v("01.")]),
               _vm._v(
-                " 인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
+                " 만날사람들 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
               ),
             ]),
             _vm._v(" "),
@@ -61603,7 +61561,7 @@ var staticRenderFns = [
             _c("p", [
               _c("span", [_vm._v("10.")]),
               _vm._v(
-                " 인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
+                " 만날사람들을 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료이나 횟수가 남아 있으실 경우에는 "
               ),
               _c("br", { staticClass: "br-re" }),
               _vm._v(
@@ -65329,7 +65287,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "sec-title-wrap col-group" }, [
       _c("div", { staticClass: "sec-title" }, [
         _c("h2", [
-          _c("span", [_vm._v("인사")]),
+          _c("span", [_vm._v("만날사람들")]),
           _vm._v("\n                아이디찾기\n            "),
         ]),
         _vm._v(" "),
@@ -65651,7 +65609,7 @@ var render = function () {
                   },
                   [
                     _c("span", { staticClass: "icon" }),
-                    _vm._v(" 오늘하루 보지 않기\n                    "),
+                    _vm._v(" 오늘하루 보지 않기\n                        "),
                   ]
                 ),
                 _vm._v(" "),
@@ -65731,56 +65689,46 @@ var staticRenderFns = [
         _c("div", { staticClass: "banner-contents" }, [
           _c("div", { staticClass: "banner-title" }, [
             _c("h2", { staticClass: "col-group pc" }, [
-              _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              인\n            "),
-              ]),
-              _vm._v(" "),
               _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                _vm._v(
-                  "\n              생에서 가장 중요한 것은  \n            "
-                ),
+                _vm._v("\n                  우린 결국\n                "),
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "text-style-1" }, [
-                _vm._v("\n              사\n            "),
+                _vm._v("\n                  만날사람들\n                "),
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                _vm._v("\n              랑이다\n            "),
+                _vm._v("\n                  이었어\n                "),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb" }, [
-              _c("h2", { staticClass: "col-group col-group01" }, [
-                _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                인\n              "),
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "toggle_txt toggle_txt1" }, [
-                  _vm._v("\n                생에서 가장\n              "),
-                ]),
-              ]),
-              _vm._v(" "),
               _c("h2", { staticClass: "col-group" }, [
                 _c("span", { staticClass: "toggle_txt toggle_txt2" }, [
-                  _vm._v("\n                중요한 것은  \n              "),
+                  _vm._v(
+                    "\n                    우린 결국  \n                  "
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "text-style-1" }, [
-                  _vm._v("\n                사\n              "),
+                  _vm._v(
+                    "\n                    만날사람들\n                  "
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "toggle_txt toggle_txt3" }, [
-                  _vm._v("\n                랑이다\n              "),
+                  _vm._v("\n                    이었어\n                  "),
                 ]),
               ]),
             ]),
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "banner-text" }, [
-            _vm._v("사랑을 선물합니다\n                    "),
+            _vm._v(
+              "소개팅앱은 가볍고 결정사는 올드해\n                        "
+            ),
             _c("br"),
-            _vm._v(" 모든 사람들이 사랑하는 그 날까지\n                "),
+            _vm._v("그렇다면 시작하세요\n                    "),
           ]),
           _vm._v(" "),
           _c(
@@ -65835,14 +65783,14 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", { staticClass: "left-content" }, [
                   _vm._v(
-                    "\n                        조건, 성향 등을 고려해서 매칭해주는 소개팅 서비스로"
+                    "\n                            조건, 성향 등을 고려해서 매칭해주는 소개팅 서비스로"
                   ),
                   _c("br"),
                   _vm._v(" "),
                   _c("span", { staticClass: "text-style-1" }, [
                     _vm._v("'원하는 만남'"),
                   ]),
-                  _vm._v("의 기회를 제공합니다.\n                    "),
+                  _vm._v("의 기회를 제공합니다.\n                        "),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "top-roadMap" }, [
@@ -65919,14 +65867,14 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "left-content" }, [
                 _vm._v(
-                  "\n                        연령과 성비를 조율한 파티 서비스로"
+                  "\n                            연령과 성비를 조율한 파티 서비스로"
                 ),
                 _c("br"),
                 _vm._v(" "),
                 _c("span", { staticClass: "text-style-1" }, [
                   _vm._v("'자연스러운 만남'"),
                 ]),
-                _vm._v(" 의 기회를 제공합니다\n                    "),
+                _vm._v(" 의 기회를 제공합니다\n                        "),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "left-roadMap" }, [
@@ -66021,23 +65969,21 @@ var staticRenderFns = [
               _c("div", { staticClass: "content-container" }, [
                 _c("div", { staticClass: "banner-title btm" }, [
                   _c("h2", { staticClass: "content-title col-group pc" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
-                    _vm._v(" "),
                     _c("span", { staticClass: "toggle_txt contenttxt1" }, [
                       _vm._v(
-                        "\n                    생에서 가장 중요한 것은  \n                  "
+                        "\n                        우린 결국\n                      "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
+                      _vm._v(
+                        "\n                        만날 사람들\n                      "
+                      ),
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "toggle_txt contenttxt2" }, [
                       _vm._v(
-                        "\n                    랑이다\n                  "
+                        "\n                        이었어\n                      "
                       ),
                     ]),
                   ]),
@@ -66071,25 +66017,23 @@ var staticRenderFns = [
               _c("div", { staticClass: "banner-title" }, [
                 _c("div", { staticClass: "mb" }, [
                   _c("h2", { staticClass: "col-group col-group01" }, [
-                    _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    인\n                  "),
-                    ]),
-                    _vm._v(" "),
                     _c("span", { staticClass: "toggle_txt toggle_txt1 btm" }, [
                       _vm._v(
-                        "\n                    생에서 가장 중요한 것은\n                  "
+                        "\n                        우린 결국\n                      "
                       ),
                     ]),
                   ]),
                   _vm._v(" "),
                   _c("h2", { staticClass: "col-group" }, [
                     _c("span", { staticClass: "text-style-1" }, [
-                      _vm._v("\n                    사\n                  "),
+                      _vm._v(
+                        "\n                          만날 사람들\n                      "
+                      ),
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "toggle_txt toggle_txt3 btm" }, [
                       _vm._v(
-                        "\n                    랑이다\n                  "
+                        "\n                        이었어\n                      "
                       ),
                     ]),
                   ]),
@@ -66142,15 +66086,15 @@ var staticRenderFns = [
             _c("div", { staticClass: "service-explan" }, [
               _c("pre", [
                 _vm._v(
-                  "누군가 만날 준비된 당신.\n          쉽게 가볍게 만나기엔 어려운 당신.\n          비싼 돈을 지불하기엔 소중한 당신.\n\n          '인사'는 준비된 분들을 위한 서비스입니다.\n          인사는 나를 지키면서, 나를 위한 1:1 프리미엄,\n          프라이빗 서비스를 제공하는 "
+                  "누군가 만날 준비된 당신.\n              쉽게 가볍게 만나기엔 어려운 당신.\n              비싼 돈을 지불하기엔 소중한 당신.\n\n              '만날사람들'은 준비된 분들을 위한 서비스입니다.\n              만날사람들은 나를 지키면서, 나를 위한 1:1 프리미엄,\n              프라이빗 서비스를 제공하는 "
                 ),
                 _c("br", { staticClass: "mb" }),
                 _vm._v(
-                  " 온·오프라인 융합 서비스입니다.\n\n          모든 것이 디지털화된 지금,"
+                  " 온·오프라인 융합 서비스입니다.\n\n              모든 것이 디지털화된 지금,"
                 ),
                 _c("br", { staticClass: "mb" }),
                 _vm._v(
-                  "  절대 디지털화 할 수 없는 것이 있습니다.\n          바로 사람과의 관계입니다.\n\n          더이상 가벼운 만남으로 감정소모 하지 않아도,\n          고가의 비용을 지불하지 않아도 됩니다.\n          최고의 고객서비스를 제공하여"
+                  "  절대 디지털화 할 수 없는 것이 있습니다.\n              바로 사람과의 관계입니다.\n\n              더이상 가벼운 만남으로 감정소모 하지 않아도,\n              고가의 비용을 지불하지 않아도 됩니다.\n              최고의 고객서비스를 제공하여"
                 ),
                 _c("br", { staticClass: "mb" }),
                 _vm._v("  최고의 만족도를 만들어 드리겠습니다."),
@@ -66175,7 +66119,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("p", [
-                _vm._v("인사를 "),
+                _vm._v("만날사람들을 "),
                 _c("br"),
                 _c("span", { staticClass: "text-style-1" }, [_vm._v("선택")]),
                 _vm._v("해야하는 이유"),
@@ -66229,7 +66173,7 @@ var staticRenderFns = [
               _c("p", [
                 _c("span", { staticClass: "text-style-1" }, [_vm._v("오직")]),
                 _c("br"),
-                _vm._v("인사에만 있는 것"),
+                _vm._v("만날사람들에만 있는 것"),
               ]),
             ]),
             _vm._v(" "),
@@ -66250,14 +66194,14 @@ var staticRenderFns = [
                   _c("span", { staticClass: "cirb b-2" }, [_vm._v("02")]),
                   _vm._v(" "),
                   _c("b", [_vm._v("대면 상담")]),
-                  _vm._v("으로 철저한 검증\n                            "),
+                  _vm._v("으로 철저한 검증\n                                "),
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _c("span", { staticClass: "cir s-3" }),
                   _vm._v(" "),
                   _c("span", { staticClass: "cirb b-3" }, [_vm._v("03")]),
-                  _vm._v("\n                                남녀 "),
+                  _vm._v("\n                                    남녀 "),
                   _c("b", [_vm._v("동일한 비용")]),
                 ]),
                 _vm._v(" "),
@@ -66265,7 +66209,7 @@ var staticRenderFns = [
                   _c("span", { staticClass: "cir s-4" }),
                   _vm._v(" "),
                   _c("span", { staticClass: "cirb b-4" }, [_vm._v("04")]),
-                  _vm._v("\n                                디테일한 "),
+                  _vm._v("\n                                    디테일한 "),
                   _c("b", [_vm._v("매칭 회의")]),
                 ]),
                 _vm._v(" "),
@@ -66274,10 +66218,10 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("span", { staticClass: "cirb b-5" }, [_vm._v("05")]),
                   _vm._v(
-                    "\n                                매너, 호감도를 체크하면서 "
+                    "\n                                    매너, 호감도를 체크하면서 "
                   ),
                   _c("b", [_vm._v("사후관리")]),
-                  _vm._v("까지 책임\n                            "),
+                  _vm._v("까지 책임\n                                "),
                 ]),
                 _vm._v(" "),
                 _c("li", [
@@ -66293,7 +66237,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("span", { staticClass: "cirb b-7" }, [_vm._v("07")]),
                   _vm._v(
-                    "\n                                온 · 오프라인 서비스 동시 운영으로 "
+                    "\n                                    온 · 오프라인 서비스 동시 운영으로 "
                   ),
                   _c("b", [_vm._v("신뢰감")]),
                 ]),
@@ -66314,9 +66258,9 @@ var staticRenderFns = [
           _c("p", [
             _vm._v("사람은 만나봐야 알 수 있고"),
             _c("br"),
-            _vm._v("\n                    사랑은 만나봐야 느낄 수 있어"),
+            _vm._v("\n                        사랑은 만나봐야 느낄 수 있어"),
             _c("br"),
-            _vm._v("\n                    사랑에 더 이상 우연은 없어"),
+            _vm._v("\n                        사랑에 더 이상 우연은 없어"),
           ]),
           _vm._v(" "),
           _c("a", { attrs: { href: "/register" } }, [
@@ -70761,7 +70705,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "sec-title-wrap col-group" }, [
       _c("div", { staticClass: "sec-title" }, [
         _c("h2", [
-          _c("span", [_vm._v("인사")]),
+          _c("span", [_vm._v("만날사람들")]),
           _vm._v("\n                    비밀번호 초기화\n                "),
         ]),
         _vm._v(" "),
@@ -70895,7 +70839,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "login-title" }, [
-      _c("span", { staticClass: "text-style-1" }, [_vm._v("인사  ")]),
+      _c("span", { staticClass: "text-style-1" }, [_vm._v("만날사람들  ")]),
       _vm._v("비밀번호 찾기"),
     ])
   },
@@ -71341,7 +71285,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "txt" }, [
         _vm._v(
-          "\n                                    인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
+          "\n                                    만날사람들(이하 '회사')이 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                    결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                    또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                "
         ),
       ]),
     ])
@@ -71361,7 +71305,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "txt" }, [
           _vm._v(
-            "\n                                        인사(이하 '회사')가 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                    "
+            "\n                                        만날사람들(이하 '회사')이 제공하는 소개팅 서비스에 가입하기 위하여 계약 내용을 인지하고 이용금액을\n                                        결제함으로써 해당 서비스의 가입 및 계약이 성립됩니다. 회사의 가입기준에 따라서 가입이 제한\n                                        또는 거절될 수 있으며 그럴 경우에는 전액 환불 도와드리고 있습니다.\n                                    "
           ),
         ]),
       ]),
@@ -71370,7 +71314,7 @@ var staticRenderFns = [
         _c("ul", { staticClass: "row-group blind-num" }, [
           _c("li", [
             _vm._v(
-              "1.인사 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
+              "1.만날사람들 가격표는 VAT가 포함된 가격이며, 정찰제로 운영됩니다."
             ),
           ]),
           _vm._v(" "),
@@ -71416,7 +71360,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "10.인사를 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                            이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
+              "10.만날사람들을 통해 교제하거나 성혼하게 된 경우, 이용 목적이 달성되는 것으로 프로그램 종료\n                                            이나 횟수가 남아 있으실 경우에는 가입하신 프로그램 기간만큼 연장 가능합니다"
             ),
           ]),
           _vm._v(" "),
@@ -72397,7 +72341,7 @@ var render = function () {
                         cols: "30",
                         rows: "10",
                         placeholder:
-                          "안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 인사를 찾게 되었습니다. 곧 만나뵐게요!♥",
+                          "안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 만날사람들을 찾게 되었습니다. 곧 만나뵐게요!♥",
                       },
                       domProps: { value: _vm.form.introduce },
                       on: {
@@ -72811,20 +72755,17 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("p", { staticClass: "login-header-title" }, [
-          _c("span", { staticClass: "text-style-1" }, [_vm._v("인")]),
-          _vm._v("생에서 가장 중요한 것은 "),
-          _c("span", { staticClass: "text-style-1" }, [_vm._v("사")]),
-          _vm._v("랑이다."),
+          _vm._v("우린 결국 "),
+          _c("span", { staticClass: "text-style-1" }, [_vm._v("만날 사람들")]),
+          _vm._v("이었어"),
         ]),
         _vm._v(" "),
         _c("img", { attrs: { src: "/images//log-line.png", alt: "log-line" } }),
         _vm._v(" "),
         _c("p", { staticClass: "login-header-sub" }, [
           _vm._v(
-            "\n                가장 친한 친구가 되어 찾아 줄게요\n                "
+            "\n                가장 친한 친구가 되어 찾아 줄게요\n            "
           ),
-          _c("br"),
-          _vm._v("\n                인사 하세요!\n            "),
         ]),
       ]),
     ])
@@ -74179,14 +74120,13 @@ var staticRenderFns = [
       _c("div", { staticClass: "login-header" }, [
         _c("img", {
           staticClass: "login-logo",
-          attrs: { src: "/images/login-logo.png", alt: "login-logo" },
+          attrs: { src: "/images/footer-logo.png", alt: "login-logo" },
         }),
         _vm._v(" "),
         _c("p", { staticClass: "login-header-title" }, [
-          _c("span", { staticClass: "text-style-1" }, [_vm._v("인")]),
-          _vm._v("생에서 가장 중요한 것은 "),
-          _c("span", { staticClass: "text-style-1" }, [_vm._v("사")]),
-          _vm._v("랑이다."),
+          _vm._v("우린 결국 "),
+          _c("span", { staticClass: "text-style-1" }, [_vm._v("만날 사람들")]),
+          _vm._v("이었어"),
         ]),
         _vm._v(" "),
         _c("img", {
@@ -74196,10 +74136,8 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "login-header-sub" }, [
           _vm._v(
-            "\n                    가장 친한 친구가 되어 찾아 줄게요\n                    "
+            "\n                    가장 친한 친구가 되어 찾아 줄게요\n                "
           ),
-          _c("br"),
-          _vm._v("\n                    인사 하세요!\n                "),
         ]),
       ]),
     ])
@@ -74400,7 +74338,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "txt" }, [
         _vm._v(
-          "\n                            인사 회원에서 탈퇴 하시면 가입하신"
+          "\n                            만날사람들 회원에서 탈퇴 하시면 가입하신"
         ),
         _c("br", { staticClass: "mb" }),
         _vm._v(" 회원정보, 프로필, 결제내역, 소개팅 내역, "),

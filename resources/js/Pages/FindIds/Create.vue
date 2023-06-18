@@ -2,7 +2,7 @@
     <main class="mypage join join2">
         <div class="join-wrap container">
             <div class="sec-title-wrap col-group">
-                <div class="sec-title"><h2><span>인사</span>
+                <div class="sec-title"><h2><span>만날사람들</span>
                     아이디찾기
                 </h2>
                     <p>

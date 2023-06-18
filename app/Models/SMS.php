@@ -61,10 +61,10 @@ class SMS
             return "[소개팅 일정 확정 및 안내]";
 
         if($template == SmsTemplate::ORDER_PARTY)
-            return "[인사 파티 결제완료]";
+            return "[만날사람들 파티 결제완료]";
 
         if($template == SmsTemplate::ACCEPT_PARTY)
-            return "[인사 파티 승인완료]";
+            return "[만날사람들 파티 승인완료]";
     }
 
     public function getTemplateMessage($data, $template)
@@ -101,10 +101,10 @@ class SMS
 2. 소개팅 하루 전 채팅창이 오픈됩니다. 유사시 채팅창을 통해 소통해주세요.
 3. 지각 또는 비매너적인 행동으로 인한 만남 취소시, 원인 제공이 있는 당사자에게 패널티가 돌아갑니다.
 
-▶ 인사 마이페이지 바로실행 : {$data['url']}";
+▶ 만날사람들 마이페이지 바로실행 : {$data['url']}";
 
         if($template == SmsTemplate::ORDER_PARTY)
-            return "[인사 파티 결제완료]
+            return "[만날사람들 파티 결제완료]
 결제가 완료되었습니다.
 신원인증 후에 선착순으로 파티참석권 승인드리고 있습니다.
 
@@ -115,7 +115,7 @@ class SMS
 5. 파티 참석 전에 환불규정 확인해주세요.";
 
         if($template == SmsTemplate::ACCEPT_PARTY)
-            return "[인사 파티 승인완료]
+            return "[만날사람들 파티 승인완료]
 일정 : {$data['opened_at']}
 장소 : {$data['place_name']}
 주소 : {$data['address']}
