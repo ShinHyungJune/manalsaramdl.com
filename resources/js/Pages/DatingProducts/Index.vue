@@ -370,7 +370,7 @@
                         <p class="title-num">5</p>
                         <p class="title">1:1 채팅방 오픈</p>
                         <p class="sub-title">
-                            소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 만날사람들에서만 나눠주세요.<br>
+                            소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 인사만 나눠주세요.<br>
                             소개팅 1시간전 서로의 연락처가 <br  class="br-m"/>채팅방에 공유됩니다.
                         </p>
                         <div class="step-4-consult">

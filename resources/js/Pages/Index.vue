@@ -184,7 +184,7 @@
                                         <img src="/images/main-table-01.png" alt="">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/images/main-table-02.png" alt="">
+                                        <img src="/images/main-table-02.png" alt="" style="height:424px;">
                                     </div>
                                     <div class="swiper-slide">
                                         <img src="/images/main-table-03.png" alt="">

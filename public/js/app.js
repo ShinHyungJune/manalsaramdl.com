@@ -56800,7 +56800,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "footer-wrap" }, [
         _c("a", { staticClass: "footer-logo", attrs: { href: "#" } }, [
           _c("img", {
-            staticStyle: { width: "160px" },
+            staticStyle: { width: "120px" },
             attrs: { src: "/images/footer-logo.png", alt: "logo" },
           }),
         ]),
@@ -57836,11 +57836,11 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-sm-nav" }, [
-          _c("a", { attrs: { href: "/partyProducts" } }, [_vm._v("파티 신청")]),
-          _vm._v(" "),
           _c("a", { attrs: { href: "/datingProducts" } }, [
             _vm._v("소개팅 신청"),
           ]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/partyProducts" } }, [_vm._v("파티 신청")]),
         ]),
       ]),
       _vm._v(" "),
@@ -57872,9 +57872,9 @@ var staticRenderFns = [
             _vm._v("만날사람들의 코멘트"),
           ]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/partyNotices" } }, [_vm._v("파티Q&A")]),
-          _vm._v(" "),
           _c("a", { attrs: { href: "/datingNotices" } }, [_vm._v("소개팅Q&A")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/partyNotices" } }, [_vm._v("파티Q&A")]),
         ]),
       ]),
     ])
@@ -61306,7 +61306,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "sub-title" }, [
               _vm._v(
-                "\n                        소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 만날사람들에서만 나눠주세요."
+                "\n                        소개팅 전일 소개팅 상대방과의 1:1 채팅방이 오픈되며 간단한 인사만 나눠주세요."
               ),
               _c("br"),
               _vm._v(
@@ -65969,6 +65969,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "swiper-slide" }, [
                     _c("img", {
+                      staticStyle: { height: "424px" },
                       attrs: { src: "/images/main-table-02.png", alt: "" },
                     }),
                   ]),
@@ -70029,7 +70030,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "img-wrap" }, [
         _c("img", {
           staticClass: "invited-pc",
-          attrs: { src: "/images/letter.png", alt: "" },
+          attrs: { src: "/images/letter.jpg", alt: "" },
         }),
       ]),
       _vm._v(" "),

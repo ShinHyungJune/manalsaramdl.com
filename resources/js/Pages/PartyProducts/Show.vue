@@ -269,7 +269,7 @@
 
         <div class="container invited">
             <div class="img-wrap">
-                <img class="invited-pc" src="/images/letter.png" alt="">
+                <img class="invited-pc" src="/images/letter.jpg" alt="">
             </div>
             <div class="text-wrap">
                 <div class="line"></div>

@@ -103,8 +103,8 @@
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="/partyProducts">파티 신청</a>
                                 <a href="/datingProducts">소개팅 신청</a>
+                                <a href="/partyProducts">파티 신청</a>
                             </div>
                         </li>
                         <li>
@@ -124,8 +124,8 @@
                             </div>
                             <div class="mb-sm-nav">
                                 <a href="/commentNotices">만날사람들의 코멘트</a>
-                                <a href="/partyNotices">파티Q&A</a>
                                 <a href="/datingNotices">소개팅Q&A</a>
+                                <a href="/partyNotices">파티Q&A</a>
                             </div>
                         </li>
                     </ul>

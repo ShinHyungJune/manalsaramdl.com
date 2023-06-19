@@ -3,7 +3,7 @@
 
         <div class="footer-wrap">
             <a href="#" class="footer-logo">
-                <img src="/images/footer-logo.png" style="width: 160px;" alt="logo">
+                <img src="/images/footer-logo.png" style="width: 120px;" alt="logo">
             </a>
             <div class="col-group">
                 <ul class="col-group">
