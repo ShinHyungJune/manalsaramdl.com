@@ -247,7 +247,7 @@ input:focus {
 
 .header-wrap .top-menu .logo a {
     width: 160px;
-    height: 64px;
+    height: 54px;
     background: url(../images/footer-logo.png) no-repeat;
     background-size: contain;
     transition: 0.3s;
@@ -830,15 +830,18 @@ a {
         display: flex;
         width: 100%;
         height: 56px;
+        position:relative;
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
         background-color: #fff;
         padding: 8px 20px;
         justify-content: space-between;
     }
-
+    .header-wrap .top-menu .logo {
+        position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+    }
     .header-wrap .top-menu .logo a {
-        width: 60px;
-        height: 50px;
+        width: 120px;
+        height: 40px;
     }
 
     .header-wrap .top-menu .top-menu-sns {
