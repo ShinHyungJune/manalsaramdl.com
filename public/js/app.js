@@ -65970,7 +65970,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "swiper-slide" }, [
                     _c("img", {
                       staticStyle: { height: "424px" },
-                      attrs: { src: "/images/main-table-02.png", alt: "" },
+                      attrs: { src: "/images/main-table-02.png?v=1", alt: "" },
                     }),
                   ]),
                   _vm._v(" "),
