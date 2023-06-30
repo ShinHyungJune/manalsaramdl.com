@@ -14,7 +14,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- 네이버 검색등록 -->
-    <meta name="naver-site-verification" content="6b8a07b01f8c06fc2496354eec41e10d18c29376" />
+    <meta name="naver-site-verification" content="176d82cebc7be401aba447419c9fa471a2c20700" />
+<!--    <meta name="naver-site-verification" content="6b8a07b01f8c06fc2496354eec41e10d18c29376" />-->
     <meta name="description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
     <meta property="og:type" content="website">
     <meta property="og:title" content="만날사람들">
