@@ -57627,7 +57627,7 @@ var staticRenderFns = [
           "a",
           {
             attrs: {
-              href: "https://www.instagram.com/insa.official_",
+              href: "https://www.instagram.com/manalsaramdl/",
               target: "_blank",
             },
           },
@@ -57643,7 +57643,7 @@ var staticRenderFns = [
           "a",
           {
             attrs: {
-              href: "https://www.instagram.com/insa.official_",
+              href: "https://www.instagram.com/manalsaramdl/",
               target: "_blank",
             },
           },
@@ -57888,7 +57888,7 @@ var staticRenderFns = [
         "a",
         {
           attrs: {
-            href: "https://www.instagram.com/insa.official_",
+            href: "https://www.instagram.com/manalsaramdl/",
             target: "_blank",
           },
         },
