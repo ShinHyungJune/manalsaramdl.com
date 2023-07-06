@@ -36,18 +36,21 @@
                             <span :class="`state-label ${dating.ongoing ? 'ongoing' : ''}`">{{dating.ongoing ? '진행중' : '종료'}}</span>
                             <span :class="alarmClass(dating)"><i class="xi-bell"></i></span>
                             <div class="user-profile">
-                                <div class="user-photo" :style="`background-image:url(${partner(dating).img ? partner(dating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
+                                <div class="user-photo" :style="`background-image:url(${partner(dating) && partner(dating).img ? partner(dating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                 <div class="txt-box">
                                     <p class="user-name">
-                                        {{partner(dating).displayName}}
+                                        {{partner(dating) ? partner(dating).displayName : '탈퇴유저'}}
                                      </p>
-                                    <div class="user-info col-group">
+                                    <div class="user-info col-group" v-if="partner(dating)">
                                         <p>{{partner(dating).formatBirth}}년생</p>
                                         /
                                         <p>{{ partner(dating).city }} 거주</p>
                                     </div>
+                                    <div class="user-info col-group" v-else>
+                                        <p>탈퇴유저</p>
+                                    </div>
                                 </div>
-                                <a href="#" class="profile-btn" @click.prevent="targetDating = dating">프로필 상세보기</a>
+                                <a href="#" class="profile-btn" @click.prevent="targetDating = dating" v-if="partner(dating)">프로필 상세보기</a>
                             </div>
 
                             <ul class="date-detail">
@@ -274,6 +277,9 @@
                 </div>
 
                 <!-- 장소 제안 -->
+                <!--
+                <div class="modal-overley location open" v-if="targetSuggestAddressDating">
+                -->
                 <div class="modal-overley location open" v-if="targetSuggestAddressDating">
                     <div class="modal-wrap">
                         <button type="button" class="close" @click="targetSuggestAddressDating = false">
@@ -307,26 +313,38 @@
                                 </li>
                             </ul>
                             <div class="search-wrap form-box">
-                                <form action="" @submit.prevent="search">
-                                    <div class="search-box">
-                                        <input type="text" placeholder="소개팅 장소를 검색해 주세요" v-model="word">
-                                        <span class="sticker" @click="search"><i class="xi-search"></i></span>
-                                    </div>
-                                </form>
-
-                                <div class="search-result" v-if="places.length > 0">
-                                    <div class="col-group" v-for="(place, index) in places" :key="index">
-                                        <div class="txt-box">
-                                            <p class="add">
-                                                {{ place.place_name }}
-                                            </p>
-                                            <p class="add-detail">
-                                                {{ place.address_name }}
-                                            </p>
+                                <!-- 장소명 찾아서 있을 때 -->
+                                <div v-if="!activeInputAddress">
+                                    <form action="" @submit.prevent="search">
+                                        <div class="search-box">
+                                            <input type="text" placeholder="소개팅 장소를 검색해 주세요" v-model="word">
+                                            <span class="sticker" @click="search"><i class="xi-search"></i></span>
                                         </div>
-                                        <a href="#" target="_blank" type="button" class="map-btn" @click.prevent="selectPlace(place)">{{form.place_name === place.place_name ? '선택됨' : '선택하기'}}</a>
+                                    </form>
+
+                                    <div class="search-result" v-if="places.length > 0">
+                                        <div class="col-group" v-for="(place, index) in places" :key="index">
+                                            <div class="txt-box">
+                                                <p class="add">
+                                                    {{ place.place_name }}
+                                                </p>
+                                                <p class="add-detail">
+                                                    {{ place.address_name }}
+                                                </p>
+                                            </div>
+                                            <a href="#" target="_blank" type="button" class="map-btn" @click.prevent="selectPlace(place)">{{form.place_name === place.place_name ? '선택됨' : '선택하기'}}</a>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- 장소명 찾아서 없을 때 -->
+                                <input-address
+                                    @change="(data) => {form.place_url = data.place_url; form.address = data.address}" :form="form"
+                                    @changeAddressDetail="(data) => {form.place_name = data; form.address_name = form.address + ' ' + form.place_name}"
+                                    v-else
+                                />
+
+
 
                                 <div class="m-input-error">{{form.errors.place_name}}</div>
                                 <div class="m-input-error">{{form.errors.address_name}}</div>
@@ -838,9 +856,10 @@ import {Link} from '@inertiajs/inertia-vue';
 import Pagination from "../../Components/Pagination";
 import Sidebar from "../../Components/Sidebar";
 import InputCities from "../../Components/Form/InputCities";
+import InputAddress from "../../Components/Form/InputAddress";
 
 export default {
-    components: {InputCities, Sidebar, Link, Pagination},
+    components: {InputAddress, InputCities, Sidebar, Link, Pagination},
     data() {
         return {
             user: this.$page.props.user.data,
@@ -870,6 +889,7 @@ export default {
 
                 // 장소제안
                 address_name:"",
+                address: "",
                 place_url:"",
                 place_name:"",
                 scheduled_at:"",
@@ -888,6 +908,7 @@ export default {
             targetSuggestAddressDating: "", // 장소제안
             targetSuggestSchedule: "", // 일정제안
             targetFeedbackDating: '', // 피드백
+            activeInputAddress: false,
             activeGuide: false,
             word:"",
             places: [],
@@ -947,6 +968,12 @@ export default {
                 }
             }).then(response => {
                 let data = JSON.parse(response.data);
+
+                if(data.documents.length === 0) {
+                    alert("검색 결과가 없습니다. 직접 주소를 입력해주세요!");
+
+                    return this.activeInputAddress = true;
+                }
 
                 this.places = data.documents;
             });

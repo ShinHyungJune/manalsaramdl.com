@@ -53,6 +53,8 @@
 
     <!-- 아임포트 -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+    <script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a156616c5072df75c708e08fb1b93de4&libraries=services"></script>
 
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
