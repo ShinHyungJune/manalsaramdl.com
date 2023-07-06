@@ -85,7 +85,7 @@
                         </form>
                     </div>
                     <ul class="payment-list row-group">
-                        <li class="date" v-for="order in orders.data" :key="order.id">
+                        <li class="date" v-for="order in orders.data" :key="order.id" v-if="order.product">
                             <div class="tr col-group">
                                 <div class="title-box row-group">
                                     <span class="label">{{ order.product.type }}</span>

@@ -66891,69 +66891,77 @@ var render = function () {
               "ul",
               { staticClass: "payment-list row-group" },
               _vm._l(_vm.orders.data, function (order) {
-                return _c("li", { key: order.id, staticClass: "date" }, [
-                  _c("div", { staticClass: "tr col-group" }, [
-                    _c("div", { staticClass: "title-box row-group" }, [
-                      _c("span", { staticClass: "label" }, [
-                        _vm._v(_vm._s(order.product.type)),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "title" }, [
-                        _vm._v(_vm._s(order.product.title)),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "payment-box col-group" }, [
-                      _c("li", [
-                        _c("p", { staticClass: "title" }, [_vm._v("결제수단")]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "txt" }, [
-                          _vm._v(_vm._s(order.pay_method_name)),
+                return order.product
+                  ? _c("li", { key: order.id, staticClass: "date" }, [
+                      _c("div", { staticClass: "tr col-group" }, [
+                        _c("div", { staticClass: "title-box row-group" }, [
+                          _c("span", { staticClass: "label" }, [
+                            _vm._v(_vm._s(order.product.type)),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "title" }, [
+                            _vm._v(_vm._s(order.product.title)),
+                          ]),
                         ]),
-                      ]),
-                      _vm._v(" "),
-                      order.product.type === "파티"
-                        ? _c("li", [
+                        _vm._v(" "),
+                        _c("ul", { staticClass: "payment-box col-group" }, [
+                          _c("li", [
                             _c("p", { staticClass: "title" }, [
-                              _vm._v("파티일자"),
+                              _vm._v("결제수단"),
                             ]),
                             _vm._v(" "),
                             _c("p", { staticClass: "txt" }, [
-                              _vm._v(_vm._s(order.product.opened_at)),
+                              _vm._v(_vm._s(order.pay_method_name)),
                             ]),
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      order.product.type === "소개팅"
-                        ? _c("li", [
+                          ]),
+                          _vm._v(" "),
+                          order.product.type === "파티"
+                            ? _c("li", [
+                                _c("p", { staticClass: "title" }, [
+                                  _vm._v("파티일자"),
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "txt" }, [
+                                  _vm._v(_vm._s(order.product.opened_at)),
+                                ]),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          order.product.type === "소개팅"
+                            ? _c("li", [
+                                _c("p", { staticClass: "title" }, [
+                                  _vm._v("충전횟수"),
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "txt" }, [
+                                  _vm._v(_vm._s(order.product.count_dating)),
+                                ]),
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("li", [
                             _c("p", { staticClass: "title" }, [
-                              _vm._v("충전횟수"),
+                              _vm._v("결제금액"),
                             ]),
                             _vm._v(" "),
                             _c("p", { staticClass: "txt" }, [
-                              _vm._v(_vm._s(order.product.count_dating)),
+                              _vm._v(_vm._s(order.price.toLocaleString())),
                             ]),
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("p", { staticClass: "title" }, [_vm._v("결제금액")]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "txt" }, [
-                          _vm._v(_vm._s(order.price.toLocaleString())),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", { staticClass: "title" }, [
+                              _vm._v("결제날짜"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "txt" }, [
+                              _vm._v(_vm._s(order.created_at)),
+                            ]),
+                          ]),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("p", { staticClass: "title" }, [_vm._v("결제날짜")]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "txt" }, [
-                          _vm._v(_vm._s(order.created_at)),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
-                ])
+                    ])
+                  : _vm._e()
               }),
               0
             ),
