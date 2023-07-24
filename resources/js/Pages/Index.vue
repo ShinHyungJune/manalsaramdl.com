@@ -208,6 +208,13 @@
                         <div class="img-wrap main-talk mb">
                             <img src="/images/main-talk-m.png" alt="">
                         </div>
+                        <!-- 0724 -->
+                        <div class="warning-container-pc pc">
+                            <div class="img-wrap">
+                                <img src="../images/main-table-07.png" alt="">
+                            </div>
+                        </div>
+                        <!-- // -->
                         <div class="warning-container mb">
                             <div class="warning-img">
                                 <img src="/images/main-warning.png" />

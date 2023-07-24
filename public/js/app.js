@@ -7097,6 +7097,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -65970,6 +65977,17 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "img-wrap main-talk mb" }, [
               _c("img", { attrs: { src: "/images/main-talk-m.png", alt: "" } }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "warning-container-pc pc" }, [
+              _c("div", { staticClass: "img-wrap" }, [
+                _c("img", {
+                  attrs: {
+                    src: __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../images/main-table-07.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
+                    alt: "",
+                  },
+                }),
+              ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "warning-container mb" }, [

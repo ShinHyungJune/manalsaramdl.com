@@ -8446,3 +8446,12 @@ min-height: calc(100vh - 156px - 307px);
 
     }
 }
+
+/* 0724 - 메인 */
+.main-section.sec-4 .main-content .warning-container-pc { }
+.main-section.sec-4 .main-content .warning-container-pc .img-wrap { max-width: 1269px; }
+.main-section.sec-4 .main-content .warning-container-pc .img-wrap img { width: 100%; }
+@media screen and (max-width: 768px) {
+    .main-section.sec-4 .main-content .warning-container-pc { display: none; }
+}
+/* // */
