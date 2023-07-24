@@ -11,7 +11,7 @@
                         <li><i class="xi-angle-right"></i></li>
                         <li><a href="#"> 게시판</a></li>
                         <li><i class="xi-angle-right"></i></li>
-                        <li><a href="#">인사 코멘트</a></li>
+                        <li><a href="#">만날사람들 코멘트</a></li>
                     </ul>
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <div class="sub-con">
                 <div class="container">
                     <div class="list-top">
-                        <p class="list-title">인사 코멘트</p>
+                        <p class="list-title">만날사람들 코멘트</p>
                         <form action="" @submit.prevent="filter">
                             <div class="search-wrap"><input type="text" id="search" placeholder="검색어를 입력하세요" v-model="form.word"><button @click="filter"><i class="xi-search"></i></button></div>
                         </form>

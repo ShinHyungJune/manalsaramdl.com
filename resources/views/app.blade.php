@@ -14,17 +14,18 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- 네이버 검색등록 -->
-    <meta name="naver-site-verification" content="6b8a07b01f8c06fc2496354eec41e10d18c29376" />
+    <meta name="naver-site-verification" content="176d82cebc7be401aba447419c9fa471a2c20700" />
+<!--    <meta name="naver-site-verification" content="6b8a07b01f8c06fc2496354eec41e10d18c29376" />-->
     <meta name="description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="인사">
+    <meta property="og:title" content="만날사람들">
     <meta property="og:image" content="{{asset("images/insa-kakao-img.jpg")}}">
     <meta property="og:description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
     <meta property="og:url" content="https://insacompany.com">
     <meta name="twitter:card" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
-    <meta name="twitter:title" content="인사">
+    <meta name="twitter:title" content="만날사람들">
     <meta name="twitter:description" content="1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리">
-    <meta name="twitter:domain" content="인사">
+    <meta name="twitter:domain" content="만날사람들">
 
     <!-- 구글검색등록 -->
     <meta name="google-site-verification" content="MpGSFJzfvoMQB4LaRNSrK419lLPHMFPmLd1MmZgZwGw" />
@@ -52,6 +53,8 @@
 
     <!-- 아임포트 -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+    <script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a156616c5072df75c708e08fb1b93de4&libraries=services"></script>
 
     <script src="{{ mix('/js/app.js') }}" defer></script>
 

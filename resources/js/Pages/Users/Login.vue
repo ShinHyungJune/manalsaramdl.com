@@ -3,13 +3,11 @@
         <main class="loginpage login">
             <div class="login-container main-login">
                 <div class="login-header">
-                    <img src="/images/login-logo.png" alt="login-logo" class="login-logo">
-                    <p class="login-header-title"><span class="text-style-1">인</span>생에서 가장 중요한 것은 <span class="text-style-1">사</span>랑이다.</p>
+                    <img src="/images/footer-logo.png" alt="login-logo" class="login-logo">
+                    <p class="login-header-title">우린 결국 <span class="text-style-1">만날 사람들</span>이었어</p>
                     <img class="login-line-img" src="/images/log-line.png" alt="log-line">
                     <p class="login-header-sub">
                         가장 친한 친구가 되어 찾아 줄게요
-                        <br />
-                        인사 하세요!
                     </p>
                 </div>
             </div>

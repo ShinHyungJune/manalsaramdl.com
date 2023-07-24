@@ -1270,6 +1270,7 @@ color: #fff;
     white-space: nowrap;
 }
 .toggle_txt1 {
+    margin-right:16px;
     animation-name: toggletxt1;
     animation-duration: 12s;
     animation-direction: alternate;
@@ -1334,7 +1335,7 @@ color: #fff;
         display: block;
     }
     .main-banner .banner-contents .banner-title h2 {
-        font-size: 32px;
+        font-size: 28px;
         justify-content: flex-start;
         line-height: 1.5;
     }
@@ -1835,12 +1836,12 @@ color: #fff;
     80%,
     100% {
         opacity: 1;
-        width: 730px;
+        width: 300px;
     }
     25%,
     75% {
         opacity: 0;
-        width: 730px;
+        width: 300px;
     }
     30%,
     70% {
@@ -2346,7 +2347,7 @@ color: #fff;
     }
 
     .main-banner .banner-contents .banner-title h2 {
-        font-size: 32px;
+        font-size: 26px;
         justify-content: flex-start;
         line-height: 1.5;
     }
@@ -2421,12 +2422,12 @@ color: #fff;
         80%,
         100% {
             opacity: 1;
-            width: 170px;
+            width: 120px;
         }
         25%,
         75% {
             opacity: 0;
-            width: 170px;
+            width: 120px;
         }
         30%,
         70% {
@@ -2478,12 +2479,12 @@ color: #fff;
         80%,
         100% {
             opacity: 1;
-            width: 90px;
+            width: 80px;
         }
         25%,
         75% {
             opacity: 0;
-            width: 90px;
+            width: 80px;
         }
         30%,
         70% {
@@ -7796,12 +7797,12 @@ td {
         80%,
         100% {
             opacity: 1;
-            width: 730px;
+            width: 300px;
         }
         25%,
         75% {
             opacity: 0;
-            width: 730px;
+            width: 300px;
         }
         30%,
         70% {
@@ -7817,6 +7818,9 @@ td {
 */
 
 @media screen and (max-width: 1225px) {
+    .subpage.blind-date .service-contents .step-1 .step-1-consult {
+        padding:0;
+    }
     .subpage.party-service .application-container .roadmap-line-box { width: calc(( (100% / 3 ) * 3 ) - 208px );}
  }
 @media screen and (max-width: 1210px){
@@ -8042,12 +8046,12 @@ td {
     80%,
     100% {
         opacity: 1;
-        width: 265px;
+        width: 106px;
     }
     25%,
     75% {
         opacity: 0;
-        width: 265px;
+        width: 106px;
 
   }
     30%,

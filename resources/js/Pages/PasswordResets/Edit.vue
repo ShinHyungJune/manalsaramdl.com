@@ -2,7 +2,7 @@
     <main class="loginpage pwd-new">
         <div class="login-wrap">
             <div class="login-contants" style="padding:60px 0;">
-                <p class="login-title"><span class="text-style-1">인사 &nbsp;</span>비밀번호 찾기</p>
+                <p class="login-title"><span class="text-style-1">만날사람들 &nbsp;</span>비밀번호 찾기</p>
                 <p class="login-title-sub">새로운 비밀번호를 등록해주세요.</p>
                 <div class="login-line"></div>
                 <div class="login-pwd-lost">

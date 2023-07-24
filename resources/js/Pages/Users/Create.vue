@@ -3,12 +3,10 @@
         <div class="login-container main-login">
             <div class="login-header">
                 <img src="/images/login-logo.png" alt="login-logo" class="login-logo">
-                <p class="login-header-title"><span class="text-style-1">인</span>생에서 가장 중요한 것은 <span class="text-style-1">사</span>랑이다.</p>
+                <p class="login-header-title">우린 결국 <span class="text-style-1">만날 사람들</span>이었어</p>
                 <img src="/images//log-line.png" alt="log-line">
                 <p class="login-header-sub">
                     가장 친한 친구가 되어 찾아 줄게요
-                    <br />
-                    인사 하세요!
                 </p>
             </div>
         </div>
@@ -273,7 +271,7 @@
                                     자기소개글
                                 </p>
                                 <div class="user">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 인사를 찾게 되었습니다. 곧 만나뵐게요!♥" v-model="form.introduce"></textarea>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="안녕하세요.만나게 되어 반갑습니다. ^^ 저는 올해 31살이구 패션회사에서 벌써 7년간 근무했습니다. 워커홀릭으로 살아왔지만 여전히 사랑하시는 저희 부모님을 보면서 이제 저와 잘 맞는 짝을 만나 운동도 함께하고 맛집도 다니는 소소한 행복을 누리고 싶어 만날사람들을 찾게 되었습니다. 곧 만나뵐게요!♥" v-model="form.introduce"></textarea>
                                     <span class="m-input-error">{{form.errors.introduce}}</span>
                                 </div>
                             </li>

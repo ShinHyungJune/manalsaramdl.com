@@ -4,8 +4,8 @@
             <div class="top-menu">
                 <ul class="top-menu-sns">
                     <li class="sns-icons">
-                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta%20(1).svg" /></a>
-                        <a href="https://www.instagram.com/insa.official_" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
+                        <a href="https://www.instagram.com/manalsaramdl/" target="_blank"><img class="sns-icon insta-off" src="/images/sns-icon-insta%20(1).svg" /></a>
+                        <a href="https://www.instagram.com/manalsaramdl/" target="_blank"><img class="sns-icon insta-on" src="/images/sns-icon-insta-on.svg" /></a>
                     </li>
                     <li>
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>
@@ -37,7 +37,7 @@
         <nav class="gnb-wrap">
             <ul class="gnb">
                 <li class="active">
-                    <a href="/story">인사</a>
+                    <a href="/story">만날 사람들</a>
                     <!-- <div class="subA"> -->
                     <ul class="gnb-sub a">
                         <li>
@@ -49,8 +49,8 @@
                 <li>
                     <a href="/partyProducts">서비스</a>
                     <ul class="gnb-sub b">
-                        <li><a href="/partyProducts">파티신청</a></li>
                         <li><a href="/datingProducts">소개팅신청</a></li>
+                        <li><a href="/partyProducts">파티신청</a></li>
                     </ul>
                 </li>
                 <li>
@@ -63,9 +63,9 @@
                 <li>
                     <a href="/commentNotices">게시판</a>
                     <ul class="gnb-sub d">
-                        <li><a href="/commentNotices">인사의 코멘트</a></li>
-                        <li><a href="/partyNotices">파티Q&A</a></li>
+                        <li><a href="/commentNotices">만날사람들의 코멘트</a></li>
                         <li><a href="/datingNotices">소개팅Q&A</a></li>
+                        <li><a href="/partyNotices">파티Q&A</a></li>
                     </ul>
                 </li>
             </ul>
@@ -74,7 +74,7 @@
             <div class="mb-hd-wrap ">
                 <div class="mb-hd-box">
                     <div class="mb-logo">
-                        <img src="/images/LOGO.png" alt="insa-logo">
+                        <img src="/images/footer-logo.png" alt="insa-logo">
                     </div>
                     <div class="mb-login" v-if="!$page.props.user">
                         <a href="/login">login</a>
@@ -90,7 +90,7 @@
                     <ul class="mb-nav">
                         <li>
                             <div class="mb-sm-nav-top">
-                                <a href="/story">인사</a>
+                                <a href="/story">만날사람들</a>
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav" style="display: none;">
@@ -103,8 +103,8 @@
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="/partyProducts">파티 신청</a>
                                 <a href="/datingProducts">소개팅 신청</a>
+                                <a href="/partyProducts">파티 신청</a>
                             </div>
                         </li>
                         <li>
@@ -123,15 +123,15 @@
                                 <i class="xi-angle-down"></i>
                             </div>
                             <div class="mb-sm-nav">
-                                <a href="/commentNotices">인사의 코멘트</a>
-                                <a href="/partyNotices">파티Q&A</a>
+                                <a href="/commentNotices">만날사람들의 코멘트</a>
                                 <a href="/datingNotices">소개팅Q&A</a>
+                                <a href="/partyNotices">파티Q&A</a>
                             </div>
                         </li>
                     </ul>
                     <div class="sns-wrap-mb">
 <!--                        <a href="/logout" class="logout-btn" v-if="$page.props.user">logout<i class="xi-log-out"></i></a>-->
-                        <a href="https://www.instagram.com/insa.official_" target="_blank"> <i class="insta xi-instagram"></i></a>
+                        <a href="https://www.instagram.com/manalsaramdl/" target="_blank"> <i class="insta xi-instagram"></i></a>
                         <a href="https://www.youtube.com/channel/UCyZXDjRBTHtc6XM2ayGpWzQ" target="_blank"> <i class="utb youtube xi-youtube-play"></i></a>
 <!--                        <a href="https://pf.kakao.com/_kvwsxj" target="_blank"> <i class="kakao speech xi-speech"></i></a>-->
                         <a href="https://blog.naver.com/insa_official" target="_blank"> <i class="sns-icon naver xi-naver"></i></a>

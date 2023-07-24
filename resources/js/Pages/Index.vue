@@ -43,37 +43,6 @@
             </div>
         </div>
 
-        <!-- layerpopup -->
-        <!--
-       <div class="layerPopup open">
-            <div class="layerbox swiper-container" id="agreePopup">
-                <div class="swiper" >
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="">
-                                <img src="/images/sample1.png" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="">
-                                <img src="/images/sample2.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination">
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                    </div>
-                </div>
-                <div class="btn-wrap">
-                    <a href="" class="today-x-btn">오늘 하루 보지 않기</a>
-                    <a href="" class="x-btn">닫기</a>
-                </div>
-            </div>
-        </div>
-        -->
-        <!-- // -->
-
         <!-- main-banner  -->
         <div class="main-banner">
             <div class="main-banner-box">
@@ -83,43 +52,35 @@
                 <div class="banner-contents">
                     <div class="banner-title">
                         <h2 class="col-group pc">
-                <span class="text-style-1">
+<!--                <span class="text-style-1">
                   인
-                </span>
+                </span>-->
                             <span class="toggle_txt toggle_txt1">
-                  생에서 가장 중요한 것은 &nbsp;
+                  우린 결국
                 </span>
                             <span class="text-style-1">
-                  사
+                  만날사람들
                 </span>
                             <span class="toggle_txt toggle_txt2">
-                  랑이다
+                  이었어
                 </span>
                         </h2>
                         <div class="mb">
-                            <h2 class="col-group col-group01">
-                  <span class="text-style-1">
-                    인
-                  </span>
-                                <span class="toggle_txt toggle_txt1">
-                    생에서 가장
-                  </span>
-                            </h2>
                             <h2 class="col-group">
                   <span class="toggle_txt toggle_txt2">
-                    중요한 것은 &nbsp;
+                    우린 결국 &nbsp;
                   </span>
                                 <span class="text-style-1">
-                    사
+                    만날사람들
                   </span>
                                 <span class="toggle_txt toggle_txt3">
-                    랑이다
+                    이었어
                   </span>
                             </h2>
                         </div>
                     </div>
-                    <p class="banner-text">사랑을 선물합니다
-                        <br /> 모든 사람들이 사랑하는 그 날까지
+                    <p class="banner-text">소개팅앱은 가볍고 결정사는 올드해
+                        <br/>그렇다면 시작하세요
                     </p>
                     <a class="join-button" href="/register">
                         <span>가입신청</span><i class="xi-long-arrow-right"></i>
@@ -230,7 +191,7 @@
                                         <img src="/images/main-table-01.png" alt="">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/images/main-table-02.png" alt="">
+                                        <img src="/images/main-table-02.png?v=1" alt="">
                                     </div>
                                     <div class="swiper-slide">
                                         <img src="/images/main-table-03.png" alt="">
@@ -246,19 +207,15 @@
                             <div class="content-container">
                                 <div class="banner-title btm">
                                     <h2 class="content-title col-group pc">
-                      <span class="text-style-1">
-                        인
-                      </span>
-                                        <!-- <span class="toggle_txt toggle_txt1"> -->
                                         <span class="toggle_txt contenttxt1">
-                        생에서 가장 중요한 것은 &nbsp;
+                        우린 결국
                       </span>
                                         <span class="text-style-1">
-                        사
+                        만날 사람들
                       </span>
                                         <!-- <span class="toggle_txt toggle_txt2"> -->
                                         <span class="toggle_txt contenttxt2">
-                        랑이다
+                        이었어
                       </span>
                                     </h2>
                                 </div>
@@ -275,19 +232,16 @@
                             <div class="banner-title">
                                 <div class="mb">
                                     <h2 class="col-group col-group01">
-                      <span class="text-style-1">
-                        인
-                      </span>
                                         <span class="toggle_txt toggle_txt1 btm">
-                        생에서 가장 중요한 것은
+                        우린 결국
                       </span>
                                     </h2>
                                     <h2 class="col-group">
                       <span class="text-style-1">
-                        사
+                          만날 사람들
                       </span>
                                         <span class="toggle_txt toggle_txt3 btm">
-                        랑이다
+                        이었어
                       </span>
                                     </h2>
                                 </div>
@@ -319,8 +273,8 @@
               쉽게 가볍게 만나기엔 어려운 당신.
               비싼 돈을 지불하기엔 소중한 당신.
 
-              '인사'는 준비된 분들을 위한 서비스입니다.
-              인사는 나를 지키면서, 나를 위한 1:1 프리미엄,
+              '만날사람들'은 준비된 분들을 위한 서비스입니다.
+              만날사람들은 나를 지키면서, 나를 위한 1:1 프리미엄,
               프라이빗 서비스를 제공하는 <br class="mb" /> 온·오프라인 융합 서비스입니다.
 
               모든 것이 디지털화된 지금,<br class="mb" />  절대 디지털화 할 수 없는 것이 있습니다.
@@ -344,7 +298,7 @@
                             <div class="crown-wrap">
                                 <img src="/images/crown2.png" alt="" >
                             </div>
-                            <p>인사를 <br /><span class="text-style-1">선택</span>해야하는 이유</p>
+                            <p>만날사람들을 <br /><span class="text-style-1">선택</span>해야하는 이유</p>
                         </div>
                         <ul class="choice-container">
                             <li class="img-wrap">
@@ -374,7 +328,7 @@
                             <div class="crown-wrap">
                                 <img src="/images/crown2.png" alt="" >
                             </div>
-                            <p><span class="text-style-1">오직</span><br />인사에만 있는 것</p>
+                            <p><span class="text-style-1">오직</span><br />만날사람들에만 있는 것</p>
                         </div>
                         <div class="only-container">
                             <ul class="only-list">

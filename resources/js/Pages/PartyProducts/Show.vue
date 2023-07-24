@@ -269,7 +269,7 @@
 
         <div class="container invited">
             <div class="img-wrap">
-                <img class="invited-pc" src="/images/letter.png" alt="">
+                <img class="invited-pc" src="/images/letter.jpg" alt="">
             </div>
             <div class="text-wrap">
                 <div class="line"></div>
@@ -287,7 +287,7 @@
                             검증된 사람들과<br />
                             술과 음악과 함께
                         </p>
-                        <p class="baytree-title">인사 파티</p>
+                        <p class="baytree-title">만날사람들 파티</p>
                     </div>
                     <p class="baytree-sumtext">Insa Party</p>
                 </div>
