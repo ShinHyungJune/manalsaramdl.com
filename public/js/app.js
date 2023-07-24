@@ -66269,10 +66269,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "warning-container-pc pc" }, [
               _c("div", { staticClass: "img-wrap" }, [
                 _c("img", {
-                  attrs: {
-                    src: __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../images/main-table-07.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-                    alt: "",
-                  },
+                  attrs: { src: "/images/main-table-07.png", alt: "" },
                 }),
               ]),
             ]),

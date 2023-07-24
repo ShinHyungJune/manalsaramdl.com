@@ -172,7 +172,7 @@
                         <!-- 0724 -->
                         <div class="warning-container-pc pc">
                             <div class="img-wrap">
-                                <img src="../images/main-table-07.png" alt="">
+                                <img src="/images/main-table-07.png" alt="">
                             </div>
                         </div>
                         <!-- // -->
