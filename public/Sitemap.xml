@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+	<loc>https://manalsaramdl.com</loc>
+	<lastmod>2023-08-07T11:16:53+09:00</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.8</priority>
+  </url>
+  <url>
+	<loc>https://manalsaramdl.com/story</loc>
+	<lastmod>2023-08-07T11:16:53+09:00</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.8</priority>
+  </url>  
+    <url>
+	<loc>https://manalsaramdl.com/partyProducts</loc>
+	<lastmod>2023-08-07T11:16:53+09:00</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.8</priority>
+  </url>  
+    <url>
+	<loc>https://manalsaramdl.com/datingReviews</loc>
+	<lastmod>2023-08-07T11:16:53+09:00</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.8</priority>
+  </url>  
+</urlset>

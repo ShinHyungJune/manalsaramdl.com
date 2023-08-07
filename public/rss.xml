@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>만날사람들</title>
+    <link>https://manalsaramdl.com</link>
+    <description>1:1 프리미엄 소개팅 서비스, 오프라인 파티 서비스, 철저한 신원인증, 전담매니저 관리, 가입부터 만남까지 올인원관리</description>
+    <item>
+      <title>만날사람들</title>
+      <link>https://manalsaramdl.com/story</link>
+      <description>탄생배경</description>
+      <pubDate>발행시간</pubDate>
+      <guid>https://manalsaramdl.com/story</guid>
+    </item>
+    <item>
+      <title>서비스</title>
+      <link>https://manalsaramdl.com/partyProducts</link>
+      <description>소개팅 신청, 파티신청</description>
+      <pubDate>발행시간</pubDate>
+      <guid>https://manalsaramdl.com/partyProducts</guid>
+    </item>
+      <item>
+      <title>후기</title>
+      <link>https://manalsaramdl.com/datingReviews</link>
+      <description>소개팅 후기, 파티 후기</description>
+      <pubDate>발행시간</pubDate>
+      <guid>https://manalsaramdl.com/datingReviews</guid>
+    </item>
+     <item>
+      <title>게시판</title>
+      <link>https://manalsaramdl.com/datingReviews</link>
+      <description>만날 사람들의 코멘트, 소개팅 Q&A, 파티 Q&A</description>
+      <pubDate>발행시간</pubDate>
+      <guid>https://manalsaramdl.com/datingReviews</guid>
+    </item>
+  </channel>
+</rss>
