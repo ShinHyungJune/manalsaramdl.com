@@ -5270,9 +5270,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -10062,8 +10059,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -10607,11 +10602,9 @@ __webpack_require__.r(__webpack_exports__);
             self.form.birth = item.birth;
             self.form.name = item.name;
           })["catch"](function (error) {
-            console.log(rsp);
             return alert("인증에 실패하였습니다.");
           });
         } else {
-          console.log(rsp);
           alert("인증에 실패하였습니다.");
         }
       });
@@ -61141,7 +61134,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                    정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                    산정됩니다.)"
+              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산정됩니다. (단, 1회권 기준 금액으로 환불이 적용됩니다. )"
             ),
           ]),
           _vm._v(" "),
@@ -61797,7 +61790,7 @@ var staticRenderFns = [
               ),
               _c("br", { staticClass: "br-re" }),
               _vm._v(
-                "\n                        (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                        산정됩니다.)"
+                "\n                        ((단, 1회권 기준 금액으로 환불이 적용됩니다.)"
               ),
             ]),
             _vm._v(" "),
@@ -71696,7 +71689,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산\n                                            정됩니다. (즉, 추가 서비스 횟수가 제공된 경우, 환불 시에 추가 서비스 횟수를 제외하고\n                                            산정됩니다.)"
+              "6.환불 가능 기간은 프로그램 기간동안이며, 환불액 산정은 남은 횟수/가입 횟수에 따라 산정됩니다. (단, 1회권 기준 금액으로 환불이 적용됩니다. )"
             ),
           ]),
           _vm._v(" "),

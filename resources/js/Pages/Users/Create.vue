@@ -477,11 +477,9 @@ export default {
                         self.form.birth = item.birth;
                         self.form.name = item.name;
                     }).catch(error => {
-                        console.log(rsp);
                         return alert("인증에 실패하였습니다.");
                     });
                 } else {
-                    console.log(rsp);
                     alert("인증에 실패하였습니다.");
                 }
             });
