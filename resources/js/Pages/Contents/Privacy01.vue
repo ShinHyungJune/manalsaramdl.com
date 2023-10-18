@@ -238,7 +238,7 @@
                                         - 연락처 : 1660-1369
                                     </p>
                                     <p>
-                                        - 이메일 : cs@insacompany.com
+                                        - 이메일 : lth2971@naver.com
                                     </p>
                                 </div>
                                 <div class="pb">
@@ -255,7 +255,7 @@
                                         - 연락처 : 1660-1369
                                     </p>
                                     <p>
-                                        - 이메일 : cs@insacompany.com
+                                        - 이메일 : lth2971@naver.com
                                     </p>
                                 </div>
                                 <p>
@@ -351,7 +351,7 @@
                                         - 연락처 : 1660-1369
                                     </p>
                                     <p>
-                                        - 이메일 : cs@insacompany.com
+                                        - 이메일 : lth2971@naver.com
                                     </p>
                                 </div>
                                 <p>

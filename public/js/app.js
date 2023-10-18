@@ -57077,11 +57077,9 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("span", [
-          _vm._v(
-            "대표 : 이태현   주소 : 서울특별시 강남구 영동대로 602, 6층  "
-          ),
+          _vm._v("대표 : 이태현   주소 : 서울 영등포구 도림로141길 17, 8층  "),
           _c("br", { staticClass: "mb" }),
-          _vm._v("대표전화 : 1660-1369   이메일 : cs@insacompany.com  "),
+          _vm._v("대표전화 : 1660-1369   이메일 : lth2971@naver.com  "),
         ]),
         _vm._v(" "),
         _c("span", [
@@ -59410,7 +59408,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "\n                                    - 이메일 : cs@insacompany.com\n                                "
+                        "\n                                    - 이메일 : lth2971@naver.com\n                                "
                       ),
                     ]),
                   ]),
@@ -59442,7 +59440,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "\n                                    - 이메일 : cs@insacompany.com\n                                "
+                        "\n                                    - 이메일 : lth2971@naver.com\n                                "
                       ),
                     ]),
                   ]),
@@ -59622,7 +59620,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "\n                                    - 이메일 : cs@insacompany.com\n                                "
+                        "\n                                    - 이메일 : lth2971@naver.com\n                                "
                       ),
                     ]),
                   ]),
