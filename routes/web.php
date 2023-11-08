@@ -114,6 +114,8 @@ Route::get("/orders/complete/mobile", [\App\Http\Controllers\OrderController::cl
 Route::get("/orders/result", [\App\Http\Controllers\OrderController::class, "result"]);
 Route::get("/orders/fail", [\App\Http\Controllers\OrderController::class, "fail"]);
 
+Route::get("/users/success", [\App\Http\Controllers\UserController::class, "success"]);
+
 Route::middleware("guest")->group(function(){
     Route::get("/login", [\App\Http\Controllers\UserController::class, "loginForm"])->name("login");
     Route::get("/register", [\App\Http\Controllers\UserController::class, "create"]);

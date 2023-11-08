@@ -396,10 +396,9 @@
 
 /* 결과화면 (아이디, 비번 찾기 결과) */
 .subpage.result-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;justify-content: center;align-items: center;
     min-height: calc(100vh - 413px);
+    padding:100px 0;
 }
 
 .subpage.result-section .result-contents {
@@ -411,6 +410,7 @@
 }
 
 .subpage.result-section .result-contents .check-icon {
+    display: flex; align-items: center; justify-content: center;
     width: 86px;
     height: 86px;
     border: solid 4px #d7a550;
@@ -448,7 +448,7 @@
 
 .subpage.result-section .result-contents .btn-result {
     width: 320px;
-    height: 62px;
+    height: 62px; line-height:62px;
     border-radius: 24px;
     border: solid 2px #d7a550;
     color: #d7a550;
@@ -457,6 +457,7 @@
     font-family: "Pretendard";
     background-color: #fff;
     margin-top: 80px;
+    transition:all .3s;
 }
 
 .subpage.result-section .result-contents .btn-result:hover {
@@ -1489,7 +1490,7 @@ input[type="checkbox"] {
         min-height: calc(100vh - 305.49px);
     }
     #theme .join-select {  font-size: 10px; }
-    
+
 }
 /* 결과 화면 582 */
 @media screen and (max-width: 582px) {

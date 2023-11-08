@@ -33,7 +33,7 @@ class UserController extends Controller
             "password" => "required|string|max:500",
         ]);
 
-        if(auth()->attempt($request->all())) {
+        if (auth()->attempt($request->all())) {
             session()->regenerate();
 
             return redirect()->intended();
@@ -74,7 +74,7 @@ class UserController extends Controller
             "imp_uid" => "nullable|string|max:50000",
         ]);
 
-        if(!$request->social_id)
+        if (!$request->social_id)
             $request->validate([
                 "email" => "required|unique:users|email|max:500",
                 "password" => "required|string|min:8|max:30|confirmed",
@@ -82,15 +82,15 @@ class UserController extends Controller
 
         $verification = Verification::where('imp_uid', $request->imp_uid)->first();
 
-        if(!$verification)
+        if (!$verification)
             return redirect()->back()->with("error", "본인인증한 사용자만 회원가입할 수 있습니다.");
 
         $user = User::create(array_merge($request->except(["password", "imgs"]), [
             "password" => $request->password ? Hash::make($request->password) : ""
         ]));
 
-        if($request->imgs){
-            foreach($request->imgs as $img){
+        if ($request->imgs) {
+            foreach ($request->imgs as $img) {
                 $user->addMedia($img)->toMediaCollection("imgs", "s3");
             }
 
@@ -101,7 +101,7 @@ class UserController extends Controller
 
         $verification->delete();
 
-        return redirect("/login")->with("success", "성공적으로 가입되었습니다.");
+        return redirect("/users/success")->with("success", "성공적으로 가입되었습니다.");
     }
 
     public function openSocialLoginPop($social)
@@ -115,8 +115,8 @@ class UserController extends Controller
 
         $user = User::where("social_id", $socialUser->id)->where("social_platform", $social)->first();
 
-        if(!$user)
-            return redirect("/register?social_id=".$socialUser->id."&social_platform=".$social);
+        if (!$user)
+            return redirect("/register?social_id=" . $socialUser->id . "&social_platform=" . $social);
 
         Auth::login($user);
 
@@ -153,8 +153,8 @@ class UserController extends Controller
         // 올려놨던 이미지 정리(나중에는 올려놨던 이미지는 그대로 살리고, 새로 업로드되거나 삭제된 이미지만 걸러내는게 효율적이겠지? 일단은 다 지우고 다 업로드하는식)
         auth()->user()->clearMediaCollection("imgs");
 
-        if($request->imgs){
-            foreach($request->imgs as $img){
+        if ($request->imgs) {
+            foreach ($request->imgs as $img) {
                 auth()->user()->addMedia($img)->toMediaCollection("imgs", "s3");
             }
         }
@@ -168,7 +168,7 @@ class UserController extends Controller
 
     public function loginForm()
     {
-        return Inertia::render("Users/Login",[]);
+        return Inertia::render("Users/Login", []);
     }
 
     public function create(Request $request)
@@ -178,7 +178,7 @@ class UserController extends Controller
 
         $verification = null;
 
-        if($request->imp_uid)
+        if ($request->imp_uid)
             $verification = Verification::where("imp_uid", $request->imp_uid)->first();
 
         return Inertia::render("Users/Create", [
@@ -203,6 +203,11 @@ class UserController extends Controller
     public function deleted()
     {
         return Inertia::render("Users/Deleted", []);
+    }
+
+    public function success()
+    {
+        return Inertia::render("Users/Success");
     }
 
     public function destroy(Request $request)
