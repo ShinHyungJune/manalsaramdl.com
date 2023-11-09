@@ -619,12 +619,15 @@
                         <button type="button" class="close" @click="targetFeedbackDating = ''">
                             <i class="xi-close"></i>
                         </button>
+
                         <div class="title-wrap profile-wrap">
                             <img src="/images/crown2.png" alt="">
                             <div class="user-profile">
+                                <!--
                                 <div class="img-wrap">
                                     <img src="/images/crown2.png" alt="">
                                 </div>
+                                -->
                                 <div class="user-photo">
                                     <div class="img-box" :style="`background-image:url(${partner(targetFeedbackDating).img ? partner(targetFeedbackDating).img.url : ''}); background-repeat:no-repeat; background-size:100%; background-position:center;`"></div>
                                 </div>

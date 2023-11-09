@@ -1,5 +1,6 @@
 <template>
     <main class="mainpage">
+
         <div class="pop-parent" id="popParent" v-if="activePop && pops.data.length > 0">
             <div class="pop">
                 <div class="swiper">
@@ -394,10 +395,10 @@
 </template>
 <script>
 import {Link} from '@inertiajs/inertia-vue';
-
+import DatingReview from "../Components/DatingReview.vue";
 
 export default {
-    components: { Link},
+    components: { Link, DatingReview },
 
     data() {
         return {

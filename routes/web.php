@@ -140,8 +140,8 @@ Route::resource("/notices", \App\Http\Controllers\Shopping\NoticeController::cla
 Route::middleware("auth")->group(function(){
     Route::get("/users/remove", [\App\Http\Controllers\UserController::class, "remove"]);
     Route::get("/users/edit", [\App\Http\Controllers\UserController::class, "edit"]);
-    Route::resource("/reviews", \App\Http\Controllers\ReviewController::class);
     Route::get("/orders", [\App\Http\Controllers\OrderController::class, "index"]);
+    Route::resource("/reviews", \App\Http\Controllers\ReviewController::class);
     Route::resource("/latestProducts", \App\Http\Controllers\Shopping\LatestProductController::class);
     Route::resource("/likes", \App\Http\Controllers\Shopping\LikeController::class);
     Route::resource("/qnas", \App\Http\Controllers\Shopping\QnaController::class);

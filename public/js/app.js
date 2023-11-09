@@ -6347,6 +6347,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -6841,6 +6844,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _Components_DatingReview_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/DatingReview.vue */ "./resources/js/Components/DatingReview.vue");
+//
 //
 //
 //
@@ -7236,9 +7241,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
+    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
+    DatingReview: _Components_DatingReview_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -64265,8 +64272,6 @@ var render = function () {
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "user-profile" }, [
-                      _vm._m(16),
-                      _vm._v(" "),
                       _c("div", { staticClass: "user-photo" }, [
                         _c("div", {
                           staticClass: "img-box",
@@ -64313,7 +64318,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(17),
+                    _vm._m(16),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "review-wrap form-wrap overflow" }, [
@@ -64323,7 +64328,7 @@ var render = function () {
                         { staticClass: "review-box form-box row-group" },
                         [
                           _c("li", [
-                            _vm._m(18),
+                            _vm._m(17),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -64507,7 +64512,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(19),
+                            _vm._m(18),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -64642,7 +64647,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(20),
+                            _vm._m(19),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -64845,7 +64850,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(21),
+                              _vm._m(20),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -64856,7 +64861,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(22),
+                            _vm._m(21),
                             _vm._v(" "),
                             _c("div", { staticClass: "as row-group" }, [
                               _c(
@@ -65029,7 +65034,7 @@ var render = function () {
                                 ]
                               ),
                               _vm._v(" "),
-                              _vm._m(23),
+                              _vm._m(22),
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "m-input-error" }, [
@@ -65038,7 +65043,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(24),
+                            _vm._m(23),
                             _vm._v(" "),
                             _c("ul", { staticClass: "as row-group" }, [
                               _c("li", [
@@ -65134,7 +65139,7 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._m(25),
+                            _vm._m(24),
                             _vm._v(" "),
                             _c("div", { staticClass: "as" }, [
                               _c("textarea", {
@@ -65451,14 +65456,6 @@ var staticRenderFns = [
     return _c("p", { staticClass: "default" }, [
       _vm._v("선호일정6 "),
       _c("span", { staticClass: "star" }, [_vm._v("*")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "img-wrap" }, [
-      _c("img", { attrs: { src: "/images/crown2.png", alt: "" } }),
     ])
   },
   function () {
