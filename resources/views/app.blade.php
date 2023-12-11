@@ -78,6 +78,15 @@
             "pluginKey": "672209d0-d86b-4832-895c-f0ffeca895c0"
         });
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9D0JV1EJZZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9D0JV1EJZZ');
+    </script>
     <noscript><img height="1" width="1" style="display:none"
                    src="https://www.facebook.com/tr?id=529437559215104&ev=PageView&noscript=1"
         /></noscript>
