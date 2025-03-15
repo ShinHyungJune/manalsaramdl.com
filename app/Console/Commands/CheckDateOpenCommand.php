@@ -50,6 +50,8 @@ class CheckDateOpenCommand extends Command
         $sms = new SMS();
 
         foreach($datings as $dating){
+            $dating->update(["alarm_date_open" => 1]);
+
             $sms->send($dating->men->contact, [
                 "url" => $dating->getUrl(),
                 "scheduled_at" => Carbon::make($dating->scheduled_at)->format("m월 d일 H:i"),
@@ -66,7 +68,6 @@ class CheckDateOpenCommand extends Command
                 "name" => $dating->men->nickname,
             ], SmsTemplate::DATE_OPEN);
 
-            $dating->update(["alarm_date_open" => 1]);
         }
     }
 }
