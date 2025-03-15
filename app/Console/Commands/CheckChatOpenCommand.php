@@ -53,6 +53,8 @@ class CheckChatOpenCommand extends Command
         $sms = new SMS();
 
         foreach($datings as $dating){
+            $dating->update(["alarm_chat_open" => 1]);
+
             $sms->send($dating->men->contact, [
                 "url" => $dating->getChatUrl()
             ], SmsTemplate::CHAT_OPEN);
@@ -60,8 +62,6 @@ class CheckChatOpenCommand extends Command
             $sms->send($dating->women->contact, [
                 "url" => $dating->getChatUrl()
             ], SmsTemplate::CHAT_OPEN);
-
-            $dating->update(["alarm_chat_open" => 1]);
         }
     }
 }
